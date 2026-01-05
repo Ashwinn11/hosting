@@ -1,0 +1,228 @@
+/* Mobile First Legal Page Styles */
+
+.legal-page {
+    min-height: 100vh;
+    padding-bottom: 40px;
+    background: var(--bg-primary);
+}
+
+/* Sticky Header */
+.legal-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+    background: rgba(3, 7, 18, 0.8);
+    /* Dark background matching theme */
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.back-btn {
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.back-btn:active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.header-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    background: none;
+    -webkit-text-fill-color: var(--text-primary);
+}
+
+.header-placeholder {
+    width: 40px;
+}
+
+/* Content */
+.legal-content {
+    padding-top: var(--spacing-lg);
+}
+
+.policy-intro {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.policy-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+}
+
+.intro-text {
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    max-width: 600px;
+}
+
+.last-updated {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Sections */
+.legal-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--spacing-md);
+}
+
+.section-title-row h2 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.info-card {
+    margin-bottom: var(--spacing-md);
+}
+
+.info-card h3 {
+    font-size: 1.125rem;
+    margin-bottom: 8px;
+    color: var(--primary-light);
+}
+
+/* Lists */
+.list-group h3 {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.list-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-group li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+}
+
+.list-group li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+/* Note Text */
+.note-text {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 12px;
+}
+
+/* Contact Link */
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 16px;
+    transition: all 0.2s;
+}
+
+.contact-link:active {
+    transform: scale(0.98);
+}
+
+.legal-footer {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+    .legal-content .container {
+        max-width: 720px;
+    }
+}
+/* Accordion (FAQ) */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-answer {
+  padding-bottom: 20px;
+  padding-right: 20px;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+  color: var(--text-muted);
+}

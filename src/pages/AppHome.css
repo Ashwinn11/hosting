@@ -1,203 +1,398 @@
+/* Mobile First App Home */
+
 .app-home {
     position: relative;
-    overflow-x: hidden;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    /* Space for potentially fixed footer if needed */
 }
 
-/* Background Decorative Elements */
-.page-ornaments {
-    position: absolute;
+/* Ambient Background */
+.ambient-background {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
     pointer-events: none;
-    z-index: 0;
-}
-
-.ornament-1 {
-    position: absolute;
-    top: 15%;
-    right: -5%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
-    opacity: 0.1;
-    filter: blur(60px);
-}
-
-.ornament-2 {
-    position: absolute;
-    top: 60%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-    opacity: 0.05;
-    filter: blur(80px);
-}
-
-/* App Hero Improvements */
-.app-hero {
-    min-height: 70vh;
-    padding: var(--spacing-2xl) 0;
-}
-
-.app-hero-icon {
-    border: 8px solid rgba(255, 255, 255, 0.05);
-    background: var(--bg-tertiary);
-}
-
-.app-hero-title {
-    -webkit-text-fill-color: white;
-    font-size: clamp(3.5rem, 12vw, 6rem);
-}
-
-/* Games Showcase Improvements */
-.games-showcase {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-}
-
-.game-showcase-card {
-    border: 1px solid rgba(255, 255, 255, 0.03);
     overflow: hidden;
 }
 
-.game-preview-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    color: var(--icon-color, var(--primary));
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2), 0 0 20px var(--icon-color, var(--primary));
-    opacity: 0.9;
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 10s ease-in-out infinite;
 }
 
-.game-showcase-card:hover .game-preview-icon {
-    transform: scale(1.1) rotate(-5deg);
-    box-shadow: 0 0 40px var(--icon-color, var(--primary));
+.orb-1 {
+    top: -100px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
 }
 
-.game-meta {
+.orb-2 {
+    bottom: 10%;
+    left: -50px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    animation-delay: -5s;
+}
+
+/* Mobile Hero */
+.mobile-hero {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.app-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.app-icon-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-glow);
+}
+
+.app-icon-large img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.app-icon-large span {
+    font-size: 4rem;
+}
+
+.app-title-block h1 {
+    font-size: 2.5rem;
+    margin-bottom: 4px;
+}
+
+.app-tagline {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.rating-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.dot {
+    color: var(--text-muted);
+}
+
+.pulse-btn {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+    }
+}
+
+.hero-actions {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 16px;
+    background: var(--border);
+}
+
+/* Games Section - Horizontal Scroll */
+.games-section {
+    padding-bottom: var(--spacing-xl);
+}
+
+.section-header-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    padding: 0 var(--spacing-xs);
 }
 
-.player-count {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    font-weight: 500;
+.section-header-row h2 {
+    font-size: 1.5rem;
+    margin: 0;
 }
 
-/* Feature Grid Improvements */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-xl);
-}
-
-.feature-card {
+.see-all {
     display: flex;
-    gap: var(--spacing-md);
-    padding: var(--spacing-xl);
-    background: rgba(255, 255, 255, 0.01);
+    align-items: center;
+    gap: 4px;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
 }
 
-.feature-icon-box {
-    flex-shrink: 0;
-    width: 56px;
-    height: 56px;
-    background: var(--bg-tertiary);
+.game-snap-card {
+    width: 160px;
+    /* Fixed width for consistent snap */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: var(--bg-secondary);
     border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.game-icon-box {
+    width: 100%;
+    aspect-ratio: 1;
+    /* Square */
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 4px;
 }
 
-.feature-text h3 {
-    margin-bottom: var(--spacing-xs);
-    font-size: 1.25rem;
+.game-info h3 {
+    font-size: 1rem;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Legal Links Improvements */
-.legal-links-grid {
-    grid-template-columns: repeat(3, 1fr);
+.game-info span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
 }
 
-.legal-icon-main {
-    color: var(--primary);
+.play-btn {
+    margin-top: auto;
+    /* Push to bottom */
+    padding: 6px 12px;
+    font-size: 0.875rem;
+}
+
+/* Feature Stack */
+.features-section {
+    position: relative;
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
+
+.mb-md {
     margin-bottom: var(--spacing-md);
-    opacity: 0.8;
 }
 
-.legal-link-card:hover .legal-icon-main {
-    transform: translateY(-5px);
-    color: var(--primary-light);
-    opacity: 1;
+.feature-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-/* Newsletter Section */
-.glass-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.feature-row {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
 }
 
-.newsletter-grid {
-    display: grid;
-    grid-template-columns: 1fr auto;
+.feature-marker {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: left;
-    gap: var(--spacing-xl);
+    gap: 8px;
+    padding-top: 6px;
 }
 
-.newsletter-info h2 {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-xs);
+.feature-marker .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
 }
 
-@media (max-width: 992px) {
-    .legal-links-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .newsletter-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+.feature-marker .line {
+    flex-grow: 1;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), transparent);
+    min-height: 40px;
 }
 
-@media (max-width: 768px) {
-    .app-hero {
-        padding: var(--spacing-xl) 0;
+.feature-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+}
+
+/* Settings Group (Legal/Support) */
+.settings-section {
+    padding-bottom: 80px;
+}
+
+.settings-group {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    color: var(--text-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s ease;
+}
+
+.settings-item:last-child {
+    border-bottom: none;
+}
+
+.settings-item:active {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.settings-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--bg-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-light);
+}
+
+.settings-label {
+    flex-grow: 1;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.settings-arrow {
+    color: var(--text-muted);
+}
+
+.version-info {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.version-info p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+/* Desktop Enhancements */
+@media (min-width: 768px) {
+    .hero-content {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+        padding: var(--spacing-2xl) 0;
     }
 
-    .app-hero-icon {
-        width: 100px;
-        height: 100px;
+    .app-branding {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: var(--spacing-lg);
     }
 
-    .app-hero-tagline {
-        font-size: 1.25rem;
+    .app-title-block {
+        align-items: flex-start;
     }
 
-    .app-hero-description {
-        font-size: 1rem;
+    .hero-actions {
+        max-width: none;
+        width: auto;
     }
 
-    .features-grid {
-        grid-template-columns: 1fr;
+    .w-full {
+        width: auto;
     }
 
-    .games-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    .settings-group {
+        max-width: 600px;
+        margin: 0 auto;
     }
 
-    .legal-links-grid {
-        grid-template-columns: 1fr;
+    .feature-stack {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }

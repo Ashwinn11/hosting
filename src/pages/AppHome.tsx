@@ -2,13 +2,11 @@ import { useParams, Link } from 'react-router-dom';
 import { 
   ShieldCheck, FileText, MessageCircle, Smartphone, Smartphone as Android, 
   Zap, Globe, Trophy, Play, Target, Layout, Activity, Palette, Box, Hash, 
-  Brain, ArrowUpCircle, Wind, Sword, Cpu, Heart, Rocket
+  Brain, ArrowUpCircle, Wind, Sword, Star, ChevronRight
 } from 'lucide-react';
 import { getAppById } from '../data/apps';
 import { Container } from '../components/ui/Container';
 import { Section } from '../components/ui/Section';
-import { Card } from '../components/ui/Card';
-import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
 import './AppHome.css';
 
@@ -42,130 +40,149 @@ export default function AppHome() {
 
   const isPlayPulse = app.id === 'playpulse';
 
-  const featureIcons = [Rocket, ShieldCheck, Cpu, Activity, Zap, Heart];
-
   return (
     <div className="app-home">
-      <div className="page-ornaments">
-        <div className="ornament-1"></div>
-        <div className="ornament-2"></div>
+      {/* Background Ambience */}
+      <div className="ambient-background">
+        <div className="glow-orb orb-1"></div>
+        <div className="glow-orb orb-2"></div>
       </div>
 
-      <section className="app-hero" style={{ background: app.gradient }}>
-        <div className="hero-glow"></div>
+      {/* Mobile-First Hero */}
+      <section className="mobile-hero">
         <Container>
-          <div className="app-hero-content fade-in">
-            <div className="app-hero-icon-wrapper">
-              <div className="app-hero-icon">
+          <div className="hero-content">
+            <div className="app-branding">
+              <div className="app-icon-large glass">
                 {app.icon.startsWith('/') ? (
-                  <img src={app.icon} alt={`${app.name} logo`} />
+                  <img src={app.icon} alt={app.name} />
                 ) : (
                   <span>{app.icon}</span>
                 )}
               </div>
-              <Badge variant="accent" className="version-badge">v1.0.4</Badge>
-            </div>
-            
-            <h1 className="app-hero-title">{app.name}</h1>
-            <p className="app-hero-tagline">{app.tagline}</p>
-            <p className="app-hero-description">{app.description}</p>
-            
-            <div className="app-hero-cta">
-              <Button size="lg" icon={Smartphone} className="pulse-btn">App Store</Button>
-              <Button size="lg" variant="secondary" icon={Android}>Google Play</Button>
+              <div className="app-title-block">
+                <h1>{app.name}</h1>
+                <p className="app-tagline">{app.tagline}</p>
+                <div className="rating-pill glass">
+                  <Star size={14} fill="currentColor" className="text-yellow-400" />
+                  <span>4.9</span>
+                  <span className="dot">•</span>
+                  <span>10k+ Reviews</span>
+                </div>
+              </div>
             </div>
 
-            <div className="app-hero-badges">
-              <div className="trust-badge"><Globe size={16} /><span>Global Play</span></div>
-              <div className="trust-badge"><Zap size={16} /><span>High Performance</span></div>
-              <div className="trust-badge"><Trophy size={16} /><span>Award Winning</span></div>
+            <div className="hero-actions">
+              <Button size="lg" icon={Smartphone} className="w-full pulse-btn">
+                Download for iOS
+              </Button>
+              <Button size="lg" variant="secondary" icon={Android} className="w-full">
+                Download for Android
+              </Button>
+            </div>
+
+            <div className="stat-row">
+              <div className="stat-item">
+                <Trophy size={20} className="text-secondary" />
+                <span className="stat-label">#1 Arcade</span>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat-item">
+                <Globe size={20} className="text-primary" />
+                <span className="stat-label">Global</span>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat-item">
+                <Zap size={20} className="text-accent" />
+                <span className="stat-label">Fast</span>
+              </div>
             </div>
           </div>
         </Container>
       </section>
 
+      {/* Horizontal Games Scroll (App Store Style) */}
       {isPlayPulse && (
-        <Section title="The Arcade Gallery" subtitle="Hand-picked classics reimagined for the modern era. No downloads, just pure skill.">
-          <div className="games-showcase">
-            {app.games?.map((game, index) => {
-              const Icon = gameIconMap[game] || Play;
-              return (
-                <Card key={index} className="game-showcase-card" glass hover>
-                  <div className="game-card-content">
-                    <div className="game-preview-icon" style={{ '--icon-color': `hsl(${index * 40}, 70%, 60%)` } as any}>
+        <section className="games-section">
+          <Container>
+            <div className="section-header-row">
+              <h2>Arcade Gallery</h2>
+              <Link to="#" className="see-all">See All <ChevronRight size={16} /></Link>
+            </div>
+            
+            <div className="horizontal-scroll hide-scrollbar">
+              {app.games?.map((game, index) => {
+                const Icon = gameIconMap[game] || Play;
+                const hue = (index * 45) % 360;
+                return (
+                  <div key={index} className="game-snap-card">
+                    <div className="game-icon-box" style={{ background: `hsl(${hue}, 70%, 15%)`, color: `hsl(${hue}, 80%, 70%)` }}>
                       <Icon size={32} />
                     </div>
-                    <h3>{game}</h3>
-                    <div className="game-meta">
-                      <Badge variant="outline" size="sm">Arcade</Badge>
-                      <span className="player-count">{(10 + index * 2)}k+ playing</span>
+                    <div className="game-info">
+                      <h3>{game}</h3>
+                      <span>Arcade • Casual</span>
                     </div>
+                    <Button size="sm" variant="secondary" className="play-btn">Play</Button>
                   </div>
-                </Card>
-              );
-            })}
-          </div>
-        </Section>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
       )}
 
-      <Section title="Premium Features" className="features-section">
-        <div className="features-grid">
-          {app.features.map((feature, index) => {
-            const Icon = featureIcons[index % featureIcons.length];
-            return (
-              <Card key={index} className="feature-card" hover>
-                <div className="feature-icon-box">
-                  <Icon size={24} className="text-primary" />
+      {/* Feature List (Vertical Stack) */}
+      <Section className="features-section">
+        <Container>
+          <h2 className="mb-lg">Premium Features</h2>
+          <div className="feature-stack">
+            {app.features.map((feature, index) => (
+              <div key={index} className="feature-row glass">
+                <div className="feature-marker">
+                  <div className="dot"></div>
+                  <div className="line"></div>
                 </div>
-                <div className="feature-text">
+                <div className="feature-content">
                   <h3>{feature}</h3>
-                  <p>Our custom-built {feature.toLowerCase()} engine ensures the smoothest experience available on mobile today.</p>
+                  <p>Optimized for the best mobile experience.</p>
                 </div>
-              </Card>
-            );
-          })}
-        </div>
-      </Section>
-
-      <Section title="Developer Support" subtitle="Everything you need to know about our commitment to quality and service.">
-        <div className="legal-links-grid">
-          <Link to={`/${app.id}/privacy-policy`} className="legal-link-wrapper">
-            <Card className="legal-link-card" hover glass>
-              <ShieldCheck size={40} className="legal-icon-main" />
-              <h3>Security</h3>
-              <p>Advanced data protection and privacy-first architecture.</p>
-            </Card>
-          </Link>
-          <Link to={`/${app.id}/terms-of-service`} className="legal-link-wrapper">
-            <Card className="legal-link-card" hover glass>
-              <FileText size={40} className="legal-icon-main" />
-              <h3>Terms</h3>
-              <p>Simple, transparent, and fair usage guidelines.</p>
-            </Card>
-          </Link>
-          <Link to={`/${app.id}/support`} className="legal-link-wrapper">
-            <Card className="legal-link-card" hover glass>
-              <MessageCircle size={40} className="legal-icon-main" />
-              <h3>Help</h3>
-              <p>Direct access to our dedicated engineering support team.</p>
-            </Card>
-          </Link>
-        </div>
-      </Section>
-
-      <Section>
-        <Card className="newsletter-box glass-card" hover={false}>
-          <div className="newsletter-grid">
-            <div className="newsletter-info">
-              <h2>Join the pulse.</h2>
-              <p>Be the first to know when we drop new games and features.</p>
-            </div>
-            <div className="newsletter-action">
-              <Button size="lg" icon={Rocket}>Get Started Free</Button>
-            </div>
+              </div>
+            ))}
           </div>
-        </Card>
+        </Container>
       </Section>
+
+      {/* Legal & Support Actions (Settings Style) */}
+      <section className="settings-section">
+        <Container>
+          <h2 className="mb-md">Information</h2>
+          <div className="settings-group glass">
+            <Link to={`/${app.id}/privacy-policy`} className="settings-item">
+              <div className="settings-icon"><ShieldCheck size={20} /></div>
+              <span className="settings-label">Privacy Policy</span>
+              <ChevronRight size={16} className="settings-arrow" />
+            </Link>
+            
+            <Link to={`/${app.id}/terms-of-service`} className="settings-item">
+              <div className="settings-icon"><FileText size={20} /></div>
+              <span className="settings-label">Terms of Service</span>
+              <ChevronRight size={16} className="settings-arrow" />
+            </Link>
+            
+            <Link to={`/${app.id}/support`} className="settings-item">
+              <div className="settings-icon"><MessageCircle size={20} /></div>
+              <span className="settings-label">Help & Support</span>
+              <ChevronRight size={16} className="settings-arrow" />
+            </Link>
+          </div>
+          
+          <div className="version-info">
+            <p>Version 2.0.4 • Build 1024</p>
+            <p>© 2026 {app.name}</p>
+          </div>
+        </Container>
+      </section>
     </div>
   );
 }
