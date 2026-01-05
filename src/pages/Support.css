@@ -1,0 +1,194 @@
+.support-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.support-header {
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+.support-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-sm);
+}
+
+.support-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+.faq-section,
+.contact-section,
+.feedback-section {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+}
+
+.faq-section h2,
+.contact-section h2,
+.feedback-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+}
+
+.faq-category {
+    margin-bottom: var(--spacing-xl);
+}
+
+.faq-category:last-child {
+    margin-bottom: 0;
+}
+
+.faq-category h3 {
+    font-size: 1.375rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--border);
+}
+
+.faq-item {
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-md);
+    border-left: 3px solid var(--primary);
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+}
+
+.faq-item h4 {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.faq-item p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.8;
+}
+
+.faq-item ul,
+.faq-item ol {
+    margin: var(--spacing-sm) 0;
+    padding-left: var(--spacing-lg);
+}
+
+.faq-item li {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.faq-item a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.faq-item a:hover {
+    color: var(--secondary);
+}
+
+.contact-card {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.contact-card p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-card strong {
+    color: var(--text-primary);
+}
+
+.contact-card a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.contact-card a:hover {
+    color: var(--secondary);
+}
+
+.contact-card ul {
+    margin: var(--spacing-sm) 0;
+    padding-left: var(--spacing-lg);
+}
+
+.contact-card li {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-secondary);
+}
+
+.response-time {
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+    font-style: italic;
+    margin-top: var(--spacing-md);
+}
+
+.feedback-section p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.8;
+}
+
+.feedback-section a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.feedback-section a:hover {
+    color: var(--secondary);
+}
+
+.support-footer {
+    text-align: center;
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+    border-top: 1px solid var(--border);
+}
+
+.support-footer p {
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-xs);
+}
+
+.support-footer p:first-child {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+
+    .faq-section,
+    .contact-section,
+    .feedback-section {
+        padding: var(--spacing-lg);
+    }
+
+    .faq-section h2,
+    .contact-section h2,
+    .feedback-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .faq-category h3 {
+        font-size: 1.25rem;
+    }
+
+    .faq-item h4 {
+        font-size: 1rem;
+    }
+}
