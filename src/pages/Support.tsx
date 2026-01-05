@@ -1,5 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
+import { HelpCircle, Mail, Lightbulb, Star } from 'lucide-react';
 import { getAppById } from '../data/apps';
+import { Container } from '../components/ui/Container';
+import { Section } from '../components/ui/Section';
+import { Card } from '../components/ui/Card';
+import { BackLink } from '../components/ui/BackLink';
+import { Button } from '../components/ui/Button';
 import './Support.css';
 
 export default function Support() {
@@ -8,158 +14,119 @@ export default function Support() {
 
   if (!app) {
     return (
-      <div className="container">
+      <Container>
         <div className="error-state">
           <h1>App Not Found</h1>
           <Link to="/" className="btn btn-primary">Back to Home</Link>
         </div>
-      </div>
+      </Container>
     );
   }
 
   return (
-    <div className="support-page container">
-      <div className="support-header">
-        <Link to={`/${app.id}`} className="back-link">← Back to {app.name}</Link>
-        <h1>{app.name} Support Center</h1>
-        <p className="support-subtitle">We're here to help you have the best experience!</p>
-      </div>
-
-      <div className="support-content">
-        <section className="faq-section">
-          <h2>📱 Frequently Asked Questions</h2>
-
-          <div className="faq-category">
-            <h3>General Questions</h3>
-            
-            <div className="faq-item">
-              <h4>Q: Is {app.name} free to download?</h4>
-              <p>A: Yes! {app.name} is completely free to download and use. The app is supported by advertisements.</p>
-            </div>
-
-            <div className="faq-item">
-              <h4>Q: Do I need an internet connection?</h4>
-              <p>A: {app.features.includes('Play Offline') ? 'No! All features work offline. You only need internet for ads to load.' : 'An internet connection is recommended for the best experience.'}</p>
-            </div>
-
-            <div className="faq-item">
-              <h4>Q: What devices are supported?</h4>
-              <p>A: {app.name} supports:</p>
-              <ul>
-                {app.platforms.includes('ios') && <li>iOS 13.0 and later (iPhone and iPod touch)</li>}
-                {app.platforms.includes('android') && <li>Android 6.0 and later</li>}
-              </ul>
-            </div>
-
-            <div className="faq-item">
-              <h4>Q: How do I save my progress?</h4>
-              <p>A: Your {app.games ? 'game progress and high scores are' : 'data is'} automatically saved on your device.</p>
-            </div>
-          </div>
-
-          {app.games && (
-            <div className="faq-category">
-              <h3>Games</h3>
-              
-              <div className="faq-item">
-                <h4>Q: How many games are included?</h4>
-                <p>A: {app.name} currently includes {app.games.length}+ mini games, with more being added regularly!</p>
-              </div>
-
-              <div className="faq-item">
-                <h4>Q: Will you add more games?</h4>
-                <p>A: Yes! We're constantly working on new games. Follow our updates to see what's coming next.</p>
-              </div>
-
-              <div className="faq-item">
-                <h4>Q: I found a bug in a game. How do I report it?</h4>
-                <p>A: Please email us at <a href={`mailto:${app.supportEmail}`}>{app.supportEmail}</a> with:</p>
-                <ul>
-                  <li>Your device model</li>
-                  <li>Operating system version</li>
-                  <li>Which game has the bug</li>
-                  <li>Description of the issue</li>
-                </ul>
-              </div>
-            </div>
-          )}
-
-          <div className="faq-category">
-            <h3>Technical Issues</h3>
-            
-            <div className="faq-item">
-              <h4>Q: The app crashes when I open it. What should I do?</h4>
-              <p>A: Try these steps:</p>
-              <ol>
-                <li>Close the app completely and reopen it</li>
-                <li>Restart your device</li>
-                <li>Update to the latest version of {app.name}</li>
-                <li>Reinstall the app (note: this may reset your {app.games ? 'scores' : 'data'})</li>
-              </ol>
-            </div>
-
-            <div className="faq-item">
-              <h4>Q: {app.games ? 'Games are' : 'The app is'} running slowly. How can I fix this?</h4>
-              <p>A: Try:</p>
-              <ol>
-                <li>Close other apps running in the background</li>
-                <li>Restart your device</li>
-                <li>Ensure you have the latest app version</li>
-              </ol>
-            </div>
-
-            <div className="faq-item">
-              <h4>Q: Why do I see ads?</h4>
-              <p>A: Ads help us keep {app.name} free for everyone. We try to show ads at natural break points to minimize interruption.</p>
-            </div>
-          </div>
-
-          <div className="faq-category">
-            <h3>Privacy & Data</h3>
-            
-            <div className="faq-item">
-              <h4>Q: What data do you collect?</h4>
-              <p>A: We collect minimal data for analytics and advertising purposes. See our <Link to={`/${app.id}/privacy-policy`}>Privacy Policy</Link> for details.</p>
-            </div>
-
-            <div className="faq-item">
-              <h4>Q: How do I delete my data?</h4>
-              <p>A: Since we don't collect personal data, there's nothing to delete on our servers. To remove local data, simply uninstall the app.</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="contact-section">
-          <h2>📧 Contact Us</h2>
-          <p>Couldn't find your answer? We'd love to hear from you!</p>
-          
-          <div className="contact-card">
-            <p><strong>Email:</strong> <a href={`mailto:${app.supportEmail}`}>{app.supportEmail}</a></p>
-            <p>Please include:</p>
-            <ul>
-              <li>Your device and OS version</li>
-              <li>Description of your issue or feedback</li>
-              <li>Screenshots (if applicable)</li>
-            </ul>
-            <p className="response-time">We typically respond within 24-48 hours.</p>
-          </div>
-        </section>
-
-        <section className="feedback-section">
-          <h2>💡 Feedback & Suggestions</h2>
-          <p>
-            Have an idea for a new {app.games ? 'game or ' : ''}feature? We're all ears! Send your suggestions to <a href={`mailto:${app.supportEmail}`}>{app.supportEmail}</a>
-          </p>
-          <p>
-            If you're enjoying {app.name}, please consider leaving a review on the App Store or Google Play. It really helps! ⭐⭐⭐⭐⭐
-          </p>
-        </section>
-
-        <div className="support-footer">
-          <p><strong>Thank you for using {app.name}!</strong></p>
-          <p>© {new Date().getFullYear()} {app.name}. All rights reserved.</p>
+    <div className="support-page">
+      <Container size="small">
+        <div className="support-header">
+          <BackLink to={`/${app.id}`}>Back to {app.name}</BackLink>
+          <h1 className="support-title">{app.name} Support</h1>
+          <p className="support-subtitle">We're here to help you have the best experience!</p>
         </div>
-      </div>
+
+        <div className="support-content">
+          <Section className="faq-section">
+            <div className="section-header-inline">
+              <HelpCircle className="text-primary" size={24} />
+              <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div className="faq-categories">
+              <div className="faq-category">
+                <h3>Technical Arcade Issues</h3>
+                
+                <div className="faq-grid">
+                  <Card hover={false} className="faq-item">
+                    <h4>My high score didn't save. Why?</h4>
+                    <p>High scores are saved when a game session ends normally. If the app is closed abruptly or your device runs out of battery during play, the score might not commit to local storage.</p>
+                  </Card>
+
+                  <Card hover={false} className="faq-item">
+                    <h4>The game feels "laggy". How can I fix it?</h4>
+                    <p>PlayPulse is optimized for 60FPS. If you experience lag, try closing other heavy apps in the background or checking if your device is in "Low Power Mode," which can throttle game performance.</p>
+                  </Card>
+
+                  <Card hover={false} className="faq-item">
+                    <h4>Can I play without ads?</h4>
+                    <p>Currently, PlayPulse is supported by minimal ads between game sessions. This allows us to keep the entire arcade free for everyone. We are looking into an "Ad-Free" version for the future!</p>
+                  </Card>
+                </div>
+              </div>
+
+              {app.games && (
+                <div className="faq-category">
+                  <h3>Games</h3>
+                  <div className="faq-grid">
+                    <Card hover={false} className="faq-item">
+                      <h4>How many games are included?</h4>
+                      <p>{app.name} currently includes {app.games.length}+ mini games, with more being added regularly!</p>
+                    </Card>
+
+                    <Card hover={false} className="faq-item">
+                      <h4>Will you add more games?</h4>
+                      <p>Yes! We're constantly working on new games. Follow our updates to see what's coming next.</p>
+                    </Card>
+
+                    <Card hover={false} className="faq-item">
+                      <h4>I found a bug. How do I report it?</h4>
+                      <p>Please email us at <a href={`mailto:${app.supportEmail}`}>{app.supportEmail}</a> with your device model and OS version.</p>
+                    </Card>
+                  </div>
+                </div>
+              )}
+            </div>
+          </Section>
+
+          <Section className="contact-section">
+            <div className="section-header-inline">
+              <Mail className="text-primary" size={24} />
+              <h2>Contact Us</h2>
+            </div>
+            <Card glass className="contact-card">
+              <p>Couldn't find your answer? We'd love to hear from you!</p>
+              <div className="contact-info">
+                <strong>Email:</strong> <a href={`mailto:${app.supportEmail}`}>{app.supportEmail}</a>
+              </div>
+              <p className="response-time">We typically respond within 24-48 hours.</p>
+              <Button as="a" href={`mailto:${app.supportEmail}`} className="mt-md">
+                Send Message
+              </Button>
+            </Card>
+          </Section>
+
+          <Section className="feedback-section">
+            <div className="section-header-inline">
+              <Lightbulb className="text-primary" size={24} />
+              <h2>Feedback & Suggestions</h2>
+            </div>
+            <Card className="feedback-card">
+              <p>
+                Have an idea for a new {app.games ? 'game or ' : ''}feature? We're all ears! Send your suggestions to our support email.
+              </p>
+              <div className="rating-stars">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={20} fill="var(--primary)" color="var(--primary)" />
+                ))}
+              </div>
+              <p className="mt-sm">
+                If you're enjoying {app.name}, please consider leaving a review. It really helps!
+              </p>
+            </Card>
+          </Section>
+        </div>
+
+        <footer className="support-footer">
+          <p>© {new Date().getFullYear()} {app.name}. All rights reserved.</p>
+        </footer>
+      </Container>
     </div>
   );
 }
