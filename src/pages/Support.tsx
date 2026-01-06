@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, MessageCircle, ChevronDown, Mail, HelpCircle, Smartphone, Bug, Zap, Shield, Camera, Heart, CreditCard, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, MessageCircle, ChevronDown, Mail, HelpCircle, Smartphone, Bug, Zap, Shield, Camera, Heart, CreditCard } from 'lucide-react';
 import { getAppById } from '../data/apps';
 import { Container } from '../components/ui/Container';
 import { Button } from '../components/ui/Button';
