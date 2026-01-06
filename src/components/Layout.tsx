@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 import { Mail } from 'lucide-react';
 import { getAppById } from '../data/apps';
 import { useParams } from 'react-router-dom';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import './Layout.css';
 
 interface LayoutProps {
@@ -10,6 +11,9 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const params = useParams();
+  
+  // Update document title and meta tags
+  useDocumentTitle();
   
   // Detect if we're on an app-specific page
   const appId = params.appId;

@@ -11,7 +11,7 @@ export function useDocumentTitle() {
     useEffect(() => {
         const path = location.pathname;
         let title = 'Briefly - Premium Mobile Apps';
-        let description = 'Discover premium mobile applications by Briefly. PlayPulse and more - beautifully crafted apps available on iOS and Android.';
+        let description = 'Discover premium mobile applications by Briefly. PlayPulse, GutScan and more - beautifully crafted apps available on iOS and Android.';
 
         if (app) {
             if (path.includes('/privacy-policy')) {
@@ -46,14 +46,14 @@ export function useDocumentTitle() {
         if (ogDescription) ogDescription.setAttribute('content', description);
         if (ogUrl) ogUrl.setAttribute('content', `https://briefly.live${path}`);
 
+
         // Update Twitter tags
         const twitterTitle = document.querySelector('meta[property="twitter:title"]');
         const twitterDescription = document.querySelector('meta[property="twitter:description"]');
-        const twitterUrl = document.querySelector('meta[property="twitter:url"]');
 
         if (twitterTitle) twitterTitle.setAttribute('content', title);
         if (twitterDescription) twitterDescription.setAttribute('content', description);
-        if (twitterUrl) twitterUrl.setAttribute('content', `https://briefly.live${path}`);
+
 
     }, [location, app]);
 }
