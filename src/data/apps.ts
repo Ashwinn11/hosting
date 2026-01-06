@@ -48,6 +48,27 @@ export const apps: App[] = [
             'Fruit Ninja Slice'
         ]
     },
+    {
+        id: 'gutscan',
+        name: 'GutScan',
+        tagline: 'Food and Gut Health',
+        description: 'AI-powered gut health tracker & food diary. Snap meals, track symptoms, and discover which foods support your digestive wellness.',
+        bundleId: 'com.foodhabit.app',
+        icon: '/gutscan.png',
+        color: '#10b981',
+        gradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+        supportEmail: 'support@gutscan.app',
+        developerName: 'Briefly',
+        platforms: ['ios'],
+        features: [
+            'AI-Powered Meal Scanning',
+            'Symptom & Digestion Tracking',
+            'FODMAP Tracking',
+            'Gut Health Scoring',
+            'Food-Symptom Correlation',
+            'Personalized Insights'
+        ]
+    },
     // Add more apps here in the future - just copy this structure!
     // {
     //   id: 'your-next-app',

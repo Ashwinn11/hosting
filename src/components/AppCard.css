@@ -72,6 +72,22 @@
     box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
 
+.app-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+}
+
+.app-icon-emoji {
+    font-size: 2rem;
+}
+
+.app-info {
+    flex: 1;
+    min-width: 0;
+}
+
 .app-name {
     font-size: 1.5rem;
     margin: 0;

@@ -184,45 +184,98 @@
     font-size: 0.875rem;
 }
 
+/* Highlight Card */
+.highlight-card {
+    background: rgba(99, 102, 241, 0.05);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.highlight-card h3 {
+    color: var(--primary-light);
+}
+
+.highlight-card h4 {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+/* Inline Icon */
+.inline-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    margin-top: -2px;
+}
+
+/* Info Card Lists */
+.info-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+}
+
+.info-card li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.info-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
 @media (min-width: 768px) {
     .legal-content .container {
         max-width: 720px;
     }
 }
+
 /* Accordion (FAQ) */
 .faq-item {
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
 }
 
 .faq-item:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .faq-trigger {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  font-weight: 500;
-  font-size: 1rem;
-  text-align: left;
-  cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
 }
 
 .faq-answer {
-  padding-bottom: 20px;
-  padding-right: 20px;
-  color: var(--text-secondary);
-  font-size: 0.9375rem;
-  line-height: 1.6;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.6;
 }
 
 .chevron {
-  transition: transform 0.3s ease;
-  color: var(--text-muted);
+    transition: transform 0.3s ease;
+    color: var(--text-muted);
 }

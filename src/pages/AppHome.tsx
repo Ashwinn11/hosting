@@ -72,19 +72,25 @@ export default function AppHome() {
               </div>
             </div>
 
+
             <div className="hero-actions">
-              <Button size="lg" icon={Smartphone} className="w-full pulse-btn">
-                Download for iOS
-              </Button>
-              <Button size="lg" variant="secondary" icon={Android} className="w-full">
-                Download for Android
-              </Button>
+              {app.platforms.includes('ios') && (
+                <Button size="lg" icon={Smartphone} className="w-full pulse-btn">
+                  Download for iOS
+                </Button>
+              )}
+              {app.platforms.includes('android') && (
+                <Button size="lg" variant="secondary" icon={Android} className="w-full">
+                  Download for Android
+                </Button>
+              )}
             </div>
+
 
             <div className="stat-row">
               <div className="stat-item">
                 <Trophy size={20} className="text-secondary" />
-                <span className="stat-label">#1 Arcade</span>
+                <span className="stat-label">{isPlayPulse ? '#1 Arcade' : '#1 Health'}</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
