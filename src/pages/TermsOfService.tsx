@@ -20,7 +20,7 @@ export default function TermsOfService() {
     );
   }
 
-  const isGutScan = app.id === 'gutscan';
+  const isGutBuddy = app.id === 'gutbuddy';
 
   return (
     <div className="legal-page">
@@ -46,7 +46,7 @@ export default function TermsOfService() {
               By downloading, installing, or using {app.name}, you agree to be bound by these Terms of Service.
             </p>
             <div className="last-updated">
-              Effective Date: January 5, 2026
+              Effective Date: January 20, 2026
             </div>
           </div>
 
@@ -66,26 +66,26 @@ export default function TermsOfService() {
               <h2>Description of Service</h2>
             </div>
             <p>
-              {isGutScan ? (
-                <>GutScan is a food analysis application that uses AI technology to analyze food images and provide gut health insights. The App provides:</>
+              {isGutBuddy ? (
+                <>{app.name} is a health tracking application designed to help you monitor and improve your digestive wellness. The App provides:</>
               ) : (
                 <>{app.name} is a mobile gaming application that provides a collection of mini games for entertainment purposes. The app is provided "as is" and "as available."</>
               )}
             </p>
-            {isGutScan && (
+            {isGutBuddy && (
               <div className="list-group">
                 <ul>
-                  <li>AI-powered food recognition and analysis</li>
-                  <li>Gut health scoring based on ingredients</li>
-                  <li>Personalized dietary recommendations</li>
-                  <li>Food sensitivity tracking</li>
-                  <li>Health insights and progress tracking</li>
+                  <li>Bowel movement and symptom tracking</li>
+                  <li>Gut Health Scoring and analysis</li>
+                  <li>Daily wellness missions and habit building</li>
+                  <li>Food and trigger detection insights</li>
+                  <li>Comprehensive health reports for personal use</li>
                 </ul>
               </div>
             )}
           </section>
 
-          {isGutScan && (
+          {isGutBuddy && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.3s' }}>
               <div className="section-title-row">
                 <UserCheck size={20} className="text-secondary" />
@@ -103,7 +103,7 @@ export default function TermsOfService() {
             </section>
           )}
 
-          {isGutScan && (
+          {isGutBuddy && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.4s' }}>
               <div className="section-title-row">
                 <Heart size={20} className="text-accent" />
@@ -112,60 +112,42 @@ export default function TermsOfService() {
               <Card className="info-card highlight-card">
                 <h3><AlertTriangle size={18} className="inline-icon" /> IMPORTANT</h3>
                 <p>
-                  <strong>GutScan is not a medical device and does not provide medical advice.</strong> The information provided by the App is for educational and informational purposes only.
+                  <strong>{app.name} is not a medical device and does not provide medical advice.</strong> The information provided by the App is for educational and informational purposes only.
                 </p>
                 <p>You should:</p>
                 <ul>
                   <li>Consult with qualified healthcare professionals for medical advice</li>
                   <li>Not use the App as a substitute for professional medical care</li>
                   <li>Seek immediate medical attention for serious health concerns</li>
-                  <li>Verify all dietary recommendations with your healthcare provider</li>
+                  <li>Verify all health insights with your healthcare provider</li>
                 </ul>
               </Card>
             </section>
           )}
 
-          {isGutScan && (
+          {isGutBuddy && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.5s' }}>
               <div className="section-title-row">
                 <CreditCard size={20} className="text-primary" />
                 <h2>Subscription and Payments</h2>
               </div>
-              <p>GutScan offers both free and premium subscription tiers:</p>
+              <p>{app.name} offers both free and premium subscription tiers:</p>
               <div className="list-group">
                 <ul>
-                  <li>Free tier includes limited daily scans</li>
-                  <li>Premium subscriptions provide unlimited scans and advanced features</li>
-                  <li>Subscriptions auto-renew unless cancelled 24 hours before renewal</li>
-                  <li>Refunds are subject to Apple App Store or Google Play Store policies</li>
+                  <li>Basic features are available for free</li>
+                  <li>Premium subscriptions provide advanced insights and historical data</li>
+                  <li>Subscriptions auto-renew unless cancelled 24 hours before renewal via App Store settings</li>
+                  <li>Refunds are subject to Apple App Store policies</li>
                   <li>We reserve the right to modify pricing with notice</li>
                 </ul>
               </div>
             </section>
           )}
 
-          {isGutScan && (
-            <section className="legal-section fade-in" style={{ animationDelay: '0.6s' }}>
-              <div className="section-title-row">
-                <FileText size={20} className="text-secondary" />
-                <h2>User Content and Data</h2>
-              </div>
-              <p>When you upload photos or provide information to the App:</p>
-              <div className="list-group">
-                <ul>
-                  <li>You retain ownership of your content</li>
-                  <li>You grant us a license to process and analyze your data</li>
-                  <li>We may use anonymized data to improve our services</li>
-                  <li>You can delete your data at any time through account settings</li>
-                </ul>
-              </div>
-            </section>
-          )}
-
-          <section className="legal-section fade-in" style={{ animationDelay: isGutScan ? '0.7s' : '0.3s' }}>
+          <section className="legal-section fade-in" style={{ animationDelay: isGutBuddy ? '0.6s' : '0.3s' }}>
             <div className="section-title-row">
               <AlertTriangle size={20} className="text-orange-400" />
-              <h2>{isGutScan ? 'Acceptable Use' : 'User Conduct'}</h2>
+              <h2>{isGutBuddy ? 'Acceptable Use' : 'User Conduct'}</h2>
             </div>
             <Card className="info-card">
               <p>You agree not to:</p>
@@ -179,17 +161,17 @@ export default function TermsOfService() {
             </Card>
           </section>
 
-          <section className="legal-section fade-in" style={{ animationDelay: isGutScan ? '0.8s' : '0.4s' }}>
+          <section className="legal-section fade-in" style={{ animationDelay: isGutBuddy ? '0.7s' : '0.4s' }}>
             <div className="section-title-row">
               <Copyright size={20} className="text-secondary" />
               <h2>Intellectual Property</h2>
             </div>
             <p>
-              All content, features, and functionality of {app.name}, including but not limited to text, graphics, logos, icons, images, and software, are the exclusive property of {app.name} and are protected by international copyright, trademark, and other intellectual property laws.
+              All content, features, and functionality of {app.name}, including but not limited to text, graphics, logos, icons, images, and software, are the exclusive property of Briefly and are protected by international copyright, trademark, and other intellectual property laws.
             </p>
           </section>
 
-          {!isGutScan && (
+          {!isGutBuddy && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.5s' }}>
               <div className="section-title-row">
                 <FileText size={20} className="text-primary" />
@@ -201,17 +183,17 @@ export default function TermsOfService() {
             </section>
           )}
 
-          <section className="legal-section fade-in" style={{ animationDelay: isGutScan ? '0.9s' : '0.6s' }}>
+          <section className="legal-section fade-in" style={{ animationDelay: isGutBuddy ? '0.8s' : '0.6s' }}>
             <div className="section-title-row">
               <Scale size={20} className="text-accent" />
               <h2>Limitation of Liability</h2>
             </div>
             <p>
-              To the maximum extent permitted by law, {app.name} shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use the App{isGutScan ? ', including but not limited to health outcomes, dietary decisions, or data loss' : ''}.
+              To the maximum extent permitted by law, {app.name} shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use the App{isGutBuddy ? ', including but not limited to health outcomes or data loss' : ''}.
             </p>
           </section>
 
-          <section className="legal-section fade-in" style={{ animationDelay: isGutScan ? '1s' : '0.7s' }}>
+          <section className="legal-section fade-in" style={{ animationDelay: isGutBuddy ? '0.9s' : '0.7s' }}>
             <div className="section-title-row">
               <Edit size={20} className="text-primary" />
               <h2>Changes to Terms</h2>
@@ -221,8 +203,8 @@ export default function TermsOfService() {
             </p>
           </section>
 
-          {isGutScan && (
-            <section className="legal-section fade-in" style={{ animationDelay: '1.1s' }}>
+          {isGutBuddy && (
+            <section className="legal-section fade-in" style={{ animationDelay: '1.0s' }}>
               <div className="section-title-row">
                 <AlertTriangle size={20} className="text-secondary" />
                 <h2>Termination</h2>
@@ -233,19 +215,7 @@ export default function TermsOfService() {
             </section>
           )}
 
-          {isGutScan && (
-            <section className="legal-section fade-in" style={{ animationDelay: '1.2s' }}>
-              <div className="section-title-row">
-                <Scale size={20} className="text-primary" />
-                <h2>Governing Law</h2>
-              </div>
-              <p>
-                These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which GutScan operates, without regard to its conflict of law provisions.
-              </p>
-            </section>
-          )}
-
-          <section className="legal-section fade-in" style={{ animationDelay: isGutScan ? '1.3s' : '0.8s' }}>
+          <section className="legal-section fade-in" style={{ animationDelay: isGutBuddy ? '1.1s' : '0.8s' }}>
             <div className="section-title-row">
               <Mail size={20} className="text-accent" />
               <h2>Contact Information</h2>
@@ -258,7 +228,7 @@ export default function TermsOfService() {
           </section>
           
           <div className="legal-footer">
-            <p>© {new Date().getFullYear()} {app.name}. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Briefly. All rights reserved.</p>
             <p style={{ marginTop: '8px' }}>
               By using {app.name}, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
             </p>

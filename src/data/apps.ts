@@ -49,24 +49,24 @@ export const apps: App[] = [
         ]
     },
     {
-        id: 'gutscan',
-        name: 'GutScan',
-        tagline: 'Food and Gut Health',
-        description: 'AI-powered gut health tracker & food diary. Snap meals, track symptoms, and discover which foods support your digestive wellness.',
+        id: 'gutbuddy',
+        name: 'Gut Buddy',
+        tagline: 'Join 50,000+ Happy Guts',
+        description: 'Your personal gut health companion. Build habits that last a lifetime with simple tracking and personalized insights.',
         bundleId: 'com.foodhabit.app',
-        icon: '/gutscan.png',
-        color: '#10b981',
-        gradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-        supportEmail: 'support@gutscan.app',
+        icon: '/gutbuddy.png',
+        color: '#FF7495',
+        gradient: 'linear-gradient(135deg, #FF7495 0%, #70CFFF 100%)',
+        supportEmail: 'support@gutbuddy.app',
         developerName: 'Briefly',
         platforms: ['ios'],
         features: [
-            'AI-Powered Meal Scanning',
-            'Symptom & Digestion Tracking',
-            'FODMAP Tracking',
-            'Gut Health Scoring',
-            'Food-Symptom Correlation',
-            'Personalized Insights'
+            'Real-time Gut Health Scoring',
+            'Bowel Movement Tracking (Bristol Scale)',
+            'Daily Wellness Missions (Water, Fiber)',
+            'Medical Health Alerts & Notices',
+            'Personalized Habits & Insights',
+            'Comprehensive Health Reports'
         ]
     },
     // Add more apps here in the future - just copy this structure!
