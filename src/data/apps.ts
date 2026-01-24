@@ -11,6 +11,10 @@ export interface App {
     developerName: string;
     platforms: ('ios' | 'android')[];
     features: string[];
+    storeLinks?: {
+        ios?: string;
+        android?: string;
+    };
     games?: string[]; // For gaming apps
 }
 
@@ -67,7 +71,10 @@ export const apps: App[] = [
             'Medical Health Alerts & Notices',
             'Personalized Habits & Insights',
             'Comprehensive Health Reports'
-        ]
+        ],
+        storeLinks: {
+            ios: 'https://apps.apple.com/in/app/gut-buddy-digestive-tracker/id6755035965'
+        }
     },
     {
         id: 'taskswipe',

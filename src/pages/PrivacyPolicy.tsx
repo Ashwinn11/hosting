@@ -20,8 +20,7 @@ export default function PrivacyPolicy() {
     );
   }
 
-  const isGutBuddy = app.id === 'gutbuddy';
-  const isTaskSwipe = app.id === 'taskswipe';
+
 
   return (
     <div className="legal-page">
@@ -44,9 +43,9 @@ export default function PrivacyPolicy() {
               <Shield size={48} className="text-primary" />
             </div>
             <p className="intro-text">
-              {isGutBuddy 
+              {app.id === 'gutbuddy' 
                 ? `At ${app.name}, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application.`
-                : isTaskSwipe
+                : app.id === 'taskswipe'
                 ? `At ${app.name}, we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our productivity app.`
                 : "Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application."
               }
@@ -56,7 +55,7 @@ export default function PrivacyPolicy() {
             </div>
           </div>
 
-          {isGutBuddy ? (
+          {app.id === 'gutbuddy' ? (
             // Gut Buddy Privacy Policy
             <>
               <section className="legal-section fade-in" style={{ animationDelay: '0.1s' }}>
@@ -154,7 +153,7 @@ export default function PrivacyPolicy() {
                 </p>
               </section>
             </>
-          ) : isTaskSwipe ? (
+          ) : app.id === 'taskswipe' ? (
             // TaskSwipe Privacy Policy
             <>
               <section className="legal-section fade-in" style={{ animationDelay: '0.1s' }}>

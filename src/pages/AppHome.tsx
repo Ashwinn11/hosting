@@ -75,12 +75,25 @@ export default function AppHome() {
 
             <div className="hero-actions">
               {app.platforms.includes('ios') && (
-                <Button size="lg" icon={Smartphone} className="w-full pulse-btn">
+                <Button 
+                  as={app.storeLinks?.ios ? 'a' : 'button'}
+                  href={app.storeLinks?.ios}
+                  size="lg" 
+                  icon={Smartphone} 
+                  className="w-full pulse-btn"
+                >
                   Download for iOS
                 </Button>
               )}
               {app.platforms.includes('android') && (
-                <Button size="lg" variant="secondary" icon={Android} className="w-full">
+                <Button 
+                  as={app.storeLinks?.android ? 'a' : 'button'}
+                  href={app.storeLinks?.android}
+                  size="lg" 
+                  variant="secondary" 
+                  icon={Android} 
+                  className="w-full"
+                >
                   Download for Android
                 </Button>
               )}

@@ -20,9 +20,6 @@ export default function TermsOfService() {
     );
   }
 
-  const isGutBuddy = app.id === 'gutbuddy';
-  const isTaskSwipe = app.id === 'taskswipe';
-
   return (
     <div className="legal-page">
       <header className="legal-header glass">
@@ -67,15 +64,15 @@ export default function TermsOfService() {
               <h2>Description of Service</h2>
             </div>
             <p>
-              {isGutBuddy ? (
+              {app.id === 'gutbuddy' ? (
                 <>{app.name} is a health tracking application designed to help you monitor and improve your digestive wellness. The App provides:</>
-              ) : isTaskSwipe ? (
+              ) : app.id === 'taskswipe' ? (
                 <>{app.name} is a productivity application that helps you manage tasks through an intuitive swipe-based interface. The App provides:</>
               ) : (
                 <>{app.name} is a mobile gaming application that provides a collection of mini games for entertainment purposes. The app is provided "as is" and "as available."</>
               )}
             </p>
-            {isGutBuddy && (
+            {app.id === 'gutbuddy' && (
               <div className="list-group">
                 <ul>
                   <li>Bowel movement and symptom tracking</li>
@@ -86,7 +83,7 @@ export default function TermsOfService() {
                 </ul>
               </div>
             )}
-            {isTaskSwipe && (
+            {app.id === 'taskswipe' && (
               <div className="list-group">
                 <ul>
                   <li>Task creation and management</li>
@@ -99,14 +96,14 @@ export default function TermsOfService() {
             )}
           </section>
 
-          {(isGutBuddy || isTaskSwipe) && (
+          {(app.id === 'gutbuddy' || app.id === 'taskswipe') && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.3s' }}>
               <div className="section-title-row">
                 <UserCheck size={20} className="text-secondary" />
                 <h2>User Accounts</h2>
               </div>
               <p>
-                {isTaskSwipe 
+                {app.id === 'taskswipe' 
                   ? "To use certain features of the App, you must create an account using Apple Sign In or Google Sign In. You are responsible for:"
                   : "To use certain features of the App, you must create an account. You agree to:"
                 }
@@ -116,10 +113,10 @@ export default function TermsOfService() {
                   <li>Maintaining the confidentiality of your account</li>
                   <li>All activities that occur under your account</li>
                   <li>Notifying us immediately of any unauthorized use</li>
-                  {!isTaskSwipe && <li>Provide accurate and complete information</li>}
+                  {app.id !== 'taskswipe' && <li>Provide accurate and complete information</li>}
                 </ul>
               </div>
-              {isTaskSwipe && (
+              {app.id === 'taskswipe' && (
                 <p style={{ marginTop: '1rem', fontWeight: 500 }}>
                   You must be at least 13 years old to create an account and use the App.
                 </p>
@@ -127,7 +124,7 @@ export default function TermsOfService() {
             </section>
           )}
 
-          {isGutBuddy && (
+          {app.id === 'gutbuddy' && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.4s' }}>
               <div className="section-title-row">
                 <Heart size={20} className="text-accent" />
@@ -149,7 +146,7 @@ export default function TermsOfService() {
             </section>
           )}
 
-          {isGutBuddy && (
+          {app.id === 'gutbuddy' && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.5s' }}>
               <div className="section-title-row">
                 <CreditCard size={20} className="text-primary" />
@@ -168,7 +165,7 @@ export default function TermsOfService() {
             </section>
           )}
 
-          {isTaskSwipe && (
+          {app.id === 'taskswipe' && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.5s' }}>
               <div className="section-title-row">
                 <CreditCard size={20} className="text-primary" />
@@ -180,10 +177,10 @@ export default function TermsOfService() {
             </section>
           )}
 
-          <section className="legal-section fade-in" style={{ animationDelay: isGutBuddy ? '0.6s' : '0.3s' }}>
+          <section className="legal-section fade-in" style={{ animationDelay: app.id === 'gutbuddy' ? '0.6s' : '0.3s' }}>
             <div className="section-title-row">
               <AlertTriangle size={20} className="text-orange-400" />
-              <h2>{isGutBuddy ? 'Acceptable Use' : 'User Conduct'}</h2>
+              <h2>{app.id === 'gutbuddy' ? 'Acceptable Use' : 'User Conduct'}</h2>
             </div>
             <Card className="info-card">
               <p>You agree not to:</p>
@@ -197,7 +194,7 @@ export default function TermsOfService() {
             </Card>
           </section>
 
-          <section className="legal-section fade-in" style={{ animationDelay: isGutBuddy ? '0.7s' : '0.4s' }}>
+          <section className="legal-section fade-in" style={{ animationDelay: app.id === 'gutbuddy' ? '0.7s' : '0.4s' }}>
             <div className="section-title-row">
               <Copyright size={20} className="text-secondary" />
               <h2>Intellectual Property</h2>
@@ -207,7 +204,7 @@ export default function TermsOfService() {
             </p>
           </section>
 
-          {!isGutBuddy && (
+          {app.id === 'playpulse' && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.5s' }}>
               <div className="section-title-row">
                 <FileText size={20} className="text-primary" />
@@ -219,17 +216,17 @@ export default function TermsOfService() {
             </section>
           )}
 
-          <section className="legal-section fade-in" style={{ animationDelay: isGutBuddy ? '0.8s' : '0.6s' }}>
+          <section className="legal-section fade-in" style={{ animationDelay: app.id === 'gutbuddy' ? '0.8s' : '0.6s' }}>
             <div className="section-title-row">
               <Scale size={20} className="text-accent" />
               <h2>Limitation of Liability</h2>
             </div>
             <p>
-              To the maximum extent permitted by law, {app.name} shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use the App{isGutBuddy ? ', including but not limited to health outcomes or data loss' : ''}.
+              To the maximum extent permitted by law, {app.name} shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use the App{app.id === 'gutbuddy' ? ', including but not limited to health outcomes or data loss' : ''}.
             </p>
           </section>
 
-          <section className="legal-section fade-in" style={{ animationDelay: isGutBuddy ? '0.9s' : '0.7s' }}>
+          <section className="legal-section fade-in" style={{ animationDelay: app.id === 'gutbuddy' ? '0.9s' : '0.7s' }}>
             <div className="section-title-row">
               <Edit size={20} className="text-primary" />
               <h2>Changes to Terms</h2>
@@ -239,7 +236,7 @@ export default function TermsOfService() {
             </p>
           </section>
 
-          {isGutBuddy && (
+          {app.id === 'gutbuddy' && (
             <section className="legal-section fade-in" style={{ animationDelay: '1.0s' }}>
               <div className="section-title-row">
                 <AlertTriangle size={20} className="text-secondary" />
@@ -251,7 +248,7 @@ export default function TermsOfService() {
             </section>
           )}
 
-          <section className="legal-section fade-in" style={{ animationDelay: isGutBuddy ? '1.1s' : '0.8s' }}>
+          <section className="legal-section fade-in" style={{ animationDelay: app.id === 'gutbuddy' ? '1.1s' : '0.8s' }}>
             <div className="section-title-row">
               <Mail size={20} className="text-accent" />
               <h2>Contact Information</h2>
