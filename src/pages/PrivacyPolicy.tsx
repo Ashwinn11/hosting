@@ -21,6 +21,7 @@ export default function PrivacyPolicy() {
   }
 
   const isGutBuddy = app.id === 'gutbuddy';
+  const isTaskSwipe = app.id === 'taskswipe';
 
   return (
     <div className="legal-page">
@@ -45,11 +46,13 @@ export default function PrivacyPolicy() {
             <p className="intro-text">
               {isGutBuddy 
                 ? `At ${app.name}, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application.`
+                : isTaskSwipe
+                ? `At ${app.name}, we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our productivity app.`
                 : "Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application."
               }
             </p>
             <div className="last-updated">
-              Effective Date: January 5, 2026
+              Effective Date: January 16, 2026
             </div>
           </div>
 
@@ -148,6 +151,130 @@ export default function PrivacyPolicy() {
                 </div>
                 <p style={{ marginTop: '1rem' }}>
                   To exercise these rights, visit your Profile settings in the app or contact us at {app.supportEmail}.
+                </p>
+              </section>
+            </>
+          ) : isTaskSwipe ? (
+            // TaskSwipe Privacy Policy
+            <>
+              <section className="legal-section fade-in" style={{ animationDelay: '0.1s' }}>
+                <div className="section-title-row">
+                  <Database size={20} className="text-accent" />
+                  <h2>Information We Collect</h2>
+                </div>
+                
+                <Card className="info-card">
+                  <h3>Account Information</h3>
+                  <p>When you sign in with Apple or Google, we collect:</p>
+                  <ul>
+                    <li>Email address</li>
+                    <li>Display name</li>
+                    <li>Authentication credentials (securely managed)</li>
+                  </ul>
+                </Card>
+                
+                <Card className="info-card">
+                  <h3>Task & Usage Data</h3>
+                  <p>To provide our service, we collect:</p>
+                  <ul>
+                    <li>Tasks you create and manage within the app</li>
+                    <li>Focus session duration and completion data</li>
+                    <li>Usage data to improve our services</li>
+                    <li>Device information for authentication and security</li>
+                  </ul>
+                </Card>
+              </section>
+
+              <section className="legal-section fade-in" style={{ animationDelay: '0.2s' }}>
+                <div className="section-title-row">
+                  <Eye size={20} className="text-secondary" />
+                  <h2>How We Use Your Information</h2>
+                </div>
+                <p>We use your information to:</p>
+                <div className="list-group">
+                  <ul>
+                    <li>Provide and maintain our service</li>
+                    <li>Authenticate your account</li>
+                    <li>Sync your tasks across devices</li>
+                    <li>Improve and optimize our app</li>
+                    <li>Communicate with you about updates and support</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section className="legal-section fade-in" style={{ animationDelay: '0.3s' }}>
+                <div className="section-title-row">
+                  <Lock size={20} className="text-primary" />
+                  <h2>Third-Party Services</h2>
+                </div>
+                <p>{app.name} uses the following third-party services:</p>
+                
+                <Card className="info-card">
+                  <h3>Authentication</h3>
+                  <ul>
+                    <li>Apple Sign In for secure authentication</li>
+                    <li>Google Sign In for secure authentication</li>
+                  </ul>
+                </Card>
+
+                <Card className="info-card">
+                  <h3>Data Storage</h3>
+                  <p>
+                    We use Supabase for data storage and authentication. Your data is stored securely and encrypted in transit and at rest.
+                  </p>
+                </Card>
+                <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                  These services have their own privacy policies and we encourage you to review them.
+                </p>
+              </section>
+
+              <section className="legal-section fade-in" style={{ animationDelay: '0.4s' }}>
+                <div className="section-title-row">
+                  <Lock size={20} className="text-accent" />
+                  <h2>Data Storage and Security</h2>
+                </div>
+                <p>
+                  Your data is stored securely using Supabase, a trusted database provider. We implement appropriate technical and organizational measures to protect your personal data against unauthorized or unlawful processing and against accidental loss, destruction, or damage.
+                </p>
+              </section>
+
+              <section className="legal-section fade-in" style={{ animationDelay: '0.5s' }}>
+                <div className="section-title-row">
+                  <Shield size={20} className="text-primary" />
+                  <h2>Your Rights</h2>
+                </div>
+                <p>You have the right to:</p>
+                <div className="list-group">
+                  <ul>
+                    <li>Access your personal data</li>
+                    <li>Correct inaccurate data</li>
+                    <li>Request deletion of your data</li>
+                    <li>Export your data</li>
+                    <li>Withdraw consent at any time</li>
+                  </ul>
+                </div>
+                <p style={{ marginTop: '1rem' }}>
+                  To exercise these rights, visit your Profile settings in the app or contact us at {app.supportEmail}.
+                </p>
+              </section>
+
+              <section className="legal-section fade-in" style={{ animationDelay: '0.6s' }}>
+                <div className="section-title-row">
+                  <Database size={20} className="text-secondary" />
+                  <h2>Data Retention</h2>
+                </div>
+                <p>
+                  We retain your personal data only for as long as necessary to provide you with our services. When you delete your account, we will delete your personal data within 30 days.
+                </p>
+              </section>
+
+              <section className="legal-section fade-in" style={{ animationDelay: '0.7s' }}>
+                <div className="section-title-row">
+                  <UserX size={20} className="text-accent" />
+                  <h2>Children's Privacy</h2>
+                </div>
+                <p>
+                  Our service is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13.
                 </p>
               </section>
             </>

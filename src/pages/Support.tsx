@@ -15,6 +15,7 @@ export default function Support() {
   }
 
   const isGutBuddy = app.id === 'gutbuddy';
+  const isTaskSwipe = app.id === 'taskswipe';
 
   return (
     <div className="legal-page">
@@ -39,6 +40,8 @@ export default function Support() {
             <p className="intro-text">
               {isGutBuddy 
                 ? `Welcome to ${app.name} Support! We're here to help you get the most out of your gut health tracking experience.`
+                : isTaskSwipe
+                ? `Welcome to ${app.name} Support! We're here to help you get the most out of your productivity experience.`
                 : `Welcome to ${app.name} Support! We're here to help you have the best gaming experience.`
               }
             </p>
@@ -48,7 +51,7 @@ export default function Support() {
           <section className="legal-section fade-in" style={{ animationDelay: '0.1s' }}>
             <div className="section-title-row">
               <HelpCircle size={20} className="text-primary" />
-              <h2>{isGutBuddy ? 'Getting Started' : 'General Questions'}</h2>
+              <h2>{isGutBuddy ? 'Getting Started' : isTaskSwipe ? 'Getting Started' : 'General Questions'}</h2>
             </div>
             
             <div className="list-group">
@@ -65,6 +68,25 @@ export default function Support() {
                   <AccordionItem 
                     question="Is Gut Buddy free to use?" 
                     answer="We offer a high-value tracking experience with premium features available for deeper insights and history." 
+                  />
+                </>
+              ) : isTaskSwipe ? (
+                <>
+                  <AccordionItem 
+                    question="How do I add a new task?" 
+                    answer="Tap the '+' button on the Swipe tab to add a new task. You can set a title, category, and priority for each task." 
+                  />
+                  <AccordionItem 
+                    question="How does the swipe feature work?" 
+                    answer="Swipe right to mark a task as complete, or swipe left to skip it for later. Completed tasks will appear in your History tab." 
+                  />
+                  <AccordionItem 
+                    question="Can I edit or delete tasks?" 
+                    answer="Yes! Long press on any task to see options to edit or delete it." 
+                  />
+                  <AccordionItem 
+                    question="What is Focus Mode?" 
+                    answer="Focus Mode helps you concentrate on one task at a time with a distraction-free interface. Tap on a task to enter Focus Mode." 
                   />
                 </>
               ) : (
@@ -107,8 +129,8 @@ export default function Support() {
             </section>
           )}
 
-          {/* Account & Privacy (Gut Buddy only) */}
-          {isGutBuddy && (
+          {/* Account & Privacy (Gut Buddy and TaskSwipe) */}
+          {(isGutBuddy || isTaskSwipe) && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.3s' }}>
               <div className="section-title-row">
                 <Shield size={20} className="text-accent" />
@@ -116,14 +138,37 @@ export default function Support() {
               </div>
               
               <div className="list-group">
-                <AccordionItem 
-                  question="Is my data shared with anyone?" 
-                  answer="No. Your health data is stored securely and is never sold to third parties or shared with advertisers. You have full control." 
-                />
-                <AccordionItem 
-                  question="How do I delete my account?" 
-                  answer="Go to Profile > Settings > Delete Account. Your data will be permanently removed within 30 days." 
-                />
+                {isGutBuddy ? (
+                  <>
+                    <AccordionItem 
+                      question="Is my data shared with anyone?" 
+                      answer="No. Your health data is stored securely and is never sold to third parties or shared with advertisers. You have full control." 
+                    />
+                    <AccordionItem 
+                      question="How do I delete my account?" 
+                      answer="Go to Profile > Settings > Delete Account. Your data will be permanently removed within 30 days." 
+                    />
+                  </>
+                ) : (
+                  <>
+                    <AccordionItem 
+                      question="How do I sync my tasks across devices?" 
+                      answer="Your tasks are automatically synced when you sign in with Apple or Google. Make sure you're signed in on all your devices." 
+                    />
+                    <AccordionItem 
+                      question="Can I export my data?" 
+                      answer="Yes, you can export your task data from the Stats tab. Look for the export option in the menu." 
+                    />
+                    <AccordionItem 
+                      question="How do I delete my account?" 
+                      answer="Go to Profile > Delete Account. Please note that this action is permanent and cannot be undone." 
+                    />
+                    <AccordionItem 
+                      question="Is my data secure?" 
+                      answer="Yes, we use industry-standard encryption and secure authentication through Apple and Google. Your data is stored securely with Supabase." 
+                    />
+                  </>
+                )}
               </div>
             </section>
           )}

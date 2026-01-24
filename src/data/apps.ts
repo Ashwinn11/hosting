@@ -69,6 +69,27 @@ export const apps: App[] = [
             'Comprehensive Health Reports'
         ]
     },
+    {
+        id: 'taskswipe',
+        name: 'TaskSwipe',
+        tagline: 'Focus & Finish',
+        description: 'Swipe right to focus. A mindful productivity app that helps you tackle one task at a time with focus timers, ambient sounds, and a distraction-free interface.',
+        bundleId: 'com.focustaskswipe.app',
+        icon: '/taskswipe.png',
+        color: '#E91E8C',
+        gradient: 'linear-gradient(135deg, #E91E8C 0%, #FFD93D 100%)',
+        supportEmail: 'support@taskswipe.app',
+        developerName: 'Briefly',
+        platforms: ['ios', 'android'],
+        features: [
+            'Swipe-based Task Management',
+            'Focus Timer Sessions',
+            'Ambient Sounds for Focus',
+            'Productivity Statistics',
+            'Task History & Tracking',
+            'Personalized Onboarding'
+        ]
+    },
     // Add more apps here in the future - just copy this structure!
     // {
     //   id: 'your-next-app',

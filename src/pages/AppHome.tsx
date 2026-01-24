@@ -90,7 +90,7 @@ export default function AppHome() {
             <div className="stat-row">
               <div className="stat-item">
                 <Trophy size={20} className="text-secondary" />
-                <span className="stat-label">{isPlayPulse ? '#1 Arcade' : '#1 Health'}</span>
+                <span className="stat-label">{isPlayPulse ? '#1 Arcade' : app.id === 'taskswipe' ? '#1 Productivity' : '#1 Health'}</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
@@ -100,7 +100,7 @@ export default function AppHome() {
               <div className="stat-divider"></div>
               <div className="stat-item">
                 <Zap size={20} className="text-accent" />
-                <span className="stat-label">Fast</span>
+                <span className="stat-label">{app.id === 'taskswipe' ? 'Focus' : 'Fast'}</span>
               </div>
             </div>
           </div>

@@ -21,6 +21,7 @@ export default function TermsOfService() {
   }
 
   const isGutBuddy = app.id === 'gutbuddy';
+  const isTaskSwipe = app.id === 'taskswipe';
 
   return (
     <div className="legal-page">
@@ -68,6 +69,8 @@ export default function TermsOfService() {
             <p>
               {isGutBuddy ? (
                 <>{app.name} is a health tracking application designed to help you monitor and improve your digestive wellness. The App provides:</>
+              ) : isTaskSwipe ? (
+                <>{app.name} is a productivity application that helps you manage tasks through an intuitive swipe-based interface. The App provides:</>
               ) : (
                 <>{app.name} is a mobile gaming application that provides a collection of mini games for entertainment purposes. The app is provided "as is" and "as available."</>
               )}
@@ -83,23 +86,44 @@ export default function TermsOfService() {
                 </ul>
               </div>
             )}
+            {isTaskSwipe && (
+              <div className="list-group">
+                <ul>
+                  <li>Task creation and management</li>
+                  <li>Focus timer sessions</li>
+                  <li>Productivity statistics and tracking</li>
+                  <li>Task history and completion records</li>
+                  <li>Ambient sounds for focus sessions</li>
+                </ul>
+              </div>
+            )}
           </section>
 
-          {isGutBuddy && (
+          {(isGutBuddy || isTaskSwipe) && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.3s' }}>
               <div className="section-title-row">
                 <UserCheck size={20} className="text-secondary" />
                 <h2>User Accounts</h2>
               </div>
-              <p>To use certain features of the App, you must create an account. You agree to:</p>
+              <p>
+                {isTaskSwipe 
+                  ? "To use certain features of the App, you must create an account using Apple Sign In or Google Sign In. You are responsible for:"
+                  : "To use certain features of the App, you must create an account. You agree to:"
+                }
+              </p>
               <div className="list-group">
                 <ul>
-                  <li>Provide accurate and complete information</li>
-                  <li>Maintain the security of your account credentials</li>
-                  <li>Notify us immediately of any unauthorized access</li>
-                  <li>Be responsible for all activities under your account</li>
+                  <li>Maintaining the confidentiality of your account</li>
+                  <li>All activities that occur under your account</li>
+                  <li>Notifying us immediately of any unauthorized use</li>
+                  {!isTaskSwipe && <li>Provide accurate and complete information</li>}
                 </ul>
               </div>
+              {isTaskSwipe && (
+                <p style={{ marginTop: '1rem', fontWeight: 500 }}>
+                  You must be at least 13 years old to create an account and use the App.
+                </p>
+              )}
             </section>
           )}
 
@@ -141,6 +165,18 @@ export default function TermsOfService() {
                   <li>We reserve the right to modify pricing with notice</li>
                 </ul>
               </div>
+            </section>
+          )}
+
+          {isTaskSwipe && (
+            <section className="legal-section fade-in" style={{ animationDelay: '0.5s' }}>
+              <div className="section-title-row">
+                <CreditCard size={20} className="text-primary" />
+                <h2>Subscription and Payments</h2>
+              </div>
+              <p>
+                Currently, {app.name} is provided free of charge. If we introduce paid features or subscriptions in the future, we will notify you and update these terms accordingly.
+              </p>
             </section>
           )}
 
