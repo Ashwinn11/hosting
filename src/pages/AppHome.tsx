@@ -103,7 +103,7 @@ export default function AppHome() {
             <div className="stat-row">
               <div className="stat-item">
                 <Trophy size={20} className="text-secondary" />
-                <span className="stat-label">{isPlayPulse ? '#1 Arcade' : app.id === 'taskswipe' ? '#1 Productivity' : '#1 Health'}</span>
+                <span className="stat-label">{isPlayPulse ? '#1 Arcade' : app.id === 'focusswipe' ? '#1 Productivity' : '#1 Health'}</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
@@ -113,7 +113,7 @@ export default function AppHome() {
               <div className="stat-divider"></div>
               <div className="stat-item">
                 <Zap size={20} className="text-accent" />
-                <span className="stat-label">{app.id === 'taskswipe' ? 'Focus' : 'Fast'}</span>
+                <span className="stat-label">{app.id === 'focusswipe' ? 'Focus' : 'Fast'}</span>
               </div>
             </div>
           </div>
@@ -164,13 +164,39 @@ export default function AppHome() {
                 </div>
                 <div className="feature-content">
                   <h3>{feature}</h3>
-                  <p>Optimized for the best mobile experience.</p>
+                  <p>
+                    {app.id === 'focusswipe' 
+                      ? "Designed for maximum efficiency and deep concentration."
+                      : "Optimized for the best mobile experience."
+                    }
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </Container>
       </Section>
+
+      {/* Specialty Section for FocusSwipe */}
+      {app.id === 'focusswipe' && (
+        <Section className="specialty-section glass shadow-lg mx-md rounded-xl py-xl px-lg text-center">
+          <div style={{ marginTop: '-2rem', marginBottom: '4rem', background: 'rgba(233, 30, 140, 0.05)', padding: '2rem', borderRadius: '1.5rem' }}>
+            <div className="flex flex-col items-center gap-md">
+              <Brain size={48} className="text-primary mb-sm" />
+              <h2 className="text-2xl font-bold tracking-tight">The ADHD Focus Update</h2>
+              <p className="max-w-md mx-auto text-lg leading-relaxed text-secondary opacity-90">
+                We've recently updated FocusSwipe with <strong>Binaural Beats</strong> and an <strong>ADHD-optimized interface</strong>. 
+                Our new <strong>drag-and-drop rearranging</strong> allows you to intuitively prioritize your tasks without cognitive friction.
+              </p>
+              <div className="flex gap-sm mt-md">
+                <span className="badge badge-primary">ADHD Friendly</span>
+                <span className="badge badge-accent">Binaural Audio</span>
+                <span className="badge badge-secondary">Mindful UX</span>
+              </div>
+            </div>
+          </div>
+        </Section>
+      )}
 
       {/* Legal & Support Actions (Settings Style) */}
       <section className="settings-section">

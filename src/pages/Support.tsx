@@ -15,7 +15,7 @@ export default function Support() {
   }
 
   const isGutBuddy = app.id === 'gutbuddy';
-  const isTaskSwipe = app.id === 'taskswipe';
+  const isFocusSwipe = app.id === 'focusswipe';
 
   return (
     <div className="legal-page">
@@ -40,7 +40,7 @@ export default function Support() {
             <p className="intro-text">
               {isGutBuddy 
                 ? `Welcome to ${app.name} Support! We're here to help you get the most out of your gut health tracking experience.`
-                : isTaskSwipe
+                : isFocusSwipe
                 ? `Welcome to ${app.name} Support! We're here to help you get the most out of your productivity experience.`
                 : `Welcome to ${app.name} Support! We're here to help you have the best gaming experience.`
               }
@@ -51,7 +51,7 @@ export default function Support() {
           <section className="legal-section fade-in" style={{ animationDelay: '0.1s' }}>
             <div className="section-title-row">
               <HelpCircle size={20} className="text-primary" />
-              <h2>{isGutBuddy ? 'Getting Started' : isTaskSwipe ? 'Getting Started' : 'General Questions'}</h2>
+              <h2>{isGutBuddy ? 'Getting Started' : isFocusSwipe ? 'Getting Started' : 'General Questions'}</h2>
             </div>
             
             <div className="list-group">
@@ -70,23 +70,31 @@ export default function Support() {
                     answer="We offer a high-value tracking experience with premium features available for deeper insights and history." 
                   />
                 </>
-              ) : isTaskSwipe ? (
+              ) : isFocusSwipe ? (
                 <>
                   <AccordionItem 
                     question="How do I add a new task?" 
                     answer="Tap the '+' button on the Swipe tab to add a new task. You can set a title, category, and priority for each task." 
                   />
                   <AccordionItem 
+                    question="How do I rearrange my tasks?" 
+                    answer="You can rearrange tasks by dragging and dropping them in the List tab. This helps you prioritize your day exactly how you want." 
+                  />
+                  <AccordionItem 
+                    question="What are Binaural Beats?" 
+                    answer="Binaural Beats are specialized sound frequencies that help tune your brain into a state of deep focus. You can find them in the Focus Mode sound settings." 
+                  />
+                  <AccordionItem 
                     question="How does the swipe feature work?" 
                     answer="Swipe right to mark a task as complete, or swipe left to skip it for later. Completed tasks will appear in your History tab." 
                   />
                   <AccordionItem 
-                    question="Can I edit or delete tasks?" 
-                    answer="Yes! Long press on any task to see options to edit or delete it." 
+                    question="Is FocusSwipe good for ADHD?" 
+                    answer="Yes! FocusSwipe is designed with an ADHD-friendly interface that reduces cognitive load by showing only one task at a time, helping you avoid overwhelm and stay focused." 
                   />
                   <AccordionItem 
                     question="What is Focus Mode?" 
-                    answer="Focus Mode helps you concentrate on one task at a time with a distraction-free interface. Tap on a task to enter Focus Mode." 
+                    answer="Focus Mode helps you concentrate on one task at a time with a distraction-free interface and ambient background sounds or binaural beats." 
                   />
                 </>
               ) : (
@@ -130,7 +138,7 @@ export default function Support() {
           )}
 
           {/* Account & Privacy (Gut Buddy and TaskSwipe) */}
-          {(isGutBuddy || isTaskSwipe) && (
+          {(isGutBuddy || isFocusSwipe) && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.3s' }}>
               <div className="section-title-row">
                 <Shield size={20} className="text-accent" />

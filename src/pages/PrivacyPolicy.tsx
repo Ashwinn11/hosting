@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
             <p className="intro-text">
               {app.id === 'gutbuddy' 
                 ? `At ${app.name}, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application.`
-                : app.id === 'taskswipe'
+                : app.id === 'focusswipe'
                 ? `At ${app.name}, we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our productivity app.`
                 : "Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application."
               }
@@ -153,8 +153,8 @@ export default function PrivacyPolicy() {
                 </p>
               </section>
             </>
-          ) : app.id === 'taskswipe' ? (
-            // TaskSwipe Privacy Policy
+          ) : app.id === 'focusswipe' ? (
+            // FocusSwipe Privacy Policy
             <>
               <section className="legal-section fade-in" style={{ animationDelay: '0.1s' }}>
                 <div className="section-title-row">

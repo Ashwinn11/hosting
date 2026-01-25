@@ -66,7 +66,7 @@ export default function TermsOfService() {
             <p>
               {app.id === 'gutbuddy' ? (
                 <>{app.name} is a health tracking application designed to help you monitor and improve your digestive wellness. The App provides:</>
-              ) : app.id === 'taskswipe' ? (
+              ) : app.id === 'focusswipe' ? (
                 <>{app.name} is a productivity application that helps you manage tasks through an intuitive swipe-based interface. The App provides:</>
               ) : (
                 <>{app.name} is a mobile gaming application that provides a collection of mini games for entertainment purposes. The app is provided "as is" and "as available."</>
@@ -83,7 +83,7 @@ export default function TermsOfService() {
                 </ul>
               </div>
             )}
-            {app.id === 'taskswipe' && (
+            {app.id === 'focusswipe' && (
               <div className="list-group">
                 <ul>
                   <li>Task creation and management</li>
@@ -96,14 +96,14 @@ export default function TermsOfService() {
             )}
           </section>
 
-          {(app.id === 'gutbuddy' || app.id === 'taskswipe') && (
+          {(app.id === 'gutbuddy' || app.id === 'focusswipe') && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.3s' }}>
               <div className="section-title-row">
                 <UserCheck size={20} className="text-secondary" />
                 <h2>User Accounts</h2>
               </div>
               <p>
-                {app.id === 'taskswipe' 
+                {app.id === 'focusswipe' 
                   ? "To use certain features of the App, you must create an account using Apple Sign In or Google Sign In. You are responsible for:"
                   : "To use certain features of the App, you must create an account. You agree to:"
                 }
@@ -113,10 +113,10 @@ export default function TermsOfService() {
                   <li>Maintaining the confidentiality of your account</li>
                   <li>All activities that occur under your account</li>
                   <li>Notifying us immediately of any unauthorized use</li>
-                  {app.id !== 'taskswipe' && <li>Provide accurate and complete information</li>}
+                  {app.id !== 'focusswipe' && <li>Provide accurate and complete information</li>}
                 </ul>
               </div>
-              {app.id === 'taskswipe' && (
+              {app.id === 'focusswipe' && (
                 <p style={{ marginTop: '1rem', fontWeight: 500 }}>
                   You must be at least 13 years old to create an account and use the App.
                 </p>
@@ -165,7 +165,7 @@ export default function TermsOfService() {
             </section>
           )}
 
-          {app.id === 'taskswipe' && (
+          {app.id === 'focusswipe' && (
             <section className="legal-section fade-in" style={{ animationDelay: '0.5s' }}>
               <div className="section-title-row">
                 <CreditCard size={20} className="text-primary" />

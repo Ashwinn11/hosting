@@ -77,24 +77,24 @@ export const apps: App[] = [
         }
     },
     {
-        id: 'taskswipe',
-        name: 'TaskSwipe',
+        id: 'focusswipe',
+        name: 'FocusSwipe',
         tagline: 'Focus & Finish',
-        description: 'Swipe right to focus. A mindful productivity app that helps you tackle one task at a time with focus timers, ambient sounds, and a distraction-free interface.',
+        description: 'Swipe right to focus. A mindful productivity app designed for ADHD and focus-seekers. Tackle one task at a time with focus timers, binaural beats, and a distraction-free swipe interface.',
         bundleId: 'com.focustaskswipe.app',
         icon: '/taskswipe.png',
         color: '#E91E8C',
         gradient: 'linear-gradient(135deg, #E91E8C 0%, #FFD93D 100%)',
-        supportEmail: 'support@taskswipe.app',
+        supportEmail: 'support@focusswipe.app',
         developerName: 'Briefly',
         platforms: ['ios', 'android'],
         features: [
             'Swipe-based Task Management',
-            'Focus Timer Sessions',
-            'Ambient Sounds for Focus',
+            'ADHD-Friendly Focus Mode',
+            'Binaural Beats & Ambient Sounds',
+            'Intuitive Task Rearranging',
             'Productivity Statistics',
-            'Task History & Tracking',
-            'Personalized Onboarding'
+            'Task History & Analytics'
         ]
     },
     // Add more apps here in the future - just copy this structure!
