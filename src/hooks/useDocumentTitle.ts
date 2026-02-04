@@ -11,7 +11,7 @@ export function useDocumentTitle() {
     useEffect(() => {
         const path = location.pathname;
         let title = 'Briefly - Premium Mobile Apps';
-        let description = 'Discover premium mobile applications by Briefly. PlayPulse, GutScan and more - beautifully crafted apps available on iOS and Android.';
+        let description = 'Discover premium mobile applications by Briefly. PlayPulse, gutbuddy and more - beautifully crafted apps available on iOS and Android.';
 
         if (app) {
             if (path.includes('/privacy-policy')) {

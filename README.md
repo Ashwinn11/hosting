@@ -22,6 +22,10 @@ A beautiful, scalable platform for hosting multiple mobile app pages on a single
   - Privacy Policy: `briefly.live/playpulse/privacy-policy`
   - Terms of Service: `briefly.live/playpulse/terms-of-service`
   - Support: `briefly.live/playpulse/support`
+- **GutBuddy**: `briefly.live/gutbuddy`
+  - Privacy Policy: `briefly.live/gutbuddy/privacy-policy`
+  - Terms of Service: `briefly.live/gutbuddy/terms-of-service`
+  - Support: `briefly.live/gutbuddy/support`
 
 ## 📁 Project Structure
 
