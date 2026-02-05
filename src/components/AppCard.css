@@ -164,6 +164,41 @@
     }
 
     .app-name {
-        font-size: 1.25rem;
-    }
-}
+            font-size: 1.25rem;
+            }
+        }
+        
+        /* Minimal Card Variant */
+        .minimal-card {
+            background: transparent !important;
+            border: 1px solid var(--ph-border, #27272a) !important;
+            box-shadow: none !important;
+            transition: all 0.2s ease;
+        }
+        
+        .minimal-card:hover {
+            border-color: #52525b !important;
+            background: #18181b !important;
+            transform: translateY(-2px);
+        }
+        
+        .minimal-card .app-icon-container {
+            background: transparent;
+            border: 1px solid var(--ph-border, #27272a);
+            box-shadow: none;
+            width: 48px;
+            height: 48px;
+        }
+        
+        .minimal-card:hover .app-icon-container {
+            transform: none; /* Disable rotation */
+            border-color: #52525b;
+            background: #27272a;
+        }
+        
+        .minimal-card .app-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        

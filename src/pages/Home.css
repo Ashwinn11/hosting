@@ -1,55 +1,297 @@
-.hero-section {
-    padding-top: var(--spacing-2xl);
-    padding-bottom: var(--spacing-xl);
+/* Modern Minimalist Bento Portfolio */
+
+.personal-home {
+    --ph-bg: #000000;
+    --ph-text: #ffffff;
+    --ph-text-secondary: #a1a1aa;
+    --ph-border: #27272a;
+    --ph-card-bg: #09090b;
+    --ph-card-hover: #18181b;
+    --ph-accent: #ffffff;
+
+    background-color: var(--ph-bg);
+    color: var(--ph-text);
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero-title {
-    margin-bottom: var(--spacing-md);
-    line-height: 1.1;
-    font-weight: 800;
-}
-
-.hero-description {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    margin: 0 auto;
-    max-width: 600px;
-}
-
-.apps-grid-section {
-    padding-top: 0;
-}
-
-.apps-grid {
+.bento-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
-.empty-state {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: var(--spacing-2xl);
-    color: var(--text-muted);
+/* Card Base Styles */
+.bento-card {
+    background: var(--ph-card-bg);
+    border: 1px solid var(--ph-border);
+    border-radius: 24px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
 }
 
-@media (max-width: 768px) {
-    .hero-section {
-        padding-top: var(--spacing-xl);
-    }
+.bento-card:hover {
+    border-color: #52525b;
+    background: var(--ph-card-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+}
 
-    .hero-description {
-        font-size: 1.125rem;
-    }
+/* 1. Bio Card (Large: Spans 2 cols, 2 rows) */
+.bio-card {
+    grid-column: span 2;
+    grid-row: span 2;
+    justify-content: space-between;
+}
 
-    .apps-grid {
+.bio-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.bio-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid var(--ph-border);
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.bio-card:hover .bio-avatar {
+    filter: grayscale(0%);
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 100px;
+    background: rgba(34, 197, 94, 0.1);
+    color: #4ade80;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px #4ade80;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.bio-card h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to bottom right, #fff, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bio-text {
+    font-size: 1.125rem;
+    color: var(--ph-text-secondary);
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+.social-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #18181b;
+    color: var(--ph-text-secondary);
+    border: 1px solid var(--ph-border);
+    transition: all 0.2s;
+}
+
+.social-btn:hover {
+    background: #27272a;
+    color: #fff;
+    border-color: #52525b;
+}
+
+/* 2. App Cards (Standard) */
+.app-card {
+    grid-column: span 1;
+    grid-row: span 1;
+    justify-content: space-between;
+}
+
+.masterly-card {
+    grid-column: span 2; /* Masterly gets more space */
+    background: linear-gradient(145deg, #0f1c10, #09090b);
+    border-color: #1a2e1e;
+}
+
+.masterly-card:hover {
+    border-color: #2d4f1e;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.app-icon-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.app-icon-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.app-text h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.app-text p {
+    font-size: 0.9rem;
+    color: var(--ph-text-secondary);
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transform: translate(-10px, 10px);
+    transition: all 0.3s;
+    color: var(--ph-text-secondary);
+}
+
+.bento-card:hover .arrow-icon {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* 3. Tech Stack Card */
+.tech-card {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.tags-cloud span {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    background: #18181b;
+    border-radius: 6px;
+    color: #a1a1aa;
+    border: 1px solid var(--ph-border);
+}
+
+/* 4. Stats Card */
+.stats-card {
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-num {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--ph-text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .bento-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .bio-card {
+        grid-column: span 2;
+    }
+    
+    .masterly-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 640px) {
+    .bento-container {
         grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+        padding: 1rem;
+    }
+    
+    .bio-card, .masterly-card, .app-card, .tech-card, .stats-card {
+        grid-column: span 1;
+    }
+    
+    .bio-card h1 {
+        font-size: 2rem;
     }
 }

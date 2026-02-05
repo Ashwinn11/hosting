@@ -12,6 +12,9 @@ export interface App {
     platforms: ('ios' | 'android')[];
     features: string[];
     games?: string[]; // For gaming apps
+    externalUrl?: string;
+    iosUrl?: string;
+    androidUrl?: string;
 }
 
 export const apps: App[] = [
@@ -22,8 +25,8 @@ export const apps: App[] = [
         description: '10+ addictive mini games in one app! Bubble Shooter, 2048, Snake & more. Play offline anytime, anywhere.',
         bundleId: 'com.brolee.app',
         icon: '/playpulse.png',
-        color: '#6366f1',
-        gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        color: '#4ECDC4',
+        gradient: 'linear-gradient(135deg, #4ECDC4 0%, #556270 100%)',
         supportEmail: 'support@playpulse.app',
         developerName: 'Briefly',
         platforms: ['ios', 'android'],
@@ -56,7 +59,7 @@ export const apps: App[] = [
         bundleId: 'com.foodhabit.app',
         icon: '/gutbuddy.png',
         color: '#FF7495',
-        gradient: 'linear-gradient(135deg, #FF7495 0%, #70CFFF 100%)',
+        gradient: 'linear-gradient(135deg, #FCE762 0%, #FF7495 100%)',
         supportEmail: 'support@gutbuddy.app',
         developerName: 'Briefly',
         platforms: ['ios'],
@@ -67,14 +70,31 @@ export const apps: App[] = [
             'Medical Health Alerts & Notices',
             'Personalized Habits & Insights',
             'Comprehensive Health Reports'
-        ]
+        ],
+        iosUrl: 'https://apps.apple.com/app/gut-buddy-digestive-tracker/id6755035965'
     },
-    // Add more apps here in the future - just copy this structure!
-    // {
-    //   id: 'your-next-app',
-    //   name: 'Your App Name',
-    //   ...
-    // }
+    {
+        id: 'masterly',
+        name: 'Masterly AI',
+        tagline: 'Master Your Studies',
+        description: 'Your personal AI study companion. Scan materials, generate quizzes, and master any subject with the power of AI.',
+        bundleId: 'com.masterly.app',
+        icon: '/masterly.png',
+        color: '#2D4F1E',
+        gradient: 'linear-gradient(135deg, #2D4F1E 0%, #A44231 100%)',
+        supportEmail: 'support@masterlyapp.in',
+        developerName: 'Briefly',
+        platforms: ['ios'],
+        features: [
+            'AI Quiz Generation', 
+            'Study Material Scanning', 
+            'Voice Notes & Transcription',
+            'Smart Flashcards',
+            'Progress Tracking'
+        ],
+        externalUrl: 'https://masterlyapp.in',
+        iosUrl: 'https://apps.apple.com/us/app/masterly-ai-quiz-study-app/id6753760295'
+    }
 ];
 
 export const getAppById = (id: string): App | undefined => {
