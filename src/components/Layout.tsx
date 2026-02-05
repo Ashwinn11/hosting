@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react';
 import { Mail } from 'lucide-react';
-import { getAppById } from '../data/apps';
 import { useParams } from 'react-router-dom';
+import { useAppDetails } from '../presentation/hooks/useAppDetails';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import './Layout.css';
 
@@ -17,7 +17,7 @@ export default function Layout({ children }: LayoutProps) {
   
   // Detect if we're on an app-specific page
   const appId = params.appId;
-  const currentApp = appId ? getAppById(appId) : undefined;
+  const { app: currentApp } = useAppDetails(appId || '');
   
   return (
     <div className="layout">

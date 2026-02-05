@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Smartphone, Trophy, Zap, Gamepad2, Layers, Target, Grid, Ghost, Star, ChevronLeft } from 'lucide-react';
 import { Container } from '../components/ui/Container';
-import { getAppById } from '../data/apps';
+import { useAppDetails } from '../presentation/hooks/useAppDetails';
 import './PlayPulseHome.css';
 
 const games = [
@@ -16,8 +16,9 @@ const games = [
 ];
 
 export default function PlayPulseHome() {
-  const app = getAppById('playpulse');
+  const { app, loading } = useAppDetails('playpulse');
 
+  if (loading) return null;
   if (!app) return null;
 
   return (

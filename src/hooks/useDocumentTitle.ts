@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { getAppById } from '../data/apps';
+import { useAppDetails } from '../presentation/hooks/useAppDetails';
 
 export function useDocumentTitle() {
     const location = useLocation();
     const params = useParams();
     const appId = params.appId;
-    const app = appId ? getAppById(appId) : undefined;
+    const { app } = useAppDetails(appId || '');
 
     useEffect(() => {
         const path = location.pathname;

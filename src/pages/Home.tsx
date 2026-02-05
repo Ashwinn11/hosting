@@ -1,12 +1,12 @@
 import { Github, Twitter, Mail, ArrowUpRight, Cpu } from 'lucide-react';
-import { apps } from '../data/apps';
 import { Link } from 'react-router-dom';
+import { usePortfolio } from '../presentation/hooks/usePortfolio';
 import './Home.css';
 
 export default function Home() {
-  const masterly = apps.find(a => a.id === 'masterly');
-  const playpulse = apps.find(a => a.id === 'playpulse');
-  const gutbuddy = apps.find(a => a.id === 'gutbuddy');
+  const { masterly, playpulse, gutbuddy, loading } = usePortfolio();
+
+  if (loading) return null; // Or a skeleton loader
 
   return (
     <div className="home personal-home">

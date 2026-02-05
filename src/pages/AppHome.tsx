@@ -4,7 +4,7 @@ import {
   Zap, Globe, Trophy, Play, Target, Layout, Activity, Palette, Box, Hash, 
   Brain, ArrowUpCircle, Wind, Sword, Star, ChevronRight
 } from 'lucide-react';
-import { getAppById } from '../data/apps';
+import { useAppDetails } from '../presentation/hooks/useAppDetails';
 import { Container } from '../components/ui/Container';
 import { Section } from '../components/ui/Section';
 import { Button } from '../components/ui/Button';
@@ -25,7 +25,9 @@ const gameIconMap: Record<string, any> = {
 
 export default function AppHome() {
   const { appId } = useParams<{ appId: string }>();
-  const app = appId ? getAppById(appId) : undefined;
+  const { app, loading } = useAppDetails(appId || '');
+
+  if (loading) return null; // Or loader
 
   if (!app) {
     return (

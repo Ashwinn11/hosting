@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ChevronRight, Smartphone, Layout as Android, Rocket, Shield, Zap, ExternalLink } from 'lucide-react';
-import { type App } from '../data/apps';
+import type { AppEntity as App } from '../core/domain/entities/App';
 import { Card } from './ui/Card';
 import { Badge } from './ui/Badge';
 import './AppCard.css';

@@ -1,23 +1,6 @@
-export interface App {
-    id: string;
-    name: string;
-    tagline: string;
-    description: string;
-    bundleId: string;
-    icon: string;
-    color: string;
-    gradient: string;
-    supportEmail: string;
-    developerName: string;
-    platforms: ('ios' | 'android')[];
-    features: string[];
-    games?: string[]; // For gaming apps
-    externalUrl?: string;
-    iosUrl?: string;
-    androidUrl?: string;
-}
+import type { AppEntity } from '../../core/domain/entities/App';
 
-export const apps: App[] = [
+export const apps: AppEntity[] = [
     {
         id: 'playpulse',
         name: 'PlayPulse',
@@ -96,7 +79,3 @@ export const apps: App[] = [
         iosUrl: 'https://apps.apple.com/us/app/masterly-ai-quiz-study-app/id6753760295'
     }
 ];
-
-export const getAppById = (id: string): App | undefined => {
-    return apps.find(app => app.id === id);
-};

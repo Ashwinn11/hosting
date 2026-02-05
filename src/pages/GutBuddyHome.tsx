@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Apple, ChevronLeft, Droplets, HeartPulse, Smartphone } from 'lucide-react';
 import { Container } from '../components/ui/Container';
-import { getAppById } from '../data/apps';
+import { useAppDetails } from '../presentation/hooks/useAppDetails';
 import './GutBuddyHome.css';
 
 export default function GutBuddyHome() {
-  const app = getAppById('gutbuddy');
+  const { app, loading } = useAppDetails('gutbuddy');
 
+  if (loading) return null;
   if (!app) return null;
 
   return (

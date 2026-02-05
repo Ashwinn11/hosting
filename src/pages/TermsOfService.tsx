@@ -1,14 +1,14 @@
 import { useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, FileText, CheckCircle, AlertTriangle, Scale, Copyright, Edit, CreditCard, UserCheck, Heart, Mail } from 'lucide-react';
-import { getAppById } from '../data/apps';
+import { useAppDetails } from '../presentation/hooks/useAppDetails';
 import { Container } from '../components/ui/Container';
 import { Card } from '../components/ui/Card';
 import './LegalPage.css';
 
 export default function TermsOfService() {
   const { appId } = useParams<{ appId: string }>();
-  const app = appId ? getAppById(appId) : undefined;
+  const { app } = useAppDetails(appId || '');
   const pageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,13 +43,13 @@ export default function TermsOfService() {
 
   if (!app) {
     return (
-      <Container>
-        <div className="error-state">
-          <h1>App Not Found</h1>
-          <Link to="/" className="btn btn-primary">Back to Home</Link>
-        </div>
-      </Container>
-    );
+        <Container>
+          <div className="error-state">
+            <h1>App Not Found</h1>
+            <Link to="/" className="btn btn-primary">Back to Home</Link>
+          </div>
+        </Container>
+      );
   }
 
   const isGutBuddy = app.id === 'gutbuddy';
@@ -72,7 +72,6 @@ export default function TermsOfService() {
       <main className="legal-content">
         <Container>
           {isGutBuddy && (
-             // Generic Gut Buddy Terms (Since specific file not found, keeping structure but ensuring style match)
             <>
               <div className="policy-intro fade-in">
                 <div className="policy-icon-wrapper">

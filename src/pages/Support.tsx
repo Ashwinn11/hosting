@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, MessageCircle, ChevronDown, Mail, HelpCircle } from 'lucide-react';
-import { getAppById } from '../data/apps';
+import { useAppDetails } from '../presentation/hooks/useAppDetails';
 import { Container } from '../components/ui/Container';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
@@ -9,7 +9,7 @@ import './LegalPage.css';
 
 export default function Support() {
   const { appId } = useParams<{ appId: string }>();
-  const app = appId ? getAppById(appId) : undefined;
+  const { app } = useAppDetails(appId || '');
   const pageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,7 +43,14 @@ export default function Support() {
   }, [app]);
   
   if (!app) {
-    return <div>App not found</div>;
+    return (
+        <Container>
+          <div className="error-state">
+            <h1>App Not Found</h1>
+            <Link to="/" className="btn btn-primary">Back to Home</Link>
+          </div>
+        </Container>
+      );
   }
 
   const isGutBuddy = app.id === 'gutbuddy';
