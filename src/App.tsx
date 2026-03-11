@@ -1,28 +1,22 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
 import Home from './pages/Home';
-import AppHome from './pages/AppHome';
-import PlayPulseHome from './pages/PlayPulseHome';
-import GutBuddyHome from './pages/GutBuddyHome';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import Support from './pages/Support';
-import './styles/global.css';
+import AppLanding from './pages/AppLanding';
 
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
+      <div className="min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/playpulse" element={<PlayPulseHome />} />
-          <Route path="/gutbuddy" element={<GutBuddyHome />} />
-          <Route path="/:appId" element={<AppHome />} />
-          <Route path="/:appId/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/:appId/terms-of-service" element={<TermsOfService />} />
-          <Route path="/:appId/support" element={<Support />} />
+          <Route path="/:appId" element={<AppLanding />} />
+          <Route path="/:appId/privacy-policy" element={<AppLanding section="privacy" />} />
+          <Route path="/:appId/terms-of-service" element={<AppLanding section="terms" />} />
+          <Route path="/:appId/support" element={<AppLanding section="support" />} />
+          <Route path="/privacy-policy" element={<AppLanding appId="masterly" section="privacy" />} />
+          <Route path="/terms-of-service" element={<AppLanding appId="masterly" section="terms" />} />
+          <Route path="/support" element={<AppLanding appId="masterly" section="support" />} />
         </Routes>
-      </Layout>
+      </div>
     </BrowserRouter>
   );
 }
