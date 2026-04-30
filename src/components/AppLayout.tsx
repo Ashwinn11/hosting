@@ -14,7 +14,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ app, children }) => {
       className={`min-h-screen ${app.design.fontFamily} transition-colors duration-700`}
       style={{
         backgroundColor: app.design.bg,
-        color: app.design.templateId === 'academic' ? '#2D4F1E' : app.design.templateId === 'zen' ? '#1C2B20' : 'white'
+        color: app.design.templateId === 'academic' ? '#2D4F1E' : app.design.templateId === 'zen' ? '#1A1A1A' : 'white'
       }}
     >
       <SEOBox

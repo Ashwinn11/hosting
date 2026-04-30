@@ -217,78 +217,6 @@ export const apps: AppConfig[] = [
     }
   },
   {
-    id: 'closeclaw',
-    name: 'CloseClaw',
-    category: 'Games',
-    tagline: 'Precision and speed gaming',
-    platforms: ['ios', 'web'],
-    description: 'A precision-based gaming experience that challenges your reflexes.',
-    externalUrl: 'https://closeclaw.in',
-    seo: {
-      title: 'CloseClaw | Managed OpenClaw Hosting',
-      description: 'Get your own dedicated, private OpenClaw instance in 60 seconds — no server, no Docker, no DevOps.',
-      keywords: ['OpenClaw', 'Managed Hosting', 'Cloud Platform', 'Telegram', 'CloseClaw']
-    },
-    marketing: {
-      headline: 'Managed OpenClaw Hosting.',
-      subheadline: 'Skip the Docker setup, server config, and 2am outages.',
-      problem: 'Self-hosting an OpenClaw instance is complicated, requiring Docker setups, networking configurations, and dealing with unexpected server downtimes.',
-      agitation: 'You just want to use the AI assistant with your team on Telegram, Discord, or Slack, but instead you are forced to become a DevOps engineer just to keep the bot online.',
-      solution: 'CloseClaw gives you a dedicated OpenClaw instance running Claude, GPT, and Gemini with 99.9% uptime. No server, no Docker, deploy in 60s.',
-      benefits: [
-        { title: 'No Server Needed', description: 'Zero DevOps required. We handle all infrastructure, updates, and maintenance.', icon: 'Cloud' },
-        { title: 'Multi-Platform', description: 'Seamlessly works with Telegram, Discord, WhatsApp, and Slack.', icon: 'Activity' },
-        { title: '99.9% Uptime', description: 'Dedicated VM isolation ensuring your bot never goes down when you need it.', icon: 'ShieldHighlight' }
-      ]
-    },
-    legal: {
-      privacyPolicy: 'See closeclaw.in/privacy',
-      termsOfService: 'See closeclaw.in/terms',
-      support: 'For any issues or questions regarding CloseClaw, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com',
-      lastUpdated: '2026'
-    },
-    design: {
-      primary: '#FF4C29',
-      bg: '#082032',
-      fontFamily: 'font-inter',
-      templateId: 'arcade'
-    }
-  },
-  {
-    id: 'homerestyler',
-    name: 'HomeRestyler',
-    category: 'Lifestyle',
-    tagline: 'AI Home Interior Design',
-    platforms: ['web'],
-    description: 'Transform your living space with AI-powered interior design suggestions.',
-    externalUrl: 'https://homerestyler.app',
-    seo: {
-      title: 'HomeRestyler | AI Interior Design',
-      description: 'Design your dream home in seconds with AI.',
-      keywords: ['Interior Design', 'AI', 'Home Decor']
-    },
-    marketing: {
-      headline: 'Redesign your space in seconds.',
-      subheadline: 'Upload a photo and let AI do the heavy lifting.',
-      problem: 'Interior designers are expensive.',
-      agitation: 'Your home feels outdated.',
-      solution: 'AI-driven design at your fingertips.',
-      benefits: [{ title: 'Instant Rendering', description: 'See your room transformed.', icon: 'Camera' }]
-    },
-    legal: {
-      privacyPolicy: 'See homerestyler.app/privacy',
-      termsOfService: 'See homerestyler.app/terms',
-      support: 'For any issues or questions regarding HomeRestyler, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com',
-      lastUpdated: '2026'
-    },
-    design: {
-      primary: '#6366f1',
-      bg: '#f8fafc',
-      fontFamily: 'font-figtree',
-      templateId: 'zen'
-    }
-  },
-  {
     id: 'mascotmaker',
     name: 'Mascot Maker',
     category: 'Design',
@@ -325,7 +253,46 @@ export const apps: AppConfig[] = [
       fontFamily: 'font-inter',
       templateId: 'arcade'
     }
+  },
+  {
+    id: 'roomsnap',
+    name: 'RoomSnap',
+    category: 'Lifestyle',
+    tagline: 'AI Interior Design & Shopping',
+    platforms: ['ios'],
+    description: 'Scan your room and watch AI transform it instantly into a magazine-quality design. Shop the products you love directly from the render.',
+    seo: {
+      title: 'RoomSnap | AI Interior Design & Room Redesign',
+      description: 'Transform your home in seconds with AI. Scan your room, choose a style, and shop furniture instantly.',
+      keywords: ['Interior Design', 'AI', 'Room Redesign', 'Home Decor', 'Furniture Shopping', 'RoomSnap']
+    },
+    marketing: {
+      headline: 'Redesign your room in seconds.',
+      subheadline: 'Instant AI interior design and furniture shopping at your fingertips.',
+      problem: 'Interior design is expensive and overwhelming.',
+      agitation: 'You want a fresh look but don\'t know where to start or how to match furniture.',
+      solution: 'RoomSnap uses AI to scan your space and render it in stunning new styles, complete with shoppable products.',
+      benefits: [
+        { title: 'AI Rendering', description: 'See your room transformed in 8+ styles instantly.', icon: 'Zap' },
+        { title: 'Smart Shopping', description: 'Shop furniture and decor directly from your new design.', icon: 'ShoppingBag' },
+        { title: 'Structural Integrity', description: 'AI preserves your room\'s dimensions and window positions.', icon: 'Maximize' }
+      ]
+    },
+    legal: {
+      privacyPolicy: '1. Information We Collect\nRoomSnap collects photos of your rooms to facilitate AI redesigns. We also collect basic account information (name, email) and subscription status.\n\n2. Use of AI\nWe use Google Gemini AI to process your room photos and generate design suggestions. Your photos are used solely for generation and are not used to train global AI models.\n\n3. Subscription Management\nRoomSnap offers Weekly, Monthly, and Yearly subscription plans. The Yearly plan includes a 3-day free trial. Subscriptions are managed through Apple iTunes.\n\n4. Data Security\nWe prioritize your privacy. Your room photos are stored securely and are only accessible via your account.\n\n5. Contact Us\nEmail: ashwinnanbazhagan@gmail.com',
+      termsOfService: '1. Standard EULA\nBy using RoomSnap, you agree to the Apple Standard Licensed Application End User License Agreement (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n\n2. Usage Terms\nRoomSnap is intended for interior design inspiration. AI-generated results may vary and are for visualization purposes only.\n\n3. Subscriptions\nPayments will be charged to your iTunes Account. Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period.',
+      support: 'For any issues or questions regarding RoomSnap, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24-48 hours.',
+      lastUpdated: '30 April 2026'
+    },
+    design: {
+      primary: '#C46F84',
+      bg: '#FDFBF7',
+      fontFamily: 'font-playfair',
+      templateId: 'zen',
+      grain: 0.05
+    }
   }
 ];
+
 
 

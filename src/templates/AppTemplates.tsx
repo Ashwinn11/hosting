@@ -46,7 +46,7 @@ export const ZenTemplate: React.FC<TemplateProps> = ({ app, section }) => {
   if (section === 'privacy' || section === 'terms' || section === 'support') {
     return (
       <AppLayout app={app}>
-        <div className="text-[#1C2B20]">
+        <div className="text-inherit">
           <LegalContent app={app} section={section} />
         </div>
       </AppLayout>
@@ -56,16 +56,18 @@ export const ZenTemplate: React.FC<TemplateProps> = ({ app, section }) => {
   return (
     <AppLayout app={app}>
       <header className="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center backdrop-blur-sm">
-        <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity text-[#2D7A52]">
+        <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity" style={{ color: app.design.primary }}>
           <ChevronLeft size={20} className="hidden sm:block" />
-          <div className="w-8 h-8 rounded-lg overflow-hidden border border-[#2D7A52]/20">
+          <div className="w-8 h-8 rounded-lg overflow-hidden border" style={{ borderColor: `${app.design.primary}33` }}>
             <img src={`/${app.id}.png`} alt={app.name} className="w-full h-full object-cover" />
           </div>
-          <span className="font-figtree font-black text-xl">{app.name}</span>
+          <span className={`font-black text-xl tracking-tight`}>{app.name}</span>
         </Link>
-        <div className="flex items-center gap-6 text-sm font-dm-mono text-[#6B8C72]">
-          <Link to={`/${app.id}/support`} className="hover:text-[#2D7A52]">Support</Link>
-          <a href={app.externalUrl || app.appStoreUrl} className="bg-[#2D7A52] text-white px-4 py-2 rounded-full font-bold">{app.externalUrl ? 'Visit Site' : 'Get App'}</a>
+        <div className="flex items-center gap-6 text-sm font-dm-mono opacity-60">
+          <Link to={`/${app.id}/support`} className="hover:opacity-100 transition-opacity">Support</Link>
+          <a href={app.externalUrl || app.appStoreUrl} className="text-white px-4 py-2 rounded-full font-bold" style={{ backgroundColor: app.design.primary }}>
+            {app.externalUrl ? 'Visit Site' : 'Get App'}
+          </a>
         </div>
       </header>
 
@@ -73,13 +75,13 @@ export const ZenTemplate: React.FC<TemplateProps> = ({ app, section }) => {
         {/* Hero Section */}
         <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
           <div className="animate-in fade-in slide-in-from-bottom duration-700">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E6F5EC] text-[#2D7A52] text-xs font-dm-mono font-bold mb-6">
-              <Zap size={14} /> AI-POWERED WELLNESS
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-dm-mono font-bold mb-6 uppercase" style={{ backgroundColor: `${app.design.primary}15`, color: app.design.primary }}>
+              <Zap size={14} /> {app.category}
             </div>
-            <h1 className="text-6xl md:text-7xl font-figtree font-black text-[#1C2B20] leading-[1.05] tracking-tight mb-8">
+            <h1 className={`text-6xl md:text-7xl font-black leading-[1.05] tracking-tight mb-8`}>
               {app.marketing.headline}
             </h1>
-            <p className="text-xl text-[#6B8C72] font-figtree font-medium mb-10 max-w-lg">
+            <p className="text-xl opacity-60 font-medium mb-10 max-w-lg leading-relaxed">
               {app.marketing.subheadline}
             </p>
             <div className="flex flex-wrap gap-4">
@@ -90,7 +92,7 @@ export const ZenTemplate: React.FC<TemplateProps> = ({ app, section }) => {
                 <img src="/playstore.png" alt="Get it on Google Play" className="h-10" />
               </a>}
               {app.externalUrl && (
-                <a href={app.externalUrl} target="_blank" rel="noopener noreferrer" className="bg-[#2D7A52] text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform active:scale-95">
+                <a href={app.externalUrl} target="_blank" rel="noopener noreferrer" className="text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform active:scale-95" style={{ backgroundColor: app.design.primary }}>
                   Visit Live Site
                 </a>
               )}
@@ -103,23 +105,23 @@ export const ZenTemplate: React.FC<TemplateProps> = ({ app, section }) => {
                   {/* Left Screenshot */}
                   {app.marketing.screenshots[2] && (
                     <div className="hidden lg:block transform -translate-y-4 transition-all duration-700 z-10 group/s3">
-                      <div className="bg-white rounded-[2.5rem] p-3 shadow-xl border border-[#D4EAD9] relative">
+                      <div className="bg-white rounded-[2.5rem] p-3 shadow-xl border relative" style={{ borderColor: `${app.design.primary}15` }}>
                          <img src={app.marketing.screenshots[2]} className="w-[200px] aspect-[9/19] object-cover rounded-[1.8rem]" alt="Screenshot 3" />
-                         <div className="absolute -top-4 -left-4 bg-[#2D7A52] text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg">RECIPES</div>
+                         <div className="absolute -top-4 -left-4 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg uppercase" style={{ backgroundColor: app.design.primary }}>{app.name}</div>
                       </div>
                     </div>
                   )}
                   
                   {/* Centerpiece Screenshot */}
-                  <div className="relative z-20 scale-110 shadow-[0_50px_100px_-20px_rgba(45,122,82,0.3)] group/s1">
-                    <div className="bg-white rounded-[3.5rem] p-4 border border-[#D4EAD9] relative">
+                  <div className="relative z-20 scale-110 group/s1" style={{ filter: `drop-shadow(0 50px 100px ${app.design.primary}33)` }}>
+                    <div className="bg-white rounded-[3.5rem] p-4 border relative" style={{ borderColor: `${app.design.primary}15` }}>
                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-7 bg-white rounded-b-3xl z-30 flex items-center justify-center">
                          <div className="w-14 h-1.5 bg-black/5 rounded-full" />
                        </div>
                        <img src={app.marketing.screenshots[0]} className="w-[300px] aspect-[9/19] object-cover rounded-[2.5rem]" alt="Screenshot 1" />
-                       <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-2 rounded-2xl shadow-xl border border-[#D4EAD9] whitespace-nowrap">
-                          <span className="text-[#2D7A52] font-figtree font-black text-sm uppercase tracking-widest flex items-center gap-2">
-                             <Zap size={14} /> Smart Insights
+                       <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-2 rounded-2xl shadow-xl border whitespace-nowrap" style={{ borderColor: `${app.design.primary}15` }}>
+                          <span className="font-black text-sm uppercase tracking-widest flex items-center gap-2" style={{ color: app.design.primary }}>
+                             <Zap size={14} /> {app.tagline}
                           </span>
                        </div>
                     </div>
@@ -128,21 +130,21 @@ export const ZenTemplate: React.FC<TemplateProps> = ({ app, section }) => {
                   {/* Right Screenshot */}
                   {app.marketing.screenshots[1] && (
                     <div className="hidden lg:block transform -translate-y-4 transition-all duration-700 z-10 group/s2">
-                      <div className="bg-white rounded-[2.5rem] p-3 shadow-xl border border-[#D4EAD9] relative">
+                      <div className="bg-white rounded-[2.5rem] p-3 shadow-xl border relative" style={{ borderColor: `${app.design.primary}15` }}>
                          <img src={app.marketing.screenshots[1]} className="w-[200px] aspect-[9/19] object-cover rounded-[1.8rem]" alt="Screenshot 2" />
-                         <div className="absolute -top-4 -right-4 bg-[#2D7A52] text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg">SCANNER</div>
+                         <div className="absolute -top-4 -right-4 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg uppercase" style={{ backgroundColor: app.design.primary }}>{app.category}</div>
                       </div>
                     </div>
                   )}
                 </div>
               ) : (
-                <div className="relative bg-white rounded-[3rem] p-8 shadow-2xl shadow-[#2D7A52]/10 border border-[#D4EAD9]">
-                   <div className="aspect-[9/16] bg-[#F0F7F2] rounded-[2rem] overflow-hidden flex items-center justify-center relative">
+                <div className="relative bg-white rounded-[3rem] p-8 shadow-2xl border" style={{ borderColor: `${app.design.primary}15`, boxShadow: `0 50px 100px -20px ${app.design.primary}33` }}>
+                   <div className="aspect-[9/16] rounded-[2rem] overflow-hidden flex items-center justify-center relative" style={{ backgroundColor: `${app.design.primary}08` }}>
                     <div className="text-center">
                         <div className="w-32 h-32 rounded-[2.5rem] mx-auto mb-6 shadow-2xl overflow-hidden border-4 border-white p-1 bg-white">
                           <img src={`/${app.id}.png`} alt={app.name} className="w-full h-full object-contain rounded-[1.8rem]" />
                         </div>
-                        <div className="bg-white px-4 py-2 rounded-2xl shadow-sm text-sm font-bold text-[#2D7A52] border border-[#D4EAD9]">
+                        <div className="bg-white px-4 py-2 rounded-2xl shadow-sm text-sm font-bold border" style={{ color: app.design.primary, borderColor: `${app.design.primary}15` }}>
                           {app.tagline}
                         </div>
                      </div>
@@ -157,29 +159,31 @@ export const ZenTemplate: React.FC<TemplateProps> = ({ app, section }) => {
           {app.marketing.benefits.map((benefit, i) => {
             const Icon = IconMap[benefit.icon] || Info;
             return (
-              <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-[#D4EAD9] hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
-                <div className="w-14 h-14 rounded-2xl bg-[#E6F5EC] flex items-center justify-center text-[#2D7A52] mb-8">
+              <div key={i} className="bg-white p-10 rounded-[2.5rem] border hover:shadow-xl transition-all duration-500 hover:-translate-y-2" style={{ borderColor: `${app.design.primary}15` }}>
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8" style={{ backgroundColor: `${app.design.primary}15`, color: app.design.primary }}>
                   <Icon size={28} />
                 </div>
-                <h3 className="text-2xl font-figtree font-extrabold text-[#1C2B20] mb-4">{benefit.title}</h3>
-                <p className="text-[#6B8C72] font-figtree font-medium leading-relaxed">{benefit.description}</p>
+                <h3 className={`text-2xl font-black mb-4`}>{benefit.title}</h3>
+                <p className="opacity-60 font-medium leading-relaxed">{benefit.description}</p>
               </div>
             );
           })}
         </div>
 
         {/* PAS Section */}
-        <div className="bg-[#1C2B20] rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#2D7A52]/20 blur-[100px]" />
+        <div className="rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden" style={{ backgroundColor: '#1A1A1A' }}>
+          <div className="absolute top-0 right-0 w-64 h-64 blur-[100px]" style={{ backgroundColor: `${app.design.primary}33` }} />
           <div className="max-w-3xl relative z-10">
-            <h2 className="text-4xl md:text-5xl font-figtree font-black mb-12 leading-tight">Your gut is personal. Your answers should be too.</h2>
-            <div className="space-y-10 text-lg opacity-80 font-figtree">
+            <h2 className={`text-4xl md:text-5xl font-black mb-12 leading-tight`}>{app.marketing.headline}</h2>
+            <div className="space-y-10 text-lg opacity-80">
               <p>{app.marketing.problem}</p>
-              <p className="border-l-4 border-[#2D7A52] pl-8 italic">{app.marketing.agitation}</p>
+              <p className="border-l-4 pl-8 italic" style={{ borderColor: app.design.primary }}>{app.marketing.agitation}</p>
               <p>{app.marketing.solution}</p>
             </div>
           </div>
         </div>
+
+
       </div>
     </AppLayout>
   );
