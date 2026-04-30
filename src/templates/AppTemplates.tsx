@@ -99,43 +99,40 @@ export const ZenTemplate: React.FC<TemplateProps> = ({ app, section }) => {
             </div>
           </div>
           
-            <div className="relative h-[650px] w-full flex items-center justify-center pt-20">
+            <div className="relative w-full flex flex-col items-center pt-20 overflow-hidden">
               {app.marketing.screenshots ? (
-                <div className="relative w-full max-w-5xl h-full flex items-center justify-center gap-8">
-                  {/* Left Screenshot */}
-                  {app.marketing.screenshots[2] && (
-                    <div className="hidden lg:block transform -translate-y-4 transition-all duration-700 z-10 group/s3">
-                      <div className="bg-white rounded-[2.5rem] p-3 shadow-xl border relative" style={{ borderColor: `${app.design.primary}15` }}>
-                         <img src={app.marketing.screenshots[2]} className="w-[200px] aspect-[9/19] object-cover rounded-[1.8rem]" alt="Screenshot 3" />
-                         <div className="absolute -top-4 -left-4 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg uppercase" style={{ backgroundColor: app.design.primary }}>{app.name}</div>
+                <div className="w-full max-w-[1600px]">
+                  {/* Raw Frame Screenshot Showcase */}
+                  <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 px-4">
+                    {app.marketing.screenshots.slice(0, 3).map((src, i) => (
+                      <div 
+                        key={i} 
+                        className={`relative group animate-in fade-in slide-in-from-bottom duration-700 delay-[${i * 200}ms] flex-1 max-w-[450px]`}
+                      >
+                        {/* Subtle Atmospheric Glow */}
+                        <div className="absolute -inset-12 bg-gradient-to-tr opacity-0 group-hover:opacity-10 blur-[100px] rounded-full transition-opacity duration-1000" style={{ backgroundImage: `linear-gradient(to top right, ${app.design.primary}, transparent)` }} />
+                        
+                        <img 
+                          src={src} 
+                          className="w-full aspect-[9/19] object-cover rounded-none shadow-[0_40px_80px_-20px_rgba(0,0,0,0.3)] border border-black/5 hover:scale-[1.02] transition-all duration-700" 
+                          alt={`Screenshot ${i + 1}`} 
+                        />
+                        
+                        {/* Minimalist Order Badge */}
+                        <div className="absolute -top-4 -left-4 w-12 h-12 rounded-none bg-white shadow-xl flex items-center justify-center border border-black/5 z-20 transition-transform group-hover:-translate-y-1">
+                           <span className="font-dm-mono text-sm font-black" style={{ color: app.design.primary }}>0{i + 1}</span>
+                        </div>
                       </div>
-                    </div>
-                  )}
-                  
-                  {/* Centerpiece Screenshot */}
-                  <div className="relative z-20 scale-110 group/s1" style={{ filter: `drop-shadow(0 50px 100px ${app.design.primary}33)` }}>
-                    <div className="bg-white rounded-[3.5rem] p-4 border relative" style={{ borderColor: `${app.design.primary}15` }}>
-                       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-7 bg-white rounded-b-3xl z-30 flex items-center justify-center">
-                         <div className="w-14 h-1.5 bg-black/5 rounded-full" />
-                       </div>
-                       <img src={app.marketing.screenshots[0]} className="w-[300px] aspect-[9/19] object-cover rounded-[2.5rem]" alt="Screenshot 1" />
-                       <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-2 rounded-2xl shadow-xl border whitespace-nowrap" style={{ borderColor: `${app.design.primary}15` }}>
-                          <span className="font-black text-sm uppercase tracking-widest flex items-center gap-2" style={{ color: app.design.primary }}>
-                             <Zap size={14} /> {app.tagline}
-                          </span>
-                       </div>
-                    </div>
+                    ))}
                   </div>
 
-                  {/* Right Screenshot */}
-                  {app.marketing.screenshots[1] && (
-                    <div className="hidden lg:block transform -translate-y-4 transition-all duration-700 z-10 group/s2">
-                      <div className="bg-white rounded-[2.5rem] p-3 shadow-xl border relative" style={{ borderColor: `${app.design.primary}15` }}>
-                         <img src={app.marketing.screenshots[1]} className="w-[200px] aspect-[9/19] object-cover rounded-[1.8rem]" alt="Screenshot 2" />
-                         <div className="absolute -top-4 -right-4 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg uppercase" style={{ backgroundColor: app.design.primary }}>{app.category}</div>
-                      </div>
+                  {/* Tagline Pill */}
+                  <div className="flex justify-center mt-20">
+                    <div className="inline-flex items-center gap-6 px-12 py-5 rounded-full bg-black/5 backdrop-blur-md border border-black/5 shadow-sm">
+                       <div className="w-2.5 h-2.5 rounded-full animate-pulse" style={{ backgroundColor: app.design.primary }} />
+                       <span className="text-sm font-dm-mono uppercase tracking-[0.6em] font-black text-black/50">{app.tagline}</span>
                     </div>
-                  )}
+                  </div>
                 </div>
               ) : (
                 <div className="relative bg-white rounded-[3rem] p-8 shadow-2xl border" style={{ borderColor: `${app.design.primary}15`, boxShadow: `0 50px 100px -20px ${app.design.primary}33` }}>
@@ -257,28 +254,41 @@ export const AcademicTemplate: React.FC<TemplateProps> = ({ app, section }) => {
 
           <div className="lg:col-span-2 sticky top-32">
             <div className="relative group p-6 bg-[#2D4F1E]/5 rounded-[40px] border-[2px] border-[#2D4F1E]/10">
-               <div className="relative aspect-[9/18] bg-[#FDFBF7] rounded-[32px] shadow-2xl p-6 flex flex-col justify-between overflow-hidden border-[4px] border-[#2D4F1E]">
-                  <div className="space-y-8 relative z-10">
-                    <div className="w-24 h-24 rounded-[2.5rem] overflow-hidden p-2 border-[4px] border-[#2D4F1E] bg-white mx-auto shadow-lg">
-                       <img src={`/${app.id}.png`} alt={app.name} className="w-full h-full object-contain rounded-[1.8rem]" />
+               <div className="relative aspect-[9/18] bg-[#FDFBF7] rounded-[32px] shadow-2xl overflow-hidden border-[4px] border-[#2D4F1E]">
+                  {app.marketing.videoHero ? (
+                    <video 
+                      src={app.marketing.videoHero} 
+                      className="w-full h-full object-cover" 
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline 
+                    />
+                  ) : (
+                    <div className="p-6 flex flex-col justify-between h-full">
+                      <div className="space-y-8 relative z-10">
+                        <div className="w-24 h-24 rounded-[2.5rem] overflow-hidden p-2 border-[4px] border-[#2D4F1E] bg-white mx-auto shadow-lg">
+                           <img src={`/${app.id}.png`} alt={app.name} className="w-full h-full object-contain rounded-[1.8rem]" />
+                        </div>
+                        <div className="flex justify-between px-2">
+                           <div className="font-dm-mono text-[10px] uppercase font-bold text-[#2D4F1E]/40 tracking-widest">Protocol 01</div>
+                           <div className="font-dm-mono text-[10px] uppercase font-bold text-[#E9B44C] tracking-widest">Omni-Discovery</div>
+                        </div>
+                        <div className="space-y-3">
+                           <div className="h-2 w-full bg-[#2D4F1E]/10 rounded-full overflow-hidden">
+                              <div className="h-full bg-[#E9B44C] w-[65%]" />
+                           </div>
+                           <div className="h-[120px] w-full bg-[#F5F2EA] rounded-[16px] border-[3px] border-[#DECFBA] border-dashed flex items-center justify-center">
+                              <p className="font-handlee text-xs text-[#2D4F1E]/30 uppercase tracking-widest font-bold">Paste Syllabus</p>
+                           </div>
+                        </div>
+                      </div>
+                      <div className="relative z-10 pt-4 border-t-[2px] border-[#2D4F1E]/5">
+                         <div className="text-center font-syne text-[80px] font-black text-[#E9B44C] leading-none tracking-tighter" style={{ textShadow: '3px 4px 0px rgba(45,79,30,0.1)' }}>07</div>
+                         <div className="text-center font-dm-mono text-[10px] uppercase tracking-[0.4em] text-[#2D4F1E] font-bold mt-2">Day Streak</div>
+                      </div>
                     </div>
-                    <div className="flex justify-between px-2">
-                       <div className="font-dm-mono text-[10px] uppercase font-bold text-[#2D4F1E]/40 tracking-widest">Protocol 01</div>
-                       <div className="font-dm-mono text-[10px] uppercase font-bold text-[#E9B44C] tracking-widest">Omni-Discovery</div>
-                    </div>
-                    <div className="space-y-3">
-                       <div className="h-2 w-full bg-[#2D4F1E]/10 rounded-full overflow-hidden">
-                          <div className="h-full bg-[#E9B44C] w-[65%]" />
-                       </div>
-                       <div className="h-[120px] w-full bg-[#F5F2EA] rounded-[16px] border-[3px] border-[#DECFBA] border-dashed flex items-center justify-center">
-                          <p className="font-handlee text-xs text-[#2D4F1E]/30 uppercase tracking-widest font-bold">Paste Syllabus</p>
-                       </div>
-                    </div>
-                  </div>
-                  <div className="relative z-10 pt-4 border-t-[2px] border-[#2D4F1E]/5">
-                     <div className="text-center font-syne text-[80px] font-black text-[#E9B44C] leading-none tracking-tighter" style={{ textShadow: '3px 4px 0px rgba(45,79,30,0.1)' }}>07</div>
-                     <div className="text-center font-dm-mono text-[10px] uppercase tracking-[0.4em] text-[#2D4F1E] font-bold mt-2">Day Streak</div>
-                  </div>
+                  )}
                </div>
             </div>
           </div>
@@ -448,16 +458,33 @@ export const SanctuaryTemplate: React.FC<TemplateProps> = ({ app, section }) => 
 
       <main className="relative pt-40 pb-40 px-6 max-w-4xl mx-auto flex flex-col items-center text-center">
         <div className="animate-in fade-in duration-1000">
-          <div className="w-24 h-24 rounded-full bg-white/5 backdrop-blur-3xl border border-white/10 flex items-center justify-center mb-16 shadow-2xl shadow-indigo-500/10 overflow-hidden p-2">
+          <div className="w-24 h-24 rounded-full bg-white/5 backdrop-blur-3xl border border-white/10 flex items-center justify-center mx-auto mb-16 shadow-2xl shadow-indigo-500/10 overflow-hidden p-2">
             <img src={`/${app.id}.png`} alt={app.name} className="w-full h-full object-contain rounded-full" />
           </div>
-          <h1 className="text-7xl md:text-8xl font-playfair font-light tracking-tighter mb-8 italic">
+          <h1 className="text-7xl md:text-8xl font-playfair font-light tracking-tighter mb-8 italic text-white">
             {app.name}
           </h1>
-          <p className="text-2xl font-inter font-extralight tracking-widest opacity-60 mb-16 uppercase">
+          <p className="text-2xl font-inter font-extralight tracking-widest opacity-60 mb-16 uppercase text-white">
             {app.marketing.headline}
           </p>
-          <div className="w-px h-32 bg-gradient-to-b from-white/20 to-transparent mb-20" />
+
+          {app.marketing.screenshots && app.marketing.screenshots[0] && (
+            <div className="mb-20 flex justify-center">
+              <div className="relative group max-w-[280px]">
+                <div className="absolute -inset-10 bg-white/5 blur-[80px] rounded-full opacity-50 group-hover:opacity-80 transition-opacity duration-1000" />
+                <div className="relative bg-white/5 backdrop-blur-md rounded-[3rem] p-3 border border-white/10 shadow-2xl">
+                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-black/40 rounded-b-2xl z-20 backdrop-blur-xl" />
+                   <img 
+                     src={app.marketing.screenshots[0]} 
+                     className="w-full aspect-[9/19] object-cover rounded-[2.5rem]" 
+                     alt="App Preview" 
+                   />
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div className="w-px h-32 bg-gradient-to-b from-white/20 to-transparent mb-20 mx-auto" />
         </div>
 
         <div className="grid gap-40 w-full">

@@ -32,6 +32,7 @@ export interface AppConfig {
     solution: string;
     benefits: Benefit[];
     screenshots?: string[];
+    videoHero?: string;
     faqs?: FAQ[];
   };
   legal: {
@@ -53,32 +54,32 @@ export interface AppConfig {
 export const apps: AppConfig[] = [
   {
     id: 'gutbuddy',
-    name: 'Gut Buddy',
+    name: 'GutBuddy',
     category: 'Health & Fitness',
-    tagline: 'Scan menus for low FODMAP',
+    tagline: 'Scan Menus & Barcodes for Safe Eating',
     platforms: ['ios'],
-    description: 'Find your personal triggers, get safe recipes, and track your digestive health with AI.',
+    description: 'The AI gut health companion for IBS, Celiac, IBD, and more. Scan restaurant menus and over 3 million grocery products to find safe dishes and ingredients tailored to your specific profile of 100+ conditions, allergies, and diets.',
     appStoreUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
     seo: {
-      title: 'Gut Buddy | Personal Gut Health Coach & FODMAP Scanner',
-      description: 'Stop guessing why your stomach hurts. Gut Buddy helps you identify personal IBS triggers and find safe foods at any restaurant.',
-      keywords: ['IBS', 'FODMAP', 'Gut Health', 'Food Scanner', 'Low FODMAP Diet', 'Gut Buddy']
+      title: 'GutBuddy | AI Menu & Barcode Scanner for IBS',
+      description: 'Find safe food anywhere. GutBuddy scans menus and 3M+ products to match your unique profile of 100+ conditions, allergies, and diets.',
+      keywords: ['IBS', 'FODMAP', 'Barcode Scanner', 'Menu Scanner', 'Gut Health', 'Food Sensitivity']
     },
     marketing: {
-      headline: 'Stop guessing why your stomach hurts.',
-      subheadline: 'The AI gut health coach that learns your specific triggers from your own data.',
-      problem: 'Living with IBS or chronic bloating often feels like a guessing game. Generic advice tells you what everyone else should avoid, but your gut is unique.',
-      agitation: 'Every meal is a risk. You follow Low FODMAP, but you still feel sick. You\'re tired of clinical apps that don\'t feel human or helpful.',
-      solution: 'Gut Buddy acts as your personal detective. It correlates your meals with your symptoms to find YOUR specific triggers—whether it\'s garlic, dairy, or stress.',
+      headline: 'Eat safe. Everywhere.',
+      subheadline: 'Scan menus and barcodes to find gut-friendly food tailored to your unique health profile.',
+      problem: 'Navigating restaurant menus and grocery aisles with multiple food sensitivities is a constant, stressful challenge.',
+      agitation: 'One wrong ingredient can cause days of discomfort. Generic advice isn\'t enough when you have a complex profile of allergies and conditions.',
+      solution: 'GutBuddy uses your detailed health profile—covering 100+ conditions and diets—to instantly analyze menus and 3M+ products, ensuring you always find food that\'s safe for you.',
       benefits: [
-        { title: 'Personalized Insights', description: 'Log your meals and symptoms to discover exactly what triggers your discomfort.', icon: 'Zap' },
-        { title: 'Smart Scanner', description: 'Instantly check if any food or menu item is safe for your digestive system.', icon: 'Camera' },
-        { title: 'AI Diet Coach', description: 'Get suggestions for recipes and alternatives that keep your gut happy.', icon: 'Utensils' }
+        { title: 'Menu & Barcode Scanner', description: 'Instantly check restaurant dishes and over 3 million grocery items against your specific needs.', icon: 'Camera' },
+        { title: '100+ Health Conditions', description: 'Personalized scanning based on your unique profile of conditions, allergies, and dietary requirements.', icon: 'ShieldCheck' },
+        { title: 'AI Recipe Generator', description: 'Create safe, delicious recipes tailored specifically to your gut health needs.', icon: 'Utensils' }
       ],
       screenshots: [
-        '/gutbuddy/gutscore.png',
-        '/gutbuddy/scan.png',
-        '/gutbuddy/recipe.png'
+        '/gutbuddy/02.png',
+        '/gutbuddy/03.png',
+        '/gutbuddy/04.png'
       ]
     },
     legal: {
@@ -118,7 +119,8 @@ export const apps: AppConfig[] = [
         { title: 'App Blocker', description: 'Integrated with iOS Screen Time to keep you focused until your work is done.', icon: 'Lock' },
         { title: 'AI Tutor', description: 'Generates micro-lessons and quizzes directly from your uploaded syllabus.', icon: 'BookOpen' },
         { title: 'Streak System', description: 'Build a learning habit that\'s harder to break than your focus.', icon: 'Flame' }
-      ]
+      ],
+      videoHero: '/masterly_demo.mp4'
     },
     legal: {
       privacyPolicy: '1. Information We Collect\nMasterly collects minimal data required to function. This includes your email for authentication, uploaded syllabus PDFs for lesson generation, and Screen Time data via Apple Family Controls to facilitate app blocking during study sessions.\n\n2. Use of AI\nYour study materials are processed by Google Gemini API to generate personalized lessons and quizzes. Your data is not used to train global AI models.\n\n3. Family Controls\nWe use Apple\'s Family Controls and Device Activity API to monitor app usage and enforce study blocks. We do not track browsing history or personal messages.\n\n4. Data Deletion\nYou can delete your account and all associated data at any time via the Settings menu.\n\n5. Contact Us\nIf you have any questions about this Privacy Policy, please contact us at ashwinnanbazhagan@gmail.com.',
@@ -179,33 +181,36 @@ export const apps: AppConfig[] = [
   },
   {
     id: 'morningjournal',
-    name: 'Morning Journal',
+    name: 'Honestly: Morning Journal',
     category: 'Lifestyle',
-    tagline: 'Morning Routine Enforcer & Journal',
+    tagline: 'Block Apps, Clear Your Mind',
     platforms: ['ios'],
-    description: 'Block your distracting apps using Screen Time until you complete your morning journal reflection.',
-    appStoreUrl: 'https://apps.apple.com/us/app/morning-journal/id0987654321',
+    description: 'Start your day with intention. A 4-step ritual of Mood tracking, Journaling, 3 Big Wins, and Gratitude. Synchronized across your devices with interactive widgets.',
+    appStoreUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
     seo: {
-      title: 'Morning Journal | App Blocker & Daily Reflection',
-      description: 'Start your day with intention. Morning Journal blocks your distracting apps until you complete your morning reflection.',
-      keywords: ['Journaling', 'App Blocker', 'Morning Routine', 'Screen Time', 'Mindfulness']
+      title: 'Honestly: Morning Journal | App Blocker & Daily Reflection',
+      description: 'Start your day with intention. Honestly blocks your distracting apps until you complete your morning reflection.',
+      keywords: ['Honestly', 'Journaling', 'App Blocker', 'Morning Routine', 'Screen Time', 'Mindfulness']
     },
     marketing: {
       headline: 'Reclaim your morning focus.',
-      subheadline: 'Morning Journal locks distracting apps until you’ve completed your daily reflection.',
-      problem: 'We all know the feeling: waking up and immediately doom-scrolling before even getting out of bed.',
-      agitation: 'Starting the day by reacting to notifications and feeds ruins your focus and wastes your most productive hours.',
-      solution: 'Morning Journal integrates with Apple Screen Time to block your chosen apps. The only way to unlock them is by completing your morning journal entry.',
+      subheadline: 'The 4-step ritual to clear your mind and set your daily intentions.',
+      problem: 'Starting the day by doom-scrolling ruins your focus and productivity.',
+      agitation: 'Notifications and feeds steal your most productive hours before you even get out of bed.',
+      solution: 'Honestly combines a calming journaling experience with powerful focus tools, ensuring you start your day proactively.',
       benefits: [
-        { title: 'App Blocker', description: 'Locks down distracting apps using Apple Family Controls until your journal is done.', icon: 'Lock' },
-        { title: 'Daily Intentions', description: 'Start your day proactively by setting goals in a calm, distraction-free sanctuary.', icon: 'Moon' },
-        { title: 'Private & Secure', description: 'Your journal entries are encrypted and stay strictly on your device.', icon: 'ShieldHighlight' }
+        { title: '4-Step Morning Ritual', description: 'Mood, Journal, 3 Big Wins, and Gratitude to center your mind.', icon: 'Moon' },
+        { title: 'Interactive Widgets', description: 'Track your Big Wins and Streaks right from your Home Screen.', icon: 'ShieldHighlight' },
+        { title: 'iCloud Sync', description: 'Your journals and focus data sync seamlessly between iPhone and iPad.', icon: 'Lock' }
+      ],
+      screenshots: [
+        '/morningjournal/journal.png'
       ]
     },
     legal: {
       privacyPolicy: 'Data collection:\n- We collect no personal information\n- We do not use third-party analytics\n- We do not track your activity across other apps\n- Journal entries are stored securely using Apple\'s protected local storage\n\nData retention and deletion:\n- Journal data remains on-device unless you delete it\n- You can delete your account and local data from Settings > Account > Delete Account\n\nContact:\n- Email: ashwinnanbazhagan@gmail.com',
       termsOfService: 'Subscription terms:\n- Premium features are offered as auto-renewing subscriptions\n- Payment is charged to your Apple ID account at confirmation\n- Subscription renews automatically unless canceled at least 24 hours before the period ends\n- You can manage or cancel subscriptions in Apple ID Subscriptions settings\n- Restore Purchases is available in the app\n\nUsage:\n- You are responsible for how you configure app blocking selections\n- The app depends on Screen Time authorization and Apple platform behavior\n\nDisclaimer:\n- Service is provided as-is without guarantees of uninterrupted availability\n\nContact:\n- Email: ashwinnanbazhagan@gmail.com',
-      support: 'For any issues or questions regarding Morning Journal, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com',
+      support: 'For any issues or questions regarding Honestly, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com',
       lastUpdated: 'February 28, 2026'
     },
     design: {
@@ -258,9 +263,10 @@ export const apps: AppConfig[] = [
     id: 'roomsnap',
     name: 'RoomSnap',
     category: 'Lifestyle',
-    tagline: 'AI Interior Design & Shopping',
+    tagline: 'Scan, Design & Shop Furniture',
     platforms: ['ios'],
-    description: 'Scan your room and watch AI transform it instantly into a magazine-quality design. Shop the products you love directly from the render.',
+    description: 'Transform your room instantly with photorealistic 2K redesigns. Upload a photo, pick a style, and watch AI create magazine-quality designs while preserving your room\'s architecture.',
+    appStoreUrl: 'https://apps.apple.com/ie/app/roomsnap-ai-interior-design/id6760695323',
     seo: {
       title: 'RoomSnap | AI Interior Design & Room Redesign',
       description: 'Transform your home in seconds with AI. Scan your room, choose a style, and shop furniture instantly.',
@@ -268,14 +274,19 @@ export const apps: AppConfig[] = [
     },
     marketing: {
       headline: 'Redesign your room in seconds.',
-      subheadline: 'Instant AI interior design and furniture shopping at your fingertips.',
-      problem: 'Interior design is expensive and overwhelming.',
-      agitation: 'You want a fresh look but don\'t know where to start or how to match furniture.',
-      solution: 'RoomSnap uses AI to scan your space and render it in stunning new styles, complete with shoppable products.',
+      subheadline: 'Photorealistic AI interior design that preserves your home\'s unique character.',
+      problem: 'Interior design is expensive, slow, and hard to visualize.',
+      agitation: 'You want a fresh look but can\'t see how new styles will work with your specific layout and furniture.',
+      solution: 'RoomSnap uses advanced AI to render your room in stunning new styles in seconds, giving you high-resolution 2K results that respect your room\'s structure.',
       benefits: [
-        { title: 'AI Rendering', description: 'See your room transformed in 8+ styles instantly.', icon: 'Zap' },
-        { title: 'Smart Shopping', description: 'Shop furniture and decor directly from your new design.', icon: 'ShoppingBag' },
-        { title: 'Structural Integrity', description: 'AI preserves your room\'s dimensions and window positions.', icon: 'Maximize' }
+        { title: '2K High-Res AI Rendering', description: 'See your room transformed in seconds with photorealistic quality.', icon: 'Zap' },
+        { title: 'Architectural Preservation', description: 'The AI respects your room\'s windows, doors, and structural layout.', icon: 'Maximize' },
+        { title: 'Multiple Design Styles', description: 'From Scandinavian to Industrial, explore dozens of professional looks.', icon: 'ShoppingBag' }
+      ],
+      screenshots: [
+        '/roomsnap/01.png',
+        '/roomsnap/04.png',
+        '/roomsnap/05.png'
       ]
     },
     legal: {
