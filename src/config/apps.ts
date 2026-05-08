@@ -302,6 +302,50 @@ export const apps: AppConfig[] = [
       templateId: 'zen',
       grain: 0.05
     }
+  },
+  {
+    id: 'faceaura',
+    name: 'FaceAura',
+    category: 'Lifestyle',
+    tagline: 'Analyze Your Face. Scale Your Aura.',
+    platforms: ['ios'],
+    description: 'The AI beauty system designed to turn your self-improvement goals into a clinical, 90-day ritual.',
+    appStoreUrl: 'https://apps.apple.com/app/faceaura-looksmax-ai/id6761001234',
+    seo: {
+      title: 'FaceAura | AI Looksmax & 90-Day Beauty Ritual',
+      description: 'Unlock your maximum potential with FaceAura. Get a clinical PSL score, precision face analysis, and a personalized 90-day glow up roadmap.',
+      keywords: ['Looksmax', 'Glow Up', 'Face Analysis', 'PSL Score', 'Symmetry', 'Aura']
+    },
+    marketing: {
+      headline: 'Stop guessing. Start glowing.',
+      subheadline: 'The diagnostic-grade scanner that turns your looksmaxxing goals into a scientific 90-day ritual.',
+      problem: 'Most beauty advice is generic. You don\'t know what actually works for your specific facial structure, leading to wasted time and zero results.',
+      agitation: 'You see others ascending, but you\'re stuck guessing. Without a data-driven roadmap, you\'re just hoping for a glow up that never comes.',
+      solution: 'FaceAura uses clinical AI to analyze your symmetry, skin, and proportions. We don\'t just give you a score; we build your daily ritual for the next 90 days.',
+      benefits: [
+        { title: 'AI Face Scan', description: 'Clinical-grade analysis of your symmetry, PSL score, and proportions.', icon: 'Camera' },
+        { title: '90-Day Ritual', description: 'Daily habits tailored to your specific face shape and goals.', icon: 'Clock' },
+        { title: 'Progress Tracking', description: 'See your aura ascend with detailed trend comparisons and history.', icon: 'Zap' }
+      ],
+      screenshots: [
+        '/faceaura/02.png',
+        '/faceaura/03.png',
+        '/faceaura/04.png'
+      ]
+    },
+    legal: {
+      privacyPolicy: '1. Information We Collect\nFaceAura collects photos you upload for analysis. We also collect basic profile data including age, skin concerns, and hair type to personalize your 90-day ritual.\n\n2. AI Analysis\nYour photos are processed by Google Gemini Pro Vision to provide facial metrics and beauty insights. Photos are used solely for generation and are not used to train global AI models.\n\n3. Data Storage\nAnalysis results and ritual progress are stored locally on your device and via iCloud. We do not store your original photos on our permanent servers after analysis is complete.\n\n4. Subscription\nFaceAura Pro offers Monthly, Yearly, and Lifetime access. Subscriptions are managed through your Apple ID.\n\n5. Contact Us\nEmail: ashwinnanbazhagan@gmail.com',
+      termsOfService: '1. Standard EULA\nBy using FaceAura, you agree to the Apple Standard Licensed Application End User License Agreement (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n\n2. Appearance and Results\nAI-generated analysis and rituals are for self-improvement and informational purposes only. Results vary by individual consistency and biological factors.\n\n3. Medical Disclaimer\nFaceAura is not a medical diagnostic tool. For clinical skin or hair conditions, consult a licensed professional.\n\n4. Subscriptions\nPayments are charged to your iTunes Account. Auto-renewal can be managed in your Apple ID settings.',
+      support: 'For any issues or questions regarding FaceAura, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com',
+      lastUpdated: '8 May 2026'
+    },
+    design: {
+      primary: '#D1A054',
+      bg: '#FDFBF7',
+      fontFamily: 'font-playfair',
+      templateId: 'zen',
+      grain: 0.05
+    }
   }
 ];
 
