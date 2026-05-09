@@ -53,16 +53,16 @@ export interface AppConfig {
 
 export const apps: AppConfig[] = [
   {
-    id: 'gutbuddy',
-    name: 'GutBuddy',
+    id: 'menucheck',
+    name: 'Menu Check',
     category: 'Health & Fitness',
     tagline: 'Scan Menus & Barcodes for Safe Eating',
     platforms: ['ios'],
     description: 'The AI gut health companion for IBS, Celiac, IBD, and more. Scan restaurant menus and over 3 million grocery products to find safe dishes and ingredients tailored to your specific profile of 100+ conditions, allergies, and diets.',
     appStoreUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
     seo: {
-      title: 'GutBuddy | AI Menu & Barcode Scanner for IBS',
-      description: 'Find safe food anywhere. GutBuddy scans menus and 3M+ products to match your unique profile of 100+ conditions, allergies, and diets.',
+      title: 'Menu Check | AI Menu & Barcode Scanner for IBS',
+      description: 'Find safe food anywhere. Menu Check scans menus and 3M+ products to match your unique profile of 100+ conditions, allergies, and diets.',
       keywords: ['IBS', 'FODMAP', 'Barcode Scanner', 'Menu Scanner', 'Gut Health', 'Food Sensitivity']
     },
     marketing: {
@@ -70,22 +70,22 @@ export const apps: AppConfig[] = [
       subheadline: 'Scan menus and barcodes to find gut-friendly food tailored to your unique health profile.',
       problem: 'Navigating restaurant menus and grocery aisles with multiple food sensitivities is a constant, stressful challenge.',
       agitation: 'One wrong ingredient can cause days of discomfort. Generic advice isn\'t enough when you have a complex profile of allergies and conditions.',
-      solution: 'GutBuddy uses your detailed health profile—covering 100+ conditions and diets—to instantly analyze menus and 3M+ products, ensuring you always find food that\'s safe for you.',
+      solution: 'Menu Check uses your detailed health profile—covering 100+ conditions and diets—to instantly analyze menus and 3M+ products, ensuring you always find food that\'s safe for you.',
       benefits: [
         { title: 'Menu & Barcode Scanner', description: 'Instantly check restaurant dishes and over 3 million grocery items against your specific needs.', icon: 'Camera' },
         { title: '100+ Health Conditions', description: 'Personalized scanning based on your unique profile of conditions, allergies, and dietary requirements.', icon: 'ShieldCheck' },
         { title: 'AI Recipe Generator', description: 'Create safe, delicious recipes tailored specifically to your gut health needs.', icon: 'Utensils' }
       ],
       screenshots: [
-        '/gutbuddy/02.png',
-        '/gutbuddy/03.png',
-        '/gutbuddy/04.png'
+        '/menucheck/02.png',
+        '/menucheck/03.png',
+        '/menucheck/04.png'
       ]
     },
     legal: {
-      privacyPolicy: '1. Information We Collect\nGutBuddy collects information you provide directly: your name, age, gender, and dietary preferences when you create an account.\n\n2. Health Data\nWe collect and process data you log in the app, including meal times, food items, and mood ratings. This data is used solely to provide insights into your gut health.\n\n3. Use of Information\nWe use the information we collect to personalize your experience, provide health insights, and improve our services. We do not sell your personal data.\n\n4. Data Security\nWe take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access.\n\n5. Contact Us\nIf you have any questions about this Privacy Policy, please contact us at ashwinnanbazhagan@gmail.com.',
-      termsOfService: 'By using GutBuddy, you agree to the following terms:\n\n1. Medical Disclaimer\nGutBuddy is designed to help you track your meals and mood. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.\n\n2. User Accounts\nYou are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.\n\n3. Acceptable Use\nYou agree not to use the app for any unlawful purpose or in any way that could damage, disable, overburden, or impair the service.\n\n4. Changes to Terms\nWe reserve the right to modify these terms at any time. We will notify you of any significant changes by posting the new terms in the app.\n\n5. Contact Information\nEmail: ashwinnanbazhagan@gmail.com',
-      support: 'For any issues or questions regarding GutBuddy, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24-48 hours.',
+      privacyPolicy: '1. Information We Collect\nMenu Check collects information you provide directly: your name, age, gender, and dietary preferences when you create an account.\n\n2. Health Data\nWe collect and process data you log in the app, including meal times, food items, and mood ratings. This data is used solely to provide insights into your gut health.\n\n3. Use of Information\nWe use the information we collect to personalize your experience, provide health insights, and improve our services. We do not sell your personal data.\n\n4. Data Security\nWe take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access.\n\n5. Contact Us\nIf you have any questions about this Privacy Policy, please contact us at ashwinnanbazhagan@gmail.com.',
+      termsOfService: 'By using Menu Check, you agree to the following terms:\n\n1. Medical Disclaimer\nMenu Check is designed to help you track your meals and mood. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.\n\n2. User Accounts\nYou are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.\n\n3. Acceptable Use\nYou agree not to use the app for any unlawful purpose or in any way that could damage, disable, overburden, or impair the service.\n\n4. Changes to Terms\nWe reserve the right to modify these terms at any time. We will notify you of any significant changes by posting the new terms in the app.\n\n5. Contact Information\nEmail: ashwinnanbazhagan@gmail.com',
+      support: 'For any issues or questions regarding Menu Check, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24-48 hours.',
       lastUpdated: '15 March 2026'
     },
     design: {
