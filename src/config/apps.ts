@@ -135,50 +135,7 @@ export const apps: AppConfig[] = [
       templateId: 'academic'
     }
   },
-  {
-    id: 'playpulse',
-    name: 'PlayPulse',
-    category: 'Games',
-    tagline: 'Arcade Mini-Games Hub',
-    platforms: ['ios', 'android'],
-    description: 'Vibrant, high-energy mini-games hub for quick gaming sessions.',
-    appStoreUrl: 'https://apps.apple.com/us/app/playpulse/id1234567890',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.playpulse.games',
-    seo: {
-      title: 'PlayPulse | Vibrant Arcade Mini-Games',
-      description: 'A collection of addictive, high-energy mini-games with a Cyber Arcade aesthetic. Perfect for quick sessions and high-score chasing.',
-      keywords: ['Arcade Games', 'Mini Games', 'Cyberpunk', 'Gaming Hub', 'PlayPulse']
-    },
-    marketing: {
-      headline: 'Pure energy. Zero friction.',
-      subheadline: 'A curated hub of addictive mini-games designed for the modern arcade enthusiast.',
-      problem: 'Most mobile games are bloated with ads, long tutorials, and pay-to-win mechanics that kill the fun.',
-      agitation: 'You just want a quick game while waiting or commuting, but you spend half the time watching ads or navigating menus.',
-      solution: 'PlayPulse is the "Arcade Night" in your pocket. Quick, high-intensity games that start instantly and look stunning.',
-      benefits: [
-        { title: 'Instant Play', description: 'No tutorials, no fluff. Just pure gameplay from the first tap.', icon: 'Zap' },
-        { title: 'Cyber Aesthetic', description: 'High-contrast neon visuals that make every win feel electric.', icon: 'Activity' },
-        { title: 'Global Leaderboards', description: 'Compete against the world and pulse your way to the top.', icon: 'Trophy' }
-      ],
-      screenshots: [
-        '/playpulse/flapy.jpeg',
-        '/playpulse/score.jpeg'
-      ]
-    },
-    legal: {
-      privacyPolicy: '1. Information We Collect\nOur app does not require user accounts or sign-in. We do not collect personal information such as your name, email address, or contact information.\n\n2. Automatically Collected Information\nGame Statistics: We store your game scores, progress, and achievements locally on your device using AsyncStorage. This data never leaves your device.\nAdvertising ID: We collect your device\'s advertising identifier to serve personalized advertisements through Google AdMob.\n\n3. How We Use Your Information\nTo provide and maintain the game functionality. To track your game progress and statistics locally. To display relevant advertisements through Google AdMob.\n\n4. Data Storage and Security\nAll game data is stored locally on your device and is not transmitted to our servers.\n\n5. Contact Us\nIf you have any questions about this Privacy Policy, please contact us at:\nEmail: ashwinnanbazhagan@gmail.com',
-      termsOfService: '1. Acceptance of Terms\nBy downloading, installing, or using PlayPulse, you agree to be bound by these Terms of Service. If you do not agree to these Terms, please do not use the App.\n\n2. Description of Service\nPlayPulse is a mobile gaming application that provides access to multiple mini-games. The App is provided free of charge and is supported by advertisements.\n\n3. User Accounts\nThe App does not require user registration or accounts. All game progress and statistics are stored locally on your device.\n\n4. Advertising\nThe App displays advertisements provided by Google AdMob. By using the App, you acknowledge and agree that advertisements are an integral part of the App.\n\n5. Disclaimer of Warranties\nTHE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND.\n\n6. Contact Information\nEmail: ashwinnanbazhagan@gmail.com',
-      support: 'For any issues or questions regarding PlayPulse, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com',
-      lastUpdated: 'January 4, 2026'
-    },
-    design: {
-      primary: '#4ECDC4',
-      bg: '#000000',
-      fontFamily: 'font-inter',
-      templateId: 'arcade',
-      mesh: true
-    }
-  },
+
   {
     id: 'morningjournal',
     name: 'Honestly: Morning Journal',
@@ -221,44 +178,7 @@ export const apps: AppConfig[] = [
       mesh: true
     }
   },
-  {
-    id: 'mascotmaker',
-    name: 'Mascot Maker',
-    category: 'Design',
-    tagline: 'Create stunning mascots with AI',
-    platforms: ['web'],
-    description: 'Transform your idea into mascots, stickers, logos, 8-frame stories, and 3D product meshes.',
-    externalUrl: 'https://mascotmaker.io',
-    seo: {
-      title: 'Mascot Maker | AI Mascot & Character Generator',
-      description: 'Create professional mascots, logos, stickers, and product meshes. Custom AI generation with perfect character consistency.',
-      keywords: ['Design', 'AI', 'Mascots', 'Logos', 'Stickers', 'Storyboards']
-    },
-    marketing: {
-      headline: 'Create Worlds. Any Style. Zero Limits.',
-      subheadline: 'Transform any idea into a professional mascot. From Pixar-grade 3D renders to retro pixel art.',
-      problem: 'Creating professional brand mascots or unique character assets usually requires hiring expensive 3D artists or dedicating weeks to illustration studios.',
-      agitation: 'Generic AI generators spit out inconsistent blobs that rarely look like true, coherent characters—forcing you to constantly redraw or abandon your vision.',
-      solution: 'Mascot Maker gives you a complete Studio Workflow. Generate consistent core mascots, design vector logos, create sticker packs, direct 8-frame stories, or render 3D product meshes—all with the same character DNA.',
-      benefits: [
-        { title: 'Any Asset Type', description: 'From 2D stickers and logos to 8-frame storyboards and 3D product meshes.', icon: 'ShieldHighlight' },
-        { title: 'Identity Preservation', description: 'Maintain complete character consistency across different angles, emotions, and assets.', icon: 'Camera' },
-        { title: 'The Studio Workflow', description: 'Specialized engines designed to handle every stage of your creative production.', icon: 'Zap' }
-      ]
-    },
-    legal: {
-      privacyPolicy: 'See mascotmaker.io/privacy',
-      termsOfService: 'See mascotmaker.io/terms',
-      support: 'For any issues or questions regarding Mascot Maker, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com',
-      lastUpdated: '2026'
-    },
-    design: {
-      primary: '#8B5CF6',
-      bg: '#0F172A',
-      fontFamily: 'font-inter',
-      templateId: 'arcade'
-    }
-  },
+
   {
     id: 'roomsnap',
     name: 'RoomSnap',
@@ -304,45 +224,45 @@ export const apps: AppConfig[] = [
     }
   },
   {
-    id: 'faceaura',
-    name: 'FaceAura',
-    category: 'Lifestyle',
-    tagline: 'Analyze Your Face. Scale Your Aura.',
+    id: 'pepkit',
+    name: 'PepKit',
+    category: 'Health & Fitness',
+    tagline: 'Precision Peptide & GLP-1 Tracker',
     platforms: ['ios'],
-    description: 'The AI beauty system designed to turn your self-improvement goals into a clinical, 90-day ritual.',
-    appStoreUrl: 'https://apps.apple.com/app/faceaura-looksmax-ai/id6761001234',
+    description: 'The definitive dosing and research tool for peptide protocols. Calculate reconstitutions with clinical accuracy, log injections, and manage your vial inventory seamlessly.',
+    appStoreUrl: 'https://apps.apple.com/app/pepkit-peptide-calculator/id6761001234',
     seo: {
-      title: 'FaceAura | AI Looksmax & 90-Day Beauty Ritual',
-      description: 'Unlock your maximum potential with FaceAura. Get a clinical PSL score, precision face analysis, and a personalized 90-day glow up roadmap.',
-      keywords: ['Looksmax', 'Glow Up', 'Face Analysis', 'PSL Score', 'Symmetry', 'Aura']
+      title: 'PepKit | Peptide Calculator & GLP-1 Dose Tracker',
+      description: 'Master your peptide research with PepKit. The ultimate calculator for reconstitution, dosage, and inventory tracking for GLP-1 and amino acids.',
+      keywords: ['Peptide', 'GLP-1', 'Calculator', 'Dose Tracker', 'Amino Acids', 'Reconstitution', 'Suppco']
     },
     marketing: {
-      headline: 'Stop guessing. Start glowing.',
-      subheadline: 'The diagnostic-grade scanner that turns your looksmaxxing goals into a scientific 90-day ritual.',
-      problem: 'Most beauty advice is generic. You don\'t know what actually works for your specific facial structure, leading to wasted time and zero results.',
-      agitation: 'You see others ascending, but you\'re stuck guessing. Without a data-driven roadmap, you\'re just hoping for a glow up that never comes.',
-      solution: 'FaceAura uses clinical AI to analyze your symmetry, skin, and proportions. We don\'t just give you a score; we build your daily ritual for the next 90 days.',
+      headline: 'Precision dosing for safe research.',
+      subheadline: 'The diagnostic-grade calculator that turns complex peptide math into a simple, error-free ritual.',
+      problem: 'Peptide reconstitution math is complex and unforgiving. Single errors can ruin research protocols or lead to incorrect dosage.',
+      agitation: 'Logbooks and spreadsheets are disjointed. Missing a dose or running out of a vial mid-cycle sets your progress back and breaks consistency.',
+      solution: 'PepKit automates the complex math of peptide research. With low-inventory alerts and a human-centric dose calculator, you stay perfectly on track with clinical accuracy.',
       benefits: [
-        { title: 'AI Face Scan', description: 'Clinical-grade analysis of your symmetry, PSL score, and proportions.', icon: 'Camera' },
-        { title: '90-Day Ritual', description: 'Daily habits tailored to your specific face shape and goals.', icon: 'Clock' },
-        { title: 'Progress Tracking', description: 'See your aura ascend with detailed trend comparisons and history.', icon: 'Zap' }
+        { title: 'Human Dose Calculator', description: 'Instructional, step-by-step guides that eliminate mental math and prevent dosing errors.', icon: 'Zap' },
+        { title: 'Inventory Protection', description: 'Automatic deduction from your stock and local alerts when a vial falls below 20%.', icon: 'ShieldCheck' },
+        { title: 'Protocol Adherence', description: 'Personalized daily reminders and detailed logging to ensure you never miss a dose.', icon: 'Clock' }
       ],
       screenshots: [
-        '/faceaura/02.png',
-        '/faceaura/03.png',
-        '/faceaura/04.png'
+        '/pepkit/03.png',
+        '/pepkit/04.png',
+        '/pepkit/05.png'
       ]
     },
     legal: {
-      privacyPolicy: '1. Information We Collect\nFaceAura collects photos you upload for analysis. We also collect basic profile data including age, skin concerns, and hair type to personalize your 90-day ritual.\n\n2. AI Analysis\nYour photos are processed by Google Gemini Pro Vision to provide facial metrics and beauty insights. Photos are used solely for generation and are not used to train global AI models.\n\n3. Data Storage\nAnalysis results and ritual progress are stored locally on your device and via iCloud. We do not store your original photos on our permanent servers after analysis is complete.\n\n4. Subscription\nFaceAura Pro offers Monthly, Yearly, and Lifetime access. Subscriptions are managed through your Apple ID.\n\n5. Contact Us\nEmail: ashwinnanbazhagan@gmail.com',
-      termsOfService: '1. Standard EULA\nBy using FaceAura, you agree to the Apple Standard Licensed Application End User License Agreement (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n\n2. Appearance and Results\nAI-generated analysis and rituals are for self-improvement and informational purposes only. Results vary by individual consistency and biological factors.\n\n3. Medical Disclaimer\nFaceAura is not a medical diagnostic tool. For clinical skin or hair conditions, consult a licensed professional.\n\n4. Subscriptions\nPayments are charged to your iTunes Account. Auto-renewal can be managed in your Apple ID settings.',
-      support: 'For any issues or questions regarding FaceAura, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com',
-      lastUpdated: '8 May 2026'
+      privacyPolicy: `1. Data We Collect\nPepKit collects only the data you enter directly into the app: peptide names, dose amounts, injection sites, and cycle details. No biometric or identifiable personal data is required.\n\n2. How We Use Your Data\nAll logs and cycle data are stored locally on your device using standard iOS storage. Your data is never transmitted to any server, sold, or shared with third parties.\n\n3. Subscription & Payments\nSubscription billing is handled entirely by Apple. PepKit never sees or stores your payment information.\n\n4. RevenueCat\nWe use RevenueCat to verify subscription status via anonymized App Store receipts. No personal health data is shared.\n\n5. Health Disclaimer\nPepKit is a personal tracking tool and is not a medical device. Always consult a qualified healthcare professional before starting any peptide protocol.\n\n6. Contact\nFor privacy questions, contact: support@PepKit.app`,
+      termsOfService: `1. NO MEDICAL ADVICE\nPepKit provides personal tracking tools for informational purposes only. It does not constitute medical advice or treatment. Always seek the advice of your physician.\n\n2. USER RESPONSIBILITY\nYou are solely responsible for the accuracy of any data entered into the app (including dose calculations) and for any decisions made based on such information.\n\n3. LIMITATION OF LIABILITY\nIn no event shall the developers of PepKit be liable for any damages resulting from the use of the application or the peptides mentioned in the library.\n\n4. APPLE EULA\nBy using this software, you also agree to the Standard Apple Licensed Application End User License Agreement (EULA).`,
+      support: 'For support or questions regarding PepKit research tools, contact us at support@PepKit.app',
+      lastUpdated: '12 May 2026'
     },
     design: {
-      primary: '#D1A054',
+      primary: '#5856D6',
       bg: '#FDFBF7',
-      fontFamily: 'font-playfair',
+      fontFamily: 'font-inter',
       templateId: 'zen',
       grain: 0.05
     }
