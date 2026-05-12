@@ -230,7 +230,7 @@ export const apps: AppConfig[] = [
     tagline: 'Precision Peptide & GLP-1 Tracker',
     platforms: ['ios'],
     description: 'The definitive dosing and research tool for peptide protocols. Calculate reconstitutions with clinical accuracy, log injections, and manage your vial inventory seamlessly.',
-    appStoreUrl: 'https://apps.apple.com/app/pepkit-peptide-calculator/id6761001234',
+    appStoreUrl: 'https://apps.apple.com/us/app/peptide-calculator-pepkit/id6764238552',
     seo: {
       title: 'PepKit | Peptide Calculator & GLP-1 Dose Tracker',
       description: 'Master your peptide research with PepKit. The ultimate calculator for reconstitution, dosage, and inventory tracking for GLP-1 and amino acids.',
