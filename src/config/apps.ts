@@ -61,20 +61,20 @@ export const apps: AppConfig[] = [
     description: 'The AI gut health companion for IBS, Celiac, IBD, and more. Scan restaurant menus and over 3 million grocery products to find safe dishes and ingredients tailored to your specific profile of 100+ conditions, allergies, and diets.',
     appStoreUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
     seo: {
-      title: 'Menu Check | AI Menu & Barcode Scanner for IBS',
-      description: 'Find safe food anywhere. Menu Check scans menus and 3M+ products to match your unique profile of 100+ conditions, allergies, and diets.',
-      keywords: ['IBS', 'FODMAP', 'Barcode Scanner', 'Menu Scanner', 'Gut Health', 'Food Sensitivity']
+      title: 'Menu Check | IBS Food Scanner, FODMAP & Celiac Barcode Scanner',
+      description: 'Scan restaurant menus and 3M+ grocery barcodes for IBS, Celiac, Crohn\'s, FODMAP & 100+ conditions. Get instant Safe/Limit/Avoid verdicts. Free on iOS.',
+      keywords: ['IBS Food Scanner', 'FODMAP Scanner', 'Celiac App', 'Barcode Scanner Gut Health', 'Restaurant Menu Scanner', 'Gut Health App', 'Food Sensitivity App', 'Crohn\'s Food Checker', 'Safe Food App', 'AI Recipe Generator IBS']
     },
     marketing: {
-      headline: 'Eat safe. Everywhere.',
-      subheadline: 'Scan menus and barcodes to find gut-friendly food tailored to your unique health profile.',
-      problem: 'Navigating restaurant menus and grocery aisles with multiple food sensitivities is a constant, stressful challenge.',
-      agitation: 'One wrong ingredient can cause days of discomfort. Generic advice isn\'t enough when you have a complex profile of allergies and conditions.',
-      solution: 'Menu Check uses your detailed health profile—covering 100+ conditions and diets—to instantly analyze menus and 3M+ products, ensuring you always find food that\'s safe for you.',
+      headline: 'The Food Scanner Built for IBS, Celiac & Gut Conditions.',
+      subheadline: 'Scan menus, barcodes, and dishes. Get instant Safe/Limit/Avoid verdicts tailored to your exact conditions, allergies, and diet.',
+      problem: 'You\'re at a restaurant. The menu is three pages long. You ask the waiter but they\'re not sure. You guess. You pay for it the next three days.',
+      agitation: 'Reading every ingredient label takes forever. Online databases don\'t know your specific conditions. Generic "healthy eating" apps have no idea what IBS, FODMAP, or Celiac actually means for your body.',
+      solution: 'Menu Check builds a detailed profile of your conditions, allergies, diet preferences, and strictness level. Then it instantly analyzes any menu, dish, or barcode against your exact profile — giving you a clear Safe, Limit, or Avoid verdict every time.',
       benefits: [
-        { title: 'Menu & Barcode Scanner', description: 'Instantly check restaurant dishes and over 3 million grocery items against your specific needs.', icon: 'Camera' },
-        { title: '100+ Health Conditions', description: 'Personalized scanning based on your unique profile of conditions, allergies, and dietary requirements.', icon: 'ShieldCheck' },
-        { title: 'AI Recipe Generator', description: 'Create safe, delicious recipes tailored specifically to your gut health needs.', icon: 'Utensils' }
+        { title: 'Barcode Scanner', description: 'Scan 3M+ grocery products via OpenFoodFacts. Instant verdict against your profile.', icon: 'Camera' },
+        { title: 'Menu Photo Scan', description: 'Point your camera at a restaurant menu. AI reads and scores every dish for your conditions.', icon: 'ShieldCheck' },
+        { title: 'Safe Recipe Generator', description: 'AI generates gut-friendly recipes with prep time, difficulty, and gut notes — built for your exact profile.', icon: 'Utensils' }
       ],
       screenshots: [
         '/menucheck/02.png',
@@ -105,20 +105,21 @@ export const apps: AppConfig[] = [
     description: 'Learn from your own notes. Your apps stay locked until you pass today\'s quiz.',
     appStoreUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id67533760295',
     seo: {
-      title: 'Masterly AI | Study Discipline & AI App Blocker',
-      description: 'The ultimate study discipline app. Lock your distractions and only unlock them once you\'ve mastered your own study material with AI lessons.',
-      keywords: ['Study App', 'App Blocker', 'AI Flashcards', 'Discipline', 'Exam Prep', 'Masterly']
+      title: 'Masterly AI | AI Study Planner, Flashcards & App Blocker for Exams',
+      description: 'Upload your syllabus. Masterly builds a day-by-day exam plan, generates flashcards and quizzes from your notes, and locks your apps until you pass. Free on iOS.',
+      keywords: ['Study App', 'AI Study Planner', 'App Blocker for Students', 'Flashcard App', 'Exam Prep', 'AI Flashcards', 'Study Discipline', 'Masterly', 'Quiz App', 'Syllabus Planner']
     },
     marketing: {
-      headline: 'Your distractions cost you more than this.',
-      subheadline: 'Masterly locks your social apps until you pass a daily quiz generated from your own study notes.',
-      problem: 'Social media is engineered to steal your focus. Even when you try to study, one "quick check" of Instagram turns into an hour of doom-scrolling.',
-      agitation: 'Exams are approaching, and your notes remain unread. You lack the discipline to stay off your phone, and existing blockers are too easy to bypass.',
-      solution: 'Masterly turns your study material into the only key. Upload your PDF, and Masterly generates a daily lesson. You don\'t get your apps back until you demonstrate mastery.',
+      headline: 'The AI Study App That Locks Your Phone Until You Learn.',
+      subheadline: 'Upload your syllabus. Get a day-by-day plan to your exam. Flashcards, quizzes, and app blocking — all generated from your own notes.',
+      problem: 'You open Instagram to "quickly check" something and lose an hour. You don\'t know what to study or in what order. The night before the exam, your notes feel pointless.',
+      agitation: 'Existing app blockers are too easy to bypass. Generic study tools give you flashcards for someone else\'s material. And no app actually connects your studying to your phone unlocking.',
+      solution: 'Masterly uploads your syllabus, sets your exam date, and builds a day-by-day AI study plan. Each day: a lesson, flip flashcards, and a quiz — all from your own notes. Pass the quiz. Unlock your apps.',
       benefits: [
-        { title: 'App Blocker', description: 'Integrated with iOS Screen Time to keep you focused until your work is done.', icon: 'Lock' },
-        { title: 'AI Tutor', description: 'Generates micro-lessons and quizzes directly from your uploaded syllabus.', icon: 'BookOpen' },
-        { title: 'Streak System', description: 'Build a learning habit that\'s harder to break than your focus.', icon: 'Flame' }
+        { title: 'AI Study Plan', description: 'Set your exam date. AI breaks your syllabus into a day-by-day plan so you always know what to study next.', icon: 'BookOpen' },
+        { title: 'Flashcards + Quiz', description: 'Each day generates flip flashcards and a multiple-choice quiz from your own uploaded notes.', icon: 'Zap' },
+        { title: 'App Blocker Gate', description: 'iOS Screen Time locks your chosen apps during your study window. Pass today\'s quiz to unlock them.', icon: 'Lock' },
+        { title: 'Streak System', description: 'Build a daily streak. Consecutive days of quiz completion tracked automatically.', icon: 'Flame' }
       ],
       videoHero: '/masterly_demo.mp4'
     },
@@ -180,50 +181,6 @@ export const apps: AppConfig[] = [
   },
 
   {
-    id: 'roomsnap',
-    name: 'RoomSnap',
-    category: 'Lifestyle',
-    tagline: 'Scan, Design & Shop Furniture',
-    platforms: ['ios'],
-    description: 'Transform your room instantly with photorealistic 2K redesigns. Upload a photo, pick a style, and watch AI create magazine-quality designs while preserving your room\'s architecture.',
-    appStoreUrl: 'https://apps.apple.com/ie/app/roomsnap-ai-interior-design/id6760695323',
-    seo: {
-      title: 'RoomSnap | AI Interior Design & Room Redesign',
-      description: 'Transform your home in seconds with AI. Scan your room, choose a style, and shop furniture instantly.',
-      keywords: ['Interior Design', 'AI', 'Room Redesign', 'Home Decor', 'Furniture Shopping', 'RoomSnap']
-    },
-    marketing: {
-      headline: 'Redesign your room in seconds.',
-      subheadline: 'Photorealistic AI interior design that preserves your home\'s unique character.',
-      problem: 'Interior design is expensive, slow, and hard to visualize.',
-      agitation: 'You want a fresh look but can\'t see how new styles will work with your specific layout and furniture.',
-      solution: 'RoomSnap uses advanced AI to render your room in stunning new styles in seconds, giving you high-resolution 2K results that respect your room\'s structure.',
-      benefits: [
-        { title: '2K High-Res AI Rendering', description: 'See your room transformed in seconds with photorealistic quality.', icon: 'Zap' },
-        { title: 'Architectural Preservation', description: 'The AI respects your room\'s windows, doors, and structural layout.', icon: 'Maximize' },
-        { title: 'Multiple Design Styles', description: 'From Scandinavian to Industrial, explore dozens of professional looks.', icon: 'ShoppingBag' }
-      ],
-      screenshots: [
-        '/roomsnap/01.png',
-        '/roomsnap/04.png',
-        '/roomsnap/05.png'
-      ]
-    },
-    legal: {
-      privacyPolicy: '1. Information We Collect\nRoomSnap collects photos of your rooms to facilitate AI redesigns. We also collect basic account information (name, email) and subscription status.\n\n2. Use of AI\nWe use Google Gemini AI to process your room photos and generate design suggestions. Your photos are used solely for generation and are not used to train global AI models.\n\n3. Subscription Management\nRoomSnap offers Weekly, Monthly, and Yearly subscription plans. The Yearly plan includes a 3-day free trial. Subscriptions are managed through Apple iTunes.\n\n4. Data Security\nWe prioritize your privacy. Your room photos are stored securely and are only accessible via your account.\n\n5. Contact Us\nEmail: ashwinnanbazhagan@gmail.com',
-      termsOfService: '1. Standard EULA\nBy using RoomSnap, you agree to the Apple Standard Licensed Application End User License Agreement (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n\n2. Usage Terms\nRoomSnap is intended for interior design inspiration. AI-generated results may vary and are for visualization purposes only.\n\n3. Subscriptions\nPayments will be charged to your iTunes Account. Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period.',
-      support: 'For any issues or questions regarding RoomSnap, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24-48 hours.',
-      lastUpdated: '30 April 2026'
-    },
-    design: {
-      primary: '#C46F84',
-      bg: '#FDFBF7',
-      fontFamily: 'font-playfair',
-      templateId: 'zen',
-      grain: 0.05
-    }
-  },
-  {
     id: 'pepkit',
     name: 'PepKit',
     category: 'Health & Fitness',
@@ -232,20 +189,20 @@ export const apps: AppConfig[] = [
     description: 'The definitive dosing and research tool for peptide protocols. Calculate reconstitutions with clinical accuracy, log injections, and manage your vial inventory seamlessly.',
     appStoreUrl: 'https://apps.apple.com/us/app/peptide-calculator-pepkit/id6764238552',
     seo: {
-      title: 'PepKit | Peptide Calculator & GLP-1 Dose Tracker',
-      description: 'Master your peptide research with PepKit. The ultimate calculator for reconstitution, dosage, and inventory tracking for GLP-1 and amino acids.',
-      keywords: ['Peptide', 'GLP-1', 'Calculator', 'Dose Tracker', 'Amino Acids', 'Reconstitution', 'Suppco']
+      title: 'PepKit | Peptide Calculator, Cycle Tracker & GLP-1 Dose Logger',
+      description: 'The complete peptide research toolkit. Reconstitution calculator, cycle planner, inventory tracker, lab results, and compound level charts. Free on iOS.',
+      keywords: ['Peptide Calculator', 'GLP-1 Tracker', 'Peptide Reconstitution Calculator', 'Peptide Cycle Tracker', 'Peptide Dose Logger', 'BPC-157 Calculator', 'Peptide Inventory', 'Lab Results Tracker', 'Compound Levels', 'Peptide App']
     },
     marketing: {
-      headline: 'Precision dosing for safe research.',
-      subheadline: 'The diagnostic-grade calculator that turns complex peptide math into a simple, error-free ritual.',
-      problem: 'Peptide reconstitution math is complex and unforgiving. Single errors can ruin research protocols or lead to incorrect dosage.',
-      agitation: 'Logbooks and spreadsheets are disjointed. Missing a dose or running out of a vial mid-cycle sets your progress back and breaks consistency.',
-      solution: 'PepKit automates the complex math of peptide research. With low-inventory alerts and a human-centric dose calculator, you stay perfectly on track with clinical accuracy.',
+      headline: 'The Peptide Calculator & Cycle Tracker Built for Precision.',
+      subheadline: 'Reconstitution math, dose logging, cycle tracking, inventory alerts, and lab results — all in one place.',
+      problem: 'Reconstitution math is unforgiving. One wrong calculation wastes an entire vial. Most people track doses in scattered notes, run out of vials mid-cycle with no warning, and have no way to visualize compound levels over time.',
+      agitation: 'Spreadsheets don\'t alert you when stock is low. Notes don\'t calculate how much BAC water to use. And nothing connects your lab results to your active protocol.',
+      solution: 'PepKit handles the math, the tracking, the alerts, and the visualization. Step-by-step reconstitution guides. Auto-deducting inventory. Day-by-day dose logging with a body map. Compound level curves based on half-life. Lab results alongside your cycles.',
       benefits: [
-        { title: 'Human Dose Calculator', description: 'Instructional, step-by-step guides that eliminate mental math and prevent dosing errors.', icon: 'Zap' },
-        { title: 'Inventory Protection', description: 'Automatic deduction from your stock and local alerts when a vial falls below 20%.', icon: 'ShieldCheck' },
-        { title: 'Protocol Adherence', description: 'Personalized daily reminders and detailed logging to ensure you never miss a dose.', icon: 'Clock' }
+        { title: 'Reconstitution Calculator', description: 'Step-by-step guide: vial size, BAC water volume, desired dose → exact units to draw. No math errors.', icon: 'Zap' },
+        { title: 'Cycle Planner', description: 'Multi-compound protocols with start/end dates. See all active cycles and what\'s due today.', icon: 'Clock' },
+        { title: 'Inventory + Lab Tracking', description: 'Auto-deducting vial stock with 20% low alerts. Log bloodwork and view compound level curves.', icon: 'ShieldCheck' }
       ],
       screenshots: [
         '/pepkit/03.png',

@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { apps } from '../config/apps';
 import { ZenTemplate, AcademicTemplate, ArcadeTemplate, SanctuaryTemplate } from '../templates/AppTemplates';
+import MasterlyLanding from './MasterlyLanding';
+import MenuCheckLanding from './MenuCheckLanding';
+import PepKitLanding from './PepKitLanding';
 
 interface AppLandingProps {
   section?: 'privacy' | 'terms' | 'support';
@@ -15,7 +18,7 @@ const AppLanding: React.FC<AppLandingProps> = ({ section, appId: propAppId }) =>
 
   useEffect(() => {
     if (app) {
-      document.title = `${app.name} | Briefly.live`;
+      document.title = app.seo.title;
     }
   }, [app]);
 
@@ -23,12 +26,17 @@ const AppLanding: React.FC<AppLandingProps> = ({ section, appId: propAppId }) =>
     return <Navigate to="/" replace />;
   }
 
-  // Handle external redirects if accidentally navigated to (though Home handles this with <a> tags)
-  if (app.externalUrl && !section) {
+  if (app.externalUrl && !section && typeof window !== 'undefined') {
     window.location.href = app.externalUrl;
     return null;
   }
 
+  // Custom landing pages per app
+  if (app.id === 'masterly') return <MasterlyLanding app={app} section={section} />;
+  if (app.id === 'menucheck') return <MenuCheckLanding app={app} section={section} />;
+  if (app.id === 'pepkit') return <PepKitLanding app={app} section={section} />;
+
+  // Fallback to template system (Morning Journal → SanctuaryTemplate)
   const TemplateMap = {
     zen: ZenTemplate,
     academic: AcademicTemplate,
@@ -37,7 +45,6 @@ const AppLanding: React.FC<AppLandingProps> = ({ section, appId: propAppId }) =>
   };
 
   const SelectedTemplate = TemplateMap[app.design.templateId] || ZenTemplate;
-
   return <SelectedTemplate app={app} section={section} />;
 };
 
