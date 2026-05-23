@@ -5,6 +5,7 @@ import { ZenTemplate, AcademicTemplate, ArcadeTemplate, SanctuaryTemplate } from
 import MasterlyLanding from './MasterlyLanding';
 import MenuCheckLanding from './MenuCheckLanding';
 import PepKitLanding from './PepKitLanding';
+import HonestlyLanding from './HonestlyLanding';
 
 interface AppLandingProps {
   section?: 'privacy' | 'terms' | 'support';
@@ -35,6 +36,7 @@ const AppLanding: React.FC<AppLandingProps> = ({ section, appId: propAppId }) =>
   if (app.id === 'masterly') return <MasterlyLanding app={app} section={section} />;
   if (app.id === 'menucheck') return <MenuCheckLanding app={app} section={section} />;
   if (app.id === 'pepkit') return <PepKitLanding app={app} section={section} />;
+  if (app.id === 'morningjournal') return <HonestlyLanding app={app} section={section} />;
 
   // Fallback to template system (Morning Journal → SanctuaryTemplate)
   const TemplateMap = {
