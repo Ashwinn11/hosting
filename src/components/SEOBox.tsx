@@ -8,9 +8,18 @@ interface SEOProps {
   appId?: string;
   appStoreUrl?: string;
   appCategory?: string;
+  aggregateRating?: { ratingValue: string; ratingCount: string };
+  faqs?: Array<{ question: string; answer: string }>;
+  appNumericId?: string;
+  screenshots?: string[];
 }
 
-const SEOBox: React.FC<SEOProps> = ({ title, description, keywords, ogImage, appId, appStoreUrl, appCategory }) => {
+const BASE = 'https://briefly.live';
+
+const SEOBox: React.FC<SEOProps> = ({
+  title, description, keywords, ogImage, appId, appStoreUrl, appCategory,
+  aggregateRating, faqs, appNumericId, screenshots,
+}) => {
   useEffect(() => {
     document.title = title;
 
@@ -26,8 +35,9 @@ const SEOBox: React.FC<SEOProps> = ({ title, description, keywords, ogImage, app
       el.setAttribute('content', content);
     };
 
-    const canonicalUrl = `https://briefly.live/${appId || ''}`;
-    const image = ogImage || 'https://briefly.live/og-image.png';
+    const canonicalUrl = `${BASE}/${appId || ''}`;
+    const image = ogImage || `${BASE}/og-image.png`;
+    const appName = title.split('|')[0].trim();
 
     // Basic
     setMetaName('description', description);
@@ -49,35 +59,83 @@ const SEOBox: React.FC<SEOProps> = ({ title, description, keywords, ogImage, app
     setMetaName('twitter:image', image);
     setMetaName('twitter:creator', '@shwiinn');
 
+    if (appId && appNumericId) {
+      setMetaName('apple-itunes-app', `app-id=${appNumericId}, app-argument=${BASE}/${appId}`);
+      setMetaProp('al:ios:app_name', appName);
+      setMetaProp('al:ios:app_store_id', appNumericId);
+      setMetaProp('al:ios:url', `${appId}://home`);
+      setMetaName('twitter:app:name:iphone', appName);
+      setMetaName('twitter:app:id:iphone', appNumericId);
+    }
+
     // Canonical
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement('link'); canonical.setAttribute('rel', 'canonical'); document.head.appendChild(canonical); }
     canonical.setAttribute('href', canonicalUrl);
 
-    // JSON-LD Schema
-    let script = document.querySelector('script[type="application/ld+json"]');
-    if (!script) { script = document.createElement('script'); script.setAttribute('type', 'application/ld+json'); document.head.appendChild(script); }
+    // Primary JSON-LD
+    let script = document.querySelector('script[data-seo="primary"]') as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.setAttribute('type', 'application/ld+json');
+      script.setAttribute('data-seo', 'primary');
+      document.head.appendChild(script);
+    }
 
     const schema = appId ? {
       '@context': 'https://schema.org',
-      '@type': 'SoftwareApplication',
-      name: title.split('|')[0].trim(),
+      '@type': 'MobileApplication',
+      name: appName,
       description,
       applicationCategory: appCategory || 'HealthApplication',
       operatingSystem: 'iOS',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       url: appStoreUrl || canonicalUrl,
-      author: { '@type': 'Person', name: 'Ashwin Anbazhagan', url: 'https://briefly.live' },
+      author: { '@type': 'Person', name: 'Ashwin Anbazhagan', url: BASE },
+      ...(aggregateRating && {
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: aggregateRating.ratingValue,
+          ratingCount: aggregateRating.ratingCount,
+        },
+      }),
+      ...(screenshots?.length && {
+        screenshot: screenshots.map(s => `${BASE}${s}`),
+      }),
     } : {
       '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: 'Ashwin Anbazhagan',
-      jobTitle: 'App Developer & Founder',
-      url: 'https://briefly.live',
+      '@type': 'Organization',
+      name: 'Briefly',
+      url: BASE,
+      logo: `${BASE}/apple-touch-icon.png`,
+      sameAs: ['https://twitter.com/shwiinn'],
+      founder: { '@type': 'Person', name: 'Ashwin Anbazhagan' },
     };
 
     script.textContent = JSON.stringify(schema);
-  }, [title, description, keywords, ogImage, appId, appStoreUrl, appCategory]);
+
+    // FAQPage JSON-LD
+    let faqScript = document.querySelector('script[data-seo="faq"]') as HTMLScriptElement | null;
+    if (faqs && faqs.length > 0) {
+      if (!faqScript) {
+        faqScript = document.createElement('script');
+        faqScript.setAttribute('type', 'application/ld+json');
+        faqScript.setAttribute('data-seo', 'faq');
+        document.head.appendChild(faqScript);
+      }
+      faqScript.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(f => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+      });
+    } else if (faqScript) {
+      faqScript.remove();
+    }
+  }, [title, description, keywords, ogImage, appId, appStoreUrl, appCategory, aggregateRating, faqs, appNumericId, screenshots]);
 
   return null;
 };

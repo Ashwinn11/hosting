@@ -1,0 +1,12 @@
+# Briefly.live — iOS App Portfolio by Ashwin Anbazhagan
+
+> Four iOS apps across gut health, AI-powered studying, morning rituals, and peptide research.
+
+## Apps
+- [Menu Check](https://briefly.live/menucheck): AI barcode + restaurant menu scanner for IBS, FODMAP, Celiac, and 100+ gut conditions. Instant Safe/Limit/Avoid verdicts.
+- [Masterly AI](https://briefly.live/masterly): Upload your syllabus, get a day-by-day AI study plan with flashcards and quizzes. Apps stay locked until you pass the quiz.
+- [Honestly: Morning Journal](https://briefly.live/morningjournal): 4-step morning ritual (Mood, Journal, 3 Big Wins, Gratitude) with app blocking and home screen widgets.
+- [PepKit](https://briefly.live/pepkit): Peptide reconstitution calculator, cycle planner, inventory tracker, and lab results log. Clinical accuracy for BPC-157, TB-500, GLP-1, and more.
+
+## About
+- [Homepage](https://briefly.live): Ashwin Anbazhagan, indie iOS developer.
