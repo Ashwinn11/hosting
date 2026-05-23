@@ -22,6 +22,11 @@ const AppLayout: React.FC<AppLayoutProps> = ({ app, children }) => {
         description={app.seo.description}
         keywords={app.seo.keywords}
         appId={app.id}
+        appStoreUrl={app.appStoreUrl}
+        aggregateRating={app.aggregateRating}
+        faqs={app.marketing.faqs}
+        appNumericId={app.appNumericId}
+        screenshots={app.marketing.screenshots}
       />
 
       {app.design.mesh && <div className="mesh-bg opacity-30" />}

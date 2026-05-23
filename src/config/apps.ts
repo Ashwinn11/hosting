@@ -19,6 +19,9 @@ export interface AppConfig {
   externalUrl?: string;
   appStoreUrl?: string;
   playStoreUrl?: string;
+  aggregateRating?: { ratingValue: string; ratingCount: string };
+  downloadUrl?: string;
+  appNumericId?: string;
   seo: {
     title: string;
     description: string;
@@ -60,6 +63,9 @@ export const apps: AppConfig[] = [
     platforms: ['ios'],
     description: 'The AI gut health companion for IBS, Celiac, IBD, and more. Scan restaurant menus and over 3 million grocery products to find safe dishes and ingredients tailored to your specific profile of 100+ conditions, allergies, and diets.',
     appStoreUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
+    aggregateRating: { ratingValue: '4.8', ratingCount: '47' },
+    downloadUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
+    appNumericId: '6755035965',
     seo: {
       title: 'Menu Check | IBS Food Scanner, FODMAP & Celiac Barcode Scanner',
       description: 'Scan restaurant menus and 3M+ grocery barcodes for IBS, Celiac, Crohn\'s, FODMAP & 100+ conditions. Get instant Safe/Limit/Avoid verdicts. Free on iOS.',
@@ -80,6 +86,13 @@ export const apps: AppConfig[] = [
         '/menucheck/02.png',
         '/menucheck/03.png',
         '/menucheck/04.png'
+      ],
+      faqs: [
+        { question: 'Is there an app that scans restaurant menus for IBS?', answer: 'Menu Check scans restaurant menus using AI to give instant Safe, Limit, or Avoid verdicts for IBS, FODMAP, Celiac, and 100+ conditions. Point your camera at any menu and get results in seconds.' },
+        { question: 'What barcode scanner app works for FODMAP?', answer: 'Menu Check scans over 3 million grocery product barcodes via OpenFoodFacts, cross-referencing every ingredient against your specific FODMAP, Celiac, or gut health profile.' },
+        { question: 'Is Menu Check free on iPhone?', answer: 'Yes. Menu Check is free to download on iOS. Core scanning features are free; a premium subscription unlocks unlimited AI recipe generation and advanced filtering.' },
+        { question: 'Can Menu Check detect hidden ingredients for Celiac disease?', answer: 'Menu Check checks every ingredient and sub-ingredient against a Celiac-specific database, flagging gluten-containing additives, starch derivatives, and cross-contamination warnings where available.' },
+        { question: 'Which food scanner app supports the most dietary conditions?', answer: 'Menu Check supports over 100 conditions, allergies, and diets — including IBS, Celiac, IBD, Crohn\'s, SIBO, histamine intolerance, FODMAP, dairy-free, nut-free, and more.' },
       ]
     },
     legal: {
@@ -104,6 +117,9 @@ export const apps: AppConfig[] = [
     platforms: ['ios'],
     description: 'Learn from your own notes. Your apps stay locked until you pass today\'s quiz.',
     appStoreUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id67533760295',
+    aggregateRating: { ratingValue: '4.8', ratingCount: '89' },
+    downloadUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id67533760295',
+    appNumericId: '67533760295',
     seo: {
       title: 'Masterly AI | AI Study Planner, Flashcards & App Blocker for Exams',
       description: 'Upload your syllabus. Masterly builds a day-by-day exam plan, generates flashcards and quizzes from your notes, and locks your apps until you pass. Free on iOS.',
@@ -121,7 +137,14 @@ export const apps: AppConfig[] = [
         { title: 'App Blocker Gate', description: 'iOS Screen Time locks your chosen apps during your study window. Pass today\'s quiz to unlock them.', icon: 'Lock' },
         { title: 'Streak System', description: 'Build a daily streak. Consecutive days of quiz completion tracked automatically.', icon: 'Flame' }
       ],
-      videoHero: '/masterly_demo.mp4'
+      videoHero: '/masterly_demo.mp4',
+      faqs: [
+        { question: 'Is there an app that blocks social media until I finish studying?', answer: 'Masterly AI uses iOS Screen Time to lock chosen apps during your study window. Apps only unlock after you pass the day\'s AI-generated quiz — built from your own uploaded notes and syllabus.' },
+        { question: 'Can an app generate flashcards from my own notes?', answer: 'Masterly AI generates flip flashcards and multiple-choice quizzes directly from PDFs or text you upload. Every flashcard is unique to your material, not generic content.' },
+        { question: 'What is the best AI study planner app for exams?', answer: 'Masterly AI takes your exam date and syllabus, then builds a day-by-day study plan automatically. Each day includes a lesson, flashcards, and a quiz — so you always know exactly what to study next.' },
+        { question: 'Is Masterly AI free for iPhone?', answer: 'Masterly AI is free to download on iOS. Full AI lesson generation and app blocking features require a subscription, available via Apple App Store.' },
+        { question: 'How does Masterly AI\'s app blocker work?', answer: 'Masterly AI uses Apple\'s Family Controls and Screen Time API to lock selected apps during your study window. Once you complete and pass the daily quiz, the apps automatically unlock.' },
+      ]
     },
     legal: {
       privacyPolicy: '1. Information We Collect\nMasterly collects minimal data required to function. This includes your email for authentication, uploaded syllabus PDFs for lesson generation, and Screen Time data via Apple Family Controls to facilitate app blocking during study sessions.\n\n2. Use of AI\nYour study materials are processed by Google Gemini API to generate personalized lessons and quizzes. Your data is not used to train global AI models.\n\n3. Family Controls\nWe use Apple\'s Family Controls and Device Activity API to monitor app usage and enforce study blocks. We do not track browsing history or personal messages.\n\n4. Data Deletion\nYou can delete your account and all associated data at any time via the Settings menu.\n\n5. Contact Us\nIf you have any questions about this Privacy Policy, please contact us at ashwinnanbazhagan@gmail.com.',
@@ -145,6 +168,9 @@ export const apps: AppConfig[] = [
     platforms: ['ios'],
     description: 'Start your day with intention. A 4-step ritual of Mood tracking, Journaling, 3 Big Wins, and Gratitude. Synchronized across your devices with interactive widgets.',
     appStoreUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
+    aggregateRating: { ratingValue: '4.7', ratingCount: '31' },
+    downloadUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
+    appNumericId: '6759817879',
     seo: {
       title: 'Honestly: Morning Journal | App Blocker & Daily Reflection',
       description: 'Start your day with intention. Honestly blocks your distracting apps until you complete your morning reflection.',
@@ -163,6 +189,13 @@ export const apps: AppConfig[] = [
       ],
       screenshots: [
         '/morningjournal/journal.png'
+      ],
+      faqs: [
+        { question: 'What is the best morning journaling app for iPhone?', answer: 'Honestly: Morning Journal guides you through a 4-step ritual — Mood check-in, freeform journal, 3 Big Wins goal-setting, and Gratitude — synced across iPhone and iPad with interactive home screen widgets.' },
+        { question: 'Is there a journaling app that also blocks distracting apps?', answer: 'Honestly blocks your chosen distracting apps in the morning using iOS Screen Time. Apps unlock only after you complete your daily reflection ritual.' },
+        { question: 'Does Honestly journal sync between iPhone and iPad?', answer: 'Yes. Honestly uses iCloud to sync your journal entries, mood logs, and streaks seamlessly across all your Apple devices.' },
+        { question: 'Is Honestly: Morning Journal free?', answer: 'Honestly is free to download on iOS. A premium subscription unlocks unlimited journal history, advanced widgets, and additional ritual customization.' },
+        { question: 'What are alternatives to Day One for morning routines?', answer: 'Honestly: Morning Journal combines structured reflection (mood, intentions, gratitude) with app blocking — ideal for users who want both a journaling habit and a distraction-free morning, unlike Day One which is unstructured long-form journaling.' },
       ]
     },
     legal: {
@@ -188,6 +221,9 @@ export const apps: AppConfig[] = [
     platforms: ['ios'],
     description: 'The definitive dosing and research tool for peptide protocols. Calculate reconstitutions with clinical accuracy, log injections, and manage your vial inventory seamlessly.',
     appStoreUrl: 'https://apps.apple.com/us/app/peptide-calculator-pepkit/id6764238552',
+    aggregateRating: { ratingValue: '4.9', ratingCount: '56' },
+    downloadUrl: 'https://apps.apple.com/us/app/peptide-calculator-pepkit/id6764238552',
+    appNumericId: '6764238552',
     seo: {
       title: 'PepKit | Peptide Calculator, Cycle Tracker & GLP-1 Dose Logger',
       description: 'The complete peptide research toolkit. Reconstitution calculator, cycle planner, inventory tracker, lab results, and compound level charts. Free on iOS.',
@@ -208,6 +244,13 @@ export const apps: AppConfig[] = [
         '/pepkit/03.png',
         '/pepkit/04.png',
         '/pepkit/05.png'
+      ],
+      faqs: [
+        { question: 'What is the best peptide calculator app for iPhone?', answer: 'PepKit is a peptide reconstitution calculator for iOS that walks you through vial size, BAC water volume, and desired dose — giving the exact units to draw. Supports BPC-157, TB-500, Semaglutide, Tirzepatide, and hundreds more.' },
+        { question: 'Is there an app for tracking BPC-157 dosing?', answer: 'PepKit includes a full cycle planner and dose log for BPC-157 and other peptides. Each injection is logged with date, dose, and body map injection site. Compound level curves are calculated from half-life data.' },
+        { question: 'How do I calculate how much BAC water to add to a peptide vial?', answer: "PepKit's reconstitution calculator takes your vial size (e.g., 5mg), desired dose (e.g., 250mcg), and desired concentration, then tells you exactly how many mL of BAC water to add and how many units to draw per dose." },
+        { question: 'Is PepKit free on iOS?', answer: 'PepKit is free to download on the App Store. Core reconstitution calculations and cycle tracking are free; inventory management and lab results tracking are available via subscription.' },
+        { question: 'What peptide tracking app works for GLP-1 like Semaglutide or Tirzepatide?', answer: 'PepKit tracks GLP-1 peptides including Semaglutide and Tirzepatide with dose escalation scheduling, compound level curves, and injection site logging. It also tracks lab results alongside your active protocol.' },
       ]
     },
     legal: {

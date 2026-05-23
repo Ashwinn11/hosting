@@ -31,6 +31,10 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
         appId={app.id}
         appStoreUrl={app.appStoreUrl}
         appCategory="EducationApplication"
+        aggregateRating={app.aggregateRating}
+        faqs={app.marketing.faqs}
+        appNumericId={app.appNumericId}
+        screenshots={app.marketing.screenshots}
       />
 
       {/* Nav */}

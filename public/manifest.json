@@ -1,7 +1,7 @@
 {
-    "name": "Briefly - Premium Mobile Apps",
+    "name": "Briefly — iOS Apps for Health, Education & Wellness",
     "short_name": "Briefly",
-    "description": "Discover premium mobile applications by Briefly. PlayPulse and more - beautifully crafted apps available on iOS and Android.",
+    "description": "Four iOS apps by Ashwin Anbazhagan: gut health scanner, AI study planner, morning journaling, and peptide tracking.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#0f172a",
@@ -16,8 +16,10 @@
         }
     ],
     "categories": [
-        "productivity",
-        "utilities"
+        "health",
+        "education",
+        "lifestyle",
+        "productivity"
     ],
     "lang": "en-US",
     "dir": "ltr"
