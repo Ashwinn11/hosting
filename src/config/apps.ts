@@ -116,10 +116,10 @@ export const apps: AppConfig[] = [
     tagline: 'AI Study Discipline & App Blocker',
     platforms: ['ios'],
     description: 'Learn from your own notes. Your apps stay locked until you pass today\'s quiz.',
-    appStoreUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id67533760295',
+    appStoreUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id6753760295',
     aggregateRating: { ratingValue: '4.8', ratingCount: '89' },
-    downloadUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id67533760295',
-    appNumericId: '67533760295',
+    downloadUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id6753760295',
+    appNumericId: '6753760295',
     seo: {
       title: 'Masterly AI | AI Study Planner, Flashcards & App Blocker for Exams',
       description: 'Upload your syllabus. Masterly builds a day-by-day exam plan, generates flashcards and quizzes from your notes, and locks your apps until you pass. Free on iOS.',
