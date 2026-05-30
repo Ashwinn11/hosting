@@ -161,55 +161,58 @@ export const apps: AppConfig[] = [
   },
 
   {
-    id: 'morningjournal',
-    name: 'Honestly: Morning Journal',
+    id: 'honestly',
+    name: 'Honestly',
     category: 'Lifestyle',
-    tagline: 'Block Apps, Clear Your Mind',
+    tagline: 'Morning Ritual & App Blocker',
     platforms: ['ios'],
-    description: 'Start your day with intention. A 4-step ritual of Mood tracking, Journaling, 3 Big Wins, and Gratitude. Synchronized across your devices with interactive widgets.',
+    description: 'Honestly is a morning ritual app with a warm, paper-feel design. Pick your mood, write to a daily prompt tailored to your goal, add a gratitude note — and your distracting apps unlock. A plant grows as your streak builds.',
     appStoreUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
     aggregateRating: { ratingValue: '4.7', ratingCount: '31' },
     downloadUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
     appNumericId: '6759817879',
     seo: {
-      title: 'Honestly: Morning Journal | App Blocker & Daily Reflection',
-      description: 'Start your day with intention. Honestly blocks your distracting apps until you complete your morning reflection.',
-      keywords: ['Honestly', 'Journaling', 'App Blocker', 'Morning Routine', 'Screen Time', 'Mindfulness']
+      title: 'Honestly | Morning Ritual App & App Blocker for iPhone',
+      description: 'Honestly locks distracting apps until you complete your morning ritual — mood check-in, guided journal prompt, and gratitude. Watch your plant grow with every streak. Free on iOS.',
+      keywords: ['Honestly', 'Morning Ritual App', 'App Blocker', 'Morning Journal', 'Guided Journaling', 'Daily Gratitude App', 'Screen Time App', 'Mindfulness', 'Morning Routine iPhone', 'Journaling App']
     },
     marketing: {
-      headline: 'Reclaim your morning focus.',
-      subheadline: 'The 4-step ritual to clear your mind and set your daily intentions.',
-      problem: 'Starting the day by doom-scrolling ruins your focus and productivity.',
-      agitation: 'Notifications and feeds steal your most productive hours before you even get out of bed.',
-      solution: 'Honestly combines a calming journaling experience with powerful focus tools, ensuring you start your day proactively.',
+      headline: 'Your morning doesn\'t have to start with someone else\'s content.',
+      subheadline: 'A 3-step ritual — mood, journal, gratitude — and your apps unlock. Takes 5 minutes. Changes how your whole day feels.',
+      problem: 'You wake up and immediately open Instagram, X, or your inbox. Before you\'ve had a single thought of your own, you\'re already reacting to everyone else\'s world.',
+      agitation: 'Willpower doesn\'t work. Timers don\'t work. There\'s no friction between you and the scroll — so you scroll.',
+      solution: 'Honestly locks your distracting apps via iOS Screen Time until you complete your morning ritual. Pick your mood. Write to a daily journal prompt tailored to what you want — clarity, peace, focus, or energy. Add a gratitude note. Then your apps unlock. And a little plant grows.',
       benefits: [
-        { title: '4-Step Morning Ritual', description: 'Mood, Journal, 3 Big Wins, and Gratitude to center your mind.', icon: 'Moon' },
-        { title: 'Interactive Widgets', description: 'Track your Big Wins and Streaks right from your Home Screen.', icon: 'ShieldHighlight' },
-        { title: 'iCloud Sync', description: 'Your journals and focus data sync seamlessly between iPhone and iPad.', icon: 'Lock' }
+        { title: 'Mood-Led Ritual', description: 'Pick how you\'re actually feeling — Happy, Okay, Sad, Awful, or Cry. It sets the tone for your journal.', icon: 'Sun' },
+        { title: 'Personalized Daily Prompts', description: 'Journal prompts rotate daily and adapt to your chosen goal: Clarity, Peace, Focus, or Energy.', icon: 'PenLine' },
+        { title: 'Gratitude Step', description: 'A rotating gratitude question with suggestion chips to make it feel fresh every morning.', icon: 'Heart' },
+        { title: 'App Blocker Gate', description: 'Distracting apps stay locked via iOS Screen Time until you finish. Not willpower — a gate.', icon: 'Lock' },
+        { title: 'Plant Growth System', description: 'Earn a sprout every morning. Your plant grows through 4 stages over 180+ days — a living record of your streak.', icon: 'Leaf' },
+        { title: 'Home Screen Widgets', description: 'See your mood, journal streak, and plant right on your home screen without opening the app.', icon: 'LayoutGrid' }
       ],
       screenshots: [
-        '/morningjournal/journal.png'
+        '/honestly/journal.png'
       ],
       faqs: [
-        { question: 'What is the best morning journaling app for iPhone?', answer: 'Honestly: Morning Journal guides you through a 4-step ritual — Mood check-in, freeform journal, 3 Big Wins goal-setting, and Gratitude — synced across iPhone and iPad with interactive home screen widgets.' },
-        { question: 'Is there a journaling app that also blocks distracting apps?', answer: 'Honestly blocks your chosen distracting apps in the morning using iOS Screen Time. Apps unlock only after you complete your daily reflection ritual.' },
-        { question: 'Does Honestly journal sync between iPhone and iPad?', answer: 'Yes. Honestly uses iCloud to sync your journal entries, mood logs, and streaks seamlessly across all your Apple devices.' },
-        { question: 'Is Honestly: Morning Journal free?', answer: 'Honestly is free to download on iOS. A premium subscription unlocks unlimited journal history, advanced widgets, and additional ritual customization.' },
-        { question: 'What are alternatives to Day One for morning routines?', answer: 'Honestly: Morning Journal combines structured reflection (mood, intentions, gratitude) with app blocking — ideal for users who want both a journaling habit and a distraction-free morning, unlike Day One which is unstructured long-form journaling.' },
+        { question: 'What is the best morning journaling app for iPhone?', answer: 'Honestly guides you through a 3-step morning ritual — mood check-in, a personalized daily journal prompt, and a gratitude question — with a plant that grows as your streak builds. Available free on iOS.' },
+        { question: 'Is there a journaling app that also blocks distracting apps?', answer: 'Honestly blocks your chosen distracting apps via iOS Screen Time until you complete your morning ritual. Once you finish, your apps unlock automatically.' },
+        { question: 'What journal prompts does Honestly use?', answer: 'Honestly rotates through 20+ journal prompts per day that adapt to your chosen morning goal — Clarity, Peace, Focus, or Energy — so it never feels repetitive.' },
+        { question: 'Is Honestly free?', answer: 'Honestly is free to download on iOS. A premium subscription unlocks full journal history, advanced widgets, and multilingual support.' },
+        { question: 'What are alternatives to Day One for morning routines?', answer: 'Honestly is built specifically for a structured morning ritual with app blocking and a growing plant streak system — whereas Day One is an open-ended long-form diary. Honestly is for people who want a morning habit, not just a journal.' },
       ]
     },
     legal: {
-      privacyPolicy: 'Data collection:\n- We collect no personal information\n- We do not use third-party analytics\n- We do not track your activity across other apps\n- Journal entries are stored securely using Apple\'s protected local storage\n\nData retention and deletion:\n- Journal data remains on-device unless you delete it\n- You can delete your account and local data from Settings > Account > Delete Account\n\nContact:\n- Email: ashwinnanbazhagan@gmail.com',
+      privacyPolicy: 'Data collection:\n- We collect no personal information\n- We do not use third-party analytics\n- We do not track your activity across other apps\n- Journal entries are stored securely on-device using Apple\'s protected local storage\n\nData retention and deletion:\n- Journal data remains on-device unless you delete it\n- You can delete all local data from Settings inside the app\n\nContact:\n- Email: ashwinnanbazhagan@gmail.com',
       termsOfService: 'Subscription terms:\n- Premium features are offered as auto-renewing subscriptions\n- Payment is charged to your Apple ID account at confirmation\n- Subscription renews automatically unless canceled at least 24 hours before the period ends\n- You can manage or cancel subscriptions in Apple ID Subscriptions settings\n- Restore Purchases is available in the app\n\nUsage:\n- You are responsible for how you configure app blocking selections\n- The app depends on Screen Time authorization and Apple platform behavior\n\nDisclaimer:\n- Service is provided as-is without guarantees of uninterrupted availability\n\nContact:\n- Email: ashwinnanbazhagan@gmail.com',
-      support: 'For any issues or questions regarding Honestly, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com',
-      lastUpdated: 'February 28, 2026'
+      support: 'For any issues or questions regarding Honestly, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24-48 hours.',
+      lastUpdated: 'May 30, 2026'
     },
     design: {
-      primary: '#594CF2',
-      bg: '#0D051E',
-      fontFamily: 'font-playfair',
+      primary: '#FF6B00',
+      bg: '#F7F5F0',
+      fontFamily: 'font-outfit',
       templateId: 'sanctuary',
-      mesh: true
+      mesh: false
     }
   },
 
@@ -274,7 +277,9 @@ export const apps: AppConfig[] = [
     tagline: 'your quiet place for the ones you love from afar',
     platforms: ['ios'],
     description: 'A private creative space for fans to cherish their favourite characters and ships. Write love letters, build headcanons, track dates, and keep everything in a soft, personal vault — all on your device.',
-    appStoreUrl: '',
+    appStoreUrl: 'https://apps.apple.com/app/yumeship-anime-kpop-canon/id6773642234',
+    downloadUrl: 'https://apps.apple.com/app/yumeship-anime-kpop-canon/id6773642234',
+    appNumericId: '6773642234',
     seo: {
       title: 'YumeShip | Personal Fan Creative Space for Ships & F/Os',
       description: 'A private vault for your favourite characters. Write love letters, build headcanons, track dates, choose templates — all on your device, never shared.',
@@ -292,7 +297,12 @@ export const apps: AppConfig[] = [
         { title: 'Headcanons & Vault', description: 'Log headcanons by category. Build your private vault of everything you hold about them.', icon: 'BookOpen' },
         { title: 'Fully Private', description: 'Everything stays on your device. No accounts, no cloud, no sharing. Just yours.', icon: 'Lock' },
       ],
-      screenshots: [],
+      screenshots: [
+        '/yumeship/1.webp',
+        '/yumeship/2.webp',
+        '/yumeship/3.webp',
+        '/yumeship/4.webp',
+      ],
       faqs: [
         { question: 'What is YumeShip?', answer: 'YumeShip is a private creative app for fans — specifically for yumeshippers, fictives, and anyone who loves a character. You can build ship profiles, write love letters, log headcanons, and keep special dates all in one soft, personal space.' },
         { question: 'Is YumeShip private?', answer: 'Yes. Everything you create in YumeShip stays on your device in a local database. There are no accounts, no cloud sync, and no sharing. Your vault is completely private.' },

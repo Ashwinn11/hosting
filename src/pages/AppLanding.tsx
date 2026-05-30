@@ -37,7 +37,7 @@ const AppLanding: React.FC<AppLandingProps> = ({ section, appId: propAppId }) =>
   if (app.id === 'masterly') return <MasterlyLanding app={app} section={section} />;
   if (app.id === 'menucheck') return <MenuCheckLanding app={app} section={section} />;
   if (app.id === 'pepkit') return <PepKitLanding app={app} section={section} />;
-  if (app.id === 'morningjournal') return <HonestlyLanding app={app} section={section} />;
+  if (app.id === 'honestly') return <HonestlyLanding app={app} section={section} />;
   if (app.id === 'yumeship') return <YumeshipLanding app={app} section={section} />;
 
   // Fallback to template system (Morning Journal → SanctuaryTemplate)

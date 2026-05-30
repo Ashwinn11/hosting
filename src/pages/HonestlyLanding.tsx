@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, Lock } from 'lucide-react';
 import type { AppConfig } from '../config/apps';
@@ -11,23 +11,296 @@ interface Props {
   section?: 'privacy' | 'terms' | 'support';
 }
 
-const PURPLE = '#594CF2';
-const DARK = '#0D051E';
-const SURFACE = '#111827';
-const BORDER = 'rgba(89,76,242,0.2)';
-const DIM = 'rgba(255,255,255,0.45)';
+// ── Design tokens (match app Theme.swift) ────────────────────────────────────
+const T = {
+  bg:        '#F7F5F0',
+  card:      '#FDFCF9',
+  paper:     '#EFEADE',
+  orange:    '#FF6B00',
+  ink:       '#1C1C1C',
+  inkFaint:  'rgba(28,28,28,0.45)',
+  inkGhost:  'rgba(28,28,28,0.10)',
+  happy:     '#FEAE5E',
+  okay:      '#D1E4A5',
+  sad:       '#FBABA6',
+  awful:     '#FE526C',
+  cry:       '#A8C8E8',
+  gratitude: '#FAD8D6',
+  blush:     'rgba(251,171,166,0.6)',
+};
 
+const shadow = '3px 3px 0px rgba(28,28,28,0.13)';
+const border = `1.5px solid rgba(28,28,28,0.10)`;
+
+// ── Fonts ─────────────────────────────────────────────────────────────────────
+const outfit = '"Outfit", sans-serif';
+const caveat = '"Caveat", cursive';
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+const Card: React.FC<{ children: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => (
+  <div style={{ backgroundColor: T.card, border, borderRadius: 22, boxShadow: shadow, ...style }}>
+    {children}
+  </div>
+);
+
+const Hand: React.FC<{ children: React.ReactNode; size?: number; color?: string; style?: React.CSSProperties }> = ({
+  children, size = 16, color = T.orange, style,
+}) => (
+  <span style={{ fontFamily: caveat, fontSize: size, color, fontWeight: 600, ...style }}>
+    {children}
+  </span>
+);
+
+const H2: React.FC<{ children: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => (
+  <p style={{ fontFamily: outfit, fontWeight: 700, fontSize: 'clamp(1.7rem,3.2vw,2.5rem)', color: T.ink, lineHeight: 1.2, ...style }}>
+    {children}
+  </p>
+);
+
+// ── Mood Icons (ported from MoodIcons.swift) ─────────────────────────────────
+type MoodName = 'Happy' | 'Okay' | 'Sad' | 'Awful' | 'Cry';
+
+const MOOD_COLORS: Record<MoodName, string> = {
+  Happy: T.happy,
+  Okay:  T.okay,
+  Sad:   T.sad,
+  Awful: T.awful,
+  Cry:   T.cry,
+};
+
+function MoodIcon({ mood, size = 64 }: { mood: MoodName; size?: number }) {
+  const s = size / 120;
+  const color = MOOD_COLORS[mood];
+
+  const facesByMood: Record<MoodName, React.ReactNode> = {
+    Happy: (
+      <>
+        {/* eyebrows */}
+        <path d={`M${34.8*s},${46.8*s} C${40.8*s},${42*s} ${49.2*s},${42*s} ${54*s},${45.6*s}`} stroke={T.ink} strokeWidth={3.6*s} strokeLinecap="round" fill="none"/>
+        <path d={`M${66*s},${45.6*s} C${70.8*s},${42*s} ${79.2*s},${42*s} ${85.2*s},${46.8*s}`} stroke={T.ink} strokeWidth={3.6*s} strokeLinecap="round" fill="none"/>
+        {/* eyes */}
+        <path d={`M${39.6*s},${61.2*s} C${43.2*s},${54*s} ${50.4*s},${54*s} ${54*s},${61.2*s}`} stroke={T.ink} strokeWidth={4.8*s} strokeLinecap="round" fill="none"/>
+        <path d={`M${66*s},${61.2*s} C${69.6*s},${54*s} ${76.8*s},${54*s} ${80.4*s},${61.2*s}`} stroke={T.ink} strokeWidth={4.8*s} strokeLinecap="round" fill="none"/>
+        {/* smile */}
+        <path d={`M${43.2*s},${81.6*s} C${49.2*s},${92.4*s} ${70.8*s},${92.4*s} ${76.8*s},${81.6*s}`} stroke={T.ink} strokeWidth={6*s} strokeLinecap="round" fill="none"/>
+      </>
+    ),
+    Okay: (
+      <>
+        {/* asymmetric eyebrows */}
+        <path d={`M${42*s},${45.6*s} C${44.4*s},${44.4*s} ${47.4*s},${43.2*s} ${50.4*s},${43.8*s}`} stroke={T.ink} strokeWidth={3*s} strokeLinecap="round" fill="none"/>
+        <path d={`M${69.6*s},${43.2*s} C${72.6*s},${43.8*s} ${75.6*s},${45*s} ${78*s},${46.8*s}`} stroke={T.ink} strokeWidth={3*s} strokeLinecap="round" fill="none"/>
+        {/* dot eyes */}
+        <circle cx={48*s} cy={57.6*s} r={2.7*s} fill={T.ink}/>
+        <circle cx={72*s} cy={57*s} r={2.7*s} fill={T.ink}/>
+        {/* confused mouth */}
+        <path d={`M${64.8*s},${87.6*s} C${67.2*s},${79.2*s} ${73.2*s},${72.6*s} ${82.2*s},${72*s}`} stroke={T.ink} strokeWidth={4.2*s} strokeLinecap="round" fill="none"/>
+      </>
+    ),
+    Sad: (
+      <>
+        {/* eyebrows angled */}
+        <path d={`M${40.4*s},${42.5*s} C${44.7*s},${46.9*s} ${51.3*s},${45.8*s} ${55.1*s},${39.8*s}`} stroke={T.ink} strokeWidth={3.3*s} strokeLinecap="round" fill="none"/>
+        <path d={`M${64.9*s},${39.8*s} C${68.7*s},${45.8*s} ${75.3*s},${46.9*s} ${79.6*s},${42.5*s}`} stroke={T.ink} strokeWidth={3.3*s} strokeLinecap="round" fill="none"/>
+        {/* closed eyes */}
+        <path d={`M${44.7*s},${58.9*s} C${46.9*s},${65.5*s} ${53.5*s},${65.5*s} ${55.6*s},${58.9*s}`} stroke={T.ink} strokeWidth={4.4*s} strokeLinecap="round" fill="none"/>
+        <path d={`M${64.4*s},${58.9*s} C${66.5*s},${65.5*s} ${73.1*s},${65.5*s} ${75.3*s},${58.9*s}`} stroke={T.ink} strokeWidth={4.4*s} strokeLinecap="round" fill="none"/>
+        {/* frown */}
+        <path d={`M${41.5*s},${84*s} C${50.2*s},${73.1*s} ${69.8*s},${73.1*s} ${78.5*s},${84*s}`} stroke={T.ink} strokeWidth={5.5*s} strokeLinecap="round" fill="none"/>
+      </>
+    ),
+    Awful: (
+      <>
+        {/* ellipse eyes */}
+        <ellipse cx={47*s} cy={56*s} rx={3.8*s} ry={5.2*s} fill={T.ink}/>
+        <ellipse cx={73*s} cy={56*s} rx={3.8*s} ry={5.2*s} fill={T.ink}/>
+        {/* upper lids */}
+        <path d={`M${42*s},${44*s} C${45*s},${42*s} ${49*s},${42*s} ${52*s},${44*s}`} stroke={T.ink} strokeWidth={5*s} strokeLinecap="round" fill="none"/>
+        <path d={`M${68*s},${44*s} C${71*s},${42*s} ${75*s},${42*s} ${78*s},${44*s}`} stroke={T.ink} strokeWidth={5*s} strokeLinecap="round" fill="none"/>
+        {/* shocked open mouth */}
+        <path d={`M${48*s},${82*s} C${48*s},${68*s} ${72*s},${68*s} ${72*s},${82*s} C${72*s},${92*s} ${60*s},${94*s} ${60*s},${94*s} C${60*s},${94*s} ${48*s},${92*s} ${48*s},${82*s} Z`} stroke={T.ink} strokeWidth={5*s} strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+      </>
+    ),
+    Cry: (
+      <>
+        {/* squinting eyes */}
+        <path d={`M${38*s},${50*s} C${42*s},${44*s} ${50*s},${44*s} ${54*s},${50*s}`} stroke={T.ink} strokeWidth={4.5*s} strokeLinecap="round" fill="none"/>
+        <path d={`M${66*s},${50*s} C${70*s},${44*s} ${78*s},${44*s} ${82*s},${50*s}`} stroke={T.ink} strokeWidth={4.5*s} strokeLinecap="round" fill="none"/>
+        {/* frown */}
+        <path d={`M${40*s},${82*s} C${50*s},${68*s} ${70*s},${68*s} ${80*s},${82*s}`} stroke={T.ink} strokeWidth={4.5*s} strokeLinecap="round" fill="none"/>
+        {/* teardrops */}
+        <path d={`M${44*s},${55*s} C${40*s},${60*s} ${40*s},${64*s} ${44*s},${67*s} C${48*s},${64*s} ${48*s},${60*s} ${44*s},${55*s} Z`} fill={T.cry} stroke={T.ink} strokeWidth={1.8*s}/>
+        <path d={`M${76*s},${55*s} C${72*s},${60*s} ${72*s},${64*s} ${76*s},${67*s} C${80*s},${64*s} ${80*s},${60*s} ${76*s},${55*s} Z`} fill={T.cry} stroke={T.ink} strokeWidth={1.8*s}/>
+      </>
+    ),
+  };
+
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${120*s} ${120*s}`}>
+      <circle cx={60*s} cy={60*s} r={60*s} fill={color}/>
+      <circle cx={60*s} cy={60*s} r={60*s} fill="none" stroke={T.ink} strokeWidth={Math.max(1.4, size*0.045)}/>
+      {facesByMood[mood]}
+    </svg>
+  );
+}
+
+// ── Plant components (ported from NatureChars.swift) ──────────────────────────
+
+function PlantFace({ s, size }: { s: number; size: number }) {
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none' }}>
+      <circle cx={33*s} cy={60*s} r={2.2*s} fill={T.ink}/>
+      <circle cx={47*s} cy={60*s} r={2.2*s} fill={T.ink}/>
+      <path d={`M${36*s},${66*s} Q${40*s},${70*s} ${44*s},${66*s}`} stroke={T.ink} strokeWidth={1.8*s} strokeLinecap="round" fill="none"/>
+      <ellipse cx={28*s} cy={66*s} rx={3*s} ry={2*s} fill={T.blush}/>
+      <ellipse cx={52*s} cy={66*s} rx={3*s} ry={2*s} fill={T.blush}/>
+    </svg>
+  );
+}
+
+function PotBase({ s }: { s: number; size: number }) {
+  return (
+    <>
+      {/* shadow */}
+      <ellipse cx={40*s} cy={74*s} rx={22*s} ry={3*s} fill="rgba(28,28,28,0.10)"/>
+      {/* pot body */}
+      <path d={`M${22*s},${50*s} L${58*s},${50*s} L${54*s},${74*s} L${26*s},${74*s} Z`} fill={T.orange} stroke={T.ink} strokeWidth={2.2*s}/>
+      {/* pot rim */}
+      <rect x={20*s} y={46*s} width={40*s} height={6*s} rx={1.5*s} fill={T.orange} stroke={T.ink} strokeWidth={2.2*s}/>
+    </>
+  );
+}
+
+function Sprout({ size = 80 }: { size?: number }) {
+  const s = size / 80;
+  return (
+    <div style={{ position: 'relative', width: size, height: size }}>
+      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+        <PotBase s={s} size={size}/>
+        {/* stem */}
+        <line x1={40*s} y1={54*s} x2={40*s} y2={32*s} stroke={T.ink} strokeWidth={2*s} strokeLinecap="round"/>
+        {/* left leaf */}
+        <path d={`M${40*s},${40*s} C${30*s},${40*s} ${18*s},${32*s} ${16*s},${18*s} C${30*s},${16*s} ${40*s},${26*s} ${40*s},${40*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* right leaf */}
+        <path d={`M${40*s},${36*s} C${50*s},${36*s} ${62*s},${28*s} ${64*s},${14*s} C${50*s},${12*s} ${40*s},${22*s} ${40*s},${36*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+      </svg>
+      <PlantFace s={s} size={size}/>
+    </div>
+  );
+}
+
+function YoungPlant({ size = 80 }: { size?: number }) {
+  const s = size / 80;
+  return (
+    <div style={{ position: 'relative', width: size, height: size }}>
+      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+        <PotBase s={s} size={size}/>
+        {/* extra lower-left leaf */}
+        <path d={`M${38*s},${46*s} C${24*s},${46*s} ${10*s},${40*s} ${8*s},${32*s} C${18*s},${26*s} ${34*s},${36*s} ${38*s},${46*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* extra lower-right leaf */}
+        <path d={`M${42*s},${46*s} C${56*s},${46*s} ${70*s},${40*s} ${72*s},${32*s} C${62*s},${26*s} ${46*s},${36*s} ${42*s},${46*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* stem */}
+        <line x1={40*s} y1={54*s} x2={40*s} y2={32*s} stroke={T.ink} strokeWidth={2*s} strokeLinecap="round"/>
+        {/* left leaf */}
+        <path d={`M${40*s},${40*s} C${30*s},${40*s} ${18*s},${32*s} ${16*s},${18*s} C${30*s},${16*s} ${40*s},${26*s} ${40*s},${40*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* right leaf */}
+        <path d={`M${40*s},${36*s} C${50*s},${36*s} ${62*s},${28*s} ${64*s},${14*s} C${50*s},${12*s} ${40*s},${22*s} ${40*s},${36*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+      </svg>
+      <PlantFace s={s} size={size}/>
+    </div>
+  );
+}
+
+function MaturePlant({ size = 80 }: { size?: number }) {
+  const s = size / 80;
+  return (
+    <div style={{ position: 'relative', width: size, height: size }}>
+      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+        <PotBase s={s} size={size}/>
+        {/* lower-left */}
+        <path d={`M${38*s},${47*s} C${20*s},${47*s} ${8*s},${40*s} ${6*s},${30*s} C${14*s},${24*s} ${32*s},${36*s} ${38*s},${47*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* lower-right */}
+        <path d={`M${42*s},${47*s} C${60*s},${47*s} ${72*s},${40*s} ${74*s},${30*s} C${66*s},${24*s} ${48*s},${36*s} ${42*s},${47*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* inner-left */}
+        <path d={`M${40*s},${40*s} C${30*s},${40*s} ${20*s},${32*s} ${20*s},${20*s} C${22*s},${14*s} ${38*s},${26*s} ${40*s},${40*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* inner-right */}
+        <path d={`M${40*s},${40*s} C${50*s},${40*s} ${60*s},${32*s} ${60*s},${20*s} C${58*s},${14*s} ${42*s},${26*s} ${40*s},${40*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* crown */}
+        <path d={`M${40*s},${34*s} C${30*s},${34*s} ${26*s},${20*s} ${34*s},${8*s} C${36*s},${2*s} ${48*s},${18*s} ${40*s},${34*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* stem */}
+        <line x1={40*s} y1={54*s} x2={40*s} y2={28*s} stroke={T.ink} strokeWidth={2*s} strokeLinecap="round"/>
+        {/* left leaf */}
+        <path d={`M${40*s},${40*s} C${30*s},${40*s} ${18*s},${32*s} ${16*s},${18*s} C${30*s},${16*s} ${40*s},${26*s} ${40*s},${40*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* right leaf */}
+        <path d={`M${40*s},${36*s} C${50*s},${36*s} ${62*s},${28*s} ${64*s},${14*s} C${50*s},${12*s} ${40*s},${22*s} ${40*s},${36*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+      </svg>
+      <PlantFace s={s} size={size}/>
+    </div>
+  );
+}
+
+function FloweringPlant({ size = 80 }: { size?: number }) {
+  const s = size / 80;
+  const blossoms: [number, number, number][] = [[40, 16, 6], [24, 26, 4.6], [56, 26, 4.6]];
+  return (
+    <div style={{ position: 'relative', width: size, height: size }}>
+      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+        <PotBase s={s} size={size}/>
+        {/* lower-left */}
+        <path d={`M${38*s},${47*s} C${20*s},${47*s} ${8*s},${40*s} ${6*s},${30*s} C${14*s},${24*s} ${32*s},${36*s} ${38*s},${47*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* lower-right */}
+        <path d={`M${42*s},${47*s} C${60*s},${47*s} ${72*s},${40*s} ${74*s},${30*s} C${66*s},${24*s} ${48*s},${36*s} ${42*s},${47*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* inner-left */}
+        <path d={`M${40*s},${40*s} C${30*s},${40*s} ${20*s},${32*s} ${20*s},${20*s} C${22*s},${14*s} ${38*s},${26*s} ${40*s},${40*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* inner-right */}
+        <path d={`M${40*s},${40*s} C${50*s},${40*s} ${60*s},${32*s} ${60*s},${20*s} C${58*s},${14*s} ${42*s},${26*s} ${40*s},${40*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* crown */}
+        <path d={`M${40*s},${34*s} C${30*s},${34*s} ${26*s},${20*s} ${34*s},${8*s} C${36*s},${2*s} ${48*s},${18*s} ${40*s},${34*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* stem */}
+        <line x1={40*s} y1={54*s} x2={40*s} y2={30*s} stroke={T.ink} strokeWidth={2*s} strokeLinecap="round"/>
+        {/* left + right base leaves */}
+        <path d={`M${40*s},${40*s} C${30*s},${40*s} ${18*s},${32*s} ${16*s},${18*s} C${30*s},${16*s} ${40*s},${26*s} ${40*s},${40*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        <path d={`M${40*s},${36*s} C${50*s},${36*s} ${62*s},${28*s} ${64*s},${14*s} C${50*s},${12*s} ${40*s},${22*s} ${40*s},${36*s} Z`} fill={T.okay} stroke={T.ink} strokeWidth={2.2*s}/>
+        {/* blossoms */}
+        {blossoms.map(([cx, cy, r]) =>
+          Array.from({ length: 5 }).map((_, i) => {
+            const a = (i / 5) * Math.PI * 2 - Math.PI / 2;
+            const pr = r * 0.82 * s;
+            const px = cx * s + Math.cos(a) * r * s;
+            const py = cy * s + Math.sin(a) * r * s;
+            return <ellipse key={`${cx}-${cy}-${i}`} cx={px} cy={py} rx={pr} ry={pr} fill={T.sad} stroke={T.ink} strokeWidth={1.6*s}/>;
+          })
+        )}
+        {blossoms.map(([cx, cy, r]) => {
+          const cr = r * 0.7 * s;
+          return <ellipse key={`center-${cx}-${cy}`} cx={cx*s} cy={cy*s} rx={cr} ry={cr} fill={T.happy} stroke={T.ink} strokeWidth={1.6*s}/>;
+        })}
+      </svg>
+      <PlantFace s={s} size={size}/>
+    </div>
+  );
+}
+
+// ── Moods data ────────────────────────────────────────────────────────────────
+const MOODS: MoodName[] = ['Happy', 'Okay', 'Sad', 'Awful', 'Cry'];
+
+// ── Main component ────────────────────────────────────────────────────────────
 const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
+  const [activeMood, setActiveMood] = useState<MoodName>('Happy');
+
+  useEffect(() => {
+    const cycle: MoodName[] = ['Happy', 'Okay', 'Sad', 'Awful', 'Cry'];
+    let i = 0;
+    const id = setInterval(() => { i = (i + 1) % cycle.length; setActiveMood(cycle[i]); }, 2000);
+    return () => clearInterval(id);
+  }, []);
+
   if (section) {
-    return (
-      <AppLayout app={app}>
-        <LegalContent app={app} section={section} />
-      </AppLayout>
-    );
+    return <AppLayout app={app}><LegalContent app={app} section={section} /></AppLayout>;
   }
 
   return (
-    <div className="min-h-screen font-playfair" style={{ backgroundColor: DARK, color: '#fff' }}>
+    <div style={{ backgroundColor: T.bg, color: T.ink, minHeight: '100vh', fontFamily: outfit }}>
       <SEOBox
         title={app.seo.title}
         description={app.seo.description}
@@ -41,316 +314,232 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
       />
 
       {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-md" style={{ backgroundColor: 'rgba(13,5,30,0.92)', borderBottom: `1px solid ${BORDER}` }}>
-        <div className="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2 opacity-40 hover:opacity-100 transition-opacity" style={{ color: '#a89cf5' }}>
-            <ChevronLeft size={15} />
-            <span className="font-sans text-xs font-mono uppercase tracking-widest">All Apps</span>
+      <nav style={{ position: 'fixed', top: 0, width: '100%', zIndex: 50, backgroundColor: 'rgba(247,245,240,0.92)', backdropFilter: 'blur(12px)', borderBottom: border }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', height: 60, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 6, color: T.inkFaint, textDecoration: 'none', fontSize: 12, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+            <ChevronLeft size={14}/> All Apps
           </Link>
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl overflow-hidden border" style={{ borderColor: BORDER }}>
-              <img src="/morningjournal.png" alt="Honestly" className="w-full h-full object-cover" />
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
+            <div style={{ width: 32, height: 32, borderRadius: 10, overflow: 'hidden', border, boxShadow: shadow }}>
+              <img src="/honestly.png" alt="Honestly" style={{ width: '100%', height: '100%', objectFit: 'cover' }}/>
             </div>
-            <span className="font-bold text-base text-white">Honestly</span>
+            <span style={{ fontWeight: 700, fontSize: 16, color: T.ink }}>Honestly</span>
           </Link>
-          <a
-            href={app.appStoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-sans font-bold text-sm px-5 py-2 rounded-full text-white transition-all hover:scale-105 active:scale-95"
-            style={{ backgroundColor: PURPLE, boxShadow: `0 0 20px ${PURPLE}50` }}
-          >
+          <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer"
+            style={{ backgroundColor: T.orange, color: '#fff', fontWeight: 700, fontSize: 14, padding: '8px 20px', borderRadius: 999, border: `1.5px solid ${T.ink}`, boxShadow: '3px 3px 0 rgba(28,28,28,0.15)', textDecoration: 'none' }}>
             Download Free
           </a>
         </div>
       </nav>
 
-      <main>
+      <main style={{ paddingTop: 60 }}>
+
         {/* ── HERO ── */}
-        <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center relative overflow-hidden pt-16">
-          {/* Background glow */}
-          <div className="absolute inset-0 pointer-events-none" style={{
-            background: `radial-gradient(ellipse 80% 60% at 50% 30%, rgba(89,76,242,0.18) 0%, transparent 65%)`,
-          }} />
-          {/* Mesh bg */}
-          <div className="absolute inset-0 pointer-events-none opacity-30" style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(89,76,242,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(120,100,220,0.1) 0%, transparent 50%)`,
-          }} />
+        <section style={{ minHeight: '92vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '80px 24px 60px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', top: '8%', left: '4%', width: 300, height: 300, borderRadius: '50%', background: `${T.happy}28`, filter: 'blur(60px)', pointerEvents: 'none' }}/>
+          <div style={{ position: 'absolute', bottom: '8%', right: '4%', width: 240, height: 240, borderRadius: '50%', background: `${T.okay}38`, filter: 'blur(50px)', pointerEvents: 'none' }}/>
 
-          <div className="relative z-10 max-w-3xl">
-            {/* Time display */}
-            <div className="relative inline-block mb-6">
-              <div
-                className="font-light text-white leading-none"
-                style={{
-                  fontSize: 'clamp(4.5rem, 16vw, 10rem)',
-                  fontFamily: '"Playfair Display", Georgia, serif',
-                  letterSpacing: '-0.02em',
-                  textShadow: `0 0 80px rgba(89,76,242,0.5), 0 0 40px rgba(89,76,242,0.3)`,
-                }}
-              >
-                6:47 AM
-              </div>
-            </div>
+          <div style={{ position: 'relative', zIndex: 1, maxWidth: 680 }}>
+            <Hand size={20} color={T.orange} style={{ display: 'block', marginBottom: 18 }}>✦ a morning ritual app</Hand>
 
-            <h1
-              className="font-bold leading-snug mb-6 text-white"
-              style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.6rem)', fontFamily: '"Playfair Display", Georgia, serif' }}
-            >
-              Your morning doesn't have to start<br className="hidden md:block" /> with someone else's content.
+            <h1 style={{ fontFamily: outfit, fontWeight: 700, fontSize: 'clamp(2.2rem,5vw,3.8rem)', color: T.ink, lineHeight: 1.15, marginBottom: 20 }}>
+              Your morning doesn't have<br/>to start with someone else's content.
             </h1>
-            <p className="text-xl leading-relaxed mb-10 max-w-xl mx-auto" style={{ color: DIM, fontFamily: 'system-ui, sans-serif' }}>
-              A 4-step ritual that takes 5 minutes and changes how your whole day feels.
+            <p style={{ fontSize: 'clamp(1rem,2vw,1.2rem)', color: T.inkFaint, lineHeight: 1.7, marginBottom: 44, maxWidth: 480, margin: '0 auto 44px' }}>
+              Pick your mood. Write. Be grateful.<br/>Your apps unlock. A little plant grows.
             </p>
-            <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-block hover:scale-105 transition-transform active:scale-95">
-              <img src="/appstore.png" alt="Download on App Store" className="h-13 mx-auto" style={{ height: '52px' }} />
+
+            {/* Live mood picker */}
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 12, marginBottom: 44, flexWrap: 'wrap' }}>
+              {MOODS.map(m => (
+                <button key={m} onClick={() => setActiveMood(m)}
+                  style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, padding: '12px 16px', backgroundColor: m === activeMood ? MOOD_COLORS[m] : T.card, border: `1.5px solid ${m === activeMood ? T.ink : 'rgba(28,28,28,0.10)'}`, borderRadius: 18, boxShadow: m === activeMood ? shadow : 'none', cursor: 'pointer', transition: 'all 0.2s', transform: m === activeMood ? 'translateY(-3px)' : 'none' }}>
+                  <MoodIcon mood={m} size={48}/>
+                  <Hand size={13} color={T.ink}>{m}</Hand>
+                </button>
+              ))}
+            </div>
+
+            <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
+              <img src="/appstore.png" alt="Download on App Store" style={{ height: 52 }}/>
             </a>
-            <p className="font-sans font-mono text-xs uppercase tracking-widest mt-4" style={{ color: 'rgba(255,255,255,0.2)' }}>iOS · Free</p>
+            <p style={{ fontFamily: outfit, fontSize: 11, color: T.inkFaint, textTransform: 'uppercase', letterSpacing: '0.15em', marginTop: 10 }}>iOS · Free</p>
           </div>
         </section>
 
-        {/* ── THE RITUAL ── */}
-        <section style={{ borderTop: `1px solid ${BORDER}` }}>
-          <div className="max-w-6xl mx-auto px-6 py-16">
-            <p className="font-sans font-mono text-[10px] uppercase tracking-[0.3em] mb-2" style={{ color: DIM }}>The morning ritual</p>
-            <h2 className="font-bold text-3xl mb-0" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>Four steps. Five minutes.</h2>
-          </div>
+        {/* ── HOW IT WORKS ── */}
+        <section style={{ borderTop: border, padding: '80px 24px' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+            <Hand size={20} color={T.orange} style={{ display: 'block', marginBottom: 8 }}>how it works</Hand>
+            <H2 style={{ marginBottom: 48 }}>Three steps. Five minutes.</H2>
 
-          {[
-            {
-              num: '01',
-              name: 'Mood',
-              desc: 'How are you actually feeling?',
-              tint: 'rgba(89,76,242,0.05)',
-            },
-            {
-              num: '02',
-              name: 'Journal',
-              desc: '3 minutes. No judgment. No audience.',
-              tint: 'rgba(89,76,242,0.08)',
-            },
-            {
-              num: '03',
-              name: 'Three Big Wins',
-              desc: 'What will you actually do today that matters?',
-              tint: 'rgba(89,76,242,0.12)',
-            },
-            {
-              num: '04',
-              name: 'Gratitude',
-              desc: 'Before you open a single app.',
-              tint: 'rgba(89,76,242,0.17)',
-            },
-          ].map(({ num, name, desc, tint }, i) => (
-            <div
-              key={i}
-              className="px-6 py-10 md:py-12"
-              style={{
-                backgroundColor: tint,
-                borderTop: `1px solid ${BORDER}`,
-              }}
-            >
-              <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center gap-4 md:gap-16">
-                {/* Number */}
-                <div
-                  className="flex-shrink-0 font-light"
-                  style={{
-                    fontSize: 'clamp(3rem, 6vw, 5rem)',
-                    color: `${PURPLE}`,
-                    fontFamily: '"Playfair Display", Georgia, serif',
-                    lineHeight: 1,
-                    opacity: 0.7,
-                  }}
-                >
-                  {num}
-                </div>
-                {/* Name */}
-                <div className="flex-1">
-                  <h3
-                    className="font-bold text-white"
-                    style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontFamily: '"Playfair Display", Georgia, serif' }}
-                  >
-                    {name}
-                  </h3>
-                </div>
-                {/* Desc */}
-                <div className="md:max-w-xs">
-                  <p className="text-lg leading-relaxed" style={{ color: DIM, fontFamily: 'system-ui, sans-serif' }}>{desc}</p>
-                </div>
-              </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px,1fr))', gap: 20 }}>
+              {[
+                { num: '01', title: 'Pick your mood', desc: 'Happy, Okay, Sad, Awful, or Cry — tap how you actually feel. It sets the tone for your journal.', bg: T.happy, face: <MoodIcon mood="Happy" size={56}/> },
+                { num: '02', title: 'Write to a prompt', desc: 'A daily rotating prompt tailored to your goal — Clarity, Peace, Focus, or Energy. Never the same twice.', bg: T.okay, face: <Hand size={42} color={T.ink} style={{ lineHeight: 1 }}>✍️</Hand> },
+                { num: '03', title: 'Add gratitude', desc: 'A rotating gratitude question + suggestion chips. Then your apps unlock and your plant earns a sprout.', bg: T.gratitude, face: <Sprout size={56}/> },
+              ].map(({ num, title, desc, bg, face }) => (
+                <Card key={num} style={{ padding: 28, position: 'relative', overflow: 'hidden' }}>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 6, backgroundColor: bg, borderRadius: '22px 22px 0 0' }}/>
+                  <Hand size={28} color={`rgba(28,28,28,0.12)`} style={{ display: 'block', marginBottom: 10, marginTop: 8 }}>{num}</Hand>
+                  <div style={{ marginBottom: 14 }}>{face}</div>
+                  <p style={{ fontFamily: outfit, fontWeight: 700, fontSize: 18, color: T.ink, marginBottom: 10 }}>{title}</p>
+                  <p style={{ color: T.inkFaint, fontSize: 15, lineHeight: 1.65 }}>{desc}</p>
+                </Card>
+              ))}
             </div>
-          ))}
+          </div>
         </section>
 
-        {/* ── WIDGET SHOWCASE ── */}
-        <section className="py-24 px-6" style={{ backgroundColor: SURFACE, borderTop: `1px solid ${BORDER}` }}>
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            {/* Left */}
+        {/* ── PERSONALIZED PROMPTS ── */}
+        <section style={{ borderTop: border, padding: '80px 24px', backgroundColor: T.paper }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: 48, alignItems: 'center' }}>
             <div>
-              <p className="font-sans font-mono text-[10px] uppercase tracking-[0.3em] mb-4" style={{ color: DIM }}>Home screen widgets</p>
-              <h2 className="font-bold text-3xl md:text-4xl mb-6 leading-snug" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>
-                Your wins.<br />On your home screen.
-              </h2>
-              <p className="text-lg leading-relaxed mb-8" style={{ color: DIM, fontFamily: 'system-ui, sans-serif' }}>
-                Honestly places interactive widgets on your iPhone home screen so your Big Wins and streak are visible the moment you pick up your phone — not buried inside an app.
+              <Hand size={18} color={T.orange} style={{ display: 'block', marginBottom: 10 }}>✦ personalized to you</Hand>
+              <H2 style={{ marginBottom: 16 }}>Prompts that actually fit your morning.</H2>
+              <p style={{ color: T.inkFaint, fontSize: 16, lineHeight: 1.7, marginBottom: 24 }}>
+                During onboarding you pick your goal. Honestly serves daily prompts from a rotating pool of 20+ questions matched to what you're working toward.
               </p>
-              <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-block hover:scale-105 transition-transform active:scale-95">
-                <img src="/appstore.png" alt="Download on App Store" className="h-11" />
-              </a>
-            </div>
-
-            {/* Right: iPhone mockup */}
-            <div className="flex justify-center">
-              <div
-                className="relative"
-                style={{
-                  width: '220px',
-                  height: '440px',
-                  borderRadius: '40px',
-                  backgroundColor: '#0a0a1a',
-                  border: `2px solid rgba(255,255,255,0.1)`,
-                  boxShadow: `0 0 60px ${PURPLE}30, 0 24px 60px rgba(0,0,0,0.5)`,
-                  padding: '24px 16px 16px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '10px',
-                }}
-              >
-                {/* Notch */}
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-5 rounded-full" style={{ backgroundColor: '#000' }} />
-
-                {/* Widget 1: Big Wins */}
-                <div
-                  className="rounded-[20px] p-4 mt-4"
-                  style={{ backgroundColor: `rgba(89,76,242,0.2)`, border: `1px solid ${BORDER}` }}
-                >
-                  <p className="font-sans font-mono text-[9px] uppercase tracking-widest mb-3" style={{ color: `${PURPLE}cc` }}>3 Big Wins</p>
-                  {['Ship the landing page', 'Gym at 7am', 'Read 20 pages'].map((win, i) => (
-                    <div key={i} className="flex items-center gap-2 mb-2">
-                      <div className="w-3.5 h-3.5 rounded-full border flex-shrink-0 flex items-center justify-center" style={{ borderColor: PURPLE, backgroundColor: i === 0 ? PURPLE : 'transparent' }}>
-                        {i === 0 && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
-                      </div>
-                      <span className="font-sans text-[10px]" style={{ color: i === 0 ? DIM : 'rgba(255,255,255,0.7)', textDecoration: i === 0 ? 'line-through' : 'none' }}>{win}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Widget 2: Streak */}
-                <div
-                  className="rounded-[20px] p-4 flex items-center gap-3"
-                  style={{ backgroundColor: `rgba(89,76,242,0.12)`, border: `1px solid ${BORDER}` }}
-                >
-                  <span className="text-2xl">🔥</span>
-                  <div>
-                    <p className="font-bold text-white text-2xl leading-none">7</p>
-                    <p className="font-sans font-mono text-[9px] uppercase tracking-widest mt-1" style={{ color: DIM }}>day streak</p>
-                  </div>
-                </div>
-
-                {/* App grid placeholder */}
-                <div className="grid grid-cols-4 gap-2 mt-auto">
-                  {['#FF3B30', '#1877F2', '#FF9500', '#34C759'].map((color, i) => (
-                    <div key={i} className="aspect-square rounded-[10px]" style={{ backgroundColor: `${color}30`, border: `1px solid ${color}40` }} />
-                  ))}
-                </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                {([
+                  { goal: 'Clarity', color: T.okay,     sample: "What thought keeps coming back that deserves attention?" },
+                  { goal: 'Peace',   color: T.cry,      sample: "What does a peaceful day look like for you today?" },
+                  { goal: 'Focus',   color: T.happy,    sample: "What's the one thing that would make today feel meaningful?" },
+                  { goal: 'Energy',  color: T.sad,      sample: "What are you genuinely looking forward to today?" },
+                ] as const).map(({ goal, color, sample }) => (
+                  <Card key={goal} style={{ padding: '14px 18px', display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                    <span style={{ backgroundColor: color, borderRadius: 8, padding: '3px 10px', fontSize: 12, fontWeight: 700, fontFamily: outfit, border, whiteSpace: 'nowrap', marginTop: 2 }}>{goal}</span>
+                    <Hand size={14} color={T.inkFaint} style={{ lineHeight: 1.55 }}>"{sample}"</Hand>
+                  </Card>
+                ))}
               </div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <Hand size={16} color={T.inkFaint} style={{ display: 'block' }}>✦ today's gratitude chips</Hand>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                {[['☕','morning coffee'],['💌','a kind text'],['🏠','my quiet room'],['☀️','morning light'],['🌿','a deep breath'],['🎵','comfort song']].map(([icon, text]) => (
+                  <span key={text} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '5px 12px', backgroundColor: T.card, border, borderRadius: 999, boxShadow: '2px 2px 0 rgba(28,28,28,0.10)', fontFamily: outfit, fontSize: 13, color: T.ink, whiteSpace: 'nowrap' }}>
+                    {icon} {text}
+                  </span>
+                ))}
+              </div>
+              <Card style={{ padding: 20 }}>
+                <Hand size={14} color={T.orange} style={{ display: 'block', marginBottom: 10 }}>✦ what made you smile yesterday?</Hand>
+                {[1,0.8,0.6].map((w, i) => <div key={i} style={{ height: 1.5, backgroundColor: `rgba(28,28,28,0.07)`, borderRadius: 2, marginBottom: 14, width: `${w*100}%` }}/>)}
+                <Hand size={12} color={T.inkFaint}>write anything — even one word counts</Hand>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* ── PLANT GROWTH ── */}
+        <section style={{ borderTop: border, padding: '80px 24px' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto', textAlign: 'center' }}>
+            <Hand size={20} color={T.orange} style={{ display: 'block', marginBottom: 10 }}>your little garden</Hand>
+            <H2 style={{ marginBottom: 12 }}>Every morning earns a sprout.</H2>
+            <p style={{ color: T.inkFaint, fontSize: 16, lineHeight: 1.7, maxWidth: 480, margin: '0 auto 52px' }}>
+              Show up each day and your plant grows through four stages. A living record of your streak — harder to quit when something is growing.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px,1fr))', gap: 16, maxWidth: 780, margin: '0 auto' }}>
+              {([
+                { label: 'Sprout',    range: '0–29 days',   plant: <Sprout size={80}/>,         badge: false },
+                { label: 'Young',     range: '30–89 days',  plant: <YoungPlant size={80}/>,     badge: false },
+                { label: 'Mature',    range: '90–179 days', plant: <MaturePlant size={80}/>,    badge: false },
+                { label: 'Flowering', range: '180+ days',   plant: <FloweringPlant size={80}/>, badge: true  },
+              ] as const).map(({ label, range, plant, badge }) => (
+                <Card key={label} style={{ padding: '24px 20px', textAlign: 'center', position: 'relative' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 14 }}>{plant}</div>
+                  <p style={{ fontFamily: outfit, fontWeight: 700, fontSize: 16, color: T.ink, marginBottom: 4 }}>{label}</p>
+                  <Hand size={13} color={T.inkFaint}>{range}</Hand>
+                  {badge && (
+                    <div style={{ position: 'absolute', top: -8, right: -8, backgroundColor: T.orange, color: '#fff', fontSize: 10, fontWeight: 700, fontFamily: outfit, padding: '3px 8px', borderRadius: 999, border: `1.5px solid ${T.ink}`, boxShadow: shadow }}>
+                      GOAL
+                    </div>
+                  )}
+                </Card>
+              ))}
             </div>
           </div>
         </section>
 
         {/* ── APP BLOCKER ── */}
-        <section className="py-24 px-6" style={{ borderTop: `1px solid ${BORDER}` }}>
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            {/* Left: copy */}
+        <section style={{ borderTop: border, padding: '80px 24px', backgroundColor: T.paper }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: 48, alignItems: 'center' }}>
             <div>
-              <h2 className="font-bold text-3xl md:text-4xl mb-6 leading-snug" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>
-                Apps stay locked<br />until you finish.
-              </h2>
-              <p className="text-lg leading-relaxed mb-4" style={{ color: DIM, fontFamily: 'system-ui, sans-serif' }}>
-                Honestly uses iOS Screen Time to keep your chosen distracting apps locked until you complete your 4-step morning ritual.
+              <Hand size={18} color={T.orange} style={{ display: 'block', marginBottom: 10 }}>✦ the gate</Hand>
+              <H2 style={{ marginBottom: 16 }}>Apps stay locked<br/>until you finish.</H2>
+              <p style={{ color: T.inkFaint, fontSize: 16, lineHeight: 1.7, marginBottom: 16 }}>
+                Honestly uses iOS Screen Time to keep your chosen distracting apps locked. Finish your ritual — they unlock automatically.
               </p>
-              <p className="text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'system-ui, sans-serif' }}>
-                Not willpower. Not a timer. A gate.
-              </p>
+              <Hand size={20} color={T.ink} style={{ display: 'block' }}>Not willpower. Not a timer. A gate.</Hand>
             </div>
-
-            {/* Right: locked app icons */}
-            <div className="flex flex-col items-center gap-6">
-              <div className="grid grid-cols-4 gap-4">
-                {[
-                  { color: '#FF3B30' },
-                  { color: '#1877F2' },
-                  { color: '#FF2D55' },
-                  { color: '#FF9500' },
-                ].map(({ color }, i) => (
-                  <div key={i} className="relative">
-                    <div
-                      className="w-16 h-16 rounded-[18px] flex items-center justify-center"
-                      style={{
-                        backgroundColor: `${color}18`,
-                        border: `1.5px solid ${color}30`,
-                        filter: 'blur(0.5px)',
-                        opacity: 0.5,
-                      }}
-                    >
-                      <div className="w-8 h-8 rounded-xl" style={{ backgroundColor: `${color}50` }} />
-                    </div>
-                    <div
-                      className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full flex items-center justify-center shadow-lg"
-                      style={{ backgroundColor: DARK, border: `1px solid ${BORDER}` }}
-                    >
-                      <Lock size={9} style={{ color: PURPLE }} />
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+                {[T.awful, '#1877F2', '#FF2D55', T.happy].map((color, i) => (
+                  <div key={i} style={{ position: 'relative' }}>
+                    <div style={{ width: 64, height: 64, borderRadius: 18, backgroundColor: `${color}20`, border: `1.5px solid ${color}40`, opacity: 0.5 }}/>
+                    <div style={{ position: 'absolute', top: -6, right: -6, width: 20, height: 20, borderRadius: '50%', backgroundColor: T.card, border, boxShadow: shadow, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Lock size={9} color={T.orange}/>
                     </div>
                   </div>
                 ))}
               </div>
-              <p className="font-sans font-mono text-xs uppercase tracking-widest text-center" style={{ color: DIM }}>
-                Complete ritual to unlock →
-              </p>
+              <Hand size={14} color={T.inkFaint}>complete ritual to unlock →</Hand>
             </div>
           </div>
         </section>
 
-        {/* ── ICLOUD SYNC CALLOUT ── */}
-        <section className="py-10 px-6 text-center" style={{ borderTop: `1px solid ${BORDER}` }}>
-          <p className="text-sm max-w-lg mx-auto" style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'system-ui, sans-serif' }}>
-            Journal entries, streaks, and widgets sync across all your Apple devices via iCloud.
-          </p>
-        </section>
+        {/* ── FAQ ── */}
+        {app.marketing.faqs && app.marketing.faqs.length > 0 && (
+          <section style={{ borderTop: border, padding: '80px 24px' }}>
+            <div style={{ maxWidth: 720, margin: '0 auto' }}>
+              <Hand size={18} color={T.orange} style={{ display: 'block', marginBottom: 10 }}>✦ questions</Hand>
+              <H2 style={{ marginBottom: 40 }}>Common questions</H2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                {app.marketing.faqs.map(faq => (
+                  <Card key={faq.question} style={{ padding: '20px 24px' }}>
+                    <p style={{ fontFamily: outfit, fontWeight: 700, fontSize: 16, color: T.ink, marginBottom: 8 }}>{faq.question}</p>
+                    <p style={{ color: T.inkFaint, fontSize: 15, lineHeight: 1.65 }}>{faq.answer}</p>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ── CTA ── */}
-        <section className="py-32 px-6 text-center relative overflow-hidden" style={{ borderTop: `1px solid ${BORDER}` }}>
-          <div className="absolute inset-0 pointer-events-none" style={{
-            background: `radial-gradient(ellipse 80% 70% at 50% 100%, rgba(89,76,242,0.2) 0%, transparent 65%)`,
-          }} />
-          <div className="relative z-10">
-            <h2
-              className="font-bold text-white mb-6 leading-snug"
-              style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)', fontFamily: '"Playfair Display", Georgia, serif' }}
-            >
-              Start tomorrow morning.
+        <section style={{ borderTop: border, padding: '100px 24px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', top: '20%', left: '50%', transform: 'translateX(-50%)', width: 500, height: 300, borderRadius: '50%', background: `${T.happy}22`, filter: 'blur(80px)', pointerEvents: 'none' }}/>
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
+              <FloweringPlant size={100}/>
+            </div>
+            <Hand size={22} color={T.orange} style={{ display: 'block', marginBottom: 14 }}>✦ start tomorrow morning</Hand>
+            <h2 style={{ fontFamily: outfit, fontWeight: 700, fontSize: 'clamp(2rem,4.5vw,3.4rem)', color: T.ink, marginBottom: 16, lineHeight: 1.15 }}>
+              Five minutes.<br/>Before the scroll. Before the noise.
             </h2>
-            <p className="text-lg mb-10 max-w-xs mx-auto" style={{ color: DIM, fontFamily: 'system-ui, sans-serif' }}>
-              Five minutes. Before the scroll. Before the noise.
+            <p style={{ color: T.inkFaint, fontSize: 17, marginBottom: 36, maxWidth: 340, margin: '0 auto 36px' }}>
+              Free on iPhone. Your plant is waiting.
             </p>
-            <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-block hover:scale-105 transition-transform active:scale-95">
-              <img src="/appstore.png" alt="Download on App Store" className="h-14 mx-auto" />
+            <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
+              <img src="/appstore.png" alt="Download on App Store" style={{ height: 56 }}/>
             </a>
-            <p className="font-sans font-mono text-xs uppercase tracking-widest mt-5" style={{ color: 'rgba(255,255,255,0.2)' }}>Free on iPhone</p>
+            <p style={{ fontFamily: outfit, fontSize: 11, color: T.inkFaint, textTransform: 'uppercase', letterSpacing: '0.15em', marginTop: 12 }}>Free on iPhone</p>
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="py-10 px-6" style={{ borderTop: `1px solid ${BORDER}` }}>
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 opacity-30 hover:opacity-100 transition-opacity">
-            <div className="flex gap-8 font-sans font-mono text-xs uppercase tracking-widest font-bold text-white">
-              <Link to="/morningjournal/privacy-policy" className="hover:opacity-60 transition-opacity">Privacy</Link>
-              <Link to="/morningjournal/terms-of-service" className="hover:opacity-60 transition-opacity">Terms</Link>
-              <Link to="/morningjournal/support" className="hover:opacity-60 transition-opacity">Support</Link>
+        <footer style={{ borderTop: border, padding: '28px 24px' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 12, opacity: 0.4 }}>
+            <div style={{ display: 'flex', gap: 28, fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+              <Link to="/honestly/privacy-policy" style={{ color: T.ink, textDecoration: 'none' }}>Privacy</Link>
+              <Link to="/honestly/terms-of-service" style={{ color: T.ink, textDecoration: 'none' }}>Terms</Link>
+              <Link to="/honestly/support" style={{ color: T.ink, textDecoration: 'none' }}>Support</Link>
             </div>
-            <p className="font-sans font-mono text-xs uppercase tracking-widest text-white">© 2026 Ashwin Anbazhagan // briefly.live</p>
+            <p style={{ fontSize: 12, fontFamily: outfit, color: T.ink }}>© 2026 Ashwin Anbazhagan // briefly.live</p>
           </div>
         </footer>
+
       </main>
     </div>
   );

@@ -243,22 +243,30 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
             </a>
           </div>
 
-          {/* Phone mockup placeholder */}
-          <div style={{ marginTop: 64, display: 'flex', justifyContent: 'center', gap: 20 }}>
-            {[SAKURA, LAVENDER].map((color, i) => (
-              <div key={i} style={{
-                width: 180, height: 360,
-                borderRadius: 32,
-                background: `linear-gradient(160deg, ${color}55, ${i === 0 ? '#fce8ef' : '#ede5f8'})`,
-                border: `1.5px solid ${i === 0 ? SAKURA : LAVENDER}`,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                boxShadow: `0 20px 60px ${color}33`,
-                transform: i === 0 ? 'rotate(-4deg) translateY(10px)' : 'rotate(3deg) translateY(-5px)',
-              }}>
-                <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic', fontSize: 28, color: i === 0 ? SAKURA_DEEP : LAV_DEEP, opacity: 0.5 }}>♡</span>
-              </div>
-            ))}
-          </div>
+          {/* Screenshots */}
+          {app.marketing.screenshots && app.marketing.screenshots.length > 0 && (
+            <div style={{ marginTop: 64, display: 'flex', justifyContent: 'center', alignItems: 'flex-end', flexWrap: 'wrap' }}>
+              {app.marketing.screenshots.slice(0, 4).map((src, i) => {
+                const rotations = ['-4deg', '0deg', '0deg', '2deg'];
+                const yOffsets  = ['10px',  '0px',  '0px',  '-8px'];
+                const gaps      = [20, 2, 20, 20];
+                return (
+                  <div key={i} style={{
+                    width: 160,
+                    borderRadius: 28,
+                    overflow: 'hidden',
+                    border: `1.5px solid ${i % 2 === 0 ? SAKURA : LAVENDER}`,
+                    boxShadow: `0 20px 60px ${i % 2 === 0 ? SAKURA : LAVENDER}44`,
+                    transform: `rotate(${rotations[i]}) translateY(${yOffsets[i]})`,
+                    flexShrink: 0,
+                    marginRight: i < 3 ? gaps[i] : 0,
+                  }}>
+                    <img src={src} alt={`YumeShip screenshot ${i + 1}`} style={{ width: '100%', display: 'block' }}/>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 

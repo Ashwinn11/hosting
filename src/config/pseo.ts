@@ -346,7 +346,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Track Your Semaglutide Protocol',
   },
   {
-    appId: 'morningjournal',
+    appId: 'honestly',
     slug: 'vs-day-one',
     type: 'compare',
     title: 'Honestly vs Day One — Best Morning Journal App for iPhone 2026 | briefly.live',
