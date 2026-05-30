@@ -14,7 +14,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ app, children }) => {
       className={`min-h-screen ${app.design.fontFamily} transition-colors duration-700`}
       style={{
         backgroundColor: app.design.bg,
-        color: app.design.templateId === 'academic' ? '#2D4F1E' : app.design.templateId === 'zen' ? '#1A1A1A' : 'white'
+        color: app.design.templateId === 'academic' ? '#2D4F1E' : app.design.templateId === 'zen' ? '#1A1A1A' : app.design.templateId === 'sanctuary' ? '#1C1C1C' : 'white'
       }}
     >
       <SEOBox
@@ -43,7 +43,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ app, children }) => {
         {children}
       </main>
 
-      <footer className="relative z-10 py-10 px-6 border-t border-white/5 opacity-40 hover:opacity-100 transition-opacity">
+      <footer className="relative z-10 py-10 px-6 border-t opacity-40 hover:opacity-100 transition-opacity" style={{ borderColor: app.design.templateId === 'sanctuary' ? 'rgba(28,28,28,0.10)' : 'rgba(255,255,255,0.05)' }}>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-dm-mono uppercase tracking-widest">
           <div className="flex gap-8 font-bold">
             <Link to={`/${app.id}/privacy-policy`} className="hover:opacity-60 transition-opacity">Privacy</Link>

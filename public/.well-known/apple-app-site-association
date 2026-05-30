@@ -11,7 +11,7 @@
         { "/": "/masterly/*" },
         { "/": "/menucheck/*" },
         { "/": "/pepkit/*" },
-        { "/": "/morningjournal/*" }
+        { "/": "/honestly/*" }
       ]
     }]
   }

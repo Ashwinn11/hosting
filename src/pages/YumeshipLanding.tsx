@@ -402,7 +402,7 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
             ))}
           </div>
           <span style={{ fontFamily: "'Fredoka', sans-serif", fontWeight: 300, fontSize: 12, color: INK2, opacity: 0.5 }}>
-            support@yumeship.app
+            ashwinnanbazhagan@gmail.com
           </span>
         </div>
       </footer>

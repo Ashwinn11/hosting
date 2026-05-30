@@ -367,6 +367,29 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
           </div>
         </section>
 
+        {/* ── SCREENSHOTS ── */}
+        <section style={{ borderTop: border, padding: '64px 0', overflow: 'hidden' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto', paddingLeft: 24, marginBottom: 36 }}>
+            <Hand size={20} color={T.orange} style={{ display: 'block', marginBottom: 8 }}>see it in action</Hand>
+          </div>
+          <div style={{ display: 'flex', gap: 20, overflowX: 'auto', paddingLeft: 24, paddingRight: 24, paddingBottom: 16, scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}
+            className="hide-scrollbar">
+            {[
+              { src: '/honestly/screenshots/01.png', alt: 'App blocker' },
+              { src: '/honestly/screenshots/02.png', alt: 'Journal editor' },
+              { src: '/honestly/screenshots/03.png', alt: 'Mood garden' },
+              { src: '/honestly/screenshots/04.png', alt: 'Widgets' },
+              { src: '/honestly/screenshots/05.png', alt: 'Sprout collection' },
+            ].map(({ src, alt }) => (
+              <div key={src} style={{ flexShrink: 0, scrollSnapAlign: 'start' }}>
+                <div style={{ width: 220, height: 476, borderRadius: 28, overflow: 'hidden', border, boxShadow: '6px 6px 0 rgba(28,28,28,0.10)' }}>
+                  <img src={src} alt={alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy"/>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* ── HOW IT WORKS ── */}
         <section style={{ borderTop: border, padding: '80px 24px' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
