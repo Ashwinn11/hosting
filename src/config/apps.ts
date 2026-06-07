@@ -217,57 +217,59 @@ export const apps: AppConfig[] = [
   },
 
   {
-    id: 'pepkit',
-    name: 'PepKit',
+    id: 'shotly',
+    name: 'Shotly',
     category: 'Health & Fitness',
-    tagline: 'Precision Peptide & GLP-1 Tracker',
+    tagline: 'GLP-1 Injection & Weight Loss Tracker',
     platforms: ['ios'],
-    description: 'The definitive dosing and research tool for peptide protocols. Calculate reconstitutions with clinical accuracy, log injections, and manage your vial inventory seamlessly.',
-    appStoreUrl: 'https://apps.apple.com/us/app/peptide-calculator-pepkit/id6764238552',
-    aggregateRating: { ratingValue: '4.9', ratingCount: '56' },
-    downloadUrl: 'https://apps.apple.com/us/app/peptide-calculator-pepkit/id6764238552',
-    appNumericId: '6764238552',
+    description: 'The complete GLP-1 companion app. Track Ozempic, Wegovy, Mounjaro, and Zepbound injections, log your weight loss journey, and monitor meals — all in one beautiful, private app.',
+    appStoreUrl: 'https://apps.apple.com/app/id6776381502',
+    aggregateRating: { ratingValue: '4.9', ratingCount: '12' },
+    downloadUrl: 'https://apps.apple.com/app/id6776381502',
+    appNumericId: '6776381502',
     seo: {
-      title: 'PepKit | Peptide Calculator, Cycle Tracker & GLP-1 Dose Logger',
-      description: 'The complete peptide research toolkit. Reconstitution calculator, cycle planner, inventory tracker, lab results, and compound level charts. Free on iOS.',
-      keywords: ['Peptide Calculator', 'GLP-1 Tracker', 'Peptide Reconstitution Calculator', 'Peptide Cycle Tracker', 'Peptide Dose Logger', 'BPC-157 Calculator', 'Peptide Inventory', 'Lab Results Tracker', 'Compound Levels', 'Peptide App']
+      title: 'Shotly | GLP-1 Tracker for Ozempic, Wegovy, Mounjaro & Zepbound',
+      description: 'Track your GLP-1 injections, log weight loss, and monitor nutrition. Built for Ozempic, Wegovy, Mounjaro, and Zepbound users. Free on iOS.',
+      keywords: ['GLP-1 Tracker', 'Ozempic Tracker', 'Wegovy Tracker', 'Mounjaro Tracker', 'Zepbound App', 'Injection Log', 'Weight Loss App', 'Semaglutide Tracker', 'Tirzepatide App', 'Peptide Tracker']
     },
     marketing: {
-      headline: 'The Peptide Calculator & Cycle Tracker Built for Precision.',
-      subheadline: 'Reconstitution math, dose logging, cycle tracking, inventory alerts, and lab results — all in one place.',
-      problem: 'Reconstitution math is unforgiving. One wrong calculation wastes an entire vial. Most people track doses in scattered notes, run out of vials mid-cycle with no warning, and have no way to visualize compound levels over time.',
-      agitation: 'Spreadsheets don\'t alert you when stock is low. Notes don\'t calculate how much BAC water to use. And nothing connects your lab results to your active protocol.',
-      solution: 'PepKit handles the math, the tracking, the alerts, and the visualization. Step-by-step reconstitution guides. Auto-deducting inventory. Day-by-day dose logging with a body map. Compound level curves based on half-life. Lab results alongside your cycles.',
+      headline: 'Your GLP-1 Journey, Beautifully Tracked.',
+      subheadline: 'Log injections, watch the pounds drop, and stay on top of your nutrition — all in one private app built for Ozempic, Wegovy, Mounjaro & Zepbound.',
+      problem: 'You\'re on a weekly injection and tracking it in your phone\'s Notes app. Or a spreadsheet. Or not at all. You miss shots, lose streak momentum, and have no clear picture of how far you\'ve come.',
+      agitation: 'Generic habit trackers don\'t understand dose escalation schedules. Fitness apps weren\'t built for GLP-1 users whose appetite is suppressed to 1,200 calories. Nothing connects your injection day to your weight trend.',
+      solution: 'Shotly is purpose-built for GLP-1 users. Log every shot with dose, site, and notes. See your weight chart slope downward week by week. Track protein, fiber, and calories at the right targets for your medication. Know exactly how many days until your next dose.',
       benefits: [
-        { title: 'Reconstitution Calculator', description: 'Step-by-step guide: vial size, BAC water volume, desired dose → exact units to draw. No math errors.', icon: 'Zap' },
-        { title: 'Cycle Planner', description: 'Multi-compound protocols with start/end dates. See all active cycles and what\'s due today.', icon: 'Clock' },
-        { title: 'Inventory + Lab Tracking', description: 'Auto-deducting vial stock with 20% low alerts. Log bloodwork and view compound level curves.', icon: 'ShieldCheck' }
+        { title: 'Injection Log', description: 'Log every dose with medication, amount, injection site, and notes. Built-in dose escalation schedule for Ozempic, Wegovy, Mounjaro & Zepbound.', icon: 'Zap' },
+        { title: 'Weight Loss Chart', description: 'A weekly weight chart that shows your actual trajectory. See total pounds lost and your average loss per week at a glance.', icon: 'TrendingDown' },
+        { title: 'Nutrition Tracking', description: 'Log meals with calories, protein, fiber, and fat. Goals calibrated for GLP-1 users — high protein, appropriate fiber.', icon: 'Utensils' },
+        { title: 'Next Dose Countdown', description: 'Always know how many days until your next injection. Never miss a dose or second-guess your schedule again.', icon: 'Clock' }
       ],
       screenshots: [
-        '/pepkit/03.png',
-        '/pepkit/04.png',
-        '/pepkit/05.png'
+        '/shotly/01.png',
+        '/shotly/02.png',
+        '/shotly/03.png',
+        '/shotly/04.png',
       ],
       faqs: [
-        { question: 'What is the best peptide calculator app for iPhone?', answer: 'PepKit is a peptide reconstitution calculator for iOS that walks you through vial size, BAC water volume, and desired dose — giving the exact units to draw. Supports BPC-157, TB-500, Semaglutide, Tirzepatide, and hundreds more.' },
-        { question: 'Is there an app for tracking BPC-157 dosing?', answer: 'PepKit includes a full cycle planner and dose log for BPC-157 and other peptides. Each injection is logged with date, dose, and body map injection site. Compound level curves are calculated from half-life data.' },
-        { question: 'How do I calculate how much BAC water to add to a peptide vial?', answer: "PepKit's reconstitution calculator takes your vial size (e.g., 5mg), desired dose (e.g., 250mcg), and desired concentration, then tells you exactly how many mL of BAC water to add and how many units to draw per dose." },
-        { question: 'Is PepKit free on iOS?', answer: 'PepKit is free to download on the App Store. Core reconstitution calculations and cycle tracking are free; inventory management and lab results tracking are available via subscription.' },
-        { question: 'What peptide tracking app works for GLP-1 like Semaglutide or Tirzepatide?', answer: 'PepKit tracks GLP-1 peptides including Semaglutide and Tirzepatide with dose escalation scheduling, compound level curves, and injection site logging. It also tracks lab results alongside your active protocol.' },
+        { question: 'What is the best app to track Ozempic injections?', answer: 'Shotly is a dedicated injection tracker for Ozempic, Wegovy, Mounjaro, and Zepbound. Log every weekly dose with site, amount, and notes. See your full injection history and know exactly when your next dose is due.' },
+        { question: 'Is there an app for tracking weight loss on Mounjaro?', answer: 'Shotly tracks your weight weekly alongside your injection log, showing a chart of your full journey. See total pounds lost, average loss per week, and your progress toward your goal weight.' },
+        { question: 'How do I track Wegovy dose escalation on my phone?', answer: 'Shotly supports the full dose escalation schedule for Wegovy (0.25 → 0.5 → 1.0 → 1.7 → 2.4 mg). Your current dose is tracked and displayed on every injection log entry.' },
+        { question: 'Is Shotly free on iPhone?', answer: 'Shotly is free to download on iOS. Core injection and weight tracking are free. Premium unlocks unlimited meal logging, body measurements, side effect tracking, and progress photos.' },
+        { question: 'Can I track nutrition on a GLP-1 medication?', answer: 'Shotly includes a meal logger with calories, protein, fiber, and fat — with daily goals calibrated for GLP-1 users (typically higher protein, moderate fiber, lower overall calories due to appetite suppression).' },
       ]
     },
     legal: {
-      privacyPolicy: `1. Data We Collect\nPepKit collects only the data you enter directly into the app: peptide names, dose amounts, injection sites, and cycle details. No biometric or identifiable personal data is required.\n\n2. How We Use Your Data\nAll logs and cycle data are stored locally on your device using standard iOS storage. Your data is never transmitted to any server, sold, or shared with third parties.\n\n3. Subscription & Payments\nSubscription billing is handled entirely by Apple. PepKit never sees or stores your payment information.\n\n4. RevenueCat\nWe use RevenueCat to verify subscription status via anonymized App Store receipts. No personal health data is shared.\n\n5. Health Disclaimer\nPepKit is a personal tracking tool and is not a medical device. Always consult a qualified healthcare professional before starting any peptide protocol.\n\n6. Contact\nFor privacy questions, contact: ashwinnanbazhagan@gmail.com`,
-      termsOfService: `1. NO MEDICAL ADVICE\nPepKit provides personal tracking tools for informational purposes only. It does not constitute medical advice or treatment. Always seek the advice of your physician.\n\n2. USER RESPONSIBILITY\nYou are solely responsible for the accuracy of any data entered into the app (including dose calculations) and for any decisions made based on such information.\n\n3. LIMITATION OF LIABILITY\nIn no event shall the developers of PepKit be liable for any damages resulting from the use of the application or the peptides mentioned in the library.\n\n4. APPLE EULA\nBy using this software, you also agree to the Standard Apple Licensed Application End User License Agreement (EULA).`,
-      support: 'For support or questions regarding PepKit research tools, contact us at ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24-48 hours.',
-      lastUpdated: '12 May 2026'
+      privacyPolicy: `1. Data We Collect\nShotly collects only the data you enter directly into the app: injection logs, weight entries, meal logs, and profile details (age, weight, goal). No biometric identifiers or personal data beyond what you voluntarily enter is collected.\n\n2. How We Use Your Data\nAll health data is stored locally on your device. Shotly does not transmit your health logs to any external server, and does not sell or share your personal data with third parties.\n\n3. Subscription & Payments\nSubscription billing is handled entirely by Apple via the App Store. Shotly uses RevenueCat to verify subscription status via anonymized receipts only. No payment information is ever seen or stored by Shotly.\n\n4. RevenueCat\nWe use RevenueCat for anonymous subscription verification. No personal health data is shared with RevenueCat.\n\n5. Health Disclaimer\nShotly is a personal tracking tool and is not a medical device. It does not provide medical advice. Always follow your prescribing physician's instructions regarding your GLP-1 medication.\n\n6. Contact\nFor privacy questions, contact: ashwinnanbazhagan@gmail.com`,
+      termsOfService: `1. NOT MEDICAL ADVICE\nShotly is a personal logging and tracking tool provided for informational purposes only. It does not constitute medical advice, diagnosis, or treatment. Always seek the advice of your physician or qualified health provider regarding your GLP-1 medication.\n\n2. USER RESPONSIBILITY\nYou are solely responsible for the accuracy of data you enter into the app and for all decisions made regarding your medication, dosage, and health.\n\n3. SUBSCRIPTION\nShotly Premium is available via auto-renewing subscription through the Apple App Store. Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. Manage or cancel subscriptions in your Apple ID Account Settings.\n\n4. LIMITATION OF LIABILITY\nIn no event shall the developers of Shotly be liable for any damages arising from the use or misuse of the application or reliance on its tracking data.\n\n5. APPLE EULA\nBy using this software, you also agree to the Standard Apple Licensed Application End User License Agreement: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n\n6. Contact\nEmail: ashwinnanbazhagan@gmail.com`,
+      support: 'For support or questions regarding Shotly, contact us at ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24–48 hours.',
+      lastUpdated: '8 June 2026'
     },
     design: {
-      primary: '#5856D6',
-      bg: '#FDFBF7',
+      primary: '#FF6B00',
+      bg: '#F7F5F0',
       fontFamily: 'font-inter',
       templateId: 'zen',
-      grain: 0.05
+      grain: 0.04
     }
   },
   {

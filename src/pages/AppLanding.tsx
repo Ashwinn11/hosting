@@ -4,7 +4,7 @@ import { apps } from '../config/apps';
 import { ZenTemplate, AcademicTemplate, ArcadeTemplate, SanctuaryTemplate } from '../templates/AppTemplates';
 import MasterlyLanding from './MasterlyLanding';
 import MenuCheckLanding from './MenuCheckLanding';
-import PepKitLanding from './PepKitLanding';
+import ShotlyLanding from './ShotlyLanding';
 import HonestlyLanding from './HonestlyLanding';
 import YumeshipLanding from './YumeshipLanding';
 
@@ -36,7 +36,7 @@ const AppLanding: React.FC<AppLandingProps> = ({ section, appId: propAppId }) =>
   // Custom landing pages per app
   if (app.id === 'masterly') return <MasterlyLanding app={app} section={section} />;
   if (app.id === 'menucheck') return <MenuCheckLanding app={app} section={section} />;
-  if (app.id === 'pepkit') return <PepKitLanding app={app} section={section} />;
+  if (app.id === 'shotly') return <ShotlyLanding app={app} section={section} />;
   if (app.id === 'honestly') return <HonestlyLanding app={app} section={section} />;
   if (app.id === 'yumeship') return <YumeshipLanding app={app} section={section} />;
 
