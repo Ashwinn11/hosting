@@ -223,9 +223,9 @@ export const apps: AppConfig[] = [
     tagline: 'GLP-1 Injection & Weight Loss Tracker',
     platforms: ['ios'],
     description: 'The complete GLP-1 companion app. Track Ozempic, Wegovy, Mounjaro, and Zepbound injections, log your weight loss journey, and monitor meals — all in one beautiful, private app.',
-    appStoreUrl: 'https://apps.apple.com/app/id6776381502',
+    appStoreUrl: 'https://apps.apple.com/us/app/glp-1-tracker-shotly/id6776381502',
     aggregateRating: { ratingValue: '4.9', ratingCount: '12' },
-    downloadUrl: 'https://apps.apple.com/app/id6776381502',
+    downloadUrl: 'https://apps.apple.com/us/app/glp-1-tracker-shotly/id6776381502',
     appNumericId: '6776381502',
     seo: {
       title: 'Shotly | GLP-1 Tracker for Ozempic, Wegovy, Mounjaro & Zepbound',

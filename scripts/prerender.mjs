@@ -83,7 +83,7 @@ const apps = [
   {
     id: 'shotly',
     name: 'Shotly',
-    appStoreUrl: 'https://apps.apple.com/app/id6776381502',
+    appStoreUrl: 'https://apps.apple.com/us/app/glp-1-tracker-shotly/id6776381502',
     appNumericId: '6776381502',
     category: 'HealthApplication',
     aggregateRating: { ratingValue: '4.9', ratingCount: '12' },
