@@ -325,6 +325,55 @@ export const apps: AppConfig[] = [
       fontFamily: 'font-instrument',
       templateId: 'zen'
     }
+  },
+  {
+    id: 'catch-wildlife',
+    name: 'Catch Wildlife',
+    category: 'Games',
+    tagline: 'Snap Real Animals & Build Your Collection',
+    platforms: ['ios'],
+    description: 'Catch real animals in nature with your camera. Watch them lift off the photo as collectible stickers. Build your wildlife album, one hunt at a time.',
+    appStoreUrl: 'https://apps.apple.com/us/app/catch-wildlife-collection/id6778048762',
+    downloadUrl: 'https://apps.apple.com/us/app/catch-wildlife-collection/id6778048762',
+    appNumericId: '6778048762',
+    seo: {
+      title: 'Catch Wildlife | Animal Collection Game for iPhone',
+      description: 'Snap real animals in nature with your camera and collect them as stickers. Build your wildlife album with location-based rarity. Free on iOS.',
+      keywords: ['nature', 'collection', 'catch', 'wildlife', 'dex', 'pokedex', 'catalog', 'inventory', 'log', 'album', 'gallery']
+    },
+    marketing: {
+      headline: 'Every walk is a hunt.',
+      subheadline: 'Snap real animals in nature. Watch them lift off your photo as collectible stickers. Build your wildlife album, one discovery at a time.',
+      problem: 'You love nature, but you forget the animals you spot. A beautiful bird, a rare butterfly — seen once, forgotten forever.',
+      agitation: 'Photos just sit in your camera roll. There\'s no way to organize them, track them, or celebrate the discovery. The moment passes.',
+      solution: 'Catch Wildlife turns your outdoor walks into a collecting adventure. Snap any animal. Watch it shimmer and lift off your photo as a sticker. It lands in your personal wildlife album — organized by species, location, and rarity. Each region has different animals. The same bird downtown is rare in the mountains.',
+      benefits: [
+        { title: 'Snap & Collect', description: 'Point your camera at any real animal. It lifts off the photo as a shimmering sticker and lands in your collection.', icon: 'Camera' },
+        { title: 'Location-Based Rarity', description: 'The same animal has different rarity depending on where you catch it. A pigeon downtown is common — in the mountains it\'s a find.', icon: 'MapPin' },
+        { title: 'Wildlife Album', description: 'Your catches organize automatically into a beautiful catalog by species, region, and rarity. Track your journey across regions.', icon: 'Images' },
+        { title: 'Premium Features', description: 'Unlimited catches, rarity insights, and advanced stats. See patterns in what you\'ve found and where.', icon: 'Crown' }
+      ],
+      faqs: [
+        { question: 'How does Catch Wildlife work?', answer: 'Snap a photo of any real animal with your camera. AI lifts the animal off the photo as a sticker and it lands in your collection. Each animal is cataloged by species and location.' },
+        { question: 'Is rarity different in different locations?', answer: 'Yes. The same animal has different rarity depending on where you catch it. A pigeon in the city is common, but in the mountains it\'s rare. Your collection reflects the biodiversity of each region.' },
+        { question: 'Is Catch Wildlife free?', answer: 'Catch Wildlife is free to download on iOS. Core catching and collection features are free. Premium unlocks unlimited catches, rarity insights, and advanced statistics.' },
+        { question: 'Can I share my collection?', answer: 'Your wildlife album is personal and private. Premium features let you see detailed stats and patterns across your collection.' },
+        { question: 'What animals can I catch?', answer: 'Any real animal you spot in nature — birds, insects, mammals, reptiles, and more. The AI recognizes thousands of species.' },
+      ]
+    },
+    legal: {
+      privacyPolicy: 'Catch Wildlife respects your privacy.\n\n1. Camera Access\nYour photos are processed locally on your device to identify animals. Photos are never sent to servers.\n\n2. Location Data\nWe use approximate location (city/region level) to determine animal rarity. Precise GPS tracking is not used.\n\n3. Collection Data\nYour caught animals and collection are stored locally on your device. We do not store or access this data.\n\n4. No Tracking\nWe do not track your activity, share your data with third parties, or use behavioral analytics.\n\n5. Contact\nFor privacy questions: ashwinnanbazhagan@gmail.com',
+      termsOfService: 'By using Catch Wildlife, you agree:\n\n1. The app is for personal use and entertainment.\n2. You are responsible for your safety while using the camera outdoors.\n3. Always be aware of your surroundings when hunting animals.\n4. Do not trespass on private property while catching animals.\n5. Respect local wildlife laws and regulations.\n\nContact: ashwinnanbazhagan@gmail.com',
+      support: 'Need help with Catch Wildlife?\n\nEmail: ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24-48 hours.',
+      lastUpdated: 'June 12, 2026'
+    },
+    design: {
+      primary: '#2D5016',
+      bg: '#F5F1ED',
+      fontFamily: 'font-saeada',
+      templateId: 'sanctuary',
+      grain: 0.05
+    }
   }
 ];
 

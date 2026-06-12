@@ -7,6 +7,7 @@ import MenuCheckLanding from './MenuCheckLanding';
 import ShotlyLanding from './ShotlyLanding';
 import HonestlyLanding from './HonestlyLanding';
 import YumeshipLanding from './YumeshipLanding';
+import CatchWildlifeLanding from './CatchWildlifeLanding';
 
 interface AppLandingProps {
   section?: 'privacy' | 'terms' | 'support';
@@ -39,6 +40,7 @@ const AppLanding: React.FC<AppLandingProps> = ({ section, appId: propAppId }) =>
   if (app.id === 'shotly') return <ShotlyLanding app={app} section={section} />;
   if (app.id === 'honestly') return <HonestlyLanding app={app} section={section} />;
   if (app.id === 'yumeship') return <YumeshipLanding app={app} section={section} />;
+  if (app.id === 'catch-wildlife') return <CatchWildlifeLanding section={section} />;
 
   // Fallback to template system (Morning Journal → SanctuaryTemplate)
   const TemplateMap = {
