@@ -324,8 +324,11 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
         </div>
       </section>
 
+      {/* Washi-tape divider */}
+      <div style={{ height: 14, background: `repeating-linear-gradient(90deg, ${SAKURA}55 0px, ${SAKURA}55 40px, ${LAVENDER}55 40px, ${LAVENDER}55 80px, ${SAKURA}22 80px, ${SAKURA}22 120px)` }} />
+
       {/* ── Why section ── */}
-      <section style={{ backgroundColor: VELLUM, borderTop: `1px solid ${LINE}`, borderBottom: `1px solid ${LINE}`, padding: '80px 28px' }}>
+      <section style={{ backgroundColor: VELLUM, borderBottom: `1px solid ${LINE}`, padding: '80px 28px' }}>
         <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
           <div style={{ position: 'absolute', top: -20, left: '15%', pointerEvents: 'none' }}><Petal style={{ opacity: 0.4 }} /></div>
           <div style={{ position: 'absolute', bottom: -10, right: '20%', pointerEvents: 'none' }}><Petal style={{ transform: 'rotate(30deg)', opacity: 0.3 }} /></div>
@@ -366,10 +369,10 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
         <div style={{ position: 'absolute', bottom: -40, left: -40, width: 180, height: 180, borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.04)', pointerEvents: 'none' }} />
         <div style={{ position: 'relative', maxWidth: 560, margin: '0 auto' }}>
           <h2 style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic', fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 400, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>
-            they deserve a soft place too.
+            Your ship deserves a soft place.
           </h2>
-          <p style={{ fontFamily: "'Caveat', cursive", fontSize: 20, color: 'rgba(255,255,255,0.75)', margin: '0 0 40px' }}>
-            your vault is waiting.
+          <p style={{ fontFamily: "'Caveat', cursive", fontSize: 22, color: 'rgba(255,255,255,0.82)', margin: '0 0 40px' }}>
+            ✦ &nbsp; free on iPhone &nbsp;·&nbsp; your vault is waiting &nbsp; ✦
           </p>
           <a
             href={app.appStoreUrl || '#'}

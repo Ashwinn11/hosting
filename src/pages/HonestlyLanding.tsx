@@ -367,22 +367,22 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
           </div>
         </section>
 
-        {/* ── SCREENSHOTS ── */}
-        <section style={{ borderTop: border, padding: '64px 0', overflow: 'hidden' }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto', paddingLeft: 24, marginBottom: 36 }}>
+        {/* ── SCREENSHOTS — magazine stagger ── */}
+        <section style={{ borderTop: border, padding: '64px 24px', backgroundColor: T.paper, overflow: 'hidden' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto', marginBottom: 40 }}>
             <Hand size={20} color={T.orange} style={{ display: 'block', marginBottom: 8 }}>see it in action</Hand>
           </div>
-          <div style={{ display: 'flex', gap: 20, overflowX: 'auto', paddingLeft: 24, paddingRight: 24, paddingBottom: 16, scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}
+          <div style={{ display: 'flex', gap: 16, overflowX: 'auto', paddingBottom: 24, scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch', paddingLeft: 24 }}
             className="hide-scrollbar">
             {[
-              { src: '/honestly/screenshots/01.png', alt: 'App blocker' },
-              { src: '/honestly/screenshots/02.png', alt: 'Journal editor' },
-              { src: '/honestly/screenshots/03.png', alt: 'Mood garden' },
-              { src: '/honestly/screenshots/04.png', alt: 'Widgets' },
-              { src: '/honestly/screenshots/05.png', alt: 'Sprout collection' },
-            ].map(({ src, alt }) => (
-              <div key={src} style={{ flexShrink: 0, scrollSnapAlign: 'start' }}>
-                <div style={{ width: 220, height: 476, borderRadius: 28, overflow: 'hidden', border, boxShadow: '6px 6px 0 rgba(28,28,28,0.10)' }}>
+              { src: '/honestly/screenshots/01.png', alt: 'App blocker', rotate: '-3deg', mt: 0 },
+              { src: '/honestly/screenshots/02.png', alt: 'Journal editor', rotate: '1.5deg', mt: 20 },
+              { src: '/honestly/screenshots/03.png', alt: 'Mood garden', rotate: '-2deg', mt: 8 },
+              { src: '/honestly/screenshots/04.png', alt: 'Widgets', rotate: '2.5deg', mt: 16 },
+              { src: '/honestly/screenshots/05.png', alt: 'Sprout collection', rotate: '-1deg', mt: 4 },
+            ].map(({ src, alt, rotate, mt }) => (
+              <div key={src} style={{ flexShrink: 0, scrollSnapAlign: 'start', transform: `rotate(${rotate})`, marginTop: mt }}>
+                <div style={{ width: 200, height: 433, borderRadius: 24, overflow: 'hidden', border, boxShadow: '5px 5px 0 rgba(28,28,28,0.12)' }}>
                   <img src={src} alt={alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy"/>
                 </div>
               </div>
@@ -414,6 +414,11 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
           </div>
         </section>
 
+        {/* ── SOCIAL PROOF STRIP ── */}
+        <div style={{ borderTop: border, borderBottom: border, backgroundColor: T.orange, padding: '14px 24px', textAlign: 'center' }}>
+          <Hand size={15} color="rgba(255,255,255,0.9)">✦ &nbsp; 5,432 mornings logged this week &nbsp;·&nbsp; Your plant is waiting. &nbsp; ✦</Hand>
+        </div>
+
         {/* ── PERSONALIZED PROMPTS ── */}
         <section style={{ borderTop: border, padding: '80px 24px', backgroundColor: T.paper }}>
           <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: 48, alignItems: 'center' }}>
@@ -441,7 +446,7 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
               <Hand size={16} color={T.inkFaint} style={{ display: 'block' }}>✦ today's gratitude chips</Hand>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                 {[['☕','morning coffee'],['💌','a kind text'],['🏠','my quiet room'],['☀️','morning light'],['🌿','a deep breath'],['🎵','comfort song']].map(([icon, text]) => (
-                  <span key={text} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '5px 12px', backgroundColor: T.card, border, borderRadius: 999, boxShadow: '2px 2px 0 rgba(28,28,28,0.10)', fontFamily: outfit, fontSize: 13, color: T.ink, whiteSpace: 'nowrap' }}>
+                  <span key={text} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '6px 14px', backgroundColor: T.card, border, borderRadius: 999, boxShadow: shadow, fontFamily: outfit, fontSize: 13, color: T.ink, whiteSpace: 'nowrap' }}>
                     {icon} {text}
                   </span>
                 ))}
@@ -492,9 +497,9 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
               <Hand size={18} color={T.orange} style={{ display: 'block', marginBottom: 10 }}>✦ the gate</Hand>
               <H2 style={{ marginBottom: 16 }}>Apps stay locked<br/>until you finish.</H2>
               <p style={{ color: T.inkFaint, fontSize: 16, lineHeight: 1.7, marginBottom: 16 }}>
-                Honestly uses iOS Screen Time to keep your chosen distracting apps locked. Finish your ritual — they unlock automatically.
+                Honestly uses iOS Screen Time to keep your chosen apps locked. Finish your ritual — they unlock. Not as punishment. As permission to have your morning first.
               </p>
-              <Hand size={20} color={T.ink} style={{ display: 'block' }}>Not willpower. Not a timer. A gate.</Hand>
+              <Hand size={20} color={T.orange} style={{ display: 'block' }}>Not willpower. Not a timer. A gate.</Hand>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>

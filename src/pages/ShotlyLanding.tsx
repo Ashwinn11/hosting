@@ -33,18 +33,6 @@ const gradientText: React.CSSProperties = {
 
 const cardShadow = '0 2px 16px rgba(28,15,6,0.07), 0 1px 4px rgba(28,15,6,0.05)';
 
-// ── Reusable stat pill ────────────────────────────────────────────────────────
-const StatPill: React.FC<{ label: string; value: string; color?: string }> = ({ label, value, color = CORAL }) => (
-  <div style={{
-    display: 'flex', flexDirection: 'column', alignItems: 'center',
-    padding: '10px 18px', borderRadius: 14,
-    backgroundColor: SURFACE, border: `1px solid ${BORDER}`, boxShadow: cardShadow,
-    minWidth: 80,
-  }}>
-    <span style={{ fontSize: 20, fontWeight: 800, color, lineHeight: 1.1 }}>{value}</span>
-    <span style={{ fontSize: 10, fontWeight: 600, color: TEXT3, textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: 3 }}>{label}</span>
-  </div>
-);
 
 // ── Hero phone mockup card ────────────────────────────────────────────────────
 const HeroCard: React.FC = () => {
@@ -181,7 +169,7 @@ const FeatureCard: React.FC<{
       </div>
       <div style={{ flex: 1 }}>
         <p style={{ fontSize: 10, fontWeight: 700, color: TEXT3, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12 }}>{label}</p>
-        <h3 style={{ fontSize: 'clamp(1.6rem,3vw,2.4rem)', fontWeight: 900, color: TEXT, letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: 16 }}>{heading}</h3>
+        <h3 style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontSize: 'clamp(1.5rem,2.8vw,2.2rem)', fontWeight: 700, color: TEXT, lineHeight: 1.2, marginBottom: 16 }}>{heading}</h3>
         <p style={{ fontSize: 17, lineHeight: 1.7, color: TEXT2, maxWidth: 440 }}>{body}</p>
       </div>
     </div>
@@ -211,8 +199,8 @@ const ShotlyLanding: React.FC<Props> = ({ app, section }) => {
   }
 
   return (
-    <div style={{ backgroundColor: BG, color: TEXT, fontFamily: '"Inter", system-ui, sans-serif', minHeight: '100vh' }}>
-      <SEOBox
+    <div style={{ backgroundColor: BG, color: TEXT, fontFamily: '"DM Sans", sans-serif', minHeight: '100vh' }}>
+<SEOBox
         title={app.seo.title}
         description={app.seo.description}
         keywords={app.seo.keywords}
@@ -293,21 +281,20 @@ const ShotlyLanding: React.FC<Props> = ({ app, section }) => {
                 </span>
               </div>
 
-              <h1 style={{ fontSize: 'clamp(2.2rem,4.5vw,3.6rem)', fontWeight: 900, letterSpacing: '-0.025em', lineHeight: 1.05, color: TEXT, marginBottom: 20 }}>
-                Track your GLP-1{' '}
-                <span style={gradientText}>journey</span>
-                ,<br />shot by shot.
+              <h1 style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontSize: 'clamp(2.2rem,4.5vw,3.4rem)', fontWeight: 700, letterSpacing: '-0.015em', lineHeight: 1.15, color: TEXT, marginBottom: 20 }}>
+                Your injections.{' '}
+                <span style={gradientText}>Your weight.</span>
+                <br />Your story. One place that gets it.
               </h1>
 
-              <p style={{ fontSize: 19, lineHeight: 1.65, color: TEXT2, marginBottom: 36, maxWidth: 460 }}>
-                Log Ozempic, Wegovy, Mounjaro, and Zepbound injections. Watch your weight trend down. Monitor protein and nutrition — all in one private app.
+              <p style={{ fontSize: 17, lineHeight: 1.7, color: TEXT2, marginBottom: 36, maxWidth: 440 }}>
+                Shotly tracks Ozempic, Wegovy, Mounjaro, and Zepbound — so your health journey is logged privately, all in one place.
               </p>
 
-              {/* Stat pills */}
-              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 36 }}>
-                <StatPill label="Avg Lost" value="2.3 lbs/wk" color={GREEN} />
-                <StatPill label="Medications" value="6 GLP-1s" color={CORAL} />
-                <StatPill label="Tracking" value="100% Private" color={AMBER} />
+              {/* Single warm stat */}
+              <div style={{ padding: '14px 20px', borderRadius: 14, backgroundColor: SURFACE, border: `1px solid ${BORDER}`, boxShadow: cardShadow, marginBottom: 36, display: 'inline-flex', alignItems: 'baseline', gap: 8 }}>
+                <span style={{ fontSize: 22, fontWeight: 800, color: GREEN }}>↓ 2.3 lbs/wk</span>
+                <span style={{ fontSize: 13, color: TEXT3 }}>average · tracked privately on your phone</span>
               </div>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
@@ -459,7 +446,7 @@ const ShotlyLanding: React.FC<Props> = ({ app, section }) => {
         <section style={{ backgroundColor: SURFACE2, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}`, padding: '64px 24px' }}>
           <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
             <p style={{ fontFamily: 'monospace', fontSize: 10, fontWeight: 700, color: TEXT3, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 16 }}>Privacy First</p>
-            <h2 style={{ fontSize: 'clamp(1.8rem,3.5vw,2.8rem)', fontWeight: 900, color: TEXT, letterSpacing: '-0.02em', marginBottom: 16 }}>Your health data stays on your phone.</h2>
+            <h2 style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, color: TEXT, lineHeight: 1.2, marginBottom: 16 }}>Your health data stays on your phone.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.7, color: TEXT2 }}>
               Shotly stores all injection logs, weight entries, and meal data locally on your device. Nothing is sent to any server. No account required. No cloud sync. Just your private health journey.
             </p>
@@ -470,7 +457,7 @@ const ShotlyLanding: React.FC<Props> = ({ app, section }) => {
         <section style={{ padding: '80px 24px' }}>
           <div style={{ maxWidth: 720, margin: '0 auto' }}>
             <p style={{ fontFamily: 'monospace', fontSize: 10, fontWeight: 700, color: TEXT3, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 8 }}>Common questions</p>
-            <h2 style={{ fontSize: 'clamp(1.6rem,3vw,2.4rem)', fontWeight: 900, color: TEXT, letterSpacing: '-0.02em', marginBottom: 40 }}>Everything you need to know.</h2>
+            <h2 style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontSize: 'clamp(1.6rem,3vw,2.4rem)', fontWeight: 700, color: TEXT, lineHeight: 1.2, marginBottom: 40 }}>Everything you need to know.</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
               {(app.marketing.faqs ?? []).map(({ question, answer }) => (
                 <details key={question} style={{ borderTop: `1px solid ${BORDER}`, padding: '20px 0' }}>
@@ -493,12 +480,12 @@ const ShotlyLanding: React.FC<Props> = ({ app, section }) => {
               <img src="/shotly.png" alt="Shotly" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             <p style={{ fontFamily: 'monospace', fontSize: 10, fontWeight: 700, color: TEXT3, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 20 }}>Free on iOS</p>
-            <h2 style={{ fontSize: 'clamp(2rem,5vw,3.6rem)', fontWeight: 900, color: TEXT, letterSpacing: '-0.025em', lineHeight: 1.05, marginBottom: 20 }}>
-              Every dose.{' '}
-              <span style={gradientText}>Every pound.</span>
+            <h2 style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontSize: 'clamp(2rem,4.5vw,3.2rem)', fontWeight: 700, color: TEXT, lineHeight: 1.15, marginBottom: 20 }}>
+              Every dose logged.{' '}
+              <span style={gradientText}>Every pound tracked.</span>
             </h2>
-            <p style={{ fontSize: 19, color: TEXT2, marginBottom: 40, maxWidth: 400, margin: '0 auto 40px' }}>
-              Your GLP-1 journey deserves a tracker that understands it.
+            <p style={{ fontSize: 17, color: TEXT2, marginBottom: 40, maxWidth: 380, margin: '0 auto 40px' }}>
+              Your journey, not theirs. Private. Warm. Yours.
             </p>
             <a
               href={app.appStoreUrl}

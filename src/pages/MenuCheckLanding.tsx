@@ -11,8 +11,18 @@ interface Props {
   section?: 'privacy' | 'terms' | 'support';
 }
 
-const PRIMARY = '#2D7A52';
-const DARK_GREEN = '#1A4D34';
+const BG       = '#F6F2EA';   // warm cream canvas
+const SURFACE  = '#FFFFFF';   // card white
+const INSET    = '#F1EADB';   // inset bg
+const SAFE     = '#1A9E52';   // SAFE green
+const SAFE_BG  = '#E8F4E8';   // SAFE light
+const LIMIT    = '#C0860F';   // LIMIT gold
+const LIMIT_BG = '#FAEDCB';   // LIMIT light
+const AVOID    = '#DD4A26';   // AVOID coral
+const AVOID_BG = '#FAE6DB';   // AVOID light
+const TEXT     = '#1C150D';   // ink
+const TEXT2    = '#5F5448';   // secondary
+const TEXT3    = '#9C8E7E';   // tertiary
 
 const marqueeStyle = `
   @keyframes marquee {
@@ -41,7 +51,7 @@ const MenuCheckLanding: React.FC<Props> = ({ app, section }) => {
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FFFFFF', color: '#1A1A1A', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+    <div style={{ backgroundColor: BG, color: TEXT, fontFamily: '"Outfit", sans-serif', minHeight: '100vh' }}>
       <style>{marqueeStyle}</style>
       <SEOBox
         title={app.seo.title}
@@ -57,101 +67,96 @@ const MenuCheckLanding: React.FC<Props> = ({ app, section }) => {
       />
 
       {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-md" style={{ backgroundColor: 'rgba(255,255,255,0.96)', borderBottom: '1px solid rgba(45,122,82,0.1)' }}>
-        <div className="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2 opacity-40 hover:opacity-100 transition-opacity" style={{ color: PRIMARY }}>
+      <nav style={{ position: 'fixed', top: 0, width: '100%', zIndex: 50, backdropFilter: 'blur(12px)', backgroundColor: `rgba(246,242,234,0.92)`, borderBottom: `1px solid rgba(28,21,13,0.06)` }}>
+        <div style={{ maxWidth: 1024, margin: '0 auto', padding: '0 24px', height: 64, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 6, color: TEXT3, textDecoration: 'none', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', opacity: 0.6, transition: 'opacity 0.2s' }}
+            onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
+            onMouseLeave={e => (e.currentTarget.style.opacity = '0.6')}
+          >
             <ChevronLeft size={15} />
-            <span className="text-xs font-mono uppercase tracking-widest">All Apps</span>
+            All Apps
           </Link>
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl overflow-hidden" style={{ border: `1.5px solid ${PRIMARY}25` }}>
-              <img src="/menucheck.png" alt="Menu Check" className="w-full h-full object-cover" />
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
+            <div style={{ width: 32, height: 32, borderRadius: 10, overflow: 'hidden', border: `1px solid rgba(28,21,13,0.08)` }}>
+              <img src="/menucheck.png" alt="Menu Check" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
-            <span className="font-bold text-base" style={{ color: PRIMARY }}>Menu Check</span>
+            <span style={{ fontWeight: 700, fontSize: 16, color: TEXT, letterSpacing: '-0.01em' }}>Menu Check</span>
           </Link>
-          <a
-            href={app.appStoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-bold px-5 py-2 rounded-full text-white transition-all hover:scale-105 active:scale-95"
-            style={{ backgroundColor: PRIMARY }}
+          <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer"
+            style={{ backgroundColor: SAFE, color: '#fff', fontWeight: 700, fontSize: 14, padding: '8px 20px', borderRadius: 12, textDecoration: 'none', transition: 'transform 0.15s' }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.04)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
           >
             Get Free
           </a>
         </div>
       </nav>
 
-      <main>
+      <main style={{ paddingTop: 64 }}>
         {/* ── HERO ── */}
-        <section className="pt-32 pb-20 px-6 max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <section style={{ padding: '100px 24px 80px' }}>
+          <div style={{ maxWidth: 1024, margin: '0 auto' }} className="flex flex-col gap-[60px] items-center lg:flex-row lg:gap-16">
             {/* Left: copy */}
-            <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold mb-8" style={{ backgroundColor: `${PRIMARY}10`, color: PRIMARY }}>
-                <CheckCircle size={12} />
-                IBS · Celiac · FODMAP · 100+ conditions
+            <div style={{ flex: 1, maxWidth: 520 }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 24, backgroundColor: `${SAFE}12`, border: `1px solid ${SAFE}20`, marginBottom: 32 }}>
+                <CheckCircle size={14} style={{ color: SAFE }} />
+                <span style={{ fontSize: 12, fontWeight: 700, color: TEXT2, textTransform: 'uppercase', letterSpacing: '0.06em' }}>IBS · FODMAP · Celiac · 100+ conditions</span>
               </div>
-              <h1 className="font-black leading-[1.08] mb-6" style={{ fontSize: 'clamp(2.4rem, 4.8vw, 3.8rem)', color: '#0F0F0F' }}>
-                You're at a restaurant.<br />
-                Your gut can't afford<br />
-                <span style={{ color: PRIMARY }}>to guess.</span>
+              <h1 style={{ fontSize: 'clamp(2.2rem,4.5vw,3.6rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, color: TEXT, marginBottom: 20 }}>
+                Finally know what's<br />in your food.
               </h1>
-              <p className="text-xl leading-relaxed mb-8 max-w-md" style={{ color: 'rgba(0,0,0,0.5)' }}>
-                Menu Check scans any menu or barcode and gives you an instant verdict — Safe, Limit, or Avoid — based on your exact conditions.
+              <p style={{ fontSize: 18, lineHeight: 1.7, color: TEXT2, marginBottom: 36 }}>
+                Point your camera at any menu or barcode. Menu Check's AI verdicts every dish in seconds — Safe, Limit, or Avoid — based on your exact conditions.
               </p>
-              <div className="flex flex-wrap gap-4 items-center">
-                <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform active:scale-95">
-                  <img src="/appstore.png" alt="Download on App Store" className="h-12" />
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
+                <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" style={{ transition: 'transform 0.15s' }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.04)'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
+                >
+                  <img src="/appstore.png" alt="Download on App Store" style={{ height: 48 }} />
                 </a>
-                <span className="font-mono text-xs uppercase tracking-widest" style={{ color: 'rgba(0,0,0,0.25)' }}>iOS · Free</span>
+                <span style={{ fontSize: 10, fontWeight: 600, color: TEXT3, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Free on iOS</span>
               </div>
             </div>
 
             {/* Right: Verdict card UI */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-sm rounded-[28px] overflow-hidden shadow-2xl" style={{ border: `1.5px solid rgba(0,0,0,0.08)`, boxShadow: `0 24px 80px rgba(45,122,82,0.12), 0 8px 32px rgba(0,0,0,0.06)` }}>
+            <div style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'center' }}>
+              <div style={{ width: '100%', maxWidth: 280, borderRadius: 28, overflow: 'hidden', backgroundColor: SURFACE, border: `1px solid rgba(28,21,13,0.1)`, boxShadow: `0 16px 48px rgba(28,21,13,0.08)` }}>
                 {/* Card header */}
-                <div className="px-6 pt-6 pb-4" style={{ backgroundColor: '#F8FBF9', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.25em] mb-1" style={{ color: 'rgba(0,0,0,0.3)' }}>Menu Check · Analyzing</p>
-                  <p className="font-bold text-xl" style={{ color: '#1A1A1A' }}>Pasta Primavera</p>
+                <div style={{ padding: '16px', borderBottom: `1px solid rgba(28,21,13,0.06)`, backgroundColor: INSET }}>
+                  <p style={{ fontSize: 9, fontWeight: 700, color: TEXT3, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 4 }}>Analyzing</p>
+                  <p style={{ fontWeight: 700, fontSize: 16, color: TEXT }}>Pasta Primavera</p>
                 </div>
 
                 {/* Verdict badge */}
-                <div className="px-6 py-5" style={{ backgroundColor: '#FEF8E7' }}>
-                  <div className="flex items-center gap-3">
-                    <AlertCircle size={22} style={{ color: '#C08000' }} />
+                <div style={{ padding: '16px', backgroundColor: LIMIT_BG }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <AlertCircle size={20} style={{ color: LIMIT, flexShrink: 0 }} />
                     <div>
-                      <span className="font-black text-3xl tracking-tight" style={{ color: '#C08000' }}>LIMIT</span>
-                      <p className="text-xs mt-0.5" style={{ color: 'rgba(0,0,0,0.45)' }}>Contains moderate triggers for your profile</p>
+                      <span style={{ fontWeight: 800, fontSize: 20, color: LIMIT, lineHeight: 1 }}>LIMIT</span>
+                      <p style={{ fontSize: 10, marginTop: 2, color: TEXT2 }}>Moderate triggers</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Ingredient rows */}
-                <div className="px-6 py-4 space-y-3" style={{ backgroundColor: '#fff' }}>
-                  <p className="font-mono text-[9px] uppercase tracking-widest mb-4" style={{ color: 'rgba(0,0,0,0.3)' }}>Ingredient breakdown</p>
+                <div style={{ padding: '12px', backgroundColor: SURFACE }}>
                   {[
-                    { name: 'Garlic', verdict: 'AVOID', color: '#C0392B', dot: '#C0392B' },
-                    { name: 'Olive oil', verdict: 'SAFE', color: '#2D7A52', dot: '#2D7A52' },
-                    { name: 'Parmesan', verdict: 'LIMIT', color: '#C08000', dot: '#C08000' },
-                    { name: 'Pasta (wheat)', verdict: 'AVOID', color: '#C0392B', dot: '#C0392B' },
-                    { name: 'Cherry tomatoes', verdict: 'SAFE', color: '#2D7A52', dot: '#2D7A52' },
-                  ].map(({ name, verdict, color, dot }) => (
-                    <div key={name} className="flex items-center justify-between py-2" style={{ borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
-                      <div className="flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: dot }} />
-                        <span className="text-sm" style={{ color: '#1A1A1A' }}>{name}</span>
-                      </div>
-                      <span className="font-mono text-[10px] font-bold uppercase tracking-wider" style={{ color }}>{verdict}</span>
+                    { name: 'Garlic', verdict: 'AVOID', color: AVOID },
+                    { name: 'Olive oil', verdict: 'SAFE', color: SAFE },
+                    { name: 'Parmesan', verdict: 'LIMIT', color: LIMIT },
+                    { name: 'Pasta', verdict: 'AVOID', color: AVOID },
+                  ].map(({ name, verdict, color }) => (
+                    <div key={name} style={{ padding: '8px 0', borderBottom: `1px solid rgba(28,21,13,0.06)`, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ fontSize: 12, color: TEXT }}>{name}</span>
+                      <span style={{ fontWeight: 700, fontSize: 9, color, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{verdict}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Card footer */}
-                <div className="px-6 py-4" style={{ backgroundColor: '#F8FBF9', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
-                  <p className="text-xs leading-relaxed" style={{ color: 'rgba(0,0,0,0.45)' }}>
-                    Based on your IBS + FODMAP profile. Garlic and wheat are high-trigger for your conditions.
-                  </p>
+                <div style={{ padding: '12px', backgroundColor: INSET, borderTop: `1px solid rgba(28,21,13,0.06)` }}>
+                  <p style={{ fontSize: 10, lineHeight: 1.5, color: TEXT3 }}>Gluten, garlic, dairy detected.</p>
                 </div>
               </div>
             </div>
@@ -159,193 +164,159 @@ const MenuCheckLanding: React.FC<Props> = ({ app, section }) => {
         </section>
 
         {/* ── TRUST STRIP ── */}
-        <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)', borderBottom: '1px solid rgba(0,0,0,0.07)', backgroundColor: '#FAFAFA' }}>
-          <div className="max-w-6xl mx-auto px-6 py-4">
-            <p className="font-mono text-xs text-center uppercase tracking-[0.25em]" style={{ color: 'rgba(0,0,0,0.35)' }}>
-              3,000,000+ products scanned &nbsp;·&nbsp; 100+ conditions supported &nbsp;·&nbsp; iOS &nbsp;·&nbsp; Free
+        <div style={{ borderTop: `1px solid rgba(28,21,13,0.06)`, borderBottom: `1px solid rgba(28,21,13,0.06)`, backgroundColor: INSET }}>
+          <div style={{ maxWidth: 1024, margin: '0 auto', padding: '16px 24px', textAlign: 'center' }}>
+            <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: TEXT3 }}>
+              3M+ products scanned &nbsp;·&nbsp; 100+ conditions &nbsp;·&nbsp; Free on iOS
             </p>
           </div>
         </div>
 
         {/* ── HOW IT WORKS ── */}
-        <section className="py-28 px-6 max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4" style={{ color: 'rgba(0,0,0,0.25)' }}>Three seconds to a verdict</p>
-            <h2 className="font-black" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', color: '#0F0F0F' }}>How it works.</h2>
+        <section style={{ padding: '80px 24px' }}>
+          <div style={{ maxWidth: 1024, margin: '0 auto', textAlign: 'center', marginBottom: 48 }}>
+            <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: TEXT3, marginBottom: 12 }}>Three seconds to a verdict</p>
+            <h2 style={{ fontSize: 'clamp(2rem,3.5vw,2.8rem)', fontWeight: 700, color: TEXT, lineHeight: 1.1 }}>How it works.</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-0">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px,1fr))', gap: 0, maxWidth: 1024, margin: '0 auto' }}>
             {[
               { num: '01', heading: 'Point your camera', body: 'Aim at any restaurant menu, grocery barcode, or dish. Menu Check reads it instantly.' },
               { num: '02', heading: 'Your profile checks everything', body: 'Every ingredient is cross-referenced against your conditions, diet, and strictness level.' },
               { num: '03', heading: 'Safe. Limit. Avoid.', body: 'A clear, color-coded verdict in seconds. No guessing. No decoding ingredient lists.' },
             ].map(({ num, heading, body }, i) => (
-              <div
-                key={i}
-                className="px-8 py-10"
-                style={{
-                  borderLeft: i > 0 ? '1px solid rgba(0,0,0,0.08)' : 'none',
-                }}
-              >
-                <div
-                  className="w-11 h-11 rounded-full flex items-center justify-center font-mono font-black text-sm mb-6"
-                  style={{ backgroundColor: `${PRIMARY}12`, color: PRIMARY, border: `1.5px solid ${PRIMARY}25` }}
-                >
+              <div key={i} style={{ padding: '32px 24px', borderLeft: i > 0 ? `1px solid rgba(28,21,13,0.08)` : 'none' }}>
+                <div style={{ width: 44, height: 44, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 14, marginBottom: 16, backgroundColor: `${SAFE}12`, color: SAFE, border: `1px solid ${SAFE}25` }}>
                   {num}
                 </div>
-                <h3 className="font-black text-xl mb-3" style={{ color: '#0F0F0F' }}>{heading}</h3>
-                <p className="text-base leading-relaxed" style={{ color: 'rgba(0,0,0,0.5)' }}>{body}</p>
+                <h3 style={{ fontWeight: 700, fontSize: 18, marginBottom: 12, color: TEXT }}>{heading}</h3>
+                <p style={{ fontSize: 15, lineHeight: 1.6, color: TEXT2 }}>{body}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* ── VERDICT SYSTEM ── */}
-        <section className="px-0 overflow-hidden" style={{ backgroundColor: '#F8FBF9' }}>
-          <div className="max-w-6xl mx-auto px-6 pt-20 pb-8 text-center">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-4" style={{ color: 'rgba(0,0,0,0.25)' }}>Every scan returns one of three results</p>
-            <h2 className="font-black mb-16" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', color: '#0F0F0F' }}>Clear verdicts. No confusion.</h2>
+        <section style={{ backgroundColor: INSET }}>
+          <div style={{ maxWidth: 1024, margin: '0 auto', padding: '64px 24px 48px', textAlign: 'center' }}>
+            <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: TEXT3, marginBottom: 12 }}>Every scan returns one of three results</p>
+            <h2 style={{ fontSize: 'clamp(2rem,3.5vw,2.8rem)', fontWeight: 700, color: TEXT }}>Clear verdicts. No confusion.</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-0">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: 0 }}>
             {[
-              {
-                verdict: 'SAFE',
-                icon: CheckCircle,
-                color: '#2D7A52',
-                bg: '#F0FAF4',
-                borderColor: '#2D7A52',
-                food: 'Grilled Salmon + Rice',
-                reason: 'No triggers detected for your IBS and FODMAP profile. All ingredients are within your safe limits.',
-              },
-              {
-                verdict: 'LIMIT',
-                icon: AlertCircle,
-                color: '#C08000',
-                bg: '#FEF8E7',
-                borderColor: '#C08000',
-                food: 'Caesar Salad',
-                reason: 'Contains onion powder — a moderate FODMAP trigger. Safe in small portions. Avoid the croutons.',
-              },
-              {
-                verdict: 'AVOID',
-                icon: AlertTriangle,
-                color: '#C0392B',
-                bg: '#FEF0EF',
-                borderColor: '#C0392B',
-                food: 'Garlic Bread Pasta',
-                reason: 'Gluten, lactose, and garlic all detected — multiple high triggers for your conditions.',
-              },
-            ].map(({ verdict, icon: Icon, color, bg, borderColor, food, reason }) => (
-              <div
-                key={verdict}
-                className="px-10 py-16 flex flex-col"
-                style={{
-                  backgroundColor: bg,
-                  borderTop: `4px solid ${borderColor}`,
-                }}
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <Icon size={20} style={{ color }} />
-                  <span className="font-mono text-[10px] uppercase tracking-widest" style={{ color: 'rgba(0,0,0,0.4)' }}>Verdict</span>
+              { verdict: 'SAFE', icon: CheckCircle, color: SAFE, bg: SAFE_BG, food: 'Grilled salmon + rice', reason: 'No triggers detected. All ingredients within your safe limits.' },
+              { verdict: 'LIMIT', icon: AlertCircle, color: LIMIT, bg: LIMIT_BG, food: 'Caesar salad', reason: 'Contains onion powder — a moderate FODMAP trigger. Safe in small portions.' },
+              { verdict: 'AVOID', icon: AlertTriangle, color: AVOID, bg: AVOID_BG, food: 'Garlic bread pasta', reason: 'Gluten, lactose, and garlic detected — multiple high triggers.' },
+            ].map(({ verdict, icon: Icon, color, bg, food, reason }) => (
+              <div key={verdict} style={{ padding: '40px 32px', backgroundColor: bg, borderTop: `4px solid ${color}`, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+                  <Icon size={20} style={{ color, flexShrink: 0 }} />
+                  <span style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: TEXT3 }}>Verdict</span>
                 </div>
-                <div className="font-black mb-3" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', color, lineHeight: 1 }}>{verdict}</div>
-                <p className="font-mono text-xs uppercase tracking-widest mb-6" style={{ color: 'rgba(0,0,0,0.4)' }}>{food}</p>
-                <p className="text-base leading-relaxed mt-auto" style={{ color: 'rgba(0,0,0,0.6)' }}>{reason}</p>
+                <div style={{ fontSize: 'clamp(2.4rem,5vw,4rem)', fontWeight: 800, color, lineHeight: 1, marginBottom: 12 }}>{verdict}</div>
+                <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: TEXT3, marginBottom: 16 }}>{food}</p>
+                <p style={{ fontSize: 15, lineHeight: 1.6, color: TEXT2, flex: 1 }}>{reason}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* ── CONDITIONS MARQUEE ── */}
-        <section style={{ backgroundColor: DARK_GREEN, overflow: 'hidden' }} className="py-5">
+        <div style={{ backgroundColor: SAFE, overflow: 'hidden', padding: '12px 0' }}>
           <div className="marquee-track">
             {[1, 2].map((rep) => (
-              <span key={rep} className="font-mono text-xs uppercase tracking-widest whitespace-nowrap pr-8" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                IBS &nbsp;·&nbsp; FODMAP &nbsp;·&nbsp; Celiac &nbsp;·&nbsp; Crohn's &nbsp;·&nbsp; SIBO &nbsp;·&nbsp; Histamine Intolerance &nbsp;·&nbsp; Gluten-Free &nbsp;·&nbsp; Dairy-Free &nbsp;·&nbsp; Nut-Free &nbsp;·&nbsp; IBD &nbsp;·&nbsp; Vegan &nbsp;·&nbsp; Low-FODMAP &nbsp;·&nbsp; Fructose Malabsorption &nbsp;·&nbsp; Lactose Intolerance &nbsp;·&nbsp; Egg-Free &nbsp;·&nbsp;
+              <span key={rep} style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.75)', whiteSpace: 'nowrap', paddingRight: 48 }}>
+                IBS &nbsp;·&nbsp; FODMAP &nbsp;·&nbsp; Celiac &nbsp;·&nbsp; Crohn's &nbsp;·&nbsp; SIBO &nbsp;·&nbsp; Histamine &nbsp;·&nbsp; Gluten-Free &nbsp;·&nbsp; Dairy-Free &nbsp;·&nbsp; Nut-Free &nbsp;·&nbsp; Lactose &nbsp;·&nbsp; Fructose &nbsp;·&nbsp; IBD &nbsp;·&nbsp;
               </span>
+            ))}
+          </div>
+        </div>
+
+        {/* ── FEATURE PAIR ── */}
+        <section style={{ padding: '80px 0', borderTop: `1px solid rgba(28,21,13,0.06)` }}>
+          <div style={{ maxWidth: 1024, margin: '0 auto', padding: '0 24px 48px', textAlign: 'center' }}>
+            <h2 style={{ fontSize: 'clamp(1.8rem,3vw,2.4rem)', fontWeight: 700, color: TEXT }}>Two ways to scan. One verdict.</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', borderTop: `1px solid rgba(28,21,13,0.06)` }}>
+            {[
+              { title: 'Barcode Scanner', sub: '3M+ grocery products', body: 'Point your camera at any grocery barcode. Menu Check cross-references every ingredient against your full health profile. Verdict in under a second. Works offline for previously scanned products.' },
+              { title: 'Menu Photo AI', sub: 'At any restaurant, anywhere', body: 'Photograph any restaurant menu — handwritten, printed, or digital. The AI reads every dish and scores it against your conditions. No more guessing at the table.' },
+            ].map(({ title, sub, body }, i) => (
+              <div key={i} style={{ padding: '48px 32px', borderLeft: i === 1 ? `1px solid rgba(28,21,13,0.08)` : 'none' }}>
+                <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: SAFE, marginBottom: 12 }}>{sub}</p>
+                <h3 style={{ fontWeight: 700, fontSize: 22, color: TEXT, marginBottom: 16 }}>{title}</h3>
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: TEXT2 }}>{body}</p>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* ── SINGLE SCREENSHOT ── */}
-        <section className="py-28 px-6 text-center" style={{ backgroundColor: '#fff' }}>
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] mb-12" style={{ color: 'rgba(0,0,0,0.25)' }}>The app</p>
-          <div className="flex justify-center">
-            <div
-              className="overflow-hidden"
-              style={{
-                width: '240px',
-                borderRadius: '36px',
-                border: '1.5px solid rgba(0,0,0,0.1)',
-                boxShadow: `0 32px 80px rgba(45,122,82,0.15), 0 8px 24px rgba(0,0,0,0.08)`,
-              }}
-            >
-              <img
-                src="/menucheck/03.png"
-                alt="Menu Check app"
-                className="w-full"
-                style={{ aspectRatio: '9/19', objectFit: 'cover', display: 'block' }}
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* ── FEATURE PAIR ── */}
-        <section className="py-24 px-6" style={{ backgroundColor: '#F8FBF9' }}>
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="font-black" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', color: '#0F0F0F' }}>Two ways to scan. One verdict.</h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-0">
-              {[
-                {
-                  title: 'Barcode Scanner',
-                  sub: '3,000,000+ grocery products',
-                  body: `Point your camera at any grocery barcode and Menu Check cross-references every ingredient against your full health profile in under a second. Powered by OpenFoodFacts with over 3 million products worldwide. No manual searching, no ingredient decoding — just a clear verdict with the reasoning behind it. Works offline for previously scanned products.`,
-                },
-                {
-                  title: 'Menu Photo AI',
-                  sub: 'At any restaurant, anywhere',
-                  body: `Take a photo of any restaurant menu — handwritten, printed, digital — and Menu Check's AI reads every dish and scores it against your specific conditions. No more asking waiters who aren't sure. No more guessing at the table. Get a color-coded list of every item on the menu, sorted from safest to most risky for your exact profile.`,
-                },
-              ].map(({ title, sub, body }, i) => (
-                <div
-                  key={i}
-                  className="px-10 py-12"
-                  style={{ borderLeft: i === 1 ? '1px solid rgba(0,0,0,0.08)' : 'none' }}
-                >
-                  <p className="font-mono text-[10px] uppercase tracking-widest mb-3" style={{ color: `${PRIMARY}80` }}>{sub}</p>
-                  <h3 className="font-black text-2xl mb-5" style={{ color: '#0F0F0F' }}>{title}</h3>
-                  <p className="text-base leading-relaxed" style={{ color: 'rgba(0,0,0,0.55)', maxWidth: '420px' }}>{body}</p>
-                </div>
+        {/* ── GUT HEALTH FOCUS ── */}
+        <section style={{ padding: '80px 24px', backgroundColor: INSET }}>
+          <div style={{ maxWidth: 760, margin: '0 auto', textAlign: 'center' }}>
+            <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: TEXT3, marginBottom: 16 }}>Built for gut-sensitive people</p>
+            <h2 style={{ fontSize: 'clamp(1.8rem,3vw,2.4rem)', fontWeight: 700, color: TEXT, lineHeight: 1.2, marginBottom: 20 }}>
+              Your gut doesn't need<br />yet another app. It needs the right one.
+            </h2>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: TEXT2, maxWidth: 520, margin: '0 auto 40px' }}>
+              Menu Check was built specifically for people with IBS, Celiac, SIBO, Crohn's, and FODMAP sensitivities. Your profile is yours — every verdict is calibrated to your exact triggers, not a generic list.
+            </p>
+            <div style={{ display: 'inline-flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center' }}>
+              {['IBS', 'FODMAP', 'Celiac Disease', 'Crohn\'s', 'SIBO', 'Histamine', 'Dairy-Free', 'Gluten-Free'].map(cond => (
+                <span key={cond} style={{ padding: '6px 14px', borderRadius: 24, backgroundColor: SURFACE, border: `1px solid rgba(28,21,13,0.1)`, fontSize: 12, fontWeight: 500, color: TEXT2, boxShadow: '0 1px 4px rgba(28,21,13,0.04)' }}>
+                  {cond}
+                </span>
               ))}
             </div>
           </div>
         </section>
 
+        {/* ── FAQ ── */}
+        {app.marketing.faqs && app.marketing.faqs.length > 0 && (
+          <section style={{ padding: '80px 24px' }}>
+            <div style={{ maxWidth: 720, margin: '0 auto' }}>
+              <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: TEXT3, marginBottom: 12 }}>Common questions</p>
+              <h2 style={{ fontSize: 'clamp(1.8rem,3vw,2.4rem)', fontWeight: 700, color: TEXT, marginBottom: 40 }}>Everything you need to know.</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+                {app.marketing.faqs.map(({ question, answer }) => (
+                  <details key={question} style={{ borderTop: `1px solid rgba(28,21,13,0.08)`, padding: '20px 0' }}>
+                    <summary style={{ fontWeight: 600, fontSize: 15, color: TEXT, cursor: 'pointer', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      {question}
+                      <span style={{ color: SAFE, fontSize: 18, marginLeft: 12, flexShrink: 0 }}>+</span>
+                    </summary>
+                    <p style={{ marginTop: 12, fontSize: 14, lineHeight: 1.7, color: TEXT2 }}>{answer}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ── CTA ── */}
-        <section className="py-32 px-6 text-center" style={{ backgroundColor: DARK_GREEN }}>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] mb-6" style={{ color: 'rgba(255,255,255,0.4)' }}>Free on iOS</p>
-          <h2 className="font-black text-white mb-8 leading-tight" style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}>
+        <section style={{ padding: '100px 24px', textAlign: 'center', backgroundColor: '#1A4D34' /* SAFE dark */ }}>
+          <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.4)', marginBottom: 20 }}>Free on iOS</p>
+          <h2 style={{ fontSize: 'clamp(2.2rem,5vw,3.6rem)', fontWeight: 700, color: '#fff', lineHeight: 1.1, marginBottom: 20 }}>
             Stop guessing.<br />Start eating safely.
           </h2>
-          <p className="text-lg mb-10 max-w-sm mx-auto" style={{ color: 'rgba(255,255,255,0.55)' }}>
-            Join people with IBS, Celiac, Crohn's, and food sensitivities who eat out without anxiety.
+          <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.55)', marginBottom: 40, maxWidth: 360, margin: '0 auto 40px' }}>
+            For everyone with IBS, Celiac, Crohn's, and food sensitivities who want to eat out without anxiety.
           </p>
-          <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-block hover:scale-105 transition-transform active:scale-95">
-            <img src="/appstore.png" alt="Download on App Store" className="h-14" />
+          <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', transition: 'transform 0.15s' }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
+          >
+            <img src="/appstore.png" alt="Download on App Store" style={{ height: 56 }} />
           </a>
         </section>
 
         {/* Footer */}
-        <footer className="py-10 px-6 bg-white" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 opacity-30 hover:opacity-100 transition-opacity">
-            <div className="flex gap-8 font-mono text-xs uppercase tracking-widest font-bold" style={{ color: '#1A1A1A' }}>
-              <Link to="/menucheck/privacy-policy" className="hover:opacity-60 transition-opacity">Privacy</Link>
-              <Link to="/menucheck/terms-of-service" className="hover:opacity-60 transition-opacity">Terms</Link>
-              <Link to="/menucheck/support" className="hover:opacity-60 transition-opacity">Support</Link>
+        <footer style={{ borderTop: `1px solid rgba(28,21,13,0.06)`, padding: '28px 24px', backgroundColor: BG }}>
+          <div style={{ maxWidth: 1024, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 12, opacity: 0.4 }}>
+            <div style={{ display: 'flex', gap: 28, fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              <Link to="/menucheck/privacy-policy" style={{ color: TEXT, textDecoration: 'none' }}>Privacy</Link>
+              <Link to="/menucheck/terms-of-service" style={{ color: TEXT, textDecoration: 'none' }}>Terms</Link>
+              <Link to="/menucheck/support" style={{ color: TEXT, textDecoration: 'none' }}>Support</Link>
             </div>
-            <p className="font-mono text-xs uppercase tracking-widest" style={{ color: '#1A1A1A' }}>© 2026 Ashwin Anbazhagan // briefly.live</p>
+            <p style={{ fontSize: 11, color: TEXT }}>© 2026 Ashwin Anbazhagan // briefly.live</p>
           </div>
         </footer>
       </main>

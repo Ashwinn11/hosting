@@ -80,7 +80,7 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
                 <p className="font-mono text-xs uppercase tracking-[0.25em]" style={{ color: `${PRIMARY}50` }}>days until your exam</p>
               </div>
 
-              <h1 className="font-bold leading-snug mb-6" style={{ fontSize: 'clamp(2rem, 3.8vw, 3rem)', color: PRIMARY }}>
+              <h1 className="font-bold leading-snug mb-6" style={{ fontSize: 'clamp(2rem, 3.8vw, 3rem)', color: PRIMARY, fontFamily: '"Chalkboard SE", "Comic Sans MS", cursive' }}>
                 Stop planning to study. Start.
               </h1>
               <p className="text-lg leading-relaxed mb-10 max-w-lg" style={{ color: `${PRIMARY}70` }}>
@@ -116,20 +116,23 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
 
         {/* ── THE MECHANISM ── */}
         <section className="py-24 px-6" style={{ borderTop: `2px solid rgba(45,79,30,0.08)`, borderBottom: `2px solid rgba(45,79,30,0.08)` }}>
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-bold text-3xl mb-0" style={{ color: PRIMARY }}>How it works.</h2>
+          <div className="max-w-6xl mx-auto mb-2">
+            <h2 className="font-bold text-3xl" style={{ color: PRIMARY, fontFamily: '"Chalkboard SE", "Comic Sans MS", cursive', position: 'relative', display: 'inline-block' }}>
+              <span style={{ position: 'absolute', inset: '-2px -8px', background: ACCENT, transform: 'skewX(-12deg)', zIndex: 0, opacity: 0.25, borderRadius: 4 }} />
+              <span style={{ position: 'relative', zIndex: 1 }}>How it works.</span>
+            </h2>
           </div>
 
-          {/* Step 01 */}
           <div className="max-w-6xl mx-auto">
+            {/* Step 01 */}
             <div className="py-12 flex flex-col md:flex-row md:items-center gap-8" style={{ borderBottom: `1.5px solid rgba(45,79,30,0.08)` }}>
-              <div className="flex-shrink-0 font-mono font-black text-6xl md:text-8xl" style={{ color: `${PRIMARY}15` }}>01</div>
-              <div className="flex-1">
+              <div className="flex-shrink-0 font-black text-6xl md:text-8xl" style={{ color: `${PRIMARY}15`, fontFamily: '"Space Mono", monospace' }}>01</div>
+              <div className="flex-1" style={{ transform: 'rotate(-0.5deg)' }}>
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${PRIMARY}12` }}>
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${PRIMARY}12`, border: `1.5px solid ${PRIMARY}20`, boxShadow: `2px 2px 0 rgba(45,79,30,0.10)` }}>
                     <Upload size={18} style={{ color: ACCENT }} />
                   </div>
-                  <h3 className="font-bold text-2xl" style={{ color: PRIMARY }}>Upload your syllabus or lecture notes</h3>
+                  <h3 className="font-bold text-2xl" style={{ color: PRIMARY, fontFamily: '"Chalkboard SE", "Comic Sans MS", cursive' }}>Upload your syllabus or lecture notes</h3>
                 </div>
                 <p className="text-lg max-w-xl" style={{ color: `${PRIMARY}60` }}>Drop in a PDF or paste your notes. Any subject, any format. Masterly reads your material and understands what you need to learn.</p>
               </div>
@@ -137,27 +140,27 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
 
             {/* Step 02 */}
             <div className="py-12 flex flex-col md:flex-row md:items-center gap-8" style={{ borderBottom: `1.5px solid rgba(45,79,30,0.08)` }}>
-              <div className="flex-shrink-0 font-mono font-black text-6xl md:text-8xl" style={{ color: `${PRIMARY}15` }}>02</div>
-              <div className="flex-1">
+              <div className="flex-shrink-0 font-black text-6xl md:text-8xl" style={{ color: `${PRIMARY}15`, fontFamily: '"Space Mono", monospace' }}>02</div>
+              <div className="flex-1" style={{ transform: 'rotate(0.4deg)' }}>
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${PRIMARY}12` }}>
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${PRIMARY}12`, border: `1.5px solid ${PRIMARY}20`, boxShadow: `2px 2px 0 rgba(45,79,30,0.10)` }}>
                     <Calendar size={18} style={{ color: ACCENT }} />
                   </div>
-                  <h3 className="font-bold text-2xl" style={{ color: PRIMARY }}>AI builds your day-by-day study plan</h3>
+                  <h3 className="font-bold text-2xl" style={{ color: PRIMARY, fontFamily: '"Chalkboard SE", "Comic Sans MS", cursive' }}>AI builds your day-by-day study plan</h3>
                 </div>
-                <p className="text-lg max-w-xl" style={{ color: `${PRIMARY}60` }}>Set your exam date. Masterly breaks your entire syllabus into daily sessions — perfectly paced so you cover everything with time to review. You always know what to study next.</p>
+                <p className="text-lg max-w-xl" style={{ color: `${PRIMARY}60` }}>Set your exam date. Masterly breaks your entire syllabus into daily sessions — perfectly paced so you cover everything with time to review.</p>
               </div>
             </div>
 
             {/* Step 03 — THE DIFFERENTIATOR */}
             <div className="py-12 flex flex-col md:flex-row md:items-center gap-8">
-              <div className="flex-shrink-0 font-mono font-black text-6xl md:text-8xl" style={{ color: `${PRIMARY}15` }}>03</div>
-              <div className="flex-1">
+              <div className="flex-shrink-0 font-black text-6xl md:text-8xl" style={{ color: `${ACCENT}30`, fontFamily: '"Space Mono", monospace' }}>03</div>
+              <div className="flex-1" style={{ transform: 'rotate(-0.3deg)' }}>
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${ACCENT}20` }}>
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${ACCENT}20`, border: `1.5px solid ${ACCENT}40`, boxShadow: `2px 2px 0 rgba(45,79,30,0.10)` }}>
                     <Lock size={18} style={{ color: PRIMARY }} />
                   </div>
-                  <h3 className="font-bold text-2xl" style={{ color: PRIMARY }}>Pass the quiz. Unlock your apps.</h3>
+                  <h3 className="font-bold text-2xl" style={{ color: PRIMARY, fontFamily: '"Chalkboard SE", "Comic Sans MS", cursive' }}>Pass the quiz. Unlock your apps.</h3>
                 </div>
                 <p className="text-lg max-w-xl mb-8" style={{ color: `${PRIMARY}60` }}>Each day generates flashcards and a quiz from your own material. Your chosen apps stay locked via iOS Screen Time until you pass. No bypass. No excuses.</p>
 
@@ -169,10 +172,10 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
                     { color: '#FF2D55', label: 'Reels' },
                     { color: '#FF9500', label: 'YouTube' },
                   ].map(({ color, label }) => (
-                    <div key={label} className="relative flex-shrink-0">
+                    <div key={label} className="relative flex-shrink-0" style={{ transform: 'rotate(-1deg)' }}>
                       <div
                         className="w-14 h-14 rounded-[16px] flex items-center justify-center"
-                        style={{ backgroundColor: `${color}20`, border: `1.5px solid ${color}30`, filter: 'blur(0.5px)', opacity: 0.6 }}
+                        style={{ backgroundColor: `${color}20`, border: `1.5px solid ${color}30`, filter: 'blur(0.5px)', opacity: 0.6, boxShadow: `2px 3px 0 rgba(45,79,30,0.12)` }}
                       >
                         <div className="w-7 h-7 rounded-lg" style={{ backgroundColor: color, opacity: 0.7 }} />
                       </div>
@@ -181,7 +184,7 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
                       </div>
                     </div>
                   ))}
-                  <p className="text-xs pb-1 ml-2 max-w-[100px]" style={{ color: `${PRIMARY}50` }}>Locked until quiz passed</p>
+                  <p className="text-xs pb-1 ml-2 max-w-[100px]" style={{ color: `${PRIMARY}50`, fontFamily: '"Chalkboard SE", cursive' }}>Locked until quiz passed</p>
                 </div>
               </div>
             </div>
@@ -210,7 +213,7 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
         <section className="py-28 px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="font-bold text-3xl md:text-4xl" style={{ color: PRIMARY }}>The difference is one habit.</h2>
+              <h2 className="font-bold text-3xl md:text-4xl" style={{ color: PRIMARY, fontFamily: '"Chalkboard SE", "Comic Sans MS", cursive' }}>The difference is one habit.</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-0 overflow-hidden rounded-[28px] border-[2px]" style={{ borderColor: `rgba(45,79,30,0.12)` }}>
               {/* Without */}
@@ -263,7 +266,7 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
 
         {/* ── FEATURE LIST ── */}
         <section className="py-24 px-6 max-w-4xl mx-auto">
-          <h3 className="font-bold text-2xl mb-10 text-center" style={{ color: PRIMARY }}>Everything else</h3>
+          <h3 className="font-bold text-2xl mb-10 text-center" style={{ color: PRIMARY, fontFamily: '"Chalkboard SE", "Comic Sans MS", cursive' }}>Everything else</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4">
             {[
               'AI flashcard generation',
