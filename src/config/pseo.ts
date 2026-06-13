@@ -1591,4 +1591,190 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Track Bird Migration',
     datePublished: '2026-06-13',
   },
+  {
+    appId: 'masterly',
+    slug: 'adhd-study-app-exam-prep',
+    type: 'guide',
+    title: 'Best ADHD Study App 2026 — Exam Prep with App Blocking | Masterly',
+    h1: 'Best ADHD Study App — Structured Exam Prep with App Blocking',
+    metaDescription: 'Masterly AI is the best ADHD study app. Auto-generates study plans, structures exam prep, and locks apps until you study.',
+    targetKeyword: 'best ADHD study app',
+    intro: 'ADHD makes traditional studying nearly impossible. You need structure, accountability, and something that removes the decision-making. Masterly is the best ADHD study app because it auto-generates your entire study plan and locks apps until you study.',
+    sections: [
+      {
+        heading: 'ADHD + Studying = Executive Dysfunction',
+        body: 'Starting to study is harder than actually studying. ADHD brains need external structure. Masterly builds your study plan automatically and locks apps until you engage—removing the "what should I study now" decision entirely.',
+      },
+      {
+        heading: 'Hyperfocus is Your Weapon',
+        body: 'ADHD students hyperfocus when they\'re interested. Masterly removes distractions during study windows so hyperfocus actually happens. App blocking forces a window where your brain can lock in.',
+      },
+      {
+        heading: 'Dopamine Through Progress',
+        body: 'Completing quizzes and seeing progress charts releases dopamine. Masterly gamifies studying by showing your study streaks, quiz scores, and time-to-exam. Progress is visible and rewarding.',
+      },
+    ],
+    faqs: [
+      { question: 'Is there a study app specifically for ADHD students?', answer: 'Most study apps aren\'t ADHD-optimized. Masterly is. Auto-generated plans remove planning paralysis, app blocking removes distraction decisions, and visible progress provides dopamine rewards.' },
+      { question: 'Can Masterly help me pass with ADHD?', answer: 'Yes. Masterly structures studying so your brain doesn\'t have to. External structure + app blocking + progress rewards = ADHD-friendly studying.' },
+      { question: 'What makes Masterly better for ADHD than other apps?', answer: 'App blocking is the key. You can\'t check your phone even if you want to. That single feature removes the most common ADHD study blocker: distraction from notifications.' },
+    ],
+    cta: 'Get ADHD Study Help',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'menucheck',
+    slug: 'best-food-allergy-app',
+    type: 'guide',
+    title: 'Best Food Allergy App 2026 — Barcode & Restaurant Scanning',
+    h1: 'Best Food Allergy App — Scanner for Restaurant Safety',
+    metaDescription: 'Menu Check scans restaurant menus and barcodes for food allergies. Safe for nut, shellfish, dairy, and 100+ allergies. Free on iPhone.',
+    targetKeyword: 'best food allergy app',
+    intro: 'Food allergies make eating out terrifying. You\'re never sure about hidden ingredients. Menu Check is the best food allergy app because it scans restaurant menus and 3M+ grocery barcodes for allergen safety.',
+    sections: [
+      {
+        heading: 'Restaurant Menus Hide Allergens',
+        body: 'Hidden ingredients are everywhere: peanut oil in "vegetable oil," shellfish in Worcestershire sauce, dairy in "buttery flavor." Menu Check scans the menu text and flags every potential allergen.',
+      },
+      {
+        heading: 'Barcode Scanning Finds Hidden Allergens',
+        body: 'Ingredient lists can be confusing. Shellfish extract, milk derivatives, tree nut oils—they hide in plain sight. Menu Check scans 3M+ grocery barcodes and flags every allergen.',
+      },
+      {
+        heading: 'Confidence When Eating Out',
+        body: 'You shouldn\'t have to interrogate servers about every ingredient. Menu Check does it for you. Point your camera at the menu, see which dishes are safe, and eat without fear.',
+      },
+    ],
+    faqs: [
+      { question: 'Is there an app that checks restaurants for food allergies?', answer: 'Yes. Menu Check scans physical restaurant menus and gives Safe/Limit/Avoid verdicts for every dish based on your allergies. No manual searching needed.' },
+      { question: 'What\'s the best app for shellfish allergies?', answer: 'Menu Check scans for shellfish, tree nuts, peanuts, milk, eggs, and 100+ other allergies. Every dish is scored so you know what\'s safe.' },
+      { question: 'How does Menu Check know about restaurant ingredients?', answer: 'AI reads the menu text directly. It identifies dishes and common ingredients based on menu language, then checks against your allergy profile.' },
+    ],
+    cta: 'Scan for Allergies',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'shotly',
+    slug: 'best-weight-loss-app-glp-1',
+    type: 'guide',
+    title: 'Best Weight Loss App for GLP-1 Users 2026 — Nutrition Tracking',
+    h1: 'Best Weight Loss App for Ozempic & Wegovy Users',
+    metaDescription: 'Shotly is the best weight loss app for GLP-1 users. Track Ozempic, Wegovy, Mounjaro with customized nutrition and injection reminders.',
+    targetKeyword: 'best weight loss app GLP-1',
+    intro: 'GLP-1 weight loss is real, but nutrition needs are completely different. You eat less and feel full sooner. Shotly is the best weight loss app for GLP-1 users because it calibrates nutrition targets for your drug and dose.',
+    sections: [
+      {
+        heading: 'Generic Weight Loss Apps Don\'t Understand GLP-1',
+        body: 'MyFitnessPal gives 2000 calorie goals. On GLP-1, 1200 calories leaves you overfull. Shotly\'s nutrition targets match GLP-1 metabolism, not generic weight loss.',
+      },
+      {
+        heading: 'Protein Is Critical on GLP-1',
+        body: 'GLP-1 suppresses appetite so much you might forget to eat protein. Muscle loss is real. Shotly tracks protein specifically and warns if you\'re too low.',
+      },
+      {
+        heading: 'Injection Reminders Never Miss a Dose',
+        body: 'Missing a dose means your appetite roars back. Shotly sends notifications for your injection day and time, with a countdown on the home screen.',
+      },
+    ],
+    faqs: [
+      { question: 'Is there a weight loss app specifically for GLP-1 users?', answer: 'Yes. Shotly. It supports Ozempic, Wegovy, Mounjaro, and Zepbound with dose-specific nutrition targets and injection reminders.' },
+      { question: 'Should I count calories on Ozempic?', answer: 'Yes, but Shotly does it for you with GLP-1-appropriate targets. Your appetite is suppressed, so calorie targets are lower than generic weight loss apps recommend.' },
+      { question: 'Why is protein tracking important on Wegovy?', answer: 'GLP-1 suppresses appetite across all foods, including protein. Without tracking, you lose muscle along with fat. Shotly makes sure you hit protein targets daily.' },
+    ],
+    cta: 'Track Your Weight Loss',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'honestly',
+    slug: 'anxiety-journaling-app',
+    type: 'guide',
+    title: 'Best Anxiety Journaling App 2026 — Morning Ritual for Panic Relief',
+    h1: 'Best App for Anxiety Journaling — Reduce Panic with Daily Ritual',
+    metaDescription: 'Honestly journaling app reduces anxiety through guided prompts. Morning ritual, mood tracking, and gratitude practice proven to lower stress.',
+    targetKeyword: 'best anxiety journaling app',
+    intro: 'Anxiety lives in avoidance. You avoid the thought, it grows. Journaling disrupts that cycle by bringing anxious thoughts into the light. Honestly is the best anxiety journaling app because it guides you through evidence-based prompts.',
+    sections: [
+      {
+        heading: 'Journaling Disrupts Anxiety Spirals',
+        body: 'When you journal about anxiety, something shifts. The thought goes from repetitive and scary to specific and manageable. Honestly\'s prompts guide you through that shift.',
+      },
+      {
+        heading: 'Morning Rituals Prevent All-Day Anxiety',
+        body: 'Starting your day with intention—mood check, gratitude, one clear priority—sets your nervous system to calm before stress hits. This single ritual reduces all-day anxiety.',
+      },
+      {
+        heading: 'App Blocking Removes Anxiety Triggers',
+        body: 'Social media and news feeds amplify anxiety. Honestly blocks them until you journal. Remove the trigger, then navigate the day with a clear head.',
+      },
+    ],
+    faqs: [
+      { question: 'Does journaling really help anxiety?', answer: 'Yes. Research shows journaling reduces anxiety by 30-40% when done consistently. The act of writing brings anxious thoughts into perspective.' },
+      { question: 'What should I journal about when anxious?', answer: 'Name the worry specifically, identify what\'s in your control, write one action you can take. Honestly guides you through this structure automatically.' },
+      { question: 'Can an app replace therapy for anxiety?', answer: 'No. Therapy is essential. But journaling between sessions helps. Honestly is a tool for daily anxiety management, not treatment.' },
+    ],
+    cta: 'Start Anxiety Journaling',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'yumeship',
+    slug: 'fandom-character-journal-app',
+    type: 'guide',
+    title: 'Best Character Journal App 2026 — Track Favorite Characters & Ships',
+    h1: 'Best App for Character Journaling — Private Fan Space for Ships',
+    metaDescription: 'Yumeship is a character journal app for fans. Track favorite characters, write headcanons, build character relationships, all private on your iPhone.',
+    targetKeyword: 'character journal app',
+    intro: 'Fandom is lonely when you keep it secret. Yumeship is the best character journal app because it\'s a private vault for your favorite characters and ships—no judgment, no exposure.',
+    sections: [
+      {
+        heading: 'Your Characters Are Your People',
+        body: 'Your favorite characters matter. Their stories, their growth, your headcanons about them. Yumeship is a space where that matters and is never exposed.',
+      },
+      {
+        heading: 'Private Templates for Every Character',
+        body: 'Write a love letter to a character. Build their personality profile. Track their story arc. Yumeship templates match character journal needs exactly.',
+      },
+      {
+        heading: 'No Cloud, No Sharing, No Exposure',
+        body: 'Everything stays on your device. No accounts, no cloud, no one else ever sees. Your character journal is as private as your diary.',
+      },
+    ],
+    faqs: [
+      { question: 'Is Yumeship just for romantic interests?', answer: 'No. Write about favorite characters, idols, OCs, fictional crushes, all of it. Every character gets a private page with customizable templates.' },
+      { question: 'Can I track multiple characters?', answer: 'Yes. Unlimited characters, unlimited ships, unlimited pages. Each character is its own vault.' },
+      { question: 'Is my character journal really private?', answer: 'Completely. No accounts, no cloud, no syncing. Everything is stored locally on your iPhone. No one sees it but you.' },
+    ],
+    cta: 'Create Your Character Journal',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'catch-wildlife',
+    slug: 'nature-collection-game-app',
+    type: 'guide',
+    title: 'Best Nature Collection Game 2026 — Catch Wildlife Photography Game',
+    h1: 'Best Nature Collection Game — Collect Real Animals with Camera',
+    metaDescription: 'Catch Wildlife is a nature collection game for iPhone. Snap real animals with your camera and build your wildlife collection with location-based rarity.',
+    targetKeyword: 'nature collection game',
+    intro: 'Playing games in nature changes how you see the world. You notice birds, insects, and animals you\'d normally miss. Catch Wildlife is the best nature collection game because collecting is based on what you actually photograph.',
+    sections: [
+      {
+        heading: 'Real Photos, Real Rarity',
+        body: 'No random spawns. Real animals in your location. A cardinal in winter is common. A cardinal in summer is rare. Your collection matches the real ecology around you.',
+      },
+      {
+        heading: 'Gamification of Nature Awareness',
+        body: 'The game mechanic (collecting with rarity) pulls you outside and teaches you to notice wildlife. You learn animal behavior and ecology without trying.',
+      },
+      {
+        heading: 'Beautiful Album of Real Moments',
+        body: 'Every photo you take becomes a sticker in your collection. You build an album of real animals you\'ve seen, not random game items.',
+      },
+    ],
+    faqs: [
+      { question: 'Is Catch Wildlife a game?', answer: 'Yes, but based on real photography. Snap animals with your camera, they land in your collection with rarity based on location and season.' },
+      { question: 'How is it different from Pokémon GO?', answer: 'Real animals, real locations, real photos. Instead of hunting spawn points, you explore nature and photograph wildlife.' },
+      { question: 'What animals can I collect?', answer: 'All North American animals visible in your region: birds, mammals, insects, reptiles. Rarity changes by season and location.' },
+    ],
+    cta: 'Start Your Nature Collection',
+    datePublished: '2026-06-13',
+  },
 ];
