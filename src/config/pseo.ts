@@ -1907,4 +1907,128 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Mindfulness Journaling',
     datePublished: '2026-06-13',
   },
+  {
+    appId: 'masterly',
+    slug: 'exam-study-planner-app',
+    type: 'guide',
+    title: 'Best Exam Study Planner App 2026 — Day-by-Day Study Schedule',
+    h1: 'Best App for Exam Planning — Auto-Generate Your Study Calendar',
+    metaDescription: 'Masterly is the best exam study planner. Upload your syllabus, get a day-by-day schedule. Covers all topics before your exam date.',
+    targetKeyword: 'exam study planner app',
+    intro: 'Running out of time before exams is the biggest regret. You forgot to study certain topics. Masterly is the best exam study planner because it builds your study calendar automatically.',
+    sections: [
+      {
+        heading: 'Backward Planning From Your Exam Date',
+        body: 'Masterly takes your exam date and available topics, then builds a study calendar. Math on Mondays, chemistry on Wednesdays—everything covered with time to review.',
+      },
+      {
+        heading: 'Never Neglect a Topic',
+        body: 'Without a plan, you study what feels familiar (already know it). A plan forces you to hit every topic, even the hard ones you\'ve been avoiding.',
+      },
+      {
+        heading: 'Daily Quizzes Keep You on Track',
+        body: 'Each day includes a quiz. If you fail, you know that day\'s topic needs more work. Pass and you move forward with confidence.',
+      },
+    ],
+    faqs: [
+      { question: 'How far in advance should I start studying?', answer: 'Masterly calculates this. Upload your syllabus and exam date, and it tells you the minimum daily commitment needed to cover everything.' },
+      { question: 'What if my exam date is soon?', answer: 'Masterly adjusts. If you have 2 weeks and 50 topics, it prioritizes high-weightage topics first and suggests intense daily study.' },
+      { question: 'Does Masterly replace a tutor?', answer: 'No. Masterly is a study planner. It organizes your time, keeps you on track, and quizzes you. A tutor explains confusing concepts—do both for best results.' },
+    ],
+    cta: 'Plan Your Exam Now',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'menucheck',
+    slug: 'nut-allergy-peanut-tree-nut',
+    type: 'guide',
+    title: 'Best Nut Allergy App 2026 — Peanut & Tree Nut Scanner',
+    h1: 'Best App for Nut Allergies — Restaurant & Barcode Safety',
+    metaDescription: 'Menu Check scans restaurant menus and barcodes for peanut and tree nut allergies. Safe dining with instant verdicts. Free on iPhone.',
+    targetKeyword: 'best app for nut allergies',
+    intro: 'Nut allergies are life-threatening and hiding everywhere. Peanut oil in Asian food, tree nuts in sauces, cross-contamination in kitchens. Menu Check is the best nut allergy app because it scans for 100+ forms of nuts.',
+    sections: [
+      {
+        heading: 'Nuts Hide in Unexpected Places',
+        body: 'Peanut oil, walnut extract, "may contain traces of tree nuts"—you can\'t read all that fast. Menu Check reads the menu and catches every nut mention.',
+      },
+      {
+        heading: 'Cross-Contamination Is Real',
+        body: 'Even if the dish doesn\'t have nuts, the kitchen might use shared utensils. Menu Check flags cross-contamination risk with your server question guide.',
+      },
+      {
+        heading: 'Restaurant Conversations Made Easy',
+        body: 'Menu Check shows exactly what to ask: "Does this share equipment with tree nuts?" You can show the screen to your server, no guessing required.',
+      },
+    ],
+    faqs: [
+      { question: 'Is there an app for nut allergies?', answer: 'Yes. Menu Check scans restaurant menus and barcodes for peanut, tree nut, and 100+ specific nut varieties. Safe/Limit/Avoid verdicts in seconds.' },
+      { question: 'How serious are tree nut allergies?', answer: 'Depends on the person. Some react to trace amounts, others to consumption only. Menu Check lets you set YOUR sensitivity level.' },
+      { question: 'Can I bring Menu Check to restaurants?', answer: 'Yes. Scan the menu with Menu Check, then show the screen to your server. The app\'s verdict guides the conversation.' },
+    ],
+    cta: 'Scan for Nut Safety',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'shotly',
+    slug: 'weight-loss-accountability-partner',
+    type: 'guide',
+    title: 'Best Weight Loss Accountability App 2026 — GLP-1 Community Support',
+    h1: 'Best Weight Loss Accountability App — Track Progress, Get Support',
+    metaDescription: 'Shotly is a weight loss accountability app for GLP-1 users. Track your progress weekly, celebrate milestones, stay motivated.',
+    targetKeyword: 'weight loss accountability app',
+    intro: 'Weight loss is lonely. You celebrate with someone who gets it—someone on GLP-1, dealing with the same nausea, the same body changes. Shotly is the best weight loss accountability app because it\'s built for GLP-1 users.',
+    sections: [
+      {
+        heading: 'Accountability Changes Everything',
+        body: 'Logging your weight weekly makes you think twice before skipping doses or overeating. The app acts as your accountability partner.',
+      },
+      {
+        heading: 'Progress Charting Shows the Trend',
+        body: 'Week-to-week weight bounces. Monthly trends don\'t lie. Shotly shows your trend line so you can see "I\'m down 15 lbs in 8 weeks" even when last week went up.',
+      },
+      {
+        heading: 'Milestone Celebrations Matter',
+        body: 'Every 5 lbs is a victory. Shotly celebrates milestones and shows you the distance you\'ve traveled. Motivation comes from seeing progress.',
+      },
+    ],
+    faqs: [
+      { question: 'How often should I weigh myself on GLP-1?', answer: 'Weekly is ideal. Daily weight fluctuates wildly. Weekly average is meaningful. Shotly tracks weekly weight so you see real trends.' },
+      { question: 'Is it normal to plateau on GLP-1?', answer: 'Yes. Plateaus are normal and temporary. Shotly helps you distinguish between real plateaus (data needs smoothing) and perception (you\'re still losing at weekly average).' },
+      { question: 'Can I lose weight without tracking?', answer: 'Maybe. But people who track lose 2-3x more. Tracking creates awareness. Shotly makes tracking feel like celebrating progress, not punishing overeating.' },
+    ],
+    cta: 'Start Your Weight Loss Journey',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'honestly',
+    slug: 'self-care-ritual-app',
+    type: 'guide',
+    title: 'Best Self-Care Ritual App 2026 — Morning Wellness Routine',
+    h1: 'Best App for Self-Care Rituals — Build Sustainable Wellness Habits',
+    metaDescription: 'Honestly is a self-care ritual app. Morning journaling, gratitude practice, app blocking until you complete your wellness routine.',
+    targetKeyword: 'best self-care ritual app',
+    intro: 'Self-care isn\'t bubble baths. It\'s daily rituals that prime your nervous system for calm. Honestly is the best self-care ritual app because it builds your self-care routine into a morning ritual you actually do.',
+    sections: [
+      {
+        heading: 'Self-Care Must Be Non-Negotiable',
+        body: 'Self-care fails when it\'s optional. Honestly makes it mandatory: apps lock until you complete your ritual. You\'re forced to take care of yourself.',
+      },
+      {
+        heading: 'Ritual Matters More Than Duration',
+        body: 'A 5-minute consistent ritual works better than a 30-minute ritual you skip most days. Honestly\'s ritual is short enough to do daily, structured enough to matter.',
+      },
+      {
+        heading: 'Consistency Creates Change',
+        body: 'One good morning doesn\'t change your nervous system. 30 days of good mornings does. Honestly makes your self-care ritual automatic.',
+      },
+    ],
+    faqs: [
+      { question: 'What counts as self-care?', answer: 'Anything that primes your nervous system for calm: meditation, journaling, stretching, gratitude practice. Honestly guides you through all of them.' },
+      { question: 'How long should a self-care ritual be?', answer: '5-15 minutes. Long enough to matter, short enough to do consistently. Honestly\'s ritual is 5-10 minutes and covers all four elements.' },
+      { question: 'Can self-care replace therapy?', answer: 'No. Self-care is maintenance. Therapy is treatment. But a solid daily ritual makes therapy more effective.' },
+    ],
+    cta: 'Start Your Self-Care Ritual',
+    datePublished: '2026-06-13',
+  },
 ];
