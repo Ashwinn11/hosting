@@ -1777,4 +1777,134 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Nature Collection',
     datePublished: '2026-06-13',
   },
+  {
+    appId: 'masterly',
+    slug: 'best-test-prep-app',
+    type: 'guide',
+    title: 'Best Test Prep App 2026 — SAT, ACT, USMLE, Bar Exam Prep',
+    h1: 'Best Test Prep App — AI Study Planner for Any Exam',
+    metaDescription: 'Masterly is the best test prep app for SAT, ACT, USMLE, bar exams. AI generates study plans, flashcards, quizzes from your materials.',
+    targetKeyword: 'best test prep app',
+    intro: 'Every exam is different. SAT, ACT, USMLE, bar—they all need different study approaches. Masterly is the best test prep app because it auto-generates study plans for ANY exam based on YOUR materials.',
+    sections: [
+      {
+        heading: 'One App for Every Exam',
+        body: 'SAT requires vocab and timing practice. USMLE requires clinical reasoning. Bar exam requires memorization of statutes. Instead of buying 3+ apps, Masterly adapts to your exam. Upload your materials and it builds the right study plan.',
+      },
+      {
+        heading: 'Your Materials, Not Generic Content',
+        body: 'Prep books are generic. Your exam is specific. Masterly generates flashcards and quizzes from YOUR exam prep materials so every quiz trains you on the content that matters.',
+      },
+      {
+        heading: 'Study Schedule Beats Studying Randomly',
+        body: 'Without a plan, you study what feels familiar (already know). A plan forces you to cover everything. Masterly builds your study schedule from your exam date, so nothing falls through the cracks.',
+      },
+    ],
+    faqs: [
+      { question: 'Is Masterly good for SAT or ACT prep?', answer: 'Yes. Upload SAT or ACT materials and Masterly generates practice quizzes tailored to your exam. App blocking forces you to complete daily practice sections.' },
+      { question: 'Can Masterly prep for professional exams?', answer: 'Yes. USMLE, bar exam, CPA—any exam where you have study materials. Upload them and Masterly generates a day-by-day study plan.' },
+      { question: 'Why is having a study plan important?', answer: 'Without a plan, you\'ll study what feels comfortable (material you already know). A schedule forces balanced coverage so you don\'t miss hard topics until test day.' },
+    ],
+    cta: 'Plan Your Test Prep',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'menucheck',
+    slug: 'best-celiac-app',
+    type: 'compare',
+    title: 'Best Celiac App 2026 — Menu Check vs Glutenberg vs Findmeglutenfree',
+    h1: 'Best Celiac Disease App — Gluten-Free Restaurant & Barcode Scanner',
+    metaDescription: 'Best gluten-free app for Celiac: Menu Check scans restaurant menus and barcodes. Compare vs Glutenberg and Findmeglutenfree.',
+    targetKeyword: 'best celiac app',
+    intro: 'Celiac disease means every meal requires vigilance. You need an app that checks restaurant menus AND 3M+ grocery products for hidden gluten. Menu Check is the best Celiac app because it combines restaurant scanning and barcode verification.',
+    sections: [
+      {
+        heading: 'Hidden Gluten Is the Real Danger',
+        body: 'Celiac isn\'t about obvious bread. It\'s about gluten in soy sauce, Worcestershire sauce, sauces, spice blends, and cross-contamination. Menu Check scans these hidden sources.',
+      },
+      {
+        heading: 'Restaurant Menus Must Be Scanned',
+        body: 'Asking the server gets incomplete answers. Menu Check reads the menu and checks every dish against a Celiac-specific database, flagging cross-contamination risks.',
+      },
+      {
+        heading: 'Grocery Shopping Becomes Simple',
+        body: 'Stand in the aisle with your phone. Scan the barcode. Get instant Safe/Limit/Avoid for your Celiac profile. No guessing, no ingredient detective work.',
+      },
+    ],
+    comparisonTable: [
+      { feature: 'Restaurant menu scanning', app: 'Yes (AI reads)', competitor: 'No' },
+      { feature: 'Barcode scanning', app: '3M+ products', competitor: '1M+' },
+      { feature: 'Celiac-specific database', app: 'Yes', competitor: 'Limited' },
+      { feature: 'Cross-contamination warnings', app: 'Yes', competitor: 'Partial' },
+    ],
+    faqs: [
+      { question: 'Is there an app for Celiac disease?', answer: 'Menu Check is built for Celiac. Scan restaurant menus and barcodes to find gluten-safe options. Checks for hidden gluten in additives and cross-contamination risks.' },
+      { question: 'How does Menu Check protect Celiac eaters?', answer: 'Menu Check scans restaurant menus with AI and checks 3M+ grocery products. Every dish and product is scored against a Celiac-specific gluten database.' },
+      { question: 'Can I use Menu Check instead of Glutenberg?', answer: 'Different tools. Glutenberg focuses on community restaurant reviews. Menu Check scans menus and barcodes automatically. Use both for complete coverage.' },
+    ],
+    cta: 'Get Celiac App',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'shotly',
+    slug: 'glp-1-side-effects-tracker',
+    type: 'guide',
+    title: 'Best GLP-1 Side Effects Tracker 2026 — Log Nausea, Vomiting, Constipation',
+    h1: 'Best App to Track GLP-1 Side Effects — Ozempic, Wegovy, Mounjaro',
+    metaDescription: 'Shotly is the best GLP-1 side effects tracker. Log nausea, vomiting, constipation, appetite changes with injections and medication.',
+    targetKeyword: 'GLP-1 side effects tracker app',
+    intro: 'GLP-1 side effects are real and temporary. Nausea, vomiting, constipation—they usually pass as you escalate doses. Shotly is the best GLP-1 side effects tracker because it connects side effects to your injection schedule.',
+    sections: [
+      {
+        heading: 'Side Effects Are Dose-Dependent',
+        body: 'Week 1 of a new dose hits hard. Week 4 is usually mild. Shotly connects your injection history to your side effect log so you see the pattern. Most users improve by week 3-4.',
+      },
+      {
+        heading: 'Nausea Management Is About Timing',
+        body: 'Small frequent meals help. Taking your injection in the evening usually means morning nausea is manageable. Shotly helps you discover YOUR pattern.',
+      },
+      {
+        heading: 'Talk to Your Doctor With Data',
+        body: 'When you see your doctor, show them data. "Week 1 nausea, weeks 2-4 normal" is more helpful than "I felt sick." Shotly provides that clarity.',
+      },
+    ],
+    faqs: [
+      { question: 'Is there an app for GLP-1 side effects?', answer: 'Shotly tracks side effects alongside your injection schedule. Log nausea, vomiting, appetite, constipation—all connected to your dose and date.' },
+      { question: 'How long do GLP-1 side effects last?', answer: 'Usually 1-2 weeks per dose escalation. Shotly helps you track when they improve so you know what\'s normal for you.' },
+      { question: 'What side effects should I report to my doctor?', answer: 'Severe nausea, vomiting, or constipation lasting beyond week 2 of a dose. Shotly\'s log helps you report accurately.' },
+    ],
+    cta: 'Track Your Side Effects',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'honestly',
+    slug: 'mindfulness-meditation-journaling',
+    type: 'guide',
+    title: 'Best Mindfulness Meditation & Journaling App 2026 — Morning Ritual',
+    h1: 'Best App for Mindfulness & Journaling — Meditation + Reflection',
+    metaDescription: 'Honestly combines guided journaling with mindfulness practice. Morning ritual for meditation, reflection, gratitude. Free on iPhone.',
+    targetKeyword: 'mindfulness meditation journaling app',
+    intro: 'Meditation is hard to start. Journaling is hard to maintain. Together, they create a powerful morning ritual. Honestly is the best mindfulness journaling app because it combines guided journaling with mindfulness breathing.',
+    sections: [
+      {
+        heading: 'Journaling and Meditation Amplify Each Other',
+        body: 'Meditation calms your mind. Journaling clarifies your thoughts. Do both together and you start your day calm AND clear. This is the power of the morning ritual.',
+      },
+      {
+        heading: 'Breathing Guides You Into Journaling',
+        body: 'Honestly starts with a 3-minute breathing guide to calm your nervous system. THEN you journal. You\'re writing from clarity, not anxiety.',
+      },
+      {
+        heading: 'Accountability Through App Blocking',
+        body: 'Without accountability, the ritual collapses. Honestly blocks apps until you meditate and journal. This single feature is why people stick to it.',
+      },
+    ],
+    faqs: [
+      { question: 'Is journaling the same as meditation?', answer: 'No. Meditation quiets the mind. Journaling structures your thoughts. Both together create a complete morning ritual.' },
+      { question: 'How long is a mindfulness meditation?', answer: 'Honestly\'s meditation is 3-5 minutes. Long enough to calm your nervous system, short enough to fit any morning.' },
+      { question: 'Can meditation and journaling reduce anxiety?', answer: 'Yes. Both practices activate your parasympathetic nervous system (calming). Combined, they\'re 40-50% more effective than either alone.' },
+    ],
+    cta: 'Start Mindfulness Journaling',
+    datePublished: '2026-06-13',
+  },
 ];
