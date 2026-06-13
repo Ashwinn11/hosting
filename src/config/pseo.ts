@@ -2186,4 +2186,283 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Adventure',
     datePublished: '2026-06-13',
   },
+  {
+    appId: 'masterly',
+    slug: 'study-schedule-app-exam-countdown',
+    type: 'guide',
+    title: 'Best Study Schedule App 2026 — Exam Countdown & Daily Plans',
+    h1: 'Best App for Study Schedules — Countdown Timer & Study Plans',
+    metaDescription: 'Masterly creates study schedules with countdown timers. Know exactly how many days until exam, what to study each day.',
+    targetKeyword: 'study schedule app countdown',
+    intro: 'You know your exam date. You don\'t know if you have enough time. A study schedule with a countdown timer removes that anxiety. Masterly is the best study schedule app because it shows you exactly how many days you have and what to cover each day.',
+    sections: [
+      {
+        heading: 'Countdown Creates Urgency',
+        body: 'Seeing "47 days until exam" is different than "sometime in May." A countdown makes the deadline real and motivates daily action.',
+      },
+      {
+        heading: 'Daily Plans Remove Guessing',
+        body: 'Without a plan, you study what feels comfortable. A schedule forces balanced coverage. Monday: math concepts. Tuesday: practice problems. Wednesday: review.',
+      },
+      {
+        heading: 'Adjustable Plans for Last-Minute Prep',
+        body: 'Exam sooner than expected? Masterly recalculates your daily schedule so you cover everything important even with less time.',
+      },
+    ],
+    faqs: [
+      { question: 'How many weeks should I study before an exam?', answer: 'Depends on your starting point and exam difficulty. Masterly tells you the minimum daily commitment needed to cover your syllabus before your exam date.' },
+      { question: 'What if my exam date moves?', answer: 'Masterly recalculates instantly. Change the date and it resets your daily study plan.' },
+      { question: 'Can I adjust the daily study load?', answer: 'Yes. If daily plans feel too intense, tell Masterly and it spreads content over more days.' },
+    ],
+    cta: 'Start Your Countdown',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'masterly',
+    slug: 'focus-app-for-students',
+    type: 'guide',
+    title: 'Best Focus App for Students 2026 — App Blocker & Study Focus',
+    h1: 'Best App to Focus While Studying — Block Distractions & Study',
+    metaDescription: 'Masterly is the best focus app for students. App blocking locks phone until you pass your daily quiz. Distraction-free studying.',
+    targetKeyword: 'best focus app for students',
+    intro: 'Focusing while studying is impossible with a phone. Every notification breaks concentration. Masterly is the best focus app for students because it doesn\'t just remind you to focus—it makes it impossible to NOT focus.',
+    sections: [
+      {
+        heading: 'App Blocking Is Mandatory Focus',
+        body: 'Other focus apps send notifications. Masterly blocks your apps completely. You literally cannot check social media even if you try. That\'s when real focus happens.',
+      },
+      {
+        heading: 'Focus Creates Flow State',
+        body: 'When distractions are removed, your brain enters flow. No notifications, no temptation, just deep study. This is where real learning happens.',
+      },
+      {
+        heading: 'Accountability Through App Locking',
+        body: 'You can\'t accidentally check your phone "just for a second." The apps are locked. This removes willpower from the equation.',
+      },
+    ],
+    faqs: [
+      { question: 'How does app blocking help me focus?', answer: 'By removing the option. When apps are literally locked, there\'s nothing to check. Your brain settles into study mode.' },
+      { question: 'Can I unlock apps during study time?', answer: 'No. That\'s the point. Unlocking requires completing your quiz. No shortcuts.' },
+      { question: 'What if I need my phone during study time?', answer: 'You can customize which apps are blocked. Keep calls/messages open if you need them, block social media.' },
+    ],
+    cta: 'Lock In & Focus',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'menucheck',
+    slug: 'histamine-intolerance-app',
+    type: 'guide',
+    title: 'Best Histamine Intolerance App 2026 — Food & Restaurant Scanner',
+    h1: 'Best App for Histamine Intolerance — Trigger Food Scanner',
+    metaDescription: 'Menu Check scans for histamine-rich foods. Restaurant menus and barcodes for histamine intolerance. Free on iPhone.',
+    targetKeyword: 'histamine intolerance app',
+    intro: 'Histamine intolerance is unpredictable and painful. You can\'t always know which foods trigger your symptoms. Menu Check is the best histamine intolerance app because it flags high-histamine foods and trigger ingredients.',
+    sections: [
+      {
+        heading: 'Histamine Hides in "Healthy" Foods',
+        body: 'Aged cheeses, fermented foods, tomatoes, avocados—they\'re all high in histamine. Menu Check identifies them in restaurant dishes and grocery products.',
+      },
+      {
+        heading: 'Fermentation Increases Histamine',
+        body: 'Soy sauce, vinegar, yogurt, kimchi—fermented foods are histamine bombs. Menu Check knows which ingredients are fermented.',
+      },
+      {
+        heading: 'Fresh Is Your Safety Zone',
+        body: 'Fresh foods are low histamine. Menu Check helps you identify fresh options at restaurants.',
+      },
+    ],
+    faqs: [
+      { question: 'What is histamine intolerance?', answer: 'Your body can\'t break down histamine from food, causing headaches, flushing, gut issues. Menu Check identifies trigger foods.' },
+      { question: 'Which foods are high in histamine?', answer: 'Aged cheeses, fermented foods, cured meats, tomatoes, avocados, alcohol. Menu Check flags all of them.' },
+      { question: 'Can I eat anything fresh?', answer: 'Yes. Fresh meat, fresh vegetables, fresh fruits are safe. Menu Check helps you build meals around fresh ingredients.' },
+    ],
+    cta: 'Scan for Histamine',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'menucheck',
+    slug: 'diabetes-friendly-restaurant-app',
+    type: 'guide',
+    title: 'Best Diabetes-Friendly Restaurant App 2026 — Carb Counter',
+    h1: 'Best App for Dining Out with Diabetes — Carb & Glucose Tracking',
+    metaDescription: 'Menu Check scans restaurant menus for diabetes-safe meals. Carb counting and blood sugar friendly options. Free on iPhone.',
+    targetKeyword: 'diabetes friendly restaurant app',
+    intro: 'Eating out with diabetes means knowing carb counts and blood sugar impact. Menu Check is the best diabetes-friendly restaurant app because it scans menus for carb content and suggests low-sugar options.',
+    sections: [
+      {
+        heading: 'Restaurant Carbs Are Hidden',
+        body: 'Sauces, breads, even "healthy" dishes have surprising carbs. Menu Check reads the menu and estimates carb count for every dish.',
+      },
+      {
+        heading: 'Substitutions Matter',
+        body: 'Swap rice for vegetables, sauce on the side, no bread. Menu Check suggests modifications that lower blood sugar impact.',
+      },
+      {
+        heading: 'Meal Timing Affects Blood Sugar',
+        body: 'Eating at 6pm vs 8pm affects how your body processes carbs. Menu Check helps you log eating patterns.',
+      },
+    ],
+    faqs: [
+      { question: 'How do I eat out with diabetes?', answer: 'Count carbs, choose proteins first, avoid liquid carbs. Menu Check scans menus and estimates carbs for every dish.' },
+      { question: 'What\'s a safe carb count per meal?', answer: 'Varies by person and medication. Menu Check lets you set your carb targets.' },
+      { question: 'Can I have dessert with diabetes?', answer: 'Yes, in moderation and with medication adjustment. Menu Check tracks desserts and carbs.' },
+    ],
+    cta: 'Dine Out Safely',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'shotly',
+    slug: 'semaglutide-tracker-injection',
+    type: 'guide',
+    title: 'Best Semaglutide Tracker 2026 — Injection Log & Weight Tracking',
+    h1: 'Best App to Track Semaglutide Injections — Ozempic, Wegovy, Rybelsus',
+    metaDescription: 'Shotly tracks semaglutide (Ozempic, Wegovy, Rybelsus) injections, weight loss, and side effects. Free on iPhone.',
+    targetKeyword: 'semaglutide tracker app',
+    intro: 'Semaglutide is powerful for weight loss, but tracking matters. You need to log injections, track weight response, and monitor side effects. Shotly is the best semaglutide tracker because it\'s built for semaglutide specifically.',
+    sections: [
+      {
+        heading: 'Semaglutide Dose Matters',
+        body: 'Different dose = different results. Shotly tracks your dose and shows weight loss per dose so you understand what\'s working.',
+      },
+      {
+        heading: 'Injection Site Rotation Prevents Lipohypertrophy',
+        body: 'Injecting the same spot repeatedly can cause lumps (lipohypertrophy). Shotly reminds you to rotate sites.',
+      },
+      {
+        heading: 'Side Effects Are Temporary',
+        body: 'Nausea, constipation—they usually pass. Shotly tracks when side effects appear and disappear so you know what\'s normal.',
+      },
+    ],
+    faqs: [
+      { question: 'What is semaglutide?', answer: 'A GLP-1 receptor agonist used for diabetes (Ozempic) and weight loss (Wegovy). It suppresses appetite and slows digestion.' },
+      { question: 'How often do I inject semaglutide?', answer: 'Once weekly. Shotly tracks your injection day and sends reminders so you never miss.' },
+      { question: 'How much weight can I lose on semaglutide?', answer: 'Average 15-22% body weight. Shotly tracks YOUR personal trend.' },
+    ],
+    cta: 'Track Your Semaglutide',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'shotly',
+    slug: 'injection-reminder-app',
+    type: 'guide',
+    title: 'Best Injection Reminder App 2026 — Never Miss a Dose',
+    h1: 'Best App for Injection Reminders — Medication Alerts & Tracking',
+    metaDescription: 'Shotly reminds you for GLP-1 injections. Notification alerts, countdown timer, injection history. Never miss a dose.',
+    targetKeyword: 'injection reminder app',
+    intro: 'Missing a GLP-1 injection means your appetite roars back. Shotly is the best injection reminder app because it sends notifications AND shows a countdown so you never forget.',
+    sections: [
+      {
+        heading: 'Phone Notifications Ensure You Remember',
+        body: 'Set your injection day and time. Shotly sends push notifications so you remember before you get distracted.',
+      },
+      {
+        heading: 'Countdown Shows Time Until Next Dose',
+        body: 'The home screen displays "3 days until next injection." You always know what\'s coming.',
+      },
+      {
+        heading: 'History Prevents Double Dosing',
+        body: 'Shotly logs every injection. Did you already inject this week? Check your history instantly.',
+      },
+    ],
+    faqs: [
+      { question: 'Can I set custom reminder times?', answer: 'Yes. Monday 6pm? Shotly sends notifications at that time every week.' },
+      { question: 'What if I miss a dose?', answer: 'Shotly logs it. Talk to your doctor about whether to take it late or wait until next week.' },
+      { question: 'Does Shotly work offline?', answer: 'Yes. Reminders work as long as your phone is on, even without internet.' },
+    ],
+    cta: 'Set Your Reminders',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'honestly',
+    slug: 'gratitude-app-journal',
+    type: 'guide',
+    title: 'Best Gratitude App 2026 — Daily Gratitude Practice & Habit',
+    h1: 'Best App for Gratitude Journaling — Daily Gratitude Habit',
+    metaDescription: 'Honestly is a gratitude app. Daily gratitude journal, streak tracking, and app blocking until you journal.',
+    targetKeyword: 'best gratitude app',
+    intro: 'Gratitude practice rewires your brain for happiness. Studies show daily gratitude reduces anxiety by 25-30%. Honestly is the best gratitude app because it makes gratitude a non-negotiable daily ritual.',
+    sections: [
+      {
+        heading: 'Gratitude Is Neuroplasticity',
+        body: 'Noticing what\'s good literally rewires your brain to look for good. Daily practice makes this automatic.',
+      },
+      {
+        heading: 'Specificity Matters',
+        body: '"I\'m grateful for my family" is generic. "I\'m grateful that my mom called today and made me laugh" is specific and powerful. Honestly prompts for specificity.',
+      },
+      {
+        heading: 'Streaks Create Momentum',
+        body: 'A 30-day gratitude streak changes your baseline happiness. You notice good things automatically.',
+      },
+    ],
+    faqs: [
+      { question: 'Does gratitude journaling actually work?', answer: 'Yes. Research shows daily gratitude practice increases happiness, reduces anxiety, and improves sleep.' },
+      { question: 'How specific should I be?', answer: 'Very. "I\'m grateful for coffee today" is better than "I\'m grateful for food." Specificity makes the gratitude real.' },
+      { question: 'When should I do my gratitude journal?', answer: 'Morning is best. Gratitude sets your mindset for the day. Honestly blocks apps until you journal.' },
+    ],
+    cta: 'Start Your Gratitude',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'yumeship',
+    slug: 'anime-fan-community-app',
+    type: 'guide',
+    title: 'Best Anime Fan App 2026 — Character Journaling & Shipping Space',
+    h1: 'Best App for Anime Fans — Character Journal & Shipping Community',
+    metaDescription: 'Yumeship is the best anime fan app. Track favorite characters, build headcanons, organize ships. Private and secure. Free on iPhone.',
+    targetKeyword: 'best anime fan app',
+    intro: 'Anime fandom deserves an app built for it. Yumeship is the best anime fan app because it lets you track your favorite characters and ships with organized, private pages.',
+    sections: [
+      {
+        heading: 'Character Pages Are Organized',
+        body: 'Keep one page per character with artwork, headcanons, episode thoughts, and relationship maps. Everything organized in one place.',
+      },
+      {
+        heading: 'Shipping Isn\'t Judged',
+        body: 'Your ships are YOUR business. Yumeship is a private vault. No one sees unless you share.',
+      },
+      {
+        heading: 'Anime Content Evolves',
+        body: 'New seasons, new characters, new ships. Yumeship grows with your fandom as new anime releases.',
+      },
+    ],
+    faqs: [
+      { question: 'Can I track multiple anime at once?', answer: 'Yes. Unlimited pages for unlimited characters across all anime you love.' },
+      { question: 'Is my anime fandom private?', answer: 'Completely. Everything stays on your device. No one sees it unless you specifically share.' },
+      { question: 'Can I share my ships with friends?', answer: 'Yes. Invite friends to view your characters and ships, or keep it private. Your choice.' },
+    ],
+    cta: 'Create Your Anime Space',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'catch-wildlife',
+    slug: 'nature-photography-guide-app',
+    type: 'guide',
+    title: 'Best Nature Photography Guide 2026 — Wildlife Photography Tips',
+    h1: 'Best App for Nature Photography — Identify & Photograph Wildlife',
+    metaDescription: 'Catch Wildlife teaches nature photography. Identify animals, learn field marks, improve your wildlife photos.',
+    targetKeyword: 'nature photography guide app',
+    intro: 'Good nature photography comes from understanding what you\'re photographing. Knowing a bird\'s field marks, its rarity, its behavior—these make better photos. Catch Wildlife is the best nature photography guide because it teaches you what to photograph.',
+    sections: [
+      {
+        heading: 'Field Marks Improve Your Compositions',
+        body: 'A male warbler in breeding plumage is more vibrant than a female. Knowing field marks helps you find and photograph the best subjects.',
+      },
+      {
+        heading: 'Rarity Shapes Your Shot',
+        body: 'Photographing a common sparrow is different than photographing a rare migrant. Knowing rarity helps you appreciate what you find.',
+      },
+      {
+        heading: 'Behavior Predicts Moments',
+        body: 'Know where birds perch, when they feed, how they move. This knowledge lets you anticipate great photo moments.',
+      },
+    ],
+    faqs: [
+      { question: 'How do I improve my nature photography?', answer: 'Learn what you\'re photographing. Catch Wildlife identifies animals and teaches you field marks so you understand your subjects better.' },
+      { question: 'What gear do I need?', answer: 'Start with your phone. Catch Wildlife is designed for phone photography. Better gear helps, but understanding animals helps more.' },
+      { question: 'Where should I go to photograph wildlife?', answer: 'Catch Wildlife shows hotspots near you and what animals you\'re likely to find in each season.' },
+    ],
+    cta: 'Master Wildlife Photography',
+    datePublished: '2026-06-13',
+  },
 ];
