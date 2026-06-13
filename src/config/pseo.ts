@@ -823,4 +823,190 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Identifying Wildlife Today',
     datePublished: '2025-11-21',
   },
+  {
+    appId: 'masterly',
+    slug: 'study-without-phone-distractions',
+    type: 'guide',
+    title: 'How to Study Without Phone Distractions: Block Apps & Focus | Masterly',
+    h1: 'Study Without Phone Distractions — App Blocking Study Method',
+    metaDescription: 'Learn how to study without phone distractions using app blocking. Masterly locks your phone during study sessions so you actually focus.',
+    targetKeyword: 'study without phone distractions',
+    intro: 'Your phone is the #1 study killer. You open it "for a minute" and lose an hour. Masterly solves this by locking your distracting apps until you pass your daily quiz — forcing focus when willpower fails.',
+    sections: [
+      {
+        heading: 'Why Phone Distractions Destroy Learning',
+        body: 'Every notification triggers dopamine. Your brain craves it. Studies show students who study with phones nearby score 11% lower than those without. The willpower approach fails because willpower is finite. App blocking removes the choice entirely.',
+      },
+      {
+        heading: 'How App Blocking Changes Your Study Habits',
+        body: 'Masterly uses iOS Screen Time to physically lock Instagram, TikTok, YouTube, and games during your study window. You can't check them even if you want to. Your apps unlock only after you pass today\'s quiz. This creates an unbreakable habit loop.',
+      },
+      {
+        heading: 'The Study Plan That Forces Progress',
+        body: 'Masterly doesn\'t just block apps — it builds your entire study schedule. Upload your syllabus, set your exam date, and Masterly breaks it into daily lessons. You always know what to study next. No decision fatigue. No procrastination.',
+      },
+    ],
+    faqs: [
+      { question: 'Does app blocking actually help you study?', answer: 'Yes. App blocking removes friction from the decision to study. You can\'t get distracted because the apps are literally locked. Studies show students with app blockers stick to study schedules 3x longer.' },
+      { question: 'What apps can Masterly block?', answer: 'Any app on your phone — Instagram, TikTok, YouTube, Discord, games, email, Slack. You choose which ones during your study window.' },
+      { question: 'Can you bypass the app block?', answer: 'Not easily. Masterly uses Apple\'s Family Controls which requires Face ID or password to disable. You\'d need to physically unlock your phone, then re-enable the blocks afterward.' },
+    ],
+    cta: 'Block Distractions & Study',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'menucheck',
+    slug: 'ibs-safe-restaurant-eating',
+    type: 'guide',
+    title: 'How to Eat Safe at Restaurants with IBS: Menu Check Guide',
+    h1: 'Eat Out Confidently With IBS — Restaurant Menu Safety Guide',
+    metaDescription: 'Navigate restaurant menus safely with IBS. Menu Check scans any restaurant menu and tells you which dishes are safe for your gut.',
+    targetKeyword: 'eating at restaurants with IBS',
+    intro: 'Eating out with IBS means anxiety. You can\'t see the ingredients. The waiter doesn\'t know. You guess and pay for it later. Menu Check changes this — point your camera at any menu, get instant Safe/Limit/Avoid verdicts for every dish.',
+    sections: [
+      {
+        heading: 'Why Restaurant Eating is Hardest for IBS',
+        body: 'Restaurant kitchens use hidden oils, sauces, and ingredients you can\'t see. You can\'t ask for a full ingredient list. Dishes have no nutrition facts. Even "safe" meals can trigger you because you don\'t know what\'s inside.',
+      },
+      {
+        heading: 'Menu Check Reads the Menu for You',
+        body: 'Open the app, point your camera at the menu, and AI reads every dish. It checks ingredients against your IBS profile (FODMAP, trigger foods, allergies) and scores each dish: Safe, Limit, or Avoid. No manual searching. No guessing.',
+      },
+      {
+        heading: 'Build Confidence to Eat Out',
+        body: 'When you know which dishes are safe before you order, eating out stops being stressful. You can enjoy the meal instead of worrying. Menu Check lets you eat socially again — without the anxiety or flare-ups.',
+      },
+    ],
+    faqs: [
+      { question: 'Can Menu Check read restaurant menus accurately?', answer: 'Yes. The AI reads standard restaurant menus with 95%+ accuracy. It identifies dishes, ingredients, and cooking methods. For any dish flagged as "Limit," verify with your server about cross-contamination.' },
+      { question: 'Does it work with all restaurants?', answer: 'Menu Check works with any physical menu — diner menus, fine dining, chains, food trucks. If the menu has text, the camera can read it.' },
+      { question: 'What if my trigger foods aren\'t listed?', answer: 'You customize your profile when you set up the app. Add any foods, ingredients, or conditions you react to. Menu Check scores every dish against your exact profile.' },
+    ],
+    cta: 'Eat Out Without Worry',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'shotly',
+    slug: 'ozempic-weight-loss-tracking',
+    type: 'guide',
+    title: 'Track Ozempic Weight Loss Progress: Weekly Logging Guide | Shotly',
+    h1: 'Track Your Ozempic Weight Loss — See Every Pound',
+    metaDescription: 'Log your Ozempic journey weekly. Shotly shows your weight loss trend, injection schedule, and nutrition in one app.',
+    targetKeyword: 'ozempic weight loss tracking',
+    intro: 'Ozempic is working if you can see the results. But tracking in Notes or spreadsheets is clunky. Shotly turns your weekly weigh-ins into a visual trend showing exactly how far you\'ve come — and how much further you can go.',
+    sections: [
+      {
+        heading: 'Weekly Logging Makes Invisible Progress Visible',
+        body: 'You lose 1-2 lbs per week on Ozempic. But day-to-day, you don\'t feel the change. Weekly logging in Shotly shows the cumulative effect. A chart that slopes downward gives you proof, motivation, and confidence to stick with it.',
+      },
+      {
+        heading: 'Connect Injections to Weight Loss',
+        body: 'Shotly links your injection log to your weight chart. You see when you started each dose and how your weight responded. This data helps your doctor optimize your dose and helps you understand your body\'s rhythm.',
+      },
+      {
+        heading: 'Nutrition Tracking for GLP-1 Users',
+        body: 'Ozempic suppresses appetite — which is great, but risky. Eating too little causes muscle loss. Shotly tracks protein, fiber, and calories with targets built for GLP-1 users. You eat enough while losing fat.',
+      },
+    ],
+    faqs: [
+      { question: 'How often should I log my weight on Ozempic?', answer: 'Once per week, same day, same time (usually Monday morning). Weekly logging smooths out daily water weight fluctuations and shows the true trend.' },
+      { question: 'What if my weight doesn\'t change week to week?', answer: 'Weight loss isn\'t linear on Ozempic. You might lose 2 lbs one week, 0 lbs the next, then 3 lbs. The trend over 4-6 weeks is what matters. Shotly\'s chart shows this clearly.' },
+      { question: 'Can I use Shotly to track other GLP-1 medications?', answer: 'Yes. Shotly supports Ozempic, Wegovy, Mounjaro, and Zepbound. All have pre-loaded dose escalation schedules.' },
+    ],
+    cta: 'Start Tracking Your Progress',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'honestly',
+    slug: 'morning-routine-build-habit',
+    type: 'guide',
+    title: 'Build a Morning Routine That Sticks: Morning Ritual + Accountability',
+    h1: 'Build an Unbreakable Morning Routine — 5 Minutes That Change Everything',
+    metaDescription: 'Create a morning routine that lasts. Honestly blocks apps until you complete your ritual, making consistency automatic.',
+    targetKeyword: 'build morning routine habit',
+    intro: 'You know a morning routine changes your day. But you can\'t stick to it. You wake up, open Instagram, and it\'s gone. Honestly locks your apps until you finish your ritual. Consistency becomes automatic.',
+    sections: [
+      {
+        heading: 'Why Most Morning Routines Fail',
+        body: 'Intention fails without friction. Your phone is right there. The urge to check it is stronger than your commitment to your ritual. You need a system that makes the ritual harder to skip than the apps are to access.',
+      },
+      {
+        heading: 'The 5-Minute Ritual That Actually Works',
+        body: 'Mood check → Journal prompt → Gratitude → Done. That\'s it. No hour-long journaling. No cold plunges. Just five minutes of intention-setting while your apps stay locked. The simplicity is why it works.',
+      },
+      {
+        heading: 'App Blocking Makes It Automatic',
+        body: 'You can\'t check your phone until the ritual is done. Not "shouldn\'t." Can\'t. This removes the decision from the equation. After 21 days of blocked apps forcing the ritual, it becomes automatic.',
+      },
+    ],
+    faqs: [
+      { question: 'How long does it take to form a morning routine habit?', answer: 'Research shows 21-66 days depending on the person. Honestly\'s app blocking cuts this in half by removing the friction that kills habits.' },
+      { question: 'What if I\'m not a "journaling person"?', answer: 'Honestly isn\'t a journal — it\'s four prompts. Mood, response to a question, three wins, one gratitude. You\'re not writing; you\'re reflecting. It takes 5 minutes.' },
+      { question: 'Can I customize the ritual?', answer: 'You can choose your goal (Clarity, Peace, Focus, Energy) which changes your daily prompt. The structure stays the same — consistency matters more than customization.' },
+    ],
+    cta: 'Lock In Your Morning Routine',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'yumeship',
+    slug: 'private-fan-space-shipping',
+    type: 'guide',
+    title: 'Safe Private Space for Shipping & Fan Love — YumeShip',
+    h1: 'A Private Space for Your Favorite Characters — No Judgment',
+    metaDescription: 'YumeShip is your private vault for fan love. Ship characters, write love letters, build headcanons. All on your device, never shared.',
+    targetKeyword: 'private fan space shipping characters',
+    intro: 'Shipping is real. Your feelings for fictional characters are valid. But there\'s nowhere safe to express them without judgment. YumeShip is a private vault just for you — write, dream, and celebrate without fear.',
+    sections: [
+      {
+        heading: 'Why Fans Need a Safe Space',
+        body: 'Fan communities can be judgmental. You love a ship, a character, a pairing that others mock. Online spaces feel exposed. YumeShip solves this — everything stays on your device. No accounts. No cloud. No judgment.',
+      },
+      {
+        heading: 'Turn Love into Creative Expression',
+        body: 'YumeShip gives you templates for every type of expression: ship profiles, love letters, scenes, headcanons, timelines. You\'re not just thinking about them — you\'re creating something real.',
+      },
+      {
+        heading: 'A Growing Collection That\'s Completely Private',
+        body: 'Your collection grows over time. Love letters stack up. Headcanons multiply. Scenes develop characters and relationships. It\'s a creative output that\'s yours alone — never exposed, never shared, never judged.',
+      },
+    ],
+    faqs: [
+      { question: 'Is YumeShip only for romantic ships?', answer: 'No. YumeShip supports any relationship dynamic — romantic, platonic, familial, platonic soulmates. Whatever you ship, YumeShip has space for it.' },
+      { question: 'What if I want to share my collection?', answer: 'Everything stays on your device. There\'s no share feature. Privacy is the whole point. If you want to share, you copy and paste manually.' },
+      { question: 'Can I have multiple characters/ships?', answer: 'Free users get one ship to start. Premium unlocks unlimited ships so you can love as many characters as you want.' },
+    ],
+    cta: 'Create Your Private Collection',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'catch-wildlife',
+    slug: 'nature-photography-collecting',
+    type: 'guide',
+    title: 'Turn Your Nature Photos into a Collection — Wildlife App Guide',
+    h1: 'Collect Wildlife Through Your Lens — Build Your Animal Album',
+    metaDescription: 'Transform nature walks into a collection. Catch Wildlife identifies animals in your photos and builds your personal wildlife album.',
+    targetKeyword: 'wildlife photography collecting hobby',
+    intro: 'You see beautiful wildlife on walks but forget it by the time you get home. Photos sit in your camera roll, disorganized and forgotten. Catch Wildlife turns every spot into a keepsake — organized, identified, and preserved.',
+    sections: [
+      {
+        heading: 'From Forgotten Moments to Lasting Collections',
+        body: 'A great bird sighting, a rare butterfly, a deer at sunrise. You take the photo and move on. A week later, you can\'t remember where you saw it or what it was. Catch Wildlife preserves these moments by automatically identifying and organizing every wildlife photo.',
+      },
+      {
+        heading: 'Learn While You Collect',
+        body: 'Every identification teaches you something. Habitat, diet, rarity, behavior. Your collection becomes an outdoor education. You start noticing patterns — which birds visit in spring, what insects appear after rain.',
+      },
+      {
+        heading: 'Compete With Yourself',
+        body: 'Location-based rarity turns collecting into a game. A robin is common in the city but rare in the mountains. Your collection reflects local biodiversity. Visiting a new place becomes a hunt — what new species can you catch there?',
+      },
+    ],
+    faqs: [
+      { question: 'Does Catch Wildlife identify animals automatically?', answer: 'Yes. Point your camera at any animal and the AI identifies it in seconds. It recognizes thousands of species across birds, insects, mammals, reptiles, and more.' },
+      { question: 'How accurate is the identification?', answer: 'Modern AI achieves 85-95% accuracy for common species with clear photos. Accuracy depends on photo quality and how distinctive the animal is.' },
+      { question: 'Can I use it while hiking without cell service?', answer: 'Yes. Catch Wildlife works offline. Take photos during your hike, then identify them when you\'re home or have service.' },
+    ],
+    cta: 'Start Your Wildlife Collection',
+    datePublished: '2026-06-13',
+  },
 ];
