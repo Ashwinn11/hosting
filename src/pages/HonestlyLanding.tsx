@@ -307,8 +307,9 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
         keywords={app.seo.keywords}
         appId={app.id}
         appStoreUrl={app.appStoreUrl}
-        appCategory="LifestyleApplication"
+        appCategory={app.seoApplicationCategory}
         aggregateRating={app.aggregateRating}
+        screenshots={app.marketing.screenshots}
         faqs={app.marketing.faqs}
         appNumericId={app.appNumericId}
       />
@@ -345,9 +346,19 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
             <h1 style={{ fontFamily: outfit, fontWeight: 700, fontSize: 'clamp(2.2rem,5vw,3.8rem)', color: T.ink, lineHeight: 1.15, marginBottom: 20 }}>
               Your morning doesn't have<br/>to start with someone else's content.
             </h1>
-            <p style={{ fontSize: 'clamp(1rem,2vw,1.2rem)', color: T.inkFaint, lineHeight: 1.7, marginBottom: 44, maxWidth: 480, margin: '0 auto 44px' }}>
+            <p style={{ fontSize: 'clamp(1rem,2vw,1.2rem)', color: T.inkFaint, lineHeight: 1.7, marginBottom: 28, maxWidth: 480, margin: '0 auto 28px' }}>
               Pick your mood. Write. Be grateful.<br/>Your apps unlock. A little plant grows.
             </p>
+
+            {/* Rating badge */}
+            {app.aggregateRating && (
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '8px 14px', borderRadius: 12, backgroundColor: T.card, border, marginBottom: 28, fontSize: 14, fontWeight: 600, color: T.ink }}>
+                <span>⭐</span>
+                <span>{app.aggregateRating.ratingValue}</span>
+                <span style={{ color: T.inkFaint }}>·</span>
+                <span style={{ color: T.inkFaint }}>{app.aggregateRating.ratingCount} ratings</span>
+              </div>
+            )}
 
             {/* Live mood picker */}
             <div style={{ display: 'flex', justifyContent: 'center', gap: 12, marginBottom: 44, flexWrap: 'wrap' }}>
@@ -363,7 +374,15 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
             <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
               <img src="/appstore.png" alt="Download on App Store" style={{ height: 52 }}/>
             </a>
-            <p style={{ fontFamily: outfit, fontSize: 11, color: T.inkFaint, textTransform: 'uppercase', letterSpacing: '0.15em', marginTop: 10 }}>iOS · Free</p>
+
+            {/* Platform chip */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 4, padding: '10px 16px', borderRadius: 10, backgroundColor: T.card, border, marginTop: 14, fontSize: 13, fontWeight: 600, color: T.ink }}>
+              <span>Free</span>
+              <span style={{ color: T.inkFaint }}>·</span>
+              <span>iOS 15+</span>
+              <span style={{ color: T.inkFaint }}>·</span>
+              <span>iPhone & iPad</span>
+            </div>
           </div>
         </section>
 
@@ -553,6 +572,37 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
               <img src="/appstore.png" alt="Download on App Store" style={{ height: 56 }}/>
             </a>
             <p style={{ fontFamily: outfit, fontSize: 11, color: T.inkFaint, textTransform: 'uppercase', letterSpacing: '0.15em', marginTop: 12 }}>Free on iPhone</p>
+          </div>
+        </section>
+
+        {/* Comparisons & Guides */}
+        <section style={{ padding: '80px 24px', backgroundColor: T.paper, borderTop: border }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+            <Hand size={18} color={T.orange} style={{ display: 'block', marginBottom: 8 }}>✦ learn & compare</Hand>
+            <h2 style={{ fontFamily: outfit, fontWeight: 700, fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: T.ink, marginBottom: 12 }}>
+              How Honestly Compares
+            </h2>
+            <p style={{ fontSize: 16, color: T.inkFaint, marginBottom: 40, maxWidth: 500 }}>
+              See how Honestly's morning ritual approach stacks up against other journal apps.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
+              <Link to="/honestly/compare/vs-day-one" style={{
+                padding: 24, borderRadius: 12, border, backgroundColor: T.card, textDecoration: 'none', color: T.ink,
+                transition: 'all 0.2s', display: 'block'
+              }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = T.orange;
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = border;
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+                }}
+              >
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: T.orange, marginBottom: 8 }}>⚖️ Compare</div>
+                <p style={{ fontSize: 16, fontWeight: 700 }}>Honestly vs Day One</p>
+              </Link>
+            </div>
           </div>
         </section>
 

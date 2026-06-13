@@ -34,7 +34,7 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
         keywords={app.seo.keywords}
         appId={app.id}
         appStoreUrl={app.appStoreUrl}
-        appCategory="EducationApplication"
+        appCategory={app.seoApplicationCategory}
         aggregateRating={app.aggregateRating}
         faqs={app.marketing.faqs}
         appNumericId={app.appNumericId}
@@ -83,14 +83,33 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
               <h1 className="font-bold leading-snug mb-6" style={{ fontSize: 'clamp(2rem, 3.8vw, 3rem)', color: PRIMARY, fontFamily: '"Chalkboard SE", "Comic Sans MS", cursive' }}>
                 Stop planning to study. Start.
               </h1>
-              <p className="text-lg leading-relaxed mb-10 max-w-lg" style={{ color: `${PRIMARY}70` }}>
+              <p className="text-lg leading-relaxed mb-6 max-w-lg" style={{ color: `${PRIMARY}70` }}>
                 Upload your syllabus. AI builds the plan. Pass the quiz. Unlock your apps.
               </p>
+
+              {/* Rating badge */}
+              {app.aggregateRating && (
+                <div className="mb-10 inline-flex items-center gap-2 px-4 py-2 rounded-lg border" style={{ backgroundColor: 'rgba(233,180,76,0.1)', borderColor: 'rgba(233,180,76,0.3)', color: PRIMARY, fontSize: '0.875rem', fontWeight: 600 }}>
+                  <span>⭐</span>
+                  <span>{app.aggregateRating.ratingValue}</span>
+                  <span style={{ color: `${PRIMARY}60` }}>·</span>
+                  <span style={{ color: `${PRIMARY}60` }}>{app.aggregateRating.ratingCount} ratings</span>
+                </div>
+              )}
+
               <div className="flex flex-wrap gap-4 items-center">
                 <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform active:scale-95">
                   <img src="/appstore.png" alt="Download on App Store" className="h-12" />
                 </a>
-                <span className="text-sm opacity-30">iOS Only</span>
+              </div>
+
+              {/* Platform chip */}
+              <div className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-lg border text-sm font-semibold" style={{ backgroundColor: 'rgba(45,79,30,0.05)', borderColor: 'rgba(45,79,30,0.15)', color: PRIMARY }}>
+                <span>Free</span>
+                <span style={{ color: `${PRIMARY}60` }}>·</span>
+                <span>iOS 15+</span>
+                <span style={{ color: `${PRIMARY}60` }}>·</span>
+                <span>iPhone & iPad</span>
               </div>
             </div>
 
@@ -295,6 +314,32 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
           <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-block hover:scale-105 transition-transform active:scale-95">
             <img src="/appstore.png" alt="Download on App Store" className="h-14" />
           </a>
+        </section>
+
+        {/* Comparisons & Guides */}
+        <section className="py-20 px-6" style={{ backgroundColor: '#FDFBF7' }}>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-bold mb-3" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: PRIMARY }}>
+              Comparisons & Guides
+            </h2>
+            <p className="text-lg mb-12 opacity-70" style={{ color: PRIMARY }}>
+              Learn how Masterly AI compares to other flashcard apps and discover study strategies.
+            </p>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <Link to="/masterly/compare/vs-anki" className="group p-6 rounded-xl border-2 transition-all hover:-translate-y-1" style={{ borderColor: ACCENT, backgroundColor: 'rgba(233,180,76,0.05)' }}>
+                <div className="text-sm font-bold uppercase tracking-wider mb-2" style={{ color: ACCENT }}>⚖️ Compare</div>
+                <p className="font-bold text-lg" style={{ color: PRIMARY }}>Masterly AI vs Anki</p>
+              </Link>
+              <Link to="/masterly/compare/vs-quizlet" className="group p-6 rounded-xl border-2 transition-all hover:-translate-y-1" style={{ borderColor: ACCENT, backgroundColor: 'rgba(233,180,76,0.05)' }}>
+                <div className="text-sm font-bold uppercase tracking-wider mb-2" style={{ color: ACCENT }}>⚖️ Compare</div>
+                <p className="font-bold text-lg" style={{ color: PRIMARY }}>Masterly AI vs Quizlet</p>
+              </Link>
+              <Link to="/masterly/guide/ai-flashcard-generator-pdf" className="group p-6 rounded-xl border-2 transition-all hover:-translate-y-1" style={{ borderColor: ACCENT, backgroundColor: 'rgba(233,180,76,0.05)' }}>
+                <div className="text-sm font-bold uppercase tracking-wider mb-2" style={{ color: ACCENT }}>📖 Guide</div>
+                <p className="font-bold text-lg" style={{ color: PRIMARY }}>AI Flashcard Generator from PDF</p>
+              </Link>
+            </div>
+          </div>
         </section>
 
         {/* Footer */}

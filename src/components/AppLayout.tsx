@@ -23,6 +23,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ app, children }) => {
         keywords={app.seo.keywords}
         appId={app.id}
         appStoreUrl={app.appStoreUrl}
+        appCategory={app.seoApplicationCategory}
         aggregateRating={app.aggregateRating}
         faqs={app.marketing.faqs}
         appNumericId={app.appNumericId}

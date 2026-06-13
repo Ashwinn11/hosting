@@ -26,11 +26,23 @@ const PSEOLanding: React.FC = () => {
       <SEOBox
         title={page.title}
         description={page.metaDescription}
-        keywords={app.seo.keywords}
+        keywords={[page.targetKeyword, ...app.seo.keywords]}
         appId={app.id}
         appStoreUrl={app.appStoreUrl}
         appNumericId={app.appNumericId}
+        appCategory={app.seoApplicationCategory}
+        aggregateRating={app.aggregateRating}
+        screenshots={app.marketing.screenshots}
         faqs={page.faqs}
+        breadcrumbs={[
+          { name: 'Home', url: 'https://briefly.live/' },
+          { name: app.name, url: `https://briefly.live/${app.id}` },
+          { name: page.h1, url: `https://briefly.live/${app.id}/${page.type}/${page.slug}` },
+        ]}
+        pageType={page.type}
+        canonicalUrl={`https://briefly.live/${app.id}/${page.type}/${page.slug}`}
+        datePublished={page.datePublished}
+        comparisonTable={page.comparisonTable}
       />
 
       {/* Nav */}
@@ -60,6 +72,21 @@ const PSEOLanding: React.FC = () => {
       </nav>
 
       <div style={{ maxWidth: 760, margin: '0 auto', padding: '88px 24px 80px' }}>
+        {/* Visible Breadcrumbs */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 32, fontSize: 13, color: mutedColor }}>
+          <Link to="/" style={{ color: primary, textDecoration: 'none', fontWeight: 600, opacity: 0.8, transition: 'opacity 0.2s' }}
+            onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.opacity = '1'}
+            onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.opacity = '0.8'}
+          >Home</Link>
+          <span>→</span>
+          <Link to={`/${app.id}`} style={{ color: primary, textDecoration: 'none', fontWeight: 600, opacity: 0.8, transition: 'opacity 0.2s' }}
+            onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.opacity = '1'}
+            onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.opacity = '0.8'}
+          >{app.name}</Link>
+          <span>→</span>
+          <span style={{ color: textColor, fontWeight: 600 }}>{page.h1}</span>
+        </div>
+
         {/* Hero */}
         <div style={{ marginBottom: 48 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: primary, backgroundColor: `${primary}15`, padding: '4px 10px', borderRadius: 20, marginBottom: 16 }}>
@@ -158,6 +185,44 @@ const PSEOLanding: React.FC = () => {
             <img src="/appstore.png" alt="App Store" style={{ height: 18, filter: 'brightness(0) invert(1)' }} />
             {page.cta}
           </a>
+        </div>
+
+        {/* Related Articles */}
+        <div style={{ marginTop: 64, paddingTop: 48, borderTop: `1px solid ${borderColor}` }}>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: textColor }}>Related Articles</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
+            {pseoPages
+              .filter(p => p.appId === appId && p.slug !== slug)
+              .slice(0, 3)
+              .map((relatedPage, i) => (
+                <Link
+                  key={i}
+                  to={`/${app.id}/${relatedPage.type}/${relatedPage.slug}`}
+                  style={{
+                    padding: 16,
+                    borderRadius: 10,
+                    border: `1px solid ${borderColor}`,
+                    textDecoration: 'none',
+                    color: textColor,
+                    transition: 'all 0.2s',
+                    display: 'block'
+                  } as React.CSSProperties}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.borderColor = primary;
+                    (e.currentTarget as HTMLElement).style.backgroundColor = `${primary}08`;
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.borderColor = borderColor;
+                    (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent';
+                  }}
+                >
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 11, fontWeight: 600, textTransform: 'uppercase', color: primary, marginBottom: 8 }}>
+                    {relatedPage.type === 'compare' ? '⚖️ Compare' : '📖 Guide'}
+                  </div>
+                  <p style={{ fontSize: 14, fontWeight: 600, lineHeight: 1.4 }}>{relatedPage.h1}</p>
+                </Link>
+              ))}
+          </div>
         </div>
       </div>
 

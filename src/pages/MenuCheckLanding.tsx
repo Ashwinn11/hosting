@@ -59,7 +59,7 @@ const MenuCheckLanding: React.FC<Props> = ({ app, section }) => {
         keywords={app.seo.keywords}
         appId={app.id}
         appStoreUrl={app.appStoreUrl}
-        appCategory="HealthApplication"
+        appCategory={app.seoApplicationCategory}
         aggregateRating={app.aggregateRating}
         faqs={app.marketing.faqs}
         appNumericId={app.appNumericId}
@@ -98,9 +98,15 @@ const MenuCheckLanding: React.FC<Props> = ({ app, section }) => {
           <div style={{ maxWidth: 1024, margin: '0 auto' }} className="flex flex-col gap-[60px] items-center lg:flex-row lg:gap-16">
             {/* Left: copy */}
             <div style={{ flex: 1, maxWidth: 520 }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 24, backgroundColor: `${SAFE}12`, border: `1px solid ${SAFE}20`, marginBottom: 32 }}>
-                <CheckCircle size={14} style={{ color: SAFE }} />
-                <span style={{ fontSize: 12, fontWeight: 700, color: TEXT2, textTransform: 'uppercase', letterSpacing: '0.06em' }}>IBS · FODMAP · Celiac · 100+ conditions</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 32 }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 24, backgroundColor: `${SAFE}12`, border: `1px solid ${SAFE}20` }}>
+                  <CheckCircle size={14} style={{ color: SAFE }} />
+                  <span style={{ fontSize: 12, fontWeight: 700, color: TEXT2, textTransform: 'uppercase', letterSpacing: '0.06em' }}>IBS · FODMAP · Celiac · 100+ conditions</span>
+                </div>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '6px 12px', borderRadius: 20, backgroundColor: SURFACE, border: `1px solid rgba(28,21,13,0.08)`, width: 'fit-content' }}>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: TEXT }}>⭐ {app.aggregateRating?.ratingValue}</span>
+                  <span style={{ fontSize: 11, color: TEXT2 }}>· {app.aggregateRating?.ratingCount} ratings</span>
+                </div>
               </div>
               <h1 style={{ fontSize: 'clamp(2.2rem,4.5vw,3.6rem)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, color: TEXT, marginBottom: 20 }}>
                 Finally know what's<br />in your food.
@@ -108,14 +114,14 @@ const MenuCheckLanding: React.FC<Props> = ({ app, section }) => {
               <p style={{ fontSize: 18, lineHeight: 1.7, color: TEXT2, marginBottom: 36 }}>
                 Point your camera at any menu or barcode. Menu Check's AI verdicts every dish in seconds — Safe, Limit, or Avoid — based on your exact conditions.
               </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'flex-start' }}>
                 <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" style={{ transition: 'transform 0.15s' }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.04)'; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1)'; }}
                 >
                   <img src="/appstore.png" alt="Download on App Store" style={{ height: 48 }} />
                 </a>
-                <span style={{ fontSize: 10, fontWeight: 600, color: TEXT3, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Free on iOS</span>
+                <span style={{ fontSize: 11, fontWeight: 600, color: TEXT3, padding: '6px 12px', backgroundColor: INSET, borderRadius: 16, display: 'inline-block', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Free · iOS 15+ · iPhone & iPad</span>
               </div>
             </div>
 
@@ -171,6 +177,25 @@ const MenuCheckLanding: React.FC<Props> = ({ app, section }) => {
             </p>
           </div>
         </div>
+
+        {/* ── SCREENSHOTS ── */}
+        {app.marketing.screenshots && app.marketing.screenshots.length > 0 && (
+          <section style={{ padding: '64px 24px', backgroundColor: INSET }}>
+            <div style={{ maxWidth: 1024, margin: '0 auto', marginBottom: 40 }}>
+              <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: TEXT3, marginBottom: 12 }}>See it in action</p>
+              <h2 style={{ fontSize: 'clamp(1.8rem,3.5vw,2.4rem)', fontWeight: 700, color: TEXT, lineHeight: 1.1 }}>Screenshots</h2>
+            </div>
+            <div style={{ display: 'flex', gap: 16, overflowX: 'auto', paddingBottom: 20, scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch', paddingLeft: 24 }} className="hide-scrollbar">
+              {app.marketing.screenshots.map((src, i) => (
+                <div key={i} style={{ flexShrink: 0, scrollSnapAlign: 'start' }}>
+                  <div style={{ width: 240, height: 520, borderRadius: 20, overflow: 'hidden', border: `1px solid rgba(28,21,13,0.08)`, boxShadow: '0 8px 24px rgba(28,21,13,0.08)' }}>
+                    <img src={src} alt={`Menu Check Screenshot ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ── HOW IT WORKS ── */}
         <section style={{ padding: '80px 24px' }}>
@@ -306,6 +331,70 @@ const MenuCheckLanding: React.FC<Props> = ({ app, section }) => {
           >
             <img src="/appstore.png" alt="Download on App Store" style={{ height: 56 }} />
           </a>
+        </section>
+
+        {/* Comparisons & Guides */}
+        <section style={{ padding: '80px 24px', backgroundColor: BG }}>
+          <div style={{ maxWidth: 1024, margin: '0 auto' }}>
+            <h2 style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, color: TEXT, marginBottom: 10 }}>Comparisons & Guides</h2>
+            <p style={{ fontSize: 16, color: TEXT2, marginBottom: 40 }}>Learn how Menu Check compares to other apps and discover tips for managing your food sensitivities.</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+              <Link to="/menucheck/compare/vs-spoonful" style={{
+                padding: 24, borderRadius: 12, border: `1px solid rgba(28,21,13,0.1)`, backgroundColor: SURFACE, textDecoration: 'none', color: TEXT,
+                transition: 'all 0.2s',
+              }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = AVOID;
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px rgba(221,74,38,0.12)`;
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(28,21,13,0.1)';
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+                }}
+              >
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: AVOID, marginBottom: 8 }}>⚖️ Compare</div>
+                <p style={{ fontSize: 16, fontWeight: 700 }}>Menu Check vs Spoonful</p>
+              </Link>
+              <Link to="/menucheck/guide/ibs-food-scanner-restaurants" style={{
+                padding: 24, borderRadius: 12, border: `1px solid rgba(28,21,13,0.1)`, backgroundColor: SURFACE, textDecoration: 'none', color: TEXT,
+                transition: 'all 0.2s',
+              }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = SAFE;
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px rgba(26,158,82,0.12)`;
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(28,21,13,0.1)';
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+                }}
+              >
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: SAFE, marginBottom: 8 }}>📖 Guide</div>
+                <p style={{ fontSize: 16, fontWeight: 700 }}>IBS Food Scanner for Restaurants</p>
+              </Link>
+              <Link to="/menucheck/guide/best-fodmap-apps-2026" style={{
+                padding: 24, borderRadius: 12, border: `1px solid rgba(28,21,13,0.1)`, backgroundColor: SURFACE, textDecoration: 'none', color: TEXT,
+                transition: 'all 0.2s',
+              }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = LIMIT;
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px rgba(192,134,15,0.12)`;
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(28,21,13,0.1)';
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+                }}
+              >
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: LIMIT, marginBottom: 8 }}>📖 Guide</div>
+                <p style={{ fontSize: 16, fontWeight: 700 }}>Best FODMAP Apps in 2026</p>
+              </Link>
+            </div>
+          </div>
         </section>
 
         {/* Footer */}

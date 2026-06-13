@@ -12,13 +12,18 @@ interface SEOProps {
   faqs?: Array<{ question: string; answer: string }>;
   appNumericId?: string;
   screenshots?: string[];
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  pageType?: 'guide' | 'compare';
+  canonicalUrl?: string;
+  datePublished?: string;
+  comparisonTable?: Array<{ feature: string; app: string; competitor: string }>;
 }
 
 const BASE = 'https://briefly.live';
 
 const SEOBox: React.FC<SEOProps> = ({
   title, description, keywords, ogImage, appId, appStoreUrl, appCategory,
-  aggregateRating, faqs, appNumericId, screenshots,
+  aggregateRating, faqs, appNumericId, screenshots, breadcrumbs, pageType, canonicalUrl, datePublished, comparisonTable,
 }) => {
   useEffect(() => {
     document.title = title;
@@ -35,7 +40,7 @@ const SEOBox: React.FC<SEOProps> = ({
       el.setAttribute('content', content);
     };
 
-    const canonicalUrl = `${BASE}/${appId || ''}`;
+    const resolvedCanonical = canonicalUrl || `${BASE}/${appId || ''}`;
     const image = ogImage || `${BASE}/og-image.png`;
     const appName = title.split('|')[0].trim();
 
@@ -47,10 +52,18 @@ const SEOBox: React.FC<SEOProps> = ({
     // Open Graph
     setMetaProp('og:title', title);
     setMetaProp('og:description', description);
-    setMetaProp('og:type', 'website');
-    setMetaProp('og:url', canonicalUrl);
+    setMetaProp('og:type', pageType ? 'article' : 'website');
+    setMetaProp('og:url', resolvedCanonical);
     setMetaProp('og:image', image);
+    setMetaProp('og:image:width', '1200');
+    setMetaProp('og:image:height', '630');
+    setMetaProp('og:locale', 'en_US');
     setMetaProp('og:site_name', 'Briefly.live');
+
+    if (pageType && datePublished) {
+      setMetaProp('article:published_time', datePublished);
+      setMetaProp('article:author', BASE);
+    }
 
     // Twitter Cards
     setMetaName('twitter:card', 'summary_large_image');
@@ -71,7 +84,7 @@ const SEOBox: React.FC<SEOProps> = ({
     // Canonical
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement('link'); canonical.setAttribute('rel', 'canonical'); document.head.appendChild(canonical); }
-    canonical.setAttribute('href', canonicalUrl);
+    canonical.setAttribute('href', resolvedCanonical);
 
     // Primary JSON-LD
     let script = document.querySelector('script[data-seo="primary"]') as HTMLScriptElement | null;
@@ -90,7 +103,7 @@ const SEOBox: React.FC<SEOProps> = ({
       applicationCategory: appCategory || 'HealthApplication',
       operatingSystem: 'iOS',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-      url: appStoreUrl || canonicalUrl,
+      url: appStoreUrl || resolvedCanonical,
       author: { '@type': 'Person', name: 'Ashwin Anbazhagan', url: BASE },
       ...(aggregateRating && {
         aggregateRating: {
@@ -114,6 +127,56 @@ const SEOBox: React.FC<SEOProps> = ({
 
     script.textContent = JSON.stringify(schema);
 
+    // BreadcrumbList JSON-LD
+    let breadcrumbScript = document.querySelector('script[data-seo="breadcrumb"]') as HTMLScriptElement | null;
+    if (breadcrumbs && breadcrumbs.length > 0) {
+      if (!breadcrumbScript) {
+        breadcrumbScript = document.createElement('script');
+        breadcrumbScript.setAttribute('type', 'application/ld+json');
+        breadcrumbScript.setAttribute('data-seo', 'breadcrumb');
+        document.head.appendChild(breadcrumbScript);
+      }
+      breadcrumbScript.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumbs.map((b, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: b.name,
+          item: b.url,
+        })),
+      });
+    } else if (breadcrumbScript) {
+      breadcrumbScript.remove();
+    }
+
+    // Article JSON-LD (for pSEO guide pages)
+    let articleScript = document.querySelector('script[data-seo="article"]') as HTMLScriptElement | null;
+    if (pageType === 'guide') {
+      if (!articleScript) {
+        articleScript = document.createElement('script');
+        articleScript.setAttribute('type', 'application/ld+json');
+        articleScript.setAttribute('data-seo', 'article');
+        document.head.appendChild(articleScript);
+      }
+      articleScript.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: title,
+        description,
+        author: {
+          '@type': 'Person',
+          name: 'Ashwin Anbazhagan',
+          url: BASE,
+        },
+        datePublished: datePublished || '2025-01-01',
+        dateModified: new Date().toISOString().split('T')[0],
+        image: ogImage || `${BASE}/og-image.png`,
+      });
+    } else if (articleScript) {
+      articleScript.remove();
+    }
+
     // FAQPage JSON-LD
     let faqScript = document.querySelector('script[data-seo="faq"]') as HTMLScriptElement | null;
     if (faqs && faqs.length > 0) {
@@ -135,7 +198,31 @@ const SEOBox: React.FC<SEOProps> = ({
     } else if (faqScript) {
       faqScript.remove();
     }
-  }, [title, description, keywords, ogImage, appId, appStoreUrl, appCategory, aggregateRating, faqs, appNumericId, screenshots]);
+
+    // ComparisonTable JSON-LD (for compare pages)
+    let tableScript = document.querySelector('script[data-seo="comparison"]') as HTMLScriptElement | null;
+    if (comparisonTable && comparisonTable.length > 0 && pageType === 'compare') {
+      if (!tableScript) {
+        tableScript = document.createElement('script');
+        tableScript.setAttribute('type', 'application/ld+json');
+        tableScript.setAttribute('data-seo', 'comparison');
+        document.head.appendChild(tableScript);
+      }
+      tableScript.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: title,
+        itemListElement: comparisonTable.map((row, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: row.feature,
+          description: `${row.app} vs ${row.competitor}`,
+        })),
+      });
+    } else if (tableScript) {
+      tableScript.remove();
+    }
+  }, [title, description, keywords, ogImage, appId, appStoreUrl, appCategory, aggregateRating, faqs, appNumericId, screenshots, breadcrumbs, pageType, canonicalUrl, datePublished, comparisonTable]);
 
   return null;
 };

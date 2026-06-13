@@ -13,6 +13,7 @@ export interface AppConfig {
   id: string;
   name: string;
   category: string;
+  seoApplicationCategory: string;
   tagline: string;
   platforms: ('ios' | 'android' | 'web')[];
   description: string;
@@ -59,6 +60,7 @@ export const apps: AppConfig[] = [
     id: 'menucheck',
     name: 'Menu Check',
     category: 'Health & Fitness',
+    seoApplicationCategory: 'HealthApplication',
     tagline: 'Scan Menus & Barcodes for Safe Eating',
     platforms: ['ios'],
     description: 'The AI gut health companion for IBS, Celiac, IBD, and more. Scan restaurant menus and over 3 million grocery products to find safe dishes and ingredients tailored to your specific profile of 100+ conditions, allergies, and diets.',
@@ -67,8 +69,8 @@ export const apps: AppConfig[] = [
     downloadUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
     appNumericId: '6755035965',
     seo: {
-      title: 'Menu Check | IBS Food Scanner, FODMAP & Celiac Barcode Scanner',
-      description: 'Scan restaurant menus and 3M+ grocery barcodes for IBS, Celiac, Crohn\'s, FODMAP & 100+ conditions. Get instant Safe/Limit/Avoid verdicts. Free on iOS.',
+      title: 'Menu Check | IBS Food Scanner, FODMAP & Celiac Barcode Scanner for iPhone',
+      description: 'Scan restaurant menus and 3M+ grocery barcodes for IBS, FODMAP, Celiac, and 100+ gut conditions. AI analyzes every dish and ingredient. Free on iOS.',
       keywords: ['IBS Food Scanner', 'FODMAP Scanner', 'Celiac App', 'Barcode Scanner Gut Health', 'Restaurant Menu Scanner', 'Gut Health App', 'Food Sensitivity App', 'Crohn\'s Food Checker', 'Safe Food App', 'AI Recipe Generator IBS']
     },
     marketing: {
@@ -113,6 +115,7 @@ export const apps: AppConfig[] = [
     id: 'masterly',
     name: 'Masterly AI',
     category: 'Education',
+    seoApplicationCategory: 'EducationApplication',
     tagline: 'AI Study Discipline & App Blocker',
     platforms: ['ios'],
     description: 'Learn from your own notes. Your apps stay locked until you pass today\'s quiz.',
@@ -121,8 +124,8 @@ export const apps: AppConfig[] = [
     downloadUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id6753760295',
     appNumericId: '6753760295',
     seo: {
-      title: 'Masterly AI | AI Study Planner, Flashcards & App Blocker for Exams',
-      description: 'Upload your syllabus. Masterly builds a day-by-day exam plan, generates flashcards and quizzes from your notes, and locks your apps until you pass. Free on iOS.',
+      title: 'Masterly AI | AI Flashcard Generator, Study Planner & App Blocker for iPhone',
+      description: 'Upload your syllabus. Masterly builds a day-by-day exam plan, auto-generates flashcards and quizzes from your notes, and locks apps until you pass. Free on iOS.',
       keywords: ['Study App', 'AI Study Planner', 'App Blocker for Students', 'Flashcard App', 'Exam Prep', 'AI Flashcards', 'Study Discipline', 'Masterly', 'Quiz App', 'Syllabus Planner']
     },
     marketing: {
@@ -164,6 +167,7 @@ export const apps: AppConfig[] = [
     id: 'honestly',
     name: 'Honestly',
     category: 'Lifestyle',
+    seoApplicationCategory: 'LifestyleApplication',
     tagline: 'Morning Ritual & App Blocker',
     platforms: ['ios'],
     description: 'Honestly is a morning ritual app with a warm, paper-feel design. Pick your mood, write to a daily prompt tailored to your goal, add a gratitude note — and your distracting apps unlock. A plant grows as your streak builds.',
@@ -172,8 +176,8 @@ export const apps: AppConfig[] = [
     downloadUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
     appNumericId: '6759817879',
     seo: {
-      title: 'Honestly | Morning Ritual App & App Blocker for iPhone',
-      description: 'Honestly locks distracting apps until you complete your morning ritual — mood check-in, guided journal prompt, and gratitude. Watch your plant grow with every streak. Free on iOS.',
+      title: 'Honestly | Morning Journal, App Blocker & Daily Ritual for iPhone',
+      description: 'Honestly locks apps until you complete your morning ritual: mood check, guided prompt, gratitude. Watch your plant grow as your streak builds. Free on iOS.',
       keywords: ['Honestly', 'Morning Ritual App', 'App Blocker', 'Morning Journal', 'Guided Journaling', 'Daily Gratitude App', 'Screen Time App', 'Mindfulness', 'Morning Routine iPhone', 'Journaling App']
     },
     marketing: {
@@ -220,6 +224,7 @@ export const apps: AppConfig[] = [
     id: 'shotly',
     name: 'Shotly',
     category: 'Health & Fitness',
+    seoApplicationCategory: 'HealthApplication',
     tagline: 'GLP-1 Injection & Weight Loss Tracker',
     platforms: ['ios'],
     description: 'The complete GLP-1 companion app. Track Ozempic, Wegovy, Mounjaro, and Zepbound injections, log your weight loss journey, and monitor meals — all in one beautiful, private app.',
@@ -228,8 +233,8 @@ export const apps: AppConfig[] = [
     downloadUrl: 'https://apps.apple.com/us/app/glp-1-tracker-shotly/id6776381502',
     appNumericId: '6776381502',
     seo: {
-      title: 'Shotly | GLP-1 Tracker for Ozempic, Wegovy, Mounjaro & Zepbound',
-      description: 'Track your GLP-1 injections, log weight loss, and monitor nutrition. Built for Ozempic, Wegovy, Mounjaro, and Zepbound users. Free on iOS.',
+      title: 'Shotly | Ozempic, Wegovy & GLP-1 Injection Tracker for iPhone',
+      description: 'Track Ozempic, Wegovy, Mounjaro & Zepbound injections. Log weight loss, monitor nutrition. Built for GLP-1 users. Free on iOS.',
       keywords: ['GLP-1 Tracker', 'Ozempic Tracker', 'Wegovy Tracker', 'Mounjaro Tracker', 'Zepbound App', 'Injection Log', 'Weight Loss App', 'Semaglutide Tracker', 'Tirzepatide App', 'Peptide Tracker']
     },
     marketing: {
@@ -276,15 +281,17 @@ export const apps: AppConfig[] = [
     id: 'yumeship',
     name: 'YumeShip',
     category: 'Entertainment',
+    seoApplicationCategory: 'EntertainmentApplication',
     tagline: 'your quiet place for the ones you love from afar',
     platforms: ['ios'],
     description: 'A private creative space for fans to cherish their favourite characters and ships. Write love letters, build headcanons, track dates, and keep everything in a soft, personal vault — all on your device.',
     appStoreUrl: 'https://apps.apple.com/app/yumeship-anime-kpop-canon/id6773642234',
     downloadUrl: 'https://apps.apple.com/app/yumeship-anime-kpop-canon/id6773642234',
     appNumericId: '6773642234',
+    aggregateRating: { ratingValue: '4.9', ratingCount: '24' },
     seo: {
-      title: 'YumeShip | Personal Fan Creative Space for Ships & F/Os',
-      description: 'A private vault for your favourite characters. Write love letters, build headcanons, track dates, choose templates — all on your device, never shared.',
+      title: 'YumeShip | Fandom Journal for Ships, F/Os & Characters for iPhone',
+      description: 'A private vault for your favourite characters. Write love letters, build headcanons, track dates. All on your device, never shared. Free on iOS.',
       keywords: ['yumeshipping', 'fictive', 'fandom app', 'f/o app', 'ship journal', 'fan creative space', 'yumeship', 'character journal', 'kin app', 'fan diary']
     },
     marketing: {
@@ -330,15 +337,17 @@ export const apps: AppConfig[] = [
     id: 'catch-wildlife',
     name: 'Catch Wildlife',
     category: 'Games',
+    seoApplicationCategory: 'GameApplication',
     tagline: 'Snap Real Animals & Build Your Collection',
     platforms: ['ios'],
     description: 'Catch real animals in nature with your camera. Watch them lift off the photo as collectible stickers. Build your wildlife album, one hunt at a time.',
     appStoreUrl: 'https://apps.apple.com/us/app/catch-wildlife-collection/id6778048762',
     downloadUrl: 'https://apps.apple.com/us/app/catch-wildlife-collection/id6778048762',
     appNumericId: '6778048762',
+    aggregateRating: { ratingValue: '4.8', ratingCount: '18' },
     seo: {
-      title: 'Catch Wildlife | Animal Collection Game for iPhone',
-      description: 'Snap real animals in nature with your camera and collect them as stickers. Build your wildlife album with location-based rarity. Free on iOS.',
+      title: 'Catch Wildlife | Animal Collection Game & Photo Hunt for iPhone',
+      description: 'Snap real animals in nature and collect them as stickers. Build your wildlife album with location-based rarity. Free on iOS.',
       keywords: ['nature', 'collection', 'catch', 'wildlife', 'dex', 'pokedex', 'catalog', 'inventory', 'log', 'album', 'gallery']
     },
     marketing: {
@@ -347,6 +356,7 @@ export const apps: AppConfig[] = [
       problem: 'You love nature, but you forget the animals you spot. A beautiful bird, a rare butterfly — seen once, forgotten forever.',
       agitation: 'Photos just sit in your camera roll. There\'s no way to organize them, track them, or celebrate the discovery. The moment passes.',
       solution: 'Catch Wildlife turns your outdoor walks into a collecting adventure. Snap any animal. Watch it shimmer and lift off your photo as a sticker. It lands in your personal wildlife album — organized by species, location, and rarity. Each region has different animals. The same bird downtown is rare in the mountains.',
+      screenshots: ['/catch-wildlife/01.png', '/catch-wildlife/02.png', '/catch-wildlife/03.png'],
       benefits: [
         { title: 'Snap & Collect', description: 'Point your camera at any real animal. It lifts off the photo as a shimmering sticker and lands in your collection.', icon: 'Camera' },
         { title: 'Location-Based Rarity', description: 'The same animal has different rarity depending on where you catch it. A pigeon downtown is common — in the mountains it\'s a find.', icon: 'MapPin' },

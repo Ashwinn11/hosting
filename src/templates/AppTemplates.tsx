@@ -436,9 +436,19 @@ export const SanctuaryTemplate: React.FC<TemplateProps> = ({ app, section }) => 
           <h1 className="text-7xl md:text-8xl font-playfair font-light tracking-tighter mb-8 italic text-white">
             {app.name}
           </h1>
-          <p className="text-2xl font-inter font-extralight tracking-widest opacity-60 mb-16 uppercase text-white">
+          <p className="text-2xl font-inter font-extralight tracking-widest opacity-60 mb-10 uppercase text-white">
             {app.marketing.headline}
           </p>
+
+          {/* Rating badge */}
+          {app.aggregateRating && (
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 mb-10 text-sm font-inter tracking-widest uppercase opacity-80 text-white">
+              <span>⭐</span>
+              <span>{app.aggregateRating.ratingValue}</span>
+              <span className="opacity-50">·</span>
+              <span className="opacity-50">{app.aggregateRating.ratingCount} ratings</span>
+            </div>
+          )}
 
           {app.marketing.screenshots && app.marketing.screenshots[0] && (
             <div className="mb-20 flex justify-center">
@@ -482,16 +492,44 @@ export const SanctuaryTemplate: React.FC<TemplateProps> = ({ app, section }) => 
                  <p className="text-playfair italic text-3xl opacity-40">{app.marketing.problem}</p>
                  <div className="w-20 h-px bg-white/10" />
                  <p className="text-inter font-extralight text-lg opacity-60 leading-relaxed font-italic">{app.marketing.solution}</p>
-                 <div className="pt-10 flex justify-center gap-4">
-                    {app.appStoreUrl && <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" className="h-10 hover:scale-105 transition-transform active:scale-95 opacity-80 hover:opacity-100">
-                      <img src="/appstore.png" alt="App Store" className="h-full" />
-                    </a>}
-                    {app.playStoreUrl && <a href={app.playStoreUrl} target="_blank" rel="noopener noreferrer" className="h-10 hover:scale-105 transition-transform active:scale-95 opacity-80 hover:opacity-100">
-                      <img src="/playstore.png" alt="Google Play" className="h-full" />
-                    </a>}
-                    {app.externalUrl && <a href={app.externalUrl} className="px-12 py-5 border border-white/10 rounded-full hover:bg-white/5 transition-all uppercase text-[10px] tracking-[0.5em] font-inter">
-                      Visit Website
-                    </a>}
+                 <div className="pt-10 flex flex-col items-center gap-6">
+                    <div className="flex justify-center gap-4">
+                      {app.appStoreUrl && <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" className="h-10 hover:scale-105 transition-transform active:scale-95 opacity-80 hover:opacity-100">
+                        <img src="/appstore.png" alt="App Store" className="h-full" />
+                      </a>}
+                      {app.playStoreUrl && <a href={app.playStoreUrl} target="_blank" rel="noopener noreferrer" className="h-10 hover:scale-105 transition-transform active:scale-95 opacity-80 hover:opacity-100">
+                        <img src="/playstore.png" alt="Google Play" className="h-full" />
+                      </a>}
+                      {app.externalUrl && <a href={app.externalUrl} className="px-12 py-5 border border-white/10 rounded-full hover:bg-white/5 transition-all uppercase text-[10px] tracking-[0.5em] font-inter">
+                        Visit Website
+                      </a>}
+                    </div>
+
+                    {/* Platform chip */}
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-sm font-inter tracking-widest uppercase opacity-60 text-white">
+                      <span>Free</span>
+                      <span className="opacity-50">·</span>
+                      <span>iOS 15+</span>
+                      <span className="opacity-50">·</span>
+                      <span>iPhone & iPad</span>
+                    </div>
+                 </div>
+              </section>
+           </div>
+
+           {/* Guides Section */}
+           <div className="pt-20 border-t border-white/10">
+              <section className="text-center max-w-4xl mx-auto space-y-10">
+                 <div>
+                    <p className="text-xs uppercase tracking-[0.3em] opacity-40 mb-4">Learn More</p>
+                    <h2 className="text-4xl md:text-5xl font-playfair font-light italic text-white mb-6">Guides & Resources</h2>
+                    <p className="text-lg opacity-60 mb-10">Explore tips and strategies for wildlife observation.</p>
+                 </div>
+                 <div className="grid sm:grid-cols-2 gap-8">
+                    <a href={`/${app.id}/guide/best-animal-identification-app-2026`} className="group p-8 border border-white/5 bg-white/[0.02] rounded-2xl hover:border-white/20 hover:bg-white/[0.05] transition-all">
+                       <div className="text-xs uppercase tracking-[0.2em] opacity-40 mb-3">📖 Guide</div>
+                       <h3 className="text-xl font-playfair italic text-white">Best Animal Identification App</h3>
+                    </a>
                  </div>
               </section>
            </div>

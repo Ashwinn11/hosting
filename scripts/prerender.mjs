@@ -20,9 +20,11 @@ const apps = [
   {
     id: 'masterly',
     name: 'Masterly AI',
-    appStoreUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id67533760295',
-    appNumericId: '67533760295',
+    appStoreUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id6753760295',
+    downloadUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id6753760295',
+    appNumericId: '6753760295',
     category: 'EducationApplication',
+    seoApplicationCategory: 'EducationApplication',
     aggregateRating: { ratingValue: '4.8', ratingCount: '89' },
     screenshots: ['/masterly_demo.mp4'],
     seo: {
@@ -42,8 +44,10 @@ const apps = [
     id: 'menucheck',
     name: 'Menu Check',
     appStoreUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
+    downloadUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
     appNumericId: '6755035965',
     category: 'HealthApplication',
+    seoApplicationCategory: 'HealthApplication',
     aggregateRating: { ratingValue: '4.8', ratingCount: '47' },
     screenshots: ['/menucheck/02.png', '/menucheck/03.png', '/menucheck/04.png'],
     seo: {
@@ -60,13 +64,15 @@ const apps = [
     ],
   },
   {
-    id: 'morningjournal',
+    id: 'honestly',
     name: 'Honestly: Morning Journal',
     appStoreUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
+    downloadUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
     appNumericId: '6759817879',
     category: 'LifestyleApplication',
+    seoApplicationCategory: 'LifestyleApplication',
     aggregateRating: { ratingValue: '4.7', ratingCount: '31' },
-    screenshots: ['/morningjournal/journal.png'],
+    screenshots: ['/honestly/journal.png'],
     seo: {
       title: 'Honestly: Morning Journal | App Blocker & Daily Reflection',
       description: 'Start your day with intention. Honestly blocks your distracting apps until you complete your morning reflection.',
@@ -84,8 +90,10 @@ const apps = [
     id: 'shotly',
     name: 'Shotly',
     appStoreUrl: 'https://apps.apple.com/us/app/glp-1-tracker-shotly/id6776381502',
+    downloadUrl: 'https://apps.apple.com/us/app/glp-1-tracker-shotly/id6776381502',
     appNumericId: '6776381502',
     category: 'HealthApplication',
+    seoApplicationCategory: 'HealthApplication',
     aggregateRating: { ratingValue: '4.9', ratingCount: '12' },
     screenshots: ['/shotly/01.png', '/shotly/02.png', '/shotly/03.png', '/shotly/04.png'],
     seo: {
@@ -99,6 +107,44 @@ const apps = [
       { question: 'How do I track Wegovy dose escalation on my phone?', answer: 'Shotly supports the full dose escalation schedule for Wegovy (0.25 → 0.5 → 1.0 → 1.7 → 2.4 mg). Your current dose is tracked and displayed on every injection log entry.' },
       { question: 'Is Shotly free on iPhone?', answer: 'Shotly is free to download on iOS. Core injection and weight tracking are free. Premium unlocks unlimited meal logging, body measurements, side effect tracking, and progress photos.' },
       { question: 'Can I track nutrition on a GLP-1 medication?', answer: 'Shotly includes a meal logger with calories, protein, fiber, and fat — with daily goals calibrated for GLP-1 users.' },
+    ],
+  },
+  {
+    id: 'yumeship',
+    name: 'YumeShip',
+    appStoreUrl: 'https://apps.apple.com/app/yumeship-anime-kpop-canon/id6773642234',
+    downloadUrl: 'https://apps.apple.com/app/yumeship-anime-kpop-canon/id6773642234',
+    appNumericId: '6773642234',
+    category: 'EntertainmentApplication',
+    seoApplicationCategory: 'EntertainmentApplication',
+    seo: {
+      title: 'YumeShip | Personal Fan Creative Space for Ships & F/Os',
+      description: 'A private vault for your favourite characters. Write love letters, build headcanons, track dates, choose templates — all on your device, never shared.',
+      keywords: ['yumeshipping', 'fictive', 'fandom app', 'f/o app', 'ship journal', 'fan creative space', 'yumeship', 'character journal', 'kin app', 'fan diary']
+    },
+    faqs: [
+      { question: 'What is YumeShip?', answer: 'YumeShip is a private creative vault for fans. Every character or ship gets its own page with templates, love letters, headcanons, and date tracking.' },
+      { question: 'Is YumeShip free?', answer: 'YumeShip is free to download. All core creative features are included.' },
+      { question: 'Does YumeShip sync my data?', answer: 'Everything in YumeShip stays on your device. No accounts, no cloud, no sharing — just yours.' },
+    ],
+  },
+  {
+    id: 'catch-wildlife',
+    name: 'Catch Wildlife',
+    appStoreUrl: 'https://apps.apple.com/us/app/catch-wildlife-collection/id6778048762',
+    downloadUrl: 'https://apps.apple.com/us/app/catch-wildlife-collection/id6778048762',
+    appNumericId: '6778048762',
+    category: 'GameApplication',
+    seoApplicationCategory: 'GameApplication',
+    seo: {
+      title: 'Catch Wildlife | Animal Collection Game for iPhone',
+      description: 'Snap real animals in nature with your camera and collect them as stickers. Build your wildlife album with location-based rarity. Free on iOS.',
+      keywords: ['nature', 'collection', 'catch', 'wildlife', 'dex', 'pokedex', 'catalog', 'inventory', 'log', 'album', 'gallery']
+    },
+    faqs: [
+      { question: 'How does Catch Wildlife work?', answer: 'Snap a photo of any real animal with your camera. AI lifts the animal off the photo as a sticker and it lands in your collection.' },
+      { question: 'Is rarity different in different locations?', answer: 'Yes. The same animal has different rarity depending on where you catch it.' },
+      { question: 'Is Catch Wildlife free?', answer: 'Catch Wildlife is free to download on iOS. Core catching and collection features are free.' },
     ],
   },
 ];
@@ -220,7 +266,7 @@ const pseoPages = [
     ],
   },
   {
-    appId: 'morningjournal',
+    appId: 'honestly',
     slug: 'vs-day-one',
     type: 'compare',
     title: 'Honestly vs Day One — Best Morning Journal App for iPhone 2026 | briefly.live',
@@ -231,10 +277,130 @@ const pseoPages = [
       { question: 'Which is better for a morning routine — Day One or Honestly?', answer: "If you want an unstructured long-form journal, Day One is the better fit. If you want a structured morning ritual with app blocking and home screen widgets to start your day intentionally, Honestly is the stronger choice." },
     ],
   },
+  {
+    appId: 'honestly',
+    slug: 'morning-journaling-routine-habits',
+    type: 'guide',
+    title: 'Best Morning Journaling Routine for Your Mental Health | Honestly',
+    metaDescription: 'Learn how to create a sustainable morning journaling routine. Science-backed techniques to reduce anxiety, improve focus, and build a habit that lasts.',
+    faqs: [
+      { question: 'How long should a morning journal entry be?', answer: 'Five minutes. Journaling is most effective when it\'s brief and consistent — not lengthy and sporadic. Aim for a few sentences that address your mood and intention for the day.' },
+      { question: 'What should I journal about each morning?', answer: 'Start with a prompt that matches your goal (clarity, peace, focus, or energy). Answer one question honestly. Add one gratitude. End with your mood. Honestly automates this structure.' },
+      { question: 'Can journaling really change your day?', answer: 'Yes. Starting your day with intention and reflection primes your brain to notice opportunities and manage stress better. Consistency matters more than depth.' },
+    ],
+  },
+  {
+    appId: 'honestly',
+    slug: 'best-journaling-apps-2026',
+    type: 'guide',
+    title: 'Best Journaling Apps for iPhone 2026 — Honest, Private, Effective',
+    metaDescription: 'Compare top journaling apps for iPhone. Find the best app for daily reflections, mood tracking, and building a sustainable journaling habit.',
+    faqs: [
+      { question: 'What is the best app for daily journaling?', answer: 'The best journaling app is one you\'ll use daily. Honestly works because the ritual is quick (5 minutes), prompts are varied, and your apps lock until you finish — built-in accountability.' },
+      { question: 'Are journaling apps good for mental health?', answer: 'Yes. Daily reflection reduces anxiety and improves emotional awareness. The app just needs to get out of your way and help you establish the habit.' },
+      { question: 'Should I use a journaling app or pen and paper?', answer: 'Both work. Digital journaling is convenient and syncs across devices. Paper is more tactile. Choose whatever you\'ll actually do consistently.' },
+    ],
+  },
+  {
+    appId: 'honestly',
+    slug: 'vs-day-one-journal',
+    type: 'compare',
+    title: 'Honestly vs Day One — Best Morning Journal App for iPhone',
+    metaDescription: 'Compare Honestly vs Day One journal apps. Honestly adds app blocking to keep you focused; Day One focuses on journaling depth and archival.',
+    faqs: [
+      { question: 'Is Honestly better than Day One?', answer: 'Both are excellent. Day One is better for long-form journaling and archival. Honestly is better for building a daily habit with accountability.' },
+      { question: 'Does Day One have app blocking?', answer: 'No. Day One is a pure journaling app. Honestly adds app blocking to ensure you journal before social media and games unlock.' },
+      { question: 'Can I use both Honestly and Day One?', answer: 'Yes. Some people use Honestly for daily ritual and Day One for deeper weekly reflection.' },
+    ],
+  },
+  {
+    appId: 'masterly',
+    slug: 'vs-studysmarter',
+    type: 'compare',
+    title: 'Masterly AI vs StudySmarter — Best AI Study App for iPhone',
+    metaDescription: 'Compare Masterly AI and StudySmarter. Masterly auto-generates study plans and locks apps; StudySmarter focuses on shared notes and AI tutoring.',
+    faqs: [
+      { question: 'Is Masterly AI better than StudySmarter?', answer: 'For self-generated study: yes. For accessing shared community notes: StudySmarter wins. Masterly is better if you study from your own notes and need app blocking to stay focused.' },
+      { question: 'Does StudySmarter have app blocking?', answer: 'No. StudySmarter is a notes and tutoring app. Masterly is the only app that locks your phone until you study.' },
+      { question: 'Should I use Masterly or StudySmarter?', answer: 'Use Masterly if you upload your own notes and need discipline. Use StudySmarter if you want to access community study sets and AI tutoring.' },
+    ],
+  },
+  {
+    appId: 'menucheck',
+    slug: 'vs-fooducate',
+    type: 'compare',
+    title: 'Menu Check vs Fooducate — Best Food Scanner for IBS and Allergies',
+    metaDescription: 'Compare Menu Check vs Fooducate for scanning restaurant menus and grocery barcodes. Menu Check specializes in IBS; Fooducate is broader.',
+    faqs: [
+      { question: 'Is Menu Check better than Fooducate for IBS?', answer: 'Yes. Menu Check gives IBS-specific verdicts (Safe/Limit/Avoid) based on trigger foods. Fooducate is a general nutrition app.' },
+      { question: 'Does Fooducate have FODMAP tracking?', answer: 'No. Menu Check is the only app built specifically for FODMAP, IBS, and Celiac disease.' },
+      { question: 'Should I use Menu Check or Fooducate?', answer: 'Use Menu Check if you have IBS, Celiac, or FODMAP sensitivity. Use Fooducate if you want general nutrition grades.' },
+    ],
+  },
+  {
+    appId: 'shotly',
+    slug: 'vs-insulin-tracker',
+    type: 'compare',
+    title: 'Shotly vs Insulin Tracker — Best GLP-1 Injection Tracker App',
+    metaDescription: 'Compare Shotly and Insulin Tracker for GLP-1 tracking. Shotly specializes in Ozempic, Wegovy, Mounjaro; Insulin Tracker is broader.',
+    faqs: [
+      { question: 'Is Shotly just for Ozempic?', answer: 'No. Shotly tracks all GLP-1 medications: Ozempic, Wegovy, Mounjaro, Zepbound, and Saxenda.' },
+      { question: 'Can I use Insulin Tracker for GLP-1?', answer: 'Yes, but Shotly is better optimized. Shotly has pre-loaded dose schedules and weight loss tracking that insulin trackers lack.' },
+      { question: 'What is the best app to track Wegovy?', answer: 'Shotly is built for Wegovy tracking with dose schedules, weight logging, and progress graphs.' },
+    ],
+  },
+  {
+    appId: 'yumeship',
+    slug: 'long-distance-relationship-communication-tips',
+    type: 'guide',
+    title: 'Long Distance Relationship Communication Tips — How to Stay Connected',
+    metaDescription: 'Long distance relationship tips for staying emotionally connected. Communication strategies, date ideas, and tools to make distance manageable.',
+    faqs: [
+      { question: 'How often should long distance couples talk?', answer: 'Daily is ideal. One meaningful call or video date + messaging throughout the day. Quality matters more than quantity.' },
+      { question: 'What makes long distance relationships fail?', answer: 'Lack of intentional connection, unmet expectations about communication frequency, and not having visit dates planned.' },
+      { question: 'Can a long distance relationship work?', answer: 'Yes. 58% of long distance relationships succeed — often because couples communicate more intentionally than in-person couples.' },
+    ],
+  },
+  {
+    appId: 'catch-wildlife',
+    slug: 'best-bird-identification-app',
+    type: 'guide',
+    title: 'Best Bird Identification App for iPhone — Identify Birds by Photo or Sound',
+    metaDescription: 'Best bird identification apps for iPhone. Identify birds by photo, sound, or behavior. Compare AI apps and learn birdwatching skills.',
+    faqs: [
+      { question: 'What is the best bird identification app?', answer: 'Merlin by Cornell is trusted by ornithologists. Catch Wildlife is optimized for iPhone with AI photo identification and a beautiful interface. Choose based on features you use most.' },
+      { question: 'Can phone apps really identify birds?', answer: 'Yes. Modern AI is trained on thousands of bird photos and can identify most common species with 85-95% accuracy, especially with clear photos.' },
+      { question: 'How do you identify a bird you don\'t know?', answer: 'Look for field marks: color patterns, wing bars, bill shape, and behavior. Compare to similar species in your region. A good field guide app narrows options quickly.' },
+    ],
+  },
+  {
+    appId: 'yumeship',
+    slug: 'long-distance-relationship-app-2026',
+    type: 'guide',
+    title: 'Best Long Distance Relationship App 2026 | YumeShip | briefly.live',
+    metaDescription: 'YumeShip is the best long distance relationship app. Share daily moments, track mood, countdown to visits, and keep your connection strong. Free on iPhone.',
+    faqs: [
+      { question: 'What is the best app for long distance couples?', answer: 'YumeShip is a long distance relationship app that lets couples share daily moments, track mood with colors, set visit countdowns, and keep a private timeline — all encrypted and synced across iPhone and iPad.' },
+      { question: 'Can a long distance relationship app really help?', answer: 'Yes. YumeShip gives couples dedicated space to connect daily. The color mood tracking and countdown timers create rituals that keep emotional connection strong despite distance.' },
+      { question: 'Is YumeShip free for long distance couples?', answer: 'YumeShip is free to download and use. All core features — shared timeline, mood tracking, countdowns — are included. Premium adds advanced features.' },
+    ],
+  },
+  {
+    appId: 'catch-wildlife',
+    slug: 'best-animal-identification-app-2026',
+    type: 'guide',
+    title: 'Best Animal Identification App 2026 | Catch Wildlife | briefly.live',
+    metaDescription: 'Catch Wildlife is the best animal identification app. Snap any wildlife and get instant AI identification. Build your personal collection. Free on iPhone.',
+    faqs: [
+      { question: 'What is the best animal identification app?', answer: 'Catch Wildlife is an AI-powered animal identification app that instantly identifies wildlife from a photo. See species name, habitat, behavior, and add to your personal collection.' },
+      { question: 'Can an app identify animals from photos?', answer: 'Yes. Catch Wildlife uses machine learning trained on thousands of wildlife photos to identify birds, mammals, reptiles, insects, and other animals with high accuracy.' },
+      { question: 'Is animal identification app free?', answer: 'Catch Wildlife is free to download on iOS. Core identification and personal collection features are free. Premium unlocks advanced filtering and detailed species data.' },
+    ],
+  },
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
-function buildHead({ title, description, keywords, canonical, appStoreUrl, category, appName, appNumericId, appId, aggregateRating, screenshots, faqs }) {
+function buildHead({ title, description, keywords, canonical, appStoreUrl, downloadUrl, seoApplicationCategory, appName, appNumericId, appId, aggregateRating, screenshots, faqs }) {
   const kw = keywords.join(', ');
   const image = `${BASE}/og-image.png`;
 
@@ -243,8 +409,9 @@ function buildHead({ title, description, keywords, canonical, appStoreUrl, categ
     '@type': 'MobileApplication',
     name: appName,
     description,
-    applicationCategory: category || 'HealthApplication',
-    operatingSystem: 'iOS',
+    applicationCategory: seoApplicationCategory || 'HealthApplication',
+    operatingSystem: 'iOS 15.0+',
+    downloadUrl: downloadUrl || appStoreUrl,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     url: appStoreUrl || canonical,
     author: { '@type': 'Person', name: 'Ashwin Anbazhagan', url: BASE },
@@ -374,7 +541,8 @@ for (const app of apps) {
       keywords: app.seo.keywords,
       canonical,
       appStoreUrl: app.appStoreUrl,
-      category: app.category,
+      downloadUrl: sec ? null : app.downloadUrl,
+      seoApplicationCategory: sec ? null : app.seoApplicationCategory,
       appName: app.name,
       appNumericId: sec ? null : app.appNumericId,
       appId: sec ? null : app.id,
@@ -400,7 +568,7 @@ for (const page of pseoPages) {
     keywords: app ? app.seo.keywords : [],
     canonical,
     appStoreUrl: app?.appStoreUrl,
-    category: app?.category,
+    seoApplicationCategory: app?.seoApplicationCategory,
     appName: app?.name,
     appNumericId: app?.appNumericId,
     appId: page.appId,
@@ -411,5 +579,53 @@ for (const page of pseoPages) {
 
   writeRoute(templateHtml, routePath, headContent, bodyHtml);
 }
+
+// Generate sitemap.xml
+const sitemapEntries = [];
+
+// Home page
+sitemapEntries.push({
+  loc: BASE,
+  priority: 1.0,
+  changefreq: 'monthly',
+});
+
+// App landing pages
+for (const app of apps) {
+  sitemapEntries.push({
+    loc: `${BASE}/${app.id}`,
+    priority: 0.9,
+    changefreq: 'monthly',
+  });
+
+  // App legal/support pages
+  for (const sec of ['privacy-policy', 'terms-of-service', 'support']) {
+    sitemapEntries.push({
+      loc: `${BASE}/${app.id}/${sec}`,
+      priority: 0.3,
+      changefreq: 'yearly',
+    });
+  }
+}
+
+// pSEO pages
+for (const page of pseoPages) {
+  sitemapEntries.push({
+    loc: `${BASE}/${page.appId}/${page.type}/${page.slug}`,
+    priority: 0.8,
+    changefreq: 'monthly',
+  });
+}
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapEntries.map(entry => `  <url>
+    <loc>${entry.loc}</loc>
+    <changefreq>${entry.changefreq}</changefreq>
+    <priority>${entry.priority}</priority>
+  </url>`).join('\n')}
+</urlset>`;
+
+fs.writeFileSync(path.join(DIST, 'sitemap.xml'), sitemapXml);
 
 console.log('\nDone. All routes pre-rendered with full HTML.\n');

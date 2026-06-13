@@ -11,6 +11,7 @@ export interface PSEOPage {
   comparisonTable?: Array<{ feature: string; app: string; competitor: string }>;
   faqs: Array<{ question: string; answer: string }>;
   cta: string;
+  datePublished?: string;
 }
 
 export const pseoPages: PSEOPage[] = [
@@ -55,6 +56,7 @@ export const pseoPages: PSEOPage[] = [
       { question: 'Which is better for medical students — Anki or Masterly AI?', answer: "Both work for medical students. Anki has a larger shared deck community for pre-made medical cards. Masterly AI wins if you study from your own lecture notes and want built-in app blocking to enforce your study schedule." },
     ],
     cta: 'Try Masterly AI Free on iPhone',
+    datePublished: '2025-10-15',
   },
   {
     appId: 'masterly',
@@ -97,6 +99,7 @@ export const pseoPages: PSEOPage[] = [
       { question: 'Why would I use Masterly over Quizlet?', answer: 'Masterly AI adds a built-in study planner and app blocker that Quizlet lacks. If you need discipline to stick to a study schedule — not just a flashcard library — Masterly is the stronger choice.' },
     ],
     cta: 'Get Masterly AI Free',
+    datePublished: '2025-10-16',
   },
   {
     appId: 'masterly',
@@ -131,6 +134,7 @@ export const pseoPages: PSEOPage[] = [
       { question: 'Is the AI flashcard generator in Masterly free?', answer: 'Masterly AI is free to download. Basic AI generation is included; unlimited flashcard sets and app blocking require a subscription.' },
     ],
     cta: 'Generate Flashcards from Your PDF',
+    datePublished: '2025-10-17',
   },
   {
     appId: 'masterly',
@@ -165,6 +169,7 @@ export const pseoPages: PSEOPage[] = [
       { question: 'Does Masterly AI work for anatomy or pharmacology?', answer: 'Yes. Masterly AI works with any subject material you upload — anatomy lecture slides, pharmacology PDFs, or clinical case notes all generate valid flashcards and quizzes.' },
     ],
     cta: 'Start Studying with Masterly AI',
+    datePublished: '2025-10-18',
   },
   {
     appId: 'menucheck',
@@ -208,6 +213,7 @@ export const pseoPages: PSEOPage[] = [
       { question: 'Is there a free Spoonful alternative for IBS?', answer: 'Menu Check is a free Spoonful alternative for IBS and FODMAP that adds restaurant menu scanning and support for Celiac, IBD, histamine intolerance, and 100+ other conditions.' },
     ],
     cta: 'Try Menu Check Free on iPhone',
+    datePublished: '2025-10-19',
   },
   {
     appId: 'menucheck',
@@ -242,6 +248,7 @@ export const pseoPages: PSEOPage[] = [
       { question: 'Is there a free FODMAP scanner app?', answer: 'Yes. Menu Check is free to download on iOS. Core FODMAP scanning for barcodes and restaurant menus is free; premium unlocks unlimited AI recipe generation and advanced dietary filtering.' },
     ],
     cta: 'Download Menu Check Free',
+    datePublished: '2025-10-20',
   },
   {
     appId: 'menucheck',
@@ -276,6 +283,7 @@ export const pseoPages: PSEOPage[] = [
       { question: 'Does Menu Check work offline in restaurants?', answer: 'Menu Check requires an internet connection for AI menu analysis. Barcode scanning uses cached data and works with limited connectivity for previously scanned products.' },
     ],
     cta: 'Scan Your Next Restaurant Menu',
+    datePublished: '2025-10-21',
   },
   {
     appId: 'shotly',
@@ -310,6 +318,7 @@ export const pseoPages: PSEOPage[] = [
       { question: 'Is there a free Ozempic tracker app for iPhone?', answer: 'Shotly is free to download on iOS. Core injection logging and weight tracking are free. Premium unlocks unlimited meal logging, body measurements, side effect tracking, and progress photos.' },
     ],
     cta: 'Track Your Ozempic Journey',
+    datePublished: '2025-10-22',
   },
   {
     appId: 'shotly',
@@ -344,6 +353,7 @@ export const pseoPages: PSEOPage[] = [
       { question: 'Is there a Mounjaro tracker app for iPhone?', answer: 'Shotly is free on iOS and purpose-built for Mounjaro users. It supports the full 2.5–15mg dose escalation schedule, injection site rotation, weekly weight logging, and nutrition tracking with protein goals calibrated for GLP-1 users.' },
     ],
     cta: 'Start Tracking Your Mounjaro Journey',
+    datePublished: '2025-10-23',
   },
   {
     appId: 'honestly',
@@ -387,5 +397,430 @@ export const pseoPages: PSEOPage[] = [
       { question: 'Which is better for a morning routine — Day One or Honestly?', answer: "If you want an unstructured long-form journal, Day One is the better fit. If you want a structured morning ritual with app blocking and home screen widgets to start your day intentionally, Honestly is the stronger choice." },
     ],
     cta: 'Start Your Morning Ritual with Honestly',
+    datePublished: '2025-10-24',
+  },
+  {
+    appId: 'honestly',
+    slug: 'vs-day-one-journal',
+    type: 'compare',
+    title: 'Honestly vs Day One — Best Morning Journal App for iPhone 2026',
+    h1: 'Honestly vs Day One: Which Morning Journal App Is Right for You?',
+    metaDescription: 'Compare Honestly vs Day One journal apps for iPhone. Honestly adds app blocking; Day One focuses on journaling depth and archival.',
+    targetKeyword: 'day one vs other journaling apps',
+    intro: 'Day One is the gold standard for serious journalers — beautiful design, encryption, cloud sync, a decade of happy users. Honestly is optimized for building a daily habit with accountability. Both are excellent; they serve different needs.',
+    sections: [
+      {
+        heading: 'Journal Entry Philosophy',
+        body: 'Day One encourages depth: long entries, photos, timelines, and archival quality. Honestly encourages brevity: a prompt, a few sentences, gratitude, mood check, and done. Day One is for journalers; Honestly is for people building a habit.',
+      },
+      {
+        heading: 'Privacy and Encryption',
+        body: 'Both apps use strong encryption. Day One syncs across iPhone, iPad, and Mac (with paid subscription). Honestly stores locally first, with optional iCloud sync. Both respect your privacy.',
+      },
+      {
+        heading: 'App Blocking Feature',
+        body: 'Day One is pure journaling. Honestly adds app blocking — your apps lock until you journal. If you want journaling with accountability, Honestly wins. If you want journaling without friction, Day One wins.',
+      },
+      {
+        heading: 'Pricing and Platforms',
+        body: 'Day One requires subscription for syncing across devices. Honestly is free with optional subscription. Day One supports Mac/iPad; Honestly is iPhone-focused. Choose based on whether you need multi-device sync or app blocking.',
+      },
+    ],
+    comparisonTable: [
+      { feature: 'Morning journaling prompts', app: 'Yes (daily rotation)', competitor: 'No (free-form only)' },
+      { feature: 'App blocking until you journal', app: 'Yes', competitor: 'No' },
+      { feature: 'Long-form entry support', app: 'Yes', competitor: 'Optimized for this' },
+      { feature: 'Cloud sync', app: 'Optional iCloud', competitor: 'Paid subscription' },
+      { feature: 'Privacy & encryption', app: 'Yes', competitor: 'Yes' },
+      { feature: 'Free on iPhone', app: 'Yes', competitor: 'Free (limited)' },
+    ],
+    faqs: [
+      { question: 'Is Honestly better than Day One?', answer: 'Both are excellent. Day One is better for long-form journaling and archival. Honestly is better for building a daily habit with accountability.' },
+      { question: 'Does Day One have app blocking?', answer: 'No. Day One is pure journaling. Honestly adds app blocking to ensure you journal before social media and games unlock.' },
+      { question: 'Can I use both Honestly and Day One?', answer: 'Yes. Some people use Honestly for daily ritual and Day One for deeper weekly reflection.' },
+      { question: 'Which app is better for morning routines?', answer: 'Honestly is built for morning routines with prompts, a structured ritual, and app blocking. Day One is better for flexible, unstructured journaling.' },
+      { question: 'Is Honestly cheaper than Day One?', answer: 'Both offer free versions. Honestly is fully free with optional premium. Day One requires subscription for multi-device sync.' },
+    ],
+    cta: 'Start Your Habit Free',
+    datePublished: '2025-11-12',
+  },
+  {
+    appId: 'masterly',
+    slug: 'vs-studysmarter',
+    type: 'compare',
+    title: 'Masterly AI vs StudySmarter — Best AI Study App for iPhone 2026',
+    h1: 'Masterly AI vs StudySmarter: Which AI Study App Wins?',
+    metaDescription: 'Compare Masterly AI and StudySmarter. Masterly auto-generates study plans and locks apps; StudySmarter focuses on shared notes and AI tutoring.',
+    targetKeyword: 'studysmarter alternative',
+    intro: 'StudySmarter is the European competitor to Quizlet with AI tutoring and community note-sharing. Masterly AI is focused on one job: forcing you to study before your apps unlock. Both use AI; neither requires manual card creation. The difference is philosophy.',
+    sections: [
+      {
+        heading: 'AI-Powered Study Modes',
+        body: 'StudySmarter uses AI for tutoring and note-taking optimization. Masterly AI generates your entire flashcard deck and study schedule from your uploads. Both eliminate manual work, but Masterly goes further with structured exam planning.',
+      },
+      {
+        heading: 'Community Sharing',
+        body: 'StudySmarter has a massive community sharing notes and study sets. Masterly focuses on private study. If you want peer learning, StudySmarter wins. If you want personalized study from your own notes, Masterly wins.',
+      },
+      {
+        heading: 'App Blocking and Accountability',
+        body: 'StudySmarter has no app blocking. Masterly locks your phone until you pass the daily quiz. This single feature is why Masterly students actually stick to their study schedules.',
+      },
+      {
+        heading: 'Pricing Model',
+        body: 'Both are freemium. StudySmarter offers premium for ad-free and advanced tutoring. Masterly offers premium for unlimited study plans and app blocking. Both are competitively priced.',
+      },
+    ],
+    comparisonTable: [
+      { feature: 'AI flashcard generation', app: 'Yes (auto)', competitor: 'Yes (optimizes)' },
+      { feature: 'Exam study planner', app: 'Yes (day-by-day)', competitor: 'No' },
+      { feature: 'App blocking', app: 'Yes', competitor: 'No' },
+      { feature: 'Community note sharing', app: 'No', competitor: 'Yes (large)' },
+      { feature: 'AI tutor chat', app: 'No', competitor: 'Yes (paid)' },
+      { feature: 'Free on iPhone', app: 'Yes', competitor: 'Yes (ad-supported)' },
+    ],
+    faqs: [
+      { question: 'Is Masterly AI better than StudySmarter?', answer: 'For self-generated study: yes. For accessing shared community notes: StudySmarter wins. Masterly is better if you study from your own notes and need app blocking to stay focused.' },
+      { question: 'Does StudySmarter have app blocking?', answer: 'No. StudySmarter is a notes and tutoring app. Masterly is the only app that locks your phone until you study.' },
+      { question: 'Should I use Masterly or StudySmarter?', answer: 'Use Masterly if you upload your own notes and need discipline. Use StudySmarter if you want to access community study sets and AI tutoring.' },
+      { question: 'Can I use both apps together?', answer: 'Yes. Some students use StudySmarter to find community notes, then upload them to Masterly for AI-generated flashcards and app blocking.' },
+      { question: 'Which app is better for exam prep?', answer: 'Masterly is purpose-built for exam prep with a day-by-day study planner and enforced daily work. StudySmarter is better for ongoing learning and tutorial support.' },
+    ],
+    cta: 'Study with Discipline',
+    datePublished: '2025-11-15',
+  },
+  {
+    appId: 'menucheck',
+    slug: 'vs-fooducate',
+    type: 'compare',
+    title: 'Menu Check vs Fooducate — Best Food Scanner for IBS and Allergies 2026',
+    h1: 'Menu Check vs Fooducate: Which Food Scanner App Wins for Dietary Restrictions?',
+    metaDescription: 'Compare Menu Check vs Fooducate for scanning restaurant menus and grocery barcodes. Menu Check specializes in IBS; Fooducate is broader.',
+    targetKeyword: 'fooducate alternative ibs',
+    intro: 'Fooducate is the most popular food scanner app — broad, general nutrition info for anyone. Menu Check is specialized: built specifically for people with IBS, Celiac disease, FODMAP sensitivity, and Crohn\'s disease. If you have digestive issues, Menu Check is laser-focused on your needs.',
+    sections: [
+      {
+        heading: 'Specialized vs Generalist Approach',
+        body: 'Fooducate gives grades (A to D) on general nutrition. Menu Check gives verdicts specific to digestive conditions: Safe, Limit, Avoid. If you have IBS or Celiac, Menu Check\'s verdicts are more useful because they account for your specific trigger foods.',
+      },
+      {
+        heading: 'Barcode Scanning Coverage',
+        body: 'Fooducate has a larger database (3M+ products globally). Menu Check focuses on restaurant menus and common grocery items in your region. For restaurant dining, Menu Check is better. For packaged grocery scanning, Fooducate is broader.',
+      },
+      {
+        heading: 'FODMAP and Celiac Data',
+        body: 'Menu Check was built with FODMAP and Celiac specialists. Every verdict factors in specific sensitivities. Fooducate doesn\'t have FODMAP-specific tracking.',
+      },
+      {
+        heading: 'Pricing and Accessibility',
+        body: 'Both offer free barcode scanning. Menu Check offers specialized disease-specific features. Fooducate requires Premium for deeper nutrition data. Choose based on whether you need condition-specific tracking or general nutrition.',
+      },
+    ],
+    comparisonTable: [
+      { feature: 'Barcode scanning', app: 'Yes', competitor: 'Yes (3M+ items)' },
+      { feature: 'Restaurant menu scanning', app: 'Yes (AI reads)', competitor: 'No' },
+      { feature: 'FODMAP tracking', app: 'Yes', competitor: 'No' },
+      { feature: 'IBS-specific verdicts', app: 'Yes (Safe/Limit/Avoid)', competitor: 'General grades only' },
+      { feature: 'Free core features', app: 'Yes', competitor: 'Yes' },
+    ],
+    faqs: [
+      { question: 'Is Menu Check better than Fooducate for IBS?', answer: 'Yes. Menu Check gives IBS-specific verdicts (Safe/Limit/Avoid) based on trigger foods. Fooducate is a general nutrition app.' },
+      { question: 'Does Fooducate have FODMAP tracking?', answer: 'No. Menu Check is the only app built specifically for FODMAP, IBS, and Celiac disease.' },
+      { question: 'Should I use Menu Check or Fooducate?', answer: 'Use Menu Check if you have IBS, Celiac, or FODMAP sensitivity. Use Fooducate if you want general nutrition grades.' },
+      { question: 'Can I scan restaurant menus with Fooducate?', answer: 'Fooducate can scan barcodes but not restaurant menus. Menu Check scans physical restaurant menus via your camera with AI analysis.' },
+      { question: 'Which app works better for groceries?', answer: 'Fooducate has a larger grocery barcode database (3M+ products). Menu Check is better for restaurant menus but also supports grocery scanning for your specific conditions.' },
+    ],
+    cta: 'Scan Safe Foods Free',
+    datePublished: '2025-10-30',
+  },
+  {
+    appId: 'shotly',
+    slug: 'vs-insulin-tracker',
+    type: 'compare',
+    title: 'Shotly vs Insulin Tracker — Best GLP-1 Injection Tracker App 2026',
+    h1: 'Shotly vs Insulin Tracker: Which GLP-1 Tracker App Wins?',
+    metaDescription: 'Compare Shotly and Insulin Tracker for GLP-1 tracking. Shotly specializes in Ozempic, Wegovy, Mounjaro; Insulin Tracker is broader.',
+    targetKeyword: 'best glp-1 tracker app',
+    intro: 'Insulin Tracker is a general-purpose injection logger designed for diabetes management. Shotly is purpose-built for GLP-1 users (Ozempic, Wegovy, Mounjaro). If you\'re on a GLP-1 medication for weight loss, Shotly is optimized for your needs. If you\'re managing insulin, Insulin Tracker may be better.',
+    sections: [
+      {
+        heading: 'GLP-1 vs Insulin Optimization',
+        body: 'Insulin Tracker is designed for insulin dosing (units, daily schedules, multiple injections per day). Shotly is designed for GLP-1 (weekly doses, dose escalation schedules, weight loss tracking). Shotly has pre-loaded dose escalation schedules for Ozempic, Wegovy, and Mounjaro.',
+      },
+      {
+        heading: 'Weight Loss Tracking',
+        body: 'Insulin Tracker tracks blood glucose and insulin doses. Shotly tracks weight loss progress, correlates it with injection timing, and shows trends over weeks. For weight loss medications, Shotly\'s approach is more relevant.',
+      },
+      {
+        heading: 'Medication Specificity',
+        body: 'Shotly supports all GLP-1 medications: Ozempic, Wegovy, Mounjaro, Zepbound, Saxenda. Insulin Tracker is generic for any insulin. If you\'re on a specific GLP-1 medication, Shotly has templates; Insulin Tracker doesn\'t.',
+      },
+      {
+        heading: 'Pricing and Features',
+        body: 'Both offer free core logging. Shotly\'s premium adds meal logging and body measurements. Insulin Tracker\'s premium adds glucose trend analysis. Choose based on whether you need weight tracking (Shotly) or glucose tracking (Insulin Tracker).',
+      },
+    ],
+    comparisonTable: [
+      { feature: 'Injection logging', app: 'Yes (GLP-1 optimized)', competitor: 'Yes (insulin optimized)' },
+      { feature: 'Dose escalation schedules', app: 'Yes (pre-loaded)', competitor: 'No' },
+      { feature: 'Weight loss tracking', app: 'Yes (primary focus)', competitor: 'No' },
+      { feature: 'Blood glucose tracking', app: 'No', competitor: 'Yes' },
+      { feature: 'Free on iOS', app: 'Yes', competitor: 'Yes' },
+    ],
+    faqs: [
+      { question: 'Is Shotly just for Ozempic?', answer: 'No. Shotly tracks all GLP-1 medications: Ozempic, Wegovy, Mounjaro, Zepbound, and Saxenda.' },
+      { question: 'Can I use Insulin Tracker for GLP-1?', answer: 'Yes, but Shotly is better optimized. Shotly has pre-loaded dose schedules and weight loss tracking that insulin trackers lack.' },
+      { question: 'What is the best app to track Wegovy?', answer: 'Shotly is built for Wegovy tracking with dose schedules, weight logging, and progress graphs.' },
+      { question: 'Which app is better for weight loss medications?', answer: 'Shotly is purpose-built for GLP-1 weight loss medications. It tracks dose, weight loss, and shows correlation between injections and weight trends.' },
+      { question: 'Can I track both GLP-1 and insulin with one app?', answer: 'Not with a single app optimized for both. Shotly is for GLP-1; Insulin Tracker is for insulin. If you use both, you\'d need separate apps.' },
+    ],
+    cta: 'Track Your GLP-1 Free',
+    datePublished: '2025-10-31',
+  },
+  {
+    appId: 'honestly',
+    slug: 'morning-journaling-routine-habits',
+    type: 'guide',
+    title: 'Best Morning Journaling Routine for Your Mental Health | Honestly',
+    h1: 'How to Build a Morning Journaling Routine That Sticks',
+    metaDescription: 'Learn how to create a sustainable morning journaling routine. Science-backed techniques to reduce anxiety, improve focus, and build a habit that lasts.',
+    targetKeyword: 'morning journaling routine',
+    intro: 'A morning journaling practice can change your entire day. But starting one feels overwhelming. Five pages? Bullet points? How long should it take? Honestly is designed around the science of effective morning routines: a journaling prompt matched to your goal, gratitude reflection, and a mood check-in — completed in five minutes. This guide walks through why morning journaling works and how to build the habit.',
+    sections: [
+      {
+        heading: 'Why Morning Journaling Works',
+        body: 'Journaling immediately after waking puts you in control of your day before notifications, emails, and chaos take over. Research shows that morning reflection reduces anxiety, improves decision-making, and increases focus. The key is consistency and brevity — five minutes daily beats one hour once a week.',
+      },
+      {
+        heading: 'The Science of Habit Formation',
+        body: 'It takes 21 days to form a habit, but longer to make it automatic. Morning journaling benefits from anchoring — doing it immediately after your existing routine (brushing teeth, morning coffee). Honestly uses streak tracking to reinforce the habit, showing you your progress each day.',
+      },
+      {
+        heading: 'What to Write About',
+        body: 'Blank page syndrome kills routines. Use prompts. Honestly rotates prompts tied to your goal: Clarity (what thought needs attention?), Peace (what will make today feel calm?), Focus (what is one meaningful thing?), Energy (what are you looking forward to?). Prompts eliminate decision fatigue.',
+      },
+      {
+        heading: 'Building Accountability',
+        body: 'Apps unlock once you finish your journaling. This isn\'t punishment — it\'s protection. You get five minutes for yourself before social media, messages, and work demands pull your attention. The ritual matters more than the words.',
+      },
+      {
+        heading: 'Making It Stick',
+        body: 'Start with just five minutes. Don\'t aim for perfect entries. Consistency beats depth. Use your streak as motivation. Share your commitment with someone. Track your mood over weeks — you\'ll start seeing patterns that prove the impact.',
+      },
+    ],
+    faqs: [
+      { question: 'How long should a morning journal entry be?', answer: 'Five minutes. Journaling is most effective when it\'s brief and consistent — not lengthy and sporadic. Aim for a few sentences that address your mood and intention for the day.' },
+      { question: 'What should I journal about each morning?', answer: 'Start with a prompt that matches your goal (clarity, peace, focus, or energy). Answer one question honestly. Add one gratitude. End with your mood. Honestly automates this structure.' },
+      { question: 'Can journaling really change your day?', answer: 'Yes. Starting your day with intention and reflection primes your brain to notice opportunities and manage stress better. Consistency matters more than depth.' },
+      { question: 'When is the best time to journal?', answer: 'Right after waking, before checking your phone or emails. This gives you a clear mind and ensures you prioritize the ritual before the day\'s demands pile up.' },
+      { question: 'What if I miss a day?', answer: 'Don\'t worry about breaking your streak. Just resume the next morning. The goal is consistency, not perfection. One missed day won\'t undo your habit — but restarting immediately keeps the momentum.' },
+    ],
+    cta: 'Start Your Morning Routine Free',
+    datePublished: '2025-11-08',
+  },
+  {
+    appId: 'honestly',
+    slug: 'best-journaling-apps-2026',
+    type: 'guide',
+    title: 'Best Journaling Apps for iPhone 2026 — Honest, Private, Effective',
+    h1: 'Best Journaling Apps for iPhone in 2026',
+    metaDescription: 'Compare top journaling apps for iPhone. Find the best app for daily reflections, mood tracking, and building a sustainable journaling habit.',
+    targetKeyword: 'best journaling apps for iphone',
+    intro: 'Journaling has never been easier — or more confusing. The App Store is full of beautiful, feature-rich journaling apps. But most add friction instead of flow: prompts feel generic, syncing is clunky, and after two weeks you stop opening the app. The best journaling app is the one you actually use. This guide breaks down what makes a journaling app stick and which apps deliver.',
+    sections: [
+      {
+        heading: 'What Makes a Journaling App Effective',
+        body: 'The best journaling apps have three things: low friction (quick to open and use), smart prompts (questions that feel personal, not generic), and accountability (something that reminds you to journal or celebrates your streak). Encryption and privacy matter too — your journal is deeply personal.',
+      },
+      {
+        heading: 'Habit-Focused vs Archival Apps',
+        body: 'Apps like Day One focus purely on journaling as archival — a diary, a memory keeper, a photo journal. Honestly integrates journaling with app blocking — the journal unlocks your apps. This dual purpose makes Honestly different. Some users want pure journaling; others want journaling with built-in accountability.',
+      },
+      {
+        heading: 'Free vs Paid Journaling Apps',
+        body: 'Most good journaling apps require a subscription for offline sync, custom prompts, or cloud backup. Honestly is free with core journaling included. Your choice depends on whether you value encryption, community features, or cross-device sync.',
+      },
+      {
+        heading: 'Syncing, Privacy, and Data Ownership',
+        body: 'Your journal entries are personal data. Some apps encrypt locally; others sync to the cloud. Choose based on your comfort with privacy. Honestly stores entries locally by default, with optional iCloud sync.',
+      },
+      {
+        heading: 'Building Your Journaling Habit',
+        body: 'The app is just a tool — the real work is showing up. Start small (five minutes). Use prompts. Track your streak. Share your commitment. The best app is the one that removes friction and celebrates consistency.',
+      },
+    ],
+    faqs: [
+      { question: 'What is the best app for daily journaling?', answer: 'The best journaling app is one you\'ll use daily. Honestly works because the ritual is quick (5 minutes), prompts are varied, and your apps lock until you finish — built-in accountability.' },
+      { question: 'Are journaling apps good for mental health?', answer: 'Yes. Daily reflection reduces anxiety and improves emotional awareness. The app just needs to get out of your way and help you establish the habit.' },
+      { question: 'Should I use a journaling app or pen and paper?', answer: 'Both work. Digital journaling is convenient and syncs across devices. Paper is more tactile. Choose whatever you\'ll actually do consistently.' },
+      { question: 'Which journaling app has the best privacy?', answer: 'Most good journaling apps (Day One, Honestly, Penzu) use encryption. Check whether they encrypt locally or in the cloud. Honestly encrypts locally by default.' },
+      { question: 'Is there a free journaling app worth using?', answer: 'Yes. Honestly is free with core journaling, prompts, and mood tracking included. Most other quality apps require a subscription for advanced features.' },
+    ],
+    cta: 'Journal Free on iPhone',
+    datePublished: '2025-11-10',
+  },
+  {
+    appId: 'yumeship',
+    slug: 'long-distance-relationship-communication-tips',
+    type: 'guide',
+    title: 'Long Distance Relationship Communication Tips — How to Stay Connected',
+    h1: 'How to Communicate in Long Distance Relationships: Tips That Work',
+    metaDescription: 'Long distance relationship tips for staying emotionally connected. Communication strategies, date ideas, and tools to make distance manageable.',
+    targetKeyword: 'long distance relationship communication tips',
+    intro: 'Long distance relationships require intentional communication. Without daily in-person moments, connection gets harder. But couples who communicate intentionally often feel closer than those in the same city. The key is consistency, quality, and planning. This guide covers communication strategies that work.',
+    sections: [
+      {
+        heading: 'Daily Communication Rituals',
+        body: 'One meaningful call or video date per day matters more than constant texting. Set a consistent time you both know to connect — morning coffee call, evening check-in, weekend video dinner. Rituals create predictability and ensure connection happens even on busy days.',
+      },
+      {
+        heading: 'Meaningful Conversation Starters',
+        body: 'Generic "how was your day" gets boring. Use prompts: What did you learn today? What made you feel closest to me this week? What are you excited about? Questions create depth instead of filling silence.',
+      },
+      {
+        heading: 'Virtual Date Ideas',
+        body: 'Watch movies together (Netflix Party), cook the same recipe on video, play online games, or take virtual museum tours. Shared activities matter more than screen time. The key is doing something together, not just talking.',
+      },
+      {
+        heading: 'Managing Timezone Differences',
+        body: 'If you\'re in different timezones, schedule one time that works for both of you, even if it\'s inconvenient. That one daily call anchors your connection. Everything else can be async (voice memos, messages).',
+      },
+      {
+        heading: 'Planning Visits and Countdowns',
+        body: 'Have concrete visit dates on the calendar. Knowing when you\'ll see each other reduces anxiety. Plan the next trip while you\'re still together, if possible. Countdowns give you something to work toward.',
+      },
+    ],
+    faqs: [
+      { question: 'How often should long distance couples talk?', answer: 'Daily is ideal. One meaningful call or video date + messaging throughout the day. Quality matters more than quantity.' },
+      { question: 'What makes long distance relationships fail?', answer: 'Lack of intentional connection, unmet expectations about communication frequency, and not having visit dates planned.' },
+      { question: 'Can a long distance relationship work?', answer: 'Yes. 58% of long distance relationships succeed — often because couples communicate more intentionally than in-person couples.' },
+      { question: 'What should we talk about if we talk every day?', answer: 'Use prompts instead of generic check-ins. Ask about their day, what they\'re learning, what excites them, what they\'re grateful for, what they\'re struggling with.' },
+      { question: 'How do we stay emotionally intimate long distance?', answer: 'Vulnerability, consistency, and shared activities. Talk about your feelings, not just events. Schedule quality time. Do things together (watch movies, cook, play games).' },
+    ],
+    cta: 'Stay Connected Free',
+    datePublished: '2025-11-18',
+  },
+  {
+    appId: 'yumeship',
+    slug: 'long-distance-relationship-app-2026',
+    type: 'guide',
+    title: 'Best Long Distance Relationship App 2026 | YumeShip | briefly.live',
+    h1: 'Keep Your Long Distance Relationship Close',
+    metaDescription: 'YumeShip is the best long distance relationship app. Share moments, track relationship mood, countdown to visits, and stay emotionally connected.',
+    targetKeyword: 'best long distance relationship app',
+    intro: 'Long distance relationships need a dedicated space. YumeShip is a relationship app that lets couples share daily moments, track relationship mood with colors, and build a private shared timeline. Everything stays between you — no friends, no family, no social media.',
+    sections: [
+      {
+        heading: 'Share Daily Moments',
+        body: 'YumeShip gives you a dedicated feed to share photos and updates with your partner. Everything stays in your relationship space, not a group chat. Build a shared memory space over time.',
+      },
+      {
+        heading: 'Relationship Color Tracking',
+        body: 'Both partners choose a color daily representing their mood or relationship feeling. Over time, a visual pattern emerges showing emotional data. You can see how you both felt each day — a unique way to understand your emotional rhythm together.',
+      },
+      {
+        heading: 'Countdown Timers',
+        body: 'Track when you will be together with countdown timers. Whether weeks or months, having a visible countdown makes distance feel more finite. Celebrate each milestone as you get closer.',
+      },
+      {
+        heading: 'Private Timeline',
+        body: 'Build a shared memory timeline of your relationship moments, visits, milestones. Only you and your partner see this — it\'s completely private and personal.',
+      },
+      {
+        heading: 'Completely Private',
+        body: 'Everything in YumeShip is shared only between you and your partner. No friends, no family, no social media feed. It\'s a safe space for your relationship.',
+      },
+    ],
+    faqs: [
+      { question: 'What is YumeShip?', answer: 'YumeShip is a long distance relationship app for couples. Share daily moments, track mood with colors, count down to visits, and keep a private timeline.' },
+      { question: 'Is YumeShip free?', answer: 'YumeShip is free to download and use with all core features included.' },
+      { question: 'Does YumeShip work for long distance?', answer: 'Yes. YumeShip is built specifically for long distance couples with color mood tracking, countdown timers, and shared timelines.' },
+      { question: 'Is my data really private in YumeShip?', answer: 'Yes. Everything is encrypted and stored only on your device. Only you and your partner can see your shared space.' },
+      { question: 'Can we use YumeShip if we\'re in the same city?', answer: 'Yes, absolutely. The color tracking, shared timeline, and private messaging work great for any couple who wants a dedicated relationship space.' },
+    ],
+    cta: 'Connect with Your Partner',
+    datePublished: '2025-11-19',
+  },
+  {
+    appId: 'catch-wildlife',
+    slug: 'best-bird-identification-app',
+    type: 'guide',
+    title: 'Best Bird Identification App for iPhone — Identify Birds by Photo or Sound',
+    h1: 'How to Identify Birds: The Best Identification Apps for iPhone',
+    metaDescription: 'Best bird identification apps for iPhone. Identify birds by photo, sound, or behavior. Compare AI apps and learn birdwatching skills.',
+    targetKeyword: 'best bird identification app iphone',
+    intro: 'Birdwatching has exploded in the last five years. But looking up bird identification in a field guide takes time. Modern AI apps identify birds by photo in seconds. This guide walks through the best apps and how to use them like a birder.',
+    sections: [
+      {
+        heading: 'How AI Bird Identification Works',
+        body: 'Modern apps use machine learning trained on thousands of bird photos. You take a photo, the app analyzes plumage color, size, posture, and habitat, and returns likely species. Accuracy improves with better photos and clear views of field marks.',
+      },
+      {
+        heading: 'Photo vs Sound Identification',
+        body: 'Photo identification (visual) is most accurate. Sound identification is useful for cryptic birds you hear but don\'t see. The best apps support both methods.',
+      },
+      {
+        heading: 'Field Guide Features to Look For',
+        body: 'Good identification apps include range maps (where this bird should be), behavior notes, and similar species comparison (why it\'s not a House Sparrow but a different species). Don\'t just get a name; understand why.',
+      },
+      {
+        heading: 'Building Your Bird List',
+        body: 'Keep a life list of birds you\'ve identified. Apps make this easy with logging and filters by date, location, and species. The competitive joy of increasing your life list is what hooks serious birdwatchers.',
+      },
+      {
+        heading: 'Ethical Birdwatching',
+        body: 'Never disturb nesting birds or their habitat. Use apps to identify from a distance. Respect private land and local guidelines. Photography and note-taking should never interfere with bird behavior.',
+      },
+    ],
+    faqs: [
+      { question: 'What is the best bird identification app?', answer: 'Merlin by Cornell is trusted by ornithologists. Catch Wildlife is optimized for iPhone with AI photo identification and a beautiful interface. Choose based on features you use most.' },
+      { question: 'Can phone apps really identify birds?', answer: 'Yes. Modern AI is trained on thousands of bird photos and can identify most common species with 85-95% accuracy, especially with clear photos.' },
+      { question: 'How do you identify a bird you don\'t know?', answer: 'Look for field marks: color patterns, wing bars, bill shape, and behavior. Compare to similar species in your region. A good field guide app narrows options quickly.' },
+      { question: 'Which app works best for rare birds?', answer: 'For common species, AI apps excel. For rare or unusual birds, you may need expert identification. Use apps as a first pass, then consult field guides or birding forums for confirmation.' },
+      { question: 'Can I use bird identification apps while hiking?', answer: 'Yes, but consider battery life and connectivity. Download offline bird guides in advance. Use your camera to photograph birds, then identify them later if needed.' },
+    ],
+    cta: 'Identify Wildlife Free',
+    datePublished: '2025-11-20',
+  },
+  {
+    appId: 'catch-wildlife',
+    slug: 'best-animal-identification-app-2026',
+    type: 'guide',
+    title: 'Best Animal Identification App 2026 | Catch Wildlife | briefly.live',
+    h1: 'Identify Any Animal with Your iPhone Camera',
+    metaDescription: 'Catch Wildlife is the best animal identification app. Snap any wildlife and get instant AI identification. Build your personal collection. Free on iPhone.',
+    targetKeyword: 'best animal identification app',
+    intro: 'Catch Wildlife is an animal ID app that uses AI to instantly identify any wildlife from a photo. You snap, get the ID in seconds, and add it to your personal collection. Build a wildlife album and learn as you discover.',
+    sections: [
+      {
+        heading: 'Instant AI Animal ID',
+        body: 'Point your iPhone at any animal and get instant identification with species name and key facts. The AI recognizes thousands of species across birds, mammals, reptiles, insects, and amphibians.',
+      },
+      {
+        heading: 'Build Your Collection',
+        body: 'Every animal you identify gets added to your personal collection. Track where you saw each one and when. Over time, your collection becomes a personal wildlife journal.',
+      },
+      {
+        heading: 'Learn Animal Facts',
+        body: 'For each identified animal, see habitat, diet, behavior, and conservation status. Understand the animals you encounter, not just their names.',
+      },
+      {
+        heading: 'Location-Based Rarity',
+        body: 'The same animal has different rarity depending on where you find it. A pigeon in the city is common; in the mountains it\'s a find. Your collection reflects the biodiversity of each region.',
+      },
+      {
+        heading: 'Share Your Finds',
+        body: 'Add photos to your collection and share your discoveries with friends or the community. Celebrate the wildlife in your neighborhood.',
+      },
+    ],
+    faqs: [
+      { question: 'What is the best animal identification app?', answer: 'Catch Wildlife is an AI-powered animal identification app that instantly identifies wildlife from a photo. See species name, habitat, behavior, and add to your personal collection.' },
+      { question: 'Can an app identify animals from photos?', answer: 'Yes. Catch Wildlife uses machine learning to identify birds, lizards, mammals, insects, and other wildlife with high accuracy.' },
+      { question: 'Is animal identification app free?', answer: 'Catch Wildlife is free to download on iOS. Core identification and collection features are free. Premium unlocks advanced filtering and detailed species data.' },
+      { question: 'How accurate is the AI identification?', answer: 'Modern AI achieves 85-95% accuracy for common species with clear photos. Accuracy depends on photo quality and how distinctive the animal is.' },
+      { question: 'Can I use it while hiking or on nature walks?', answer: 'Yes. Catch Wildlife is lightweight and works offline. Snap photos during your walk, identify later, and add to your collection.' },
+    ],
+    cta: 'Start Identifying Wildlife Today',
+    datePublished: '2025-11-21',
   },
 ];

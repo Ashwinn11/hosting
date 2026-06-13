@@ -131,7 +131,10 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
         keywords={app.seo.keywords}
         appId={app.id}
         appStoreUrl={app.appStoreUrl}
-        appCategory="EntertainmentApplication"
+        appCategory={app.seoApplicationCategory}
+        appNumericId={app.appNumericId}
+        aggregateRating={app.aggregateRating}
+        screenshots={app.marketing.screenshots}
         faqs={app.marketing.faqs}
       />
 
@@ -207,11 +210,21 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
             fontSize: 'clamp(18px, 2.5vw, 24px)',
             color: INK2,
             lineHeight: 1.5,
-            margin: '0 auto 44px',
+            margin: '0 auto 28px',
             maxWidth: 520,
           }}>
             {app.marketing.subheadline}
           </p>
+
+          {/* Rating badge */}
+          {app.aggregateRating && (
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '8px 14px', borderRadius: 12, backgroundColor: VELLUM, border: `1px solid ${LINE}`, marginBottom: 28, fontSize: 14, fontWeight: 500, color: INK, fontFamily: "'Fredoka', sans-serif" }}>
+              <span>⭐</span>
+              <span>{app.aggregateRating.ratingValue}</span>
+              <span style={{ color: INK2 }}>·</span>
+              <span style={{ color: INK2 }}>{app.aggregateRating.ratingCount} ratings</span>
+            </div>
+          )}
 
           {/* CTA */}
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -241,6 +254,15 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
             >
               learn more
             </a>
+          </div>
+
+          {/* Platform chip */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 4, padding: '10px 16px', borderRadius: 10, backgroundColor: VELLUM, border: `1px solid ${LINE}`, marginTop: 14, fontSize: 13, fontWeight: 500, color: INK, fontFamily: "'Fredoka', sans-serif" }}>
+            <span>Free</span>
+            <span style={{ color: INK2 }}>·</span>
+            <span>iOS 15+</span>
+            <span style={{ color: INK2 }}>·</span>
+            <span>iPhone & iPad</span>
           </div>
 
           {/* Screenshots */}
@@ -386,6 +408,47 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
             download on ios — it's free
           </a>
+        </div>
+      </section>
+
+      {/* ── Guides ── */}
+      <section style={{ padding: '80px 28px', backgroundColor: VELLUM, borderTop: `1px solid ${LINE}` }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+            <div style={{ width: 24, height: 1, backgroundColor: SAKURA }} />
+            <span style={{ fontFamily: "'Fredoka', sans-serif", fontSize: 11, letterSpacing: 2.5, textTransform: 'uppercase', color: SAKURA_DEEP, fontWeight: 500 }}>
+              guides
+            </span>
+            <div style={{ width: 24, height: 1, backgroundColor: SAKURA }} />
+          </div>
+          <h2 style={{
+            fontFamily: "'Instrument Serif', serif",
+            fontStyle: 'italic',
+            fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)',
+            fontWeight: 400,
+            color: INK,
+            marginBottom: 40,
+          }}>
+            Learn about long-distance relationships
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
+            <Link to="/yumeship/guide/long-distance-relationship-app-2026" style={{
+              padding: 24, borderRadius: 12, border: `1px solid ${LINE}`, backgroundColor: PAPER, textDecoration: 'none', color: INK,
+              transition: 'all 0.2s', display: 'block'
+            }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = SAKURA_DEEP;
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = LINE;
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+              }}
+            >
+              <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: SAKURA_DEEP, marginBottom: 8 }}>📖 Guide</div>
+              <p style={{ fontSize: 16, fontWeight: 700 }}>Best Long Distance Relationship App</p>
+            </Link>
+          </div>
         </div>
       </section>
 

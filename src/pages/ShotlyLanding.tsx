@@ -206,7 +206,7 @@ const ShotlyLanding: React.FC<Props> = ({ app, section }) => {
         keywords={app.seo.keywords}
         appId={app.id}
         appStoreUrl={app.appStoreUrl}
-        appCategory="HealthApplication"
+        appCategory={app.seoApplicationCategory}
         aggregateRating={app.aggregateRating}
         faqs={app.marketing.faqs}
         appNumericId={app.appNumericId}
@@ -287,9 +287,19 @@ const ShotlyLanding: React.FC<Props> = ({ app, section }) => {
                 <br />Your story. One place that gets it.
               </h1>
 
-              <p style={{ fontSize: 17, lineHeight: 1.7, color: TEXT2, marginBottom: 36, maxWidth: 440 }}>
+              <p style={{ fontSize: 17, lineHeight: 1.7, color: TEXT2, marginBottom: 28, maxWidth: 440 }}>
                 Shotly tracks Ozempic, Wegovy, Mounjaro, and Zepbound — so your health journey is logged privately, all in one place.
               </p>
+
+              {/* Rating badge */}
+              {app.aggregateRating && (
+                <div style={{ padding: '8px 14px', borderRadius: 12, backgroundColor: SURFACE, border: `1px solid ${BORDER}`, marginBottom: 28, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 600, color: TEXT }}>
+                  <span>⭐</span>
+                  <span>{app.aggregateRating.ratingValue}</span>
+                  <span style={{ color: TEXT3 }}>·</span>
+                  <span style={{ color: TEXT3 }}>{app.aggregateRating.ratingCount} ratings</span>
+                </div>
+              )}
 
               {/* Single warm stat */}
               <div style={{ padding: '14px 20px', borderRadius: 14, backgroundColor: SURFACE, border: `1px solid ${BORDER}`, boxShadow: cardShadow, marginBottom: 36, display: 'inline-flex', alignItems: 'baseline', gap: 8 }}>
@@ -305,7 +315,15 @@ const ShotlyLanding: React.FC<Props> = ({ app, section }) => {
                 >
                   <img src="/appstore.png" alt="Download on the App Store" style={{ height: 48 }} />
                 </a>
-                <span style={{ fontFamily: 'monospace', fontSize: 10, fontWeight: 600, color: TEXT3, textTransform: 'uppercase', letterSpacing: '0.1em' }}>iOS · Free to start</span>
+              </div>
+
+              {/* Platform chip */}
+              <div style={{ padding: '10px 16px', borderRadius: 10, backgroundColor: SURFACE, border: `1px solid ${BORDER}`, display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 13, fontWeight: 600, color: TEXT }}>
+                <span>Free</span>
+                <span style={{ color: TEXT3 }}>·</span>
+                <span>iOS 15+</span>
+                <span style={{ color: TEXT3 }}>·</span>
+                <span>iPhone & iPad</span>
               </div>
             </div>
 
@@ -500,6 +518,71 @@ const ShotlyLanding: React.FC<Props> = ({ app, section }) => {
             <p style={{ marginTop: 24, fontFamily: 'monospace', fontSize: 10, fontWeight: 600, color: TEXT3, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
               Not medical advice · Personal tracking only
             </p>
+          </div>
+        </section>
+
+        {/* ── Guides ── */}
+        <section style={{ padding: '80px 24px', backgroundColor: SURFACE2 }}>
+          <div style={{ maxWidth: 1024, margin: '0 auto' }}>
+            <p style={{ fontSize: 10, fontWeight: 700, color: TEXT3, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12 }}>Learn & Compare</p>
+            <h2 style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, color: TEXT, marginBottom: 10 }}>Guides for GLP-1 Trackers</h2>
+            <p style={{ fontSize: 16, color: TEXT2, marginBottom: 40 }}>Discover the best practices for tracking your injections and weight loss journey.</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
+              <Link to="/shotly/guide/ozempic-injection-tracker" style={{
+                padding: 24, borderRadius: 12, border: `1.5px solid ${BORDER}`, backgroundColor: SURFACE, textDecoration: 'none', color: TEXT,
+                transition: 'all 0.2s', display: 'block'
+              }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = CORAL;
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px rgba(255,107,0,0.12)`;
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = BORDER;
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+                }}
+              >
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: CORAL, marginBottom: 8 }}>📖 Guide</div>
+                <p style={{ fontSize: 16, fontWeight: 700 }}>Best Ozempic Injection Tracker</p>
+              </Link>
+              <Link to="/shotly/guide/mounjaro-weight-loss-tracker" style={{
+                padding: 24, borderRadius: 12, border: `1.5px solid ${BORDER}`, backgroundColor: SURFACE, textDecoration: 'none', color: TEXT,
+                transition: 'all 0.2s', display: 'block'
+              }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = CORAL;
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px rgba(255,107,0,0.12)`;
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = BORDER;
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+                }}
+              >
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: CORAL, marginBottom: 8 }}>📖 Guide</div>
+                <p style={{ fontSize: 16, fontWeight: 700 }}>Best Mounjaro Weight Loss Tracker</p>
+              </Link>
+              <Link to="/shotly/guide/wegovy-weight-loss-tracker" style={{
+                padding: 24, borderRadius: 12, border: `1.5px solid ${BORDER}`, backgroundColor: SURFACE, textDecoration: 'none', color: TEXT,
+                transition: 'all 0.2s', display: 'block'
+              }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = CORAL;
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px rgba(255,107,0,0.12)`;
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = BORDER;
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+                  (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+                }}
+              >
+                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: CORAL, marginBottom: 8 }}>📖 Guide</div>
+                <p style={{ fontSize: 16, fontWeight: 700 }}>Best Wegovy Weight Loss Tracker</p>
+              </Link>
+            </div>
           </div>
         </section>
 
