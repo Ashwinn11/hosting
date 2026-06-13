@@ -166,7 +166,7 @@ const pseoPages = arrayStartIndex !== -1 && arrayEndIndex !== -1 ?
   eval(`(${pseoRaw.substring(arrayStartIndex + 'export const pseoPages: PSEOPage[] = '.length, arrayEndIndex + 1)})`) : [];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
-function buildHead({ title, description, keywords, canonical, appStoreUrl, downloadUrl, seoApplicationCategory, appName, appNumericId, appId, aggregateRating, screenshots, faqs }) {
+function buildHead({ title, description, keywords, canonical, appStoreUrl, downloadUrl, seoApplicationCategory, appName, appNumericId, appId, aggregateRating, screenshots, faqs, breadcrumbs, pageType, datePublished }) {
   const kw = keywords.join(', ');
   const image = `${BASE}/og-image.png`;
 
@@ -200,6 +200,18 @@ function buildHead({ title, description, keywords, canonical, appStoreUrl, downl
     sameAs: ['https://twitter.com/shwiinn'],
     founder: { '@type': 'Person', name: 'Ashwin Anbazhagan' },
   });
+
+  const breadcrumbSchema = (breadcrumbs && breadcrumbs.length > 0) ? `
+    <script type="application/ld+json">${JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((b, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: b.name,
+        item: b.url,
+      })),
+    })}</script>` : '';
 
   const faqSchema = (faqs && faqs.length > 0) ? `
     <script type="application/ld+json">${JSON.stringify({
@@ -237,7 +249,7 @@ function buildHead({ title, description, keywords, canonical, appStoreUrl, downl
     <meta name="twitter:description" content="${description}">
     <meta name="twitter:image" content="${image}">
     <meta name="twitter:creator" content="@shwiinn">${appMetaTags}
-    <script type="application/ld+json">${appSchema}</script>${faqSchema}`.trim();
+    <script type="application/ld+json">${appSchema}</script>${breadcrumbSchema}${faqSchema}`.trim();
 }
 
 function writeRoute(templateHtml, routePath, headContent, bodyHtml) {
@@ -328,6 +340,11 @@ for (const page of pseoPages) {
   const app = apps.find(a => a.id === page.appId);
 
   const bodyHtml = render(routePath);
+  const breadcrumbs = [
+    { name: 'Home', url: `${BASE}/` },
+    { name: app?.name || '', url: `${BASE}/${page.appId}` },
+    { name: page.h1 || page.title, url: canonical },
+  ];
   const headContent = buildHead({
     title: page.title,
     description: page.metaDescription,
@@ -341,6 +358,9 @@ for (const page of pseoPages) {
     aggregateRating: null,
     screenshots: null,
     faqs: page.faqs,
+    breadcrumbs,
+    pageType: page.type,
+    datePublished: page.datePublished,
   });
 
   writeRoute(templateHtml, routePath, headContent, bodyHtml);
