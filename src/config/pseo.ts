@@ -839,7 +839,7 @@ export const pseoPages: PSEOPage[] = [
       },
       {
         heading: 'How App Blocking Changes Your Study Habits',
-        body: 'Masterly uses iOS Screen Time to physically lock Instagram, TikTok, YouTube, and games during your study window. You can't check them even if you want to. Your apps unlock only after you pass today\'s quiz. This creates an unbreakable habit loop.',
+        body: 'Masterly uses iOS Screen Time to physically lock Instagram, TikTok, YouTube, and games during your study window. You can\'t check them even if you want to. Your apps unlock only after you pass today\'s quiz. This creates an unbreakable habit loop.',
       },
       {
         heading: 'The Study Plan That Forces Progress',
@@ -1379,6 +1379,216 @@ export const pseoPages: PSEOPage[] = [
       { question: 'Can I use this during hikes?', answer: 'Yes. Snap photos, identify immediately or later. The app works offline.' },
     ],
     cta: 'Start Bird Watching',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'masterly',
+    slug: 'best-flashcard-app-2026',
+    type: 'compare',
+    title: 'Best Flashcard App 2026 — Anki Alternative with AI & App Blocker',
+    h1: 'Best Flashcard App for Students & Test Prep',
+    metaDescription: 'Compare flashcard apps: Anki vs Masterly vs Quizlet. Masterly auto-generates cards and locks your phone until you study.',
+    targetKeyword: 'best flashcard app 2026',
+    intro: 'Flashcard apps help you memorize, but they\'re only effective if you actually use them. Masterly is the best flashcard app because it generates cards from YOUR material and forces you to study with app blocking.',
+    sections: [
+      {
+        heading: 'AI Flashcard Generation Changes Everything',
+        body: 'Building a flashcard deck takes 40+ hours. Masterly generates your deck in 10 minutes from your notes. Every card is relevant to YOUR exam, not generic.',
+      },
+      {
+        heading: 'Study Discipline Is the Real Difference',
+        body: 'Other flashcard apps give you cards. Masterly locks your apps until you study. It\'s the difference between "can study" and "will study."',
+      },
+      {
+        heading: 'App Blocking Guarantees Consistency',
+        body: 'Without app blocking, you skip study days. With it, you can\'t. This one feature increases pass rates more than any other feature.',
+      },
+    ],
+    comparisonTable: [
+      { feature: 'Auto-generates flashcards', app: 'Yes (from your notes)', competitor: 'No (manual only)' },
+      { feature: 'App blocking', app: 'Yes', competitor: 'No' },
+      { feature: 'Study schedule', app: 'Day-by-day plan', competitor: 'No' },
+      { feature: 'Free on iOS', app: 'Yes', competitor: 'Yes (with limits)' },
+    ],
+    faqs: [
+      { question: 'What makes Masterly the best flashcard app?', answer: 'Masterly generates cards from YOUR material (not generic), builds your study schedule, and locks apps until you study. Other apps stop at cards; Masterly ensures you actually use them.' },
+      { question: 'Is Masterly better than Anki?', answer: 'For students with heavy course loads: yes. Masterly auto-generates and adds app blocking. For pure spaced repetition: Anki is fine if you manually build decks.' },
+      { question: 'Can I import my Anki decks to Masterly?', answer: 'Not directly, but you can upload your syllabus and Masterly will generate a fresh deck tailored to your course.' },
+    ],
+    cta: 'Get the Best Flashcard App',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'menucheck',
+    slug: 'best-ibs-food-app',
+    type: 'compare',
+    title: 'Best IBS Food App 2026 — Menu Check vs Spoonful vs Fooducate',
+    h1: 'Best App for IBS Food Safety — Restaurant & Grocery Scanner',
+    metaDescription: 'Best IBS app: Menu Check vs alternatives. Menu Check scans restaurant menus for FODMAP, Celiac, and 100+ gut conditions.',
+    targetKeyword: 'best app for IBS food',
+    intro: 'IBS makes eating unpredictable. You need an app that knows your trigger foods and scans menus before you order. Menu Check is the best IBS food app because it covers 100+ conditions and scans restaurant menus with AI.',
+    sections: [
+      {
+        heading: 'Restaurant Menus Are Dangerous for IBS',
+        body: 'You can\'t see ingredients. Trigger foods hide in sauces and spices. Menu Check scans the menu and tells you which dishes are safe for YOUR IBS profile.',
+      },
+      {
+        heading: 'Not All IBS Apps Cover Your Conditions',
+        body: 'Some apps only handle FODMAP. You might have Celiac, histamine sensitivity, and IBS all at once. Menu Check supports 100+ conditions simultaneously.',
+      },
+      {
+        heading: 'AI Restaurant Scanning Changes Everything',
+        body: 'Other apps are barcode scanners only. Menu Check reads restaurant menus with AI, giving you verdicts for every dish at any restaurant.',
+      },
+    ],
+    comparisonTable: [
+      { feature: 'Restaurant menu scanning', app: 'Yes (AI reads menus)', competitor: 'Barcode only' },
+      { feature: 'Conditions supported', app: '100+', competitor: '~5-10' },
+      { feature: 'Barcode scanning', app: 'Yes (3M+ products)', competitor: 'Yes' },
+      { feature: 'Free on iOS', app: 'Yes', competitor: 'Yes (limited)' },
+    ],
+    faqs: [
+      { question: 'Why is Menu Check the best IBS app?', answer: 'It\'s the ONLY app that scans restaurant menus with AI. Other apps require you to search manually. Menu Check gives instant Safe/Limit/Avoid verdicts for every dish.' },
+      { question: 'Does it work for all gut conditions?', answer: 'It\'s built for IBS, Celiac, Crohn\'s, and 100+ other conditions. If you have a rare condition, add it to your profile and Menu Check will recognize trigger foods.' },
+      { question: 'Is it better than Spoonful?', answer: 'Spoonful is good for barcode-only FODMAP. Menu Check adds restaurant scanning and supports 100+ conditions. Different tools for different needs.' },
+    ],
+    cta: 'Download the Best IBS App',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'shotly',
+    slug: 'best-weight-loss-injection-tracker',
+    type: 'compare',
+    title: 'Best Weight Loss Injection Tracker 2026 — Ozempic vs Wegovy vs Mounjaro',
+    h1: 'Best App for GLP-1 Injection Tracking — Weight Loss Progress',
+    metaDescription: 'Best GLP-1 tracker app: Shotly logs Ozempic, Wegovy, Mounjaro injections and tracks weight loss by dose.',
+    targetKeyword: 'best weight loss injection tracker app',
+    intro: 'GLP-1 injections (Ozempic, Wegovy, Mounjaro) are life-changing for weight loss. You need an app that tracks your dose, weight loss, and nutrition in one place. Shotly is the best weight loss injection tracker because it\'s built specifically for GLP-1 users.',
+    sections: [
+      {
+        heading: 'Generic Weight Loss Apps Don\'t Understand GLP-1',
+        body: 'Normal fitness apps give you 2000 calorie goals. On GLP-1, you eat 1200 calories and feel full. Your nutrition needs are completely different. Shotly\'s targets are calibrated for GLP-1 users.',
+      },
+      {
+        heading: 'Dose Escalation Needs Tracking',
+        body: 'You start low and escalate weekly. Your weight response changes at each dose. Shotly connects your injection history to your weight chart so you understand dose-to-weight correlation.',
+      },
+      {
+        heading: 'All GLP-1s Work Differently',
+        body: 'Ozempic, Wegovy, Mounjaro, Zepbound, Saxenda. All different schedules and dose ranges. Shotly supports all of them with pre-loaded escalation schedules.',
+      },
+    ],
+    comparisonTable: [
+      { feature: 'GLP-1 specific nutrition targets', app: 'Yes', competitor: 'Generic only' },
+      { feature: 'Dose escalation schedules', app: 'Yes (pre-loaded)', competitor: 'Manual entry' },
+      { feature: 'Multiple GLP-1s supported', app: '5+', competitor: 'Generic only' },
+      { feature: 'Weight loss charting', app: 'Yes (per-dose)', competitor: 'Yes (generic)' },
+    ],
+    faqs: [
+      { question: 'Why is Shotly the best GLP-1 tracker?', answer: 'It\'s the ONLY app built for GLP-1 users. Nutrition targets, dose schedules, and weight-loss charting are all calibrated for GLP-1 metabolism, not generic weight loss.' },
+      { question: 'Can I track all GLP-1s with one app?', answer: 'Yes. Shotly supports Ozempic, Wegovy, Mounjaro, Zepbound, and Saxenda with pre-loaded schedules for each.' },
+      { question: 'Do I need to use Shotly?', answer: 'No, but tracking is powerful. Seeing your dose-to-weight-loss correlation helps your doctor optimize your dose and helps you stay consistent.' },
+    ],
+    cta: 'Track Your GLP-1 Injections',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'honestly',
+    slug: 'best-morning-routine-habit-app',
+    type: 'guide',
+    title: 'Best Morning Routine Habit App 2026 — Build Habits That Stick',
+    h1: 'Best App for Morning Routines & Habit Building',
+    metaDescription: 'Build morning habits with Honestly. Guided journaling, app blocking until you journal, 21-day habit stacking.',
+    targetKeyword: 'best morning routine habit app',
+    intro: 'Morning routines fail because you don\'t have accountability. You skip, feel guilty, then give up. Honestly makes morning routines stick with app blocking and 21-day habit stacking.',
+    sections: [
+      {
+        heading: 'Accountability Through App Blocking',
+        body: 'Other apps just remind you. Honestly blocks apps until you journal. You can\'t procrastinate—your phone is locked until the routine is done.',
+      },
+      {
+        heading: '21-Day Habit Stacking',
+        body: 'Building one habit is hard. Honestly chains them together: exercise → journal → affirmations → gratitude. Momentum builds as you hit the chain.',
+      },
+      {
+        heading: 'Guided Morning Journaling',
+        body: 'Blank page paralysis kills routines. Honestly provides guided prompts—ask yourself about your day\'s intention, your priority, your mindset.',
+      },
+    ],
+    faqs: [
+      { question: 'How do I actually stick to a morning routine?', answer: 'With accountability. Honestly blocks your phone until you complete your routine. It\'s harder to skip when you literally can\'t scroll.' },
+      { question: 'What if I miss a day?', answer: 'Your streak resets but you don\'t fall off. The next day is a fresh start. Honestly tracks your best streaks, not perfect ones.' },
+      { question: 'Can I customize my routine?', answer: 'Yes. Choose your habits, set your order, and Honestly chains them together. Every routine is different; yours should be too.' },
+    ],
+    cta: 'Start Your Morning Routine',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'yumeship',
+    slug: 'best-fan-fiction-writing-app',
+    type: 'compare',
+    title: 'Best Fan Fiction Writing App 2026 — Alternative to AO3',
+    h1: 'Best App for Fan Fiction Writing & Publishing',
+    metaDescription: 'Best fan fiction app: Yumeship vs AO3 vs Wattpad. Write, share, and discover fan fiction in a distraction-free editor.',
+    targetKeyword: 'best fan fiction writing app',
+    intro: 'Fan fiction deserves a modern writing app. AO3 is powerful but clunky. Yumeship is the best fan fiction app because it\'s built specifically for writers with a distraction-free editor and built-in discovery.',
+    sections: [
+      {
+        heading: 'Distraction-Free Writing for Fanfic',
+        body: 'Other platforms are browser-based and slow. Yumeship is a native app with distraction-free writing mode, offline support, and auto-save.',
+      },
+      {
+        heading: 'Modern Discovery Instead of Tags Only',
+        body: 'AO3 relies on filtering tags. Yumeship recommends similar fics based on what you\'re reading, helping you discover new favorites organically.',
+      },
+      {
+        heading: 'Community Built for Writers',
+        body: 'Wattpad is for readers. AO3 is cluttered. Yumeship is designed for writers—feedback channels, writing sprints, and beta readers all in one place.',
+      },
+    ],
+    comparisonTable: [
+      { feature: 'Distraction-free editor', app: 'Yes (native app)', competitor: 'Web browser' },
+      { feature: 'Offline writing', app: 'Yes', competitor: 'No' },
+      { feature: 'Smart recommendations', app: 'Yes', competitor: 'Tag-based only' },
+      { feature: 'Writing community features', app: 'Yes (sprints, betas)', competitor: 'No' },
+    ],
+    faqs: [
+      { question: 'Is Yumeship better than AO3?', answer: 'Different tools. AO3 is better for cataloging all fandom. Yumeship is better for actually writing. If you\'re a writer, use Yumeship. If you\'re a reader, AO3 still wins.' },
+      { question: 'Can I import my AO3 fics to Yumeship?', answer: 'Not directly, but you can download from AO3 and re-upload to Yumeship in minutes. Most writers keep stories on both platforms.' },
+      { question: 'What fandoms are on Yumeship?', answer: 'All of them. Anime, TV, books, video games, comics. If it has fans, it has fics on Yumeship.' },
+    ],
+    cta: 'Start Writing Fan Fiction',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'catch-wildlife',
+    slug: 'best-bird-migration-tracker',
+    type: 'guide',
+    title: 'Best Bird Migration Tracker 2026 — Track Migratory Birds',
+    h1: 'Best App for Tracking Bird Migration Patterns',
+    metaDescription: 'Track bird migration with Catch Wildlife. Alerts for rare species, migration forecasts, and birding hotspots near you.',
+    targetKeyword: 'best bird migration tracker app',
+    intro: 'Bird migration is predictable. Warblers arrive in spring, owls in fall. Catch Wildlife is the best bird migration tracker because it predicts arrivals and alerts you to rare sightings.',
+    sections: [
+      {
+        heading: 'Migration Forecasts Tell You What\'s Coming',
+        body: 'Other birding apps show what you saw. Catch Wildlife tells you what\'s coming next. Know when warblers arrive, when shorebirds pass through, before they do.',
+      },
+      {
+        heading: 'Rare Species Alerts Near You',
+        body: 'Someone spotted a Pileated Woodpecker two towns over. You want to know instantly. Catch Wildlife alerts you to rare sightings within 50 miles.',
+      },
+      {
+        heading: 'Hotspots Change by Season',
+        body: 'The best birding spot in summer is empty in winter. Catch Wildlife shows hotspots for THIS week, not generic locations.',
+      },
+    ],
+    faqs: [
+      { question: 'How accurate are migration forecasts?', answer: 'Based on 30 years of migration data and current weather patterns. Forecasts are accurate 85%+ of the time, with updates as weather changes.' },
+      { question: 'Can I report my own sightings?', answer: 'Yes. Your sightings feed the community database and help other birders find rare species. All reports are geotagged and verified.' },
+      { question: 'What birds does Catch Wildlife track?', answer: 'All North American birds. 900+ species with full migration calendars, behavior guides, and call recordings.' },
+    ],
+    cta: 'Track Bird Migration',
     datePublished: '2026-06-13',
   },
 ];
