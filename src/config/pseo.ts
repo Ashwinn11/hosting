@@ -2031,4 +2031,159 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Self-Care Ritual',
     datePublished: '2026-06-13',
   },
+  {
+    appId: 'masterly',
+    slug: 'study-app-high-school-students',
+    type: 'guide',
+    title: 'Best Study App for High School 2026 — App Blocker & Study Planner',
+    h1: 'Best App for High School Students — Focus, Plan, Pass Tests',
+    metaDescription: 'Masterly is the best study app for high school. AI study plans, app blocking, and exam prep for algebra, chemistry, history, and all subjects.',
+    targetKeyword: 'best study app high school',
+    intro: 'High school is the first time you\'re expected to manage your own studying. No teacher telling you what to study, no parent monitoring. Masterly is the best study app for high school because it does the planning and accountability your brain hasn\'t developed yet.',
+    sections: [
+      {
+        heading: 'Executive Function Develops in Your 20s',
+        body: 'High school brains aren\'t wired for independent planning yet. Masterly provides the structure—what to study, when, how much—that your brain will eventually build itself.',
+      },
+      {
+        heading: 'Phone Addiction Derails High School Study',
+        body: 'High school is the peak of phone addiction. Masterly\'s app blocking removes the temptation. You can\'t check Snapchat during study time, so you actually study.',
+      },
+      {
+        heading: 'College Prep Starts Now',
+        body: 'Colleges look at freshman grades. Sophomore grades matter for GPA. A solid study app now = better grades throughout high school = better college options.',
+      },
+    ],
+    faqs: [
+      { question: 'Do high school students need a study app?', answer: 'Yes. High school is when you learn to self-study. An app that does planning and removes distractions helps you succeed before college demands even more.' },
+      { question: 'Is Masterly good for SAT prep?', answer: 'Yes. Upload SAT practice tests and Masterly generates a study plan. It\'s perfect for junior-year test prep.' },
+      { question: 'Can my parents monitor my studying?', answer: 'Masterly is designed for student independence, not parental control. But the study streaks and completion summaries show parents you\'re taking it seriously.' },
+    ],
+    cta: 'Get Your Study Plan',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'menucheck',
+    slug: 'lactose-intolerance-app',
+    type: 'guide',
+    title: 'Best Lactose Intolerance App 2026 — Dairy Scanner & Barcode Checker',
+    h1: 'Best App for Lactose Intolerance — Restaurant & Grocery Scanning',
+    metaDescription: 'Menu Check scans for lactose and dairy allergens. Restaurant menu scanning and 3M+ barcode database. Eat confidently. Free on iPhone.',
+    targetKeyword: 'best lactose intolerance app',
+    intro: 'Lactose intolerance is unpredictable. Mild discomfort or severe pain depends on the amount of lactose and your sensitivity. Menu Check is the best lactose intolerance app because it scans for hidden dairy and lactose.',
+    sections: [
+      {
+        heading: 'Hidden Dairy Causes Most Problems',
+        body: 'Cream sauce, butter, milk powder, whey, lactose—they hide in "innocent" foods like bread, salad dressing, energy bars. Menu Check catches them.',
+      },
+      {
+        heading: 'Lactose Varies by Product',
+        body: 'Hard cheeses have almost no lactose. Milk has maximum lactose. Most people with lactose intolerance can handle some dairy. Menu Check lets you set YOUR tolerance level.',
+      },
+      {
+        heading: 'Planning Meals Prevents Emergencies',
+        body: 'Knowing what\'s safe before you order prevents surprises mid-meal. Menu Check tells you which dishes and products work for you.',
+      },
+    ],
+    faqs: [
+      { question: 'What is the difference between lactose intolerance and Celiac?', answer: 'Lactose intolerance is difficulty digesting milk sugar. Celiac is an immune reaction to gluten. Different triggers, different apps—but Menu Check handles both.' },
+      { question: 'Are lactose-free products actually safe?', answer: 'Yes, but Menu Check still tracks them to verify claims. Some "lactose-free" products have hidden dairy in other forms.' },
+      { question: 'Can I eat dairy with lactose intolerance?', answer: 'Depends on your severity. Most people tolerate some dairy. Menu Check helps you learn YOUR threshold.' },
+    ],
+    cta: 'Scan for Dairy Safety',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'shotly',
+    slug: 'glp-1-meal-planning',
+    type: 'guide',
+    title: 'Best Meal Planning App for GLP-1 2026 — Appetite-Suppressed Nutrition',
+    h1: 'Best Meal Planning App for GLP-1 Users — Macro-Balanced Recipes',
+    metaDescription: 'Shotly meal planner for GLP-1 users. High-protein meals, small portions, appetite-suppressed nutrition. Works with Ozempic, Wegovy, Mounjaro.',
+    targetKeyword: 'meal planning app GLP-1',
+    intro: 'Eating on GLP-1 is confusing. You\'re not hungry, but you need protein. Portions are tiny, but nutrition can\'t suffer. Shotly is the best meal planning app for GLP-1 because it plans meals for suppressed appetite.',
+    sections: [
+      {
+        heading: 'Portion Sizes on GLP-1 Are Tiny',
+        body: 'A normal portion makes you uncomfortable. High-protein meals in small portions are key. Shotly plans meals that fit both constraints.',
+      },
+      {
+        heading: 'Protein Prevents Muscle Loss',
+        body: 'Appetite suppression affects all foods equally. Without planning, you miss protein. Shotly ensures protein in every meal despite small appetite.',
+      },
+      {
+        heading: 'Weekly Meal Prep Removes Decisions',
+        body: 'What should I eat? Can I handle this amount? Shotly plans your week so you eat, don\'t decide.',
+      },
+    ],
+    faqs: [
+      { question: 'What should I eat on Ozempic or Wegovy?', answer: 'High-protein, small-portion meals. Shotly suggests recipes specifically calibrated for GLP-1 users.' },
+      { question: 'How many calories should I eat on GLP-1?', answer: 'Less than generic diets recommend because appetite is suppressed. Shotly calculates YOUR calorie target based on your GLP-1 dose.' },
+      { question: 'Can I meal prep with GLP-1?', answer: 'Yes. Shotly provides weekly meal plans so you can prep everything on Sunday.' },
+    ],
+    cta: 'Plan Your GLP-1 Meals',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'yumeship',
+    slug: 'private-fan-community-app',
+    type: 'guide',
+    title: 'Best Private Fan Community App 2026 — Share Without Judgment',
+    h1: 'Best App for Private Fan Communities — Safe Fandom Space',
+    metaDescription: 'Yumeship is a private fan community app. Share shipping content, character art, headcanons with fellow fans. Completely private. Free on iPhone.',
+    targetKeyword: 'private fan community app',
+    intro: 'Fandom is more fun with others, but sharing feels risky. What if someone screenshots? What if family finds out? Yumeship is the best private fan community app because it\'s end-to-end encrypted and completely private.',
+    sections: [
+      {
+        heading: 'Private Spaces for Authentic Fandom',
+        body: 'You act differently when watched. Private spaces let you be authentically you. Yumeship is a vault where your fandom side is safe.',
+      },
+      {
+        heading: 'Invite-Only Communities',
+        body: 'No public profiles, no exposure, no randos finding your account. You invite who you trust. Your fandom stays between you and people who get it.',
+      },
+      {
+        heading: 'Encrypted End-to-End',
+        body: 'Your character love letters, your shipped art, your headcanons—all encrypted. Not even Yumeship can see what you share.',
+      },
+    ],
+    faqs: [
+      { question: 'Is Yumeship a social media app?', answer: 'No. It\'s private by default. You control who sees everything. More like a shared journal than social media.' },
+      { question: 'Can others screenshot my posts?', answer: 'Technically yes, but Yumeship is designed for trust. You invite people you trust, so screenshots are unlikely.' },
+      { question: 'Is my fandom community data private from Yumeship?', answer: 'Yes. End-to-end encryption means even Yumeship staff can\'t read your messages or see your content.' },
+    ],
+    cta: 'Create Your Fan Community',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'catch-wildlife',
+    slug: 'outdoor-adventure-app-animal-guide',
+    type: 'guide',
+    title: 'Best Outdoor Adventure App 2026 — Wildlife & Nature Guide',
+    h1: 'Best App for Outdoor Adventures — Wildlife Identification Field Guide',
+    metaDescription: 'Catch Wildlife is an outdoor adventure app. Identify animals on hikes, learn behaviors, build your wildlife album. Free nature guide on iPhone.',
+    targetKeyword: 'outdoor adventure wildlife app',
+    intro: 'Hiking is more fun when you know what you\'re seeing. That bird, that mammal, that track—they all have stories. Catch Wildlife is the best outdoor adventure app because it identifies wildlife instantly.',
+    sections: [
+      {
+        heading: 'Learning Animal Behavior Changes Your Hikes',
+        body: 'A random bird is just a bird. A warbler migrating 3000 miles annually is a story. Catch Wildlife teaches you those stories.',
+      },
+      {
+        heading: 'Photography Gets Better With Knowledge',
+        body: 'Knowing what to look for improves your photos. You notice the male warbler\'s unique colors, the rarity, the seasonality. Catch Wildlife teaches you what matters.',
+      },
+      {
+        heading: 'Your Collection Becomes a Nature Journal',
+        body: 'Every photo you take with Catch Wildlife becomes a log entry. Your collection is a record of what you\'ve seen and learned.',
+      },
+    ],
+    faqs: [
+      { question: 'How does Catch Wildlife help with hiking?', answer: 'Snap animals you see on the trail. Catch Wildlife identifies them and teaches you about their behavior, habitat, and rarity in your region.' },
+      { question: 'Is Catch Wildlife good for nature photography?', answer: 'Yes. Knowing what to look for improves your photos. Catch Wildlife teaches you field marks and behavior so you capture better shots.' },
+      { question: 'Can I use Catch Wildlife offline on hikes?', answer: 'Identification requires a connection, but your collection is stored locally. View your album anytime.' },
+    ],
+    cta: 'Start Your Adventure',
+    datePublished: '2026-06-13',
+  },
 ];
