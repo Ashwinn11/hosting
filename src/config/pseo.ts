@@ -1195,4 +1195,190 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Become a Trail Naturalist',
     datePublished: '2026-06-13',
   },
+  {
+    appId: 'masterly',
+    slug: 'pass-college-exams-app-blocker',
+    type: 'guide',
+    title: 'Pass College Exams: Study App Blocker Strategy for Finals',
+    h1: 'Ace College Exams — Study Without Distractions',
+    metaDescription: 'Pass college exams with app blocking. Lock your phone during study sessions and build your exam prep plan.',
+    targetKeyword: 'college exam prep app blocker',
+    intro: 'Finals week crushes students. Not because they don\'t know the material, but because they can\'t focus long enough to study it. Masterly locks your apps during study windows so you actually prepare.',
+    sections: [
+      {
+        heading: 'The Exam Preparation Crisis',
+        body: 'You have 3 weeks. 5 classes. 10,000 concepts. Your phone destroys any attempt at focus. You need a system that removes the choice to get distracted.',
+      },
+      {
+        heading: 'AI Study Plans Built from Your Syllabus',
+        body: 'Upload your syllabus. Masterly calculates exam date and builds a day-by-day plan. You know exactly what chapter to study today. No overwhelm. No decision fatigue.',
+      },
+      {
+        heading: 'App Blocking Forces Consistency',
+        body: 'Your apps lock during study hours. You can\'t check them even once. After 3 weeks of forced focus, you\'ll pass exams you thought you\'d fail.',
+      },
+    ],
+    faqs: [
+      { question: 'How much time do I need to study with Masterly?', answer: 'The time needed stays the same. Masterly just makes sure you actually use it. Most students study 2-3 hours/day for 3 weeks before finals.' },
+      { question: 'Will my professors notice if I use Masterly?', answer: 'No. Masterly is just a study tool. Your grades will speak for themselves.' },
+      { question: 'What if I need my phone during study time?', answer: 'Calls and texts still work. Only recreational apps lock. Emergencies get through.' },
+    ],
+    cta: 'Lock In Your Exam Prep',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'menucheck',
+    slug: 'crohns-disease-safe-food-scanner',
+    type: 'guide',
+    title: 'Crohn\'s Disease Food Safety: Restaurant & Grocery Scanner',
+    h1: 'Eat Safely With Crohn\'s Disease — Food Scanner for Flare Prevention',
+    metaDescription: 'Menu Check helps Crohn\'s patients avoid trigger foods. Scan restaurant menus and groceries for safe meals.',
+    targetKeyword: 'crohns disease safe food app',
+    intro: 'Crohn\'s disease means certain foods trigger painful flares. Restaurant meals are a guessing game. Menu Check scans any menu and identifies which dishes are safe for your gut.',
+    sections: [
+      {
+        heading: 'Trigger Foods Hide in Restaurants',
+        body: 'High fat, high fiber, spicy foods trigger flares. But restaurants coat everything in butter and seasonings. You can\'t see what\'s in your meal before you order.',
+      },
+      {
+        heading: 'Scan Before You Order',
+        body: 'Menu Check reads the menu and flags trigger foods specific to Crohn\'s disease. You see exactly which dishes are safe before you commit to ordering.',
+      },
+      {
+        heading: 'Build Your Personal Safe Food List',
+        body: 'Over time, you learn which restaurants and dishes work for you. Menu Check builds a history so you can confidently order at your favorite places.',
+      },
+    ],
+    faqs: [
+      { question: 'Can Menu Check identify all Crohn\'s triggers?', answer: 'Menu Check identifies common triggers (fat, fiber, spice). Your personal triggers may vary — keep a food journal alongside the app.' },
+      { question: 'Does it work for all restaurants?', answer: 'Any restaurant with a readable menu. Chain restaurants with online menus have the highest accuracy.' },
+      { question: 'What if I\'m in remission?', answer: 'Even in remission, certain foods can trigger flares. Menu Check helps prevent them before they start.' },
+    ],
+    cta: 'Prevent Crohn\'s Flares',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'shotly',
+    slug: 'saxenda-injection-tracking-app',
+    type: 'guide',
+    title: 'Saxenda Injection Tracker: Weight Loss Logging & Schedule',
+    h1: 'Track Saxenda Injections & Weight Loss Progress',
+    metaDescription: 'Shotly tracks Saxenda (liraglutide) injections, weight loss, and nutrition goals for GLP-1 users.',
+    targetKeyword: 'saxenda injection tracker weight loss',
+    intro: 'Saxenda is liraglutide for weight loss. Weekly injections with dose escalation from 0.6mg to 3.0mg. Shotly tracks every dose and shows your weight loss trend.',
+    sections: [
+      {
+        heading: 'Saxenda Dose Escalation Takes Months',
+        body: 'You start low and escalate weekly. Your weight response changes at each dose. Shotly tracks this so you understand your body\'s rhythm at each level.',
+      },
+      {
+        heading: 'Weight Loss Tracking Across Doses',
+        body: 'You might lose 1 lb/week at 1.2mg and 2 lbs/week at 2.4mg. The chart shows exactly how your weight responds to escalation.',
+      },
+      {
+        heading: 'Nutrition Calibrated for GLP-1',
+        body: 'Appetite suppression is dose-dependent. Shotly adjusts your nutrition targets based on your current dose, ensuring you eat enough protein.',
+      },
+    ],
+    faqs: [
+      { question: 'Is Saxenda different from Ozempic?', answer: 'Saxenda is liraglutide (same ingredient as Victoza for diabetes). Ozempic is semaglutide. Both GLP-1s, different drugs, different dosing schedules.' },
+      { question: 'How much weight can I lose on Saxenda?', answer: 'Clinical trials showed average weight loss of 5-8% of body weight over 56 weeks. Individual results vary.' },
+      { question: 'Can I switch from Saxenda to Ozempic?', answer: 'That\'s a doctor decision. Shotly logs both equally — just change the drug name in settings.' },
+    ],
+    cta: 'Track Your Saxenda Journey',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'honestly',
+    slug: 'journal-for-anxiety-management',
+    type: 'guide',
+    title: 'Journaling for Anxiety: Morning Ritual Mental Health Guide',
+    h1: 'Reduce Anxiety With Morning Journaling — 5-Minute Daily Ritual',
+    metaDescription: 'Use journaling to manage anxiety. Honestly\'s morning ritual helps you process worry before your day starts.',
+    targetKeyword: 'journaling for anxiety relief',
+    intro: 'Anxiety spirals happen first thing in the morning. Your brain catastrophizes before you\'ve had coffee. A 5-minute morning journal breaks the cycle by externalizing worry onto paper.',
+    sections: [
+      {
+        heading: 'Morning Anxiety Is Preventable',
+        body: 'You wake up with a racing mind. Thoughts spiral. Cortisol spikes. But this happens before any actual stimulus. Journaling interrupts the pattern by forcing your brain to externalize worry.',
+      },
+      {
+        heading: 'The Anxiety Journal Framework',
+        body: 'Mood check → What\'s worrying you? → 3 things you can control → 1 thing you\'re grateful for. This sequence reframes catastrophizing into manageable reality.',
+      },
+      {
+        heading: 'Build an Anxiety-Resistant Morning',
+        body: 'After 21 days of this ritual, you\'ll notice anxiety doesn\'t hijack your mornings. You process worry constructively instead of spiraling.',
+      },
+    ],
+    faqs: [
+      { question: 'Does journaling really help anxiety?', answer: 'Yes. Research shows expressive writing reduces anxiety and depression. The act of writing externalizes worry and triggers problem-solving.' },
+      { question: 'What if I\'m too anxious to journal?', answer: 'That\'s when it helps most. Even one sentence counts. The act of opening the app breaks the anxiety spiral.' },
+      { question: 'Can I use this alongside therapy?', answer: 'Absolutely. Journaling complements therapy — it\'s a daily tool between sessions.' },
+    ],
+    cta: 'Manage Anxiety Daily',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'yumeship',
+    slug: 'fandom-community-creative-space',
+    type: 'guide',
+    title: 'Fandom Creative Space: Private Shipping & Fan Art Vault',
+    h1: 'Your Private Fandom Space — Celebrate Fan Love Freely',
+    metaDescription: 'YumeShip is a creative vault for fans. Ship characters, write fan letters, build headcanons privately.',
+    targetKeyword: 'private fandom shipping space',
+    intro: 'Fandom brings you joy. But online spaces judge harshly. YumeShip gives you a private corner where your fan love is celebrated, not criticized.',
+    sections: [
+      {
+        heading: 'Fandom Discourse Is Exhausting',
+        body: 'You love a character or ship that others mock. Online communities are judgmental. You need a space where your feelings are valid without defense.',
+      },
+      {
+        heading: 'Create Without Judgment',
+        body: 'YumeShip gives you templates for love letters, scenes, headcanons, and timelines. You express your feelings the way that feels right. No wrong answers.',
+      },
+      {
+        heading: 'Your Collection Stays Yours',
+        body: 'Everything is local. No sharing feature. No accounts. No one sees what you create. Your fan love is completely private.',
+      },
+    ],
+    faqs: [
+      { question: 'Is it normal to be this invested in fictional characters?', answer: 'Yes. Fan communities provide creativity, community, and emotional outlet. Your investment is valid.' },
+      { question: 'Can I share my collection on social media?', answer: 'YumeShip has no share feature. You manually copy/paste if you want to share elsewhere. Privacy is the default.' },
+      { question: 'What types of characters can I add?', answer: 'Anime, manga, TV shows, movies, books, games, webcomics — any character from any media.' },
+    ],
+    cta: 'Create Your Fan Space',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'catch-wildlife',
+    slug: 'bird-watching-binocular-guide',
+    type: 'guide',
+    title: 'Bird Watching Guide: Identify Birds Without Binoculars',
+    h1: 'Identify Birds Without Binoculars — Smartphone Bird Guide',
+    metaDescription: 'Learn bird identification using your phone camera. Catch Wildlife works without expensive binoculars or field guides.',
+    targetKeyword: 'bird identification guide app',
+    intro: 'Bird watching requires expensive binoculars and heavy field guides. Catch Wildlife turns your phone camera into a bird identification tool. Snap and identify instantly.',
+    sections: [
+      {
+        heading: 'Bird Watching Is Accessible Now',
+        body: 'You don\'t need $500 binoculars or to memorize a field guide. Your phone is always with you. Catch Wildlife identifies birds in real-time from photos.',
+      },
+      {
+        heading: 'Learn While You Watch',
+        body: 'Every identification teaches you something. Habitat, migration patterns, diet, conservation status. Your phone becomes a portable ornithology lab.',
+      },
+      {
+        heading: 'Build Your Bird List',
+        body: 'Over months, you\'ll identify hundreds of birds. Your collection becomes a personal record of local biodiversity and migration patterns.',
+      },
+    ],
+    faqs: [
+      { question: 'Do I need binoculars for bird watching?', answer: 'Not with Catch Wildlife. Your phone camera works fine. Binoculars help you spot distant birds, but the app identifies anything you can photograph.' },
+      { question: 'How accurate is the identification?', answer: 'For common birds in good light, 90%+ accurate. Rare birds or tough angles are harder — the app shows confidence level.' },
+      { question: 'Can I use this during hikes?', answer: 'Yes. Snap photos, identify immediately or later. The app works offline.' },
+    ],
+    cta: 'Start Bird Watching',
+    datePublished: '2026-06-13',
+  },
 ];
