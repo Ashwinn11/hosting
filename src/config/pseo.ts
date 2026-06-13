@@ -1009,4 +1009,190 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Wildlife Collection',
     datePublished: '2026-06-13',
   },
+  {
+    appId: 'masterly',
+    slug: 'ace-medical-school-exams',
+    type: 'guide',
+    title: 'How Medical Students Ace Exams: Study System for USMLE & Beyond',
+    h1: 'Med School Exam Success — The Complete Study System',
+    metaDescription: 'Pass USMLE, board exams, and licensing exams. Masterly builds your study plan from your syllabus with daily structure and app blocking.',
+    targetKeyword: 'medical school exam preparation system',
+    intro: 'Med school exams are cumulative, broad, and unforgiving. You can\'t cram 4 years of material. You need a system that breaks it into daily chunks, forces consistency, and keeps you on pace. That\'s what Masterly does.',
+    sections: [
+      {
+        heading: 'The Problem: Too Much Material, Never Enough Time',
+        body: 'USMLE covers 10,000+ concepts. You have 6-12 months. Pre-mades like Zanki work, but they\'re generic — they don\'t match your curriculum or your gaps. You need cards built from YOUR material.',
+      },
+      {
+        heading: 'The Solution: AI-Generated Cards from Your Notes',
+        body: 'Upload your lecture PDFs and Masterly generates a complete flashcard deck matching your school\'s curriculum. Every card is relevant. Every question is testable. You\'re not wasting time on content you don\'t need.',
+      },
+      {
+        heading: 'Pacing That Gets You to the Finish Line',
+        body: 'Masterly calculates your exam date and builds a day-by-day plan. You know exactly what block, system, or organ to study today. No guessing whether you\'re on pace. No cramming.',
+      },
+    ],
+    faqs: [
+      { question: 'Can Masterly replace Anki or Zanki for USMLE?', answer: 'Masterly complements them. Your curriculum-specific cards come first (Masterly), then supplement with comprehensive decks (Zanki) for gaps. This hybrid approach scores highest.' },
+      { question: 'How much time does card generation save?', answer: 'Building a Zanki deck takes 40-60 hours of review and editing. Masterly generates your deck in 10 minutes, cutting 50+ hours per block.' },
+      { question: 'Do I still need study groups?', answer: 'Yes. Masterly is your card system. Study groups, problem-solving, and peer discussion happen alongside it. Masterly handles the spaced repetition; groups handle the application.' },
+    ],
+    cta: 'Ace Your Medical Exams',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'menucheck',
+    slug: 'celiac-disease-restaurant-safety',
+    type: 'guide',
+    title: 'Restaurant Safety for Celiac Disease: Cross-Contamination Prevention',
+    h1: 'Eat Safely With Celiac — Restaurant Menu Scanning for Gluten-Free',
+    metaDescription: 'Navigate restaurants with Celiac disease. Menu Check identifies gluten, cross-contamination risks, and safe meals.',
+    targetKeyword: 'restaurants with celiac disease gluten-free',
+    intro: 'Celiac disease means one breadcrumb ends your week. Restaurant kitchens use shared surfaces, shared oil, shared everything. Even "gluten-free" options get contaminated. Menu Check shows you exactly which dishes are truly safe.',
+    sections: [
+      {
+        heading: 'Hidden Gluten in Restaurant Food',
+        body: 'It\'s not just bread. Soy sauce has gluten. Seasonings have gluten. Fried foods get contaminated in shared oil. Soups cooked in meat broth that came from broth with gluten. Menu Check knows all these hidden sources.',
+      },
+      {
+        heading: 'Scan, Check, Order Safely',
+        body: 'Point your camera at the menu. Menu Check reads every dish and flags gluten, cross-contamination risks, and certified-safe options. You see which items are genuinely safe before you order.',
+      },
+      {
+        heading: 'Never Guess About Your Health Again',
+        body: 'You know your body. You know what happens if you get glutened. Menu Check removes the guessing. You eat with confidence knowing exactly what\'s in your meal.',
+      },
+    ],
+    faqs: [
+      { question: 'Can Menu Check detect all hidden gluten sources?', answer: 'Menu Check checks ingredients and preparation methods. For Celiac, always verify cross-contamination procedures with your server — the kitchen method matters as much as ingredients.' },
+      { question: 'Does it cover all restaurants?', answer: 'Menu Check works with any physical menu. Chain restaurants often have full ingredient lists online, which improves accuracy. Small restaurants depend on menu text readability.' },
+      { question: 'Should I show the server my results?', answer: 'Yes. Menu Check gives you confident talking points. When you tell the server "your fish is fried in dedicated fryer" or "your rice is cooked separately," they take you seriously.' },
+    ],
+    cta: 'Eat Out Safely With Celiac',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'shotly',
+    slug: 'wegovy-dose-tracking-results',
+    type: 'guide',
+    title: 'Track Wegovy Dose Changes & Weight Loss Results | Shotly App',
+    h1: 'Wegovy Dose Tracking — See Your Dose-to-Weight-Loss Connection',
+    metaDescription: 'Log every Wegovy injection and dose change. Shotly tracks weight loss at each dose level.',
+    targetKeyword: 'wegovy dose tracker weight loss',
+    intro: 'Wegovy\'s dose escalation (0.25mg → 2.4mg) takes 4-5 months. Your weight loss might jump at one dose but plateau at another. Shotly connects your injection history to your weight chart so you see exactly how your body responds to each dose.',
+    sections: [
+      {
+        heading: 'Dose Escalation Takes Time — Track Every Level',
+        body: 'You start at 0.25mg and bump up every 4 weeks. Each dose level produces different weight loss. Some people lose 1 lb/week at 0.5mg, then jump to 3 lbs/week at 1.0mg. Shotly tracks this so you understand your body\'s rhythm.',
+      },
+      {
+        heading: 'Know Your Optimal Dose Before Going Higher',
+        body: 'Not everyone tolerates the highest dose. You might lose great weight at 1.7mg but get severe side effects at 2.4mg. By tracking your dose and weight response, you and your doctor can find YOUR optimal dose instead of chasing a generic endpoint.',
+      },
+      {
+        heading: 'Nutrition Tracking for Every Dose Level',
+        body: 'Appetite suppression is different at 0.5mg than at 2.4mg. Shotly adjusts your nutrition targets based on your dose level, ensuring you eat enough protein at each stage.',
+      },
+    ],
+    faqs: [
+      { question: 'Does weight loss increase with each dose bump?', answer: 'Usually yes, but not always linearly. Some people plateau at a dose for 2-3 weeks before dropping weight. The trend over 4 weeks per dose matters more than week-to-week changes.' },
+      { question: 'What if I don\'t want to go to the highest dose?', answer: 'That\'s fine. Shotly lets you log your current dose indefinitely. Many people get results at 1.7mg and stay there.' },
+      { question: 'Can I see how my results compare to others?', answer: 'Shotly is private — no comparisons. But clinical trials show average weight loss is 15–22% at 2.4mg, 10–15% at 1.7mg. Your personal trend matters most.' },
+    ],
+    cta: 'Track Your Wegovy Progress',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'honestly',
+    slug: 'break-social-media-phone-addiction',
+    type: 'guide',
+    title: 'Break Phone Addiction: Morning Ritual + App Blocking Strategy',
+    h1: 'Break Social Media Addiction — Start Your Day Phone-Free',
+    metaDescription: 'Escape phone addiction with a morning ritual and app blocking. Honestly locks your apps until you complete your reflection.',
+    targetKeyword: 'break phone addiction morning',
+    intro: 'Phone addiction starts the moment you wake up. Before your coffee, before a thought, you\'re scrolling. That first 30 minutes sets the tone for your whole day. Honestly breaks that cycle by locking your apps until you\'ve had five minutes to yourself.',
+    sections: [
+      {
+        heading: 'Why Your Phone Owns Your Morning',
+        body: 'Your phone is the first thing you see. Dopamine pathways light up. Your willpower is weakest right after sleep. You can\'t white-knuckle your way to discipline. You need a system that makes resistance impossible.',
+      },
+      {
+        heading: 'The Five-Minute Intervention',
+        body: 'Five minutes of journaling before your apps unlock. That\'s enough to interrupt the addiction cycle. You take control instead of your phone taking you. After 21 days of locked apps, the ritual becomes automatic.',
+      },
+      {
+        heading: 'Build a New Morning Identity',
+        body: 'Instead of "person who scrolls at 6am," you become "person who journaled at 6am." Identity shifts happen through repeated behavior. Honestly\'s app blocking forces the behavior; identity follows.',
+      },
+    ],
+    faqs: [
+      { question: 'Will app blocking make me resentful?', answer: 'Initially yes, but that fades by day 5-7. By week 2, you\'ll look forward to your ritual. By week 4, you\'ll feel incomplete without it.' },
+      { question: 'What if I really need to check my phone?', answer: 'Honestly locks recreational apps — Instagram, TikTok, games. Calls, texts, email, and maps still work. Real emergencies get through.' },
+      { question: 'Can I use Honestly if I don\'t like journaling?', answer: 'Honestly isn\'t a journal app. It\'s four text boxes: mood, prompted response, three wins, one gratitude. No writing required. Just reflecting.' },
+    ],
+    cta: 'Reclaim Your Mornings',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'yumeship',
+    slug: 'express-fan-love-safely',
+    type: 'guide',
+    title: 'Express Fan Love Without Judgment — Safe Space for Shipping',
+    h1: 'Fan Love Deserves a Safe Space — YumeShip Guide',
+    metaDescription: 'Express shipping, fan love, and creative passion privately. YumeShip keeps your collection safe, private, and judgment-free.',
+    targetKeyword: 'safe space for fan shipping love',
+    intro: 'Fandom is joy. But fan spaces are judgmental. You ship a character people mock. You love a pairing considered "wrong." You need somewhere you can celebrate without comments, without discourse, without feeling ashamed. YumeShip is that place.',
+    sections: [
+      {
+        heading: 'Why Fans Need Privacy',
+        body: 'Fandom discourse can be cruel. Shipping wars, character bashing, pairing hierarchies. Your love gets criticized constantly. You need a space where your feelings are validated, not debated.',
+      },
+      {
+        heading: 'Your Collection, Your Way',
+        body: 'YumeShip gives you templates: ship profiles with canonical timelines, love letters, scenes, headcanons. You express yourself however feels right. There\'s no "correct" way to love a character.',
+      },
+      {
+        heading: 'Grow Your Passion Safely',
+        body: 'Your collection develops over time. Love letters build character. Scenes develop relationships. Headcanons become mini-universes. This creative output is completely private — no screenshots, no sharing, no exposure.',
+      },
+    ],
+    faqs: [
+      { question: 'Is it weird to have a character love app?', answer: 'No. Fandom and shipping are normal. Studies show fan spaces provide genuine community and creative outlet. YumeShip just gives you a private corner of fandom.' },
+      { question: 'What types of relationships can I explore?', answer: 'All of them. Romantic, platonic, familial, queerplatonic. Whatever dynamic feels right for your characters.' },
+      { question: 'Can people see my collection?', answer: 'Never. Everything stays on your device. No accounts. No sharing feature. Complete privacy.' },
+    ],
+    cta: 'Create Your Shipping Space',
+    datePublished: '2026-06-13',
+  },
+  {
+    appId: 'catch-wildlife',
+    slug: 'nature-walk-wildlife-guide',
+    type: 'guide',
+    title: 'Wildlife Identification on Nature Walks: Field Guide for Hikers',
+    h1: 'Identify Wildlife on Every Trail — Hiker\'s Wildlife Guide',
+    metaDescription: 'Learn wildlife while hiking. Catch Wildlife identifies birds, insects, mammals on the trail in real-time.',
+    targetKeyword: 'wildlife identification hiking trail',
+    intro: 'You see something beautiful on a trail — a bird, an insect, something rare. You take a photo but forget what it was by the time you get home. Catch Wildlife identifies it instantly so you remember every sighting.',
+    sections: [
+      {
+        heading: 'Turn Your Hikes into Wildlife Lessons',
+        body: 'Every sighting teaches you something. What birds live here? What insects appear in spring? What mammals are nocturnal? Your hikes become outdoor education. Your photos become your textbook.',
+      },
+      {
+        heading: 'Identification Happens Instantly',
+        body: 'Point your camera at any animal. Catch Wildlife identifies it in seconds — species name, habitat, diet, conservation status. You learn while you\'re still on the trail, when the curiosity is fresh.',
+      },
+      {
+        heading: 'Your Collection Documents Local Biodiversity',
+        body: 'Over time, your collection becomes a record of what lives near you. You see patterns — which birds migrate through, which appear year-round, which are rare. You become an expert on your local ecosystem.',
+      },
+    ],
+    faqs: [
+      { question: 'Does it work while hiking?', answer: 'Yes. Take photos during your hike, identify them immediately or later. The app works offline. Just snap and identify.' },
+      { question: 'How accurate is real-time identification?', answer: 'For common species in good lighting, 85-95% accurate. For rare birds or difficult angles, accuracy drops. Catch Wildlife shows confidence level so you know when to double-check.' },
+      { question: 'Can I use this as a real field guide?', answer: 'Yes and better. Real field guides are heavy. Catch Wildlife gives you identification instantly, plus conservation info and local rarity data in real-time.' },
+    ],
+    cta: 'Become a Trail Naturalist',
+    datePublished: '2026-06-13',
+  },
 ];
