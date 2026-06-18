@@ -1,2 +1,4 @@
+/menucheck /gutpal 301
+/menucheck/* /gutpal/:splat 301
 /mascotmaker/* https://mascotmaker.io/:splat 301
 /* /index.html 200

@@ -3,11 +3,11 @@ import { useParams, Navigate } from 'react-router-dom';
 import { apps } from '../config/apps';
 import { ZenTemplate, AcademicTemplate, ArcadeTemplate, SanctuaryTemplate } from '../templates/AppTemplates';
 import MasterlyLanding from './MasterlyLanding';
-import MenuCheckLanding from './MenuCheckLanding';
+import GutPalLanding from './GutPalLanding';
 import ShotlyLanding from './ShotlyLanding';
 import HonestlyLanding from './HonestlyLanding';
 import YumeshipLanding from './YumeshipLanding';
-import CatchWildlifeLanding from './CatchWildlifeLanding';
+
 
 interface AppLandingProps {
   section?: 'privacy' | 'terms' | 'support';
@@ -36,11 +36,11 @@ const AppLanding: React.FC<AppLandingProps> = ({ section, appId: propAppId }) =>
 
   // Custom landing pages per app
   if (app.id === 'masterly') return <MasterlyLanding app={app} section={section} />;
-  if (app.id === 'menucheck') return <MenuCheckLanding app={app} section={section} />;
+  if (app.id === 'gutpal') return <GutPalLanding app={app} section={section} />;
   if (app.id === 'shotly') return <ShotlyLanding app={app} section={section} />;
   if (app.id === 'honestly') return <HonestlyLanding app={app} section={section} />;
   if (app.id === 'yumeship') return <YumeshipLanding app={app} section={section} />;
-  if (app.id === 'catch-wildlife') return <CatchWildlifeLanding section={section} />;
+
 
   // Fallback to template system (Morning Journal → SanctuaryTemplate)
   const TemplateMap = {

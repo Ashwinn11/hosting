@@ -57,58 +57,53 @@ export interface AppConfig {
 
 export const apps: AppConfig[] = [
   {
-    id: 'menucheck',
-    name: 'Menu Check',
+    id: 'gutpal',
+    name: 'GutPal',
     category: 'Health & Fitness',
     seoApplicationCategory: 'HealthApplication',
-    tagline: 'Scan Menus & Barcodes for Safe Eating',
+    tagline: 'AI Gut-Health Meal Planner for IBS & FODMAP',
     platforms: ['ios'],
-    description: 'The AI gut health companion for IBS, Celiac, IBD, and more. Scan restaurant menus and over 3 million grocery products to find safe dishes and ingredients tailored to your specific profile of 100+ conditions, allergies, and diets.',
+    description: 'The AI meal planner for IBS, IBD, and low-FODMAP diets. Tell GutPal what\'s in your kitchen — it builds a week of gut-safe meals around your conditions, triggers, and diet. No logging. No guessing.',
     appStoreUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
     aggregateRating: { ratingValue: '4.8', ratingCount: '47' },
     downloadUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
     appNumericId: '6755035965',
     seo: {
-      title: 'Menu Check | IBS Food Scanner, FODMAP & Celiac Barcode Scanner for iPhone',
-      description: 'Scan restaurant menus and 3M+ grocery barcodes for IBS, FODMAP, Celiac, and 100+ gut conditions. AI analyzes every dish and ingredient. Free on iOS.',
-      keywords: ['IBS Food Scanner', 'FODMAP Scanner', 'Celiac App', 'Barcode Scanner Gut Health', 'Restaurant Menu Scanner', 'Gut Health App', 'Food Sensitivity App', 'Crohn\'s Food Checker', 'Safe Food App', 'AI Recipe Generator IBS']
+      title: 'GutPal | IBS Meal Planner, Low FODMAP & IBD Diet App for iPhone',
+      description: 'GutPal builds gut-safe weekly meal plans for IBS, IBD, SIBO, and low-FODMAP diets. Tell us what\'s in your kitchen — we hand you meals that won\'t hurt. Monash-aligned. Free on iOS.',
+      keywords: ['IBS Meal Planner', 'Low FODMAP App', 'IBD Diet App', 'Gut Health Meal Planner', 'FODMAP Meal Plan', 'IBS Diet App', 'Crohn\'s Meal Planner', 'SIBO Diet', 'Monash FODMAP App', 'Gut Health App iPhone']
     },
     marketing: {
-      headline: 'The Food Scanner Built for IBS, Celiac & Gut Conditions.',
-      subheadline: 'Scan menus, barcodes, and dishes. Get instant Safe/Limit/Avoid verdicts tailored to your exact conditions, allergies, and diet.',
-      problem: 'You\'re at a restaurant. The menu is three pages long. You ask the waiter but they\'re not sure. You guess. You pay for it the next three days.',
-      agitation: 'Reading every ingredient label takes forever. Online databases don\'t know your specific conditions. Generic "healthy eating" apps have no idea what IBS, FODMAP, or Celiac actually means for your body.',
-      solution: 'Menu Check builds a detailed profile of your conditions, allergies, diet preferences, and strictness level. Then it instantly analyzes any menu, dish, or barcode against your exact profile — giving you a clear Safe, Limit, or Avoid verdict every time.',
+      headline: 'Finally know what to eat for your gut.',
+      subheadline: 'Tell GutPal what\'s in your kitchen and how your gut behaves. Get a week of gut-safe meals — personalized for IBS, IBD, FODMAP, and more. No logging. No guessing.',
+      problem: 'You\'ve read every FODMAP list. You know your triggers. You still don\'t know what to make for dinner without spending 20 minutes second-guessing every ingredient.',
+      agitation: 'Food logging apps want you to track every bite. Generic meal planners ignore your conditions. FODMAP databases give you data — not meals. None of them just tell you what to eat.',
+      solution: 'GutPal asks what\'s in your kitchen and how your gut behaves, then hands you a week of meals that work for your body. Every suggestion respects your conditions, triggers, and diet — cooked from what you already have.',
       benefits: [
-        { title: 'Barcode Scanner', description: 'Scan 3M+ grocery products via OpenFoodFacts. Instant verdict against your profile.', icon: 'Camera' },
-        { title: 'Menu Photo Scan', description: 'Point your camera at a restaurant menu. AI reads and scores every dish for your conditions.', icon: 'ShieldCheck' },
-        { title: 'Safe Recipe Generator', description: 'AI generates gut-friendly recipes with prep time, difficulty, and gut notes — built for your exact profile.', icon: 'Utensils' }
-      ],
-      screenshots: [
-        '/menucheck/02.png',
-        '/menucheck/03.png',
-        '/menucheck/04.png'
+        { title: 'Kitchen-first meal plans', description: 'Enter what\'s in your fridge and pantry. GutPal generates gut-safe meals from what you already have — no specialty shopping required.', icon: 'Utensils' },
+        { title: 'Personalized to your gut', description: 'Set up your profile: IBS, IBD, SIBO, Crohn\'s, Colitis, Celiac, GERD, lactose or histamine intolerance. Every meal respects your exact triggers.', icon: 'Heart' },
+        { title: 'Eat out without anxiety', description: 'Heading to a restaurant? GutPal tells you what to order and what to skip based on your conditions. Share your safe picks with friends.', icon: 'ShieldCheck' }
       ],
       faqs: [
-        { question: 'Is there an app that scans restaurant menus for IBS?', answer: 'Menu Check scans restaurant menus using AI to give instant Safe, Limit, or Avoid verdicts for IBS, FODMAP, Celiac, and 100+ conditions. Point your camera at any menu and get results in seconds.' },
-        { question: 'What barcode scanner app works for FODMAP?', answer: 'Menu Check scans over 3 million grocery product barcodes via OpenFoodFacts, cross-referencing every ingredient against your specific FODMAP, Celiac, or gut health profile.' },
-        { question: 'Is Menu Check free on iPhone?', answer: 'Yes. Menu Check is free to download on iOS. Core scanning features are free; a premium subscription unlocks unlimited AI recipe generation and advanced filtering.' },
-        { question: 'Can Menu Check detect hidden ingredients for Celiac disease?', answer: 'Menu Check checks every ingredient and sub-ingredient against a Celiac-specific database, flagging gluten-containing additives, starch derivatives, and cross-contamination warnings where available.' },
-        { question: 'Which food scanner app supports the most dietary conditions?', answer: 'Menu Check supports over 100 conditions, allergies, and diets — including IBS, Celiac, IBD, Crohn\'s, SIBO, histamine intolerance, FODMAP, dairy-free, nut-free, and more.' },
+        { question: 'Is there an app that plans meals for IBS?', answer: 'GutPal is an AI meal planner built specifically for IBS, IBD, and low-FODMAP diets. Set up your gut profile, tell us what\'s in your kitchen, and GutPal generates a week of gut-safe meals. Free on iOS.' },
+        { question: 'What is the best low FODMAP meal planning app?', answer: 'GutPal builds FODMAP-safe meal plans aligned with Monash University research. You tell it your pantry, it gives you meals — no food logging, no calorie counting.' },
+        { question: 'Can GutPal help with Crohn\'s or Colitis?', answer: 'Yes. GutPal supports IBD including Crohn\'s Disease and Ulcerative Colitis. Set your conditions and trigger foods in your gut profile — every meal plan respects them.' },
+        { question: 'Is GutPal free on iPhone?', answer: 'GutPal is free to download on iOS. GutPal Pro unlocks unlimited meal plans, restaurant guides, and advanced personalization. A 3-day free trial is included.' },
+        { question: 'Does GutPal follow Monash University FODMAP guidelines?', answer: 'Yes. All FODMAP content in GutPal is aligned with Monash University research — the gold standard for IBS and low-FODMAP diets.' },
       ]
     },
     legal: {
-      privacyPolicy: '1. Information We Collect\nMenu Check collects information you provide directly: your name, age, gender, and dietary preferences when you create an account.\n\n2. Health Data\nWe collect and process data you log in the app, including meal times, food items, and mood ratings. This data is used solely to provide insights into your gut health.\n\n3. Use of Information\nWe use the information we collect to personalize your experience, provide health insights, and improve our services. We do not sell your personal data.\n\n4. Data Security\nWe take reasonable measures to help protect information about you from loss, theft, misuse, and unauthorized access.\n\n5. Contact Us\nIf you have any questions about this Privacy Policy, please contact us at ashwinnanbazhagan@gmail.com.',
-      termsOfService: 'By using Menu Check, you agree to the following terms:\n\n1. Medical Disclaimer\nMenu Check is designed to help you track your meals and mood. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.\n\n2. User Accounts\nYou are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.\n\n3. Acceptable Use\nYou agree not to use the app for any unlawful purpose or in any way that could damage, disable, overburden, or impair the service.\n\n4. Changes to Terms\nWe reserve the right to modify these terms at any time. We will notify you of any significant changes by posting the new terms in the app.\n\n5. Contact Information\nEmail: ashwinnanbazhagan@gmail.com',
-      support: 'For any issues or questions regarding Menu Check, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24-48 hours.',
-      lastUpdated: '15 March 2026'
+      privacyPolicy: `Last updated: 19 June 2026\n\n1. Information We Collect\nGutPal collects information you provide directly: your gut health profile including conditions (IBS, IBD, SIBO, etc.), trigger foods, allergies, dietary preferences, and pantry items. We also collect your Apple ID sign-in token for authentication.\n\n2. Health Data\nYour gut profile and meal preferences are stored securely in our database (Supabase) to generate personalized meal plans. This data is used solely to provide GutPal's meal planning service.\n\n3. AI Processing\nMeal plans are generated using Google Gemini AI. Your profile data is sent to Gemini to generate relevant meal suggestions. Your data is not used to train AI models.\n\n4. Use of Information\nWe use your information to generate personalized gut-safe meal plans, improve our service, and provide customer support. We do not sell your personal data to third parties.\n\n5. Data Security\nWe use industry-standard security measures including encrypted storage and secure API connections to protect your data.\n\n6. Data Deletion\nYou can delete your account and all associated data at any time via Settings → Delete Account in the app.\n\n7. Contact\nQuestions? Email us at ashwinnanbazhagan@gmail.com`,
+      termsOfService: `Last updated: 19 June 2026\n\n1. Medical Disclaimer\nGutPal is a meal planning tool and is not a medical device. It does not provide medical advice, diagnosis, or treatment. The meal suggestions are for general informational purposes only. Always consult your physician or dietitian regarding your specific dietary needs and medical conditions.\n\n2. Subscription\nGutPal Pro is available as an auto-renewing subscription through the Apple App Store. A 3-day free trial is included. Payment is charged to your Apple ID at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel subscriptions in your Apple ID Account Settings.\n\n3. User Accounts\nYou are responsible for maintaining the confidentiality of your account and for all activities that occur under your account. Sign-in is handled via Apple ID.\n\n4. Acceptable Use\nYou agree not to use GutPal for any unlawful purpose or in any way that could damage or impair the service.\n\n5. Changes to Terms\nWe reserve the right to modify these terms at any time. Continued use of the app after changes constitutes acceptance of the new terms.\n\n6. Apple EULA\nBy using this app, you also agree to Apple's Standard Licensed Application End User License Agreement: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n\n7. Contact\nEmail: ashwinnanbazhagan@gmail.com`,
+      support: `For help with GutPal, email us at ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24–48 hours.\n\nCommon issues:\n• Meal plan not generating — check your pantry has at least 3 items entered\n• Subscription questions — manage via Apple ID Account Settings → Subscriptions\n• Profile reset — go to Settings → Reset Profile in the app`,
+      lastUpdated: '19 June 2026'
     },
     design: {
-      primary: '#2D7A52',
-      bg: '#F0F7F2',
-      fontFamily: 'font-figtree',
+      primary: '#d97757',
+      bg: '#f4ede2',
+      fontFamily: 'font-hanken',
       templateId: 'zen',
-      grain: 0.05
+      grain: 0.03
     }
   },
   {
@@ -333,58 +328,6 @@ export const apps: AppConfig[] = [
       templateId: 'zen'
     }
   },
-  {
-    id: 'catch-wildlife',
-    name: 'Catch Wildlife',
-    category: 'Games',
-    seoApplicationCategory: 'GameApplication',
-    tagline: 'Snap Real Animals & Build Your Collection',
-    platforms: ['ios'],
-    description: 'Catch real animals in nature with your camera. Watch them lift off the photo as collectible stickers. Build your wildlife album, one hunt at a time.',
-    appStoreUrl: 'https://apps.apple.com/us/app/catch-wildlife-collection/id6778048762',
-    downloadUrl: 'https://apps.apple.com/us/app/catch-wildlife-collection/id6778048762',
-    appNumericId: '6778048762',
-    aggregateRating: { ratingValue: '4.8', ratingCount: '18' },
-    seo: {
-      title: 'Catch Wildlife | Animal Collection Game & Photo Hunt for iPhone',
-      description: 'Snap real animals in nature and collect them as stickers. Build your wildlife album with location-based rarity. Free on iOS.',
-      keywords: ['nature', 'collection', 'catch', 'wildlife', 'dex', 'pokedex', 'catalog', 'inventory', 'log', 'album', 'gallery']
-    },
-    marketing: {
-      headline: 'Every walk is a hunt.',
-      subheadline: 'Snap real animals in nature. Watch them lift off your photo as collectible stickers. Build your wildlife album, one discovery at a time.',
-      problem: 'You love nature, but you forget the animals you spot. A beautiful bird, a rare butterfly — seen once, forgotten forever.',
-      agitation: 'Photos just sit in your camera roll. There\'s no way to organize them, track them, or celebrate the discovery. The moment passes.',
-      solution: 'Catch Wildlife turns your outdoor walks into a collecting adventure. Snap any animal. Watch it shimmer and lift off your photo as a sticker. It lands in your personal wildlife album — organized by species, location, and rarity. Each region has different animals. The same bird downtown is rare in the mountains.',
-      screenshots: ['/catch-wildlife/01.png', '/catch-wildlife/02.png', '/catch-wildlife/03.png'],
-      benefits: [
-        { title: 'Snap & Collect', description: 'Point your camera at any real animal. It lifts off the photo as a shimmering sticker and lands in your collection.', icon: 'Camera' },
-        { title: 'Location-Based Rarity', description: 'The same animal has different rarity depending on where you catch it. A pigeon downtown is common — in the mountains it\'s a find.', icon: 'MapPin' },
-        { title: 'Wildlife Album', description: 'Your catches organize automatically into a beautiful catalog by species, region, and rarity. Track your journey across regions.', icon: 'Images' },
-        { title: 'Premium Features', description: 'Unlimited catches, rarity insights, and advanced stats. See patterns in what you\'ve found and where.', icon: 'Crown' }
-      ],
-      faqs: [
-        { question: 'How does Catch Wildlife work?', answer: 'Snap a photo of any real animal with your camera. AI lifts the animal off the photo as a sticker and it lands in your collection. Each animal is cataloged by species and location.' },
-        { question: 'Is rarity different in different locations?', answer: 'Yes. The same animal has different rarity depending on where you catch it. A pigeon in the city is common, but in the mountains it\'s rare. Your collection reflects the biodiversity of each region.' },
-        { question: 'Is Catch Wildlife free?', answer: 'Catch Wildlife is free to download on iOS. Core catching and collection features are free. Premium unlocks unlimited catches, rarity insights, and advanced statistics.' },
-        { question: 'Can I share my collection?', answer: 'Your wildlife album is personal and private. Premium features let you see detailed stats and patterns across your collection.' },
-        { question: 'What animals can I catch?', answer: 'Any real animal you spot in nature — birds, insects, mammals, reptiles, and more. The AI recognizes thousands of species.' },
-      ]
-    },
-    legal: {
-      privacyPolicy: 'Catch Wildlife respects your privacy.\n\n1. Camera Access\nYour photos are processed locally on your device to identify animals. Photos are never sent to servers.\n\n2. Location Data\nWe use approximate location (city/region level) to determine animal rarity. Precise GPS tracking is not used.\n\n3. Collection Data\nYour caught animals and collection are stored locally on your device. We do not store or access this data.\n\n4. No Tracking\nWe do not track your activity, share your data with third parties, or use behavioral analytics.\n\n5. Contact\nFor privacy questions: ashwinnanbazhagan@gmail.com',
-      termsOfService: 'By using Catch Wildlife, you agree:\n\n1. The app is for personal use and entertainment.\n2. You are responsible for your safety while using the camera outdoors.\n3. Always be aware of your surroundings when hunting animals.\n4. Do not trespass on private property while catching animals.\n5. Respect local wildlife laws and regulations.\n\nContact: ashwinnanbazhagan@gmail.com',
-      support: 'Need help with Catch Wildlife?\n\nEmail: ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24-48 hours.',
-      lastUpdated: 'June 12, 2026'
-    },
-    design: {
-      primary: '#2D5016',
-      bg: '#F5F1ED',
-      fontFamily: 'font-saeada',
-      templateId: 'sanctuary',
-      grain: 0.05
-    }
-  }
 ];
 
 

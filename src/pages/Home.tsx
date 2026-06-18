@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import SEOBox from '../components/SEOBox';
 
-const MARQUEE = ['FODMAP', 'Quiz-Locked Apps', 'GLP-1 Tracker', 'Morning Ritual', 'Syllabus AI', 'Mood Check', 'Weight Chart', 'Gratitude', 'Injection Log', 'Relationship Journal', 'Daily Prompt', 'Screen Time'];
+const MARQUEE = ['FODMAP', 'Gut-Safe Meals', 'GLP-1 Tracker', 'Morning Ritual', 'Syllabus AI', 'Mood Check', 'Weight Chart', 'Gratitude', 'Injection Log', 'Relationship Journal', 'Daily Prompt', 'IBS Meal Plan'];
 
 // Per-app card worlds — each card breaks out of the dark studio shell into its own design system
 const WORLDS: Record<string, {
@@ -16,16 +16,19 @@ const WORLDS: Record<string, {
   teaser: React.ReactNode;
   decorators?: React.ReactNode;
 }> = {
-  menucheck: {
-    cardBg: '#F6F2EA',
-    cardText: '#1C150D',
-    cardText2: '#5F5448',
-    accent: '#1A9E52',
-    fontDisplay: '"Outfit", sans-serif',
+  gutpal: {
+    cardBg: '#f4ede2',
+    cardText: '#141413',
+    cardText2: 'rgba(20,20,19,0.55)',
+    accent: '#d97757',
+    fontDisplay: '"Bricolage Grotesque", sans-serif',
     teaser: (
-      <div style={{ display: 'inline-flex', gap: 6, marginTop: 18 }}>
-        {[['SAFE','#E8F4E8','#147A40'],['LIMIT','#FAEDCB','#9B6C0C'],['AVOID','#FAE6DB','#B03417']].map(([l,bg,c]) => (
-          <span key={l} style={{ background: bg, color: c, fontSize: 10, fontWeight: 800, letterSpacing: '0.08em', padding: '4px 10px', borderRadius: 6 }}>{l}</span>
+      <div style={{ marginTop: 18, display: 'flex', flexDirection: 'column', gap: 6 }}>
+        {[['Mon','Lemon herb salmon'],['Tue','Chickpea bowl'],['Wed','Turkey stir-fry']].map(([day, meal]) => (
+          <div key={day} style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+            <span style={{ fontSize: 9, fontWeight: 700, color: '#d97757', width: 24 }}>{day}</span>
+            <span style={{ fontSize: 11, color: 'rgba(20,20,19,0.6)' }}>{meal}</span>
+          </div>
         ))}
       </div>
     ),
@@ -94,20 +97,6 @@ const WORLDS: Record<string, {
     ),
     decorators: (
       <div style={{ position: 'absolute', top: 18, right: 18, fontFamily: '"Caveat", cursive', fontSize: 22, color: 'rgba(155,79,110,0.25)', transform: 'rotate(8deg)' }}>✦</div>
-    ),
-  },
-  'catch-wildlife': {
-    cardBg: '#F0F5EC',
-    cardText: '#1A2B12',
-    cardText2: '#4A6A30',
-    accent: '#2D5016',
-    fontDisplay: '"Outfit", sans-serif',
-    teaser: (
-      <div style={{ marginTop: 18, display: 'flex', gap: 8, alignItems: 'center' }}>
-        {['🦎','🦅','🐢','🦊','🐆'].map((e) => (
-          <span key={e} style={{ fontSize: 20 }}>{e}</span>
-        ))}
-      </div>
     ),
   },
 };
@@ -216,12 +205,12 @@ const Home: React.FC = () => {
 
             {/* Sub */}
             <p className="reveal d4" style={{ fontSize: 14, lineHeight: 1.85, color: 'rgba(237,232,223,0.45)', maxWidth: 460, margin: '0 0 60px 0' }}>
-              Six iOS apps. Gut health, study discipline, peptide tracking, morning focus. Each one solves exactly one thing — and does it precisely.
+              Five iOS apps. Gut health, study discipline, peptide tracking, morning focus. Each one solves exactly one thing — and does it precisely.
             </p>
 
             {/* Stats */}
             <div className="reveal d5 stats-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, auto)', gap: '0 48px', borderTop: '1px solid rgba(237,232,223,0.1)', paddingTop: 28, marginBottom: 52, width: 'fit-content' }}>
-              {[['06', 'LIVE_APPS'], ['50K+', 'DOWNLOADS'], ['iOS', 'PLATFORM'], ['2024–', 'SINCE']].map(([val, label]) => (
+              {[['05', 'LIVE_APPS'], ['50K+', 'DOWNLOADS'], ['iOS', 'PLATFORM'], ['2024–', 'SINCE']].map(([val, label]) => (
                 <div key={label}>
                   <div style={{ fontFamily: '"Outfit", sans-serif', fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 800, color: '#EDE8DF', lineHeight: 1 }}>{val}</div>
                   <div style={{ fontSize: 9, letterSpacing: '0.18em', color: 'rgba(237,232,223,0.3)', marginTop: 6 }}>{label}</div>
@@ -245,7 +234,7 @@ const Home: React.FC = () => {
               const w = WORLDS[app.id];
               return (
                 <span key={i} style={{ paddingLeft: 64, whiteSpace: 'nowrap', display: 'inline-flex', alignItems: 'baseline', gap: 16 }}>
-                  <span className="ns-name" style={{ fontFamily: w?.fontDisplay ?? '"Outfit", sans-serif', fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 800, color: w?.cardText ?? '#EDE8DF', opacity: 0.12, lineHeight: 1 }}>
+                  <span className="ns-name" style={{ fontFamily: w?.fontDisplay ?? '"Outfit", sans-serif', fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 800, color: '#EDE8DF', opacity: 0.18, lineHeight: 1 }}>
                     {app.name}
                   </span>
                   <span style={{ fontSize: 10, letterSpacing: '0.2em', color: '#D4A843', opacity: 0.3 }}>·</span>
