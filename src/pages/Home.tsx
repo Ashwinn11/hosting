@@ -99,6 +99,24 @@ const WORLDS: Record<string, {
       <div style={{ position: 'absolute', top: 18, right: 18, fontFamily: '"Caveat", cursive', fontSize: 22, color: 'rgba(155,79,110,0.25)', transform: 'rotate(8deg)' }}>✦</div>
     ),
   },
+  habithive: {
+    cardBg: '#F4F1EB',
+    cardText: '#16140f',
+    cardText2: 'rgba(22,20,15,0.55)',
+    accent: '#FBB152',
+    fontDisplay: '"Georgia", serif',
+    teaser: (
+      <div style={{ marginTop: 16, display: 'flex', gap: -4 }}>
+        {['#FFE2A0','#C7CAFF','#FFD9CB','#D4EFD6','#FFCFA8'].map((c, i) => (
+          <div key={i} style={{ width: 28, height: 32, clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)', backgroundColor: c, marginLeft: i === 0 ? 0 : -6, border: '1px solid rgba(22,20,15,0.08)' }} />
+        ))}
+        <span style={{ marginLeft: 10, fontSize: 11, color: 'rgba(22,20,15,0.45)', alignSelf: 'center' }}>🐝 hive growing</span>
+      </div>
+    ),
+    decorators: (
+      <div style={{ position: 'absolute', top: 16, right: 16, fontSize: 22, opacity: 0.3 }}>🍯</div>
+    ),
+  },
 };
 
 const Home: React.FC = () => {

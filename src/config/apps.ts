@@ -328,6 +328,112 @@ export const apps: AppConfig[] = [
       templateId: 'zen'
     }
   },
+  {
+    id: 'habithive',
+    name: 'Habit Hive',
+    category: 'Health & Fitness',
+    seoApplicationCategory: 'HealthApplication',
+    tagline: 'Photo Habit Tracker with App Blocking',
+    platforms: ['ios'],
+    description: 'Build real habits with photo proof and app blocking. Log your habit with a photo — your distracting apps stay locked until you do. Watch your honeycomb hive grow.',
+    appStoreUrl: 'https://apps.apple.com/app/id6782327597',
+    downloadUrl: 'https://apps.apple.com/app/id6782327597',
+    appNumericId: '6782327597',
+    seo: {
+      title: 'Habit Hive | Photo Habit Tracker with App Blocker for iPhone',
+      description: 'Build habits that stick. Log your habit with a photo, block Instagram and TikTok until you do, and watch your honeycomb hive grow every day. Free on iPhone.',
+      keywords: ['habit tracker app', 'photo habit tracker', 'app blocker habit', 'screen time habit', 'habit hive', 'streak tracker iPhone', 'habit app blocker', 'daily habit tracker iOS', 'habit photo log', 'focus habit tracker']
+    },
+    marketing: {
+      headline: 'Your apps stay locked until you log it.',
+      subheadline: 'Build habits with photo proof. Habit Hive locks your distracting apps — Instagram, TikTok, YouTube — until you photograph today\'s habit. Your honeycomb grows with every day you show up.',
+      problem: 'You know the habit. You set the intention. Then you open Instagram and two hours disappear.',
+      agitation: 'Reminder apps nag. Streak apps reward. But nothing actually stops you from picking up your phone before you\'ve done the thing.',
+      solution: 'Habit Hive ties your phone to your habit. Log a photo as proof — until then, your chosen apps are blocked by iOS Screen Time. No willpower needed. Just do the thing, unlock your phone.',
+      benefits: [
+        { title: 'Photo proof logging', description: 'Take a photo to log your habit for the day. No skipping, no tapping a checkbox. Real evidence, visible in your honeycomb history.', icon: 'Camera' },
+        { title: 'App blocking until done', description: 'Habit Hive uses iOS Screen Time to block Instagram, TikTok, or any app you choose — until you log your habit. Your phone works for you.', icon: 'Shield' },
+        { title: 'Honeycomb hive', description: 'Every logged day fills a hex in your hive. Watch it grow into a honeycomb over weeks and months. Miss a day, it pauses at your last milestone.', icon: 'Hexagon' },
+      ],
+      screenshots: [
+        '/habithive/01.png',
+        '/habithive/02.png',
+        '/habithive/03.png',
+        '/habithive/04.png',
+        '/habithive/05.png',
+      ],
+      faqs: [
+        { question: 'How does Habit Hive block apps?', answer: 'Habit Hive uses Apple\'s Screen Time (FamilyControls) framework built into iOS. You choose which apps to block — Instagram, TikTok, YouTube, games — and they stay locked until you log your habit photo for the day. No third-party software involved.' },
+        { question: 'What is photo habit logging?', answer: 'Instead of tapping a checkbox, you take a photo as proof that you completed your habit. The photo is stored privately on your device and fills a hex in your honeycomb hive.' },
+        { question: 'Does Habit Hive track multiple habits?', answer: 'Yes. Each habit gets its own time window, color, and honeycomb hive. You can track as many habits as you need, each with its own app-blocking schedule.' },
+        { question: 'What is the honeycomb hive?', answer: 'Every day you log your habit, a hexagon fills in your hive — like bees filling a honeycomb. The hive grows as your streak builds. Miss a day and the visual pauses at your last checkpoint, ready to continue when you resume.' },
+        { question: 'Is Habit Hive free?', answer: 'Habit Hive offers a free trial with full access. After the trial, Habit Hive Pro unlocks unlimited habits and app blocking with a weekly, monthly, or annual subscription.' },
+        { question: 'Does Habit Hive work without internet?', answer: 'Yes. All your habit data and photos are stored locally on your device. No account, no server, no internet required.' },
+      ]
+    },
+    legal: {
+      privacyPolicy: `Last updated: 23 June 2026
+
+1. Your data stays on your device
+Everything you create in Habit Hive — habits, photos, logs, streaks — is stored locally on your iPhone. We have no access to it. Deleting the app removes it permanently.
+
+2. What we don't collect
+We do not collect your name, email, or photos. We do not use advertising SDKs or sell data to third parties. There is no account or login system.
+
+3. Subscriptions
+When you subscribe, RevenueCat (our payment processor) receives a pseudonymous ID and your purchase receipt to verify your subscription status. No personal details are shared with us. RevenueCat's privacy policy is available at revenuecat.com/privacy.
+
+4. Screen Time
+Habit Hive uses Apple's FamilyControls framework (Screen Time) to block apps you choose. This is handled entirely by iOS on your device — we do not receive information about which apps you block or use.
+
+5. Notifications
+If you allow notifications, reminders are handled on-device through iOS. Nothing is sent to our servers.
+
+6. Deleting your data
+Go to Settings → Delete data in the app to erase all habits and photos from your device. Since we hold nothing server-side, no further request is needed.
+
+7. Contact
+Questions? Email us at ashwinnanbazhagan@gmail.com`,
+      termsOfService: `Last updated: 23 June 2026
+
+1. License
+Habit Hive is licensed to you under Apple's standard End User License Agreement (EULA), available at: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+2. Subscriptions
+Habit Hive Pro is an auto-renewable subscription sold through Apple's App Store. Weekly, monthly, and annual plans are available. A free trial is included for new subscribers. Payment is charged to your Apple ID at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel anytime in your Apple ID Account Settings → Subscriptions.
+
+3. Screen Time
+Habit Hive uses iOS Screen Time (FamilyControls) to block apps during your habit window. You are responsible for configuring which apps are blocked. We are not liable for any access or restriction issues arising from Screen Time configuration.
+
+4. No medical advice
+Habit Hive is a productivity and habit tool. It does not provide medical, psychological, or therapeutic advice.
+
+5. Your content
+Photos you log are stored locally on your device. We have no access to them and cannot recover them if deleted.
+
+6. Changes
+We may update these terms at any time. Continued use of the app constitutes acceptance of the updated terms.
+
+7. Contact
+Email: ashwinnanbazhagan@gmail.com`,
+      support: `We'd love to help.
+
+Email us at ashwinnanbazhagan@gmail.com and we'll get back to you within 24–48 hours.
+
+Common questions:
+• App blocking not working — make sure you've granted Screen Time permission in the app, and that the habit's time window is currently active
+• Photos not saving — check that Habit Hive has photo library access in iPhone Settings → Privacy → Photos
+• Subscription questions — manage via Apple ID Account Settings → Subscriptions
+• Reset everything — go to Settings → Delete data in the app`,
+      lastUpdated: '23 June 2026'
+    },
+    design: {
+      primary: '#FBB152',
+      bg: '#F4F1EB',
+      fontFamily: 'font-fraunces',
+      templateId: 'zen'
+    }
+  },
 ];
 
 
