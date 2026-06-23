@@ -228,7 +228,7 @@ const Home: React.FC = () => {
 
             {/* Stats */}
             <div className="reveal d5 stats-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, auto)', gap: '0 48px', borderTop: '1px solid rgba(237,232,223,0.1)', paddingTop: 28, marginBottom: 52, width: 'fit-content' }}>
-              {[['05', 'LIVE_APPS'], ['50K+', 'DOWNLOADS'], ['iOS', 'PLATFORM'], ['2024–', 'SINCE']].map(([val, label]) => (
+              {[['06', 'LIVE_APPS'], ['50K+', 'DOWNLOADS'], ['iOS', 'PLATFORM'], ['2024–', 'SINCE']].map(([val, label]) => (
                 <div key={label}>
                   <div style={{ fontFamily: '"Outfit", sans-serif', fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 800, color: '#EDE8DF', lineHeight: 1 }}>{val}</div>
                   <div style={{ fontSize: 9, letterSpacing: '0.18em', color: 'rgba(237,232,223,0.3)', marginTop: 6 }}>{label}</div>
