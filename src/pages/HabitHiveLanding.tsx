@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, Camera, Shield, Hexagon } from 'lucide-react';
 import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
+import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
 import LegalContent from './LegalContent';
 
@@ -319,6 +320,11 @@ const HabitHiveLanding: React.FC<Props> = ({ app, section }) => {
             </div>
           </div>
         </section>
+
+        {/* Guides & Comparisons (dynamic — links every Habit Hive pSEO page) */}
+        <div style={{ backgroundColor: BG, borderTop: `1px solid ${BORDER}` }}>
+          <GuidesGrid app={app} heading="Habit & Focus Guides" />
+        </div>
 
         {/* ── FOOTER ── */}
         <footer style={{ padding: '40px 24px', borderTop: `1px solid ${BORDER}`, backgroundColor: BG }}>

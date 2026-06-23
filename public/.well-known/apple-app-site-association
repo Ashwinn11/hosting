@@ -9,8 +9,7 @@
       ],
       "components": [
         { "/": "/masterly/*" },
-        { "/": "/menucheck/*" },
-        { "/": "/pepkit/*" },
+        { "/": "/gutpal/*" },
         { "/": "/honestly/*" }
       ]
     }]

@@ -4,6 +4,7 @@ import { ChevronLeft, Camera, Zap, Utensils, Lock, BookOpen, Flame, Activity, Tr
 import { Link } from 'react-router-dom';
 import AppLayout from '../components/AppLayout';
 import LegalContent from '../pages/LegalContent';
+import GuidesGrid from '../components/GuidesGrid';
 
 interface TemplateProps {
   app: AppConfig;
@@ -399,6 +400,9 @@ export const ArcadeTemplate: React.FC<TemplateProps> = ({ app, section }) => {
              </div>
            </div>
         </section>
+
+        {/* Guides & Comparisons (dynamic — links every pSEO page for this app) */}
+        <GuidesGrid app={app} dark heading="Guides & Comparisons" />
       </main>
     </AppLayout>
   );
@@ -517,22 +521,8 @@ export const SanctuaryTemplate: React.FC<TemplateProps> = ({ app, section }) => 
               </section>
            </div>
 
-           {/* Guides Section */}
-           <div className="pt-20 border-t border-white/10">
-              <section className="text-center max-w-4xl mx-auto space-y-10">
-                 <div>
-                    <p className="text-xs uppercase tracking-[0.3em] opacity-40 mb-4">Learn More</p>
-                    <h2 className="text-4xl md:text-5xl font-playfair font-light italic text-white mb-6">Guides & Resources</h2>
-                    <p className="text-lg opacity-60 mb-10">Explore tips and strategies for wildlife observation.</p>
-                 </div>
-                 <div className="grid sm:grid-cols-2 gap-8">
-                    <a href={`/${app.id}/guide/best-animal-identification-app-2026`} className="group p-8 border border-white/5 bg-white/[0.02] rounded-2xl hover:border-white/20 hover:bg-white/[0.05] transition-all">
-                       <div className="text-xs uppercase tracking-[0.2em] opacity-40 mb-3">📖 Guide</div>
-                       <h3 className="text-xl font-playfair italic text-white">Best Animal Identification App</h3>
-                    </a>
-                 </div>
-              </section>
-           </div>
+           {/* Guides Section (dynamic — links every pSEO page for this app) */}
+           <GuidesGrid app={app} dark heading="Guides & Resources" />
         </div>
       </main>
     </AppLayout>

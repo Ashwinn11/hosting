@@ -178,8 +178,32 @@ const Home: React.FC = () => {
       <div style={{ background: '#0B0B0F', color: '#EDE8DF', minHeight: '100vh', fontFamily: '"DM Mono", monospace', overflowX: 'hidden' }}>
         <SEOBox
           title="Ashwin Anbazhagan | iOS App Developer & Founder"
-          description="Six iOS apps across health, education, biohacking, and mindfulness. Each one built to solve one specific problem, precisely."
+          description="Indie iOS apps for gut health, studying, GLP-1 tracking, journaling, habits and fandom. Each one solves one specific problem, precisely."
           keywords={['Ashwin Anbazhagan', 'iOS App Developer', 'Indie App Maker', 'SaaS Founder', 'App Developer India']}
+        />
+
+        {/* ItemList structured data — lists every app for richer home-page markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'ItemList',
+              name: 'iOS Apps by Ashwin Anbazhagan',
+              itemListElement: apps.map((a, i) => ({
+                '@type': 'ListItem',
+                position: i + 1,
+                item: {
+                  '@type': 'MobileApplication',
+                  name: a.name,
+                  applicationCategory: a.seoApplicationCategory,
+                  operatingSystem: 'iOS',
+                  url: `https://briefly.live/${a.id}`,
+                  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+                },
+              })),
+            }),
+          }}
         />
 
         {/* ── Nav ── */}
@@ -223,12 +247,12 @@ const Home: React.FC = () => {
 
             {/* Sub */}
             <p className="reveal d4" style={{ fontSize: 14, lineHeight: 1.85, color: 'rgba(237,232,223,0.45)', maxWidth: 460, margin: '0 0 60px 0' }}>
-              Five iOS apps. Gut health, study discipline, peptide tracking, morning focus. Each one solves exactly one thing — and does it precisely.
+              Six iOS apps. Gut health, studying, GLP-1 tracking, journaling, habits, and fandom. Each one solves exactly one thing — and does it precisely.
             </p>
 
             {/* Stats */}
             <div className="reveal d5 stats-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, auto)', gap: '0 48px', borderTop: '1px solid rgba(237,232,223,0.1)', paddingTop: 28, marginBottom: 52, width: 'fit-content' }}>
-              {[['06', 'LIVE_APPS'], ['50K+', 'DOWNLOADS'], ['iOS', 'PLATFORM'], ['2024–', 'SINCE']].map(([val, label]) => (
+              {[[String(apps.length).padStart(2, '0'), 'LIVE_APPS'], ['50K+', 'DOWNLOADS'], ['iOS', 'PLATFORM'], ['2024–', 'SINCE']].map(([val, label]) => (
                 <div key={label}>
                   <div style={{ fontFamily: '"Outfit", sans-serif', fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 800, color: '#EDE8DF', lineHeight: 1 }}>{val}</div>
                   <div style={{ fontSize: 9, letterSpacing: '0.18em', color: 'rgba(237,232,223,0.3)', marginTop: 6 }}>{label}</div>
@@ -337,7 +361,7 @@ const Home: React.FC = () => {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', gap: 28 }}>
               <p style={{ fontSize: 14, lineHeight: 1.85, color: 'rgba(237,232,223,0.48)', margin: 0 }}>
-                I build iOS apps for people who've looked for something specific and couldn't find it. Gut health scanning that knows FODMAP. Study blocking that actually sticks. Peptide tracking with real reconstitution math. Each product solves one thing — nothing more.
+                I build iOS apps for people who've looked for something specific and couldn't find it. Gut-safe meal plans that know FODMAP. Study blocking that actually sticks. GLP-1 tracking built for Ozempic and Mounjaro. Each product solves one thing — nothing more.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                 {['iOS-native, no bloat', 'AI where it genuinely helps', 'One problem, solved precisely', 'Free to download, honest monetization'].map((item) => (

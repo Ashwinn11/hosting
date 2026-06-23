@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, Lock } from 'lucide-react';
 import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
+import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
 import LegalContent from './LegalContent';
 
@@ -575,36 +576,10 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
           </div>
         </section>
 
-        {/* Comparisons & Guides */}
-        <section style={{ padding: '80px 24px', backgroundColor: T.paper, borderTop: border }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-            <Hand size={18} color={T.orange} style={{ display: 'block', marginBottom: 8 }}>✦ learn & compare</Hand>
-            <h2 style={{ fontFamily: outfit, fontWeight: 700, fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', color: T.ink, marginBottom: 12 }}>
-              How Honestly Compares
-            </h2>
-            <p style={{ fontSize: 16, color: T.inkFaint, marginBottom: 40, maxWidth: 500 }}>
-              See how Honestly's morning ritual approach stacks up against other journal apps.
-            </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
-              <Link to="/honestly/compare/vs-day-one" style={{
-                padding: 24, borderRadius: 12, border, backgroundColor: T.card, textDecoration: 'none', color: T.ink,
-                transition: 'all 0.2s', display: 'block'
-              }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = T.orange;
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = border;
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                }}
-              >
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: T.orange, marginBottom: 8 }}>⚖️ Compare</div>
-                <p style={{ fontSize: 16, fontWeight: 700 }}>Honestly vs Day One</p>
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* Comparisons & Guides (dynamic — links every Honestly pSEO page) */}
+        <div style={{ backgroundColor: T.paper, borderTop: border }}>
+          <GuidesGrid app={app} heading="How Honestly Compares" />
+        </div>
 
         {/* Footer */}
         <footer style={{ borderTop: border, padding: '28px 24px' }}>

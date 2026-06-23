@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, Heart, Mail, BookOpen, Lock, ChevronDown } from 'lucide-react';
 import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
+import GuidesGrid from '../components/GuidesGrid';
 
 interface Props {
   app: AppConfig;
@@ -411,46 +412,10 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
         </div>
       </section>
 
-      {/* ── Guides ── */}
-      <section style={{ padding: '80px 28px', backgroundColor: VELLUM, borderTop: `1px solid ${LINE}` }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
-            <div style={{ width: 24, height: 1, backgroundColor: SAKURA }} />
-            <span style={{ fontFamily: "'Fredoka', sans-serif", fontSize: 11, letterSpacing: 2.5, textTransform: 'uppercase', color: SAKURA_DEEP, fontWeight: 500 }}>
-              guides
-            </span>
-            <div style={{ width: 24, height: 1, backgroundColor: SAKURA }} />
-          </div>
-          <h2 style={{
-            fontFamily: "'Instrument Serif', serif",
-            fontStyle: 'italic',
-            fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)',
-            fontWeight: 400,
-            color: INK,
-            marginBottom: 40,
-          }}>
-            Learn about long-distance relationships
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
-            <Link to="/yumeship/guide/long-distance-relationship-app-2026" style={{
-              padding: 24, borderRadius: 12, border: `1px solid ${LINE}`, backgroundColor: PAPER, textDecoration: 'none', color: INK,
-              transition: 'all 0.2s', display: 'block'
-            }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = SAKURA_DEEP;
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = LINE;
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-              }}
-            >
-              <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: SAKURA_DEEP, marginBottom: 8 }}>📖 Guide</div>
-              <p style={{ fontSize: 16, fontWeight: 700 }}>Best Long Distance Relationship App</p>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* ── Guides (dynamic — links every YumeShip pSEO page) ── */}
+      <div style={{ backgroundColor: VELLUM, borderTop: `1px solid ${LINE}` }}>
+        <GuidesGrid app={app} heading="Guides & Comparisons" />
+      </div>
 
       {/* ── Footer ── */}
       <footer style={{ backgroundColor: PAPER, borderTop: `1px solid ${LINE}`, padding: '40px 28px' }}>

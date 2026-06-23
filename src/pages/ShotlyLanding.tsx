@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
+import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
 import LegalContent from './LegalContent';
 
@@ -521,70 +522,10 @@ const ShotlyLanding: React.FC<Props> = ({ app, section }) => {
           </div>
         </section>
 
-        {/* ── Guides ── */}
-        <section style={{ padding: '80px 24px', backgroundColor: SURFACE2 }}>
-          <div style={{ maxWidth: 1024, margin: '0 auto' }}>
-            <p style={{ fontSize: 10, fontWeight: 700, color: TEXT3, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12 }}>Learn & Compare</p>
-            <h2 style={{ fontSize: 'clamp(1.8rem,3.5vw,2.6rem)', fontWeight: 700, color: TEXT, marginBottom: 10 }}>Guides for GLP-1 Trackers</h2>
-            <p style={{ fontSize: 16, color: TEXT2, marginBottom: 40 }}>Discover the best practices for tracking your injections and weight loss journey.</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
-              <Link to="/shotly/guide/ozempic-injection-tracker" style={{
-                padding: 24, borderRadius: 12, border: `1.5px solid ${BORDER}`, backgroundColor: SURFACE, textDecoration: 'none', color: TEXT,
-                transition: 'all 0.2s', display: 'block'
-              }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = CORAL;
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
-                  (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px rgba(255,107,0,0.12)`;
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = BORDER;
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                  (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-                }}
-              >
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: CORAL, marginBottom: 8 }}>📖 Guide</div>
-                <p style={{ fontSize: 16, fontWeight: 700 }}>Best Ozempic Injection Tracker</p>
-              </Link>
-              <Link to="/shotly/guide/mounjaro-weight-loss-tracker" style={{
-                padding: 24, borderRadius: 12, border: `1.5px solid ${BORDER}`, backgroundColor: SURFACE, textDecoration: 'none', color: TEXT,
-                transition: 'all 0.2s', display: 'block'
-              }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = CORAL;
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
-                  (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px rgba(255,107,0,0.12)`;
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = BORDER;
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                  (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-                }}
-              >
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: CORAL, marginBottom: 8 }}>📖 Guide</div>
-                <p style={{ fontSize: 16, fontWeight: 700 }}>Best Mounjaro Weight Loss Tracker</p>
-              </Link>
-              <Link to="/shotly/guide/wegovy-weight-loss-tracker" style={{
-                padding: 24, borderRadius: 12, border: `1.5px solid ${BORDER}`, backgroundColor: SURFACE, textDecoration: 'none', color: TEXT,
-                transition: 'all 0.2s', display: 'block'
-              }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = CORAL;
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
-                  (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 24px rgba(255,107,0,0.12)`;
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = BORDER;
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                  (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-                }}
-              >
-                <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: CORAL, marginBottom: 8 }}>📖 Guide</div>
-                <p style={{ fontSize: 16, fontWeight: 700 }}>Best Wegovy Weight Loss Tracker</p>
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* ── Guides (dynamic — links every Shotly pSEO page) ── */}
+        <div style={{ backgroundColor: SURFACE2 }}>
+          <GuidesGrid app={app} heading="Guides for GLP-1 Trackers" />
+        </div>
 
         {/* ── FOOTER ── */}
         <footer style={{ borderTop: `1px solid ${BORDER}`, padding: '32px 24px' }}>

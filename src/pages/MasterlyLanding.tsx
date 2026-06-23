@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, Lock, Upload, Calendar, Flame } from 'lucide-react';
 import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
+import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
 import LegalContent from './LegalContent';
 
@@ -316,31 +317,10 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
           </a>
         </section>
 
-        {/* Comparisons & Guides */}
-        <section className="py-20 px-6" style={{ backgroundColor: '#FDFBF7' }}>
-          <div className="max-w-6xl mx-auto">
-            <h2 className="font-bold mb-3" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: PRIMARY }}>
-              Comparisons & Guides
-            </h2>
-            <p className="text-lg mb-12 opacity-70" style={{ color: PRIMARY }}>
-              Learn how Masterly AI compares to other flashcard apps and discover study strategies.
-            </p>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <Link to="/masterly/compare/vs-anki" className="group p-6 rounded-xl border-2 transition-all hover:-translate-y-1" style={{ borderColor: ACCENT, backgroundColor: 'rgba(233,180,76,0.05)' }}>
-                <div className="text-sm font-bold uppercase tracking-wider mb-2" style={{ color: ACCENT }}>⚖️ Compare</div>
-                <p className="font-bold text-lg" style={{ color: PRIMARY }}>Masterly AI vs Anki</p>
-              </Link>
-              <Link to="/masterly/compare/vs-quizlet" className="group p-6 rounded-xl border-2 transition-all hover:-translate-y-1" style={{ borderColor: ACCENT, backgroundColor: 'rgba(233,180,76,0.05)' }}>
-                <div className="text-sm font-bold uppercase tracking-wider mb-2" style={{ color: ACCENT }}>⚖️ Compare</div>
-                <p className="font-bold text-lg" style={{ color: PRIMARY }}>Masterly AI vs Quizlet</p>
-              </Link>
-              <Link to="/masterly/guide/ai-flashcard-generator-pdf" className="group p-6 rounded-xl border-2 transition-all hover:-translate-y-1" style={{ borderColor: ACCENT, backgroundColor: 'rgba(233,180,76,0.05)' }}>
-                <div className="text-sm font-bold uppercase tracking-wider mb-2" style={{ color: ACCENT }}>📖 Guide</div>
-                <p className="font-bold text-lg" style={{ color: PRIMARY }}>AI Flashcard Generator from PDF</p>
-              </Link>
-            </div>
-          </div>
-        </section>
+        {/* Comparisons & Guides (dynamic — links every Masterly pSEO page) */}
+        <div style={{ backgroundColor: '#FDFBF7' }}>
+          <GuidesGrid app={app} heading="Comparisons & Guides" />
+        </div>
 
         {/* Footer */}
         <footer className="py-10 px-6" style={{ borderTop: '2px solid rgba(45,79,30,0.08)' }}>

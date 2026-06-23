@@ -1,7 +1,7 @@
 {
-    "name": "Briefly — iOS Apps for Health, Education & Wellness",
+    "name": "Briefly — iOS Apps for Health, Studying & Wellness",
     "short_name": "Briefly",
-    "description": "Four iOS apps by Ashwin Anbazhagan: gut health scanner, AI study planner, morning journaling, and peptide tracking.",
+    "description": "Six indie iOS apps by Ashwin Anbazhagan: gut-health meal planning, AI study discipline, GLP-1 tracking, morning journaling, habit building, and fandom journaling.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#0f172a",
@@ -19,7 +19,8 @@
         "health",
         "education",
         "lifestyle",
-        "productivity"
+        "productivity",
+        "entertainment"
     ],
     "lang": "en-US",
     "dir": "ltr"

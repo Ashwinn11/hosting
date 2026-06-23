@@ -69,7 +69,7 @@ export const apps: AppConfig[] = [
     downloadUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
     appNumericId: '6755035965',
     seo: {
-      title: 'GutPal | IBS Meal Planner, Low FODMAP & IBD Diet App for iPhone',
+      title: 'GutPal | IBS Meal Planner, Low FODMAP & IBD Diet App',
       description: 'GutPal builds gut-safe weekly meal plans for IBS, IBD, SIBO, and low-FODMAP diets. Tell us what\'s in your kitchen — we hand you meals that won\'t hurt. Monash-aligned. Free on iOS.',
       keywords: ['IBS Meal Planner', 'Low FODMAP App', 'IBD Diet App', 'Gut Health Meal Planner', 'FODMAP Meal Plan', 'IBS Diet App', 'Crohn\'s Meal Planner', 'SIBO Diet', 'Monash FODMAP App', 'Gut Health App iPhone']
     },
@@ -119,7 +119,7 @@ export const apps: AppConfig[] = [
     downloadUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id6753760295',
     appNumericId: '6753760295',
     seo: {
-      title: 'Masterly AI | AI Flashcard Generator, Study Planner & App Blocker for iPhone',
+      title: 'Masterly AI | AI Flashcards, Study Planner & App Blocker',
       description: 'Upload your syllabus. Masterly builds a day-by-day exam plan, auto-generates flashcards and quizzes from your notes, and locks apps until you pass. Free on iOS.',
       keywords: ['Study App', 'AI Study Planner', 'App Blocker for Students', 'Flashcard App', 'Exam Prep', 'AI Flashcards', 'Study Discipline', 'Masterly', 'Quiz App', 'Syllabus Planner']
     },
@@ -171,7 +171,7 @@ export const apps: AppConfig[] = [
     downloadUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
     appNumericId: '6759817879',
     seo: {
-      title: 'Honestly | Morning Journal, App Blocker & Daily Ritual for iPhone',
+      title: 'Honestly | Morning Journal, App Blocker & Daily Ritual',
       description: 'Honestly locks apps until you complete your morning ritual: mood check, guided prompt, gratitude. Watch your plant grow as your streak builds. Free on iOS.',
       keywords: ['Honestly', 'Morning Ritual App', 'App Blocker', 'Morning Journal', 'Guided Journaling', 'Daily Gratitude App', 'Screen Time App', 'Mindfulness', 'Morning Routine iPhone', 'Journaling App']
     },
@@ -228,7 +228,7 @@ export const apps: AppConfig[] = [
     downloadUrl: 'https://apps.apple.com/us/app/glp-1-tracker-shotly/id6776381502',
     appNumericId: '6776381502',
     seo: {
-      title: 'Shotly | Ozempic, Wegovy & GLP-1 Injection Tracker for iPhone',
+      title: 'Shotly | Ozempic, Wegovy & GLP-1 Injection Tracker',
       description: 'Track Ozempic, Wegovy, Mounjaro & Zepbound injections. Log weight loss, monitor nutrition. Built for GLP-1 users. Free on iOS.',
       keywords: ['GLP-1 Tracker', 'Ozempic Tracker', 'Wegovy Tracker', 'Mounjaro Tracker', 'Zepbound App', 'Injection Log', 'Weight Loss App', 'Semaglutide Tracker', 'Tirzepatide App', 'Peptide Tracker']
     },
@@ -285,7 +285,7 @@ export const apps: AppConfig[] = [
     appNumericId: '6773642234',
     aggregateRating: { ratingValue: '4.9', ratingCount: '24' },
     seo: {
-      title: 'YumeShip | Fandom Journal for Ships, F/Os & Characters for iPhone',
+      title: 'YumeShip | Fandom Journal for Ships, F/Os & Characters',
       description: 'A private vault for your favourite characters. Write love letters, build headcanons, track dates. All on your device, never shared. Free on iOS.',
       keywords: ['yumeshipping', 'fictive', 'fandom app', 'f/o app', 'ship journal', 'fan creative space', 'yumeship', 'character journal', 'kin app', 'fan diary']
     },
@@ -340,7 +340,7 @@ export const apps: AppConfig[] = [
     downloadUrl: 'https://apps.apple.com/app/id6782327597',
     appNumericId: '6782327597',
     seo: {
-      title: 'Habit Hive | Photo Habit Tracker with App Blocker for iPhone',
+      title: 'Habit Hive | Photo Habit Tracker with App Blocker',
       description: 'Build habits that stick. Log your habit with a photo, block Instagram and TikTok until you do, and watch your honeycomb hive grow every day. Free on iPhone.',
       keywords: ['habit tracker app', 'photo habit tracker', 'app blocker habit', 'screen time habit', 'habit hive', 'streak tracker iPhone', 'habit app blocker', 'daily habit tracker iOS', 'habit photo log', 'focus habit tracker']
     },

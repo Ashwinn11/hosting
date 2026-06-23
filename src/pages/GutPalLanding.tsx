@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, CheckCircle, Utensils, ShieldCheck } from 'lucide-react';
 import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
+import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
 import LegalContent from './LegalContent';
 
@@ -290,6 +291,11 @@ const GutPalLanding: React.FC<Props> = ({ app, section }) => {
             <img src="/appstore.png" alt="Download on App Store" style={{ height: 56 }} />
           </a>
         </section>
+
+        {/* Guides & Comparisons (dynamic — links every GutPal pSEO page) */}
+        <div style={{ backgroundColor: BG, borderTop: `1px solid ${BORDER}` }}>
+          <GuidesGrid app={app} heading="IBS & FODMAP Guides" />
+        </div>
 
         {/* FOOTER */}
         <footer style={{ borderTop: `1px solid ${BORDER}`, padding: '28px 24px', backgroundColor: BG }}>
