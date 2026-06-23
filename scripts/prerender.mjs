@@ -147,6 +147,29 @@ const apps = [
       { question: 'Is Catch Wildlife free?', answer: 'Catch Wildlife is free to download on iOS. Core catching and collection features are free.' },
     ],
   },
+  {
+    id: 'habithive',
+    name: 'Habit Hive',
+    appStoreUrl: 'https://apps.apple.com/app/id6782327597',
+    downloadUrl: 'https://apps.apple.com/app/id6782327597',
+    appNumericId: '6782327597',
+    category: 'HealthApplication',
+    seoApplicationCategory: 'HealthApplication',
+    screenshots: ['/habithive/01.png', '/habithive/02.png', '/habithive/03.png', '/habithive/04.png', '/habithive/05.png'],
+    seo: {
+      title: 'Habit Hive | Photo Habit Tracker with App Blocker for iPhone',
+      description: 'Build habits that stick. Log your habit with a photo, block Instagram and TikTok until you do, and watch your honeycomb hive grow every day. Free on iPhone.',
+      keywords: ['habit tracker app', 'photo habit tracker', 'app blocker habit', 'screen time habit', 'habit hive', 'streak tracker iPhone', 'habit app blocker', 'daily habit tracker iOS', 'habit photo log', 'focus habit tracker'],
+    },
+    faqs: [
+      { question: 'How does Habit Hive block apps?', answer: "Habit Hive uses Apple's Screen Time (FamilyControls) framework built into iOS. You choose which apps to block — Instagram, TikTok, YouTube, games — and they stay locked until you log your habit photo for the day. No third-party software involved." },
+      { question: 'What is photo habit logging?', answer: "Instead of tapping a checkbox, you take a photo as proof that you completed your habit. The photo is stored privately on your device and fills a hex in your honeycomb hive." },
+      { question: 'Does Habit Hive track multiple habits?', answer: "Yes. Each habit gets its own time window, color, and honeycomb hive. You can track as many habits as you need, each with its own app-blocking schedule." },
+      { question: 'What is the honeycomb hive?', answer: "Every day you log your habit, a hexagon fills in your hive — like bees filling a honeycomb. The hive grows ring by ring. Miss a day and the visual pauses at your last checkpoint, ready to continue when you resume." },
+      { question: 'Is Habit Hive free?', answer: 'Habit Hive offers a free trial with full access. After the trial, Habit Hive Pro unlocks unlimited habits and app blocking with a weekly, monthly, or annual subscription.' },
+      { question: 'Does Habit Hive work without internet?', answer: 'Yes. All your habit data and photos are stored locally on your device. No account, no server, no internet required.' },
+    ],
+  },
 ];
 
 const homeSeo = {
