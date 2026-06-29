@@ -5,6 +5,9 @@ import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
 import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
+import Testimonials from '../components/Testimonials';
+import CompareStrip from '../components/CompareStrip';
+import FounderNote from '../components/FounderNote';
 import LegalContent from './LegalContent';
 
 interface Props {
@@ -254,6 +257,18 @@ const GutPalLanding: React.FC<Props> = ({ app, section }) => {
           </div>
         </section>
 
+        <Testimonials
+          items={app.testimonials}
+          rating={app.aggregateRating}
+          theme={{ primary: ACCENT, bg: BG, ink: TEXT, card: SURFACE, border: BORDER, heading: HEADING }}
+        />
+
+        <CompareStrip
+          items={app.comparisonHighlights}
+          appName={app.name}
+          theme={{ primary: ACCENT, bg: INSET, ink: TEXT, card: SURFACE, border: BORDER, heading: HEADING }}
+        />
+
         {/* FAQ */}
         {app.marketing.faqs && app.marketing.faqs.length > 0 && (
           <section style={{ padding: '80px 24px' }}>
@@ -296,6 +311,11 @@ const GutPalLanding: React.FC<Props> = ({ app, section }) => {
         <div style={{ backgroundColor: BG, borderTop: `1px solid ${BORDER}` }}>
           <GuidesGrid app={app} heading="IBS & FODMAP Guides" />
         </div>
+
+        <FounderNote
+          appName={app.name}
+          theme={{ primary: ACCENT, bg: INSET, ink: TEXT, card: SURFACE, border: BORDER, heading: HEADING }}
+        />
 
         {/* FOOTER */}
         <footer style={{ borderTop: `1px solid ${BORDER}`, padding: '28px 24px', backgroundColor: BG }}>

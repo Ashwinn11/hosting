@@ -4,6 +4,9 @@ import { ChevronLeft, Heart, Mail, BookOpen, Lock, ChevronDown } from 'lucide-re
 import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
 import GuidesGrid from '../components/GuidesGrid';
+import Testimonials from '../components/Testimonials';
+import CompareStrip from '../components/CompareStrip';
+import FounderNote from '../components/FounderNote';
 
 interface Props {
   app: AppConfig;
@@ -368,6 +371,19 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
         </div>
       </section>
 
+      <Testimonials
+        items={app.testimonials}
+        rating={app.aggregateRating}
+        heading="Held close by the people who use it."
+        theme={{ primary: SAKURA_DEEP, bg: PAPER, ink: INK, card: VELLUM, border: LINE, heading: "'Instrument Serif', serif" }}
+      />
+
+      <CompareStrip
+        items={app.comparisonHighlights}
+        appName={app.name}
+        theme={{ primary: SAKURA_DEEP, bg: VELLUM, ink: INK, card: PAPER, border: LINE, heading: "'Instrument Serif', serif" }}
+      />
+
       {/* ── FAQ ── */}
       {app.marketing.faqs && app.marketing.faqs.length > 0 && (
         <section style={{ padding: '100px 28px', maxWidth: 700, margin: '0 auto' }}>
@@ -416,6 +432,12 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
       <div style={{ backgroundColor: VELLUM, borderTop: `1px solid ${LINE}` }}>
         <GuidesGrid app={app} heading="Guides & Comparisons" />
       </div>
+
+      <FounderNote
+        appName={app.name}
+        note={`I'm Ashwin. I made YumeShip as a soft, private place for the ones you love from afar. I'd love to hear what you keep here.`}
+        theme={{ primary: SAKURA_DEEP, bg: VELLUM, ink: INK, card: PAPER, border: LINE, heading: "'Instrument Serif', serif" }}
+      />
 
       {/* ── Footer ── */}
       <footer style={{ backgroundColor: PAPER, borderTop: `1px solid ${LINE}`, padding: '40px 28px' }}>

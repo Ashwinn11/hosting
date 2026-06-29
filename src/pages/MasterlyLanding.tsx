@@ -5,6 +5,9 @@ import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
 import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
+import Testimonials from '../components/Testimonials';
+import CompareStrip from '../components/CompareStrip';
+import FounderNote from '../components/FounderNote';
 import LegalContent from './LegalContent';
 
 interface Props {
@@ -304,6 +307,18 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
           </div>
         </section>
 
+        <CompareStrip
+          items={app.comparisonHighlights}
+          appName={app.name}
+          theme={{ primary: PRIMARY, bg: '#FDFBF7', ink: PRIMARY, card: '#FFFFFF', border: 'rgba(45,79,30,0.12)', heading: '"Chalkboard SE", "Comic Sans MS", cursive' }}
+        />
+
+        <Testimonials
+          items={app.testimonials}
+          rating={app.aggregateRating}
+          theme={{ primary: ACCENT, bg: BG, ink: PRIMARY, card: '#FFFFFF', border: 'rgba(45,79,30,0.12)', heading: '"Chalkboard SE", "Comic Sans MS", cursive' }}
+        />
+
         {/* ── CTA ── */}
         <section className="py-32 px-6 text-center" style={{ backgroundColor: PRIMARY }}>
           <h2 className="font-bold text-white mb-8 leading-tight" style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}>
@@ -321,6 +336,11 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
         <div style={{ backgroundColor: '#FDFBF7' }}>
           <GuidesGrid app={app} heading="Comparisons & Guides" />
         </div>
+
+        <FounderNote
+          appName={app.name}
+          theme={{ primary: PRIMARY, bg: BG, ink: PRIMARY, card: '#FFFFFF', border: 'rgba(45,79,30,0.12)', heading: '"Chalkboard SE", "Comic Sans MS", cursive' }}
+        />
 
         {/* Footer */}
         <footer className="py-10 px-6" style={{ borderTop: '2px solid rgba(45,79,30,0.08)' }}>

@@ -19,16 +19,32 @@ const OG_DIR = path.join(PUBLIC, 'og');
 fs.mkdirSync(OG_DIR, { recursive: true });
 
 // Presentation data (mirrors src/config/apps.ts for display only).
+// `headline` is the emotional hook (#18) — the OG image is the thumbnail (#5),
+// so it leads with the hook, NOT the SEO category tagline.
 const apps = [
-  { id: 'gutpal',         name: 'GutPal',         tagline: 'AI Gut-Health Meal Planner for IBS & FODMAP', primary: '#d97757', bg: '#f4ede2' },
-  { id: 'masterly',       name: 'Masterly AI',    tagline: 'AI Study Planner, Flashcards & App Blocker',  primary: '#2D4F1E', bg: '#FDFBF7' },
-  { id: 'honestly',       name: 'Honestly',       tagline: 'Morning Ritual & App Blocker',                primary: '#E07B39', bg: '#FDFCF9' },
-  { id: 'shotly',         name: 'Shotly',         tagline: 'GLP-1 Injection & Weight-Loss Tracker',       primary: '#FF6B00', bg: '#101A13', text: '#E8F5E9' },
-  { id: 'yumeship',       name: 'YumeShip',       tagline: 'A private vault for the ones you love',       primary: '#9b4f6e', bg: '#FDF4F8' },
-  { id: 'habithive',      name: 'Habit Hive',     tagline: 'Photo Habit Tracker with App Blocking',       primary: '#C98A2E', bg: '#F4F1EB' },
+  { id: 'gutpal',    name: 'GutPal',      headline: 'Know what to eat. Without wrecking your gut.', primary: '#d97757', bg: '#f4ede2' },
+  { id: 'masterly',  name: 'Masterly AI', headline: 'Your phone stays locked until you pass the quiz.', primary: '#2D4F1E', bg: '#FDFBF7' },
+  { id: 'honestly',  name: 'Honestly',    headline: "Don't start your day on someone else's feed.", primary: '#E07B39', bg: '#FDFCF9' },
+  { id: 'shotly',    name: 'Shotly',      headline: 'Watch the weight come off, week by week.',   primary: '#FF6B00', bg: '#101A13', text: '#E8F5E9' },
+  { id: 'yumeship',  name: 'YumeShip',    headline: 'A quiet place for the ones you love from afar.', primary: '#9b4f6e', bg: '#FDF4F8' },
+  { id: 'habithive', name: 'Habit Hive',  headline: 'Your apps stay locked until you log it.',    primary: '#C98A2E', bg: '#F4F1EB' },
 ];
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+// Greedy word-wrap to a max chars-per-line, so long headlines render as a
+// stacked, thumbnail-style block instead of overflowing a single line.
+function wrap(text, maxChars) {
+  const words = text.split(' ');
+  const lines = [];
+  let line = '';
+  for (const w of words) {
+    if ((line + ' ' + w).trim().length > maxChars && line) { lines.push(line); line = w; }
+    else { line = (line + ' ' + w).trim(); }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
 
 // Perceived luminance → choose readable text color when not explicitly set.
 function inkFor(hex) {
@@ -64,20 +80,34 @@ async function compressIcons() {
 async function makeOgImages() {
   for (const app of apps) {
     const ink = app.text || inkFor(app.bg);
-    const muted = ink === '#FFFFFF' ? 'rgba(255,255,255,0.62)' : 'rgba(21,20,15,0.6)';
+    // Light or dark muted tone, decided by the ink's luminance (not an exact
+    // hex match) so custom light inks like Shotly's stay readable on dark bgs.
+    const inkHex = ink.replace('#', '');
+    const inkLum = (0.299 * parseInt(inkHex.slice(0, 2), 16) + 0.587 * parseInt(inkHex.slice(2, 4), 16) + 0.114 * parseInt(inkHex.slice(4, 6), 16)) / 255;
+    const muted = inkLum > 0.6 ? 'rgba(255,255,255,0.62)' : 'rgba(21,20,15,0.6)';
     const iconPath = path.join(PUBLIC, `${app.id}.png`);
     const hasIcon = fs.existsSync(iconPath);
+
+    // Thumbnail-style layout (#5): app name as a small eyebrow, the emotional
+    // headline (#18) as the dominant, wrapped hero text.
+    const lines = wrap(app.headline, 22);
+    const lineH = 70;
+    const blockH = lines.length * lineH;
+    const startY = 315 - blockH / 2 + 56; // vertically center the headline block
+    const headlineTspans = lines
+      .map((ln, i) => `<tspan x="96" y="${startY + i * lineH}">${esc(ln)}</tspan>`)
+      .join('');
 
     // Background + text layer as SVG (librsvg falls back to a default sans if
     // the named family is unavailable — fine for an OG card).
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
       <rect width="1200" height="630" fill="${app.bg}"/>
       <rect x="0" y="0" width="14" height="630" fill="${app.primary}"/>
-      <text x="96" y="250" font-family="Helvetica, Arial, sans-serif" font-size="84" font-weight="800" fill="${ink}">${esc(app.name)}</text>
-      <text x="96" y="320" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="500" fill="${muted}">${esc(app.tagline)}</text>
-      <rect x="96" y="372" width="190" height="44" rx="22" fill="${app.primary}"/>
-      <text x="191" y="402" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">Free on iOS</text>
-      <text x="96" y="566" font-family="Helvetica, Arial, sans-serif" font-size="26" font-weight="600" fill="${app.primary}">briefly.live</text>
+      <text x="96" y="120" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="1" fill="${app.primary}">${esc(app.name)}</text>
+      <text font-family="Helvetica, Arial, sans-serif" font-size="60" font-weight="800" fill="${ink}">${headlineTspans}</text>
+      <rect x="96" y="520" width="190" height="46" rx="23" fill="${app.primary}"/>
+      <text x="191" y="551" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">Free on iOS</text>
+      <text x="310" y="552" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="${muted}">briefly.live</text>
     </svg>`;
 
     let img = sharp(Buffer.from(svg));

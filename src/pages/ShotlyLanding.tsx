@@ -5,6 +5,9 @@ import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
 import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
+import Testimonials from '../components/Testimonials';
+import CompareStrip from '../components/CompareStrip';
+import FounderNote from '../components/FounderNote';
 import LegalContent from './LegalContent';
 
 interface Props {
@@ -472,6 +475,18 @@ const ShotlyLanding: React.FC<Props> = ({ app, section }) => {
           </div>
         </section>
 
+        <Testimonials
+          items={app.testimonials}
+          rating={app.aggregateRating}
+          theme={{ primary: CORAL, bg: BG, ink: TEXT, card: SURFACE, border: BORDER, heading: '"Libre Baskerville", Georgia, serif' }}
+        />
+
+        <CompareStrip
+          items={app.comparisonHighlights}
+          appName={app.name}
+          theme={{ primary: CORAL, bg: SURFACE2, ink: TEXT, card: SURFACE, border: BORDER, heading: '"Libre Baskerville", Georgia, serif' }}
+        />
+
         {/* ── FAQ ── */}
         <section style={{ padding: '80px 24px' }}>
           <div style={{ maxWidth: 720, margin: '0 auto' }}>
@@ -526,6 +541,11 @@ const ShotlyLanding: React.FC<Props> = ({ app, section }) => {
         <div style={{ backgroundColor: SURFACE2 }}>
           <GuidesGrid app={app} heading="Guides for GLP-1 Trackers" />
         </div>
+
+        <FounderNote
+          appName={app.name}
+          theme={{ primary: CORAL, bg: SURFACE2, ink: TEXT, card: SURFACE, border: BORDER, heading: '"Libre Baskerville", Georgia, serif' }}
+        />
 
         {/* ── FOOTER ── */}
         <footer style={{ borderTop: `1px solid ${BORDER}`, padding: '32px 24px' }}>

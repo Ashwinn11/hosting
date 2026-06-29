@@ -5,6 +5,9 @@ import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
 import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
+import Testimonials from '../components/Testimonials';
+import CompareStrip from '../components/CompareStrip';
+import FounderNote from '../components/FounderNote';
 import LegalContent from './LegalContent';
 
 interface Props {
@@ -282,6 +285,18 @@ const HabitHiveLanding: React.FC<Props> = ({ app, section }) => {
           </div>
         </section>
 
+        <Testimonials
+          items={app.testimonials}
+          rating={app.aggregateRating}
+          theme={{ primary: HONEY_D, bg: BG, ink: INK, card: CARD, border: BORDER, heading: HEADING }}
+        />
+
+        <CompareStrip
+          items={app.comparisonHighlights}
+          appName={app.name}
+          theme={{ primary: HONEY_D, bg: PAPER2, ink: INK, card: CARD, border: BORDER, heading: HEADING }}
+        />
+
         {/* ── CTA SECTION ── */}
         <section style={{ padding: '80px 24px', textAlign: 'center' }}>
           <div style={{ maxWidth: 600, margin: '0 auto' }}>
@@ -325,6 +340,11 @@ const HabitHiveLanding: React.FC<Props> = ({ app, section }) => {
         <div style={{ backgroundColor: BG, borderTop: `1px solid ${BORDER}` }}>
           <GuidesGrid app={app} heading="Habit & Focus Guides" />
         </div>
+
+        <FounderNote
+          appName={app.name}
+          theme={{ primary: HONEY_D, bg: PAPER2, ink: INK, card: CARD, border: BORDER, heading: HEADING }}
+        />
 
         {/* ── FOOTER ── */}
         <footer style={{ padding: '40px 24px', borderTop: `1px solid ${BORDER}`, backgroundColor: BG }}>

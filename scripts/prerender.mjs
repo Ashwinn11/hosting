@@ -109,11 +109,16 @@ function buildHead({ title, description, keywords, canonical, appStoreUrl, downl
     <meta name="twitter:app:name:iphone" content="${appName}">
     <meta name="twitter:app:id:iphone" content="${appNumericId}">` : '';
 
+  // Per-app favicon (#23 brand recognition); generic Briefly mark on the home page.
+  const favicon = appId ? `${BASE}/${appId}.png` : `${BASE}/favicon.png`;
+
   return `
     <title>${title}</title>
     <meta name="description" content="${description}">
     <meta name="keywords" content="${kw}">
     <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="${favicon}">
+    <link rel="apple-touch-icon" href="${favicon}">
     <link rel="canonical" href="${canonical}">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
@@ -155,7 +160,10 @@ execSync(
 const { render, apps, pseoPages } = await import(path.join(DIST_SSR, 'entry-server.js'));
 
 // ─── Read client template ─────────────────────────────────────────────────────
-const templateHtml = fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8');
+const templateHtml = fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8')
+  // Strip the template's static favicon links — buildHead injects per-app ones.
+  .replace(/\s*<link rel="icon"[^>]*>/g, '')
+  .replace(/\s*<link rel="apple-touch-icon"[^>]*>/g, '');
 
 // ─── Generate routes ──────────────────────────────────────────────────────────
 console.log('\nPrerendering routes...');

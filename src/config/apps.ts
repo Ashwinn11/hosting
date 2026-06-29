@@ -9,6 +9,17 @@ export interface FAQ {
   answer: string;
 }
 
+export interface Testimonial {
+  quote: string;
+  author: string;
+  detail?: string; // e.g. "App Store review"
+}
+
+export interface ComparisonHighlight {
+  us: string;
+  them: string;
+}
+
 export interface AppConfig {
   id: string;
   name: string;
@@ -21,6 +32,9 @@ export interface AppConfig {
   appStoreUrl?: string;
   playStoreUrl?: string;
   aggregateRating?: { ratingValue: string; ratingCount: string };
+  pricingNote?: string; // hero chip, e.g. "Free · iOS"
+  testimonials?: Testimonial[]; // real, user-supplied reviews only
+  comparisonHighlights?: ComparisonHighlight[]; // short "us vs. the usual" rows
   downloadUrl?: string;
   appNumericId?: string;
   seo: {
@@ -66,6 +80,12 @@ export const apps: AppConfig[] = [
     description: 'The AI meal planner for IBS, IBD, and low-FODMAP diets. Tell GutPal what\'s in your kitchen — it builds a week of gut-safe meals around your conditions, triggers, and diet. No logging. No guessing.',
     appStoreUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
     aggregateRating: { ratingValue: '4.8', ratingCount: '47' },
+    pricingNote: 'Free · iOS',
+    comparisonHighlights: [
+      { them: 'Food logging apps make you track every bite.', us: 'No logging — just meals you can eat.' },
+      { them: 'Generic meal planners ignore your conditions.', us: 'Built around your IBS, IBD & FODMAP triggers.' },
+      { them: 'FODMAP databases hand you data.', us: 'GutPal hands you the actual dinner.' },
+    ],
     downloadUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
     appNumericId: '6755035965',
     seo: {
@@ -116,6 +136,12 @@ export const apps: AppConfig[] = [
     description: 'Learn from your own notes. Your apps stay locked until you pass today\'s quiz.',
     appStoreUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id6753760295',
     aggregateRating: { ratingValue: '4.8', ratingCount: '89' },
+    pricingNote: 'Free · iOS',
+    comparisonHighlights: [
+      { them: 'App blockers you can bypass in a tap.', us: 'Apps unlock only when you pass the quiz.' },
+      { them: 'Flashcards from someone else\'s material.', us: 'Quizzes generated from your own notes.' },
+      { them: 'No link between studying and your phone.', us: 'Your study session is the unlock.' },
+    ],
     downloadUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id6753760295',
     appNumericId: '6753760295',
     seo: {
@@ -168,6 +194,12 @@ export const apps: AppConfig[] = [
     description: 'Honestly is a morning ritual app with a warm, paper-feel design. Pick your mood, write to a daily prompt tailored to your goal, add a gratitude note — and your distracting apps unlock. A plant grows as your streak builds.',
     appStoreUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
     aggregateRating: { ratingValue: '4.7', ratingCount: '31' },
+    pricingNote: 'Free · iOS',
+    comparisonHighlights: [
+      { them: 'Willpower and timers don\'t hold.', us: 'Apps stay locked until your ritual\'s done.' },
+      { them: 'Nothing stands between you and the scroll.', us: 'A 5-minute morning ritual does.' },
+      { them: 'Generic journals feel like a chore.', us: 'Mood, prompt, gratitude — then your day\'s yours.' },
+    ],
     downloadUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
     appNumericId: '6759817879',
     seo: {
@@ -225,6 +257,12 @@ export const apps: AppConfig[] = [
     description: 'The complete GLP-1 companion app. Track Ozempic, Wegovy, Mounjaro, and Zepbound injections, log your weight loss journey, and monitor meals — all in one beautiful, private app.',
     appStoreUrl: 'https://apps.apple.com/us/app/glp-1-tracker-shotly/id6776381502',
     aggregateRating: { ratingValue: '4.9', ratingCount: '12' },
+    pricingNote: 'Free · iOS',
+    comparisonHighlights: [
+      { them: 'Habit trackers ignore dose schedules.', us: 'Built around your GLP-1 escalation.' },
+      { them: 'Fitness apps assume a 2,000-calorie day.', us: 'Protein & fiber targets for suppressed appetite.' },
+      { them: 'Nothing ties shots to your weight trend.', us: 'Injection day and weight curve, side by side.' },
+    ],
     downloadUrl: 'https://apps.apple.com/us/app/glp-1-tracker-shotly/id6776381502',
     appNumericId: '6776381502',
     seo: {
@@ -283,7 +321,13 @@ export const apps: AppConfig[] = [
     appStoreUrl: 'https://apps.apple.com/app/yumeship-anime-kpop-canon/id6773642234',
     downloadUrl: 'https://apps.apple.com/app/yumeship-anime-kpop-canon/id6773642234',
     appNumericId: '6773642234',
-    aggregateRating: { ratingValue: '4.9', ratingCount: '24' },
+    aggregateRating: { ratingValue: '4.7', ratingCount: '80' },
+    pricingNote: 'Free · iOS',
+    comparisonHighlights: [
+      { them: 'Notes apps feel cold.', us: 'A vault made for the ones you love.' },
+      { them: 'Social media feels exposed.', us: 'Private — nothing ever leaves your phone.' },
+      { them: 'No space that gets shipping & headcanons.', us: 'Every ship its own page, beautifully.' },
+    ],
     seo: {
       title: 'YumeShip | Fandom Journal for Ships, F/Os & Characters',
       description: 'A private vault for your favourite characters. Write love letters, build headcanons, track dates. All on your device, never shared. Free on iOS.',
@@ -339,6 +383,13 @@ export const apps: AppConfig[] = [
     appStoreUrl: 'https://apps.apple.com/app/id6782327597',
     downloadUrl: 'https://apps.apple.com/app/id6782327597',
     appNumericId: '6782327597',
+    aggregateRating: { ratingValue: '4.8', ratingCount: '18' },
+    pricingNote: 'Free · iOS',
+    comparisonHighlights: [
+      { them: 'Reminder apps just nag.', us: 'Your apps stay locked till you log it.' },
+      { them: 'A checkbox is easy to fake.', us: 'Photo proof — you actually did it.' },
+      { them: 'Streak apps reward, then forget.', us: 'Your honeycomb grows every day you show up.' },
+    ],
     seo: {
       title: 'Habit Hive | Photo Habit Tracker with App Blocker',
       description: 'Build habits that stick. Log your habit with a photo, block Instagram and TikTok until you do, and watch your honeycomb hive grow every day. Free on iPhone.',

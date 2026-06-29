@@ -5,6 +5,9 @@ import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
 import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
+import Testimonials from '../components/Testimonials';
+import CompareStrip from '../components/CompareStrip';
+import FounderNote from '../components/FounderNote';
 import LegalContent from './LegalContent';
 
 interface Props {
@@ -537,6 +540,18 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
           </div>
         </section>
 
+        <Testimonials
+          items={app.testimonials}
+          rating={app.aggregateRating}
+          theme={{ primary: T.orange, bg: T.bg, ink: T.ink, card: T.card, border: 'rgba(28,28,28,0.10)', heading: outfit }}
+        />
+
+        <CompareStrip
+          items={app.comparisonHighlights}
+          appName={app.name}
+          theme={{ primary: T.orange, bg: T.paper, ink: T.ink, card: T.card, border: 'rgba(28,28,28,0.10)', heading: outfit }}
+        />
+
         {/* ── FAQ ── */}
         {app.marketing.faqs && app.marketing.faqs.length > 0 && (
           <section style={{ borderTop: border, padding: '80px 24px' }}>
@@ -580,6 +595,11 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
         <div style={{ backgroundColor: T.paper, borderTop: border }}>
           <GuidesGrid app={app} heading="How Honestly Compares" />
         </div>
+
+        <FounderNote
+          appName={app.name}
+          theme={{ primary: T.orange, bg: T.paper, ink: T.ink, card: T.card, border: 'rgba(28,28,28,0.10)', heading: outfit }}
+        />
 
         {/* Footer */}
         <footer style={{ borderTop: border, padding: '28px 24px' }}>

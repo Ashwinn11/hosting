@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronDown, ChevronUp } from 'lucide-react';
 import { apps } from '../config/apps';
 import { pseoPages } from '../config/pseo';
 import SEOBox from '../components/SEOBox';
+import Testimonials from '../components/Testimonials';
 
 const PSEOLanding: React.FC = () => {
   const { appId, slug } = useParams<{ appId: string; slug: string }>();
@@ -92,10 +93,14 @@ const PSEOLanding: React.FC = () => {
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: primary, backgroundColor: `${primary}15`, padding: '4px 10px', borderRadius: 20, marginBottom: 16 }}>
             {page.type === 'compare' ? 'Comparison' : 'Guide'} · {app.name}
           </div>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: 20, letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: 14, letterSpacing: '-0.02em' }}>
             {page.h1}
           </h1>
-          <p style={{ fontSize: 18, lineHeight: 1.65, color: mutedColor, marginBottom: 28 }}>
+          {/* Emotional hook (#18) — the app's headline, so a keyword-targeted page still has a pulse. */}
+          <p style={{ fontSize: 'clamp(1.05rem, 2.4vw, 1.35rem)', fontWeight: 600, color: primary, lineHeight: 1.3, marginBottom: 20 }}>
+            {app.marketing.headline}
+          </p>
+          <p style={{ fontSize: 18, lineHeight: 1.65, color: mutedColor, marginBottom: 24 }}>
             {page.intro}
           </p>
           <a
@@ -107,6 +112,17 @@ const PSEOLanding: React.FC = () => {
             <img src="/appstore.png" alt="App Store" style={{ height: 18, filter: 'brightness(0) invert(1)' }} />
             {page.cta}
           </a>
+          {/* Proof bar (#29) — surfaces the rating already in schema to cold search traffic. */}
+          {app.aggregateRating && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 16, fontSize: 14, color: mutedColor }}>
+              <span style={{ color: primary, letterSpacing: 1 }}>{'★'.repeat(Math.round(parseFloat(app.aggregateRating.ratingValue)))}</span>
+              <span style={{ fontWeight: 600, color: textColor }}>{app.aggregateRating.ratingValue}</span>
+              <span>·</span>
+              <span>{app.aggregateRating.ratingCount} ratings</span>
+              <span>·</span>
+              <span>Free on iOS</span>
+            </div>
+          )}
         </div>
 
         {/* Comparison Table */}
@@ -168,6 +184,17 @@ const PSEOLanding: React.FC = () => {
             ))}
           </div>
         </div>
+
+        {/* Proof (#29) — renders nothing until the app has real testimonials. */}
+        {app.testimonials && app.testimonials.length > 0 && (
+          <div style={{ marginBottom: 56 }}>
+            <Testimonials
+              items={app.testimonials}
+              rating={app.aggregateRating}
+              theme={{ primary, bg, ink: textColor, card: isLight ? '#FFFFFF' : 'rgba(255,255,255,0.04)', border: borderColor, heading: 'system-ui, -apple-system, sans-serif' }}
+            />
+          </div>
+        )}
 
         {/* CTA */}
         <div style={{ textAlign: 'center', padding: '40px 24px', borderRadius: 16, backgroundColor: `${primary}10`, border: `1px solid ${primary}25` }}>
