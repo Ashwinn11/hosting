@@ -373,94 +373,88 @@ export const apps: AppConfig[] = [
     }
   },
   {
-    id: 'habithive',
-    name: 'Habit Hive',
+    id: 'her75',
+    name: 'Her 75',
     category: 'Health & Fitness',
     seoApplicationCategory: 'HealthApplication',
-    tagline: 'Photo Habit Tracker with App Blocking',
+    tagline: '75-Day Challenge Tracker for Women',
     platforms: ['ios'],
-    description: 'Build real habits with photo proof and app blocking. Log your habit with a photo — your distracting apps stay locked until you do. Watch your honeycomb hive grow.',
-    appStoreUrl: 'https://apps.apple.com/app/id6782327597',
-    downloadUrl: 'https://apps.apple.com/app/id6782327597',
-    appNumericId: '6782327597',
-    aggregateRating: { ratingValue: '4.8', ratingCount: '18' },
-    pricingNote: 'Free · iOS',
+    description: "Become her in 75 days. Choose your hard — from a gentle reset to the full 75 — and show up every day with daily missions, proof photos, and a circle of women who won't let you quit.",
+    appStoreUrl: 'https://apps.apple.com/app/id6786597603',
+    downloadUrl: 'https://apps.apple.com/app/id6786597603',
+    appNumericId: '6786597603',
+    pricingNote: 'iOS · Subscription',
     comparisonHighlights: [
-      { them: 'Reminder apps just nag.', us: 'Your apps stay locked till you log it.' },
-      { them: 'A checkbox is easy to fake.', us: 'Photo proof — you actually did it.' },
-      { them: 'Streak apps reward, then forget.', us: 'Your honeycomb grows every day you show up.' },
+      { them: 'Generic challenge apps are built for men.', us: 'Made for women, by women.' },
+      { them: 'A checkbox is easy to fake.', us: 'Proof photos — you actually showed up.' },
+      { them: 'One slip and streak apps wipe everything.', us: 'Streak protection & missed-day recovery.' },
     ],
     seo: {
-      title: 'Habit Hive | Photo Habit Tracker with App Blocker',
-      description: 'Build habits that stick. Log your habit with a photo, block Instagram and TikTok until you do, and watch your honeycomb hive grow every day. Free on iPhone.',
-      keywords: ['habit tracker app', 'photo habit tracker', 'app blocker habit', 'screen time habit', 'habit hive', 'streak tracker iPhone', 'habit app blocker', 'daily habit tracker iOS', 'habit photo log', 'focus habit tracker']
+      title: 'Her 75 | 75-Day Challenge Tracker for Women',
+      description: 'Her 75 is the 75-day challenge built for women. Choose your hard, log daily missions with proof photos, and finish with friends. Free to download on iOS.',
+      keywords: ['75 day challenge', 'challenge tracker', '75 hard for women', 'her 75', '75 soft challenge', 'habit tracker for women', 'glow up challenge', 'daily goals tracker', 'proof photo habit', 'challenge with friends']
     },
     marketing: {
-      headline: 'Your apps stay locked until you log it.',
-      subheadline: 'Build habits with photo proof. Habit Hive locks your distracting apps — Instagram, TikTok, YouTube — until you photograph today\'s habit. Your honeycomb grows with every day you show up.',
-      problem: 'You know the habit. You set the intention. Then you open Instagram and two hours disappear.',
-      agitation: 'Reminder apps nag. Streak apps reward. But nothing actually stops you from picking up your phone before you\'ve done the thing.',
-      solution: 'Habit Hive ties your phone to your habit. Log a photo as proof — until then, your chosen apps are blocked by iOS Screen Time. No willpower needed. Just do the thing, unlock your phone.',
+      headline: 'Become her — in 75 days.',
+      subheadline: "Choose your hard. Show up every day with daily missions, proof photos, and a circle of women who won't let you quit.",
+      problem: "You start strong on Monday. By Thursday the streak's broken, the app's forgotten, and you're back where you began — again.",
+      agitation: 'Most 75-day apps are built for men, reward a checkbox you can fake, and punish one missed day by wiping everything. So you quit.',
+      solution: 'Her 75 is the challenge built for women. Pick the hard that fits your life, prove each mission with a photo, and let streak protection carry you through the off days. Finish with friends who keep you honest.',
       benefits: [
-        { title: 'Photo proof logging', description: 'Take a photo to log your habit for the day. No skipping, no tapping a checkbox. Real evidence, visible in your honeycomb history.', icon: 'Camera' },
-        { title: 'App blocking until done', description: 'Habit Hive uses iOS Screen Time to block Instagram, TikTok, or any app you choose — until you log your habit. Your phone works for you.', icon: 'Shield' },
-        { title: 'Honeycomb hive', description: 'Every logged day fills a hex in your hive. Watch it grow into a honeycomb over weeks and months. Miss a day, it pauses at your last milestone.', icon: 'Hexagon' },
+        { title: 'Choose your hard', description: 'From a gentle 75 Soft reset to the full hard mode — Glow Up, Sugar-Free, Mental Wellness, Better Me, or build your own. Same discipline, your rules.', icon: 'Sparkles' },
+        { title: 'Daily missions', description: 'A simple daily checklist — workout, water, reading, clean eating, and a progress photo. Check them off and watch your streak grow.', icon: 'ListChecks' },
+        { title: 'Proof, not promises', description: "Snap a proof photo for each task. Your camera roll becomes a record of the woman you're becoming.", icon: 'Camera' },
+        { title: 'Your journey in photos', description: 'Every proof photo lands in a beautiful calendar of your challenge. One tap replays any day.', icon: 'Images' },
+        { title: 'Never lose a day', description: 'Check off missions from your home-screen widget. Streak protection and missed-day recovery keep you moving forward instead of back to zero.', icon: 'ShieldCheck' },
+        { title: 'Finish with friends', description: "Add friends, follow each other's progress, and keep each other honest. The women who finish don't go it alone.", icon: 'Users' },
       ],
       screenshots: [
-        '/habithive/01.png',
-        '/habithive/02.png',
-        '/habithive/03.png',
-        '/habithive/04.png',
-        '/habithive/05.png',
+        '/her75/preview.png'
       ],
       faqs: [
-        { question: 'How does Habit Hive block apps?', answer: 'Habit Hive uses Apple\'s Screen Time (FamilyControls) framework built into iOS. You choose which apps to block — Instagram, TikTok, YouTube, games — and they stay locked until you log your habit photo for the day. No third-party software involved.' },
-        { question: 'What is photo habit logging?', answer: 'Instead of tapping a checkbox, you take a photo as proof that you completed your habit. The photo is stored privately on your device and fills a hex in your honeycomb hive.' },
-        { question: 'Does Habit Hive track multiple habits?', answer: 'Yes. Each habit gets its own time window, color, and honeycomb hive. You can track as many habits as you need, each with its own app-blocking schedule.' },
-        { question: 'What is the honeycomb hive?', answer: 'Every day you log your habit, a hexagon fills in your hive — like bees filling a honeycomb. The hive grows as your streak builds. Miss a day and the visual pauses at your last checkpoint, ready to continue when you resume.' },
-        { question: 'Is Habit Hive free?', answer: 'Habit Hive offers a free trial with full access. After the trial, Habit Hive Pro unlocks unlimited habits and app blocking with a weekly, monthly, or annual subscription.' },
-        { question: 'Does Habit Hive work without internet?', answer: 'Yes. All your habit data and photos are stored locally on your device. No account, no server, no internet required.' },
+        { question: 'What is Her 75?', answer: 'Her 75 is a 75-day challenge tracker built for women. You choose your challenge — from a gentle reset to the full hard mode — and complete daily missions with proof photos until showing up becomes who you are.' },
+        { question: 'Is Her 75 like a 75-day hard challenge?', answer: 'Her 75 lets you choose your hard. Run a full hard challenge, a softer 75, a Glow Up, Sugar-Free or Mental Wellness track, or build your own — all with proof photos and streak protection.' },
+        { question: 'What happens if I miss a day?', answer: "Unlike apps that wipe your streak, Her 75 includes streak protection and missed-day recovery on most tracks, so one off day doesn't send you back to zero." },
+        { question: 'Can I do the challenge with friends?', answer: "Yes. Add friends, follow each other's progress, and keep each other accountable through the whole 75 days." },
+        { question: 'Is Her 75 free?', answer: 'Her 75 is free to download. A Premium subscription unlocks every challenge and feature, available as weekly, monthly, or yearly plans.' },
       ]
     },
     legal: {
-      privacyPolicy: `Last updated: 23 June 2026
+      privacyPolicy: `Last updated: 3 July 2026
 
-1. Your data stays on your device
-Everything you create in Habit Hive — habits, photos, logs, streaks — is stored locally on your iPhone. We have no access to it. Deleting the app removes it permanently.
+1. What we collect
+Your challenge data — habits, daily completions, and proof photos — is stored on your device and in your private iCloud account via Apple's CloudKit. Proof photos never leave your device or your private iCloud.
 
-2. What we don't collect
-We do not collect your name, email, or photos. We do not use advertising SDKs or sell data to third parties. There is no account or login system.
+2. Friends & social features
+If you use Friends, a display name, an optional profile photo, and your current challenge progress (such as your current day and streak) are stored in a shared CloudKit database so people you connect with can see your progress. You can remove friends or erase this data at any time from Settings → Delete all data.
 
 3. Subscriptions
-When you subscribe, RevenueCat (our payment processor) receives a pseudonymous ID and your purchase receipt to verify your subscription status. No personal details are shared with us. RevenueCat's privacy policy is available at revenuecat.com/privacy.
+When you subscribe, RevenueCat (our payment processor) and Apple receive a pseudonymous ID and your purchase receipt to verify your subscription status. We never see or store your payment details.
 
-4. Screen Time
-Habit Hive uses Apple's FamilyControls framework (Screen Time) to block apps you choose. This is handled entirely by iOS on your device — we do not receive information about which apps you block or use.
+4. What we don't do
+We do not sell your personal data. We do not use advertising SDKs. There is no third-party analytics tracking you across apps.
 
-5. Notifications
-If you allow notifications, reminders are handled on-device through iOS. Nothing is sent to our servers.
+5. Deleting your data
+Go to Settings → Delete all data in the app to erase your challenge, proof photos, and social profile. Local data is removed immediately; your public social profile is removed so others stop seeing you.
 
-6. Deleting your data
-Go to Settings → Delete data in the app to erase all habits and photos from your device. Since we hold nothing server-side, no further request is needed.
-
-7. Contact
-Questions? Email us at ashwinnanbazhagan@gmail.com`,
-      termsOfService: `Last updated: 23 June 2026
+6. Contact
+Questions? Email ashwinnanbazhagan@gmail.com`,
+      termsOfService: `Last updated: 3 July 2026
 
 1. License
-Habit Hive is licensed to you under Apple's standard End User License Agreement (EULA), available at: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+Her 75 is licensed to you under Apple's standard Licensed Application End User License Agreement (EULA), available at: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 2. Subscriptions
-Habit Hive Pro is an auto-renewable subscription sold through Apple's App Store. Weekly, monthly, and annual plans are available. A free trial is included for new subscribers. Payment is charged to your Apple ID at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel anytime in your Apple ID Account Settings → Subscriptions.
+Her 75 Premium is an auto-renewing subscription sold through Apple's App Store, available in weekly, monthly, and yearly plans. Payment is charged to your Apple ID at confirmation of purchase. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel anytime in your Apple ID Account Settings → Subscriptions.
 
-3. Screen Time
-Habit Hive uses iOS Screen Time (FamilyControls) to block apps during your habit window. You are responsible for configuring which apps are blocked. We are not liable for any access or restriction issues arising from Screen Time configuration.
+3. Not medical or fitness advice
+Her 75 is a habit and challenge tool. It does not provide medical, dietary, or fitness advice. Consult a qualified professional before beginning any new diet or exercise program.
 
-4. No medical advice
-Habit Hive is a productivity and habit tool. It does not provide medical, psychological, or therapeutic advice.
+4. Your content
+Proof photos and challenge data are yours. Photos stay on your device and your private iCloud; we have no access to them.
 
-5. Your content
-Photos you log are stored locally on your device. We have no access to them and cannot recover them if deleted.
+5. Community conduct
+If you use Friends, you agree not to use display names, photos, or content that are abusive, harassing, or unlawful. We may remove content or accounts that violate this.
 
 6. Changes
 We may update these terms at any time. Continued use of the app constitutes acceptance of the updated terms.
@@ -472,17 +466,18 @@ Email: ashwinnanbazhagan@gmail.com`,
 Email us at ashwinnanbazhagan@gmail.com and we'll get back to you within 24–48 hours.
 
 Common questions:
-• App blocking not working — make sure you've granted Screen Time permission in the app, and that the habit's time window is currently active
-• Photos not saving — check that Habit Hive has photo library access in iPhone Settings → Privacy → Photos
+• Friends not showing up — make sure you're signed into iCloud and that both people have added each other
+• Proof photos missing — check Her 75 has photo access in iPhone Settings → Privacy → Photos
 • Subscription questions — manage via Apple ID Account Settings → Subscriptions
-• Reset everything — go to Settings → Delete data in the app`,
-      lastUpdated: '23 June 2026'
+• Reset everything — go to Settings → Delete all data in the app`,
+      lastUpdated: '3 July 2026'
     },
     design: {
-      primary: '#FBB152',
-      bg: '#F4F1EB',
-      fontFamily: 'font-fraunces',
-      templateId: 'zen'
+      primary: '#C4765A',
+      bg: '#FAF6EF',
+      fontFamily: 'font-hanken',
+      templateId: 'zen',
+      grain: 0.03
     }
   },
 ];

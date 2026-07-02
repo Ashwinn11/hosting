@@ -1,6 +1,6 @@
 # Briefly.live — iOS App Portfolio by Ashwin Anbazhagan
 
-> Six indie iOS apps across gut health, studying, GLP-1 tracking, morning journaling, habits, and fandom. Each app solves one specific problem precisely. All built by Ashwin Anbazhagan.
+> Six indie iOS apps across gut health, studying, GLP-1 tracking, morning journaling, women's 75-day challenges, and fandom. Each app solves one specific problem precisely. All built by Ashwin Anbazhagan.
 
 ## Apps
 - [GutPal](https://briefly.live/gutpal): AI gut-health meal planner for IBS, IBD, SIBO, and low-FODMAP diets. Tell it what's in your kitchen and it builds a week of gut-safe meals, aligned with Monash FODMAP research. Also scans menus and barcodes.
@@ -8,7 +8,7 @@
 - [Honestly](https://briefly.live/honestly): A structured morning ritual — mood check-in, an adaptive journal prompt, and gratitude — that blocks distracting apps until you finish. A plant grows as your streak builds.
 - [Shotly](https://briefly.live/shotly): GLP-1 injection and weight-loss tracker for Ozempic, Wegovy, Mounjaro, and Zepbound. Logs doses, dose escalation, weight trend, nutrition, side effects, and progress photos. Private and on-device.
 - [YumeShip](https://briefly.live/yumeship): A private, on-device creative vault for fans — ships, F/Os, and comfort characters. Write love letters, organize headcanons, track dates. Nothing leaves your device.
-- [Habit Hive](https://briefly.live/habithive): A photo-proof habit tracker with a built-in app blocker. Log each habit with a photo and your distracting apps stay locked via iOS Screen Time until you do. Your honeycomb hive grows daily.
+- [Her 75](https://briefly.live/her75): A 75-day challenge tracker made for women. Choose your hard — from a gentle reset to the full 75 — log daily missions with proof photos, keep your streak with missed-day recovery, and finish with friends.
 
 ## Guides & Comparisons
 - Each app has in-depth guide and comparison pages at /{app}/guide/{slug} and /{app}/compare/{slug}, covering specific use cases, conditions, and competitor comparisons.

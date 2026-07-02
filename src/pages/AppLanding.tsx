@@ -7,7 +7,7 @@ import GutPalLanding from './GutPalLanding';
 import ShotlyLanding from './ShotlyLanding';
 import HonestlyLanding from './HonestlyLanding';
 import YumeshipLanding from './YumeshipLanding';
-import HabitHiveLanding from './HabitHiveLanding';
+import Her75Landing from './Her75Landing';
 
 
 interface AppLandingProps {
@@ -41,7 +41,7 @@ const AppLanding: React.FC<AppLandingProps> = ({ section, appId: propAppId }) =>
   if (app.id === 'shotly') return <ShotlyLanding app={app} section={section} />;
   if (app.id === 'honestly') return <HonestlyLanding app={app} section={section} />;
   if (app.id === 'yumeship') return <YumeshipLanding app={app} section={section} />;
-  if (app.id === 'habithive') return <HabitHiveLanding app={app} section={section} />;
+  if (app.id === 'her75') return <Her75Landing app={app} section={section} />;
 
 
   // Fallback to template system (Morning Journal → SanctuaryTemplate)
