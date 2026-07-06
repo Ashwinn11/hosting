@@ -189,127 +189,66 @@ export const apps: AppConfig[] = [
     name: 'Honestly',
     category: 'Lifestyle',
     seoApplicationCategory: 'LifestyleApplication',
-    tagline: 'Morning Ritual & App Blocker',
+    tagline: 'Morning Journal, Affirmations & App Blocker',
     platforms: ['ios'],
-    description: 'Honestly is a morning ritual app with a warm, paper-feel design. Pick your mood, write to a daily prompt tailored to your goal, add a gratitude note — and your distracting apps unlock. A plant grows as your streak builds.',
+    description: 'Honestly is a warm, paper-feel morning journal. Pick your mood, write to a blank page — no prompts, no rules — say a few affirmations back to yourself, and your distracting apps stay asleep each morning until you\'ve written.',
     appStoreUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
     aggregateRating: { ratingValue: '4.7', ratingCount: '31' },
     pricingNote: 'Free · iOS',
     comparisonHighlights: [
-      { them: 'Willpower and timers don\'t hold.', us: 'Apps stay locked until your ritual\'s done.' },
-      { them: 'Nothing stands between you and the scroll.', us: 'A 5-minute morning ritual does.' },
-      { them: 'Generic journals feel like a chore.', us: 'Mood, prompt, gratitude — then your day\'s yours.' },
+      { them: 'Blank-page apps give you nothing to hold onto.', us: 'Mood, a free-write, and affirmations — in under 3 minutes.' },
+      { them: 'Willpower and timers don\'t hold.', us: 'Yours stay asleep until you\'ve written.' },
+      { them: 'Affirmations you read once and forget.', us: 'Your own words come back on your Lock Screen.' },
     ],
     downloadUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
     appNumericId: '6759817879',
     seo: {
-      title: 'Honestly | Morning Journal, App Blocker & Daily Ritual',
-      description: 'Honestly locks apps until you complete your morning ritual: mood check, guided prompt, gratitude. Watch your plant grow as your streak builds. Free on iOS.',
-      keywords: ['Honestly', 'Morning Ritual App', 'App Blocker', 'Morning Journal', 'Guided Journaling', 'Daily Gratitude App', 'Screen Time App', 'Mindfulness', 'Morning Routine iPhone', 'Journaling App']
+      title: 'Honestly | Morning Journal, Affirmations & App Blocker',
+      description: 'Honestly is a mood + free-write + affirmations morning journal for iPhone that keeps distracting apps asleep each morning until you\'ve written, syncs your history to iCloud, and echoes your affirmations back on your Lock Screen.',
+      keywords: ['Honestly', 'Morning Journal App', 'App Blocker', 'Affirmations App', 'Guided Journaling', 'Screen Time App', 'Mindfulness', 'Morning Routine iPhone', 'Journaling App', 'Lock Screen Widget']
     },
     marketing: {
-      headline: 'Your morning doesn\'t have to start with someone else\'s content.',
-      subheadline: 'A 3-step ritual — mood, journal, gratitude — and your apps unlock. Takes 5 minutes. Changes how your whole day feels.',
-      problem: 'You wake up and immediately open Instagram, X, or your inbox. Before you\'ve had a single thought of your own, you\'re already reacting to everyone else\'s world.',
-      agitation: 'Willpower doesn\'t work. Timers don\'t work. There\'s no friction between you and the scroll — so you scroll.',
-      solution: 'Honestly locks your distracting apps via iOS Screen Time until you complete your morning ritual. Pick your mood. Write to a daily journal prompt tailored to what you want — clarity, peace, focus, or energy. Add a gratitude note. Then your apps unlock. And a little plant grows.',
+      headline: 'Journal first. Then your apps unlock.',
+      subheadline: 'Mood, a blank page, a few affirmations — under 3 minutes. Then your distracting apps wake up.',
+      problem: 'You wake up and reach for Instagram, TikTok, or X before you\'ve had a single thought of your own. Before you\'re even out of bed, you\'re already reacting to everyone else\'s morning.',
+      agitation: 'Willpower doesn\'t work. Timers don\'t work. There\'s no friction between you and the scroll — so you scroll, and the morning is gone before it started.',
+      solution: 'Honestly opens with your mood, then a genuinely blank page — no prompts, no rules, just write. Add a few affirmations in your own words. Your chosen apps stay asleep every morning (from 4 AM) until you\'ve written, your affirmations echo back on your Lock Screen, and your history syncs to iCloud.',
       benefits: [
-        { title: 'Mood-Led Ritual', description: 'Pick how you\'re actually feeling — Happy, Okay, Sad, Awful, or Cry. It sets the tone for your journal.', icon: 'Sun' },
-        { title: 'Personalized Daily Prompts', description: 'Journal prompts rotate daily and adapt to your chosen goal: Clarity, Peace, Focus, or Energy.', icon: 'PenLine' },
-        { title: 'Gratitude Step', description: 'A rotating gratitude question with suggestion chips to make it feel fresh every morning.', icon: 'Heart' },
-        { title: 'App Blocker Gate', description: 'Distracting apps stay locked via iOS Screen Time until you finish. Not willpower — a gate.', icon: 'Lock' },
-        { title: 'Plant Growth System', description: 'Earn a sprout every morning. Your plant grows through 4 stages over 180+ days — a living record of your streak.', icon: 'Leaf' },
-        { title: 'Home Screen Widgets', description: 'See your mood, journal streak, and plant right on your home screen without opening the app.', icon: 'LayoutGrid' }
+        { title: 'Mood Check-In', description: 'Happy, Confused, Sad, Awful, or Cry — tap what\'s actually true. It colors the rest of your page.', icon: 'Sun' },
+        { title: 'A Genuinely Blank Page', description: 'No prompts, no rotating questions. “Empty your head” — write whatever’s actually there.', icon: 'PenLine' },
+        { title: 'Affirmations That Echo Back', description: 'Say up to five things to yourself. They resurface later as gentle reminders — in your own words, not a stock quote.', icon: 'Heart' },
+        { title: 'Apps Asleep Till You Write', description: 'Your chosen apps stay locked via iOS Screen Time each morning until your page is done — Honestly never sees which apps you picked.', icon: 'Lock' },
+        { title: 'Streaks, Calendar & History', description: 'A day streak, a month-at-a-glance mood calendar, and a searchable archive of every morning you\'ve written.', icon: 'CalendarDays' },
+        { title: 'Lock Screen & Widgets', description: 'Today’s affirmation waits right on your Lock Screen and Home Screen — no need to open the app.', icon: 'LayoutGrid' }
       ],
       screenshots: [
-        '/honestly/journal.png'
+        '/honestly/screenshots/01.png',
+        '/honestly/screenshots/02.png',
+        '/honestly/screenshots/05.png'
       ],
       faqs: [
-        { question: 'What is the best morning journaling app for iPhone?', answer: 'Honestly guides you through a 3-step morning ritual — mood check-in, a personalized daily journal prompt, and a gratitude question — with a plant that grows as your streak builds. Available free on iOS.' },
-        { question: 'Is there a journaling app that also blocks distracting apps?', answer: 'Honestly blocks your chosen distracting apps via iOS Screen Time until you complete your morning ritual. Once you finish, your apps unlock automatically.' },
-        { question: 'What journal prompts does Honestly use?', answer: 'Honestly rotates through 20+ journal prompts per day that adapt to your chosen morning goal — Clarity, Peace, Focus, or Energy — so it never feels repetitive.' },
-        { question: 'Is Honestly free?', answer: 'Honestly is free to download on iOS. A premium subscription unlocks full journal history, advanced widgets, and multilingual support.' },
-        { question: 'What are alternatives to Day One for morning routines?', answer: 'Honestly is built specifically for a structured morning ritual with app blocking and a growing plant streak system — whereas Day One is an open-ended long-form diary. Honestly is for people who want a morning habit, not just a journal.' },
+        { question: 'Is Honestly free?', answer: 'Yes — Honestly is free to download on the App Store.' },
+        { question: 'How is Honestly different from Day One or Reflectly?', answer: 'Day One and Reflectly are open-ended, general-purpose journals. Honestly is built around one specific morning ritual — mood, a blank page, a few affirmations — paired with an app-blocking gate that keeps your chosen apps asleep until you\'ve written. It\'s narrower by design.' },
+        { question: 'Is there a journaling app that also blocks distracting apps?', answer: 'Yes — Honestly keeps your chosen apps (Instagram, TikTok, X, whatever pulls you in) locked via iOS Screen Time from 4 AM each morning until you’ve written your page. Honestly is only ever shown opaque tokens, never the names of the apps or how you use them.' },
+        { question: 'Does Honestly support other languages?', answer: 'Yes — Honestly includes an in-app language picker, so you can write your morning page in your preferred language.' },
+        { question: 'Does Honestly back up my journal?', answer: 'Yes — with iCloud sync turned on, your pages back up to your own private iCloud account (Apple’s CloudKit). Honestly never receives a copy on its own servers.' },
       ]
     },
     legal: {
-      privacyPolicy: 'Data collection:\n- We collect no personal information\n- We do not use third-party analytics\n- We do not track your activity across other apps\n- Journal entries are stored securely on-device using Apple\'s protected local storage\n\nData retention and deletion:\n- Journal data remains on-device unless you delete it\n- You can delete all local data from Settings inside the app\n\nContact:\n- Email: ashwinnanbazhagan@gmail.com',
-      termsOfService: 'Subscription terms:\n- Premium features are offered as auto-renewing subscriptions\n- Payment is charged to your Apple ID account at confirmation\n- Subscription renews automatically unless canceled at least 24 hours before the period ends\n- You can manage or cancel subscriptions in Apple ID Subscriptions settings\n- Restore Purchases is available in the app\n\nUsage:\n- You are responsible for how you configure app blocking selections\n- The app depends on Screen Time authorization and Apple platform behavior\n\nDisclaimer:\n- Service is provided as-is without guarantees of uninterrupted availability\n\nContact:\n- Email: ashwinnanbazhagan@gmail.com',
+      privacyPolicy: 'The short version:\nHonestly is built to be private. Your morning pages — your moods, your writing, your affirmations — belong to you. We don\'t sell them, mine them, or read them. There are no third-party trackers or advertising SDKs in this app.\n\nWhat stays on your device:\nEverything you write is stored locally on your iPhone. If you have iCloud enabled, your pages are backed up to your own private iCloud account (Apple\'s CloudKit) so they follow you between devices. We never receive a copy on our servers — your iCloud data is encrypted and accessible only to you.\n\nScreen Time:\nWhen you choose apps to keep asleep each morning, that selection is handled entirely by Apple\'s Screen Time (Family Controls) framework. Honestly is shown opaque tokens — never the names of the apps or websites you picked, and never any record of how you use them. That information never leaves your device and is never visible to us.\n\nPurchases:\nHonestly Premium is offered as a one-time purchase or an auto-renewing monthly subscription, both processed by Apple. We use RevenueCat to verify your purchase and unlock premium features. This involves an anonymous purchase identifier only — no name, email, or contact information is required or collected.\n\nNotifications:\nIf you turn on affirmation reminders, a single local notification quoting one of your own past affirmations is scheduled on your device. It is generated on-device and is not sent through any server.\n\nWhat we don\'t do:\nWe do not collect analytics, we do not fingerprint your device, we do not build a profile of you, and we do not share anything with advertisers. There is nothing to opt out of because there is nothing being gathered.\n\nYour control:\nYou can delete every page and reset your history at any time from the You tab (“Delete all data”). Deleting the app removes all local data; disabling iCloud sync for Honestly removes the backup from your iCloud account.\n\nContact:\nQuestions about your privacy? Email ashwinnanbazhagan@gmail.com and a human will answer.',
+      termsOfService: 'Welcome:\nThese terms are the agreement between you and Honestly for your use of the app. By using Honestly, you agree to them. We\'ve kept them plain.\n\nYour license:\nWe grant you a personal, non-transferable license to use Honestly on devices you own or control, for your own morning ritual. The app and its design are ours; please don\'t copy, resell, or reverse-engineer it.\n\nHonestly Premium:\nHonestly Premium is offered as a one-time Lifetime purchase (yours for the lifetime of the app on your Apple account) or as an auto-renewing monthly subscription. Purchases are handled and billed by Apple under Apple\'s terms; monthly subscriptions renew automatically unless canceled at least 24 hours before the period ends, and can be managed in your Apple ID Subscription settings. Refunds are managed by Apple through the App Store.\n\nYour content:\nYour pages are yours. You retain all rights to everything you write. We claim no ownership and take no license over your journal entries, moods, or affirmations.\n\nAcceptable use:\nUse Honestly for your own reflection. Don\'t use it to break the law, and don\'t attempt to disrupt, probe, or misuse the app or the Screen Time features it relies on.\n\nScreen Time & blocking:\nHonestly uses Apple\'s Screen Time to help keep chosen apps asleep until your page is written. This is a supportive nudge, not a guarantee — the operating system ultimately controls app availability, and you remain responsible for your own device and choices.\n\nNo warranty:\nHonestly is provided “as is.” We work hard to keep it reliable, but we can\'t promise it will be uninterrupted or error-free, and it is not a substitute for professional mental-health care.\n\nLimitation of liability:\nTo the extent permitted by law, Honestly and its makers are not liable for any indirect or incidental damages arising from your use of the app.\n\nChanges:\nWe may update these terms as the app evolves. If we make material changes, we\'ll note them here with a new effective date. Continued use means you accept the current terms.\n\nContact:\nReach us at ashwinnanbazhagan@gmail.com.',
       support: 'For any issues or questions regarding Honestly, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24-48 hours.',
-      lastUpdated: 'May 30, 2026'
+      lastUpdated: 'July 2026'
     },
     design: {
-      primary: '#FF6B00',
-      bg: '#F7F5F0',
-      fontFamily: 'font-outfit',
+      primary: '#F5851F',
+      bg: '#FAF8F5',
+      fontFamily: 'font-nunito',
       templateId: 'sanctuary',
       mesh: false
     }
   },
 
-  {
-    id: 'shotly',
-    name: 'Shotly',
-    category: 'Health & Fitness',
-    seoApplicationCategory: 'HealthApplication',
-    tagline: 'GLP-1 Injection & Weight Loss Tracker',
-    platforms: ['ios'],
-    description: 'The complete GLP-1 companion app. Track Ozempic, Wegovy, Mounjaro, and Zepbound injections, log your weight loss journey, and monitor meals — all in one beautiful, private app.',
-    appStoreUrl: 'https://apps.apple.com/us/app/glp-1-tracker-shotly/id6776381502',
-    aggregateRating: { ratingValue: '4.9', ratingCount: '12' },
-    pricingNote: 'Free · iOS',
-    comparisonHighlights: [
-      { them: 'Habit trackers ignore dose schedules.', us: 'Built around your GLP-1 escalation.' },
-      { them: 'Fitness apps assume a 2,000-calorie day.', us: 'Protein & fiber targets for suppressed appetite.' },
-      { them: 'Nothing ties shots to your weight trend.', us: 'Injection day and weight curve, side by side.' },
-    ],
-    downloadUrl: 'https://apps.apple.com/us/app/glp-1-tracker-shotly/id6776381502',
-    appNumericId: '6776381502',
-    seo: {
-      title: 'Shotly | Ozempic, Wegovy & GLP-1 Injection Tracker',
-      description: 'Track Ozempic, Wegovy, Mounjaro & Zepbound injections. Log weight loss, monitor nutrition. Built for GLP-1 users. Free on iOS.',
-      keywords: ['GLP-1 Tracker', 'Ozempic Tracker', 'Wegovy Tracker', 'Mounjaro Tracker', 'Zepbound App', 'Injection Log', 'Weight Loss App', 'Semaglutide Tracker', 'Tirzepatide App', 'Peptide Tracker']
-    },
-    marketing: {
-      headline: 'Your GLP-1 Journey, Beautifully Tracked.',
-      subheadline: 'Log injections, watch the pounds drop, and stay on top of your nutrition — all in one private app built for Ozempic, Wegovy, Mounjaro & Zepbound.',
-      problem: 'You\'re on a weekly injection and tracking it in your phone\'s Notes app. Or a spreadsheet. Or not at all. You miss shots, lose streak momentum, and have no clear picture of how far you\'ve come.',
-      agitation: 'Generic habit trackers don\'t understand dose escalation schedules. Fitness apps weren\'t built for GLP-1 users whose appetite is suppressed to 1,200 calories. Nothing connects your injection day to your weight trend.',
-      solution: 'Shotly is purpose-built for GLP-1 users. Log every shot with dose, site, and notes. See your weight chart slope downward week by week. Track protein, fiber, and calories at the right targets for your medication. Know exactly how many days until your next dose.',
-      benefits: [
-        { title: 'Injection Log', description: 'Log every dose with medication, amount, injection site, and notes. Built-in dose escalation schedule for Ozempic, Wegovy, Mounjaro & Zepbound.', icon: 'Zap' },
-        { title: 'Weight Loss Chart', description: 'A weekly weight chart that shows your actual trajectory. See total pounds lost and your average loss per week at a glance.', icon: 'TrendingDown' },
-        { title: 'Nutrition Tracking', description: 'Log meals with calories, protein, fiber, and fat. Goals calibrated for GLP-1 users — high protein, appropriate fiber.', icon: 'Utensils' },
-        { title: 'Next Dose Countdown', description: 'Always know how many days until your next injection. Never miss a dose or second-guess your schedule again.', icon: 'Clock' }
-      ],
-      screenshots: [
-        '/shotly/01.png',
-        '/shotly/02.png',
-        '/shotly/03.png',
-        '/shotly/04.png',
-      ],
-      faqs: [
-        { question: 'What is the best app to track Ozempic injections?', answer: 'Shotly is a dedicated injection tracker for Ozempic, Wegovy, Mounjaro, and Zepbound. Log every weekly dose with site, amount, and notes. See your full injection history and know exactly when your next dose is due.' },
-        { question: 'Is there an app for tracking weight loss on Mounjaro?', answer: 'Shotly tracks your weight weekly alongside your injection log, showing a chart of your full journey. See total pounds lost, average loss per week, and your progress toward your goal weight.' },
-        { question: 'How do I track Wegovy dose escalation on my phone?', answer: 'Shotly supports the full dose escalation schedule for Wegovy (0.25 → 0.5 → 1.0 → 1.7 → 2.4 mg). Your current dose is tracked and displayed on every injection log entry.' },
-        { question: 'Is Shotly free on iPhone?', answer: 'Shotly is free to download on iOS. Core injection and weight tracking are free. Premium unlocks unlimited meal logging, body measurements, side effect tracking, and progress photos.' },
-        { question: 'Can I track nutrition on a GLP-1 medication?', answer: 'Shotly includes a meal logger with calories, protein, fiber, and fat — with daily goals calibrated for GLP-1 users (typically higher protein, moderate fiber, lower overall calories due to appetite suppression).' },
-      ]
-    },
-    legal: {
-      privacyPolicy: `1. Data We Collect\nShotly collects only the data you enter directly into the app: injection logs, weight entries, meal logs, and profile details (age, weight, goal). No biometric identifiers or personal data beyond what you voluntarily enter is collected.\n\n2. How We Use Your Data\nAll health data is stored locally on your device. Shotly does not transmit your health logs to any external server, and does not sell or share your personal data with third parties.\n\n3. Subscription & Payments\nSubscription billing is handled entirely by Apple via the App Store. Shotly uses RevenueCat to verify subscription status via anonymized receipts only. No payment information is ever seen or stored by Shotly.\n\n4. RevenueCat\nWe use RevenueCat for anonymous subscription verification. No personal health data is shared with RevenueCat.\n\n5. Health Disclaimer\nShotly is a personal tracking tool and is not a medical device. It does not provide medical advice. Always follow your prescribing physician's instructions regarding your GLP-1 medication.\n\n6. Contact\nFor privacy questions, contact: ashwinnanbazhagan@gmail.com`,
-      termsOfService: `1. NOT MEDICAL ADVICE\nShotly is a personal logging and tracking tool provided for informational purposes only. It does not constitute medical advice, diagnosis, or treatment. Always seek the advice of your physician or qualified health provider regarding your GLP-1 medication.\n\n2. USER RESPONSIBILITY\nYou are solely responsible for the accuracy of data you enter into the app and for all decisions made regarding your medication, dosage, and health.\n\n3. SUBSCRIPTION\nShotly Premium is available via auto-renewing subscription through the Apple App Store. Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. Manage or cancel subscriptions in your Apple ID Account Settings.\n\n4. LIMITATION OF LIABILITY\nIn no event shall the developers of Shotly be liable for any damages arising from the use or misuse of the application or reliance on its tracking data.\n\n5. APPLE EULA\nBy using this software, you also agree to the Standard Apple Licensed Application End User License Agreement: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n\n6. Contact\nEmail: ashwinnanbazhagan@gmail.com`,
-      support: 'For support or questions regarding Shotly, contact us at ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24–48 hours.',
-      lastUpdated: '8 June 2026'
-    },
-    design: {
-      primary: '#FF6B00',
-      bg: '#F7F5F0',
-      fontFamily: 'font-inter',
-      templateId: 'zen',
-      grain: 0.04
-    }
-  },
   {
     id: 'yumeship',
     name: 'YumeShip',

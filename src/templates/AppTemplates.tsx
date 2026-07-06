@@ -1,6 +1,6 @@
 import React from 'react';
 import type { AppConfig } from '../config/apps';
-import { ChevronLeft, Camera, Zap, Utensils, Lock, BookOpen, Flame, Activity, Trophy, Clock, Cloud, Moon, Shield, Info } from 'lucide-react';
+import { ChevronLeft, Camera, Zap, Utensils, Lock, BookOpen, Flame, Activity, Trophy, Clock, Cloud, Moon, Shield, Info, Sun, PenLine, Heart, CalendarDays, LayoutGrid } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AppLayout from '../components/AppLayout';
 import LegalContent from '../pages/LegalContent';
@@ -12,7 +12,8 @@ interface TemplateProps {
 }
 
 const IconMap: Record<string, any> = {
-  Camera, Zap, Utensils, Lock, BookOpen, Flame, Activity, Trophy, Clock, Cloud, Moon, ShieldHighlight: Shield, ShieldCheck: Shield, Info
+  Camera, Zap, Utensils, Lock, BookOpen, Flame, Activity, Trophy, Clock, Cloud, Moon, ShieldHighlight: Shield, ShieldCheck: Shield, Info,
+  Sun, PenLine, Heart, CalendarDays, LayoutGrid
 };
 
 export const ZenTemplate: React.FC<TemplateProps> = ({ app, section }) => {

@@ -24,10 +24,8 @@ fs.mkdirSync(OG_DIR, { recursive: true });
 const apps = [
   { id: 'gutpal',    name: 'GutPal',      headline: 'Know what to eat. Without wrecking your gut.', primary: '#d97757', bg: '#f4ede2' },
   { id: 'masterly',  name: 'Masterly AI', headline: 'Your phone stays locked until you pass the quiz.', primary: '#2D4F1E', bg: '#FDFBF7' },
-  { id: 'honestly',  name: 'Honestly',    headline: "Don't start your day on someone else's feed.", primary: '#E07B39', bg: '#FDFCF9' },
-  { id: 'shotly',    name: 'Shotly',      headline: 'Watch the weight come off, week by week.',   primary: '#FF6B00', bg: '#101A13', text: '#E8F5E9' },
+  { id: 'honestly',  name: 'Honestly',    headline: 'Journal first. Then your apps unlock.', primary: '#F5851F', bg: '#FAF8F5' },
   { id: 'yumeship',  name: 'YumeShip',    headline: 'A quiet place for the ones you love from afar.', primary: '#9b4f6e', bg: '#FDF4F8' },
-  { id: 'habithive', name: 'Habit Hive',  headline: 'Your apps stay locked until you log it.',    primary: '#C98A2E', bg: '#F4F1EB' },
 ];
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

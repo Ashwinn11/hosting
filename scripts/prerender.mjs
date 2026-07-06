@@ -23,7 +23,7 @@ const BUILD_DATE = new Date().toISOString().split('T')[0];
 
 const homeSeo = {
   title: 'Ashwin Anbazhagan | iOS App Developer & Founder',
-  description: 'Indie iOS apps for gut health, studying, GLP-1 tracking, journaling, habits and fandom. Each one solves one specific problem, precisely.',
+  description: 'Indie iOS apps for gut health, studying, morning journaling and fandom. Each one solves one specific problem, precisely.',
   keywords: ['Ashwin Anbazhagan', 'iOS App Developer', 'Indie App Maker', 'SaaS Founder', 'App Developer India'],
 };
 
@@ -157,7 +157,11 @@ execSync(
 );
 
 // ─── Load render function + canonical data (single source of truth) ───────────
-const { render, apps, pseoPages } = await import(path.join(DIST_SSR, 'entry-server.js'));
+const { render, apps, pseoPages: allPseoPages } = await import(path.join(DIST_SSR, 'entry-server.js'));
+
+// Guard against stale pSEO entries whose app was removed from apps.ts (e.g. a
+// discontinued app) — never prerender or sitemap a page whose app doesn't exist.
+const pseoPages = allPseoPages.filter(page => apps.some(a => a.id === page.appId));
 
 // ─── Read client template ─────────────────────────────────────────────────────
 const templateHtml = fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8')

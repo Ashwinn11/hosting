@@ -16,6 +16,8 @@ export default {
       fontFamily: {
         outfit: ['Outfit', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
+        nunito: ['Nunito', 'sans-serif'],
+        shantell: ['"Shantell Sans"', 'cursive'],
       }
     },
   },
