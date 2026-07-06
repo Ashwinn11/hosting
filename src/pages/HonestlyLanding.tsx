@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, Lock, Search, Moon } from 'lucide-react';
+import { ChevronLeft, Lock, Search, Moon, Check } from 'lucide-react';
 import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
 import GuidesGrid from '../components/GuidesGrid';
@@ -9,6 +9,8 @@ import Testimonials from '../components/Testimonials';
 import CompareStrip from '../components/CompareStrip';
 import FounderNote from '../components/FounderNote';
 import LegalContent from './LegalContent';
+import { ConfettiBurst } from '../lib/Confetti';
+import { swiftSpring, springTransition } from '../lib/springs';
 
 interface Props {
   app: AppConfig;
@@ -51,6 +53,27 @@ const GRAIN_BG = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/
 // ── Fonts — the app's own two-family system: Shantell Sans (display) + Nunito (ui) ──
 const display = '"Shantell Sans", cursive';
 const ui = 'Nunito, sans-serif';
+
+// The app's motion vocabulary (App/Support/Motion.swift), as real solved springs.
+const GENTLE = swiftSpring(0.55, 0.9);
+const POP = swiftSpring(0.35, 0.6);
+
+// Tactile press physics (the app's key-press style: the card sinks onto its ink
+// ledge) + screenshot straighten + the wake-up bounce for unlocked app tiles.
+const honCss = `
+  .hon-press { transition: transform 0.2s cubic-bezier(0.3,1.2,0.4,1), box-shadow 0.2s cubic-bezier(0.3,1.2,0.4,1); }
+  .hon-press:active { transform: translateY(4px) !important; box-shadow: 0px 0px 0px #33261A !important; }
+  .hon-shot { transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+  .hon-shot:hover { transform: rotate(0deg) translateY(-8px) !important; }
+  @keyframes hon-wake { 0% { transform: scale(1); } 45% { transform: scale(1.12); } 100% { transform: scale(1); } }
+  @keyframes hon-sun-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .hon-caret { animation: hon-caret-blink 0.9s step-end infinite; }
+  @keyframes hon-caret-blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .hon-shot, .hon-press { transition: none; }
+    .hon-caret { animation: none; }
+  }
+`;
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 const Card: React.FC<{ children: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => (
@@ -157,8 +180,11 @@ function MoodFace({ mood, size = 56, expressive = false }: { mood: number; size?
 const WEEKDAY_LETTERS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 const DEMO_MOOD_CYCLE = [0, 0, 1, 0, 0, 2, 0, 1, 0, 3, 0, 0, 1, 0, 4, 0, 0, 1, 2, 0, 0, 1, 0, 0, 3, 0, 1, 0, 0, 2, 0];
 
+// A fixed, canonical demo month — the same one the sample entries below live in.
+// Deterministic on purpose: the prerendered HTML and every client render agree
+// (hydration-safe), and the calendar always matches the "Jul …" sample pages.
 function monthGrid() {
-  const today = new Date();
+  const today = new Date(2026, 6, 6); // July 6, 2026
   const year = today.getFullYear();
   const month = today.getMonth();
   const todayDate = today.getDate();
@@ -181,17 +207,271 @@ const SAMPLE_ENTRIES = [
   { day: 'Jul 1', mood: 3, line: 'Anxious about the week ahead, so I wrote it out instead of scrolling.' },
 ];
 
+// ── The morning ritual, playable — mood → page → affirmation → apps wake up ──
+// Mirrors App/Ritual/RitualView.swift's three steps and celebration.
+
+const JOURNAL_TEXT =
+  "Woke before the alarm for once. Coffee's warm, the house is quiet — I want to keep this feeling in my pocket all day.";
+
+const AFFIRMATION_CHIPS = [
+  'I am allowed to take today slow.',
+  'I can do hard things before 9 AM.',
+  'I trust myself with this day.',
+];
+
+function useTypewriter(text: string, active: boolean, cps = 30) {
+  const [n, setN] = useState(0);
+  useEffect(() => {
+    if (!active) return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const id = window.setInterval(() => {
+      setN((v) => {
+        if (v >= text.length) {
+          clearInterval(id);
+          return v;
+        }
+        return v + 1;
+      });
+    }, reduced ? 4 : 1000 / cps);
+    return () => clearInterval(id);
+  }, [active, text, cps]);
+  return { typed: text.slice(0, n), done: n >= text.length };
+}
+
+const StepDot: React.FC<{ filled: boolean }> = ({ filled }) => (
+  <span
+    style={{
+      width: 22, height: 5, borderRadius: 999,
+      backgroundColor: filled ? T.amber : 'rgba(51,38,26,0.14)',
+      transition: springTransition(GENTLE, 'background-color'),
+      display: 'inline-block',
+    }}
+  />
+);
+
+const RitualDemo: React.FC<{ onFinish: () => void; done: boolean; onReset: () => void }> = ({ onFinish, done, onReset }) => {
+  const [step, setStep] = useState(0); // 0 mood · 1 page · 2 affirm
+  const [mood, setMood] = useState<number | null>(null);
+  const [affirmation, setAffirmation] = useState<number | null>(null);
+  const timers = useRef<number[]>([]);
+  const { typed, done: typedDone } = useTypewriter(JOURNAL_TEXT, step === 1);
+  const words = typed.length === 0 ? 0 : typed.trim().split(/\s+/).length;
+
+  useEffect(() => () => timers.current.forEach(clearTimeout), []);
+
+  // Auto-advance: the page finishes writing itself, then the affirmation step arrives.
+  useEffect(() => {
+    if (step === 1 && typedDone) {
+      timers.current.push(window.setTimeout(() => setStep(2), 650));
+    }
+  }, [step, typedDone]);
+
+  const pickMood = (i: number) => {
+    if (step !== 0) return;
+    setMood(i);
+    timers.current.push(window.setTimeout(() => setStep(1), 480));
+  };
+
+  const reset = () => {
+    setStep(0);
+    setMood(null);
+    setAffirmation(null);
+    onReset();
+  };
+
+  return (
+    <Card style={{ padding: 24, position: 'relative', overflow: 'hidden' }}>
+      {/* Header — eyebrow + step progress */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18 }}>
+        <Accent size={15}>{done ? 'page complete ✦' : 'this morning'}</Accent>
+        <div style={{ display: 'flex', gap: 5 }}>
+          <StepDot filled={mood !== null} />
+          <StepDot filled={step >= 2} />
+          <StepDot filled={done} />
+        </div>
+      </div>
+
+      {!done ? (
+        <>
+          {/* Step 0 — mood */}
+          {step === 0 && (
+            <div>
+              <p style={{ fontFamily: display, fontWeight: 700, fontSize: 19, color: T.ink, marginBottom: 16 }}>How are you, really?</p>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                {MOOD_LABEL.map((m, i) => (
+                  <button
+                    key={m}
+                    onClick={() => pickMood(i)}
+                    aria-label={m}
+                    style={{
+                      display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5,
+                      padding: '10px 11px', borderRadius: 16, cursor: 'pointer',
+                      backgroundColor: mood === i ? `${MOOD_FILL[i]}33` : 'transparent',
+                      border: `1.5px solid ${mood === i ? T.ink : 'rgba(51,38,26,0.12)'}`,
+                      transform: mood === i ? 'scale(1.08)' : 'scale(1)',
+                      transition: springTransition(POP, 'transform') + ', background-color 0.2s, border-color 0.2s',
+                    }}
+                  >
+                    <MoodFace mood={i} size={40} expressive />
+                    <Accent size={11} color={T.ink}>{m}</Accent>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Step 1 — the page writes itself on ruled paper */}
+          {step === 1 && (
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  {mood !== null && <MoodFace mood={mood} size={26} />}
+                  <p style={{ fontFamily: display, fontWeight: 700, fontSize: 17, color: T.ink }}>Empty your head</p>
+                </div>
+                <span style={{ fontFamily: ui, fontWeight: 800, fontSize: 11, color: T.inkSofter, backgroundColor: T.bg, borderRadius: 999, padding: '4px 10px' }}>
+                  {words} words
+                </span>
+              </div>
+              <div
+                style={{
+                  minHeight: 128, borderRadius: 14, padding: '2px 14px', backgroundColor: T.card,
+                  border: `1.5px solid rgba(51,38,26,0.12)`,
+                  backgroundImage: 'repeating-linear-gradient(transparent, transparent 30px, rgba(51,38,26,0.10) 30px, rgba(51,38,26,0.10) 31px)',
+                }}
+              >
+                <p style={{ fontFamily: display, fontSize: 14.5, color: T.inkBody, lineHeight: '31px', margin: 0 }}>
+                  {typed}
+                  {!typedDone && <span className="hon-caret" style={{ color: T.amberDeep }}>|</span>}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Step 2 — say one kind thing */}
+          {step === 2 && (
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+                <SunMark size={26} muted={affirmation === null} />
+                <p style={{ fontFamily: display, fontWeight: 700, fontSize: 17, color: T.ink }}>Say one kind thing to yourself</p>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 18 }}>
+                {AFFIRMATION_CHIPS.map((line, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setAffirmation(i)}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: 10, textAlign: 'left',
+                      padding: '11px 14px', borderRadius: 14, cursor: 'pointer',
+                      backgroundColor: affirmation === i ? 'rgba(247,178,60,0.18)' : T.bg,
+                      border: `1.5px solid ${affirmation === i ? T.ink : 'rgba(51,38,26,0.12)'}`,
+                      transform: affirmation === i ? 'scale(1.02)' : 'scale(1)',
+                      transition: springTransition(POP, 'transform') + ', background-color 0.2s, border-color 0.2s',
+                    }}
+                  >
+                    <SunMark size={18} muted={affirmation !== i} />
+                    <span style={{ fontFamily: ui, fontWeight: 700, fontSize: 13.5, color: T.ink }}>{line}</span>
+                  </button>
+                ))}
+              </div>
+              <button
+                className="hon-press"
+                onClick={onFinish}
+                disabled={affirmation === null}
+                style={{
+                  width: '100%', padding: '13px 0', borderRadius: 999, cursor: affirmation === null ? 'default' : 'pointer',
+                  backgroundColor: affirmation === null ? T.hairline : T.amber,
+                  color: '#fff', fontFamily: ui, fontWeight: 800, fontSize: 15,
+                  border: `1.5px solid ${T.ink}`,
+                  boxShadow: affirmation === null ? 'none' : tactileShadow,
+                }}
+              >
+                Finish my page
+              </button>
+            </div>
+          )}
+        </>
+      ) : (
+        /* Done — celebration state */
+        <div style={{ textAlign: 'center', padding: '10px 0 4px' }}>
+          <div style={{ display: 'inline-block', animation: 'hon-wake 0.6s cubic-bezier(0.3,1.4,0.4,1) both' }}>
+            <SunMark size={64} />
+          </div>
+          <p style={{ fontFamily: display, fontWeight: 700, fontSize: 20, color: T.ink, margin: '12px 0 6px' }}>Page done. Apps awake.</p>
+          <p style={{ fontFamily: ui, fontSize: 13.5, color: T.inkSoft, marginBottom: 14 }}>
+            {mood !== null ? `Felt ${MOOD_LABEL[mood].toLowerCase()} · ` : ''}{words} words · streak +1
+          </p>
+          <button
+            onClick={reset}
+            style={{ fontFamily: ui, fontWeight: 800, fontSize: 12.5, color: T.amberDeep, background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+          >
+            do it again tomorrow
+          </button>
+        </div>
+      )}
+    </Card>
+  );
+};
+
+/* One shielded app tile — asleep under the moon until the ritual wakes it. */
+const BlockedAppTile: React.FC<{ brand: string; awake: boolean; index: number }> = ({ brand, awake, index }) => (
+  <div
+    style={{
+      position: 'relative',
+      animation: awake ? `hon-wake 0.55s cubic-bezier(0.3,1.4,0.4,1) ${index * 0.09}s both` : 'none',
+    }}
+  >
+    <div
+      style={{
+        width: 60, height: 60, borderRadius: 16, overflow: 'hidden',
+        border: `1.5px solid ${awake ? 'rgba(51,38,26,0.3)' : T.hairline}`,
+        opacity: awake ? 1 : 0.65,
+        filter: awake ? 'none' : 'grayscale(0.4)',
+        transition: `opacity 0.5s ease ${index * 0.09}s, filter 0.5s ease ${index * 0.09}s, border-color 0.5s ease`,
+      }}
+    >
+      <img src={`/brands/${brand}.jpg`} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+    </div>
+    {/* Top-right badge: lock → green check */}
+    <div
+      style={{
+        position: 'absolute', top: -6, right: -6, width: 22, height: 22, borderRadius: '50%',
+        backgroundColor: awake ? T.success : T.card, border: awake ? `1.5px solid ${T.ink}` : border,
+        boxShadow: softShadow, display: 'flex', alignItems: 'center', justifyContent: 'center',
+        transition: `background-color 0.35s ease ${index * 0.09}s`,
+      }}
+    >
+      {awake ? <Check size={11} color="#fff" strokeWidth={3.5} /> : <Lock size={10} color={T.amberDeep} />}
+    </div>
+    {/* Bottom-left badge: moon → sun */}
+    <div
+      style={{
+        position: 'absolute', bottom: -6, left: -6, width: 20, height: 20, borderRadius: '50%',
+        backgroundColor: awake ? T.card : T.ink, border: awake ? `1.5px solid ${T.ink}` : 'none',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        transition: `background-color 0.35s ease ${index * 0.09}s`,
+      }}
+    >
+      {awake ? <SunMark size={13} /> : <Moon size={10} color={T.sunDisc} fill={T.sunDisc} />}
+    </div>
+  </div>
+);
+
 // ── Main component ────────────────────────────────────────────────────────────
 const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
   const [activeMood, setActiveMood] = useState(0);
+  const [moodPicked, setMoodPicked] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [filterMood, setFilterMood] = useState<number | null>(null);
+  const [ritualDone, setRitualDone] = useState(false);
+  const [confetti, setConfetti] = useState(0);
 
+  // The hero faces take turns until the visitor picks one — then it's theirs.
   useEffect(() => {
+    if (moodPicked) return;
     let i = 0;
     const id = setInterval(() => { i = (i + 1) % 5; setActiveMood(i); }, 2000);
     return () => clearInterval(id);
-  }, []);
+  }, [moodPicked]);
 
   const { cells: monthCells, todayDate, label: monthLabel, monthShort } = monthGrid();
   // Derived from the same demo data the calendar grid renders, so the stats below it
@@ -211,6 +491,7 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
 
   return (
     <div style={{ backgroundColor: T.bg, backgroundImage: GRAIN_BG, backgroundRepeat: 'repeat', color: T.ink, minHeight: '100vh', fontFamily: ui }}>
+      <style>{honCss}</style>
       <SEOBox
         title={app.seo.title}
         description={app.seo.description}
@@ -236,8 +517,8 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
             </div>
             <span style={{ fontFamily: display, fontWeight: 700, fontSize: 18, color: T.ink }}>Honestly</span>
           </Link>
-          <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer"
-            style={{ backgroundColor: T.amber, color: '#fff', fontFamily: ui, fontWeight: 800, fontSize: 14, padding: '8px 20px', borderRadius: 999, border: `1.5px solid ${T.ink}`, boxShadow: tactileShadow, textDecoration: 'none' }}>
+          <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" className="hon-press"
+            style={{ backgroundColor: T.amber, color: '#fff', fontFamily: ui, fontWeight: 800, fontSize: 14, padding: '8px 20px', borderRadius: 999, border: `1.5px solid ${T.ink}`, boxShadow: tactileShadow, textDecoration: 'none', display: 'inline-block' }}>
             Download Free
           </a>
         </div>
@@ -274,7 +555,7 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
             {/* Live mood picker */}
             <div style={{ display: 'flex', justifyContent: 'center', gap: 10, marginBottom: 32, flexWrap: 'wrap' }}>
               {MOOD_LABEL.map((m, i) => (
-                <button key={m} onClick={() => setActiveMood(i)}
+                <button key={m} onClick={() => { setActiveMood(i); setMoodPicked(true); }}
                   style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, padding: '10px 14px', backgroundColor: i === activeMood ? `${MOOD_FILL[i]}33` : T.card, border: `1.5px solid ${i === activeMood ? T.ink : 'rgba(51,38,26,0.12)'}`, borderRadius: 18, boxShadow: i === activeMood ? tactileShadow : 'none', cursor: 'pointer', transition: 'all 0.2s', transform: i === activeMood ? 'translateY(-3px)' : 'none' }}>
                   <MoodFace mood={i} size={44} expressive/>
                   <Accent size={12} color={T.ink}>{m}</Accent>
@@ -314,7 +595,7 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
                 { src: '/honestly/screenshots/04.png', alt: 'A little encouragement every day — Lock Screen affirmation', rotate: '2.5deg', mt: 16 },
                 { src: '/honestly/screenshots/05.png', alt: 'See your progress — mood calendar', rotate: '-1deg', mt: 4 },
               ].map(({ src, alt, rotate, mt }) => (
-                <div key={src} style={{ flexShrink: 0, scrollSnapAlign: 'center', transform: `rotate(${rotate})`, marginTop: mt }}>
+                <div key={src} className="hon-shot" style={{ flexShrink: 0, scrollSnapAlign: 'center', transform: `rotate(${rotate})`, marginTop: mt }}>
                   <div style={{ width: 220, height: 478, borderRadius: 24, overflow: 'hidden', border, boxShadow: softShadow }}>
                     <img src={src} alt={alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy"/>
                   </div>
@@ -521,36 +802,36 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
           </div>
         </section>
 
-        {/* ── APP BLOCKER ── */}
-        <section style={{ borderTop: border, padding: '80px 24px', backgroundColor: T.card }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: 48, alignItems: 'center' }}>
-            <div>
-              <Accent size={18} style={{ display: 'block', marginBottom: 10 }}>✦ the gate</Accent>
+        {/* ── APP BLOCKER — playable: finish the ritual, watch the apps wake ── */}
+        <section style={{ borderTop: border, padding: '80px 24px', backgroundColor: T.card, position: 'relative', overflow: 'hidden' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+            <div style={{ maxWidth: 560, marginBottom: 40 }}>
+              <Accent size={18} style={{ display: 'block', marginBottom: 10 }}>✦ the gate — try it</Accent>
               <H2 style={{ marginBottom: 16 }}>Apps stay asleep<br/>until you've written.</H2>
-              <p style={{ color: T.inkSoft, fontSize: 16, lineHeight: 1.7, marginBottom: 16, fontFamily: ui }}>
+              <p style={{ color: T.inkSoft, fontSize: 16, lineHeight: 1.7, fontFamily: ui }}>
                 Every morning from 4 AM, Honestly keeps your chosen apps — Instagram, TikTok, X, whatever pulls you in — asleep via iOS Screen Time until your page is done. Honestly is only ever shown opaque tokens, never which apps you picked.
               </p>
-              <Accent size={20} style={{ display: 'block' }}>Not a timer. Not willpower. A gate.</Accent>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
-                {['instagram', 'tiktok', 'snapchat', 'whatsapp', 'x', 'youtube'].map((brand) => (
-                  <div key={brand} style={{ position: 'relative' }}>
-                    <div style={{ width: 60, height: 60, borderRadius: 16, overflow: 'hidden', border: `1.5px solid ${T.hairline}`, opacity: 0.65, filter: 'grayscale(0.4)' }}>
-                      <img src={`/honestly/brands/${brand}.jpg`} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy"/>
-                    </div>
-                    <div style={{ position: 'absolute', top: -6, right: -6, width: 22, height: 22, borderRadius: '50%', backgroundColor: T.card, border, boxShadow: softShadow, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Lock size={10} color={T.amberDeep}/>
-                    </div>
-                    <div style={{ position: 'absolute', bottom: -6, left: -6, width: 20, height: 20, borderRadius: '50%', backgroundColor: T.ink, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Moon size={10} color={T.sunDisc} fill={T.sunDisc}/>
-                    </div>
-                  </div>
-                ))}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: 48, alignItems: 'center' }}>
+              <RitualDemo
+                done={ritualDone}
+                onFinish={() => { setRitualDone(true); setConfetti((c) => c + 1); }}
+                onReset={() => setRitualDone(false)}
+              />
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
+                  {['instagram', 'tiktok', 'snapchat', 'whatsapp', 'x', 'youtube'].map((brand, i) => (
+                    <BlockedAppTile key={brand} brand={brand} awake={ritualDone} index={i} />
+                  ))}
+                </div>
+                <Accent size={14} color={ritualDone ? T.amberDeep : T.inkSoft}>
+                  {ritualDone ? 'good morning — they’re awake ✦' : 'write your page to wake them up →'}
+                </Accent>
+                <Accent size={17} style={{ display: 'block', textAlign: 'center' }}>Not a timer. Not willpower. A gate.</Accent>
               </div>
-              <Accent size={14} color={T.inkSoft}>write your page to wake them up →</Accent>
             </div>
           </div>
+          <ConfettiBurst trigger={confetti} palette={[T.sunDisc, T.amber, T.amberLight, MOOD_FILL[1], MOOD_FILL[2]]} />
         </section>
 
         <Testimonials
@@ -588,7 +869,9 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
           <div style={{ position: 'absolute', top: '20%', left: '50%', transform: 'translateX(-50%)', width: 500, height: 300, borderRadius: '50%', background: `${T.sunDisc}22`, filter: 'blur(80px)', pointerEvents: 'none' }}/>
           <div style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
-              <SunMark size={90}/>
+              <div style={{ animation: 'hon-sun-spin 90s linear infinite' }}>
+                <SunMark size={90}/>
+              </div>
             </div>
             <Accent size={22} style={{ display: 'block', marginBottom: 14 }}>✦ start tomorrow morning</Accent>
             <h2 style={{ fontFamily: display, fontWeight: 700, fontSize: 'clamp(2rem,4.5vw,3.4rem)', color: T.ink, marginBottom: 16, lineHeight: 1.15 }}>

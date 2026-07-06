@@ -305,8 +305,8 @@ export const apps: AppConfig[] = [
       lastUpdated: 'May 27, 2025'
     },
     design: {
-      primary: '#9b4f6e',
-      bg: '#faf8f5',
+      primary: '#d77a8d',
+      bg: '#fdf3ee',
       fontFamily: 'font-instrument',
       templateId: 'zen'
     }

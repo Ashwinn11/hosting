@@ -11,7 +11,7 @@ interface TemplateProps {
   section?: 'privacy' | 'terms' | 'support';
 }
 
-const IconMap: Record<string, any> = {
+const IconMap: Record<string, React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties; strokeWidth?: number }>> = {
   Camera, Zap, Utensils, Lock, BookOpen, Flame, Activity, Trophy, Clock, Cloud, Moon, ShieldHighlight: Shield, ShieldCheck: Shield, Info,
   Sun, PenLine, Heart, CalendarDays, LayoutGrid
 };

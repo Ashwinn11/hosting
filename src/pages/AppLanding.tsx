@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import type React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { apps } from '../config/apps';
 import { ZenTemplate, AcademicTemplate, ArcadeTemplate, SanctuaryTemplate } from '../templates/AppTemplates';
@@ -19,18 +20,26 @@ const AppLanding: React.FC<AppLandingProps> = ({ section, appId: propAppId }) =>
   const effectiveAppId = propAppId || paramAppId;
   const app = apps.find((a) => a.id === effectiveAppId);
 
+  const externalRedirect = !!app?.externalUrl && !section;
+
   useEffect(() => {
     if (app) {
       document.title = app.seo.title;
     }
   }, [app]);
 
+  // External apps redirect after mount — never as a render side effect.
+  useEffect(() => {
+    if (externalRedirect && app?.externalUrl) {
+      window.location.href = app.externalUrl;
+    }
+  }, [externalRedirect, app]);
+
   if (!app) {
     return <Navigate to="/" replace />;
   }
 
-  if (app.externalUrl && !section && typeof window !== 'undefined') {
-    window.location.href = app.externalUrl;
+  if (externalRedirect) {
     return null;
   }
 
