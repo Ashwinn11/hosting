@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, Heart, Mail, BookOpen, Lock, ChevronDown, Plus } from 'lucide-react';
 import type { AppConfig } from '../config/apps';
+import { findPseoPage } from '../config/pseo';
 import SEOBox from '../components/SEOBox';
 import GuidesGrid from '../components/GuidesGrid';
 import Testimonials from '../components/Testimonials';
@@ -364,7 +365,7 @@ const HeartFrameMini: React.FC = () => (
         </clipPath>
       </defs>
       <path d="M50 88 C22 66 6 48 6 30 A21 21 0 0 1 50 18 A21 21 0 0 1 94 30 C94 48 78 66 50 88 Z" fill={SAKURA_SOFT} />
-      <image href="/yumeship/1.webp" x="8" y="2" width="84" height="96" preserveAspectRatio="xMidYMid slice" clipPath="url(#ys-heart-clip)" />
+      <image href="/yumeship/screenshots/01.webp" x="8" y="2" width="84" height="96" preserveAspectRatio="xMidYMid slice" clipPath="url(#ys-heart-clip)" />
       <path d="M50 88 C22 66 6 48 6 30 A21 21 0 0 1 50 18 A21 21 0 0 1 94 30 C94 48 78 66 50 88 Z" fill="none" stroke={SAKURA_DEEP} strokeWidth={2.5} />
     </svg>
   </div>
@@ -533,7 +534,7 @@ const LegalPage: React.FC<{ app: AppConfig; section: 'privacy' | 'terms' | 'supp
 };
 
 /* ── FAQ item (smooth open) ── */
-const FAQItem: React.FC<{ q: string; a: string }> = ({ q, a }) => {
+const FAQItem: React.FC<{ q: string; a: string; link?: { to: string } }> = ({ q, a, link }) => {
   const [open, setOpen] = useState(false);
   return (
     <div onClick={() => setOpen(!open)} style={{ borderBottom: `1px solid ${LINE}`, padding: '18px 0', cursor: 'pointer' }}>
@@ -544,6 +545,15 @@ const FAQItem: React.FC<{ q: string; a: string }> = ({ q, a }) => {
       <div style={{ display: 'grid', gridTemplateRows: open ? '1fr' : '0fr', transition: `grid-template-rows 0.4s ${EASE_SOFT}` }}>
         <div style={{ overflow: 'hidden' }}>
           <p style={{ margin: '12px 0 0', fontFamily: UI, fontWeight: 300, fontSize: 14, color: INK2, lineHeight: 1.7 }}>{a}</p>
+          {link && (
+            <Link
+              to={link.to}
+              onClick={(e) => e.stopPropagation()}
+              style={{ display: 'inline-block', margin: '10px 0 2px', fontFamily: UI, fontWeight: 500, fontSize: 13, color: SAKURA_DEEP, textDecoration: 'none' }}
+            >
+              Learn more →
+            </Link>
+          )}
         </div>
       </div>
     </div>
@@ -562,6 +572,7 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
         description={app.seo.description}
         keywords={app.seo.keywords}
         appId={app.id}
+        appName={app.appStoreName || app.name}
         appStoreUrl={app.appStoreUrl}
         appCategory={app.seoApplicationCategory}
         appNumericId={app.appNumericId}
@@ -678,25 +689,36 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
             <span>iPhone & iPad</span>
           </div>
 
-          {/* Screenshots — plum shadows, straighten on hover */}
+          {/* Screenshots — plum shadows, straighten on hover; single full-bleed row
+              (breaks out of the 780px hero column so all 6 fit across the viewport) */}
           {app.marketing.screenshots && app.marketing.screenshots.length > 0 && (
-            <div style={{ marginTop: 64, display: 'flex', justifyContent: 'center', alignItems: 'flex-end', flexWrap: 'wrap' }}>
-              {app.marketing.screenshots.slice(0, 4).map((src, i) => {
-                const rotations = ['-4deg', '0deg', '0deg', '2deg'];
-                const yOffsets  = ['10px',  '0px',  '0px',  '-8px'];
-                const gaps      = [20, 2, 20, 20];
+            <div className="hide-scrollbar" style={{ marginTop: 64, overflowX: 'auto', padding: '12px 0', width: '100vw', marginLeft: 'calc(50% - 50vw)' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-end', flexWrap: 'nowrap', width: 'max-content', margin: '0 auto', padding: '0 28px' }}>
+              {app.marketing.screenshots.slice(0, 6).map((src, i) => {
+                const rotations = ['-4deg', '0deg', '0deg', '2deg', '-2deg', '3deg'];
+                const yOffsets  = ['10px',  '0px',  '0px',  '-8px', '6px',   '-6px'];
+                const gaps      = [20, 2, 20, 20, 12, 20];
+                const alts      = [
+                  'A private world for your yumeship — journal with F/O notification',
+                  'Ship charts and poly dynamics — make it canon',
+                  'Scenario prompts and polycule bingo',
+                  'Incorrect quotes starring your F/O',
+                  'Love letters, dates, albums and self-inserts',
+                  'Messages only your F/O sends',
+                ];
                 return (
                   <div key={i} className="ys-shot" style={{
                     width: 160, borderRadius: 28, overflow: 'hidden',
                     border: `1.5px solid ${i % 2 === 0 ? SAKURA : LAVENDER}`,
                     boxShadow: SHADOW_3,
                     transform: `rotate(${rotations[i]}) translateY(${yOffsets[i]})`,
-                    flexShrink: 0, marginRight: i < 3 ? gaps[i] : 0,
+                    flexShrink: 0, marginRight: i < 5 ? gaps[i] : 0,
                   }}>
-                    <img src={src} alt={`YumeShip screenshot ${i + 1}`} style={{ width: '100%', display: 'block' }}/>
+                    <img src={src} alt={alts[i] ?? `YumeShip screenshot ${i + 1}`} loading="lazy" style={{ width: '100%', display: 'block' }}/>
                   </div>
                 );
               })}
+              </div>
             </div>
           )}
         </div>
@@ -844,9 +866,17 @@ const YumeshipLanding: React.FC<Props> = ({ app, section }) => {
           <h2 style={{ fontFamily: DISPLAY, fontStyle: 'italic', fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 400, color: INK, margin: '0 0 48px', textAlign: 'center' }}>
             questions & soft answers.
           </h2>
-          {app.marketing.faqs.map((faq, i) => (
-            <FAQItem key={i} q={faq.question} a={faq.answer} />
-          ))}
+          {app.marketing.faqs.map((faq, i) => {
+            const learnMore = faq.learnMoreSlug ? findPseoPage(app.id, faq.learnMoreSlug) : undefined;
+            return (
+              <FAQItem
+                key={i}
+                q={faq.question}
+                a={faq.answer}
+                link={learnMore ? { to: `/${app.id}/${learnMore.type}/${learnMore.slug}` } : undefined}
+              />
+            );
+          })}
         </section>
       )}
 

@@ -26,6 +26,7 @@ const apps = [
   { id: 'masterly',  name: 'Masterly AI', headline: 'Your phone stays locked until you pass the quiz.', primary: '#2D4F1E', bg: '#FDFBF7' },
   { id: 'honestly',  name: 'Honestly',    headline: 'Journal first. Then your apps unlock.', primary: '#F5851F', bg: '#FAF8F5' },
   { id: 'yumeship',  name: 'YumeShip',    headline: 'A quiet place for the ones you love from afar.', primary: '#9b4f6e', bg: '#FDF4F8' },
+  { id: 'her75',     name: 'Her 75',      headline: 'Become her — in 75 days.', primary: '#C4765A', bg: '#FAF6EF' },
 ];
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -128,7 +129,41 @@ async function makeOgImages() {
   }
 }
 
+// ── 3. App Store screenshots → public/<id>/screenshots/NN.webp ──────────────
+// Staging inputs live in content/appstore/raw/<id>/ (gitignored; refill via the
+// App Store pull or by copying fresh App Store Connect exports). 640px wide
+// covers the largest landing render (~240 CSS px) at ~2.7× retina.
+const RAW_SCREENSHOTS = path.join(__dirname, '..', 'content', 'appstore', 'raw');
+async function processScreenshots() {
+  if (!fs.existsSync(RAW_SCREENSHOTS)) {
+    console.log('  (no content/appstore/raw staging dir — screenshots skipped)');
+    return;
+  }
+  for (const id of fs.readdirSync(RAW_SCREENSHOTS).sort()) {
+    const src = path.join(RAW_SCREENSHOTS, id);
+    if (!fs.statSync(src).isDirectory()) continue;
+    const files = fs.readdirSync(src).filter(f => /\.(png|jpe?g|webp)$/i.test(f)).sort();
+    if (!files.length) continue;
+    const outDir = path.join(PUBLIC, id, 'screenshots');
+    fs.mkdirSync(outDir, { recursive: true });
+    let i = 0;
+    for (const f of files) {
+      i += 1;
+      const inPath = path.join(src, f);
+      const out = path.join(outDir, `${String(i).padStart(2, '0')}.webp`);
+      const before = fs.statSync(inPath).size;
+      await sharp(inPath)
+        .resize(640, null, { withoutEnlargement: true })
+        .webp({ quality: 80 })
+        .toFile(out);
+      const after = fs.statSync(out).size;
+      console.log(`  ${id}/screenshots/${path.basename(out)}: ${(before / 1024).toFixed(0)}KB → ${(after / 1024).toFixed(0)}KB`);
+    }
+  }
+}
+
 console.log('\nGenerating images...');
 await compressIcons();
 await makeOgImages();
+await processScreenshots();
 console.log('Done.\n');

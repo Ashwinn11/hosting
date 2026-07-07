@@ -7,6 +7,7 @@ export interface Benefit {
 export interface FAQ {
   question: string;
   answer: string;
+  learnMoreSlug?: string; // slug of one of this app's pSEO pages — renders a "Learn more" link when it resolves
 }
 
 export interface Testimonial {
@@ -23,6 +24,7 @@ export interface ComparisonHighlight {
 export interface AppConfig {
   id: string;
   name: string;
+  appStoreName?: string; // exact live App Store listing name — used for JSON-LD + app meta tags
   category: string;
   seoApplicationCategory: string;
   tagline: string;
@@ -73,25 +75,26 @@ export const apps: AppConfig[] = [
   {
     id: 'gutpal',
     name: 'GutPal',
+    appStoreName: 'IBS Meal Planner - GutPal',
     category: 'Health & Fitness',
     seoApplicationCategory: 'HealthApplication',
     tagline: 'AI Gut-Health Meal Planner for IBS & FODMAP',
     platforms: ['ios'],
     description: 'The AI meal planner for IBS, IBD, and low-FODMAP diets. Tell GutPal what\'s in your kitchen — it builds a week of gut-safe meals around your conditions, triggers, and diet. No logging. No guessing.',
-    appStoreUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
-    aggregateRating: { ratingValue: '4.8', ratingCount: '47' },
+    appStoreUrl: 'https://apps.apple.com/app/ibs-meal-planner-gutpal/id6755035965',
+    // aggregateRating intentionally omitted: only 2 real store ratings as of 2026-07 — re-add once volume is defensible
     pricingNote: 'Free · iOS',
     comparisonHighlights: [
       { them: 'Food logging apps make you track every bite.', us: 'No logging — just meals you can eat.' },
       { them: 'Generic meal planners ignore your conditions.', us: 'Built around your IBS, IBD & FODMAP triggers.' },
       { them: 'FODMAP databases hand you data.', us: 'GutPal hands you the actual dinner.' },
     ],
-    downloadUrl: 'https://apps.apple.com/in/app/gut-buddy-food-scanner-ibs/id6755035965',
+    downloadUrl: 'https://apps.apple.com/app/ibs-meal-planner-gutpal/id6755035965',
     appNumericId: '6755035965',
     seo: {
       title: 'GutPal | IBS Meal Planner, Low FODMAP & IBD Diet App',
-      description: 'GutPal builds gut-safe weekly meal plans for IBS, IBD, SIBO, and low-FODMAP diets. Tell us what\'s in your kitchen — we hand you meals that won\'t hurt. Monash-aligned. Free on iOS.',
-      keywords: ['IBS Meal Planner', 'Low FODMAP App', 'IBD Diet App', 'Gut Health Meal Planner', 'FODMAP Meal Plan', 'IBS Diet App', 'Crohn\'s Meal Planner', 'SIBO Diet', 'Monash FODMAP App', 'Gut Health App iPhone']
+      description: 'GutPal builds gut-safe weekly meal plans for IBS, IBD, SIBO, and low-FODMAP diets from what\'s already in your kitchen — and scans restaurant menus to tell you what\'s safe to order. Monash-aligned. Free on iOS.',
+      keywords: ['IBS Meal Planner', 'Low FODMAP App', 'IBD Diet App', 'Gut Health Meal Planner', 'FODMAP Meal Plan', 'IBS Diet App', 'Crohn\'s Meal Planner', 'SIBO Diet', 'Monash FODMAP App', 'FODMAP Recipes', 'IBS Restaurant Menu Scanner', 'Gut Health App iPhone']
     },
     marketing: {
       headline: 'Finally know what to eat for your gut.',
@@ -102,14 +105,25 @@ export const apps: AppConfig[] = [
       benefits: [
         { title: 'Kitchen-first meal plans', description: 'Enter what\'s in your fridge and pantry. GutPal generates gut-safe meals from what you already have — no specialty shopping required.', icon: 'Utensils' },
         { title: 'Personalized to your gut', description: 'Set up your profile: IBS, IBD, SIBO, Crohn\'s, Colitis, Celiac, GERD, lactose or histamine intolerance. Every meal respects your exact triggers.', icon: 'Heart' },
-        { title: 'Eat out without anxiety', description: 'Heading to a restaurant? GutPal tells you what to order and what to skip based on your conditions. Share your safe picks with friends.', icon: 'ShieldCheck' }
+        { title: 'Eat out without anxiety', description: 'Scan the menu at any restaurant — GutPal reads it and tells you what to order and what to skip based on your conditions.', icon: 'ShieldCheck' }
+      ],
+      screenshots: [
+        '/gutpal/screenshots/01.webp',
+        '/gutpal/screenshots/02.webp',
+        '/gutpal/screenshots/03.webp',
+        '/gutpal/screenshots/04.webp',
+        '/gutpal/screenshots/05.webp',
+        '/gutpal/screenshots/06.webp',
+        '/gutpal/screenshots/07.webp',
       ],
       faqs: [
-        { question: 'Is there an app that plans meals for IBS?', answer: 'GutPal is an AI meal planner built specifically for IBS, IBD, and low-FODMAP diets. Set up your gut profile, tell us what\'s in your kitchen, and GutPal generates a week of gut-safe meals. Free on iOS.' },
-        { question: 'What is the best low FODMAP meal planning app?', answer: 'GutPal builds FODMAP-safe meal plans aligned with Monash University research. You tell it your pantry, it gives you meals — no food logging, no calorie counting.' },
-        { question: 'Can GutPal help with Crohn\'s or Colitis?', answer: 'Yes. GutPal supports IBD including Crohn\'s Disease and Ulcerative Colitis. Set your conditions and trigger foods in your gut profile — every meal plan respects them.' },
+        { question: 'Is there an app that plans meals for IBS?', answer: 'GutPal is an AI meal planner built specifically for IBS, IBD, and low-FODMAP diets. Set up your gut profile, tell us what\'s in your kitchen, and GutPal generates a week of gut-safe meals. Free on iOS.', learnMoreSlug: 'ibs-meal-planner-app' },
+        { question: 'What is the best low FODMAP meal planning app?', answer: 'GutPal builds FODMAP-safe meal plans aligned with Monash University research. You tell it your pantry, it gives you meals — no food logging, no calorie counting.', learnMoreSlug: 'low-fodmap-meal-plan-app' },
+        { question: 'Can GutPal help with Crohn\'s or Colitis?', answer: 'Yes. GutPal supports IBD including Crohn\'s Disease and Ulcerative Colitis. Set your conditions and trigger foods in your gut profile — every meal plan respects them.', learnMoreSlug: 'crohns-disease-safe-food-scanner' },
+        { question: 'Can GutPal tell me what to order at restaurants?', answer: 'Yes. Scan or photograph the menu and GutPal reads every dish, then tells you what\'s safe to order and what to skip based on your gut profile.', learnMoreSlug: 'ibs-safe-restaurant-eating' },
+        { question: 'What should I eat during an IBS flare-up?', answer: 'Gentle, low-trigger meals — and no experiments. Tell GutPal your gut is flaring and it plans the week around foods your profile tolerates, cooked from what\'s already in your kitchen.', learnMoreSlug: 'what-to-eat-ibs-flare-up' },
         { question: 'Is GutPal free on iPhone?', answer: 'GutPal is free to download on iOS. GutPal Pro unlocks unlimited meal plans, restaurant guides, and advanced personalization. A 3-day free trial is included.' },
-        { question: 'Does GutPal follow Monash University FODMAP guidelines?', answer: 'Yes. All FODMAP content in GutPal is aligned with Monash University research — the gold standard for IBS and low-FODMAP diets.' },
+        { question: 'Does GutPal follow Monash University FODMAP guidelines?', answer: 'Yes. All FODMAP content in GutPal is aligned with Monash University research — the gold standard for IBS and low-FODMAP diets.', learnMoreSlug: 'vs-monash-fodmap-app' },
       ]
     },
     legal: {
@@ -129,45 +143,54 @@ export const apps: AppConfig[] = [
   {
     id: 'masterly',
     name: 'Masterly AI',
+    appStoreName: 'App Blocker & Study - Masterly',
     category: 'Education',
     seoApplicationCategory: 'EducationApplication',
-    tagline: 'AI Study Discipline & App Blocker',
+    tagline: 'App Blocker, AI Flashcards & Study Planner',
     platforms: ['ios'],
-    description: 'Learn from your own notes. Your apps stay locked until you pass today\'s quiz.',
-    appStoreUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id6753760295',
-    aggregateRating: { ratingValue: '4.8', ratingCount: '89' },
+    description: 'Distracting apps lock up to 3 times a day — and unlock only when you pass short quizzes from your own notes. AI flashcards, spaced repetition, and day-by-day exam planning.',
+    appStoreUrl: 'https://apps.apple.com/app/app-blocker-study-masterly/id6753760295',
+    // aggregateRating intentionally omitted: only 5 real store ratings as of 2026-07 — re-add once volume is defensible
     pricingNote: 'Free · iOS',
     comparisonHighlights: [
       { them: 'App blockers you can bypass in a tap.', us: 'Apps unlock only when you pass the quiz.' },
       { them: 'Flashcards from someone else\'s material.', us: 'Quizzes generated from your own notes.' },
       { them: 'No link between studying and your phone.', us: 'Your study session is the unlock.' },
     ],
-    downloadUrl: 'https://apps.apple.com/in/app/masterly-ai-quiz-study-app/id6753760295',
+    downloadUrl: 'https://apps.apple.com/app/app-blocker-study-masterly/id6753760295',
     appNumericId: '6753760295',
     seo: {
-      title: 'Masterly AI | AI Flashcards, Study Planner & App Blocker',
-      description: 'Upload your syllabus. Masterly builds a day-by-day exam plan, auto-generates flashcards and quizzes from your notes, and locks apps until you pass. Free on iOS.',
-      keywords: ['Study App', 'AI Study Planner', 'App Blocker for Students', 'Flashcard App', 'Exam Prep', 'AI Flashcards', 'Study Discipline', 'Masterly', 'Quiz App', 'Syllabus Planner']
+      title: 'Masterly | App Blocker for Students, AI Flashcards & Quiz',
+      description: 'Masterly locks your distracting apps up to 3 times a day — pass short quizzes generated from your own notes and PDFs to unlock them. AI flashcards with spaced repetition, study timetables, and exam planning. Free on iOS.',
+      keywords: ['App Blocker for Students', 'Study App', 'AI Flashcards', 'Quiz App', 'Focus App', 'Spaced Repetition App', 'AI Study Planner', 'Exam Prep', 'Study Timetable', 'Study Discipline', 'Masterly', 'Syllabus Planner']
     },
     marketing: {
       headline: 'The AI Study App That Locks Your Phone Until You Learn.',
-      subheadline: 'Upload your syllabus. Get a day-by-day plan to your exam. Flashcards, quizzes, and app blocking — all generated from your own notes.',
+      subheadline: 'Your apps lock up to 3 times a day. Pass short quizzes from your own notes and PDFs to earn them back — with AI flashcards, spaced repetition, and a day-by-day exam plan.',
       problem: 'You open Instagram to "quickly check" something and lose an hour. You don\'t know what to study or in what order. The night before the exam, your notes feel pointless.',
       agitation: 'Existing app blockers are too easy to bypass. Generic study tools give you flashcards for someone else\'s material. And no app actually connects your studying to your phone unlocking.',
-      solution: 'Masterly uploads your syllabus, sets your exam date, and builds a day-by-day AI study plan. Each day: a lesson, flip flashcards, and a quiz — all from your own notes. Pass the quiz. Unlock your apps.',
+      solution: 'Masterly turns your phone into a focused workspace. Distracting apps lock up to 3 times a day — to unlock them, pass short quizzes generated from your own notes or PDFs. Upload a syllabus and set your exam date for a day-by-day plan with flashcards, quizzes, and study notes.',
       benefits: [
-        { title: 'AI Study Plan', description: 'Set your exam date. AI breaks your syllabus into a day-by-day plan so you always know what to study next.', icon: 'BookOpen' },
-        { title: 'Flashcards + Quiz', description: 'Each day generates flip flashcards and a multiple-choice quiz from your own uploaded notes.', icon: 'Zap' },
-        { title: 'App Blocker Gate', description: 'iOS Screen Time locks your chosen apps during your study window. Pass today\'s quiz to unlock them.', icon: 'Lock' },
-        { title: 'Streak System', description: 'Build a daily streak. Consecutive days of quiz completion tracked automatically.', icon: 'Flame' }
+        { title: 'App Blocker Gate', description: 'Apps lock up to 3 times a day via iOS Screen Time. Pass a short quiz on your own material to earn access back — no workarounds.', icon: 'Lock' },
+        { title: 'AI Study Plan', description: 'Set your exam date. AI breaks your syllabus or PDFs into a day-by-day plan so you always know what to study next.', icon: 'BookOpen' },
+        { title: 'Flashcards + Quiz', description: 'AI generates flip flashcards with spaced repetition and multiple-choice quizzes from your own uploaded notes.', icon: 'Zap' },
+        { title: 'Progress & Heatmaps', description: 'Daily quiz completion builds your streak — with focus heatmaps and analytics to see your consistency.', icon: 'Flame' }
+      ],
+      screenshots: [
+        '/masterly/screenshots/01.webp',
+        '/masterly/screenshots/02.webp',
+        '/masterly/screenshots/03.webp',
+        '/masterly/screenshots/04.webp',
       ],
       videoHero: '/masterly_demo.mp4',
       faqs: [
-        { question: 'Is there an app that blocks social media until I finish studying?', answer: 'Masterly AI uses iOS Screen Time to lock chosen apps during your study window. Apps only unlock after you pass the day\'s AI-generated quiz — built from your own uploaded notes and syllabus.' },
-        { question: 'Can an app generate flashcards from my own notes?', answer: 'Masterly AI generates flip flashcards and multiple-choice quizzes directly from PDFs or text you upload. Every flashcard is unique to your material, not generic content.' },
-        { question: 'What is the best AI study planner app for exams?', answer: 'Masterly AI takes your exam date and syllabus, then builds a day-by-day study plan automatically. Each day includes a lesson, flashcards, and a quiz — so you always know exactly what to study next.' },
-        { question: 'Is Masterly AI free for iPhone?', answer: 'Masterly AI is free to download on iOS. Full AI lesson generation and app blocking features require a subscription, available via Apple App Store.' },
-        { question: 'How does Masterly AI\'s app blocker work?', answer: 'Masterly AI uses Apple\'s Family Controls and Screen Time API to lock selected apps during your study window. Once you complete and pass the daily quiz, the apps automatically unlock.' },
+        { question: 'Is there an app that blocks social media until I finish studying?', answer: 'Masterly uses iOS Screen Time to lock your chosen apps up to 3 times a day. They only unlock after you pass a short AI-generated quiz — built from your own uploaded notes and PDFs.', learnMoreSlug: 'study-without-phone-distractions' },
+        { question: 'Can an app generate flashcards from my own notes?', answer: 'Masterly generates flip flashcards and multiple-choice quizzes directly from PDFs or text you upload, with spaced repetition built in. Every flashcard is unique to your material, not generic content.', learnMoreSlug: 'ai-flashcard-generator-pdf' },
+        { question: 'What is the best AI study planner app for exams?', answer: 'Masterly takes your exam date and syllabus, then builds a day-by-day study plan automatically. Each day includes a lesson, flashcards, and a quiz — so you always know exactly what to study next.', learnMoreSlug: 'exam-study-planner-app' },
+        { question: 'Can Masterly build a study schedule from my syllabus?', answer: 'Yes. Upload your syllabus PDF and set your exam date — Masterly breaks it into a day-by-day timetable that covers everything before you sit.', learnMoreSlug: 'app-that-makes-study-schedule-from-syllabus' },
+        { question: 'Does Masterly work for MCAT, bar exam, or NCLEX prep?', answer: 'Yes. Masterly builds flashcards, quizzes, and a daily plan from whatever material you upload — MCAT content, bar outlines, or NCLEX review notes.', learnMoreSlug: 'mcat-study-app' },
+        { question: 'Is Masterly free for iPhone?', answer: 'Masterly is free to download on iOS. Masterly Pro unlocks AI quiz generation, flashcards, study notes, heatmaps, exam planning, and app blocking — $9.99/month or $79.99/year.' },
+        { question: 'How does Masterly\'s app blocker work?', answer: 'Masterly uses Apple\'s Family Controls and Screen Time API to lock selected apps up to 3 times a day. Complete and pass the quiz, and your apps automatically unlock.', learnMoreSlug: 'focus-app-for-students' },
       ]
     },
     legal: {
@@ -187,51 +210,56 @@ export const apps: AppConfig[] = [
   {
     id: 'honestly',
     name: 'Honestly',
+    appStoreName: 'Honestly - Reflect & Manifest',
     category: 'Lifestyle',
     seoApplicationCategory: 'LifestyleApplication',
-    tagline: 'Morning Journal, Affirmations & App Blocker',
+    tagline: 'Reflect & Manifest — Journal, Mood Tracker & App Blocker',
     platforms: ['ios'],
-    description: 'Honestly is a warm, paper-feel morning journal. Pick your mood, write to a blank page — no prompts, no rules — say a few affirmations back to yourself, and your distracting apps stay asleep each morning until you\'ve written.',
-    appStoreUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
-    aggregateRating: { ratingValue: '4.7', ratingCount: '31' },
+    description: 'Honestly is a free journaling ritual — check your mood, write freely, note what you\'re grateful for and what you\'re manifesting, and watch your Sprout grow as your streak builds. Premium keeps distracting apps locked on a schedule until you\'ve journaled.',
+    appStoreUrl: 'https://apps.apple.com/app/honestly-reflect-manifest/id6759817879',
+    // aggregateRating intentionally omitted: only 2 real store ratings as of 2026-07 — re-add once volume is defensible
     pricingNote: 'Free · iOS',
     comparisonHighlights: [
       { them: 'Blank-page apps give you nothing to hold onto.', us: 'Mood, a free-write, and affirmations — in under 3 minutes.' },
       { them: 'Willpower and timers don\'t hold.', us: 'Yours stay asleep until you\'ve written.' },
       { them: 'Affirmations you read once and forget.', us: 'Your own words come back on your Lock Screen.' },
     ],
-    downloadUrl: 'https://apps.apple.com/in/app/honestly-morning-journal/id6759817879',
+    downloadUrl: 'https://apps.apple.com/app/honestly-reflect-manifest/id6759817879',
     appNumericId: '6759817879',
     seo: {
-      title: 'Honestly | Morning Journal, Affirmations & App Blocker',
-      description: 'Honestly is a mood + free-write + affirmations morning journal for iPhone that keeps distracting apps asleep each morning until you\'ve written, syncs your history to iCloud, and echoes your affirmations back on your Lock Screen.',
-      keywords: ['Honestly', 'Morning Journal App', 'App Blocker', 'Affirmations App', 'Guided Journaling', 'Screen Time App', 'Mindfulness', 'Morning Routine iPhone', 'Journaling App', 'Lock Screen Widget']
+      title: 'Honestly | Reflect & Manifest — Journal, Mood Tracker & App Blocker',
+      description: 'Honestly is a free journaling ritual for iPhone — mood check, free writing, gratitude & manifest — with a Sprout that grows as your streak builds. Premium locks distracting apps on a schedule and syncs your journal to iCloud.',
+      keywords: ['Honestly', 'Morning Journal App', 'Manifestation Journal', 'Mood Tracker', 'Gratitude Journal', 'App Blocker', 'Affirmations App', 'Shadow Work Prompts', 'Screen Time App', 'Mindfulness', 'Morning Routine iPhone', 'Journaling App', 'Lock Screen Widget']
     },
     marketing: {
       headline: 'Journal first. Then your apps unlock.',
-      subheadline: 'Mood, a blank page, a few affirmations — under 3 minutes. Then your distracting apps wake up.',
+      subheadline: 'Mood check, free writing, gratitude & manifest — a morning ritual in minutes. Then your apps wake up.',
       problem: 'You wake up and reach for Instagram, TikTok, or X before you\'ve had a single thought of your own. Before you\'re even out of bed, you\'re already reacting to everyone else\'s morning.',
       agitation: 'Willpower doesn\'t work. Timers don\'t work. There\'s no friction between you and the scroll — so you scroll, and the morning is gone before it started.',
-      solution: 'Honestly opens with your mood, then a genuinely blank page — no prompts, no rules, just write. Add a few affirmations in your own words. Your chosen apps stay asleep every morning (from 4 AM) until you\'ve written, your affirmations echo back on your Lock Screen, and your history syncs to iCloud.',
+      solution: 'Honestly opens with your mood, then a free-write to empty your head, then gratitude and what you\'re manifesting — with optional reflection and shadow-work prompts to go deeper. Your Sprout grows as your streak builds, and with Premium your distracting apps stay locked on your schedule until you\'ve journaled.',
       benefits: [
         { title: 'Mood Check-In', description: 'Happy, Confused, Sad, Awful, or Cry — tap what\'s actually true. It colors the rest of your page.', icon: 'Sun' },
-        { title: 'A Genuinely Blank Page', description: 'No prompts, no rotating questions. “Empty your head” — write whatever’s actually there.', icon: 'PenLine' },
-        { title: 'Affirmations That Echo Back', description: 'Say up to five things to yourself. They resurface later as gentle reminders — in your own words, not a stock quote.', icon: 'Heart' },
-        { title: 'Apps Asleep Till You Write', description: 'Your chosen apps stay locked via iOS Screen Time each morning until your page is done — Honestly never sees which apps you picked.', icon: 'Lock' },
-        { title: 'Streaks, Calendar & History', description: 'A day streak, a month-at-a-glance mood calendar, and a searchable archive of every morning you\'ve written.', icon: 'CalendarDays' },
-        { title: 'Lock Screen & Widgets', description: 'Today’s affirmation waits right on your Lock Screen and Home Screen — no need to open the app.', icon: 'LayoutGrid' }
+        { title: 'Free Writing', description: 'Empty your mind before the world fills it. Just write — with optional reflection and shadow-work prompts when you want to go deeper.', icon: 'PenLine' },
+        { title: 'Gratitude & Manifest', description: 'Note what you\'re grateful for and what you\'re manifesting — in your own words, not a stock quote. They echo back on your Lock Screen.', icon: 'Heart' },
+        { title: 'App Blocking (Premium)', description: 'Lock Instagram, TikTok and the rest on a schedule with hard Screen Time blocking — no workarounds, no snoozing. Honestly never sees which apps you picked.', icon: 'Lock' },
+        { title: 'Your Sprout & Streak', description: 'A plant that grows across four stages the more you show up — plus a mood calendar and full journal history with Premium.', icon: 'CalendarDays' },
+        { title: 'Lock Screen & Widgets', description: 'Today\'s affirmation waits right on your Lock Screen and Home Screen — no need to open the app.', icon: 'LayoutGrid' }
       ],
       screenshots: [
-        '/honestly/screenshots/01.png',
-        '/honestly/screenshots/02.png',
-        '/honestly/screenshots/05.png'
+        '/honestly/screenshots/01.webp',
+        '/honestly/screenshots/02.webp',
+        '/honestly/screenshots/03.webp',
+        '/honestly/screenshots/04.webp',
+        '/honestly/screenshots/05.webp'
       ],
       faqs: [
-        { question: 'Is Honestly free?', answer: 'Yes — Honestly is free to download on the App Store.' },
-        { question: 'How is Honestly different from Day One or Reflectly?', answer: 'Day One and Reflectly are open-ended, general-purpose journals. Honestly is built around one specific morning ritual — mood, a blank page, a few affirmations — paired with an app-blocking gate that keeps your chosen apps asleep until you\'ve written. It\'s narrower by design.' },
-        { question: 'Is there a journaling app that also blocks distracting apps?', answer: 'Yes — Honestly keeps your chosen apps (Instagram, TikTok, X, whatever pulls you in) locked via iOS Screen Time from 4 AM each morning until you’ve written your page. Honestly is only ever shown opaque tokens, never the names of the apps or how you use them.' },
-        { question: 'Does Honestly support other languages?', answer: 'Yes — Honestly includes an in-app language picker, so you can write your morning page in your preferred language.' },
-        { question: 'Does Honestly back up my journal?', answer: 'Yes — with iCloud sync turned on, your pages back up to your own private iCloud account (Apple’s CloudKit). Honestly never receives a copy on its own servers.' },
+        { question: 'Is Honestly free?', answer: 'Yes — journaling, mood tracking, and your streak are free forever. Premium unlocks app blocking, iCloud sync, and full journal history — as a one-time Lifetime purchase or monthly.' },
+        { question: 'How is Honestly different from Day One or Reflectly?', answer: 'Day One and Reflectly are open-ended, general-purpose journals. Honestly is built around one specific ritual — mood check, free writing, gratitude & manifest — paired with an app-blocking gate that keeps your chosen apps locked until you\'ve written. It\'s narrower by design.', learnMoreSlug: 'vs-day-one' },
+        { question: 'Is there a journaling app that also blocks distracting apps?', answer: 'Yes — Honestly Premium locks your chosen apps (Instagram, TikTok, X, whatever pulls you in) on a schedule with hard Screen Time blocking. No workarounds, no snoozing — and Honestly is only ever shown opaque tokens, never the names of the apps.', learnMoreSlug: 'break-social-media-phone-addiction' },
+        { question: 'Can I use Honestly as a manifestation journal?', answer: 'Yes. The ritual ends with gratitude & manifest — writing what you\'re calling in, in your own words. Your manifestations resurface on your Lock Screen through the day.', learnMoreSlug: 'manifestation-journal-app' },
+        { question: 'Does Honestly give me journal prompts?', answer: 'The core page is a free-write — empty your mind, no rules. When you want structure, optional reflection and shadow-work prompts help you go deeper.', learnMoreSlug: 'daily-journal-prompts-app' },
+        { question: 'Does Honestly support other languages?', answer: 'Yes — Honestly is available in 11 languages including English, Spanish, French, German, Japanese, Korean, and Arabic.' },
+        { question: 'Does Honestly back up my journal?', answer: 'Yes — with Premium\'s iCloud sync, your pages back up to your own private iCloud account (Apple\'s CloudKit). Honestly never receives a copy on its own servers.' },
       ]
     },
     legal: {
@@ -252,6 +280,7 @@ export const apps: AppConfig[] = [
   {
     id: 'yumeship',
     name: 'YumeShip',
+    appStoreName: 'Yumeship - Anime & Kpop Canon',
     category: 'Entertainment',
     seoApplicationCategory: 'EntertainmentApplication',
     tagline: 'your quiet place for the ones you love from afar',
@@ -260,7 +289,7 @@ export const apps: AppConfig[] = [
     appStoreUrl: 'https://apps.apple.com/app/yumeship-anime-kpop-canon/id6773642234',
     downloadUrl: 'https://apps.apple.com/app/yumeship-anime-kpop-canon/id6773642234',
     appNumericId: '6773642234',
-    aggregateRating: { ratingValue: '4.7', ratingCount: '80' },
+    aggregateRating: { ratingValue: '4.6', ratingCount: '81' }, // live cross-storefront weighted average, 2026-07
     pricingNote: 'Free · iOS',
     comparisonHighlights: [
       { them: 'Notes apps feel cold.', us: 'A vault made for the ones you love.' },
@@ -268,9 +297,9 @@ export const apps: AppConfig[] = [
       { them: 'No space that gets shipping & headcanons.', us: 'Every ship its own page, beautifully.' },
     ],
     seo: {
-      title: 'YumeShip | Fandom Journal for Ships, F/Os & Characters',
-      description: 'A private vault for your favourite characters. Write love letters, build headcanons, track dates. All on your device, never shared. Free on iOS.',
-      keywords: ['yumeshipping', 'fictive', 'fandom app', 'f/o app', 'ship journal', 'fan creative space', 'yumeship', 'character journal', 'kin app', 'fan diary']
+      title: 'YumeShip | Private Journal for Yumeshippers, F/Os & Ships',
+      description: 'A private on-device journal for yumeshippers. Write headcanons, love letters, and scenarios about your anime, otome, manga, or kpop F/O — with notifications and messages from your F/O, ship charts, and incorrect quotes. Free on iOS.',
+      keywords: ['yumeshipping', 'yumeship', 'f/o app', 'fictive', 'fandom app', 'anime journal app', 'kpop f/o', 'ship journal', 'headcanon organizer', 'incorrect quotes generator', 'character journal', 'fan diary']
     },
     marketing: {
       headline: 'A quiet place for the ones you love from afar.',
@@ -279,23 +308,27 @@ export const apps: AppConfig[] = [
       agitation: 'Notes apps feel cold. Social media feels exposed. There\'s no space that understands what it means to ship, to kin, to love a character quietly.',
       solution: 'YumeShip is a private creative vault built for fans. Every ship gets its own page — templates, love letters, headcanons, dates, scenes. Nothing leaves your phone.',
       benefits: [
-        { title: 'Ship Profiles', description: 'Every F/O gets their own page with a visual template, colour palette, and all their details.', icon: 'Heart' },
-        { title: 'Love Letters & Scenes', description: 'Write letters, scenes, and message threads. Keep the soft, personal moments in one place.', icon: 'Mail' },
-        { title: 'Headcanons & Vault', description: 'Log headcanons by category. Build your private vault of everything you hold about them.', icon: 'BookOpen' },
+        { title: 'Ship Profiles', description: 'Every F/O gets their own page with a visual template, colour palette, and all their details — plus ship charts and poly dynamics.', icon: 'Heart' },
+        { title: 'Letters & Messages from Your F/O', description: 'Write love letters and scenarios, get gentle notifications and message threads that only your F/O sends.', icon: 'Mail' },
+        { title: 'Headcanons, Quotes & Games', description: 'Log headcanons by category, spin up incorrect quotes starring your F/O, play polycule bingo, and dream up scenarios.', icon: 'BookOpen' },
         { title: 'Fully Private', description: 'Everything stays on your device. No accounts, no cloud, no sharing. Just yours.', icon: 'Lock' },
       ],
       screenshots: [
-        '/yumeship/1.webp',
-        '/yumeship/2.webp',
-        '/yumeship/3.webp',
-        '/yumeship/4.webp',
+        '/yumeship/screenshots/01.webp',
+        '/yumeship/screenshots/02.webp',
+        '/yumeship/screenshots/03.webp',
+        '/yumeship/screenshots/04.webp',
+        '/yumeship/screenshots/05.webp',
+        '/yumeship/screenshots/06.webp',
       ],
       faqs: [
-        { question: 'What is YumeShip?', answer: 'YumeShip is a private creative app for fans — specifically for yumeshippers, fictives, and anyone who loves a character. You can build ship profiles, write love letters, log headcanons, and keep special dates all in one soft, personal space.' },
-        { question: 'Is YumeShip private?', answer: 'Yes. Everything you create in YumeShip stays on your device in a local database. There are no accounts, no cloud sync, and no sharing. Your vault is completely private.' },
-        { question: 'What is a F/O in YumeShip?', answer: 'F/O stands for Fictive Other — a character you have a personal, loving connection with. YumeShip is built specifically for this kind of relationship, with templates and spaces designed around it.' },
+        { question: 'What is YumeShip?', answer: 'YumeShip is a private journal for yumeshippers — anyone who loves a fictional character. Build ship profiles, write love letters and headcanons, get notifications from your F/O, and keep it all in one soft, personal space.', learnMoreSlug: 'what-is-yumeshipping' },
+        { question: 'Is YumeShip private?', answer: 'Yes. Everything you create in YumeShip stays on your device in a local database. There are no accounts, no cloud sync, and no sharing. Your vault is completely private.', learnMoreSlug: 'self-ship-app' },
+        { question: 'What is a F/O in YumeShip?', answer: 'F/O stands for Fictive Other — a character you have a personal, loving connection with. YumeShip is built specifically for this kind of relationship, with templates and spaces designed around it.', learnMoreSlug: 'fictional-other-fo-app' },
+        { question: 'Is YumeShip like Character.AI?', answer: 'No — and that\'s the point. YumeShip is a journal, not a chatbot. Your F/O\'s voice is yours to write, nothing leaves your phone, and no model update can ever change or delete them.', learnMoreSlug: 'vs-character-ai' },
+        { question: 'Can I keep a comfort character in YumeShip?', answer: 'Yes. Comfort characters get the same treatment as romantic F/Os — their own page, headcanons, albums, and gentle notifications when you need them.', learnMoreSlug: 'comfort-character-app' },
         { question: 'Can I have multiple ships?', answer: 'Yes. Premium users can create unlimited ships. Free users get one ship to start.' },
-        { question: 'Is YumeShip free?', answer: 'YumeShip is free to download. Premium unlocks unlimited ships and all visual templates.' },
+        { question: 'Is YumeShip free?', answer: 'YumeShip is free to download. Premium unlocks unlimited ships and all visual templates — weekly, monthly, or yearly.' },
       ]
     },
     legal: {
@@ -348,13 +381,14 @@ export const apps: AppConfig[] = [
         { title: 'Finish with friends', description: "Add friends, follow each other's progress, and keep each other honest. The women who finish don't go it alone.", icon: 'Users' },
       ],
       screenshots: [
-        '/her75/preview.png'
+        '/her75/screenshots/01.webp'
       ],
       faqs: [
-        { question: 'What is Her 75?', answer: 'Her 75 is a 75-day challenge tracker built for women. You choose your challenge — from a gentle reset to the full hard mode — and complete daily missions with proof photos until showing up becomes who you are.' },
-        { question: 'Is Her 75 like a 75-day hard challenge?', answer: 'Her 75 lets you choose your hard. Run a full hard challenge, a softer 75, a Glow Up, Sugar-Free or Mental Wellness track, or build your own — all with proof photos and streak protection.' },
-        { question: 'What happens if I miss a day?', answer: "Unlike apps that wipe your streak, Her 75 includes streak protection and missed-day recovery on most tracks, so one off day doesn't send you back to zero." },
-        { question: 'Can I do the challenge with friends?', answer: "Yes. Add friends, follow each other's progress, and keep each other accountable through the whole 75 days." },
+        { question: 'What is Her 75?', answer: 'Her 75 is a 75-day challenge tracker built for women. You choose your challenge — from a gentle reset to the full hard mode — and complete daily missions with proof photos until showing up becomes who you are.', learnMoreSlug: '75-hard-for-women' },
+        { question: 'Is Her 75 like a 75-day hard challenge?', answer: 'Her 75 lets you choose your hard. Run a full hard challenge, a softer 75, a Glow Up, Sugar-Free or Mental Wellness track, or build your own — all with proof photos and streak protection.', learnMoreSlug: 'vs-75-hard-official-app' },
+        { question: 'What is the 75 Soft challenge?', answer: 'A gentler take on 75 Hard — same daily consistency, kinder rules. Her 75\'s 75 Soft track gives you daily missions, proof photos, and streak protection without the all-or-nothing reset.', learnMoreSlug: '75-soft-challenge-app' },
+        { question: 'What happens if I miss a day?', answer: "Unlike apps that wipe your streak, Her 75 includes streak protection and missed-day recovery on most tracks, so one off day doesn't send you back to zero.", learnMoreSlug: 'what-happens-if-you-miss-a-day-75-hard' },
+        { question: 'Can I do the challenge with friends?', answer: "Yes. Add friends, follow each other's progress, and keep each other accountable through the whole 75 days.", learnMoreSlug: '75-hard-with-friends' },
         { question: 'Is Her 75 free?', answer: 'Her 75 is free to download. A Premium subscription unlocks every challenge and feature, available as weekly, monthly, or yearly plans.' },
       ]
     },

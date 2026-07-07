@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, Lock, Unlock, Upload, Calendar, Flame, Check } from 'lucide-react';
 import type { AppConfig } from '../config/apps';
+import { findPseoPage } from '../config/pseo';
 import SEOBox from '../components/SEOBox';
 import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
@@ -59,6 +60,8 @@ const mstCss = `
   .mst-crayon { transition: transform 0.16s ease, box-shadow 0.16s ease; }
   .mst-crayon:hover { transform: translateY(-1px); }
   .mst-crayon:active { transform: translateY(2px); box-shadow: 0px 0px 0px rgba(45,79,30,0.15) !important; }
+  .mst-faq-mark { display: inline-block; transition: transform 0.2s ease; }
+  details[open] .mst-faq-mark { transform: rotate(45deg); }
   @media (prefers-reduced-motion: reduce) {
     .mst-flip-inner { transition: none; }
   }
@@ -117,6 +120,15 @@ const DEMO_QUIZ = {
 
 // Shared brand tiles (public/brands) — the same real app icons Honestly's gate uses.
 const LOCKED_APPS = ['tiktok', 'instagram', 'snapchat', 'youtube'];
+
+// Alt text + tilt per App Store screenshot (marketing.screenshots order).
+const SCREENSHOT_ALTS = [
+  'Turn any PDF into a day-by-day study plan',
+  'Study first, scroll later — quiz complete, apps unlocked',
+  'AI flashcards generated from your own notes',
+  'Pass the quiz to unlock your phone',
+];
+const SCREENSHOT_TILTS = [-0.8, 0.6, -0.5, 0.7];
 
 const AppTiles: React.FC<{ unlocked: boolean }> = ({ unlocked }) => (
   <div className="inline-flex items-end gap-3">
@@ -359,6 +371,7 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
         description={app.seo.description}
         keywords={app.seo.keywords}
         appId={app.id}
+        appName={app.appStoreName || app.name}
         appStoreUrl={app.appStoreUrl}
         appCategory={app.seoApplicationCategory}
         aggregateRating={app.aggregateRating}
@@ -531,6 +544,40 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
           </div>
         </section>
 
+        {/* ── SCREENSHOTS ── */}
+        {app.marketing.screenshots && app.marketing.screenshots.length > 0 && (
+          <section className="py-24 px-6" style={{ backgroundColor: 'rgba(45,79,30,0.04)', borderTop: `2px solid rgba(45,79,30,0.06)` }}>
+            <div className="max-w-6xl mx-auto">
+              <div className="mb-12">
+                <h2 className="font-bold text-3xl inline-block" style={{ color: PRIMARY, fontFamily: CHALK }}>
+                  Straight from the app.
+                  <ChalkUnderline width={190} />
+                </h2>
+                <p className="text-base mt-3 max-w-lg" style={{ color: `${PRIMARY}60` }}>
+                  The plan, the flashcards, the quiz, the unlock — this is what your day looks like.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                {app.marketing.screenshots.map((src, i) => (
+                  <div
+                    key={src}
+                    className="rounded-[28px] overflow-hidden border-[3px]"
+                    style={{ borderColor: PRIMARY, backgroundColor: '#fff', boxShadow: '3px 5px 0 rgba(45,79,30,0.12)', transform: `rotate(${SCREENSHOT_TILTS[i % SCREENSHOT_TILTS.length]}deg)` }}
+                  >
+                    <img
+                      src={src}
+                      alt={SCREENSHOT_ALTS[i] ?? `Masterly screenshot ${i + 1}`}
+                      className="w-full h-full object-cover"
+                      style={{ aspectRatio: '9/19.5' }}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ── PAIN POINTS ── */}
         <section className="py-20 px-6" style={{ backgroundColor: PRIMARY }}>
           <div className="max-w-6xl mx-auto">
@@ -635,6 +682,51 @@ const MasterlyLanding: React.FC<Props> = ({ app, section }) => {
           rating={app.aggregateRating}
           theme={{ primary: ACCENT, bg: BG, ink: PRIMARY, card: '#FFFFFF', border: 'rgba(45,79,30,0.12)', heading: CHALK }}
         />
+
+        {/* ── FAQ ── */}
+        {app.marketing.faqs && app.marketing.faqs.length > 0 && (
+          <section className="py-24 px-6" style={{ borderTop: `2px solid rgba(45,79,30,0.08)` }}>
+            <div className="max-w-3xl mx-auto">
+              <div className="mb-10">
+                <h2 className="font-bold text-3xl inline-block" style={{ color: PRIMARY, fontFamily: CHALK }}>
+                  Frequently asked questions
+                  <ChalkUnderline width={220} />
+                </h2>
+              </div>
+              <div>
+                {app.marketing.faqs.map(({ question, answer, learnMoreSlug }) => {
+                  const learnMore = learnMoreSlug ? findPseoPage(app.id, learnMoreSlug) : undefined;
+                  return (
+                    <details key={question} style={{ borderBottom: `1.5px solid rgba(45,79,30,0.08)`, padding: '20px 0' }}>
+                      <summary
+                        className="flex justify-between items-center gap-4 font-bold text-lg"
+                        style={{ fontFamily: CHALK, color: PRIMARY, cursor: 'pointer', listStyle: 'none' }}
+                      >
+                        {question}
+                        <span className="mst-faq-mark flex-shrink-0 font-bold" style={{ fontFamily: MONO, fontSize: 18, color: ACCENT }}>+</span>
+                      </summary>
+                      <p className="text-base leading-relaxed mt-3 pr-8" style={{ color: `${PRIMARY}70` }}>
+                        {answer}
+                        {learnMore && (
+                          <>
+                            {' '}
+                            <Link
+                              to={`/${app.id}/${learnMore.type}/${learnMore.slug}`}
+                              className="font-bold hover:opacity-70 transition-opacity"
+                              style={{ color: PRIMARY, textDecoration: 'underline', textDecorationColor: ACCENT, textUnderlineOffset: 3 }}
+                            >
+                              Learn more →
+                            </Link>
+                          </>
+                        )}
+                      </p>
+                    </details>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ── CTA ── */}
         <section className="py-32 px-6 text-center" style={{ backgroundColor: PRIMARY }}>

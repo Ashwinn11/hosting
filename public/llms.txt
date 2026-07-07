@@ -1,14 +1,13 @@
 # Briefly.live — iOS App Portfolio by Ashwin Anbazhagan
 
-> Six indie iOS apps across gut health, studying, GLP-1 tracking, morning journaling, women's 75-day challenges, and fandom. Each app solves one specific problem precisely. All built by Ashwin Anbazhagan.
+> Five indie iOS apps across gut health, studying, journaling & manifestation, women's 75-day challenges, and fandom. Each app solves one specific problem precisely. All built by Ashwin Anbazhagan.
 
 ## Apps
-- [GutPal](https://briefly.live/gutpal): AI gut-health meal planner for IBS, IBD, SIBO, and low-FODMAP diets. Tell it what's in your kitchen and it builds a week of gut-safe meals, aligned with Monash FODMAP research. Also scans menus and barcodes.
-- [Masterly AI](https://briefly.live/masterly): Upload your syllabus or notes, get a day-by-day AI study plan with auto-generated flashcards and quizzes. Your apps stay locked via iOS Screen Time until you pass the day's quiz.
-- [Honestly](https://briefly.live/honestly): A structured morning ritual — mood check-in, an adaptive journal prompt, and gratitude — that blocks distracting apps until you finish. A plant grows as your streak builds.
-- [Shotly](https://briefly.live/shotly): GLP-1 injection and weight-loss tracker for Ozempic, Wegovy, Mounjaro, and Zepbound. Logs doses, dose escalation, weight trend, nutrition, side effects, and progress photos. Private and on-device.
-- [YumeShip](https://briefly.live/yumeship): A private, on-device creative vault for fans — ships, F/Os, and comfort characters. Write love letters, organize headcanons, track dates. Nothing leaves your device.
-- [Her 75](https://briefly.live/her75): A 75-day challenge tracker made for women. Choose your hard — from a gentle reset to the full 75 — log daily missions with proof photos, keep your streak with missed-day recovery, and finish with friends.
+- [GutPal — IBS Meal Planner](https://briefly.live/gutpal): AI gut-health meal planner for IBS, IBD, SIBO, Crohn's, Colitis, Celiac, GERD, and low-FODMAP diets. Tell it what's in your kitchen and it builds a week of gut-safe meals, aligned with Monash FODMAP research. Scans restaurant menus and says what to order and what to skip.
+- [Masterly — App Blocker & Study](https://briefly.live/masterly): Distracting apps lock up to 3 times a day and only unlock when you pass short quizzes generated from your own notes or PDFs. Pro adds AI flashcards with spaced repetition, AI study notes, focus heatmaps, and day-by-day exam planning.
+- [Honestly — Reflect & Manifest](https://briefly.live/honestly): A free journaling ritual — mood check, free writing, gratitude & manifest — with optional reflection and shadow-work prompts. A Sprout plant grows as your streak builds. Premium adds scheduled app blocking, iCloud sync, and full journal history.
+- [YumeShip — Anime & Kpop Canon](https://briefly.live/yumeship): A private, on-device journal for yumeshippers. Write headcanons, scenarios, love letters, and what-ifs about your anime, otome, manga, or kpop F/O. Notifications and messages from your F/O, ship charts, incorrect quotes. Nothing leaves your device.
+- [Her 75](https://briefly.live/her75): A 75-day challenge tracker made for women. Choose your hard — 75 Soft, Glow Up, Sugar-Free, Mental Wellness, or the full 75 — log daily missions with proof photos, keep your streak with missed-day recovery, and finish with friends.
 
 ## Guides & Comparisons
 - Each app has in-depth guide and comparison pages at /{app}/guide/{slug} and /{app}/compare/{slug}, covering specific use cases, conditions, and competitor comparisons.

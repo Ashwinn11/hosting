@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, Lock, Search, Moon, Check } from 'lucide-react';
 import type { AppConfig } from '../config/apps';
 import SEOBox from '../components/SEOBox';
+import { findPseoPage } from '../config/pseo';
 import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
 import Testimonials from '../components/Testimonials';
@@ -497,6 +498,7 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
         description={app.seo.description}
         keywords={app.seo.keywords}
         appId={app.id}
+        appName={app.appStoreName || app.name}
         appStoreUrl={app.appStoreUrl}
         appCategory={app.seoApplicationCategory}
         aggregateRating={app.aggregateRating}
@@ -532,14 +534,14 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
           <div style={{ position: 'absolute', bottom: '8%', right: '4%', width: 240, height: 240, borderRadius: '50%', background: `${MOOD_FILL[1]}38`, filter: 'blur(50px)', pointerEvents: 'none' }}/>
 
           <div style={{ position: 'relative', zIndex: 1, maxWidth: 680 }}>
-            <Accent size={20} style={{ display: 'block', marginBottom: 18 }}>✦ a morning journal</Accent>
+            <Accent size={20} style={{ display: 'block', marginBottom: 18 }}>✦ reflect & manifest</Accent>
 
             <h1 style={{ fontFamily: display, fontWeight: 700, fontSize: 'clamp(2.4rem,5.5vw,4rem)', lineHeight: 1.1, marginBottom: 20 }}>
               <span style={{ display: 'block', color: T.rust }}>Journal first.</span>
               <span style={{ display: 'block', color: T.sage }}>Then your apps unlock.</span>
             </h1>
             <p style={{ fontFamily: ui, fontSize: 'clamp(1rem,2vw,1.2rem)', color: T.inkSoft, lineHeight: 1.7, marginBottom: 28, maxWidth: 480, margin: '0 auto 28px' }}>
-              Pick your mood. Write to a genuinely blank page — no prompts, no rules. Say a few things to yourself. Then your morning is yours.
+              Pick your mood. Write freely to empty your head. Note what you're grateful for — and what you're manifesting. Then your morning is yours.
             </p>
 
             {/* Rating badge */}
@@ -589,11 +591,11 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
             className="hide-scrollbar">
             <div style={{ display: 'flex', gap: 16, width: 'max-content', margin: '0 auto', padding: '20px 24px 0', scrollSnapType: 'x mandatory' }}>
               {[
-                { src: '/honestly/screenshots/01.png', alt: 'Reclaim your mornings — apps stay asleep until you write', rotate: '-3deg', mt: 0 },
-                { src: '/honestly/screenshots/02.png', alt: 'Journal first, then your apps unlock — Home screen', rotate: '1.5deg', mt: 20 },
-                { src: '/honestly/screenshots/03.png', alt: 'Remember your best mornings — entry detail', rotate: '-2deg', mt: 8 },
-                { src: '/honestly/screenshots/04.png', alt: 'A little encouragement every day — Lock Screen affirmation', rotate: '2.5deg', mt: 16 },
-                { src: '/honestly/screenshots/05.png', alt: 'See your progress — mood calendar', rotate: '-1deg', mt: 4 },
+                { src: '/honestly/screenshots/01.webp', alt: 'Reclaim your mornings — apps locked, reflection, gratitude and intention', rotate: '-3deg', mt: 0 },
+                { src: '/honestly/screenshots/02.webp', alt: 'Journal first, then your apps unlock — Home screen', rotate: '1.5deg', mt: 20 },
+                { src: '/honestly/screenshots/03.webp', alt: 'Remember your best mornings — entry detail', rotate: '-2deg', mt: 8 },
+                { src: '/honestly/screenshots/04.webp', alt: 'A little encouragement every day — Lock Screen affirmation', rotate: '2.5deg', mt: 16 },
+                { src: '/honestly/screenshots/05.webp', alt: 'See your progress — mood calendar', rotate: '-1deg', mt: 4 },
               ].map(({ src, alt, rotate, mt }) => (
                 <div key={src} className="hon-shot" style={{ flexShrink: 0, scrollSnapAlign: 'center', transform: `rotate(${rotate})`, marginTop: mt }}>
                   <div style={{ width: 220, height: 478, borderRadius: 24, overflow: 'hidden', border, boxShadow: softShadow }}>
@@ -614,8 +616,8 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px,1fr))', gap: 20 }}>
               {[
                 { num: '01', title: 'How are you, really?', desc: 'Happy, Confused, Sad, Awful, or Cry — tap what fits, before the day has an opinion.', bg: MOOD_FILL[0], face: <MoodFace mood={0} size={56} expressive/> },
-                { num: '02', title: 'Empty your head', desc: 'No prompts, no rotating questions. A genuinely blank page — write whatever’s actually there.', bg: MOOD_FILL[1], face: <span style={{ fontSize: 40, lineHeight: 1 }}>✍️</span> },
-                { num: '03', title: 'Affirm yourself', desc: 'Say a few things to yourself, in your own words. They’ll echo back to you later.', bg: MOOD_FILL[4], face: <SunMark size={48}/> },
+                { num: '02', title: 'Empty your head', desc: 'A free-write to clear the static — plus optional reflection and shadow-work prompts when you want to go deeper.', bg: MOOD_FILL[1], face: <span style={{ fontSize: 40, lineHeight: 1 }}>✍️</span> },
+                { num: '03', title: 'Gratitude & manifest', desc: 'Anchor what matters and write what you\'re calling in — your own words. They\'ll echo back to you later.', bg: MOOD_FILL[4], face: <SunMark size={48}/> },
               ].map(({ num, title, desc, bg, face }) => (
                 <Card key={num} style={{ padding: 28, position: 'relative', overflow: 'hidden' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 6, backgroundColor: bg, borderRadius: '22px 22px 0 0' }}/>
@@ -631,7 +633,7 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
 
         {/* ── BANNER ── */}
         <div style={{ borderTop: border, borderBottom: border, backgroundColor: T.amber, padding: '14px 24px', textAlign: 'center' }}>
-          <Accent size={15} color="rgba(255,255,255,0.94)">✦ &nbsp; No prompts. No stock quotes. Just your own words, before the noise. &nbsp; ✦</Accent>
+          <Accent size={15} color="rgba(255,255,255,0.94)">✦ &nbsp; No stock quotes. Your own words, before the noise — reflect, be grateful, manifest. &nbsp; ✦</Accent>
         </div>
 
         {/* ── AFFIRMATIONS ── */}
@@ -641,7 +643,7 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
               <Accent size={18} style={{ display: 'block', marginBottom: 10 }}>✦ your own words, echoed back</Accent>
               <H2 style={{ marginBottom: 16 }}>Affirmations that actually stick.</H2>
               <p style={{ color: T.inkSoft, fontSize: 16, lineHeight: 1.7, marginBottom: 24, fontFamily: ui }}>
-                Say up to five things to yourself each morning — not a stock quote, your own words. They resurface later on your Lock Screen and widgets, when you need the reminder most.
+                Write what you're grateful for and what you're manifesting each morning — not a stock quote, your own words. They resurface later on your Lock Screen and widgets, when you need the reminder most.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {[
@@ -685,7 +687,7 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
             <Accent size={20} style={{ display: 'block', marginBottom: 10 }}>your mornings, all told</Accent>
             <H2 style={{ marginBottom: 12 }}>Every morning, every mood, in one place.</H2>
             <p style={{ color: T.inkSoft, fontSize: 16, lineHeight: 1.7, maxWidth: 520, marginBottom: 40, fontFamily: ui }}>
-              A day streak that keeps you honest, a month-at-a-glance mood calendar, and a searchable archive of every page you've ever written.
+              A day streak that keeps you honest, a Sprout that grows the more you show up, and — with Premium — a month-at-a-glance mood calendar and archive of every page you've written.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px,1fr))', gap: 20, marginBottom: 20 }}>
@@ -807,9 +809,9 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
             <div style={{ maxWidth: 560, marginBottom: 40 }}>
               <Accent size={18} style={{ display: 'block', marginBottom: 10 }}>✦ the gate — try it</Accent>
-              <H2 style={{ marginBottom: 16 }}>Apps stay asleep<br/>until you've written.</H2>
+              <H2 style={{ marginBottom: 16 }}>Apps stay locked<br/>until you've written.</H2>
               <p style={{ color: T.inkSoft, fontSize: 16, lineHeight: 1.7, fontFamily: ui }}>
-                Every morning from 4 AM, Honestly keeps your chosen apps — Instagram, TikTok, X, whatever pulls you in — asleep via iOS Screen Time until your page is done. Honestly is only ever shown opaque tokens, never which apps you picked.
+                With Premium, Honestly locks your chosen apps — Instagram, TikTok, X, whatever pulls you in — on your schedule with hard Screen Time blocking. No workarounds, no snoozing, until your page is done. Honestly is only ever shown opaque tokens, never which apps you picked.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: 48, alignItems: 'center' }}>
@@ -853,12 +855,25 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
               <Accent size={18} style={{ display: 'block', marginBottom: 10 }}>✦ questions</Accent>
               <H2 style={{ marginBottom: 40 }}>Common questions</H2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                {app.marketing.faqs.map(faq => (
-                  <Card key={faq.question} style={{ padding: '20px 24px' }}>
-                    <p style={{ fontFamily: display, fontWeight: 700, fontSize: 16, color: T.ink, marginBottom: 8 }}>{faq.question}</p>
-                    <p style={{ color: T.inkSoft, fontSize: 15, lineHeight: 1.65, fontFamily: ui }}>{faq.answer}</p>
-                  </Card>
-                ))}
+                {app.marketing.faqs.map(faq => {
+                  const learnMore = faq.learnMoreSlug ? findPseoPage(app.id, faq.learnMoreSlug) : undefined;
+                  return (
+                    <Card key={faq.question} style={{ padding: '20px 24px' }}>
+                      <p style={{ fontFamily: display, fontWeight: 700, fontSize: 16, color: T.ink, marginBottom: 8 }}>{faq.question}</p>
+                      <p style={{ color: T.inkSoft, fontSize: 15, lineHeight: 1.65, fontFamily: ui }}>
+                        {faq.answer}
+                        {learnMore && (
+                          <>
+                            {' '}
+                            <Link to={`/${app.id}/${learnMore.type}/${learnMore.slug}`} style={{ color: T.amberDeep, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>
+                              Learn more →
+                            </Link>
+                          </>
+                        )}
+                      </p>
+                    </Card>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -878,7 +893,7 @@ const HonestlyLanding: React.FC<Props> = ({ app, section }) => {
               Under three minutes.<br/>Before the scroll. Before the noise.
             </h2>
             <p style={{ color: T.inkSoft, fontSize: 17, marginBottom: 12, maxWidth: 360, margin: '0 auto 12px', fontFamily: ui }}>
-              Your apps unlock the moment your page is done.
+              Reflect, be grateful, manifest — and with Premium, your apps unlock the moment your page is done.
             </p>
             <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 24 }}>
               <img src="/appstore.png" alt="Download on App Store" style={{ height: 56 }}/>

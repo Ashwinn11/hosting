@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, CheckCircle, Utensils, ShieldCheck, Check, X } from 'lucide-react';
 import type { AppConfig } from '../config/apps';
+import { findPseoPage } from '../config/pseo';
 import SEOBox from '../components/SEOBox';
 import GuidesGrid from '../components/GuidesGrid';
 import AppLayout from '../components/AppLayout';
@@ -36,6 +37,17 @@ const BODY     = '"Hanken Grotesk", sans-serif';
 // The app's motion table (theme.ts): durations 180/280/440ms + spring presets.
 const SNAPPY = rnSpring(220, 22);
 const BOUNCY = rnSpring(180, 12);
+
+// Alt text for app.marketing.screenshots, in order.
+const SCREENSHOT_ALTS = [
+  "GutPal home — plan gut-safe meals in minutes with streak and today's recipe",
+  'Gut-friendly recipe detail with ingredients, benefits and steps',
+  'Pantry organized by produce, fruit and protein',
+  'Cookbook of saved gut-safe recipes',
+  'Restaurant directory for gut-safe dining',
+  'Scan a restaurant menu — what to order and what to skip',
+  'Personalized gut profile with conditions and triggers',
+];
 
 const marqueeStyle = `
   @keyframes marquee {
@@ -445,6 +457,7 @@ const GutPalLanding: React.FC<Props> = ({ app, section }) => {
         faqs={app.marketing.faqs}
         appNumericId={app.appNumericId}
         screenshots={app.marketing.screenshots}
+        appName={app.appStoreName || app.name}
       />
 
       {/* Nav */}
@@ -531,7 +544,7 @@ const GutPalLanding: React.FC<Props> = ({ app, section }) => {
               {app.marketing.screenshots.map((src, i) => (
                 <div key={i} style={{ flexShrink: 0, scrollSnapAlign: 'start' }}>
                   <div style={{ width: 240, height: 520, borderRadius: 20, overflow: 'hidden', border: `1px solid ${BORDER}`, boxShadow: `0 8px 24px rgba(20,20,19,0.08)` }}>
-                    <img src={src} alt={`GutPal Screenshot ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+                    <img src={src} alt={SCREENSHOT_ALTS[i] || `GutPal screenshot ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
                   </div>
                 </div>
               ))}
@@ -644,15 +657,28 @@ const GutPalLanding: React.FC<Props> = ({ app, section }) => {
               <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: TEXT3, marginBottom: 12 }}>Common questions</p>
               <h2 style={{ fontFamily: HEADING, fontSize: 'clamp(1.8rem,3vw,2.4rem)', fontWeight: 800, color: TEXT, marginBottom: 40 }}>Everything you need to know.</h2>
               <div>
-                {app.marketing.faqs.map(({ question, answer }) => (
-                  <details key={question} style={{ borderTop: `1px solid ${BORDER}`, padding: '20px 0' }}>
-                    <summary style={{ fontFamily: BODY, fontWeight: 600, fontSize: 15, color: TEXT, cursor: 'pointer', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      {question}
-                      <span style={{ color: ACCENT, fontSize: 18, marginLeft: 12, flexShrink: 0 }}>+</span>
-                    </summary>
-                    <p style={{ marginTop: 12, fontSize: 14, lineHeight: 1.7, color: TEXT2 }}>{answer}</p>
-                  </details>
-                ))}
+                {app.marketing.faqs.map(({ question, answer, learnMoreSlug }) => {
+                  const learnMore = learnMoreSlug ? findPseoPage(app.id, learnMoreSlug) : undefined;
+                  return (
+                    <details key={question} style={{ borderTop: `1px solid ${BORDER}`, padding: '20px 0' }}>
+                      <summary style={{ fontFamily: BODY, fontWeight: 600, fontSize: 15, color: TEXT, cursor: 'pointer', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        {question}
+                        <span style={{ color: ACCENT, fontSize: 18, marginLeft: 12, flexShrink: 0 }}>+</span>
+                      </summary>
+                      <p style={{ marginTop: 12, fontSize: 14, lineHeight: 1.7, color: TEXT2 }}>
+                        {answer}
+                        {learnMore && (
+                          <>
+                            {' '}
+                            <Link to={`/${app.id}/${learnMore.type}/${learnMore.slug}`} style={{ color: ACCENT, fontWeight: 600, textDecoration: 'none' }}>
+                              Learn more →
+                            </Link>
+                          </>
+                        )}
+                      </p>
+                    </details>
+                  );
+                })}
               </div>
             </div>
           </section>

@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { AppConfig } from '../config/apps';
+import { findPseoPage } from '../config/pseo';
+import GuidesGrid from '../components/GuidesGrid';
 import { ShaderCanvas } from '../lib/ShaderCanvas';
 import { ConfettiBurst } from '../lib/Confetti';
 import { swiftSpring, springTransition } from '../lib/springs';
@@ -639,6 +641,7 @@ const Her75Landing: React.FC<Props> = ({ app, section }) => {
   const heroRef = useRef<HTMLElement | null>(null);
 
   const [compareRef, compareStyle] = useReveal<HTMLDivElement>();
+  const [shotsHeadRef, shotsHeadStyle] = useReveal<HTMLDivElement>();
   const [tracksHeadRef, tracksHeadStyle] = useReveal<HTMLDivElement>();
   const [featsHeadRef, featsHeadStyle] = useReveal<HTMLDivElement>();
   const [storyRef, storyStyle] = useReveal<HTMLDivElement>();
@@ -723,6 +726,33 @@ const Her75Landing: React.FC<Props> = ({ app, section }) => {
                   <p style={{ fontFamily: SERIF, fontSize: 21, fontWeight: 600, color: INK, margin: 0, lineHeight: 1.25 }}>{c.us}</p>
                 </div>
               ))}
+            </div>
+          </section>
+        )}
+
+        {/* Screenshots — real frames from the app */}
+        {m.screenshots && m.screenshots.length > 0 && (
+          <section className="her-pad" style={{ maxWidth: 1180, margin: '0 auto', padding: '96px 40px 0' }}>
+            <div ref={shotsHeadRef} style={{ textAlign: 'center', marginBottom: 44, ...shotsHeadStyle }}>
+              <Eyebrow color={MIST} center>Inside the app</Eyebrow>
+              <h2 style={{ fontFamily: SERIF, fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', fontWeight: 600, margin: '12px 0 0', lineHeight: 1.05 }}>
+                Your day, on <span style={{ color: CLAY }}>paper</span>.
+              </h2>
+            </div>
+            {/* One screenshot centers; more become a snap-scrolling rail (max-content + auto margins). */}
+            <div className="hide-scrollbar" style={{ overflowX: 'auto', scrollSnapType: 'x proximity', padding: '6px 6px 14px', margin: '0 -6px' }}>
+              <div style={{ display: 'flex', gap: 26, width: 'max-content', margin: '0 auto' }}>
+                {m.screenshots.map((src, i) => (
+                  <div key={src} style={{ width: 262, flexShrink: 0, scrollSnapAlign: 'center', borderRadius: 46, padding: 10, background: INK, boxShadow: '0 32px 64px rgba(43,36,32,0.20)' }}>
+                    <img
+                      src={src}
+                      alt={i === 0 ? 'Her 75 — day one missions complete: workout, water, reading, clean eating' : `Her 75 app screenshot ${i + 1}`}
+                      loading="lazy"
+                      style={{ display: 'block', width: '100%', borderRadius: 37, background: PAPER }}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         )}
@@ -825,26 +855,43 @@ const Her75Landing: React.FC<Props> = ({ app, section }) => {
               <Eyebrow center>Questions</Eyebrow>
               <h2 style={{ fontFamily: SERIF, fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 600, margin: '12px 0 0' }}>Good to know</h2>
             </div>
-            {m.faqs.map((f, i) => (
-              <details
-                key={i} className="her-faq" open={openFaq === i}
-                onClick={(e) => { e.preventDefault(); setOpenFaq(openFaq === i ? null : i); }}
-                style={{ borderBottom: `1px solid ${RING}`, padding: '20px 4px', cursor: 'pointer' }}
-              >
-                <summary style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', listStyle: 'none', fontFamily: SANS, fontWeight: 600, fontSize: 17, color: INK, gap: 14 }}>
-                  {f.question}
-                  <svg viewBox="0 0 24 24" width={18} height={18} fill="none" stroke={CLAY} strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round"
-                       style={{ transition: springTransition(SNAPPY, 'transform'), transform: openFaq === i ? 'rotate(180deg)' : 'none', flexShrink: 0 }}>
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </summary>
-                <div style={{ display: 'grid', gridTemplateRows: openFaq === i ? '1fr' : '0fr', transition: 'grid-template-rows 0.35s cubic-bezier(0.22,1,0.36,1)' }}>
-                  <div style={{ overflow: 'hidden' }}>
-                    <p style={{ fontSize: 15, lineHeight: 1.65, color: INK2, margin: '14px 0 0' }}>{f.answer}</p>
+            {m.faqs.map((f, i) => {
+              const learnMore = f.learnMoreSlug ? findPseoPage(app.id, f.learnMoreSlug) : undefined;
+              return (
+                <details
+                  key={i} className="her-faq" open={openFaq === i}
+                  onClick={(e) => { e.preventDefault(); setOpenFaq(openFaq === i ? null : i); }}
+                  style={{ borderBottom: `1px solid ${RING}`, padding: '20px 4px', cursor: 'pointer' }}
+                >
+                  <summary style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', listStyle: 'none', fontFamily: SANS, fontWeight: 600, fontSize: 17, color: INK, gap: 14 }}>
+                    {f.question}
+                    <svg viewBox="0 0 24 24" width={18} height={18} fill="none" stroke={CLAY} strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round"
+                         style={{ transition: springTransition(SNAPPY, 'transform'), transform: openFaq === i ? 'rotate(180deg)' : 'none', flexShrink: 0 }}>
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </summary>
+                  <div style={{ display: 'grid', gridTemplateRows: openFaq === i ? '1fr' : '0fr', transition: 'grid-template-rows 0.35s cubic-bezier(0.22,1,0.36,1)' }}>
+                    <div style={{ overflow: 'hidden' }}>
+                      <p style={{ fontSize: 15, lineHeight: 1.65, color: INK2, margin: '14px 0 0' }}>
+                        {f.answer}
+                        {learnMore && (
+                          <>
+                            {' '}
+                            <Link
+                              to={`/${app.id}/${learnMore.type}/${learnMore.slug}`}
+                              onClick={(e) => e.stopPropagation()}
+                              style={{ color: CLAY, fontWeight: 600, textDecoration: 'none' }}
+                            >
+                              Learn more →
+                            </Link>
+                          </>
+                        )}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </details>
-            ))}
+                </details>
+              );
+            })}
           </section>
         )}
 
@@ -861,6 +908,9 @@ const Her75Landing: React.FC<Props> = ({ app, section }) => {
             </a>
           </div>
         </section>
+
+        {/* pSEO internal links — renders nothing until her75 guide pages ship */}
+        <GuidesGrid app={app} heading="75-Day Challenge Guides" />
 
         {/* Footer */}
         <footer style={{ borderTop: `1px solid ${RING}`, backgroundColor: VELLUM }}>
