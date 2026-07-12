@@ -453,6 +453,66 @@ Common questions:
       grain: 0.03
     }
   },
+
+  {
+    id: 'snipsy',
+    name: 'Snipsy',
+    category: 'Photo & Video',
+    seoApplicationCategory: 'PhotographyApplication',
+    tagline: 'Turn your photos into collectible stamps & stickers',
+    platforms: ['ios'],
+    description: 'Point your camera at anything — Snipsy lifts the subject, die-cuts it, and turns it into a collectible postage stamp or sticker. Choose from 10 hand-crafted paper dressings. Fully offline, no accounts.',
+    appStoreUrl: 'https://apps.apple.com/app/snipsy/id0000000000',
+    downloadUrl: 'https://apps.apple.com/app/snipsy/id0000000000',
+    pricingNote: 'Free · iOS',
+    comparisonHighlights: [
+      { them: 'Sticker apps give you clip art.', us: 'Your own photos, die-cut by Vision.' },
+      { them: 'Photo editors bury the fun in sliders.', us: 'One tap: camera → stamp → collection.' },
+      { them: 'Cloud-based apps need accounts.', us: 'Fully offline. Nothing ever leaves your phone.' },
+    ],
+    seo: {
+      title: 'Snipsy | Photo Stamps & Stickers — Die-Cut Camera App',
+      description: 'Snipsy turns any photo into a collectible postage stamp or die-cut sticker. 10 hand-crafted paper variants, iMessage stickers, fully offline. Free on iOS.',
+      keywords: ['photo stamp app', 'sticker maker', 'die cut sticker', 'photo sticker app', 'collectible stamp', 'postage stamp art', 'camera sticker app', 'imessage sticker maker', 'photo art app', 'stamp collection app']
+    },
+    marketing: {
+      headline: 'Every photo deserves to be kept.',
+      subheadline: 'Point your camera. Snipsy lifts the subject, die-cuts it, and dresses it as a collectible stamp or sticker — in one gesture.',
+      problem: 'You take a hundred photos a week. They vanish into the camera roll, unsorted and unseen. The coffee, the concert, the little thing that made you smile — all gone in the scroll.',
+      agitation: 'Photo editors want you to adjust fifteen sliders. Sticker apps hand you someone else\'s clip art. Nothing turns your actual moment into something you\'d want to keep, hold, and share.',
+      solution: 'Snipsy lifts the subject from your photo with on-device Vision, die-cuts it, and dresses it as a collectible postage stamp or bare sticker. Pick from 10 paper variants — tinted, ivory, airmail, foil, night, and more — then drop it in your album or send it in iMessage. One tap, your moment, kept.',
+      benefits: [
+        { title: 'Die-Cut in a Tap', description: 'Apple Vision lifts the subject from your photo and cuts it out — clean edges, no manual selection, right on your device.', icon: 'Scissors' },
+        { title: '10 Stamp Variants', description: 'Tinted, ivory, ink, airmail, commemorative, foil, revenue, botanical, night, sweetheart — each a different paper world for your subject.', icon: 'Stamp' },
+        { title: 'Stickers in iMessage', description: 'Every sticker rides in the Messages drawer. Peel and place them in conversations, exactly like Apple\'s built-in stickers.', icon: 'MessageCircle' },
+        { title: 'Stamp from Anywhere', description: 'The share extension lets you turn any photo from any app into a stamp — no need to open Snipsy first.', icon: 'Share2' },
+        { title: 'Your Album', description: 'Every stamp is numbered and dated. Your album is a growing collection of the moments you chose to keep.', icon: 'BookOpen' },
+        { title: 'Fully Offline', description: 'No accounts, no server, no analytics, no network requests. Everything lives on your device and nowhere else.', icon: 'WifiOff' },
+      ],
+      faqs: [
+        { question: 'What is Snipsy?', answer: 'Snipsy is a camera app that turns your photos into collectible postage stamps and die-cut stickers. Point at anything, tap the shutter — Vision lifts the subject, and you choose from 10 hand-crafted paper variants to dress it.' },
+        { question: 'How does the die-cut work?', answer: 'Snipsy uses Apple\'s on-device Vision framework to find and lift the subject from your photo. The cut happens entirely on your device — no upload, no cloud processing.' },
+        { question: 'What are stamp variants?', answer: 'Each variant is a different paper world for your subject: tinted uses your photo\'s own palette, ivory is an heirloom cameo, airmail is the classic chevron border, foil adds a holographic sheen, night wraps it in neon — 10 in total.' },
+        { question: 'Can I use my stamps as iMessage stickers?', answer: 'Yes. Every sticker you make appears in the Snipsy drawer inside Messages. Peel and place them in any conversation.' },
+        { question: 'Does Snipsy need an internet connection?', answer: 'No. Snipsy is fully offline — no accounts, no server, no analytics, no network requests. Your stamps live on your device only.' },
+        { question: 'Is Snipsy free?', answer: 'Snipsy is free to download. A one-time lifetime purchase unlocks all 10 stamp variants — no subscription, yours forever.' },
+        { question: 'Can I stamp photos from other apps?', answer: 'Yes. The share extension lets you select any photo from Photos, Safari, or any app and stamp it directly — Snipsy opens, cuts, and dresses it.' },
+      ]
+    },
+    legal: {
+      privacyPolicy: `Effective July 10, 2026\n\nThe short version\nEverything stays on your iPhone. Snipsy has no accounts, no analytics, no ads, no tracking, and no server. We never see your photos — or anything else.\n\n1. Information We Collect\nNone. The app does not collect, transmit, sell, or share any personal information. It makes no network requests.\n\n2. Camera\nSnipsy asks for camera access so you can take photos inside the app. Frames from the camera are processed and displayed on your device only.\n\n3. Photos and Processing\nWhen you capture a photo, Apple's on-device Vision framework finds the subject and the app renders your stamp. The photo, the cut-out subject, and the finished stamp are stored only in the app's private storage on your device. Nothing is uploaded anywhere.\n\n4. Sharing and Stickers\nSharing a stamp or sticker uses the standard iOS share sheet; what happens after you share is controlled by you and the app you share to. Stickers you keep are also made available to Snipsy's Messages sticker extension, stored in the app's private shared container on this device only.\n\n5. Deleting Your Data\nDelete individual stamps from their detail view, or use Settings → Delete All Data to permanently erase every stamp and photo the app has stored. Deleting the app from your device removes everything as well. Deletion is immediate and irreversible.\n\n6. Children\nSnipsy does not collect data from anyone, including children.\n\n7. Changes\nIf this policy ever changes — for example, if a future version adds an online feature — the updated policy will appear here with a new effective date before any such feature is enabled.\n\n8. Contact\nPrivacy questions: ashwinnanbazhagan@gmail.com`,
+      termsOfService: `Effective July 10, 2026\n\n1. Agreement\nBy downloading or using Snipsy ("the app"), you agree to these Terms of Service. If you do not agree, please do not use the app.\n\n2. What Snipsy Is\nSnipsy turns photos you take into collectible stamp artworks that live in an album on your device. The app works entirely offline; it has no accounts, no server, and no social features.\n\n3. License\nYou are granted a personal, non-transferable, non-exclusive license to use the app on Apple devices you own or control, subject to Apple's standard App Store terms (the Licensed Application End User License Agreement).\n\n4. Your Content\nPhotos you capture and the stamps made from them are yours. They are stored only on your device. You are solely responsible for the content you capture and for anything you choose to share out of the app using the system share sheet. Do not use the app to capture or share content that is unlawful or that infringes the rights of others.\n\n5. Our Content\nThe app's design, artwork, typography treatments, animations, and code are the property of the developer and are protected by applicable intellectual-property laws. The stamps you create from your own photos are yours.\n\n6. Acceptable Use\nYou agree not to reverse engineer, resell, or redistribute the app, and not to use it in violation of any applicable law.\n\n7. No Warranty\nThe app is provided "as is" and "as available," without warranties of any kind, express or implied, including fitness for a particular purpose and non-infringement. Subject-detection quality depends on your device and the photo; results may vary.\n\n8. Limitation of Liability\nTo the maximum extent permitted by law, the developer shall not be liable for any indirect, incidental, special, or consequential damages, or for loss of data — including deleted stamps — arising from your use of the app. Deleting the app or using Delete All Data permanently removes your collection; the developer cannot recover it.\n\n9. Changes\nThese terms may be updated from time to time. Material changes will be reflected in the app with an updated effective date. Continued use after a change means you accept the updated terms.\n\n10. Contact\nQuestions about these terms: ashwinnanbazhagan@gmail.com`,
+      support: `For any issues or questions regarding Snipsy, please reach out.\n\nEmail: ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24–48 hours.\n\nCommon questions:\n• Stamps not saving — make sure Snipsy has camera access in iPhone Settings → Privacy → Camera\n• Stickers not in Messages — check that the Snipsy sticker extension is enabled in Messages → Apps\n• Delete everything — go to Settings → Delete All Data in the app`,
+      lastUpdated: 'July 10, 2026'
+    },
+    design: {
+      primary: '#D6503A',
+      bg: '#F8F2E3',
+      fontFamily: 'font-rounded',
+      templateId: 'zen',
+      grain: 0.04
+    }
+  },
 ];
 
 

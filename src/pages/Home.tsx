@@ -23,9 +23,9 @@ const DISPLAY = '"Bricolage Grotesque", "Hanken Grotesk", sans-serif';
 const BODY = '"Hanken Grotesk", sans-serif';
 const MONO = '"DM Mono", monospace';
 
-/* ── The gallery lights — five app accents washing down the wall (GLSL) ──
+/* ── The gallery lights — six app accents washing down the wall (GLSL) ──
    Clay (Her 75) · coral (GutPal) · amber (Honestly) · gold (Masterly) ·
-   sakura (YumeShip), each pool breathing on its own phase, film-grain finish. */
+   sakura (YumeShip) · postal-red (Snipsy), each pool breathing on its own phase. */
 
 const WALL_FRAG = `
 precision mediump float;
@@ -44,17 +44,18 @@ void main() {
 
   vec3 wall = vec3(0.039, 0.039, 0.047);  // #0A0A0C
 
-  vec3 accents[5];
+  vec3 accents[6];
   accents[0] = vec3(0.769, 0.463, 0.353); // clay    — Her 75
   accents[1] = vec3(0.851, 0.467, 0.341); // coral   — GutPal
   accents[2] = vec3(0.961, 0.522, 0.122); // amber   — Honestly
   accents[3] = vec3(0.914, 0.706, 0.298); // gold    — Masterly
   accents[4] = vec3(0.843, 0.478, 0.553); // sakura  — YumeShip
+  accents[5] = vec3(0.839, 0.314, 0.227); // postal  — Snipsy
 
   vec3 col = wall;
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < 6; i++) {
     float fi = float(i);
-    float cx = (fi + 0.5) / 5.0 + sin(t * 0.05 + fi * 1.7) * 0.025;
+    float cx = (fi + 0.5) / 6.0 + sin(t * 0.05 + fi * 1.7) * 0.025;
     float dx = (uv.x - cx) * 2.1;
     float dy = (1.0 - uv.y) * 1.35;         // pools hang from the top edge
     float pool = exp(-(dx * dx + dy * dy) * 3.2);
@@ -357,15 +358,59 @@ const WORLDS: Record<string, World> = {
       <div aria-hidden style={{ position: 'absolute', top: 16, right: 20, fontFamily: '"Cormorant Garamond", Georgia, serif', fontStyle: 'italic', fontSize: 30, fontWeight: 600, color: 'rgba(196,118,90,0.26)' }}>75</div>
     ),
   },
+  snipsy: {
+    cardBg: '#F8F2E3',
+    cardText: '#4A3728',
+    cardText2: 'rgba(74,55,40,0.55)',
+    accent: '#D6503A',
+    fontDisplay: 'system-ui, -apple-system, sans-serif',
+    demo: (
+      <div style={{ marginTop: 20, display: 'flex', alignItems: 'flex-end', gap: 14 }}>
+        {/* Mini stamp that gets a cancellation mark on hover */}
+        <div className="snip-mini-stamp" style={{ position: 'relative', width: 56, height: 72, flexShrink: 0 }}>
+          <svg viewBox="0 0 56 72" width={56} height={72}>
+            {/* Perforated edge via circle clip */}
+            <defs>
+              <clipPath id="snip-mini-perf">
+                <path d="M5,0 Q8,-3 11,0 Q14,-3 17,0 Q20,-3 23,0 Q26,-3 29,0 Q32,-3 35,0 Q38,-3 41,0 Q44,-3 47,0 Q50,-3 53,0 L56,0 Q59,3 56,6 Q59,10 56,14 Q59,18 56,22 Q59,26 56,30 Q59,34 56,38 Q59,42 56,46 Q59,50 56,54 Q59,58 56,62 Q59,66 56,70 L56,72 Q53,75 50,72 Q47,75 44,72 Q41,75 38,72 Q35,75 32,72 Q29,75 26,72 Q23,75 20,72 Q17,75 14,72 Q11,75 8,72 Q5,75 2,72 L0,72 Q-3,69 0,66 Q-3,62 0,58 Q-3,54 0,50 Q-3,46 0,42 Q-3,38 0,34 Q-3,30 0,26 Q-3,22 0,18 Q-3,14 0,10 Q-3,6 0,2 Z" />
+              </clipPath>
+            </defs>
+            <rect x={0} y={0} width={56} height={72} fill="#C4956A" clipPath="url(#snip-mini-perf)" />
+            <rect x={6} y={6} width={44} height={42} rx={2} fill="rgba(34,31,26,0.08)" clipPath="url(#snip-mini-perf)" />
+            {/* Mountain icon */}
+            <g clipPath="url(#snip-mini-perf)" opacity={0.4}>
+              <circle cx={36} cy={16} r={5} fill="#221F1A" opacity={0.3} />
+              <path d="M8,46 L20,24 L28,34 L36,22 L48,46Z" fill="#221F1A" opacity={0.2} />
+            </g>
+            <text x={28} y={60} textAnchor="middle" fontFamily="Georgia, serif" fontWeight={600} fontSize={7} fill="#221F1A" opacity={0.6}>SNIPSY</text>
+            {/* Cancellation mark — draws on hover */}
+            <g className="snip-cancel-mark" opacity={0}>
+              <circle cx={38} cy={22} r={14} fill="none" stroke="#D6503A" strokeWidth={1.2} opacity={0.5} />
+              <line x1={26} y1={16} x2={50} y2={28} stroke="#D6503A" strokeWidth={1} opacity={0.5} />
+              <line x1={26} y1={20} x2={50} y2={32} stroke="#D6503A" strokeWidth={0.8} opacity={0.3} />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <span className="snip-tag" style={{ fontFamily: 'system-ui', fontSize: 9, fontWeight: 700, letterSpacing: 1.5, color: '#D6503A', textTransform: 'uppercase' }}>№ 042</span>
+          <span className="snip-label" style={{ display: 'block', fontFamily: 'Georgia, serif', fontSize: 11, color: 'rgba(74,55,40,0.55)', fontStyle: 'italic', marginTop: 3 }}>tinted edition</span>
+        </div>
+      </div>
+    ),
+    decorators: (
+      <div aria-hidden style={{ position: 'absolute', top: 18, right: 20, width: 28, height: 28, borderRadius: '50%', border: '1.5px solid rgba(214,80,58,0.18)' }} />
+    ),
+  },
 };
 
-// Grid rhythm — 5 apps, 5 cells, asymmetric spans. No empty cells.
+// Grid rhythm — 6 apps, 6 cells, asymmetric spans. No empty cells.
 const LAYOUT: { id: string; cls: string }[] = [
   { id: 'gutpal', cls: 'gc-7 gc-feature' },
   { id: 'masterly', cls: 'gc-5' },
-  { id: 'honestly', cls: 'gc-7 gc-feature' },
-  { id: 'yumeship', cls: 'gc-5' },
-  { id: 'her75', cls: 'gc-12 gc-feature' },
+  { id: 'honestly', cls: 'gc-5' },
+  { id: 'yumeship', cls: 'gc-7 gc-feature' },
+  { id: 'her75', cls: 'gc-7 gc-feature' },
+  { id: 'snipsy', cls: 'gc-5' },
 ];
 
 const PRINCIPLES: [string, string][] = [
@@ -567,6 +612,16 @@ const Home: React.FC = () => {
         .her-day-check path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.4s ease-out 0.8s; }
         .app-card:hover .her-day-check path { stroke-dashoffset: 0; }
 
+        /* Snipsy — cancellation mark appears, stamp number fades in */
+        .snip-cancel-mark { opacity: 0; transition: opacity 0.5s ease 0.2s; }
+        .app-card:hover .snip-cancel-mark { opacity: 1; }
+        .snip-mini-stamp { transition: transform 0.45s cubic-bezier(0.3,1.4,0.4,1); }
+        .app-card:hover .snip-mini-stamp { transform: translateY(-3px) rotate(-2deg); }
+        .snip-tag { opacity: 0; transform: translateY(4px); transition: opacity 0.3s ease 0.3s, transform 0.4s cubic-bezier(0.3,1.4,0.4,1) 0.3s; }
+        .app-card:hover .snip-tag { opacity: 1; transform: translateY(0); }
+        .snip-label { opacity: 0.55; transition: opacity 0.3s ease; }
+        .app-card:hover .snip-label { opacity: 1; }
+
         .nav-link { transition: color 0.2s ease; }
         .nav-link:hover { color: ${CREAM} !important; }
         .soft-link { transition: opacity 0.25s ease, color 0.2s ease; }
@@ -610,7 +665,7 @@ const Home: React.FC = () => {
         <Spotlight />
         <SEOBox
           title="Ashwin Anbazhagan | iOS App Developer & Founder"
-          description="Indie iOS apps for gut health, studying, morning journaling, and fandom. Each one solves one specific problem, precisely."
+          description="Indie iOS apps for gut health, studying, morning journaling, fandom, and photo stamps. Each one solves one specific problem, precisely."
           keywords={['Ashwin Anbazhagan', 'iOS App Developer', 'Indie App Maker', 'SaaS Founder', 'App Developer India']}
         />
 
@@ -667,12 +722,12 @@ const Home: React.FC = () => {
                 </div>
 
                 <h1 style={{ margin: '0 0 32px 0', padding: 0, fontFamily: DISPLAY, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 0.98, fontSize: 'clamp(2.9rem, 5.6vw, 5.4rem)' }}>
-                  <span className="rise h1" style={{ display: 'block', color: CREAM }}>Five iOS apps,</span>
+                  <span className="rise h1" style={{ display: 'block', color: CREAM }}>Six iOS apps,</span>
                   <span className="rise h2" style={{ display: 'block', color: CREAM }}>each for <span style={{ color: GOLD }}>one real problem.</span></span>
                 </h1>
 
                 <p className="rise h3" style={{ fontSize: 16, lineHeight: 1.7, color: MUTE, maxWidth: 460, margin: '0 0 40px 0' }}>
-                  Gut health, studying, morning journaling, fandom. Every app does one thing, and does it precisely.
+                  Gut health, studying, morning journaling, fandom, and photo stamps. Every app does one thing, and does it precisely.
                 </p>
 
                 <MagneticLink href="#works" className="rise h4 cta-pill" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: GOLD, color: '#1A1406', fontFamily: MONO, fontSize: 12.5, fontWeight: 500, letterSpacing: '0.04em', padding: '15px 26px', borderRadius: 999, textDecoration: 'none' }}>
@@ -724,7 +779,7 @@ const Home: React.FC = () => {
           <section id="works" style={{ padding: '110px 0 128px', maxWidth: 1400, margin: '0 auto' }}>
             <div className="pad-x reveal-scroll" style={{ padding: '0 60px 60px 60px', maxWidth: 780 }}>
               <h2 style={{ fontFamily: DISPLAY, fontSize: 'clamp(2rem, 4vw, 3.4rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.02, color: CREAM, margin: '0 0 16px 0' }}>
-                Five apps, five worlds.
+                Six apps, six worlds.
               </h2>
               <p style={{ fontSize: 15.5, lineHeight: 1.65, color: MUTE, margin: 0, maxWidth: 540 }}>
                 Every product gets its own look and voice, built around the person it is for — hover any card and it plays itself. All of them live on iOS, all built solo since 2024.
@@ -770,7 +825,7 @@ const Home: React.FC = () => {
                 Every app starts from a gap that should not exist.
               </h2>
               <p className="reveal-scroll" style={{ fontSize: 17, lineHeight: 1.75, color: 'rgba(237,232,223,0.62)', margin: '0 0 40px 0', maxWidth: '62ch' }}>
-                I build iOS apps for people who went looking for something specific and came back empty. Gut-safe meal plans that actually understand FODMAP. Study blocking that holds. A morning journal that keeps distracting apps asleep until you've written. Each one solves a single thing, then stops.
+                I build iOS apps for people who went looking for something specific and came back empty. Gut-safe meal plans that actually understand FODMAP. Study blocking that holds. A morning journal that keeps distracting apps asleep until you've written. Photos turned into stamps you'd keep forever. Each one solves a single thing, then stops.
               </p>
               <div className="about-actions reveal-scroll" style={{ display: 'flex', gap: 26 }}>
                 <a href="https://twitter.com/shwiinn" target="_blank" rel="noopener noreferrer" className="soft-link" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: MONO, fontSize: 11.5, letterSpacing: '0.1em', color: GOLD, textDecoration: 'none' }}>
