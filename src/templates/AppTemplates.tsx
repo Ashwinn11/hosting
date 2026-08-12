@@ -282,7 +282,7 @@ export const AcademicTemplate: React.FC<TemplateProps> = ({ app, section }) => {
                     <p className="font-handlee text-lg text-[#A44231]/80 leading-relaxed">{app.marketing.agitation}</p>
                  </div>
                  <div className="p-8 bg-[#2D4F1E]/5 border-[3px] border-[#2D4F1E]/20 rounded-[24px]">
-                    <h4 className="font-dm-mono text-[10px] uppercase font-bold text-[#2D4F1E] mb-6 tracking-widest">// The Masterly Solution</h4>
+                    <h4 className="font-dm-mono text-[10px] uppercase font-bold text-[#2D4F1E] mb-6 tracking-widest">// The Solution</h4>
                     <p className="font-handlee text-lg text-[#2D4F1E]/80 leading-relaxed">{app.marketing.solution}</p>
                  </div>
               </div>

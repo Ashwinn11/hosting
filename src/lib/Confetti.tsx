@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 
 /**
- * Two-corner confetti poppers — a 1:1 port of Her 75's `ConfettiBurst`
- * (Sources/Features/TodayView.swift): same launch geometry, ballistic flight,
- * flutter, tumble (width collapsing through 0 reads as a 3D flip), lifetime and
- * fade. Deterministic pseudo-random via the same sin-hash, so a given piece
- * flies the same path every frame.
+ * Two-corner confetti poppers: launch geometry, ballistic flight, flutter,
+ * tumble (width collapsing through 0 reads as a 3D flip), lifetime and fade.
+ * Deterministic pseudo-random via a sin-hash, so a given piece flies the
+ * same path every frame.
  *
  * Velocities/gravity are scaled by canvasHeight/850 so the arc shape matches
  * the app regardless of the section's size.

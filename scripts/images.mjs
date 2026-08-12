@@ -22,11 +22,9 @@ fs.mkdirSync(OG_DIR, { recursive: true });
 // `headline` is the emotional hook (#18) — the OG image is the thumbnail (#5),
 // so it leads with the hook, NOT the SEO category tagline.
 const apps = [
-  { id: 'gutpal',    name: 'GutPal',      headline: 'Know what to eat. Without wrecking your gut.', primary: '#d97757', bg: '#f4ede2' },
-  { id: 'masterly',  name: 'Masterly AI', headline: 'Your phone stays locked until you pass the quiz.', primary: '#2D4F1E', bg: '#FDFBF7' },
   { id: 'honestly',  name: 'Honestly',    headline: 'Journal first. Then your apps unlock.', primary: '#F5851F', bg: '#FAF8F5' },
   { id: 'yumeship',  name: 'YumeShip',    headline: 'A quiet place for the ones you love from afar.', primary: '#9b4f6e', bg: '#FDF4F8' },
-  { id: 'her75',     name: 'Her 75',      headline: 'Become her — in 75 days.', primary: '#C4765A', bg: '#FAF6EF' },
+  { id: 'snipsy',    name: 'Snipsy',      headline: 'Every photo deserves to be kept.', primary: '#D6503A', bg: '#F8F2E3' },
 ];
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

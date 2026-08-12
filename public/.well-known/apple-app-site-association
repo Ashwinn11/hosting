@@ -2,14 +2,10 @@
   "applinks": {
     "details": [{
       "appIDs": [
-        "PVQK77DQWL.com.masterly.app",
-        "PVQK77DQWL.com.foodhabit.app",
         "PVQK77DQWL.com.ashwinn.faceaura",
         "PVQK77DQWL.com.morning-journal.app"
       ],
       "components": [
-        { "/": "/masterly/*" },
-        { "/": "/gutpal/*" },
         { "/": "/honestly/*" }
       ]
     }]

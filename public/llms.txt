@@ -1,13 +1,11 @@
 # Briefly.live — iOS App Portfolio by Ashwin Anbazhagan
 
-> Five indie iOS apps across gut health, studying, journaling & manifestation, women's 75-day challenges, and fandom. Each app solves one specific problem precisely. All built by Ashwin Anbazhagan.
+> Three indie iOS apps: morning journaling, a private fandom journal, and photo stamps & stickers. Each app solves one specific problem precisely. All built by Ashwin Anbazhagan.
 
 ## Apps
-- [GutPal — IBS Meal Planner](https://briefly.live/gutpal): AI gut-health meal planner for IBS, IBD, SIBO, Crohn's, Colitis, Celiac, GERD, and low-FODMAP diets. Tell it what's in your kitchen and it builds a week of gut-safe meals, aligned with Monash FODMAP research. Scans restaurant menus and says what to order and what to skip.
-- [Masterly — App Blocker & Study](https://briefly.live/masterly): Distracting apps lock up to 3 times a day and only unlock when you pass short quizzes generated from your own notes or PDFs. Pro adds AI flashcards with spaced repetition, AI study notes, focus heatmaps, and day-by-day exam planning.
 - [Honestly — Reflect & Manifest](https://briefly.live/honestly): A free journaling ritual — mood check, free writing, gratitude & manifest — with optional reflection and shadow-work prompts. A Sprout plant grows as your streak builds. Premium adds scheduled app blocking, iCloud sync, and full journal history.
 - [YumeShip — Anime & Kpop Canon](https://briefly.live/yumeship): A private, on-device journal for yumeshippers. Write headcanons, scenarios, love letters, and what-ifs about your anime, otome, manga, or kpop F/O. Notifications and messages from your F/O, ship charts, incorrect quotes. Nothing leaves your device.
-- [Her 75](https://briefly.live/her75): A 75-day challenge tracker made for women. Choose your hard — 75 Soft, Glow Up, Sugar-Free, Mental Wellness, or the full 75 — log daily missions with proof photos, keep your streak with missed-day recovery, and finish with friends.
+- [Snipsy — Photo Stamps & Stickers](https://briefly.live/snipsy): Turns any photo into a collectible postage stamp or die-cut sticker using on-device Vision. 10 hand-crafted paper variants, iMessage stickers, fully offline.
 
 ## Guides & Comparisons
 - Each app has in-depth guide and comparison pages at /{app}/guide/{slug} and /{app}/compare/{slug}, covering specific use cases, conditions, and competitor comparisons.

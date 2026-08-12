@@ -1,13 +1,10 @@
-/menucheck /gutpal 301
-/menucheck/* /gutpal/:splat 301
+/menucheck / 301
+/menucheck/* / 301
 /mascotmaker/* https://mascotmaker.io/:splat 301
 
-# Retired pSEO pages (2026-07): scanner-era liability pages -> app landing
-/gutpal/guide/best-food-allergy-app /gutpal 301
-/gutpal/guide/nut-allergy-peanut-tree-nut /gutpal 301
-/gutpal/guide/diabetes-friendly-restaurant-app /gutpal 301
-# merged into the rewritten restaurant guide
-/gutpal/guide/ibs-food-scanner-restaurants /gutpal/guide/ibs-safe-restaurant-eating 301
+# Retired gutpal app (2026-08): domain retired entirely -> home
+/gutpal/* / 301
+/gutpal / 301
 
 # Retired yumeship couples-era + fabricated-community pages
 /yumeship/guide/long-distance-relationship-communication-tips /yumeship 301

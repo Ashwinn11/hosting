@@ -1,7 +1,7 @@
 {
-    "name": "Briefly — iOS Apps for Health, Studying & Wellness",
+    "name": "Briefly — iOS Apps for Journaling, Fandom & Photos",
     "short_name": "Briefly",
-    "description": "Five indie iOS apps by Ashwin Anbazhagan: gut-health meal planning, AI study discipline, morning journaling, 75-day self-improvement challenges, and fandom journaling.",
+    "description": "Three indie iOS apps by Ashwin Anbazhagan: morning journaling, a private fandom journal, and photo stamps & stickers.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#0f172a",
@@ -16,11 +16,9 @@
         }
     ],
     "categories": [
-        "health",
-        "education",
         "lifestyle",
-        "productivity",
-        "entertainment"
+        "entertainment",
+        "photo"
     ],
     "lang": "en-US",
     "dir": "ltr"

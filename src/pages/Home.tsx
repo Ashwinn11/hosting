@@ -6,8 +6,8 @@ import SEOBox from '../components/SEOBox';
 import { ShaderCanvas } from '../lib/ShaderCanvas';
 
 /* ──────────────────────────────────────────────────────────────────────────
-   BRIEFLY — indie iOS studio. A dark gallery wall at night: five works hang
-   under five colored lights (each app's true accent), and every world card
+   BRIEFLY — indie iOS studio. A dark gallery wall at night: three works hang
+   under three colored lights (each app's true accent), and every world card
    is alive — hover one and its app plays a tiny, truthful demo of itself.
    Shell type: Bricolage Grotesque display · Hanken Grotesk body · DM Mono meta.
    ────────────────────────────────────────────────────────────────────────── */
@@ -23,9 +23,9 @@ const DISPLAY = '"Bricolage Grotesque", "Hanken Grotesk", sans-serif';
 const BODY = '"Hanken Grotesk", sans-serif';
 const MONO = '"DM Mono", monospace';
 
-/* ── The gallery lights — six app accents washing down the wall (GLSL) ──
-   Clay (Her 75) · coral (GutPal) · amber (Honestly) · gold (Masterly) ·
-   sakura (YumeShip) · postal-red (Snipsy), each pool breathing on its own phase. */
+/* ── The gallery lights — three app accents washing down the wall (GLSL) ──
+   Amber (Honestly) · sakura (YumeShip) · postal-red (Snipsy), each pool
+   breathing on its own phase. */
 
 const WALL_FRAG = `
 precision mediump float;
@@ -44,18 +44,15 @@ void main() {
 
   vec3 wall = vec3(0.039, 0.039, 0.047);  // #0A0A0C
 
-  vec3 accents[6];
-  accents[0] = vec3(0.769, 0.463, 0.353); // clay    — Her 75
-  accents[1] = vec3(0.851, 0.467, 0.341); // coral   — GutPal
-  accents[2] = vec3(0.961, 0.522, 0.122); // amber   — Honestly
-  accents[3] = vec3(0.914, 0.706, 0.298); // gold    — Masterly
-  accents[4] = vec3(0.843, 0.478, 0.553); // sakura  — YumeShip
-  accents[5] = vec3(0.839, 0.314, 0.227); // postal  — Snipsy
+  vec3 accents[3];
+  accents[0] = vec3(0.961, 0.522, 0.122); // amber   — Honestly
+  accents[1] = vec3(0.843, 0.478, 0.553); // sakura  — YumeShip
+  accents[2] = vec3(0.839, 0.314, 0.227); // postal  — Snipsy
 
   vec3 col = wall;
-  for (int i = 0; i < 6; i++) {
+  for (int i = 0; i < 3; i++) {
     float fi = float(i);
-    float cx = (fi + 0.5) / 6.0 + sin(t * 0.05 + fi * 1.7) * 0.025;
+    float cx = (fi + 0.5) / 3.0 + sin(t * 0.05 + fi * 1.7) * 0.025;
     float dx = (uv.x - cx) * 2.1;
     float dy = (1.0 - uv.y) * 1.35;         // pools hang from the top edge
     float pool = exp(-(dx * dx + dy * dy) * 3.2);
@@ -187,13 +184,6 @@ const useTilt = () => {
 
 /* ── Tiny truthful pieces for the world-card demos ── */
 
-/* Her 75 / GutPal check that draws itself (stroke-dashoffset via CSS class). */
-const MiniCheck: React.FC<{ color?: string; size?: number; className?: string }> = ({ color = '#fff', size = 10, className }) => (
-  <svg viewBox="0 0 12 10" width={size} height={size * 0.83} className={className} style={{ display: 'block' }}>
-    <path d="M0.5 5.5 L4.3 9.5 L11.5 0.8" fill="none" stroke={color} strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" pathLength={1} />
-  </svg>
-);
-
 /* Honestly's mood face, compact (exact palette from the app). */
 const MOOD_FILL = ['#F7C24B', '#A8CB8C', '#90B4DC', '#C79ACD', '#6E9BD6'];
 const MOOD_INK = ['#5A3D12', '#33471F', '#22344D', '#4E3357', '#22406B'];
@@ -210,15 +200,6 @@ const MiniFace: React.FC<{ mood: number; size?: number; className?: string; styl
   </svg>
 );
 
-/* Her 75 sticky gradients (HabitColor.swift — sand corrected to #B69B7C). */
-const HER_STICKIES: [string, string][] = [
-  ['#DCA48E', '#C4765A'],
-  ['#C0CDD3', '#94A8B1'],
-  ['#B4BE9C', '#8D9A70'],
-  ['#C9ABB5', '#A98290'],
-  ['#D0BA9E', '#B69B7C'],
-];
-
 /* ── Per-app world definitions — exact app tokens + a hover-choreographed demo ── */
 
 interface World {
@@ -233,58 +214,6 @@ interface World {
 }
 
 const WORLDS: Record<string, World> = {
-  gutpal: {
-    cardBg: '#F4EDE2',
-    cardText: '#141413',
-    cardText2: 'rgba(20,20,19,0.55)',
-    accent: '#D97757',
-    fontDisplay: '"Bricolage Grotesque", sans-serif',
-    demo: (
-      <div style={{ marginTop: 22, display: 'flex', flexDirection: 'column', gap: 8 }}>
-        {[['Mon', 'Lemon herb salmon'], ['Tue', 'Chickpea bowl'], ['Wed', 'Turkey stir-fry']].map(([day, meal], i) => (
-          <div key={day} style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-            <span style={{ fontFamily: MONO, fontSize: 9, fontWeight: 500, color: '#D97757', width: 26, letterSpacing: '0.04em' }}>{day}</span>
-            <span style={{ fontSize: 12.5, color: 'rgba(20,20,19,0.62)' }}>{meal}</span>
-            <span className={`gp-tick gp-tick-${i}`} style={{ marginLeft: 'auto', width: 16, height: 16, borderRadius: '50%', background: '#D97757', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <MiniCheck size={8} />
-            </span>
-          </div>
-        ))}
-        <span className="gp-toast" style={{ alignSelf: 'flex-start', marginTop: 4, fontFamily: MONO, fontSize: 9.5, color: '#c2603f', background: 'rgba(217,119,87,0.12)', border: '1px solid rgba(217,119,87,0.4)', borderRadius: 999, padding: '3px 9px' }}>
-          🌿 +9 plants this week
-        </span>
-      </div>
-    ),
-  },
-  masterly: {
-    cardBg: '#FDFBF7',
-    cardText: '#2D4F1E',
-    cardText2: 'rgba(45,79,30,0.55)',
-    accent: '#2D4F1E',
-    fontDisplay: '"Syne", sans-serif',
-    demo: (
-      <div style={{ marginTop: 22, display: 'flex', alignItems: 'center', gap: 16 }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-          <span style={{ fontFamily: '"Syne", sans-serif', fontSize: 34, fontWeight: 700, color: '#2D4F1E', lineHeight: 1 }}>47</span>
-          <span style={{ fontFamily: MONO, fontSize: 10, color: 'rgba(45,79,30,0.5)', letterSpacing: '0.05em' }}>days to exam</span>
-        </div>
-        {/* Mini flashcard flips on card hover */}
-        <div className="mst-mini" style={{ marginLeft: 'auto', width: 118, height: 58, perspective: 500 }}>
-          <div className="mst-mini-inner" style={{ position: 'relative', width: '100%', height: '100%', transformStyle: 'preserve-3d', transition: 'transform 0.6s cubic-bezier(0.32,1.3,0.4,1)' }}>
-            <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', background: '#fff', border: '1.5px solid #2D4F1E', borderRadius: 10, boxShadow: '1px 2px 0 rgba(45,79,30,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 6 }}>
-              <span style={{ fontFamily: '"Chalkboard SE", "Patrick Hand", cursive', fontSize: 10.5, color: '#2D4F1E', textAlign: 'center', lineHeight: 1.3 }}>powerhouse of the cell?</span>
-            </div>
-            <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)', background: '#2D4F1E', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 6 }}>
-              <span style={{ fontFamily: '"Chalkboard SE", "Patrick Hand", cursive', fontSize: 10.5, color: '#E9B44C', textAlign: 'center' }}>mitochondria ✓</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-    decorators: (
-      <div aria-hidden style={{ position: 'absolute', top: 22, right: 22, width: 38, height: 38, border: '1.5px dashed rgba(45,79,30,0.22)', borderRadius: 6, transform: 'rotate(9deg)' }} />
-    ),
-  },
   honestly: {
     cardBg: '#FAF8F5',
     cardText: '#33261A',
@@ -327,35 +256,6 @@ const WORLDS: Record<string, World> = {
           }} />
         ))}
       </div>
-    ),
-  },
-  her75: {
-    cardBg: '#FAF6EF',
-    cardText: '#2B2420',
-    cardText2: 'rgba(43,36,32,0.55)',
-    accent: '#C4765A',
-    fontDisplay: '"Cormorant Garamond", Georgia, serif',
-    demo: (
-      <div style={{ marginTop: 20 }}>
-        <div style={{ display: 'flex', gap: 7 }}>
-          {HER_STICKIES.map(([a, b], i) => (
-            <div key={i} className={`her-sticky her-sticky-${i}`} style={{
-              width: 30, height: 40, borderRadius: 8,
-              background: `linear-gradient(to bottom, ${a}, ${b})`,
-              border: '1px solid rgba(43,36,32,0.06)', boxShadow: '0 3px 4px rgba(0,0,0,0.14)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-            }}>
-              <MiniCheck color="rgba(43,36,32,0.75)" size={11} className="her-sticky-check" />
-            </div>
-          ))}
-        </div>
-        <span className="her-day" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 12, fontSize: 11.5, color: 'rgba(43,36,32,0.55)' }}>
-          <MiniCheck color="#C4765A" size={11} className="her-day-check" /> day 12 of 75 — proof logged
-        </span>
-      </div>
-    ),
-    decorators: (
-      <div aria-hidden style={{ position: 'absolute', top: 16, right: 20, fontFamily: '"Cormorant Garamond", Georgia, serif', fontStyle: 'italic', fontSize: 30, fontWeight: 600, color: 'rgba(196,118,90,0.26)' }}>75</div>
     ),
   },
   snipsy: {
@@ -403,20 +303,17 @@ const WORLDS: Record<string, World> = {
   },
 };
 
-// Grid rhythm — 6 apps, 6 cells, asymmetric spans. No empty cells.
+// Grid rhythm — 3 apps, 3 cells, asymmetric spans. No empty cells.
 const LAYOUT: { id: string; cls: string }[] = [
-  { id: 'gutpal', cls: 'gc-7 gc-feature' },
-  { id: 'masterly', cls: 'gc-5' },
-  { id: 'honestly', cls: 'gc-5' },
-  { id: 'yumeship', cls: 'gc-7 gc-feature' },
-  { id: 'her75', cls: 'gc-7 gc-feature' },
-  { id: 'snipsy', cls: 'gc-5' },
+  { id: 'honestly', cls: 'gc-7 gc-feature' },
+  { id: 'yumeship', cls: 'gc-5' },
+  { id: 'snipsy', cls: 'gc-12 gc-feature' },
 ];
 
 const PRINCIPLES: [string, string][] = [
   ['iOS native, no bloat', 'Built for one platform and tuned to it. No cross-platform compromises, no web view pretending to be an app.'],
   ['One problem, solved fully', 'Each app does a single job and refuses to sprawl into ten. The scope stays small so the craft can go deep.'],
-  ['AI only where it earns it', 'No chatbot bolted onto the home screen. AI shows up in meal plans and study quizzes because there it actually helps.'],
+  ['Quietly built, not gimmicked', 'No chatbot bolted onto the home screen, no feature added just to fill a slide. Only what the app actually needs.'],
   ['Free to try, honest to pay', 'Download free and use the core. Pay only once an app is already working for you, never before.'],
 ];
 
@@ -559,20 +456,6 @@ const Home: React.FC = () => {
 
         /* ── World-card demos: each app performs itself on hover ── */
 
-        /* GutPal — meals check off, plant toast pops */
-        .gp-tick { opacity: 0; transform: scale(0.4); transition: opacity 0.25s ease, transform 0.45s cubic-bezier(0.3,1.4,0.4,1); }
-        .gp-tick path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.3s ease-out; }
-        .app-card:hover .gp-tick { opacity: 1; transform: scale(1); }
-        .app-card:hover .gp-tick path { stroke-dashoffset: 0; }
-        .app-card:hover .gp-tick-0 { transition-delay: 0.1s; } .app-card:hover .gp-tick-0 path { transition-delay: 0.2s; }
-        .app-card:hover .gp-tick-1 { transition-delay: 0.32s; } .app-card:hover .gp-tick-1 path { transition-delay: 0.42s; }
-        .app-card:hover .gp-tick-2 { transition-delay: 0.54s; } .app-card:hover .gp-tick-2 path { transition-delay: 0.64s; }
-        .gp-toast { opacity: 0; transform: translateY(5px); transition: opacity 0.3s ease 0s, transform 0.45s cubic-bezier(0.3,1.4,0.4,1) 0s; }
-        .app-card:hover .gp-toast { opacity: 1; transform: translateY(0); transition-delay: 0.8s; }
-
-        /* Masterly — the mini flashcard flips to its answer */
-        .app-card:hover .mst-mini-inner { transform: rotateY(180deg); }
-
         /* Honestly — the faces take a bow, one by one */
         .hon-face { transition: transform 0.4s cubic-bezier(0.3,1.5,0.4,1); }
         .app-card:hover .hon-face-0 { transform: translateY(-5px); transition-delay: 0.02s; }
@@ -595,22 +478,6 @@ const Home: React.FC = () => {
         .app-card:hover .ys-petal-2 { animation: ys-fall 2.8s ease-in-out infinite 1.2s; }
         .ys-script { opacity: 0.65; transition: opacity 0.3s ease; }
         .app-card:hover .ys-script { opacity: 1; }
-
-        /* Her 75 — checks draw across the sticky notes */
-        .her-sticky-check path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.35s ease-out; }
-        .app-card:hover .her-sticky-0 .her-sticky-check path { stroke-dashoffset: 0; transition-delay: 0.05s; }
-        .app-card:hover .her-sticky-1 .her-sticky-check path { stroke-dashoffset: 0; transition-delay: 0.2s; }
-        .app-card:hover .her-sticky-2 .her-sticky-check path { stroke-dashoffset: 0; transition-delay: 0.35s; }
-        .app-card:hover .her-sticky-3 .her-sticky-check path { stroke-dashoffset: 0; transition-delay: 0.5s; }
-        .app-card:hover .her-sticky-4 .her-sticky-check path { stroke-dashoffset: 0; transition-delay: 0.65s; }
-        .her-sticky { transition: transform 0.4s cubic-bezier(0.3,1.4,0.4,1); }
-        .app-card:hover .her-sticky { transform: translateY(-3px); }
-        .app-card:hover .her-sticky-1 { transition-delay: 0.12s; }
-        .app-card:hover .her-sticky-2 { transition-delay: 0.24s; }
-        .app-card:hover .her-sticky-3 { transition-delay: 0.36s; }
-        .app-card:hover .her-sticky-4 { transition-delay: 0.48s; }
-        .her-day-check path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.4s ease-out 0.8s; }
-        .app-card:hover .her-day-check path { stroke-dashoffset: 0; }
 
         /* Snipsy — cancellation mark appears, stamp number fades in */
         .snip-cancel-mark { opacity: 0; transition: opacity 0.5s ease 0.2s; }
@@ -656,7 +523,6 @@ const Home: React.FC = () => {
           .rise, .brf-icon, .brf-track { animation: none !important; opacity: 1 !important; transform: none !important; }
           .js .reveal-scroll { opacity: 1 !important; transform: none !important; transition: none !important; }
           .app-card:hover .ys-petal-0, .app-card:hover .ys-petal-1, .app-card:hover .ys-petal-2 { animation: none; }
-          .gp-tick, .app-card:hover .gp-tick, .gp-toast, .app-card:hover .gp-toast { transition: none; opacity: 1; transform: none; }
         }
       `}</style>
 
@@ -665,7 +531,7 @@ const Home: React.FC = () => {
         <Spotlight />
         <SEOBox
           title="Ashwin Anbazhagan | iOS App Developer & Founder"
-          description="Indie iOS apps for gut health, studying, morning journaling, fandom, and photo stamps. Each one solves one specific problem, precisely."
+          description="Indie iOS apps for morning journaling, fandom, and photo stamps. Each one solves one specific problem, precisely."
           keywords={['Ashwin Anbazhagan', 'iOS App Developer', 'Indie App Maker', 'SaaS Founder', 'App Developer India']}
         />
 
@@ -722,12 +588,12 @@ const Home: React.FC = () => {
                 </div>
 
                 <h1 style={{ margin: '0 0 32px 0', padding: 0, fontFamily: DISPLAY, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 0.98, fontSize: 'clamp(2.9rem, 5.6vw, 5.4rem)' }}>
-                  <span className="rise h1" style={{ display: 'block', color: CREAM }}>Six iOS apps,</span>
+                  <span className="rise h1" style={{ display: 'block', color: CREAM }}>Three iOS apps,</span>
                   <span className="rise h2" style={{ display: 'block', color: CREAM }}>each for <span style={{ color: GOLD }}>one real problem.</span></span>
                 </h1>
 
                 <p className="rise h3" style={{ fontSize: 16, lineHeight: 1.7, color: MUTE, maxWidth: 460, margin: '0 0 40px 0' }}>
-                  Gut health, studying, morning journaling, fandom, and photo stamps. Every app does one thing, and does it precisely.
+                  Morning journaling, fandom, and photo stamps. Every app does one thing, and does it precisely.
                 </p>
 
                 <MagneticLink href="#works" className="rise h4 cta-pill" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: GOLD, color: '#1A1406', fontFamily: MONO, fontSize: 12.5, fontWeight: 500, letterSpacing: '0.04em', padding: '15px 26px', borderRadius: 999, textDecoration: 'none' }}>
@@ -775,11 +641,11 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* ── Works — the five worlds ── */}
+          {/* ── Works — the three worlds ── */}
           <section id="works" style={{ padding: '110px 0 128px', maxWidth: 1400, margin: '0 auto' }}>
             <div className="pad-x reveal-scroll" style={{ padding: '0 60px 60px 60px', maxWidth: 780 }}>
               <h2 style={{ fontFamily: DISPLAY, fontSize: 'clamp(2rem, 4vw, 3.4rem)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.02, color: CREAM, margin: '0 0 16px 0' }}>
-                Six apps, six worlds.
+                Three apps, three worlds.
               </h2>
               <p style={{ fontSize: 15.5, lineHeight: 1.65, color: MUTE, margin: 0, maxWidth: 540 }}>
                 Every product gets its own look and voice, built around the person it is for — hover any card and it plays itself. All of them live on iOS, all built solo since 2024.
@@ -825,7 +691,7 @@ const Home: React.FC = () => {
                 Every app starts from a gap that should not exist.
               </h2>
               <p className="reveal-scroll" style={{ fontSize: 17, lineHeight: 1.75, color: 'rgba(237,232,223,0.62)', margin: '0 0 40px 0', maxWidth: '62ch' }}>
-                I build iOS apps for people who went looking for something specific and came back empty. Gut-safe meal plans that actually understand FODMAP. Study blocking that holds. A morning journal that keeps distracting apps asleep until you've written. Photos turned into stamps you'd keep forever. Each one solves a single thing, then stops.
+                I build iOS apps for people who went looking for something specific and came back empty. A morning journal that keeps distracting apps asleep until you've written. A private vault for the fictional characters you love. Photos turned into stamps you'd keep forever. Each one solves a single thing, then stops.
               </p>
               <div className="about-actions reveal-scroll" style={{ display: 'flex', gap: 26 }}>
                 <a href="https://twitter.com/shwiinn" target="_blank" rel="noopener noreferrer" className="soft-link" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: MONO, fontSize: 11.5, letterSpacing: '0.1em', color: GOLD, textDecoration: 'none' }}>
