@@ -4,7 +4,6 @@ import { useParams, Navigate } from 'react-router-dom';
 import { apps } from '../config/apps';
 import { ZenTemplate, AcademicTemplate, ArcadeTemplate, SanctuaryTemplate } from '../templates/AppTemplates';
 import HonestlyLanding from './HonestlyLanding';
-import YumeshipLanding from './YumeshipLanding';
 import SnipsyLanding from './SnipsyLanding';
 
 
@@ -43,7 +42,6 @@ const AppLanding: React.FC<AppLandingProps> = ({ section, appId: propAppId }) =>
 
   // Custom landing pages per app
   if (app.id === 'honestly') return <HonestlyLanding app={app} section={section} />;
-  if (app.id === 'yumeship') return <YumeshipLanding app={app} section={section} />;
   if (app.id === 'snipsy') return <SnipsyLanding app={app} section={section} />;
 
 
