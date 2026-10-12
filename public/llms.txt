@@ -5,6 +5,7 @@
 ## Apps
 - [Honestly — Reflect & Manifest](https://briefly.live/honestly): A free journaling ritual — mood check, free writing, gratitude & manifest — with optional reflection and shadow-work prompts. A Sprout plant grows as your streak builds. Premium adds scheduled app blocking, iCloud sync, and full journal history.
 - [YumeShip — Anime & Kpop Canon](https://briefly.live/yumeship): A private, on-device journal for yumeshippers. Write headcanons, scenarios, love letters, and what-ifs about your anime, otome, manga, or kpop F/O. Notifications and messages from your F/O, ship charts, incorrect quotes. Nothing leaves your device.
+- [tether — Long Distance Letters](https://briefly.live/tether): Write a note in a handwriting pen, fold it into a paper plane and throw it; it flies across the real map to the person you miss and unfolds in their city. Kisses, hugs and bombs between letters, a Home Screen widget, and letters kept end-to-end encrypted in your own iCloud. tether+ yearly with a 3-day free trial, or lifetime.
 - [Snipsy — Photo Stamps & Stickers](https://briefly.live/snipsy): Turns any photo into a collectible postage stamp or die-cut sticker using on-device Vision. 10 hand-crafted paper variants, iMessage stickers, fully offline.
 
 ## Guides & Comparisons

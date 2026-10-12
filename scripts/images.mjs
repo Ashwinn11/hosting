@@ -25,6 +25,7 @@ const apps = [
   { id: 'honestly',  name: 'Honestly',    headline: 'Journal first. Then your apps unlock.', primary: '#F5851F', bg: '#FAF8F5' },
   { id: 'yumeship',  name: 'YumeShip',    headline: 'A quiet place for the ones you love from afar.', primary: '#9b4f6e', bg: '#FDF4F8' },
   { id: 'snipsy',    name: 'Snipsy',      headline: 'Every photo deserves to be kept.', primary: '#D6503A', bg: '#F8F2E3' },
+  { id: 'tether',    name: 'tether',      headline: 'Letters that fly the real miles between you.', primary: '#1B1F40', bg: '#E4E6F4', chip: '3 days free · iOS', chipWidth: 236 },
 ];
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -97,14 +98,16 @@ async function makeOgImages() {
 
     // Background + text layer as SVG (librsvg falls back to a default sans if
     // the named family is unavailable — fine for an OG card).
+    // The price chip: "Free on iOS" unless the app says otherwise.
+    const chipWidth = app.chipWidth || 190;
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
       <rect width="1200" height="630" fill="${app.bg}"/>
       <rect x="0" y="0" width="14" height="630" fill="${app.primary}"/>
       <text x="96" y="120" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="1" fill="${app.primary}">${esc(app.name)}</text>
       <text font-family="Helvetica, Arial, sans-serif" font-size="60" font-weight="800" fill="${ink}">${headlineTspans}</text>
-      <rect x="96" y="520" width="190" height="46" rx="23" fill="${app.primary}"/>
-      <text x="191" y="551" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">Free on iOS</text>
-      <text x="310" y="552" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="${muted}">briefly.live</text>
+      <rect x="96" y="520" width="${chipWidth}" height="46" rx="23" fill="${app.primary}"/>
+      <text x="${96 + chipWidth / 2}" y="551" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">${esc(app.chip || 'Free on iOS')}</text>
+      <text x="${96 + chipWidth + 24}" y="552" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="${muted}">briefly.live</text>
     </svg>`;
 
     let img = sharp(Buffer.from(svg));

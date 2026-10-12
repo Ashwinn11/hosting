@@ -24,7 +24,7 @@ const BODY = '"Hanken Grotesk", sans-serif';
 const MONO = '"DM Mono", monospace';
 
 /* ── The gallery lights — three app accents washing down the wall (GLSL) ──
-   Amber (Honestly) · sakura (YumeShip) · postal-red (Snipsy), each pool
+   Amber (Honestly) · sky (tether) · postal-red (Snipsy), each pool
    breathing on its own phase. */
 
 const WALL_FRAG = `
@@ -46,7 +46,7 @@ void main() {
 
   vec3 accents[3];
   accents[0] = vec3(0.961, 0.522, 0.122); // amber   — Honestly
-  accents[1] = vec3(0.843, 0.478, 0.553); // sakura  — YumeShip
+  accents[1] = vec3(0.659, 0.769, 0.941); // sky     — tether
   accents[2] = vec3(0.839, 0.314, 0.227); // postal  — Snipsy
 
   vec3 col = wall;
@@ -258,6 +258,30 @@ const WORLDS: Record<string, World> = {
       </div>
     ),
   },
+  tether: {
+    cardBg: 'linear-gradient(180deg, #D6D9F0 0%, #F5F5F9 100%)',
+    cardText: '#1B1F40',
+    cardText2: '#6B6C78',
+    accent: '#1B1F40',
+    fontDisplay: '"Cal Sans", "Bricolage Grotesque", sans-serif',
+    demo: (
+      <div style={{ marginTop: 20, position: 'relative', height: 88 }}>
+        {/* Two people, the route between them, and a plane that crosses it on hover */}
+        <svg viewBox="0 0 240 62" width="100%" height={62} preserveAspectRatio="xMinYMid meet" aria-hidden>
+          <path d="M18,48 C80,6 160,6 222,22" fill="none" stroke="#E3708F" strokeWidth={1.6} strokeDasharray="4 5" strokeLinecap="round" />
+          <circle cx={18} cy={48} r={9} fill="#6B7ADB" stroke="#fff" strokeWidth={2} />
+          <circle cx={222} cy={22} r={9} fill="#E38A66" stroke="#fff" strokeWidth={2} />
+          <circle className="tt-ring" cx={222} cy={22} r={9} fill="none" stroke="#3DB870" strokeWidth={2} />
+          <g className="tt-plane">
+            <path d="M-7,-5 L8,0 L-7,5 L-4,0 Z" fill="#fff" stroke="#1B1F40" strokeWidth={1} strokeLinejoin="round" />
+          </g>
+        </svg>
+        <span className="tt-note" style={{ position: 'absolute', left: 0, bottom: 0, fontFamily: '"Kalam", "Caveat", cursive', fontSize: 13, color: '#1B1F40' }}>
+          same sky, different cities
+        </span>
+      </div>
+    ),
+  },
   snipsy: {
     cardBg: '#F8F2E3',
     cardText: '#4A3728',
@@ -306,7 +330,7 @@ const WORLDS: Record<string, World> = {
 // Grid rhythm — 3 apps, 3 cells, asymmetric spans. No empty cells.
 const LAYOUT: { id: string; cls: string }[] = [
   { id: 'honestly', cls: 'gc-7 gc-feature' },
-  { id: 'yumeship', cls: 'gc-5' },
+  { id: 'tether', cls: 'gc-5' },
   { id: 'snipsy', cls: 'gc-12 gc-feature' },
 ];
 
@@ -480,6 +504,16 @@ const Home: React.FC = () => {
         .app-card:hover .ys-script { opacity: 1; }
 
         /* Snipsy — cancellation mark appears, stamp number fades in */
+        /* tether — a plane crosses the route and lands with a ring */
+        .tt-plane { offset-path: path('M18,48 C80,6 160,6 222,22'); offset-distance: 0%; offset-rotate: auto; opacity: 0; }
+        .app-card:hover .tt-plane { animation: tt-fly 2.4s cubic-bezier(0.45,0,0.25,1) infinite; }
+        @keyframes tt-fly { 0% { offset-distance: 0%; opacity: 0; } 8% { opacity: 1; } 78% { offset-distance: 100%; opacity: 1; } 86%, 100% { offset-distance: 100%; opacity: 0; } }
+        .tt-ring { opacity: 0; transform-box: fill-box; transform-origin: center; }
+        .app-card:hover .tt-ring { animation: tt-ring 2.4s ease-out infinite; }
+        @keyframes tt-ring { 0%, 76% { opacity: 0; transform: scale(1); } 80% { opacity: 1; } 100% { opacity: 0; transform: scale(2.2); } }
+        .tt-note { opacity: 0.55; transition: opacity 0.4s ease; }
+        .app-card:hover .tt-note { opacity: 1; }
+        @media (prefers-reduced-motion: reduce) { .app-card:hover .tt-plane, .app-card:hover .tt-ring { animation: none; } }
         .snip-cancel-mark { opacity: 0; transition: opacity 0.5s ease 0.2s; }
         .app-card:hover .snip-cancel-mark { opacity: 1; }
         .snip-mini-stamp { transition: transform 0.45s cubic-bezier(0.3,1.4,0.4,1); }

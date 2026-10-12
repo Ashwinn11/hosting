@@ -202,6 +202,174 @@ export const apps: AppConfig[] = [
       grain: 0.04
     }
   },
+
+  {
+    id: 'tether',
+    name: 'tether',
+    appStoreName: 'tether: Long Distance Letters',
+    category: 'Social Networking',
+    seoApplicationCategory: 'SocialNetworkingApplication',
+    tagline: 'Long-distance letters that fly the real miles between you',
+    platforms: ['ios'],
+    description: 'Write to someone far away in a pen that looks like handwriting, fold it into a paper plane, and throw it. It flies across the real map and lands on their city, where it unfolds in front of them. Private by design: your letters live in your own iCloud, shared only with the person you wrote to.',
+    appStoreUrl: 'https://apps.apple.com/app/id6818273186',
+    downloadUrl: 'https://apps.apple.com/app/id6818273186',
+    appNumericId: '6818273186',
+    pricingNote: '3-day free trial · iOS',
+    comparisonHighlights: [
+      { them: 'A text arrives in a second and is gone in a scroll.', us: 'A letter crosses the real miles, and they watch it land.' },
+      { them: 'Couple apps want an email, a password, an account.', us: 'No sign-up. Your iCloud is all it needs.' },
+      { them: 'Every chat looks like every other chat.', us: 'Your handwriting pen, your ink, your face on every letter.' },
+    ],
+    seo: {
+      title: 'tether | Long Distance Letters — Paper Planes Across the Real Map',
+      description: 'tether turns a handwritten note into a paper plane that flies across the real map to the person you miss. Letters, kisses and hugs for long-distance couples, friends and family. Private in your own iCloud.',
+      keywords: ['long distance relationship app', 'long distance letters', 'ldr app', 'couples app', 'love letters app', 'paper plane', 'handwritten notes', 'couples widget', 'distance widget', 'miss you app', 'pen pal app', 'friends map']
+    },
+    marketing: {
+      headline: 'Letters that fly the real miles between you.',
+      subheadline: 'Write by hand, fold it into a paper plane, and throw it. It crosses the real map and lands in their city.',
+      problem: 'When the person you love lives in another city, everything you send arrives the same way: a bubble in a chat, read in a second, buried by the next one. The distance is the biggest thing between you, and nothing you send feels like it crossed it.',
+      agitation: 'Texts are instant, so they feel weightless. Calls need you both awake at the same time. And the little moments that would have been a look across the room just never get sent.',
+      solution: 'tether makes the distance part of the message. Your note is written in a handwriting pen, folded into a paper plane, and thrown across the real map, every mile of it, until it lands on their city and unfolds in front of them. Between letters, throw a kiss, a hug or a bomb that goes off on their face.',
+      benefits: [
+        { title: 'Written by hand', description: 'A pen that looks like handwriting, in blue or black ink, with your name and face on every letter.', icon: 'PenLine' },
+        { title: 'Folded and thrown', description: 'Pull the letter down and it folds into a paper plane. Flick it, and it\'s on its way.', icon: 'Send' },
+        { title: 'Across the real map', description: 'Watch it fly every mile between your city and theirs, then land on their pin and unfold.', icon: 'Map' },
+        { title: 'A kiss, a hug, a bomb', description: 'For the moments between letters. It lands on their face, wherever they are.', icon: 'Heart' },
+        { title: 'On your Home Screen', description: 'A widget with the two of you on the map and the last thing they sent, with a throw one tap away.', icon: 'LayoutGrid' },
+        { title: 'Private by design', description: 'Letters live in your own iCloud, end-to-end encrypted and shared only with the person you wrote to.', icon: 'Lock' },
+      ],
+      screenshots: [
+        '/tether/screenshots/01.webp',
+        '/tether/screenshots/02.webp',
+        '/tether/screenshots/03.webp',
+        '/tether/screenshots/04.webp',
+        '/tether/screenshots/05.webp'
+      ],
+      faqs: [
+        { question: 'What is tether?', answer: 'tether is an iPhone app for writing to the people you miss. You write a note in a handwriting pen, fold it into a paper plane, and throw it. It flies across the real map from your city to theirs and unfolds when it lands.' },
+        { question: 'Is tether a long-distance relationship app?', answer: 'It was made for exactly that: a partner in another time zone. It works just as well for a best friend who moved away or family on the other side of the world. You can be connected to as many people as you like, and each friendship is private to the two of you.' },
+        { question: 'Do we both need tether?', answer: 'Yes. You both need an iPhone signed in to iCloud. Invite them from the app with a link or a QR code, and once they\'ve opened it you\'re on each other\'s map.' },
+        { question: 'How much does tether cost?', answer: 'tether needs tether+: a yearly subscription that starts with a 3-day free trial, or a one-time lifetime purchase. Prices are shown in the app in your currency. You can cancel the trial any time before it ends and you won\'t be charged.' },
+        { question: 'Can anyone else read my letters?', answer: 'No. Letters live in your iCloud and theirs, end-to-end encrypted and shared only between the two of you. tether has no servers and no accounts, and the developer can\'t read them.' },
+        { question: 'Does tether share my exact location?', answer: 'No. tether only ever places you in a city. Your location is rounded to about 10 km before it\'s stored or shared, and you can type your city instead of sharing location at all.' },
+        { question: 'Is there a widget?', answer: 'Yes. The Home Screen widget shows the two of you on the map with the last thing they sent, and you can throw a kiss or a hug straight from it.' },
+        { question: 'Is tether on Android?', answer: 'No. tether is made for iPhone, and both of you need one.' },
+      ]
+    },
+    legal: {
+      privacyPolicy: `The short version
+tether has no servers of its own, no accounts and no analytics. Your letters travel through your own iCloud account and the iCloud account of the person you send them to. The developer can't read them, and neither can anyone else except the two of you.
+The one other company involved is RevenueCat, which checks tether+ purchases. It never sees your letters, your name, your photo or where you are.
+
+What tether keeps, and where
+Your profile: your name, the photo you choose (if any), your city, and your approximate location.
+Your letters: what you wrote, the ink and handwriting you chose, when each one was sent, and when it was opened.
+Both live in iCloud, inside the friendship you share with each person, so that person can see them. A copy is kept on your iPhone so the app opens instantly and works offline.
+Letters, your name, photo, city and location are end-to-end encrypted with keys held in iCloud Keychain and shared only with the other person in each friendship. The rest (identifiers, dates, which ink and handwriting you used, and whether a letter has been opened) is stored with iCloud's standard protection, which is how iCloud knows where to deliver things.
+
+Who can see what
+Only the people you're connected to, and only what's in your friendship with them: your profile and the letters between you. Nobody can join a friendship without an invitation, and each invitation works once, for the first person who opens it, and never again.
+
+Your location
+tether asks where you are only while it's open, at most once an hour, and takes a single approximate reading. Before it's stored or shared, it's rounded to a tenth of a degree, about 10 km, so it can place you in a city, never on a street.
+To name your city, tether looks the rounded point up with Apple Maps. Location is optional: you can type your city instead, and you can turn location off for tether at any time in Settings.
+
+Speaking a letter
+If you speak a letter instead of typing it, your iPhone's speech recognition turns your words into text. Where your iPhone supports it, that happens entirely on the device. Where it doesn't, Apple processes the audio to transcribe it, under Apple's privacy policy. tether never records or keeps audio.
+
+Notifications
+If you allow them, tether tells you when a letter has landed. The notification is made on your iPhone and says only who it's from.
+
+Buying tether+
+tether+ is bought with your Apple Account, and Apple handles the payment; tether never sees your card.
+To know whether you have tether+, tether uses RevenueCat. It receives a random identifier made just for this app, what you've bought and when, and basic details such as your country, currency, device model and app version. It doesn't receive your letters, your profile or your location, and it isn't used to advertise to you. RevenueCat's own privacy policy covers what it keeps.
+
+What tether doesn't do
+No analytics. No advertising. No tracking across apps or websites. Nothing is sold. The developer runs no servers and has no access to your letters, your profile or anything else you keep in tether.
+
+Apple
+iCloud, Apple Maps, notifications and speech recognition are provided by Apple and covered by Apple's own privacy policy.
+
+Deleting your data
+Removing someone ends your friendship with them: it disappears for both of you, with every letter in it.
+Settings → Delete my data removes everything: friendships you started are deleted for both of you, you leave the ones you joined, and everything on this iPhone is erased. It can't be undone.
+Deleting the app removes only the copy on your iPhone; what's in iCloud stays until you use Delete my data, or remove tether's data in your iPhone's iCloud storage settings.
+
+Children
+tether isn't meant for children under 13, and doesn't knowingly hold their information.
+
+Changes and contact
+If this policy changes, the new version will be here and in the app, with its date at the top. Questions go to the developer at ashwinnanbazhagan@gmail.com.`,
+      termsOfService: `Using tether
+tether is for sending letters to people who've accepted your invitation. It's for personal use. By using it you agree to these terms; if you don't, please don't use it.
+
+What you write
+Your letters are yours, and you're responsible for what you send. tether has no tolerance for objectionable content or abusive users: you agree not to send anything hateful, harassing, threatening, sexually explicit or unlawful, and not to use tether to deceive anyone. The person you write to receives what you send and can keep it for as long as the friendship lasts.
+If someone sends you something that breaks these terms, report them, from your conversation with them or from People. Reporting blocks them at once: they're removed with every letter between you, and can't reach you again unless you accept a new invitation from them. Your report goes to the developer, who responds within 24 hours. You can also block someone without reporting them.
+
+tether+
+Using tether needs tether+: a yearly subscription, or a one-time purchase where that's offered.
+The yearly subscription can start with a free trial, of the length shown before you start it, once per Apple Account. Unless you cancel at least 24 hours before the trial ends, your Apple Account is charged when it ends. After that, the subscription renews automatically at the same price each year unless you turn it off at least 24 hours before the current year ends, and your account is charged for the next year within the 24 hours before it begins. Buying a subscription during a free trial ends what's left of the trial.
+You can change or cancel the subscription any time in tether's Settings, under tether+, or in your Apple Account's subscriptions. Cancelling keeps tether+ until the end of the trial or the year you've paid for. The one-time purchase is paid once and never renews. Refunds are handled by Apple.
+Without tether+, tether opens on the way to get it. Your letters and friendships stay in your iCloud account meanwhile, until you delete them.
+
+iCloud
+tether needs an iCloud account and stores everything there, where it counts toward your iCloud storage. Apple's iCloud terms apply to that storage.
+
+Invitations
+An invitation is for the one person you send it to. It works once. Please don't pass on invitations meant for someone else.
+
+How it's provided
+tether is provided as it is. Delivery depends on iCloud and your connection, so a letter can arrive late, though it won't be lost. Features may change, and tether may one day stop being offered.
+To the extent the law allows, the developer isn't liable for indirect or consequential losses arising from using tether. Nothing in these terms limits rights you have that can't be limited by law.
+
+Stopping
+You can stop at any time. Settings → Delete my data removes everything tether has kept, as the Privacy Policy describes.
+
+Apple
+These terms are in addition to Apple's Licensed Application End User License Agreement (https://www.apple.com/legal/internet-services/itunes/dev/stdeula/), which applies to tether as it does to any app from the App Store. Apple isn't responsible for tether or its content.
+
+Changes and contact
+If these terms change, the new version will be here and in the app, with its date at the top. Questions go to the developer at ashwinnanbazhagan@gmail.com.`,
+      support: `Write to us
+tether is made by one person, who reads every message.
+Email: ashwinnanbazhagan@gmail.com
+Replies usually come within 24 to 48 hours. Reports of abuse are answered within 24 hours.
+
+Letters aren't arriving
+tether delivers through iCloud, so both of you need to be signed in to iCloud on your iPhone (Settings → your name → iCloud). A letter sent while you're offline goes as soon as you're back online. It can arrive late, but it isn't lost.
+
+Notifications don't show up
+Check Settings → Notifications → tether, and that a Focus isn't holding them back. tether can only tell you something has landed if notifications are allowed.
+
+Adding the widget
+Touch and hold your Home Screen, tap Edit → Add Widget, and choose tether. The widget shows the two of you on the map once you're connected to someone.
+
+Inviting someone
+Tap Invite someone, then show them the QR code or send them the link. Each invitation is for one person and works once, so make a new one for each person you invite.
+
+My city is wrong
+tether reads your location only while it's open, at most once an hour. You can type your city instead in Settings → Edit profile.
+
+Subscriptions and refunds
+Manage or cancel tether+ in tether's Settings under tether+, or in Settings → your name → Subscriptions. On a new iPhone, tap Restore on the tether+ screen and sign in with the same Apple Account. Refunds are handled by Apple at reportaproblem.apple.com.
+
+Reporting or blocking someone
+In People, or in your conversation with them, choose Report or Block. Reporting blocks them at once and sends the report to the developer.
+
+Deleting everything
+Settings → Delete my data removes everything tether has kept, for you and from the friendships you started. It can't be undone.`,
+      lastUpdated: '9 October 2026'
+    },
+    design: {
+      primary: '#1B1F40',
+      bg: '#F5F5F9',
+      fontFamily: 'font-sans',
+      templateId: 'zen'
+    }
+  },
 ];
 
 

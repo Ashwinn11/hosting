@@ -5,6 +5,7 @@ import { apps } from '../config/apps';
 import { ZenTemplate, AcademicTemplate, ArcadeTemplate, SanctuaryTemplate } from '../templates/AppTemplates';
 import HonestlyLanding from './HonestlyLanding';
 import SnipsyLanding from './SnipsyLanding';
+import TetherLanding from './TetherLanding';
 
 
 interface AppLandingProps {
@@ -43,6 +44,7 @@ const AppLanding: React.FC<AppLandingProps> = ({ section, appId: propAppId }) =>
   // Custom landing pages per app
   if (app.id === 'honestly') return <HonestlyLanding app={app} section={section} />;
   if (app.id === 'snipsy') return <SnipsyLanding app={app} section={section} />;
+  if (app.id === 'tether') return <TetherLanding app={app} section={section} />;
 
 
   // Fallback to template system (Morning Journal → SanctuaryTemplate)
