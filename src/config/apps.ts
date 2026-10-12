@@ -206,7 +206,7 @@ export const apps: AppConfig[] = [
   {
     id: 'tether',
     name: 'tether',
-    appStoreName: 'tether: Long Distance Letters',
+    appStoreName: 'Long Distance Couples - tether',
     category: 'Social Networking',
     seoApplicationCategory: 'SocialNetworkingApplication',
     tagline: 'Long-distance letters that fly the real miles between you',
