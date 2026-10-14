@@ -252,7 +252,7 @@ export const apps: AppConfig[] = [
         { question: 'Is tether a long-distance relationship app?', answer: 'It was made for exactly that: a partner in another time zone. It works just as well for a best friend who moved away or family on the other side of the world. You can be connected to as many people as you like, and each friendship is private to the two of you.' },
         { question: 'Do we both need tether?', answer: 'Yes. You both need an iPhone signed in to iCloud. Invite them from the app with a link or a QR code, and once they\'ve opened it you\'re on each other\'s map.' },
         { question: 'How much does tether cost?', answer: 'tether needs tether+: a yearly subscription that starts with a 3-day free trial, or a one-time lifetime purchase. Prices are shown in the app in your currency. You can cancel the trial any time before it ends and you won\'t be charged.' },
-        { question: 'Can anyone else read my letters?', answer: 'No. Letters live in your iCloud and theirs, end-to-end encrypted and shared only between the two of you. tether has no servers and no accounts, and the developer can\'t read them.' },
+        { question: 'Can anyone else read my letters?', answer: 'No. Letters live in your iCloud and theirs, end-to-end encrypted and shared only between the two of you. Your letters never pass through a server of ours, there are no accounts, and the developer can\'t read them.' },
         { question: 'Does tether share my exact location?', answer: 'No. tether only ever places you in a city. Your location is rounded to about 10 km before it\'s stored or shared, and you can type your city instead of sharing location at all.' },
         { question: 'Is there a widget?', answer: 'Yes. The Home Screen widget shows the two of you on the map with the last thing they sent, and you can throw a kiss or a hug straight from it.' },
         { question: 'Is tether on Android?', answer: 'No. tether is made for iPhone, and both of you need one.' },
@@ -260,8 +260,8 @@ export const apps: AppConfig[] = [
     },
     legal: {
       privacyPolicy: `The short version
-tether has no servers of its own, no accounts and no analytics. Your letters travel through your own iCloud account and the iCloud account of the person you send them to. The developer can't read them, and neither can anyone else except the two of you.
-The one other company involved is RevenueCat, which checks tether+ purchases. It never sees your letters, your name, your photo or where you are.
+tether has no accounts and no analytics, and your letters never pass through a server of ours. They travel through your own iCloud account and the iCloud account of the person you send them to. The developer can't read them, and neither can anyone else except the two of you.
+Two other things are involved, and neither sees your letters, your name, your photo or where you are: RevenueCat, which checks tether+ purchases, and tether's widget relay, which only wakes widgets (see Your widget).
 
 What tether keeps, and where
 Your profile: your name, the photo you choose (if any), your city, and your approximate location.
@@ -282,12 +282,16 @@ If you speak a letter instead of typing it, your iPhone's speech recognition tur
 Notifications
 If you allow them, tether tells you when a letter has landed. The notification is made on your iPhone and says only who it's from.
 
+Your widget
+If you add tether's widget, iOS gives it a push address. tether keeps that address in your profile, encrypted like the rest of it, so the people you're connected to can wake your widget when they throw something at you.
+To wake it, their tether sends your widget's push address to tether's relay, a small service the developer runs on Netlify, which asks Apple to refresh your widget. The relay receives that address and whether it belongs to a test build, nothing else: no letter, no name, nothing about either of you. It keeps none of it, though like any web service Netlify may log basic request details, such as an IP address, for a short time. Your widget then fetches what was thrown from iCloud itself.
+
 Buying tether+
 tether+ is bought with your Apple Account, and Apple handles the payment; tether never sees your card.
 To know whether you have tether+, tether uses RevenueCat. It receives a random identifier made just for this app, what you've bought and when, and basic details such as your country, currency, device model and app version. It doesn't receive your letters, your profile or your location, and it isn't used to advertise to you. RevenueCat's own privacy policy covers what it keeps.
 
 What tether doesn't do
-No analytics. No advertising. No tracking across apps or websites. Nothing is sold. The developer runs no servers and has no access to your letters, your profile or anything else you keep in tether.
+No analytics. No advertising. No tracking across apps or websites. Nothing is sold. The developer has no access to your letters, your profile or anything else you keep in tether; the only thing that ever reaches a service of the developer's is a widget's push address, on its way to Apple.
 
 Apple
 iCloud, Apple Maps, notifications and speech recognition are provided by Apple and covered by Apple's own privacy policy.
@@ -361,7 +365,7 @@ In People, or in your conversation with them, choose Report or Block. Reporting 
 
 Deleting everything
 Settings → Delete my data removes everything tether has kept, for you and from the friendships you started. It can't be undone.`,
-      lastUpdated: '9 October 2026'
+      lastUpdated: '14 October 2026'
     },
     design: {
       primary: '#1B1F40',

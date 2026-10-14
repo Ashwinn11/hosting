@@ -240,7 +240,7 @@ const PRIVATE: { title: string; body: string }[] = [
   { title: 'Only the two of you', body: 'Letters live in your iCloud and theirs, end-to-end encrypted and shared with nobody else. Not even the developer can read them.' },
   { title: 'No sign-up', body: 'No email, no password, no account to make. Your iCloud is all tether needs.' },
   { title: 'A city, never a street', body: 'Your location is rounded to about 10 km before it\'s shared. Or skip it and type your city.' },
-  { title: 'Nothing watching', body: 'No ads, no analytics, no tracking across apps. There are no tether servers to send anything to.' },
+  { title: 'Nothing watching', body: 'No ads, no analytics, no tracking across apps. Your letters never pass through a server of ours.' },
 ];
 
 /* ── Legal & support ── */
@@ -493,7 +493,7 @@ const TetherLanding: React.FC<Props> = ({ app, section }) => {
             <div className="tt-reveal" style={{ maxWidth: 640, marginBottom: 52 }}>
               <Eyebrow color="rgba(255,255,255,0.6)">Private by design</Eyebrow>
               <h2 style={{ fontFamily: DISPLAY, fontWeight: 400, fontSize: 'clamp(2rem, 4.4vw, 3.2rem)', margin: '14px 0 14px', letterSpacing: '-0.01em' }}>What you write stays between you.</h2>
-              <p style={{ fontSize: 17, lineHeight: 1.7, color: 'rgba(255,255,255,0.72)', margin: 0 }}>tether has no servers of its own. Your letters travel through your iCloud and theirs, and nowhere else.</p>
+              <p style={{ fontSize: 17, lineHeight: 1.7, color: 'rgba(255,255,255,0.72)', margin: 0 }}>Your letters never pass through a server of ours. They travel through your iCloud and theirs, and nowhere else.</p>
             </div>
             <div className="tt-four" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 18 }}>
               {PRIVATE.map((p, i) => (
