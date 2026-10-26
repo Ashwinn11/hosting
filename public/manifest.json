@@ -1,7 +1,7 @@
 {
-    "name": "Briefly — iOS Apps for Journaling, Fandom & Photos",
-    "short_name": "Briefly",
-    "description": "Three indie iOS apps by Ashwin Anbazhagan: morning journaling, a private fandom journal, and photo stamps & stickers.",
+    "name": "iOS Apps by Ashwin Anbazhagan",
+    "short_name": "Ashwin Apps",
+    "description": "Independent iOS apps by Ashwin Anbazhagan.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#0f172a",

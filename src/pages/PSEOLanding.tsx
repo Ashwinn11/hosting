@@ -36,12 +36,12 @@ const PSEOLanding: React.FC = () => {
         screenshots={app.marketing.screenshots}
         faqs={page.faqs}
         breadcrumbs={[
-          { name: 'Home', url: 'https://briefly.live/' },
-          { name: app.name, url: `https://briefly.live/${app.id}` },
-          { name: page.h1, url: `https://briefly.live/${app.id}/${page.type}/${page.slug}` },
+          { name: 'Home', url: 'https://hosting-pages.netlify.app/' },
+          { name: app.name, url: `https://hosting-pages.netlify.app/${app.id}` },
+          { name: page.h1, url: `https://hosting-pages.netlify.app/${app.id}/${page.type}/${page.slug}` },
         ]}
         pageType={page.type}
-        canonicalUrl={`https://briefly.live/${app.id}/${page.type}/${page.slug}`}
+        canonicalUrl={`https://hosting-pages.netlify.app/${app.id}/${page.type}/${page.slug}`}
         datePublished={page.datePublished}
         comparisonTable={page.comparisonTable}
       />
@@ -261,7 +261,7 @@ const PSEOLanding: React.FC = () => {
           <Link to={`/${app.id}/support`} style={{ color: mutedColor, textDecoration: 'none' }}>Support</Link>
           <Link to="/" style={{ color: mutedColor, textDecoration: 'none' }}>All Apps</Link>
         </div>
-        © 2026 Ashwin Anbazhagan · briefly.live
+        © 2026 Ashwin Anbazhagan
       </footer>
     </div>
   );

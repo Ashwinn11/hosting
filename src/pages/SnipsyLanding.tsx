@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import SEOBox from '../components/SEOBox';
 import type { AppConfig } from '../config/apps';
 import { ShaderCanvas } from '../lib/ShaderCanvas';
 
@@ -116,6 +117,7 @@ const LegalPage: React.FC<{ app: AppConfig; section: 'privacy' | 'terms' | 'supp
   return (
     <div className="snip-page" style={{ position: 'relative', minHeight: '100dvh', fontFamily: DISPLAY, color: INK }}>
       <style>{css}</style>
+      <SEOBox title={app.seo.title} description={app.seo.description} keywords={app.seo.keywords} appId={app.id} appName={app.appStoreName || app.name} appIcon={app.icon} appStoreUrl={app.appStoreUrl} appCategory={app.seoApplicationCategory} appNumericId={app.appNumericId} />
       <PaperBg />
       <div style={{ position: 'relative', zIndex: 2, maxWidth: 720, margin: '0 auto', padding: '80px 32px 100px' }}>
         <Link to="/snipsy" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 48, color: INK2, textDecoration: 'none', fontSize: 14, fontWeight: 600, opacity: 0.7 }}>
@@ -925,7 +927,7 @@ const SnipsyLanding: React.FC<Props> = ({ app, section }) => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'MobileApplication',
         name: app.appStoreName || app.name, applicationCategory: app.seoApplicationCategory,
-        operatingSystem: 'iOS', url: 'https://briefly.live/snipsy', description: app.seo.description,
+        operatingSystem: 'iOS', url: 'https://hosting-pages.netlify.app/snipsy', image: `https://hosting-pages.netlify.app${app.icon}`, description: app.seo.description,
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       }) }} />
       {app.marketing.faqs && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -942,6 +944,7 @@ const SnipsyLanding: React.FC<Props> = ({ app, section }) => {
           backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)',
           background: 'rgba(248,242,227,0.82)', borderBottom: '1px solid rgba(74,55,40,0.08)',
         }} className="snip-pad">
+          <Link to="/" style={{ fontSize: 12, fontWeight: 700, letterSpacing: 1.1, color: INK2, textDecoration: 'none', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>← All Apps</Link>
           <Link to="/snipsy" style={{ fontFamily: DISPLAY, fontSize: 17, fontWeight: 800, letterSpacing: 2, color: INK, textDecoration: 'none' }}>SNIPSY</Link>
           <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
             <a href="#how" style={{ fontSize: 12, fontWeight: 600, letterSpacing: 1.5, color: INK2, textDecoration: 'none', textTransform: 'uppercase' }}>How</a>

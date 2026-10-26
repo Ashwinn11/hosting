@@ -1,15 +1,14 @@
-# Briefly.live — iOS App Portfolio by Ashwin Anbazhagan
+# iOS Apps by Ashwin Anbazhagan
 
-> Three indie iOS apps: morning journaling, a private fandom journal, and photo stamps & stickers. Each app solves one specific problem precisely. All built by Ashwin Anbazhagan.
+> Independent iOS apps by Ashwin Anbazhagan, made to help people reflect, connect, and keep the moments they love.
 
 ## Apps
-- [Honestly — Reflect & Manifest](https://briefly.live/honestly): A free journaling ritual — mood check, free writing, gratitude & manifest — with optional reflection and shadow-work prompts. A Sprout plant grows as your streak builds. Premium adds scheduled app blocking, iCloud sync, and full journal history.
-- [YumeShip — Anime & Kpop Canon](https://briefly.live/yumeship): A private, on-device journal for yumeshippers. Write headcanons, scenarios, love letters, and what-ifs about your anime, otome, manga, or kpop F/O. Notifications and messages from your F/O, ship charts, incorrect quotes. Nothing leaves your device.
-- [tether — Long Distance Letters](https://briefly.live/tether): Write a note in a handwriting pen, fold it into a paper plane and throw it; it flies across the real map to the person you miss and unfolds in their city. Kisses, hugs and bombs between letters, a Home Screen widget, and letters kept end-to-end encrypted in your own iCloud. tether+ yearly with a 3-day free trial, or lifetime.
-- [Snipsy — Photo Stamps & Stickers](https://briefly.live/snipsy): Turns any photo into a collectible postage stamp or die-cut sticker using on-device Vision. 10 hand-crafted paper variants, iMessage stickers, fully offline.
+- [Honestly — Journal & Reflect](https://hosting-pages.netlify.app/honestly): Write before you scroll. Journal with guided prompts, explore 1,400+ affirmations, and see your selected topics across reading, customizable widgets and daily reminders. Premium app blocking helps protect time for your morning pages.
+- [tether — Long Distance Letters](https://hosting-pages.netlify.app/tether): Write a note in a handwriting pen, fold it into a paper plane and throw it; it flies across the real map to the person you miss and unfolds in their city. tether+ offers monthly, yearly and lifetime purchase options. Letters are kept end-to-end encrypted in your own iCloud.
+- [Snipsy — Photo Stamps & Stickers](https://hosting-pages.netlify.app/snipsy): Turns any photo into a collectible postage stamp or die-cut sticker using on-device Vision. 10 hand-crafted paper variants, iMessage stickers, fully offline.
 
 ## Guides & Comparisons
 - Each app has in-depth guide and comparison pages at /{app}/guide/{slug} and /{app}/compare/{slug}, covering specific use cases, conditions, and competitor comparisons.
 
 ## About
-- [Homepage](https://briefly.live): Ashwin Anbazhagan, indie iOS developer and founder.
+- [Homepage](https://hosting-pages.netlify.app): Independent iOS apps by Ashwin Anbazhagan.

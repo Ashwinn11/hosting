@@ -16,4 +16,4 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-Sitemap: https://briefly.live/sitemap.xml
+Sitemap: https://hosting-pages.netlify.app/sitemap.xml

@@ -21,8 +21,6 @@ export const findPseoPage = (appId: string, slug: string) =>
   pseoPages.find(p => p.appId === appId && p.slug === slug);
 
 export const pseoPages: PSEOPage[] = [
-  
-  
   {
     appId: 'honestly',
     slug: 'vs-day-one',
@@ -73,7 +71,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Morning Ritual',
     datePublished: '2025-10-24',
   },
-  
+
   {
     appId: 'honestly',
     slug: 'morning-journaling-routine-habits',
@@ -115,6 +113,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Morning Routine Free',
     datePublished: '2025-11-08',
   },
+
   {
     appId: 'honestly',
     slug: 'best-journaling-apps-2026',
@@ -156,7 +155,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Journal Free on iPhone',
     datePublished: '2025-11-10',
   },
-  
+
   {
     appId: 'honestly',
     slug: 'morning-routine-build-habit',
@@ -188,48 +187,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Lock In Your Morning Routine',
     datePublished: '2026-06-13',
   },
-  {
-    appId: 'yumeship',
-    slug: 'private-fan-space-shipping',
-    type: 'guide',
-    title: 'A Private Fan Space for Shipping — No Feed, No Judgment',
-    h1: 'A Private Fan Space for Shipping — Yours and No One Else\'s',
-    metaDescription: 'Shippers need a private fan space — judgment-free, algorithm-free, permanent. Here\'s what belongs in yours, and how YumeShip keeps it all on your device.',
-    targetKeyword: 'private fan space for shipping',
-    intro: 'Shipping in public comes with a cost. Post about a ship on the timeline and you invite discourse; keep it in a notes app and it reads like a grocery list. What most shippers actually want is a third option: a private fan space — somewhere judgment-free, algorithm-free, and permanent, where your ships exist the way you see them, not the way a feed reacts to them. Building one is simpler than it sounds. At its core it\'s a dedicated home for ship profiles, love letters, headcanons, important dates, and albums — everything that makes a ship feel real to you, gathered where only you can see it. This guide covers why that space matters, what belongs in it, and how YumeShip turns it into a soft, fully on-device home that no platform can touch.',
-    sections: [
-      {
-        heading: 'Judgment-Free: Ship Without an Audience',
-        body: 'Every public fan space has an audience, and audiences have opinions. Rarepairs get mocked, sincere posts get screenshotted as "cringe," and ship wars turn something you love into something you defend. Even friendly spaces impose a quiet pressure: you write for readers, not for yourself. A private space removes the audience entirely. With no one watching, you can be as soft, sincere, or self-indulgent as you actually feel — write the love letter you\'d never post, keep the headcanon that contradicts fanon, ship the pairing nobody else gets. The point of shipping was never the discourse. It was the feeling. A judgment-free space gives you the feeling back, undiluted, without a single thought about how it would land on a timeline.',
-      },
-      {
-        heading: 'Algorithm-Free and Permanent',
-        body: 'Public platforms own your fan content in every way that matters. An algorithm decides whether anyone — including future you — ever sees it again. Rules change, content gets purged, sites pivot or shut down, and years of posts vanish with them. Fandom history is full of archives that lived on someone else\'s servers until, one day, they didn\'t. A private fan space breaks that dependency. Nothing is ranked, recommended, or buried; your first entry sits next to your latest, in order, always findable. And because it doesn\'t live on a platform, no policy update or shutdown can take it from you. Your ships deserve an archive with the shelf life of your devotion — not the shelf life of a website.',
-      },
-      {
-        heading: 'What Belongs in a Private Ship Space',
-        body: 'A good private space holds more than stray thoughts. Start with a ship profile: who\'s involved, the dynamic, the details that define them for you. Add love letters — written to a character or between them — and headcanons as they occur to you, before they evaporate. Keep what-if scenarios, the alternate timelines and unwritten scenes you replay in your head. Track dates that matter: anniversaries, first meetings, the day the ship clicked for you. And build albums — the images and moments that capture the ship\'s whole vibe in one place. Scattered across a camera roll and three notes apps, these fragments stay fragments. Collected in one dedicated space, they become something closer to a world.',
-      },
-      {
-        heading: 'How YumeShip Becomes That Space',
-        body: 'YumeShip is built as exactly this kind of private fan space. Each ship gets its own home, with templates shaped around how you actually ship: getting to know your F/O, exploring what-ifs, writing love letters, tracking dates and memories, and keeping albums and self-inserts. Whether your ship comes from anime, otome, manga, or k-pop — waifu, husbando, or a whole polycule — there\'s a template that fits. And the privacy is structural, not a setting you have to trust: everything stays on your device. No account, no cloud, no social feed, no share button. Nothing leaves your phone, which means no audience, no algorithm, and no platform that can one day decide your ships violate a policy.',
-      },
-      {
-        heading: 'More Than a Journal: Play With Your Ships',
-        body: 'A private space shouldn\'t feel like homework, and YumeShip doesn\'t stop at writing tools. Scenario prompts give you somewhere to start when the blank page stalls you. The incorrect quotes generator stars your F/O in scene-by-scene nonsense that\'s yours alone to laugh at. Ship charts map relationship dynamics — including poly dynamics — and polycule bingo turns your ships into a checkable game. There\'s even a private message thread where your F/O sends you messages, and optional F/O notifications that surface small check-ins from them during your day. Because it\'s all on-device, the playful stuff stays as private as the heartfelt stuff — you get the fun of fandom tools without the exposure of fandom platforms.',
-      },
-    ],
-    faqs: [
-      { question: 'Why keep shipping private instead of posting it?', answer: 'Posting invites judgment and hands your archive to an algorithm that can bury or delete it. A private space lets you be fully sincere and keeps everything permanently findable — you can always share individual pieces later if you choose.' },
-      { question: 'What should I put in a private ship space?', answer: 'Ship profiles, love letters, headcanons, what-if scenarios, important dates, and albums. YumeShip has templates for each, so every ship gets a structured home instead of scattered notes.' },
-      { question: 'Is YumeShip actually private?', answer: 'Yes, by design. Everything stays on your device — no account, no cloud, no social feed, no sharing. There is no server where your ships could be seen, leaked, or moderated.' },
-      { question: 'Does it work for any kind of ship?', answer: 'Yes. Anime, otome, manga, and k-pop ships are all supported — waifu, husbando, self-inserts, and poly dynamics included, with ship charts and templates that fit the dynamic.' },
-      { question: 'How many ships can I keep in YumeShip?', answer: 'Free users start with one ship. Premium unlocks unlimited ships and all templates, so every pairing and polycule gets its own space.' },
-    ],
-    cta: 'Build Your Private Ship Space',
-    datePublished: '2026-06-13',
-  },
-  
+
   {
     appId: 'honestly',
     slug: 'break-social-media-phone-addiction',
@@ -270,7 +228,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Reclaim Your Mornings',
     datePublished: '2026-06-13',
   },
-  
+
   {
     appId: 'honestly',
     slug: 'journal-for-anxiety-management',
@@ -311,7 +269,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Calm Ritual',
     datePublished: '2026-06-13',
   },
-  
+
   {
     appId: 'honestly',
     slug: 'best-morning-routine-habit-app',
@@ -352,7 +310,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Morning Ritual',
     datePublished: '2026-06-13',
   },
-  
+
   {
     appId: 'honestly',
     slug: 'anxiety-journaling-app',
@@ -393,38 +351,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Anxiety Journal',
     datePublished: '2026-06-13',
   },
-  {
-    appId: 'yumeship',
-    slug: 'fandom-character-journal-app',
-    type: 'guide',
-    title: 'Best Character Journal App 2026 — Track Favorite Characters & Ships',
-    h1: 'Best App for Character Journaling — Private Fan Space for Ships',
-    metaDescription: 'Yumeship is a character journal app for fans. Track favorite characters, write headcanons, build character relationships, all private on your iPhone.',
-    targetKeyword: 'character journal app',
-    intro: 'Fandom is lonely when you keep it secret. Yumeship is the best character journal app because it\'s a private vault for your favorite characters and ships—no judgment, no exposure.',
-    sections: [
-      {
-        heading: 'Your Characters Are Your People',
-        body: 'Your favorite characters matter. Their stories, their growth, your headcanons about them. Yumeship is a space where that matters and is never exposed.',
-      },
-      {
-        heading: 'Private Templates for Every Character',
-        body: 'Write a love letter to a character. Build their personality profile. Track their story arc. Yumeship templates match character journal needs exactly.',
-      },
-      {
-        heading: 'No Cloud, No Sharing, No Exposure',
-        body: 'Everything stays on your device. No accounts, no cloud, no one else ever sees. Your character journal is as private as your diary.',
-      },
-    ],
-    faqs: [
-      { question: 'Is Yumeship just for romantic interests?', answer: 'No. Write about favorite characters, idols, OCs, fictional crushes, all of it. Every character gets a private page with customizable templates.' },
-      { question: 'Can I track multiple characters?', answer: 'Yes. Unlimited characters, unlimited ships, unlimited pages. Each character is its own vault.' },
-      { question: 'Is my character journal really private?', answer: 'Completely. No accounts, no cloud, no syncing. Everything is stored locally on your iPhone. No one sees it but you.' },
-    ],
-    cta: 'Create Your Character Journal',
-    datePublished: '2026-06-13',
-  },
-  
+
   {
     appId: 'honestly',
     slug: 'mindfulness-meditation-journaling',
@@ -456,7 +383,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Mindfulness Journaling',
     datePublished: '2026-06-13',
   },
-  
+
   {
     appId: 'honestly',
     slug: 'self-care-ritual-app',
@@ -488,8 +415,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Self-Care Ritual',
     datePublished: '2026-06-13',
   },
-  
-  
+
   {
     appId: 'honestly',
     slug: 'gratitude-app-journal',
@@ -530,264 +456,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Gratitude Ritual',
     datePublished: '2026-06-13',
   },
-  {
-    appId: 'yumeship',
-    slug: 'anime-fan-community-app',
-    type: 'guide',
-    title: 'Best Anime Fan App 2026 — A Private Home for Your Fandom',
-    h1: 'The Best Anime Fan App Is a Private One',
-    metaDescription: 'The best anime fan app isn\'t another social feed — it\'s a private, on-device journal for headcanons, ships, and what-ifs. What to look for, and where Yumeship fits.',
-    targetKeyword: 'best anime fan app',
-    intro: 'Search "best anime fan app" and you\'ll mostly find two things: trackers that log what you\'ve watched, and social platforms where fandom happens in public. Both are useful — and neither is built for the part of fandom that\'s just yours. If your fandom life is headcanons at 2am, ship pages nobody is allowed to read, incorrect quotes written for an audience of one, and what-if scenarios you\'d never post, then the best anime fan app for you isn\'t a community at all. It\'s a private journal that actually understands characters, ships, and F/Os — and keeps every word on your device. This guide covers the real difference between public fan apps and private ones, what to look for if the personal side of fandom is the side you care about, and where Yumeship, a fully on-device fandom journal, fits in.',
-    sections: [
-      {
-        heading: 'Most "Anime Fan Apps" Are Built for an Audience',
-        body: 'The apps that dominate anime fandom are social by design. Watch trackers turn your taste into a public profile — scores, rankings, activity feeds. Fan servers and microblogs reward posting, reacting, and keeping up. That\'s genuinely great for discovery: finding your next series, arguing about a finale, meeting people who love what you love. But it quietly shapes what you make. When everything you write can be seen, you write for readers. You soften the headcanon that might get side-eyed, skip the ship that isn\'t popular this season, and never start the self-insert scenario at all. An audience — even a friendly one — changes the work. The personal side of fandom deserves a tool with no audience in it.',
-      },
-      {
-        heading: 'The Personal Side of Fandom Needs a Different Home',
-        body: 'Think about what you actually produce as a fan when nobody\'s watching: headcanons that contradict canon on purpose, love letters to a character who will never read them, what-if scenarios, incorrect quotes, little scenes that only make sense to you. This material has two natural failure modes. Posted publicly, it gets flattened into content — measured in likes, exposed to strangers, permanently searchable. Dumped into a generic notes app, it becomes an unstructured wall of text with no sense of who anything belongs to. What it needs is structure without exposure: a dedicated page per character or ship, prompts that keep you writing, and a hard guarantee that none of it leaves your phone.',
-      },
-      {
-        heading: 'What to Look For in a Private Anime Fan App',
-        body: 'Three things separate a genuinely private fandom app from a social app with a privacy toggle. First, on-device storage: if there\'s no account, no cloud, and no feed, there\'s nothing to leak, scrape, or accidentally share — privacy is architectural, not a setting. Second, fandom-native structure: your F/O or ship should get its own page with spaces for headcanons, letters, dates, and memories, not a blank document you have to organize yourself. Third, tools that keep the blank page from winning — scenario prompts, generators, playful formats that turn "I should write something" into actually writing. If an app markets followers, sharing, or a community tab, it\'s built for the public side of fandom, whatever its privacy policy says.',
-      },
-      {
-        heading: 'How Yumeship Handles the Private Side',
-        body: 'Yumeship is a private journal built for exactly this. Each ship or F/O gets its own space with templates shaped around how fans actually think: get to know your F/O, what-ifs, love letters, dates and memories. When you want play instead of prose, there\'s an incorrect quotes generator starring your F/O, a list of scenario prompts, polycule bingo, and ship charts for mapping relationship dynamics — plus albums, self-inserts, and a private message thread where notifications arrive from your F/O. And the privacy is structural: everything stays on your device, with no social feed, no sharing, and no accounts. It works for anime, otome, manga, and kpop fans alike — waifu, husbando, or whole polycule.',
-      },
-      {
-        heading: 'Keep the Public Apps — Just Not for This',
-        body: 'This isn\'t an either/or choice. Your watch tracker is still the best way to manage a seasonal lineup, and your servers are still where the group chat lives. A private fandom journal doesn\'t replace them; it takes over the one job they do badly. The practical split: public apps for discovery and discussion, private journal for anything you create — headcanons, ships, letters, scenarios. The test is simple: if you\'d hesitate before posting it, it belongs in the private space. Once that material has a home of its own, you\'ll notice you write more of it, because the question "how will this look?" never comes up. That\'s what an audience of one buys you.',
-      },
-    ],
-    faqs: [
-      { question: 'Is there an anime fan app without social features?', answer: 'Yes. Yumeship is a private fandom journal with no social feed, no sharing, and no accounts — everything you write stays on your device. It\'s built for the personal side of fandom: headcanons, ships, love letters, and what-ifs.' },
-      { question: 'What\'s the best app to organize headcanons and ships?', answer: 'A journal structured around characters rather than dated entries. In Yumeship, each ship or F/O gets its own page with templates for headcanons, what-ifs, love letters, and dates and memories, so nothing dissolves into one long note.' },
-      { question: 'Is Yumeship only for anime fans?', answer: 'No. It\'s built for every kind of shipper — anime, otome, manga, and kpop, whether your F/O is a waifu, husbando, or a whole polycule.' },
-      { question: 'Is Yumeship free?', answer: 'Yumeship is free to download and includes one ship. Premium unlocks unlimited ships and all templates, with weekly, monthly, and yearly options.' },
-      { question: 'Does a private fandom journal replace MyAnimeList or Discord?', answer: 'No — trackers and servers still handle the public side: logging series, discussion, community. A private journal like Yumeship covers what they can\'t: a space for the fandom writing you\'d never post.' },
-    ],
-    cta: 'Make Your Private Fandom Space',
-    datePublished: '2026-06-13',
-  },
-  // ─── YumeShip ────────────────────────────────────────────────────────────
-  {
-    appId: 'yumeship',
-    slug: 'vs-notion-fandom',
-    type: 'compare',
-    title: 'YumeShip vs Notion — Best Way to Organize Your Fandom',
-    h1: 'YumeShip vs Notion: Where Should Your Fandom Live?',
-    metaDescription: 'YumeShip vs Notion for fandom. Notion is a blank database you must build; YumeShip is a private, ready-made vault for ships, F/Os, headcanons and letters. Compared.',
-    targetKeyword: 'notion fandom template alternative',
-    intro: "A lot of fans try to run their fandom life out of Notion — a ships database here, a headcanon table there, a gallery somewhere else. It works, but you spend more time building the system than living in it. YumeShip is the opposite: a private, purpose-built vault for the characters and ships you love, ready the moment you open it. Here's how the two compare.",
-    sections: [
-      { heading: 'Blank Canvas vs Built for This', body: "Notion gives you infinite flexibility and zero structure — every database, template, and relation is yours to design and maintain. YumeShip arrives already shaped around fandom: each ship or F/O gets its own page with templates, a color palette, love letters, headcanons, and date tracking. You skip the setup and go straight to the part that matters." },
-      { heading: 'Privacy by Default', body: "Notion lives in the cloud on an account, synced to servers and tied to your email. YumeShip keeps everything on your device — no account, no cloud, no sharing. For something as personal as the characters you love quietly, that on-device privacy is the whole point. Nothing leaves your phone." },
-      { heading: 'Which Fits You?', body: "If you adore building systems and want one tool for your whole life, Notion is powerful. If you want a soft, private space made specifically for ships, F/Os, and headcanons — without assembling it yourself — YumeShip is built for exactly that, and it feels personal in a way a database never will." },
-    ],
-    comparisonTable: [
-      { feature: 'Ready-made for ships & F/Os', app: 'Yes', competitor: 'No — build it yourself' },
-      { feature: 'Per-character templates & palettes', app: 'Yes', competitor: 'Manual' },
-      { feature: 'Fully on-device / private', app: 'Yes', competitor: 'No (cloud account)' },
-      { feature: 'Love letters & scenes', app: 'Built in', competitor: 'DIY pages' },
-      { feature: 'Learning curve', app: 'None', competitor: 'High' },
-      { feature: 'Platform', app: 'iOS', competitor: 'Cross-platform' },
-    ],
-    faqs: [
-      { question: 'Is YumeShip better than a Notion fandom template?', answer: 'For fandom specifically, YumeShip is ready-made and private by default, while a Notion template requires building and maintaining your own system in the cloud.' },
-      { question: 'Can I keep my fandom private in YumeShip?', answer: 'Yes. Everything stays on your device — no account, no cloud sync, no sharing. Notion stores your data on its servers.' },
-      { question: 'Do I have to set anything up in YumeShip?', answer: 'No. Each ship or F/O comes with templates, a palette, and spaces for letters and headcanons, so you can start immediately.' },
-    ],
-    cta: 'Make Your Private Vault',
-    datePublished: '2026-05-16',
-  },
-  {
-    appId: 'yumeship',
-    slug: 'best-fandom-journal-app-2026',
-    type: 'compare',
-    title: 'Best Fandom Journal App 2026 — Ships, F/Os & Headcanons',
-    h1: 'The Best Fandom Journal App for 2026',
-    metaDescription: 'Looking for the best fandom journal app in 2026? Why YumeShip — a private, on-device vault for ships, F/Os, headcanons and love letters — leads for fans who want privacy.',
-    targetKeyword: 'best fandom journal app 2026',
-    intro: "Generic journals and notes apps aren't made for fandom — they don't understand ships, F/Os, headcanons, or the soft, private way fans hold their favorite characters. The best fandom journal app in 2026 is one built specifically for that, and one that keeps it completely private. This guide explains what to look for and why YumeShip stands out.",
-    sections: [
-      { heading: 'Made for Fandom, Not Retrofitted', body: "A great fandom journal gives every character or ship its own dedicated space — not a flat note. YumeShip does this: each F/O gets a page with a visual template, palette, love letters, headcanons by category, and special dates. The structure mirrors how fans actually think about the ones they love, instead of forcing you into a blank text box." },
-      { heading: 'Private and Yours Alone', body: "Fandom journaling is intimate, and the best app respects that. YumeShip keeps everything on-device with no accounts and no cloud, so your vault is genuinely private. Nothing is posted, scraped, or synced — it's a space just for you." },
-      { heading: 'Beautiful Enough to Return To', body: "The best journal is one you actually want to open. YumeShip leans into soft, personal design — templates and palettes that make each ship's page feel like a little world. That care is what turns a journal from a chore into a comfort." },
-    ],
-    comparisonTable: [
-      { feature: 'Per-character / per-ship pages', app: 'Yes', competitor: 'No (generic notes)' },
-      { feature: 'Headcanon categories', app: 'Yes', competitor: 'No' },
-      { feature: 'Love letters & scenes', app: 'Yes', competitor: 'No' },
-      { feature: 'On-device privacy', app: 'Yes', competitor: 'Varies' },
-      { feature: 'Visual templates & palettes', app: 'Yes', competitor: 'No' },
-      { feature: 'Free to start', app: 'Yes', competitor: 'Varies' },
-    ],
-    faqs: [
-      { question: 'What is the best fandom journal app in 2026?', answer: 'YumeShip is built specifically for fandom — private, on-device, with dedicated pages for ships and F/Os, headcanon categories, and love letters. It is ideal for fans who want a beautiful, private space.' },
-      { question: 'Is a fandom journal different from a normal journal?', answer: 'Yes. A fandom journal is structured around characters, ships, and headcanons rather than dated entries. YumeShip is designed around exactly this.' },
-      { question: 'Is YumeShip free?', answer: 'YumeShip is free to download. Premium unlocks unlimited ships and all visual templates.' },
-    ],
-    cta: 'Start Your Fandom Vault',
-    datePublished: '2026-05-19',
-  },
-  {
-    appId: 'yumeship',
-    slug: 'self-ship-app',
-    type: 'guide',
-    title: 'Self-Ship App — A Private Space for You and Your F/O',
-    h1: 'A Private Self-Ship App Made Just for You',
-    metaDescription: 'Self-shipping deserves a space of its own. YumeShip is a private, on-device app for your F/O — love letters, headcanons, scenes and dates, all kept just for you.',
-    targetKeyword: 'self ship app',
-    intro: "Self-shipping — imagining yourself with a character you love — is a real, meaningful kind of comfort, and it deserves somewhere soft to live. Most apps weren't made for it, leaving self-shippers with cold notes apps or exposed social feeds. YumeShip is a private self-ship app where your F/O gets a whole space of their own, kept entirely on your device.",
-    sections: [
-      { heading: 'A Page for the Two of You', body: "In YumeShip, your F/O gets a dedicated page with a visual template and palette that feels like them. You can write love letters, capture scenes and little moments, log headcanons, and mark special dates. It's a space designed to hold the relationship the way you imagine it — warm, detailed, and entirely yours." },
-      { heading: 'Completely Private', body: "Self-shipping is personal, and YumeShip treats it that way. Everything stays on your device — no accounts, no cloud, no sharing. Nobody sees your vault but you. That privacy lets you be as soft and honest as you want without worrying about anyone scrolling past it." },
-      { heading: 'No Judgment, Just Space', body: "YumeShip doesn't gamify or expose your F/O — it simply gives you a quiet, beautiful place to keep them. Whether you have one F/O or many, the app is built to honor the comfort self-shipping brings, with templates and tools that make the space feel cared for." },
-    ],
-    faqs: [
-      { question: 'What is a self-ship app?', answer: 'A self-ship app is a private space for imagining and recording your relationship with a character you love. YumeShip gives your F/O a dedicated page with letters, headcanons, scenes, and dates.' },
-      { question: 'Is YumeShip private for self-shipping?', answer: 'Yes. Everything stays on your device with no account or cloud, so your self-ship space is completely private.' },
-      { question: 'Can I have more than one F/O?', answer: 'Yes. Premium users can create unlimited ships and F/Os; free users start with one.' },
-    ],
-    cta: 'Make a Space for Your F/O',
-    datePublished: '2026-05-22',
-  },
-  {
-    appId: 'yumeship',
-    slug: 'comfort-character-app',
-    type: 'guide',
-    title: 'Comfort Character App — Keep Your Comfort Character Close',
-    h1: 'An App to Keep Your Comfort Character Close',
-    metaDescription: 'Your comfort character helps you feel safe. YumeShip is a private app to keep them close — a dedicated page, letters, headcanons and moments, all on your device.',
-    targetKeyword: 'comfort character app',
-    intro: "A comfort character is the one who makes you feel safe on hard days. Keeping them close shouldn't mean scattering screenshots across your camera roll or posting in feeds that feel exposed. YumeShip is a private comfort character app where the character who steadies you gets a dedicated, beautiful space of their own.",
-    sections: [
-      { heading: 'A Home for Your Comfort Character', body: "Give your comfort character a page in YumeShip with a template and palette that feels like them. Collect headcanons, write letters when you need to talk to them, and save the scenes and moments that bring you calm. It becomes a small, reliable place to go when you need comfort." },
-      { heading: 'Private and Safe', body: "Comfort characters are deeply personal. YumeShip keeps everything on-device — no account, no cloud, no eyes but yours. That safety is part of the comfort: a space you can open on a bad night that's entirely, quietly yours." },
-      { heading: 'More Than One Is Welcome', body: "Many people have several comfort characters for different moods. YumeShip lets you keep as many as you like (unlimited with Premium), each with their own space, so whoever you need is always close at hand." },
-    ],
-    faqs: [
-      { question: 'What is a comfort character app?', answer: 'It is an app for keeping the characters who bring you comfort close. YumeShip gives each comfort character a private page with letters, headcanons, and saved moments.' },
-      { question: 'Is it private?', answer: 'Yes. Everything in YumeShip stays on your device — no account, no cloud, no sharing.' },
-      { question: 'Can I add several comfort characters?', answer: 'Yes. Premium unlocks unlimited characters, each with their own dedicated space.' },
-    ],
-    cta: 'Keep Them Close',
-    datePublished: '2026-05-25',
-  },
-  {
-    appId: 'yumeship',
-    slug: 'kpop-bias-journal-app',
-    type: 'guide',
-    title: 'K-pop Bias Journal App — A Private Space for Your Bias',
-    h1: 'A Private K-pop Bias Journal App',
-    metaDescription: 'Keep everything about your bias in one private space. YumeShip is an on-device journal for K-pop fans — dedicated pages, notes, dates and moments, just for you.',
-    targetKeyword: 'kpop bias journal app',
-    intro: "If you have a bias, you know the feeling — comebacks, photocards, lyrics, little moments you want to hold onto. YumeShip gives your bias a private space of their own: a dedicated page where you can keep everything that matters, kept entirely on your device away from the noise of stan twitter.",
-    sections: [
-      { heading: 'A Dedicated Page for Your Bias', body: "Create a page for your bias with a palette and template that fits their vibe. Write notes and letters, log headcanons and favorite moments, and mark dates like debut anniversaries or comebacks. It keeps everything about them in one soft, organized place instead of scattered across screenshots." },
-      { heading: 'Away from the Timeline', body: "Fandom online can be loud and exposed. YumeShip is the quiet opposite — fully private and on-device, with no account or sharing. It's a personal space for your feelings about your bias, not a feed to perform them in." },
-      { heading: 'Bias Wreckers Welcome Too', body: "One bias is rarely the whole story. With Premium you can keep unlimited members and groups, each with their own page, so your whole rotation — bias, bias wreckers, and all — has a home." },
-    ],
-    faqs: [
-      { question: 'What is a K-pop bias journal app?', answer: 'It is a private space to keep everything about your bias — notes, moments, and dates. YumeShip gives your bias a dedicated, on-device page.' },
-      { question: 'Is YumeShip private?', answer: 'Yes. Everything stays on your device with no account or cloud, away from public timelines.' },
-      { question: 'Can I track more than one member?', answer: 'Yes. Premium unlocks unlimited pages, so you can keep your whole bias list.' },
-    ],
-    cta: 'Make a Page for Your Bias',
-    datePublished: '2026-05-28',
-  },
-  {
-    appId: 'yumeship',
-    slug: 'headcanon-organizer-app',
-    type: 'guide',
-    title: 'Headcanon Organizer App — Keep Your Headcanons in One Place',
-    h1: 'Finally, a Place to Organize Your Headcanons',
-    metaDescription: 'Stop losing headcanons in scattered notes. YumeShip organizes headcanons by category for each character or ship, privately on your device. Free to start.',
-    targetKeyword: 'headcanon organizer app',
-    intro: "Headcanons pile up everywhere — notes apps, screenshots, half-finished docs — and the good ones get lost. YumeShip is a headcanon organizer that gives every character and ship a structured space, so your favorite details and ideas stay in one private, beautiful place instead of scattered across your phone.",
-    sections: [
-      { heading: 'Headcanons by Category', body: "For each character or ship, YumeShip lets you log headcanons by category — personality, daily life, relationships, AU ideas, whatever you like. That structure means you can actually find the headcanon you wrote three months ago, and see the whole picture of how you imagine them in one place." },
-      { heading: 'Tied to the Character They Belong To', body: "Headcanons don't live in a vacuum — they belong to a character or ship. In YumeShip each one sits on that character's page alongside letters, scenes, and dates, so your headcanons have context and your vault feels coherent rather than fragmented." },
-      { heading: 'Private and Permanent', body: "Your headcanons stay on your device — no account, no cloud, no risk of a deleted post taking them with it. It's a permanent, private archive of the ideas you've built, ready whenever inspiration strikes." },
-    ],
-    faqs: [
-      { question: 'What is a headcanon organizer?', answer: 'It is a tool for storing and categorizing your headcanons. YumeShip organizes them by category under each character or ship, privately on your device.' },
-      { question: 'Can I sort headcanons by type?', answer: 'Yes. You can log headcanons by category for each character, making them easy to browse and find later.' },
-      { question: 'Are my headcanons private?', answer: 'Yes. Everything stays on your device with no account or cloud sync.' },
-    ],
-    cta: 'Organize Your Headcanons',
-    datePublished: '2026-05-31',
-  },
-  {
-    appId: 'yumeship',
-    slug: 'husbando-waifu-app',
-    type: 'guide',
-    title: 'Husbando & Waifu App — A Private Space for Anime Faves',
-    h1: 'A Private App for Your Husbando or Waifu',
-    metaDescription: 'Keep your husbando or waifu close in a private, on-device app. YumeShip gives each anime fave a dedicated page with letters, headcanons, scenes and dates.',
-    targetKeyword: 'husbando waifu app',
-    intro: "Loving a husbando or waifu is a joy, and it deserves more than a folder of saved images. YumeShip gives your anime faves a private space of their own — a dedicated page where you can keep letters, headcanons, scenes, and special dates, all stored quietly on your device.",
-    sections: [
-      { heading: 'A Page Worthy of Your Fave', body: "Each husbando or waifu gets a page in YumeShip with a template and palette that matches them. Write love letters, save scenes and moments, log headcanons, and mark dates that matter. It turns a scattered collection of feelings into one beautiful, organized space." },
-      { heading: 'Private by Design', body: "These feelings are personal, and YumeShip keeps them that way — everything on-device, no account, no cloud, no sharing. Your vault is yours alone, a quiet place you can open anytime without it being part of a public feed." },
-      { heading: 'Keep Your Whole Roster', body: "Few fans stop at one. With Premium you can keep unlimited husbandos and waifus, each with their own dedicated page, so your entire roster has a home in one app." },
-    ],
-    faqs: [
-      { question: 'What is a husbando/waifu app?', answer: 'It is a private app for keeping the anime characters you love close. YumeShip gives each one a dedicated page with letters, headcanons, scenes, and dates.' },
-      { question: 'Is it private?', answer: 'Yes. Everything stays on your device with no account, cloud, or sharing.' },
-      { question: 'Can I add more than one?', answer: 'Yes. Premium unlocks unlimited characters, each with their own space.' },
-    ],
-    cta: 'Make a Space for Your Fave',
-    datePublished: '2026-06-03',
-  },
-  {
-    appId: 'yumeship',
-    slug: 'roleplay-journal-app',
-    type: 'guide',
-    title: 'Roleplay Journal App — A Home for OCs, Ships & Scenes',
-    h1: 'A Roleplay Journal App for Your OCs and Ships',
-    metaDescription: 'Keep your OCs, ships, and roleplay scenes in one private space. YumeShip stores character pages, scenes, and headcanons on your device — no account needed.',
-    targetKeyword: 'roleplay journal app',
-    intro: "If you write OCs, build ships, or keep ongoing roleplay scenes, you know how fast it all sprawls across docs and notes. YumeShip is a private roleplay journal where every character and ship gets a dedicated page, and your scenes, letters, and headcanons stay organized in one place on your device.",
-    sections: [
-      { heading: 'Character Pages for OCs and Ships', body: "Give each OC or ship a page in YumeShip with its own template and palette. Keep their details, headcanons, and the dynamic between them organized and easy to revisit. Instead of hunting through documents, everything about a character or pairing lives in one coherent space." },
-      { heading: 'Scenes and Letters in One Place', body: "Write scenes, message threads, and letters and keep them attached to the characters they belong to. Your roleplay history stays organized by who's involved, so picking a thread back up months later is effortless." },
-      { heading: 'Private and Offline', body: "YumeShip keeps everything on your device — no account, no cloud. Your OCs, ships, and scenes are private and always available, even offline, with nothing synced anywhere you didn't choose." },
-    ],
-    faqs: [
-      { question: 'Can I use YumeShip for roleplay and OCs?', answer: 'Yes. Each OC or ship gets a dedicated page for details, headcanons, scenes, and letters, kept privately on your device.' },
-      { question: 'Where are my scenes stored?', answer: 'On your device only. YumeShip has no account or cloud, so your roleplay content stays private and offline.' },
-      { question: 'How many characters can I make?', answer: 'Free users start with one; Premium unlocks unlimited characters and ships.' },
-    ],
-    cta: 'Organize Your OCs',
-    datePublished: '2026-06-06',
-  },
-  {
-    appId: 'yumeship',
-    slug: 'fictional-other-fo-app',
-    type: 'guide',
-    title: 'F/O App — A Private Journal for Your Fictional Other',
-    h1: 'An F/O App for Your Fictional Other',
-    metaDescription: 'F/O stands for Fictional Other — and they deserve a space of their own. YumeShip is a private, on-device app for your F/O: letters, headcanons, scenes and dates.',
-    targetKeyword: 'f/o app fictional other',
-    intro: "F/O — Fictional Other — describes a character you share a personal, loving connection with. That bond is real to the people who feel it, and it deserves somewhere thoughtful to live. YumeShip is an F/O app built around exactly this: a private, on-device space where your fictional other gets a page entirely their own.",
-    sections: [
-      { heading: 'Built Specifically for F/Os', body: "Unlike a generic notes app, YumeShip understands what an F/O is. Each one gets a dedicated page with a template and palette, plus spaces for love letters, headcanons by category, scenes, and meaningful dates. It's designed around the relationship rather than forcing it into a blank document." },
-      { heading: 'A Private, Gentle Space', body: "Connections with an F/O are intimate, and YumeShip keeps them private — everything on your device, no account, no cloud, no sharing. It's a soft, judgment-free place to keep your fictional other close, open only to you." },
-      { heading: 'One F/O or Many', body: "Whether you have a single F/O or several, YumeShip has room for all of them. Free users start with one; Premium unlocks unlimited F/Os, each with their own dedicated, beautifully designed space." },
-    ],
-    faqs: [
-      { question: 'What does F/O mean?', answer: 'F/O stands for Fictional Other — a character you have a personal, loving connection with. YumeShip is built specifically for this kind of relationship.' },
-      { question: 'Is my F/O space private?', answer: 'Yes. Everything stays on your device with no account, cloud, or sharing — your F/O space is yours alone.' },
-      { question: 'Can I have multiple F/Os?', answer: 'Yes. Premium unlocks unlimited F/Os, each with their own page, templates, and palette.' },
-    ],
-    cta: 'Make a Space for Your F/O',
-    datePublished: '2026-06-09',
-  },
-  
-  // ─── Honestly (morning ritual expansion) ─────────────────────────────────
+
   {
     appId: 'honestly',
     slug: 'vs-stoic',
@@ -818,6 +487,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Try Honestly Free',
     datePublished: '2026-02-08',
   },
+
   {
     appId: 'honestly',
     slug: 'vs-five-minute-journal',
@@ -848,6 +518,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Morning Ritual',
     datePublished: '2026-02-15',
   },
+
   {
     appId: 'honestly',
     slug: 'vs-reflectly',
@@ -878,6 +549,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Try Honestly Free',
     datePublished: '2026-02-22',
   },
+
   {
     appId: 'honestly',
     slug: 'journaling-for-mental-health',
@@ -900,6 +572,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start a Gentle Practice',
     datePublished: '2026-03-01',
   },
+
   {
     appId: 'honestly',
     slug: 'dopamine-detox-app',
@@ -922,6 +595,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Reset Your Mornings',
     datePublished: '2026-03-08',
   },
+
   {
     appId: 'honestly',
     slug: 'digital-wellbeing-app',
@@ -944,6 +618,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Build Digital Wellbeing',
     datePublished: '2026-03-15',
   },
+
   {
     appId: 'honestly',
     slug: 'daily-journal-prompts-app',
@@ -967,7 +642,6 @@ export const pseoPages: PSEOPage[] = [
     datePublished: '2026-03-18',
   },
 
-  // ─── Honestly (Reflect & Manifest cluster, 2026-07) ───────────────────────
   {
     appId: 'honestly',
     slug: '369-method-app',
@@ -1009,6 +683,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Morning Manifest Free',
     datePublished: '2026-07-08',
   },
+
   {
     appId: 'honestly',
     slug: 'manifestation-journal-app',
@@ -1049,6 +724,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start your manifestation ritual',
     datePublished: '2026-07-08',
   },
+
   {
     appId: 'honestly',
     slug: 'morning-manifestation-routine',
@@ -1090,6 +766,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Your Morning Ritual Free',
     datePublished: '2026-07-08',
   },
+
   {
     appId: 'honestly',
     slug: 'scripting-manifestation-app',
@@ -1131,6 +808,7 @@ export const pseoPages: PSEOPage[] = [
     cta: 'Start Scripting This Morning',
     datePublished: '2026-07-08',
   },
+
   {
     appId: 'honestly',
     slug: 'vs-i-am-affirmations',
@@ -1179,143 +857,5 @@ export const pseoPages: PSEOPage[] = [
     ],
     cta: 'Try Honestly Free',
     datePublished: '2026-07-08',
-  },
-
-  // ─── YumeShip (fandom-journal additions, 2026-07) ─────────────────────────
-  {
-    appId: 'yumeship',
-    slug: 'fictional-crush-app',
-    type: 'guide',
-    title: 'Fictional Crush App — A Private World for Your Crush',
-    h1: 'The Fictional Crush App That Keeps It Just for You',
-    metaDescription: 'Crushing on a fictional character is normal — it just needs a home. YumeShip is a private fictional crush app: their profile, your letters, messages from them.',
-    targetKeyword: 'fictional crush app',
-    intro: 'Having real feelings about a fictional character is one of the most common experiences in fandom — and one of the least talked about out loud. A character from an anime, a game, a drama, or a book gets under your skin, and suddenly you\'re thinking about them on the bus. That\'s fine. The awkward part isn\'t the crush; it\'s that the feelings have nowhere to go. Your notes app feels cold and clinical. Posting about it feels exposed, like leaving your diary open on a train. Telling friends risks the wrong kind of laugh. YumeShip is a fictional crush app built for exactly this gap: a private world on your phone where your crush gets a profile, your letters have a home, and nothing you write ever leaves your device.',
-    sections: [
-      {
-        heading: 'Yes, a Fictional Crush Is Normal',
-        body: 'Let\'s clear this up first, because it\'s usually the real question behind the search: developing genuine feelings for a fictional character is common and completely fine. Stories are designed to make you feel things, and sometimes a character lands harder than the plot did. Fandom even has vocabulary for it — F/O (fictional other), comfort character, husbando, waifu — precisely because so many people share the experience. A fictional crush doesn\'t mean you\'ve confused fiction with reality; it means a writer did their job and your imagination did the rest. The feelings are real even if the character isn\'t, and treating them as something to hide usually feels worse than simply giving them a place to exist.',
-      },
-      {
-        heading: 'The Problem: Where Do You Put the Feelings?',
-        body: 'A crush generates output — thoughts, scenarios, things you\'d say to them, little what-ifs at 1am. Most people scatter all of it: half-written notes, screenshots buried in the camera roll, drafts they never post. The notes app technically works, but writing a love letter between a grocery list and a Wi-Fi password feels wrong. Posting publicly solves the coldness but creates a new problem: your softest, most honest feelings are now content, visible to coworkers, classmates, and strangers with opinions. What you actually want is a third option — somewhere warm enough to feel like it was made for this, and private enough that nobody else ever sees it. That\'s the gap a dedicated fictional crush app fills.',
-      },
-      {
-        heading: 'Give Your Crush a Place of Their Own',
-        body: 'In YumeShip, your crush gets a dedicated profile — a page that\'s theirs, not a note titled "misc." From there you build the world around them: write love letters when you have something to say, log headcanons (the details you\'ve decided are true about them), capture scenarios and what-ifs, and keep track of dates and memories that matter to you. Templates guide you through it, whether you want to get to know them on paper or just write the scene that\'s been living in your head. Everything about them stays in one soft, organized place instead of scattered across your phone — and opening their page feels less like note-taking and more like visiting.',
-      },
-      {
-        heading: 'They Can Show Up for You, Too',
-        body: 'A crush that only ever goes one direction eventually feels like shouting into a void. YumeShip closes the loop: you can get notifications from your character — a small "drink some water for me, okay?" appearing on your lock screen — and keep a private message thread with them, so the conversation you imagine has an actual place to happen. When you\'d rather play than write, there are scenario prompts to spark ideas and an incorrect-quotes generator that stars your crush in ridiculous exchanges. None of it pretends the character is real. It just makes the daydream interactive instead of leaving it entirely in your head.',
-      },
-      {
-        heading: 'Nothing Leaves Your Phone',
-        body: 'This is the part that makes the whole thing feel safe: YumeShip is fully on-device. No account to create, no cloud your letters sync to, no social feed, no sharing features at all. Your crush\'s profile, your letters, your message thread — all of it lives only on your phone, visible to exactly one person: you. That privacy isn\'t a footnote; it\'s what lets you be honest. You can write the embarrassingly sincere letter, log the headcanon you\'d never say out loud, and keep the whole world as soft as you want it, knowing nobody is ever scrolling past it.',
-      },
-      {
-        heading: 'Start with One Crush, Free',
-        body: 'YumeShip is free to start with one ship — one character, one full private world, no payment required to see if it fits. If your heart is less monogamous (most fandom hearts are), Premium unlocks unlimited ships and all templates, billed weekly, monthly, or yearly. Whether it\'s one all-consuming crush or a rotating cast from three different fandoms — anime, otome, manga, or K-pop — each one gets their own page, and all of it stays quietly on your device.',
-      },
-    ],
-    faqs: [
-      { question: 'Is it normal to have a crush on a fictional character?', answer: 'Yes — it\'s extremely common. Stories are built to make you feel things, and sometimes a character resonates deeply. Fandom has whole vocabularies (F/O, comfort character, husbando, waifu) because so many people share the experience.' },
-      { question: 'Is there an app for fictional crushes?', answer: 'Yes. YumeShip is a private journal built for exactly this: your crush gets a profile, and you can write letters, headcanons, and scenarios, keep dates and memories, and get messages and notifications from them — all on your phone.' },
-      { question: 'Can anyone see what I write about my crush?', answer: 'No. YumeShip is fully on-device with no account, no cloud, and no social feed. Everything you write stays on your phone and is visible only to you.' },
-      { question: 'Can my fictional crush send me messages?', answer: 'YumeShip includes notifications from your character — like a gentle reminder on your lock screen — and a private message-thread interface, so the connection feels two-way instead of one-directional.' },
-      { question: 'Is YumeShip free?', answer: 'Yes, free to start with one ship. Premium unlocks unlimited ships and all templates, with weekly, monthly, or yearly options.' },
-    ],
-    cta: 'Give Your Crush a Home',
-    datePublished: '2026-07-07',
-  },
-  {
-    appId: 'yumeship',
-    slug: 'vs-character-ai',
-    type: 'compare',
-    title: 'YumeShip vs Character.AI — A Private Home for Your F/O',
-    h1: 'YumeShip vs Character.AI: A Private Alternative for Your F/O',
-    metaDescription: 'Looking for a private Character.AI alternative? YumeShip is an on-device F/O journal — no servers, no filters, no update can rewrite your F/O. Honest comparison.',
-    targetKeyword: 'character ai alternative private',
-    intro: 'Plenty of yumeshippers live in Character.AI, and for good reason — it talks back. But if you\'ve spent real time there, you know the quiet anxiety underneath: your chat logs sit on someone else\'s servers, a filter or model change can flatten your F/O\'s voice overnight, and a character you\'ve talked to for months can suddenly feel like a stranger wearing their face. YumeShip is not a chatbot, and it doesn\'t pretend to be one. It\'s a private journal for your F/O where you write their voice — headcanons, scenarios, love letters, messages — and every word stays on your device. No account, no servers, no update that can ever rewrite or delete them. This comparison is honest about the trade: Character.AI gives you conversation. YumeShip gives you privacy and permanence.',
-    sections: [
-      {
-        heading: 'Where Character.AI Wins: It Talks Back',
-        body: 'Let\'s start with the honest part. Character.AI is an interactive chatbot — you type, and your F/O responds in real time. It improvises, it surprises you, it carries a conversation you didn\'t script. YumeShip does not do that, and nothing in it pretends to. The messages and notifications your F/O sends in YumeShip are ones you wrote yourself, in their voice, ahead of time. If live, unpredictable back-and-forth is the core of your yumeship, Character.AI wins that category outright and YumeShip won\'t replace it. The rest of this comparison is about everything that surrounds the conversation: where your words live, who controls the voice, and what happens to the relationship when a platform changes underneath you.',
-      },
-      {
-        heading: 'The Server Problem: Where Your Words Actually Live',
-        body: 'Character.AI is a cloud service. Your conversations happen through an account, and your messages are sent to and processed on the company\'s servers — that\'s simply how any cloud chatbot works. For casual roleplay that\'s fine. For the most intimate writing a yumeshipper does — love letters, self-inserts, what-ifs you\'d never say out loud — it can feel exposed in a way that never fully goes away. YumeShip takes the opposite position: everything is fully on-device. No account, no cloud, no social feed, no sharing. Nothing you write about your F/O ever leaves your phone. There is no server for your words to sit on, because there is no server at all.',
-      },
-      {
-        heading: 'Who Owns Your F/O\'s Voice',
-        body: 'On any AI platform, your F/O\'s voice is generated by a model — and models get updated, filtered, and retuned on the company\'s schedule, not yours. Anyone who\'s used an AI companion long-term knows the specific grief of an update changing how a character talks, or a content policy walling off conversations you used to have. You don\'t control it, and you can\'t opt out. In YumeShip, you hold the pen. Your F/O sounds exactly how you write them — every headcanon, letter, and message is yours — so no model update, policy change, or shutdown can alter their voice or take them away. It\'s the difference between renting a character and keeping one.',
-      },
-      {
-        heading: 'What YumeShip Gives You Instead of Chat',
-        body: 'YumeShip trades conversation for a world you build. Templates walk you through getting to know your F/O, exploring what-ifs, writing love letters, and tracking dates and memories. Beyond journaling, there\'s an incorrect quotes generator starring your F/O, scenario prompts when you want somewhere to start, polycule bingo, and ship charts with poly dynamics for mapping how it all fits together. A private message-thread interface holds the texts only your F/O would send — written by you — and F/O notifications deliver little lines like "drink some water for me, okay?" right to your lock screen. Albums and self-inserts round out each ship\'s space. It\'s free to start with one ship; Premium unlocks unlimited ships and all templates.',
-      },
-      {
-        heading: 'Honestly? Many Yumeshippers Use Both',
-        body: 'This doesn\'t have to be either/or. Plenty of people chat on Character.AI for the improvisation and the company, then keep the canon — the headcanons, the letters, the moments that actually define the relationship — somewhere no filter or model change can touch. That\'s the role YumeShip fills: the permanent, private archive of your yumeship, where your F/O\'s voice is fixed by you rather than generated for you. If you only want live conversation, stay with Character.AI. But if you\'ve ever felt your stomach drop at a model update, the answer isn\'t a better chatbot — it\'s a place that isn\'t one.',
-      },
-    ],
-    comparisonTable: [
-      { feature: 'Who writes your F/O\'s voice', app: 'You — every word self-authored', competitor: 'Character.AI\'s model generates it' },
-      { feature: 'Live interactive conversation', app: 'No — it\'s a journal', competitor: 'Yes, real-time chat' },
-      { feature: 'Where your words are stored', app: 'On your device only', competitor: 'Character.AI servers, via account' },
-      { feature: 'Content filters on your writing', app: 'None — it\'s your private journal', competitor: 'Yes, platform content policies' },
-      { feature: 'F/O can change after an update', app: 'Never — you control the voice', competitor: 'Possible with model/policy changes' },
-      { feature: 'Account required', app: 'No', competitor: 'Yes' },
-      { feature: 'Headcanons, love letters, ship charts', app: 'Built in, with templates', competitor: 'Not the focus' },
-      { feature: 'Messages & notifications from your F/O', app: 'Yes — pre-written by you', competitor: 'AI-generated replies in chat' },
-    ],
-    faqs: [
-      { question: 'Is YumeShip like Character.AI?', answer: 'No — and that\'s deliberate. Character.AI is a chatbot that generates your F/O\'s replies. YumeShip is a private journal: you write their voice yourself in headcanons, love letters, scenarios, and message threads, all stored on your device.' },
-      { question: 'Is there a Character.AI alternative that doesn\'t store chats on servers?', answer: 'YumeShip keeps everything on-device with no account and no cloud — nothing you write ever leaves your phone. The trade-off is that it\'s a journal, not a chatbot, so there\'s no AI conversation.' },
-      { question: 'Does YumeShip use AI to write my F/O\'s messages?', answer: 'No. The messages and notifications from your F/O are ones you wrote in their voice. That\'s the point — no model update or filter can ever change how they sound.' },
-      { question: 'Can an app update change my F/O the way AI model updates do?', answer: 'No. Your F/O in YumeShip is your own writing stored on your device, so updates can add features but can\'t rewrite a word of their voice or delete them.' },
-    ],
-    cta: 'Give Your F/O Permanence',
-    datePublished: '2026-07-07',
-  },
-  {
-    appId: 'yumeship',
-    slug: 'what-is-yumeshipping',
-    type: 'guide',
-    title: 'What Is Yumeshipping? Meaning, F/O Terms & Why People Ship',
-    h1: 'What Is Yumeshipping? The Meaning, the Terms, and Why It Matters',
-    metaDescription: 'What is yumeshipping? Yume means dream in Japanese — a loving bond between you and a fictional character. Learn F/O terms and why people self-ship.',
-    targetKeyword: 'what is yumeshipping',
-    intro: 'If you\'ve found your way to the word "yumeshipping," chances are you already do it — you just didn\'t know it had a name. Yume (夢) is Japanese for dream, and yumeshipping means shipping yourself, or a self-insert version of yourself, with a fictional character you love. That character is your F/O — your fictional other — and the bond can be romantic, platonic, familial, or something entirely your own. If you\'ve ever imagined conversations with an anime character, written a scene where your bias finally notices you, or felt genuinely steadier on a bad day because a character exists, that\'s yumeshipping. It\'s practiced by a large, warm, creative community, and there is nothing embarrassing about it. This guide covers what the word actually means, the vocabulary around it, why people do it, and how shippers keep it all — with zero judgment anywhere.',
-    sections: [
-      {
-        heading: 'Yume Means Dream — the Full Definition',
-        body: 'Yumeshipping comes from Japanese fandom culture, where yume joshi (dream girl) and yume danshi (dream boy) described fans who imagined themselves alongside their favorite characters. In English-speaking fandom the idea merged with "shipping" — rooting for a relationship — to give us yumeship: a ship where one half is you. Sometimes that\'s literally you; sometimes it\'s a self-insert, a version of you designed to live inside the story. Either way, the defining feature is the same: the relationship isn\'t between two canon characters, it\'s between a character and the person imagining them. Yumeshipping overlaps heavily with self-shipping — many people use the terms interchangeably — though "yume" tends to signal anime, manga, otome, and k-pop fandom spaces specifically.',
-      },
-      {
-        heading: 'The Vocabulary: F/O, Self-Insert, Canon & More',
-        body: 'The community has its own shorthand, and knowing it makes everything click. Your F/O (fictional other) is the character you ship yourself with — the yume equivalent of a partner, best friend, or found family, depending on the bond. A self-insert is the version of you that exists in their world, anywhere from "exactly me" to a styled-up original character. Headcanons are the details you decide are true — how your F/O takes their coffee, what they\'d text you at 2 a.m. Scenarios and what-ifs are the scenes you imagine or write. And when yumeshippers say "make it canon," they mean treating the relationship as real within their own imagined continuity — because in your story, it is.',
-      },
-      {
-        heading: 'Why People Yumeship: Comfort, Creativity, Identity',
-        body: 'People yumeship for reasons that are genuinely good for them. Comfort is the big one: an F/O is a steady presence you can return to when the real world is loud — a character who is always patient, always themselves, always there. Creativity is just as central: yumeshipping is quietly one of the most generative fandom practices, producing letters, scenarios, playlists, art, and fully built alternate storylines. And for many shippers it\'s identity work — imagining yourself loved, understood, or brave in a story is a way of rehearsing who you want to be. None of this replaces real relationships; for most people it sits alongside them, the way a favorite book or a long-running daydream does.',
-      },
-      {
-        heading: 'How Yumeshippers Actually Practice It',
-        body: 'Yumeshipping looks different for everyone, but a few forms come up constantly. Some shippers write — love letters to their F/O, what-if scenarios, full scenes. Some collect — screenshots, official art, songs that feel like the relationship. Some build — timelines of how you met, headcanon lists, first-date lore, anniversaries worth remembering. Some play — imagined text conversations, incorrect quotes, games with their polycule of F/Os. And plenty keep it entirely internal, a running story in their head that no one else ever sees. All of it counts. The one thing most yumeshippers share is a wish for somewhere private to keep it — because notes apps feel cold, and public feeds feel exposed.',
-      },
-      {
-        heading: 'YumeShip: The Journal Built for Exactly This',
-        body: 'YumeShip exists because yumeshipping deserved better than a scattered camera roll. It\'s a private journal made for yumeshippers: write headcanons, scenarios, love letters, and what-ifs about your anime, otome, manga, or k-pop F/O, using templates shaped around how you actually ship — getting to know your F/O, tracking dates and memories, exploring what-ifs. It plays, too: an incorrect-quotes generator starring your F/O, ship charts and poly dynamics, polycule bingo, and messages and notifications that come from your F/O. Everything stays on your device — no account, no feed, no sharing, nobody\'s eyes but yours. Free gets you one ship; Premium unlocks unlimited ships and every template. If this page just put a name to something you\'ve done for years, YumeShip is the home for it.',
-      },
-    ],
-    faqs: [
-      { question: 'What does yumeship mean?', answer: 'Yume is Japanese for dream. A yumeship is a relationship — romantic, platonic, or otherwise — between you (or your self-insert) and a fictional character, called your F/O. Yumeshipping is the practice of imagining, writing, and cherishing that bond.' },
-      { question: 'What is an F/O?', answer: 'F/O stands for fictional other: the character you ship yourself with. The bond can be romantic, platonic, or familial, and many yumeshippers have more than one F/O for different moods and stories.' },
-      { question: 'Is yumeshipping the same as self-shipping?', answer: 'Mostly, yes. Both mean shipping yourself with a fictional character, and many people use the words interchangeably. "Yume" tends to be used in anime, manga, otome, and k-pop fandom spaces, while "self-ship" is the broader fandom-wide term.' },
-      { question: 'Is it normal to yumeship?', answer: 'Yes. Imagining yourself alongside characters you love is a common, long-standing fandom practice, and a large community shares it openly. For most people it\'s a source of comfort and creativity that sits happily alongside real-life relationships.' },
-      { question: 'Where can I keep my yumeship private?', answer: 'YumeShip is a private, on-device journal built for yumeshippers — headcanons, love letters, scenarios, dates, and playful tools like incorrect quotes and F/O messages, with no account, no feed, and no sharing.' },
-    ],
-    cta: 'Give Your Yumeship a Home',
-    datePublished: '2026-07-07',
-  },
+  }
 ];

@@ -23,6 +23,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ app, children }) => {
         keywords={app.seo.keywords}
         appId={app.id}
         appStoreUrl={app.appStoreUrl}
+        appIcon={app.icon}
         appCategory={app.seoApplicationCategory}
         aggregateRating={app.aggregateRating}
         faqs={app.marketing.faqs}
@@ -51,7 +52,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ app, children }) => {
             <Link to={`/${app.id}/terms-of-service`} className="hover:opacity-60 transition-opacity">Terms</Link>
             <Link to={`/${app.id}/support`} className="hover:opacity-60 transition-opacity">Support</Link>
           </div>
-          <p>© 2026 Ashwin Anbazhagan // briefly.live</p>
+          <p>© 2026 Ashwin Anbazhagan</p>
         </div>
       </footer>
     </div>

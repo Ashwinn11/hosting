@@ -25,6 +25,7 @@ export interface AppConfig {
   id: string;
   name: string;
   appStoreName?: string; // exact live App Store listing name — used for JSON-LD + app meta tags
+  icon: string; // current app icon used by page metadata and app listing schema
   category: string;
   seoApplicationCategory: string;
   tagline: string;
@@ -76,40 +77,41 @@ export const apps: AppConfig[] = [
   {
     id: 'honestly',
     name: 'Honestly',
-    appStoreName: 'Honestly - Reflect & Manifest',
+    icon: '/honestly.png',
+    appStoreName: 'Honestly: Journal & Reflect',
     category: 'Lifestyle',
     seoApplicationCategory: 'LifestyleApplication',
-    tagline: 'Reflect & Manifest — Journal, Mood Tracker & App Blocker',
+    tagline: 'Journal & Reflect — Affirmations & Manifest',
     platforms: ['ios'],
-    description: 'Honestly is a free journaling ritual — check your mood, write freely, note what you\'re grateful for and what you\'re manifesting, and watch your Sprout grow as your streak builds. Premium keeps distracting apps locked on a schedule until you\'ve journaled.',
+    description: 'Honestly helps you meet the day on your own terms. Write before you scroll, make sense of what is on your mind, and find a daily affirmation that speaks to you. Choose from 1,400+ affirmations and bring your chosen topics to widgets and reminders. Premium adds app blocking and more.',
     appStoreUrl: 'https://apps.apple.com/app/honestly-reflect-manifest/id6759817879',
     // aggregateRating intentionally omitted: only 2 real store ratings as of 2026-07 — re-add once volume is defensible
     pricingNote: 'Free · iOS',
     comparisonHighlights: [
-      { them: 'Blank-page apps give you nothing to hold onto.', us: 'Mood, a free-write, and affirmations — in under 3 minutes.' },
+      { them: 'Blank-page apps can leave you wondering where to start.', us: 'A mood check, a guided journal, and affirmations for your day.' },
       { them: 'Willpower and timers don\'t hold.', us: 'Yours stay asleep until you\'ve written.' },
-      { them: 'Affirmations you read once and forget.', us: 'Your own words come back on your Lock Screen.' },
+      { them: 'Affirmations are easy to forget in the scroll.', us: 'Your chosen topics return on your widgets and reminders.' },
     ],
     downloadUrl: 'https://apps.apple.com/app/honestly-reflect-manifest/id6759817879',
     appNumericId: '6759817879',
     seo: {
-      title: 'Honestly | Reflect & Manifest — Journal, Mood Tracker & App Blocker',
-      description: 'Honestly is a free journaling ritual for iPhone — mood check, free writing, gratitude & manifest — with a Sprout that grows as your streak builds. Premium locks distracting apps on a schedule and syncs your journal to iCloud.',
-      keywords: ['Honestly', 'Morning Journal App', 'Manifestation Journal', 'Mood Tracker', 'Gratitude Journal', 'App Blocker', 'Affirmations App', 'Shadow Work Prompts', 'Screen Time App', 'Mindfulness', 'Morning Routine iPhone', 'Journaling App', 'Lock Screen Widget']
+      title: 'Honestly: Journal & Reflect — Affirmations & Manifest',
+      description: 'Write before you scroll. Honestly brings journaling, mood reflection, 1,400+ affirmations, customizable widgets and daily reminders into one personal morning practice. Premium app blocking helps you protect time for yourself.',
+      keywords: ['Honestly', 'journal', 'reflect', 'affirmations', 'manifest', 'mood tracker', 'app blocker', 'journal prompts', 'morning routine', 'gratitude', 'widgets', 'mental wellness']
     },
     marketing: {
-      headline: 'Journal first. Then your apps unlock.',
-      subheadline: 'Mood check, free writing, gratitude & manifest — a morning ritual in minutes. Then your apps wake up.',
+      headline: 'Write before you scroll.',
+      subheadline: 'Make space for your thoughts, understand how you feel, and carry a personal affirmation into the day.',
       problem: 'You wake up and reach for Instagram, TikTok, or X before you\'ve had a single thought of your own. Before you\'re even out of bed, you\'re already reacting to everyone else\'s morning.',
       agitation: 'Willpower doesn\'t work. Timers don\'t work. There\'s no friction between you and the scroll — so you scroll, and the morning is gone before it started.',
-      solution: 'Honestly opens with your mood, then a free-write to empty your head, then gratitude and what you\'re manifesting — with optional reflection and shadow-work prompts to go deeper. Your Sprout grows as your streak builds, and with Premium your distracting apps stay locked on your schedule until you\'ve journaled.',
+      solution: 'Honestly gives your morning a gentler first step: write before the feeds take over, reflect on what is really going on, then find an affirmation that fits the way you want to feel. Explore more than 1,400 affirmations, choose the topics that matter to you, and see them on your widgets or in reminders. Premium app blocking helps keep chosen apps closed until you have written.',
       benefits: [
         { title: 'Mood Check-In', description: 'Happy, Confused, Sad, Awful, or Cry — tap what\'s actually true. It colors the rest of your page.', icon: 'Sun' },
-        { title: 'Free Writing', description: 'Empty your mind before the world fills it. Just write — with optional reflection and shadow-work prompts when you want to go deeper.', icon: 'PenLine' },
-        { title: 'Gratitude & Manifest', description: 'Note what you\'re grateful for and what you\'re manifesting — in your own words, not a stock quote. They echo back on your Lock Screen.', icon: 'Heart' },
+        { title: 'Journal Your Way', description: 'Start with a guided prompt or write freely. Make the page yours with photos, doodles, tags and text formatting.', icon: 'PenLine' },
+        { title: '1,400+ Affirmations', description: 'Find words for what you need today. Choose affirmation topics once, then see those themes across reading, reminders and widgets.', icon: 'Heart' },
         { title: 'App Blocking (Premium)', description: 'Lock Instagram, TikTok and the rest on a schedule with hard Screen Time blocking — no workarounds, no snoozing. Honestly never sees which apps you picked.', icon: 'Lock' },
-        { title: 'Your Sprout & Streak', description: 'A plant that grows across four stages the more you show up — plus a mood calendar and full journal history with Premium.', icon: 'CalendarDays' },
-        { title: 'Lock Screen & Widgets', description: 'Today\'s affirmation waits right on your Lock Screen and Home Screen — no need to open the app.', icon: 'LayoutGrid' }
+        { title: 'See Your Patterns', description: 'Notice how your moods shift and look back on the days you have written, all in one private journal.', icon: 'CalendarDays' },
+        { title: 'Widgets & Reminders', description: 'Bring affirmations into your day with customizable Home Screen and Lock Screen widgets and daily reminders.', icon: 'LayoutGrid' }
       ],
       screenshots: [
         '/honestly/screenshots/01.webp',
@@ -119,17 +121,17 @@ export const apps: AppConfig[] = [
         '/honestly/screenshots/05.webp'
       ],
       faqs: [
-        { question: 'Is Honestly free?', answer: 'Yes — journaling, mood tracking, and your streak are free forever. Premium unlocks app blocking, iCloud sync, and full journal history — as a one-time Lifetime purchase or monthly.' },
-        { question: 'How is Honestly different from Day One or Reflectly?', answer: 'Day One and Reflectly are open-ended, general-purpose journals. Honestly is built around one specific ritual — mood check, free writing, gratitude & manifest — paired with an app-blocking gate that keeps your chosen apps locked until you\'ve written. It\'s narrower by design.', learnMoreSlug: 'vs-day-one' },
+        { question: 'Is Honestly free?', answer: 'You can start journaling and exploring affirmations for free. Premium adds app blocking and other premium tools, with a one-time Lifetime purchase or monthly plan.' },
+        { question: 'How is Honestly different from Day One or Reflectly?', answer: 'Honestly pairs a private journal with a 1,400+ affirmation library, reminders, customizable widgets and optional app blocking. Start with what you need today, then make the practice your own.', learnMoreSlug: 'vs-day-one' },
         { question: 'Is there a journaling app that also blocks distracting apps?', answer: 'Yes — Honestly Premium locks your chosen apps (Instagram, TikTok, X, whatever pulls you in) on a schedule with hard Screen Time blocking. No workarounds, no snoozing — and Honestly is only ever shown opaque tokens, never the names of the apps.', learnMoreSlug: 'break-social-media-phone-addiction' },
-        { question: 'Can I use Honestly as a manifestation journal?', answer: 'Yes. The ritual ends with gratitude & manifest — writing what you\'re calling in, in your own words. Your manifestations resurface on your Lock Screen through the day.', learnMoreSlug: 'manifestation-journal-app' },
-        { question: 'Does Honestly give me journal prompts?', answer: 'The core page is a free-write — empty your mind, no rules. When you want structure, optional reflection and shadow-work prompts help you go deeper.', learnMoreSlug: 'daily-journal-prompts-app' },
+        { question: 'Can I use Honestly as a manifestation journal?', answer: 'Honestly gives you space to reflect, set an intention and explore affirmations that support the way you want to feel. Choose the topics you want to return to throughout the day.', learnMoreSlug: 'manifestation-journal-app' },
+        { question: 'Does Honestly give me journal prompts?', answer: 'Yes. The prompt library gives you a starting point when you want direction, and you can also write freely in your journal.', learnMoreSlug: 'daily-journal-prompts-app' },
         { question: 'Does Honestly support other languages?', answer: 'Yes — Honestly is available in 11 languages including English, Spanish, French, German, Japanese, Korean, and Arabic.' },
-        { question: 'Does Honestly back up my journal?', answer: 'Yes — with Premium\'s iCloud sync, your pages back up to your own private iCloud account (Apple\'s CloudKit). Honestly never receives a copy on its own servers.' },
+        { question: 'Does Honestly back up my journal?', answer: 'Journal data is stored privately on your device and can sync through your personal iCloud account when iCloud is enabled.' },
       ]
     },
     legal: {
-      privacyPolicy: 'The short version:\nHonestly is built to be private. Your morning pages — your moods, your writing, your affirmations — belong to you. We don\'t sell them, mine them, or read them. There are no third-party trackers or advertising SDKs in this app.\n\nWhat stays on your device:\nEverything you write is stored locally on your iPhone. If you have iCloud enabled, your pages are backed up to your own private iCloud account (Apple\'s CloudKit) so they follow you between devices. We never receive a copy on our servers — your iCloud data is encrypted and accessible only to you.\n\nScreen Time:\nWhen you choose apps to keep asleep each morning, that selection is handled entirely by Apple\'s Screen Time (Family Controls) framework. Honestly is shown opaque tokens — never the names of the apps or websites you picked, and never any record of how you use them. That information never leaves your device and is never visible to us.\n\nPurchases:\nHonestly Premium is offered as a one-time purchase or an auto-renewing monthly subscription, both processed by Apple. We use RevenueCat to verify your purchase and unlock premium features. This involves an anonymous purchase identifier only — no name, email, or contact information is required or collected.\n\nNotifications:\nIf you turn on affirmation reminders, a single local notification quoting one of your own past affirmations is scheduled on your device. It is generated on-device and is not sent through any server.\n\nWhat we don\'t do:\nWe do not collect analytics, we do not fingerprint your device, we do not build a profile of you, and we do not share anything with advertisers. There is nothing to opt out of because there is nothing being gathered.\n\nYour control:\nYou can delete every page and reset your history at any time from the You tab (“Delete all data”). Deleting the app removes all local data; disabling iCloud sync for Honestly removes the backup from your iCloud account.\n\nContact:\nQuestions about your privacy? Email ashwinnanbazhagan@gmail.com and a human will answer.',
+      privacyPolicy: 'The short version:\nHonestly is built to be private. Your morning pages — your moods, your writing, your affirmations — belong to you. We don\'t sell them, mine them, or read them. There are no third-party trackers or advertising SDKs in this app.\n\nWhat stays on your device:\nEverything you write is stored locally on your iPhone. If you have iCloud enabled, your pages are backed up to your own private iCloud account (Apple\'s CloudKit) so they follow you between devices. We never receive a copy on our servers — your iCloud data is encrypted and accessible only to you.\n\nScreen Time:\nWhen you choose apps to keep asleep each morning, that selection is handled entirely by Apple\'s Screen Time (Family Controls) framework. Honestly is shown opaque tokens — never the names of the apps or websites you picked, and never any record of how you use them. That information never leaves your device and is never visible to us.\n\nPurchases:\nHonestly Premium is offered as a one-time purchase or an auto-renewing monthly subscription, both processed by Apple. We use RevenueCat to verify your purchase and unlock premium features. This involves an anonymous purchase identifier only — no name, email, or contact information is required or collected.\n\nNotifications:\nIf you turn on affirmation reminders, local notifications show affirmations from the topics you selected. They are scheduled on your device and are not sent through a server.\n\nWhat we don\'t do:\nWe do not collect analytics, we do not fingerprint your device, we do not build a profile of you, and we do not share anything with advertisers. There is nothing to opt out of because there is nothing being gathered.\n\nYour control:\nYou can delete every page and reset your history at any time from the You tab (“Delete all data”). Deleting the app removes all local data; disabling iCloud sync for Honestly removes the backup from your iCloud account.\n\nContact:\nQuestions about your privacy? Email ashwinnanbazhagan@gmail.com and a human will answer.',
       termsOfService: 'Welcome:\nThese terms are the agreement between you and Honestly for your use of the app. By using Honestly, you agree to them. We\'ve kept them plain.\n\nYour license:\nWe grant you a personal, non-transferable license to use Honestly on devices you own or control, for your own morning ritual. The app and its design are ours; please don\'t copy, resell, or reverse-engineer it.\n\nHonestly Premium:\nHonestly Premium is offered as a one-time Lifetime purchase (yours for the lifetime of the app on your Apple account) or as an auto-renewing monthly subscription. Purchases are handled and billed by Apple under Apple\'s terms; monthly subscriptions renew automatically unless canceled at least 24 hours before the period ends, and can be managed in your Apple ID Subscription settings. Refunds are managed by Apple through the App Store.\n\nYour content:\nYour pages are yours. You retain all rights to everything you write. We claim no ownership and take no license over your journal entries, moods, or affirmations.\n\nAcceptable use:\nUse Honestly for your own reflection. Don\'t use it to break the law, and don\'t attempt to disrupt, probe, or misuse the app or the Screen Time features it relies on.\n\nScreen Time & blocking:\nHonestly uses Apple\'s Screen Time to help keep chosen apps asleep until your page is written. This is a supportive nudge, not a guarantee — the operating system ultimately controls app availability, and you remain responsible for your own device and choices.\n\nNo warranty:\nHonestly is provided “as is.” We work hard to keep it reliable, but we can\'t promise it will be uninterrupted or error-free, and it is not a substitute for professional mental-health care.\n\nLimitation of liability:\nTo the extent permitted by law, Honestly and its makers are not liable for any indirect or incidental damages arising from your use of the app.\n\nChanges:\nWe may update these terms as the app evolves. If we make material changes, we\'ll note them here with a new effective date. Continued use means you accept the current terms.\n\nContact:\nReach us at ashwinnanbazhagan@gmail.com.',
       support: 'For any issues or questions regarding Honestly, please reach out to our support team.\n\nEmail: ashwinnanbazhagan@gmail.com\n\nWe typically respond within 24-48 hours.',
       lastUpdated: 'July 2026'
@@ -146,6 +148,7 @@ export const apps: AppConfig[] = [
   {
     id: 'snipsy',
     name: 'Snipsy',
+    icon: '/snipsy.png',
     category: 'Photo & Video',
     seoApplicationCategory: 'PhotographyApplication',
     tagline: 'Turn your photos into collectible stamps & stickers',
@@ -206,6 +209,7 @@ export const apps: AppConfig[] = [
   {
     id: 'tether',
     name: 'tether',
+    icon: '/tether.png',
     appStoreName: 'Long Distance Couples - tether',
     category: 'Social Networking',
     seoApplicationCategory: 'SocialNetworkingApplication',
@@ -215,7 +219,7 @@ export const apps: AppConfig[] = [
     appStoreUrl: 'https://apps.apple.com/app/id6818273186',
     downloadUrl: 'https://apps.apple.com/app/id6818273186',
     appNumericId: '6818273186',
-    pricingNote: '3-day free trial · iOS',
+    pricingNote: 'tether+ · iOS',
     comparisonHighlights: [
       { them: 'A text arrives in a second and is gone in a scroll.', us: 'A letter crosses the real miles, and they watch it land.' },
       { them: 'Couple apps want an email, a password, an account.', us: 'No sign-up. Your iCloud is all it needs.' },
@@ -251,7 +255,7 @@ export const apps: AppConfig[] = [
         { question: 'What is tether?', answer: 'tether is an iPhone app for writing to the people you miss. You write a note in a handwriting pen, fold it into a paper plane, and throw it. It flies across the real map from your city to theirs and unfolds when it lands.' },
         { question: 'Is tether a long-distance relationship app?', answer: 'It was made for exactly that: a partner in another time zone. It works just as well for a best friend who moved away or family on the other side of the world. You can be connected to as many people as you like, and each friendship is private to the two of you.' },
         { question: 'Do we both need tether?', answer: 'Yes. You both need an iPhone signed in to iCloud. Invite them from the app with a link or a QR code, and once they\'ve opened it you\'re on each other\'s map.' },
-        { question: 'How much does tether cost?', answer: 'tether needs tether+: a yearly subscription that starts with a 3-day free trial, or a one-time lifetime purchase. Prices are shown in the app in your currency. You can cancel the trial any time before it ends and you won\'t be charged.' },
+        { question: 'How much does tether cost?', answer: 'tether+ is available as a monthly or yearly subscription, or a one-time lifetime purchase. Prices are shown in the app in your local currency.' },
         { question: 'Can anyone else read my letters?', answer: 'No. Letters live in your iCloud and theirs, end-to-end encrypted and shared only between the two of you. Your letters never pass through a server of ours, there are no accounts, and the developer can\'t read them.' },
         { question: 'Does tether share my exact location?', answer: 'No. tether only ever places you in a city. Your location is rounded to about 10 km before it\'s stored or shared, and you can type your city instead of sharing location at all.' },
         { question: 'Is there a widget?', answer: 'Yes. The Home Screen widget shows the two of you on the map with the last thing they sent, and you can throw a kiss or a hug straight from it.' },
@@ -315,8 +319,7 @@ If someone sends you something that breaks these terms, report them, from your c
 
 tether+
 Using tether needs tether+: a yearly subscription, or a one-time purchase where that's offered.
-The yearly subscription can start with a free trial, of the length shown before you start it, once per Apple Account. Unless you cancel at least 24 hours before the trial ends, your Apple Account is charged when it ends. After that, the subscription renews automatically at the same price each year unless you turn it off at least 24 hours before the current year ends, and your account is charged for the next year within the 24 hours before it begins. Buying a subscription during a free trial ends what's left of the trial.
-You can change or cancel the subscription any time in tether's Settings, under tether+, or in your Apple Account's subscriptions. Cancelling keeps tether+ until the end of the trial or the year you've paid for. The one-time purchase is paid once and never renews. Refunds are handled by Apple.
+Monthly and yearly subscriptions renew automatically unless you cancel at least 24 hours before the end of the current period. You can manage or cancel them in tether's Settings or your Apple Account subscriptions. The one-time lifetime purchase never renews. Refunds are handled by Apple.
 Without tether+, tether opens on the way to get it. Your letters and friendships stay in your iCloud account meanwhile, until you delete them.
 
 iCloud

@@ -18,12 +18,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 const DIST_SSR = path.join(ROOT, 'dist-ssr');
-const BASE = 'https://briefly.live';
+const BASE = 'https://hosting-pages.netlify.app';
 const BUILD_DATE = new Date().toISOString().split('T')[0];
 
 const homeSeo = {
-  title: 'Ashwin Anbazhagan | iOS App Developer & Founder',
-  description: 'Indie iOS apps for gut health, studying, morning journaling and fandom. Each one solves one specific problem, precisely.',
+  title: 'Ashwin Anbazhagan | Independent iOS Apps',
+  description: 'Independent iOS apps for journaling, long-distance letters, and creative photo keepsakes by Ashwin Anbazhagan.',
   keywords: ['Ashwin Anbazhagan', 'iOS App Developer', 'Indie App Maker', 'SaaS Founder', 'App Developer India'],
 };
 
@@ -31,7 +31,7 @@ const homeSeo = {
 const ogFor = (appId) => (appId ? `${BASE}/og/${appId}.png` : `${BASE}/og-image.png`);
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
-function buildHead({ title, description, keywords, canonical, appStoreUrl, downloadUrl, seoApplicationCategory, appName, appNumericId, appId, aggregateRating, screenshots, faqs, breadcrumbs, pageType, datePublished, image }) {
+function buildHead({ title, description, keywords, canonical, appStoreUrl, downloadUrl, seoApplicationCategory, appName, appNumericId, appId, appIcon, premiumOnly, aggregateRating, screenshots, faqs, breadcrumbs, pageType, datePublished, image }) {
   const kw = keywords.join(', ');
   const ogImage = image || ogFor(appId);
 
@@ -43,8 +43,9 @@ function buildHead({ title, description, keywords, canonical, appStoreUrl, downl
     applicationCategory: seoApplicationCategory || 'HealthApplication',
     operatingSystem: 'iOS 15.0+',
     downloadUrl: downloadUrl || appStoreUrl,
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    ...(!premiumOnly && { offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }),
     url: appStoreUrl || canonical,
+    image: `${BASE}${appIcon || `/${appId}.png`}`,
     author: { '@type': 'Person', name: 'Ashwin Anbazhagan', url: BASE },
     ...(aggregateRating && {
       aggregateRating: {
@@ -59,9 +60,10 @@ function buildHead({ title, description, keywords, canonical, appStoreUrl, downl
   }) : JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Briefly',
+    name: 'Ashwin Anbazhagan',
     url: BASE,
-    logo: `${BASE}/apple-touch-icon.png`,
+    logo: `${BASE}/favicon.png`,
+    image: `${BASE}/og-image.png`,
     sameAs: ['https://twitter.com/shwiinn'],
     founder: { '@type': 'Person', name: 'Ashwin Anbazhagan' },
   });
@@ -109,8 +111,8 @@ function buildHead({ title, description, keywords, canonical, appStoreUrl, downl
     <meta name="twitter:app:name:iphone" content="${appName}">
     <meta name="twitter:app:id:iphone" content="${appNumericId}">` : '';
 
-  // Per-app favicon (#23 brand recognition); generic Briefly mark on the home page.
-  const favicon = appId ? `${BASE}/${appId}.png` : `${BASE}/favicon.png`;
+  // Use the current app icon in route metadata; the portfolio uses its site mark.
+  const favicon = appId ? `${BASE}${appIcon || `/${appId}.png`}` : `${BASE}/favicon.png`;
 
   return `
     <title>${title}</title>
@@ -128,7 +130,7 @@ function buildHead({ title, description, keywords, canonical, appStoreUrl, downl
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="Briefly.live">
+    <meta property="og:site_name" content="Ashwin Anbazhagan">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${description}">
@@ -216,6 +218,8 @@ for (const app of apps) {
       appName: app.appStoreName || app.name,
       appNumericId: sec ? null : app.appNumericId,
       appId: app.id,
+      appIcon: app.icon,
+      premiumOnly: app.id === 'tether',
       aggregateRating: sec ? null : app.aggregateRating,
       screenshots: sec ? null : app.marketing?.screenshots,
       faqs: sec ? null : app.marketing?.faqs,
@@ -247,6 +251,8 @@ for (const page of pseoPages) {
     appName: app?.appStoreName || app?.name,
     appNumericId: app?.appNumericId,
     appId: page.appId,
+    appIcon: app?.icon,
+    premiumOnly: page.appId === 'tether',
     aggregateRating: null,
     screenshots: null,
     faqs: page.faqs,

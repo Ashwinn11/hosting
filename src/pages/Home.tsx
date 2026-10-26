@@ -6,7 +6,7 @@ import SEOBox from '../components/SEOBox';
 import { ShaderCanvas } from '../lib/ShaderCanvas';
 
 /* ──────────────────────────────────────────────────────────────────────────
-   BRIEFLY — indie iOS studio. A dark gallery wall at night: three works hang
+   ASHWIN ANBAZHAGAN — independent iOS apps. A dark gallery wall at night: three works hang
    under three colored lights (each app's true accent), and every world card
    is alive — hover one and its app plays a tiny, truthful demo of itself.
    Shell type: Bricolage Grotesque display · Hanken Grotesk body · DM Mono meta.
@@ -228,33 +228,6 @@ const WORLDS: Record<string, World> = {
         <span className="hon-note" style={{ fontFamily: '"Shantell Sans", cursive', fontSize: 12, color: '#BC5E17', marginLeft: 4 }}>
           how are you, really?
         </span>
-      </div>
-    ),
-  },
-  yumeship: {
-    cardBg: '#fdf3ee',
-    cardText: '#2b1a26',
-    cardText2: '#5a3f53',
-    accent: '#d77a8d',
-    fontDisplay: '"Instrument Serif", Georgia, serif',
-    fontStyle: 'italic',
-    demo: (
-      <div style={{ marginTop: 20, display: 'flex', alignItems: 'center', gap: 12, position: 'relative' }}>
-        {[['#f3b6c4', 'sakura'], ['#c7b5e3', 'lavender'], ['#b4c8a5', 'sage'], ['#f0d189', 'butter']].map(([c, n]) => (
-          <div key={n} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
-            <div style={{ width: 22, height: 22, borderRadius: '50%', background: c, border: '1.5px solid rgba(110,58,90,0.18)' }} />
-            <span style={{ fontSize: 8.5, color: '#8a7383', letterSpacing: '0.04em' }}>{n}</span>
-          </div>
-        ))}
-        <span className="ys-script" style={{ fontFamily: '"Caveat", cursive', fontSize: 17, color: '#8b3a4a', marginLeft: 6 }}>you ♡ V</span>
-        {/* Petals drift while you're here */}
-        {[0, 1, 2].map((i) => (
-          <div key={i} className={`ys-petal ys-petal-${i}`} aria-hidden style={{
-            position: 'absolute', top: -46 - i * 12, left: `${24 + i * 30}%`,
-            width: 9, height: 13, borderRadius: '50% 0 50% 0',
-            background: 'linear-gradient(135deg, #f3b6c4, #fadde5)', opacity: 0,
-          }} />
-        ))}
       </div>
     ),
   },
@@ -490,19 +463,6 @@ const Home: React.FC = () => {
         .hon-note { opacity: 0.55; transition: opacity 0.3s ease; }
         .app-card:hover .hon-note { opacity: 1; }
 
-        /* YumeShip — petals drift down through the card */
-        @keyframes ys-fall {
-          0% { opacity: 0; transform: translateY(0) rotate(0deg); }
-          12% { opacity: 0.75; }
-          88% { opacity: 0.75; }
-          100% { opacity: 0; transform: translateY(74px) rotate(140deg); }
-        }
-        .app-card:hover .ys-petal-0 { animation: ys-fall 2.6s ease-in-out infinite 0s; }
-        .app-card:hover .ys-petal-1 { animation: ys-fall 3.1s ease-in-out infinite 0.6s; }
-        .app-card:hover .ys-petal-2 { animation: ys-fall 2.8s ease-in-out infinite 1.2s; }
-        .ys-script { opacity: 0.65; transition: opacity 0.3s ease; }
-        .app-card:hover .ys-script { opacity: 1; }
-
         /* Snipsy — cancellation mark appears, stamp number fades in */
         /* tether — a plane crosses the route and lands with a ring */
         .tt-plane { offset-path: path('M18,48 C80,6 160,6 222,22'); offset-distance: 0%; offset-rotate: auto; opacity: 0; }
@@ -564,8 +524,8 @@ const Home: React.FC = () => {
         <GalleryWall />
         <Spotlight />
         <SEOBox
-          title="Ashwin Anbazhagan | iOS App Developer & Founder"
-          description="Indie iOS apps for morning journaling, fandom, and photo stamps. Each one solves one specific problem, precisely."
+          title="Ashwin Anbazhagan | iOS App Developer"
+          description="Independent iOS apps for journaling, long-distance letters, and creative photo keepsakes by Ashwin Anbazhagan."
           keywords={['Ashwin Anbazhagan', 'iOS App Developer', 'Indie App Maker', 'SaaS Founder', 'App Developer India']}
         />
 
@@ -576,17 +536,18 @@ const Home: React.FC = () => {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'ItemList',
-              name: 'iOS Apps by Ashwin Anbazhagan',
+              name: 'Independent iOS Apps by Ashwin Anbazhagan',
               itemListElement: apps.map((a, i) => ({
                 '@type': 'ListItem',
                 position: i + 1,
                 item: {
                   '@type': 'MobileApplication',
                   name: a.name,
+                  image: `https://hosting-pages.netlify.app${a.icon}`,
                   applicationCategory: a.seoApplicationCategory,
                   operatingSystem: 'iOS',
-                  url: `https://briefly.live/${a.id}`,
-                  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+                  url: `https://hosting-pages.netlify.app/${a.id}`,
+                  ...(a.id !== 'tether' && { offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }),
                 },
               })),
             }),
@@ -602,7 +563,7 @@ const Home: React.FC = () => {
             backdropFilter: 'blur(14px)', background: 'rgba(10,10,12,0.82)',
           }} className="pad-x">
             <a href="#top" className="soft-link" style={{ fontFamily: DISPLAY, fontSize: 16, letterSpacing: '0.02em', fontWeight: 700, color: CREAM, textDecoration: 'none' }}>
-              BRIEFLY<span style={{ color: GOLD }}>.</span>
+              ASHWIN ANBAZHAGAN
             </a>
             <div style={{ display: 'flex', gap: 34, alignItems: 'center' }}>
               <a href="#works" className="nav-link" style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.14em', color: MUTE, textDecoration: 'none' }}>Apps</a>
@@ -627,7 +588,7 @@ const Home: React.FC = () => {
                 </h1>
 
                 <p className="rise h3" style={{ fontSize: 16, lineHeight: 1.7, color: MUTE, maxWidth: 460, margin: '0 0 40px 0' }}>
-                  Morning journaling, fandom, and photo stamps. Every app does one thing, and does it precisely.
+                  Journaling, long-distance letters, and creative photo keepsakes. Every app does one thing, and does it precisely.
                 </p>
 
                 <MagneticLink href="#works" className="rise h4 cta-pill" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: GOLD, color: '#1A1406', fontFamily: MONO, fontSize: 12.5, fontWeight: 500, letterSpacing: '0.04em', padding: '15px 26px', borderRadius: 999, textDecoration: 'none' }}>
@@ -754,7 +715,7 @@ const Home: React.FC = () => {
 
           {/* ── Footer ── */}
           <footer style={{ borderTop: `1px solid ${HAIR}`, padding: '30px 60px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} className="pad-x">
-            <span style={{ fontFamily: DISPLAY, fontSize: 15, fontWeight: 700 }}>BRIEFLY<span style={{ color: GOLD }}>.</span></span>
+            <span style={{ fontFamily: DISPLAY, fontSize: 15, fontWeight: 700 }}>Ashwin Anbazhagan</span>
             <span style={{ fontFamily: MONO, fontSize: 10, letterSpacing: '0.08em', color: FAINT }}>© 2026 Ashwin Anbazhagan</span>
           </footer>
         </div>

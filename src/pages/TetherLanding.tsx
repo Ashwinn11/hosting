@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import type { AppConfig } from '../config/apps';
+import SEOBox from '../components/SEOBox';
 
 interface Props {
   app: AppConfig;
@@ -262,6 +263,7 @@ const LegalPage: React.FC<{ app: AppConfig; section: 'privacy' | 'terms' | 'supp
   return (
     <div className="tt-page" style={{ position: 'relative', minHeight: '100dvh', fontFamily: BODY, color: INK }}>
       <style>{css}</style>
+      <SEOBox title={app.seo.title} description={app.seo.description} keywords={app.seo.keywords} appId={app.id} appName={app.appStoreName || app.name} appIcon={app.icon} premiumOnly appStoreUrl={app.appStoreUrl} appCategory={app.seoApplicationCategory} appNumericId={app.appNumericId} />
       <SkyBg />
       <div className="tt-pad" style={{ position: 'relative', zIndex: 2, maxWidth: 760, margin: '0 auto', padding: '40px 32px 90px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 44, gap: 16 }}>
@@ -311,7 +313,7 @@ const Footer: React.FC = () => (
       <Link to={`${BASE}/terms-of-service`} style={{ color: MUTED, textDecoration: 'none' }}>Terms</Link>
       <Link to={`${BASE}/support`} style={{ color: MUTED, textDecoration: 'none' }}>Support</Link>
     </div>
-    <span>© 2026 Ashwin Anbazhagan · <Link to="/" style={{ color: MUTED }}>briefly.live</Link></span>
+    <span>© 2026 Ashwin Anbazhagan</span>
   </footer>
 );
 
@@ -350,6 +352,7 @@ const TetherLanding: React.FC<Props> = ({ app, section }) => {
   return (
     <div ref={rootRef} className="tt-page" style={{ position: 'relative', minHeight: '100dvh', fontFamily: BODY, color: INK, overflowX: 'hidden' }}>
       <style>{css}</style>
+      <SEOBox title={app.seo.title} description={app.seo.description} keywords={app.seo.keywords} appId={app.id} appName={app.appStoreName || app.name} appIcon={app.icon} premiumOnly appStoreUrl={app.appStoreUrl} appCategory={app.seoApplicationCategory} appNumericId={app.appNumericId} />
       <SkyBg />
 
       <div style={{ position: 'relative', zIndex: 2 }}>
@@ -360,6 +363,7 @@ const TetherLanding: React.FC<Props> = ({ app, section }) => {
           backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)',
           background: 'rgba(236,237,247,0.72)', borderBottom: `1px solid ${HAIR}`,
         }}>
+          <Link to="/" className="tt-back-home" aria-label="Back to all apps">← All Apps</Link>
           <Link to={BASE} style={{ textDecoration: 'none' }} aria-label="tether home"><Wordmark /></Link>
           <div style={{ display: 'flex', gap: 26, alignItems: 'center' }}>
             <a href="#how" className="tt-navlink">How it works</a>
@@ -514,16 +518,16 @@ const TetherLanding: React.FC<Props> = ({ app, section }) => {
           <div className="tt-pad" style={{ maxWidth: 900, margin: '0 auto', padding: '0 40px' }}>
             <div className="tt-reveal" style={{ textAlign: 'center', marginBottom: 44 }}>
               <Eyebrow>tether+</Eyebrow>
-              <h2 style={{ fontFamily: DISPLAY, fontWeight: 400, fontSize: 'clamp(2rem, 4.4vw, 3.2rem)', color: NAVY, margin: '14px 0 12px', letterSpacing: '-0.01em' }}>Try it free for three days.</h2>
-              <p style={{ fontSize: 16.5, lineHeight: 1.65, color: MUTED, maxWidth: 560, margin: '0 auto' }}>Everything in tether comes with tether+: unlimited letters and throws, every pen and ink, speaking your letter, and the widget.</p>
+              <h2 style={{ fontFamily: DISPLAY, fontWeight: 400, fontSize: 'clamp(2rem, 4.4vw, 3.2rem)', color: NAVY, margin: '14px 0 12px', letterSpacing: '-0.01em' }}>A little closer, every day.</h2>
+              <p style={{ fontSize: 16.5, lineHeight: 1.65, color: MUTED, maxWidth: 560, margin: '0 auto' }}>tether+ unlocks more ways to stay close: more connections, unlimited letters, every pen and ink, voice dictation, and the Home Screen widget.</p>
             </div>
             <div className="tt-two" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
               <div className="tt-card tt-reveal" style={{ padding: '32px 30px', border: `2px solid ${NAVY}` }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
-                  <h3 style={{ fontFamily: DISPLAY, fontWeight: 400, fontSize: 24, color: NAVY, margin: 0 }}>Yearly</h3>
-                  <span style={{ background: NAVY, color: PAPER, fontSize: 12, fontWeight: 700, padding: '5px 12px', borderRadius: 999 }}>3 days free</span>
+                  <h3 style={{ fontFamily: DISPLAY, fontWeight: 400, fontSize: 24, color: NAVY, margin: 0 }}>Monthly &amp; yearly</h3>
+                  <span style={{ background: NAVY, color: PAPER, fontSize: 12, fontWeight: 700, padding: '5px 12px', borderRadius: 999 }}>Subscription</span>
                 </div>
-                <p style={{ fontSize: 15, lineHeight: 1.6, color: MUTED, margin: 0 }}>Starts with a 3-day free trial, then renews once a year. Cancel any time before the trial ends and you won't be charged.</p>
+                <p style={{ fontSize: 15, lineHeight: 1.6, color: MUTED, margin: 0 }}>Choose monthly or yearly billing. Subscriptions renew automatically and can be managed or cancelled in your Apple Account settings.</p>
               </div>
               <div className="tt-card tt-reveal" style={{ padding: '32px 30px', transitionDelay: '0.06s' }}>
                 <h3 style={{ fontFamily: DISPLAY, fontWeight: 400, fontSize: 24, color: NAVY, margin: '0 0 14px' }}>Lifetime</h3>
@@ -567,7 +571,7 @@ const TetherLanding: React.FC<Props> = ({ app, section }) => {
             <h2 style={{ fontFamily: DISPLAY, fontWeight: 400, fontSize: 'clamp(2.3rem, 5.4vw, 4rem)', lineHeight: 1.04, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.02em' }}>
               Put your person on your map.
             </h2>
-            <p style={{ fontSize: 17, color: MUTED, margin: '0 auto 34px', maxWidth: 440 }}>tether for iPhone. Start with three days free.</p>
+            <p style={{ fontSize: 17, color: MUTED, margin: '0 auto 34px', maxWidth: 440 }}>tether+ for iPhone. Choose monthly, yearly, or lifetime access.</p>
             <AppStoreButton url={url} />
           </div>
         </section>
@@ -598,6 +602,7 @@ const css = `
 
   .tt-navlink { font-size: 14px; font-weight: 600; color: ${MUTED}; text-decoration: none; transition: color 0.2s ease; }
   .tt-navlink:hover { color: ${NAVY}; }
+  .tt-back-home { color: ${MUTED}; font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap; }
   .tt-cta { transition: transform 0.2s cubic-bezier(0.3,1.4,0.5,1), box-shadow 0.2s ease; }
   .tt-cta:hover { transform: translateY(-2px); }
   .tt-cta:active { transform: scale(0.97); }
@@ -637,6 +642,7 @@ const css = `
   @media (max-width: 680px) {
     .tt-pad { padding-left: 16px !important; padding-right: 16px !important; }
     .tt-navlink { display: none; }
+    .tt-back-home { font-size: 12px !important; }
     .tt-two, .tt-steps, .tt-four { grid-template-columns: 1fr !important; }
     .tt-sheet { padding: 32px 22px 26px !important; border-radius: 22px !important; }
     .tt-letter { right: 0 !important; bottom: -16% !important; width: 60% !important; }

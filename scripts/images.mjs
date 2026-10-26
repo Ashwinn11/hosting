@@ -22,10 +22,9 @@ fs.mkdirSync(OG_DIR, { recursive: true });
 // `headline` is the emotional hook (#18) — the OG image is the thumbnail (#5),
 // so it leads with the hook, NOT the SEO category tagline.
 const apps = [
-  { id: 'honestly',  name: 'Honestly',    headline: 'Journal first. Then your apps unlock.', primary: '#F5851F', bg: '#FAF8F5' },
-  { id: 'yumeship',  name: 'YumeShip',    headline: 'A quiet place for the ones you love from afar.', primary: '#9b4f6e', bg: '#FDF4F8' },
-  { id: 'snipsy',    name: 'Snipsy',      headline: 'Every photo deserves to be kept.', primary: '#D6503A', bg: '#F8F2E3' },
-  { id: 'tether',    name: 'tether',      headline: 'Letters that fly the real miles between you.', primary: '#1B1F40', bg: '#E4E6F4', chip: '3 days free · iOS', chipWidth: 236 },
+  { id: 'honestly', name: 'Honestly', headline: 'Write before you scroll.', primary: '#F5851F', bg: '#FAF8F5' },
+  { id: 'snipsy', name: 'Snipsy', headline: 'Every photo deserves to be kept.', primary: '#D6503A', bg: '#F8F2E3' },
+  { id: 'tether', name: 'tether', headline: 'Letters that fly the real miles between you.', primary: '#1B1F40', bg: '#E4E6F4', chip: 'tether+ · iOS', chipWidth: 236 },
 ];
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -107,7 +106,7 @@ async function makeOgImages() {
       <text font-family="Helvetica, Arial, sans-serif" font-size="60" font-weight="800" fill="${ink}">${headlineTspans}</text>
       <rect x="96" y="520" width="${chipWidth}" height="46" rx="23" fill="${app.primary}"/>
       <text x="${96 + chipWidth / 2}" y="551" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">${esc(app.chip || 'Free on iOS')}</text>
-      <text x="${96 + chipWidth + 24}" y="552" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="${muted}">briefly.live</text>
+      <text x="${96 + chipWidth + 24}" y="552" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="600" fill="${muted}">Ashwin Anbazhagan</text>
     </svg>`;
 
     let img = sharp(Buffer.from(svg));
@@ -128,6 +127,42 @@ async function makeOgImages() {
     await img.png({ compressionLevel: 9 }).toFile(out);
     console.log(`  og/${app.id}.png (${(fs.statSync(out).size / 1024).toFixed(0)}KB)`);
   }
+}
+
+// ── Portfolio social preview (1200×630) ────────────────────────────────────
+async function makePortfolioOgImage() {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+    <defs>
+      <radialGradient id="glow" cx="78%" cy="42%" r="70%">
+        <stop offset="0" stop-color="#F5851F" stop-opacity="0.17"/>
+        <stop offset="0.52" stop-color="#0A0A0C" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1200" height="630" fill="#0A0A0C"/>
+    <rect width="1200" height="630" fill="url(#glow)"/>
+    <text x="80" y="234" font-family="Helvetica, Arial, sans-serif" font-size="54" font-weight="800" fill="#EDE8DF">Independent iOS apps</text>
+    <text x="82" y="290" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="400" fill="rgba(237,232,223,0.68)">Tools for reflection, connection, and creativity.</text>
+    <text x="82" y="514" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="1" fill="#D4A843">ASHWIN ANBAZHAGAN</text>
+  </svg>`;
+  const icons = [
+    { id: 'honestly', name: 'Honestly', left: 620 },
+    { id: 'snipsy', name: 'Snipsy', left: 808 },
+    { id: 'tether', name: 'tether', left: 996 },
+  ];
+  const overlays = [];
+  for (const item of icons) {
+    const size = 156;
+    const mask = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}"><rect width="${size}" height="${size}" rx="36" fill="#fff"/></svg>`);
+    const icon = await sharp(path.join(PUBLIC, `${item.id}.png`))
+      .resize(size, size, { fit: 'cover' })
+      .composite([{ input: mask, blend: 'dest-in' }])
+      .png().toBuffer();
+    overlays.push({ input: icon, left: item.left, top: 202 });
+    const label = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="156" height="34"><text x="78" y="23" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#EDE8DF">${esc(item.name)}</text></svg>`);
+    overlays.push({ input: label, left: item.left, top: 378 });
+  }
+  await sharp(Buffer.from(svg)).composite(overlays).png({ compressionLevel: 9}).toFile(path.join(PUBLIC, 'og-image.png'));
+  console.log('  og-image.png');
 }
 
 // ── 3. App Store screenshots → public/<id>/screenshots/NN.webp ──────────────
@@ -164,7 +199,13 @@ async function processScreenshots() {
 }
 
 console.log('\nGenerating images...');
-await compressIcons();
-await makeOgImages();
-await processScreenshots();
+if (process.argv.includes('--og-only')) {
+  await makeOgImages();
+  await makePortfolioOgImage();
+} else {
+  await compressIcons();
+  await makeOgImages();
+  await makePortfolioOgImage();
+  await processScreenshots();
+}
 console.log('Done.\n');

@@ -8,6 +8,8 @@ interface SEOProps {
   appId?: string;
   appName?: string; // exact App Store listing name for JSON-LD + app meta; falls back to the title's first segment
   appStoreUrl?: string;
+  appIcon?: string;
+  premiumOnly?: boolean;
   appCategory?: string;
   aggregateRating?: { ratingValue: string; ratingCount: string };
   faqs?: Array<{ question: string; answer: string }>;
@@ -20,10 +22,10 @@ interface SEOProps {
   comparisonTable?: Array<{ feature: string; app: string; competitor: string }>;
 }
 
-const BASE = 'https://briefly.live';
+const BASE = 'https://hosting-pages.netlify.app';
 
 const SEOBox: React.FC<SEOProps> = ({
-  title, description, keywords, ogImage, appId, appName: appNameProp, appStoreUrl, appCategory,
+  title, description, keywords, ogImage, appId, appName: appNameProp, appStoreUrl, appIcon, premiumOnly, appCategory,
   aggregateRating, faqs, appNumericId, screenshots, breadcrumbs, pageType, canonicalUrl, datePublished, comparisonTable,
 }) => {
   useEffect(() => {
@@ -47,9 +49,8 @@ const SEOBox: React.FC<SEOProps> = ({
       el.setAttribute('href', href);
     };
 
-    // Per-app favicon + apple-touch-icon (#23 brand recognition) — falls back to
-    // the generic Briefly mark on the home page (no appId).
-    const favicon = appId ? `${BASE}/${appId}.png` : `${BASE}/favicon.png`;
+    // Use the current app icon in browser metadata; use the portfolio mark on the home page.
+    const favicon = appId ? `${BASE}${appIcon || `/${appId}.png`}` : `${BASE}/favicon.png`;
     setLinkRel('icon', favicon);
     setLinkRel('apple-touch-icon', favicon);
 
@@ -73,7 +74,7 @@ const SEOBox: React.FC<SEOProps> = ({
     setMetaProp('og:image:width', '1200');
     setMetaProp('og:image:height', '630');
     setMetaProp('og:locale', 'en_US');
-    setMetaProp('og:site_name', 'Briefly.live');
+    setMetaProp('og:site_name', 'Ashwin Anbazhagan');
 
     if (pageType && datePublished) {
       setMetaProp('article:published_time', datePublished);
@@ -117,8 +118,9 @@ const SEOBox: React.FC<SEOProps> = ({
       description,
       applicationCategory: appCategory || 'HealthApplication',
       operatingSystem: 'iOS',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      ...(!premiumOnly && { offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } }),
       url: appStoreUrl || resolvedCanonical,
+      image: `${BASE}${appIcon || `/${appId}.png`}`,
       author: { '@type': 'Person', name: 'Ashwin Anbazhagan', url: BASE },
       ...(aggregateRating && {
         aggregateRating: {
@@ -133,9 +135,9 @@ const SEOBox: React.FC<SEOProps> = ({
     } : {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: 'Briefly',
+      name: 'Ashwin Anbazhagan',
       url: BASE,
-      logo: `${BASE}/apple-touch-icon.png`,
+      logo: `${BASE}/favicon.png`,
       sameAs: ['https://twitter.com/shwiinn'],
       founder: { '@type': 'Person', name: 'Ashwin Anbazhagan' },
     };
