@@ -50,7 +50,8 @@ const SEOBox: React.FC<SEOProps> = ({
     };
 
     // Use the current app icon in browser metadata; use the portfolio mark on the home page.
-    const favicon = appId ? `${BASE}${appIcon || `/${appId}.png`}` : `${BASE}/favicon.png`;
+    // Relative on purpose: the tab icon comes from whichever site is serving the page (local or live).
+    const favicon = appId ? (appIcon || `/${appId}.png`) : '/favicon.png';
     setLinkRel('icon', favicon);
     setLinkRel('apple-touch-icon', favicon);
 

@@ -112,7 +112,7 @@ function buildHead({ title, description, keywords, canonical, appStoreUrl, downl
     <meta name="twitter:app:id:iphone" content="${appNumericId}">` : '';
 
   // Use the current app icon in route metadata; the portfolio uses its site mark.
-  const favicon = appId ? `${BASE}${appIcon || `/${appId}.png`}` : `${BASE}/favicon.png`;
+  const favicon = appId ? (appIcon || `/${appId}.png`) : '/favicon.png'; // relative: served by the same site
 
   return `
     <title>${title}</title>

@@ -66,6 +66,7 @@ export interface AppConfig {
     primary: string;
     bg: string;
     fontFamily: string;
+    webFont?: string; // CSS font stack for the app's guide pages; system UI when absent
     templateId: 'zen' | 'academic' | 'arcade' | 'sanctuary';
     grain?: number;
     mesh?: boolean;
@@ -77,18 +78,22 @@ export const apps: AppConfig[] = [
   {
     id: 'honestly',
     name: 'Honestly',
-    icon: '/honestly.png',
+    icon: '/honestly.png?v=2', // ?v= makes browsers and search engines fetch the new icon
     appStoreName: 'Honestly: Journal & Reflect',
     category: 'Lifestyle',
     seoApplicationCategory: 'LifestyleApplication',
     tagline: 'Journal & Reflect — Affirmations & Manifest',
     platforms: ['ios'],
-    description: 'Honestly helps you meet the day on your own terms. Write before you scroll, make sense of what is on your mind, and find a daily affirmation that speaks to you. Choose from 1,400+ affirmations and bring your chosen topics to widgets and reminders. Premium adds app blocking and more.',
+    description: 'Honestly is a morning journal that keeps the apps you choose asleep until you have written. A new question waits every morning, each month fills its own book, and 1,510 affirmations bring a kind word into your day. Premium adds app blocking, widgets, 35 page themes and more.',
     appStoreUrl: 'https://apps.apple.com/app/honestly-reflect-manifest/id6759817879',
     // aggregateRating intentionally omitted: only 2 real store ratings as of 2026-07 — re-add once volume is defensible
     pricingNote: 'Free · iOS',
+    testimonials: [
+      { quote: "It's a really good app—it's attractive and minimalist, with no distractions, which makes it perfect for mornings.", author: 'Ianm34223', detail: 'App Store review' },
+      { quote: 'Great way to start my morning', author: 'Jamie1430', detail: 'App Store review' },
+    ],
     comparisonHighlights: [
-      { them: 'Blank-page apps can leave you wondering where to start.', us: 'A mood check, a guided journal, and affirmations for your day.' },
+      { them: 'Blank-page apps can leave you wondering where to start.', us: 'A question waiting every morning, and a book that fills as you write.' },
       { them: 'Willpower and timers don\'t hold.', us: 'Yours stay asleep until you\'ve written.' },
       { them: 'Affirmations are easy to forget in the scroll.', us: 'Your chosen topics return on your widgets and reminders.' },
     ],
@@ -96,38 +101,40 @@ export const apps: AppConfig[] = [
     appNumericId: '6759817879',
     seo: {
       title: 'Honestly: Journal & Reflect — Affirmations & Manifest',
-      description: 'Write before you scroll. Honestly brings journaling, mood reflection, 1,400+ affirmations, customizable widgets and daily reminders into one personal morning practice. Premium app blocking helps you protect time for yourself.',
+      description: 'Your journal opens before your apps do. Honestly keeps chosen apps asleep until you write, with a daily prompt, a book for every month, mood tracking, 1,510 affirmations and free reminders.',
       keywords: ['Honestly', 'journal', 'reflect', 'affirmations', 'manifest', 'mood tracker', 'app blocker', 'journal prompts', 'morning routine', 'gratitude', 'widgets', 'mental wellness']
     },
     marketing: {
-      headline: 'Write before you scroll.',
-      subheadline: 'Make space for your thoughts, understand how you feel, and carry a personal affirmation into the day.',
+      headline: 'Your journal opens before your apps do.',
+      subheadline: 'Honestly keeps the apps you choose asleep until you have written a few honest lines, then sends you into your day with a kind word you can believe.',
       problem: 'You wake up and reach for Instagram, TikTok, or X before you\'ve had a single thought of your own. Before you\'re even out of bed, you\'re already reacting to everyone else\'s morning.',
       agitation: 'Willpower doesn\'t work. Timers don\'t work. There\'s no friction between you and the scroll — so you scroll, and the morning is gone before it started.',
-      solution: 'Honestly gives your morning a gentler first step: write before the feeds take over, reflect on what is really going on, then find an affirmation that fits the way you want to feel. Explore more than 1,400 affirmations, choose the topics that matter to you, and see them on your widgets or in reminders. Premium app blocking helps keep chosen apps closed until you have written.',
+      solution: 'Honestly gives your morning a gentler first step: write before the feeds take over, reflect on what is really going on, then find an affirmation that fits the way you want to feel. Explore 1,510 affirmations, choose the topics that matter to you, and see them on your widgets or in reminders. Premium app blocking helps keep chosen apps closed until you have written.',
       benefits: [
         { title: 'Mood Check-In', description: 'Happy, Confused, Sad, Awful, or Cry — tap what\'s actually true. It colors the rest of your page.', icon: 'Sun' },
         { title: 'Journal Your Way', description: 'Start with a guided prompt or write freely. Make the page yours with photos, doodles, tags and text formatting.', icon: 'PenLine' },
-        { title: '1,400+ Affirmations', description: 'Find words for what you need today. Choose affirmation topics once, then see those themes across reading, reminders and widgets.', icon: 'Heart' },
+        { title: '1,510 Affirmations', description: 'Find words for what you need today. Choose affirmation topics once, then see those themes across reading, reminders and widgets.', icon: 'Heart' },
         { title: 'App Blocking (Premium)', description: 'Lock Instagram, TikTok and the rest on a schedule with hard Screen Time blocking — no workarounds, no snoozing. Honestly never sees which apps you picked.', icon: 'Lock' },
         { title: 'See Your Patterns', description: 'Notice how your moods shift and look back on the days you have written, all in one private journal.', icon: 'CalendarDays' },
-        { title: 'Widgets & Reminders', description: 'Bring affirmations into your day with customizable Home Screen and Lock Screen widgets and daily reminders.', icon: 'LayoutGrid' }
+        { title: 'Widgets & Reminders', description: 'Free affirmation reminders at the times you choose, plus Home Screen and Lock Screen widgets with Premium.', icon: 'LayoutGrid' }
       ],
       screenshots: [
         '/honestly/screenshots/01.webp',
         '/honestly/screenshots/02.webp',
         '/honestly/screenshots/03.webp',
         '/honestly/screenshots/04.webp',
-        '/honestly/screenshots/05.webp'
+        '/honestly/screenshots/05.webp',
+        '/honestly/screenshots/06.webp'
       ],
       faqs: [
-        { question: 'Is Honestly free?', answer: 'You can start journaling and exploring affirmations for free. Premium adds app blocking and other premium tools, with a one-time Lifetime purchase or monthly plan.' },
-        { question: 'How is Honestly different from Day One or Reflectly?', answer: 'Honestly pairs a private journal with a 1,400+ affirmation library, reminders, customizable widgets and optional app blocking. Start with what you need today, then make the practice your own.', learnMoreSlug: 'vs-day-one' },
-        { question: 'Is there a journaling app that also blocks distracting apps?', answer: 'Yes — Honestly Premium locks your chosen apps (Instagram, TikTok, X, whatever pulls you in) on a schedule with hard Screen Time blocking. No workarounds, no snoozing — and Honestly is only ever shown opaque tokens, never the names of the apps.', learnMoreSlug: 'break-social-media-phone-addiction' },
-        { question: 'Can I use Honestly as a manifestation journal?', answer: 'Honestly gives you space to reflect, set an intention and explore affirmations that support the way you want to feel. Choose the topics you want to return to throughout the day.', learnMoreSlug: 'manifestation-journal-app' },
-        { question: 'Does Honestly give me journal prompts?', answer: 'Yes. The prompt library gives you a starting point when you want direction, and you can also write freely in your journal.', learnMoreSlug: 'daily-journal-prompts-app' },
-        { question: 'Does Honestly support other languages?', answer: 'Yes — Honestly is available in 11 languages including English, Spanish, French, German, Japanese, Korean, and Arabic.' },
-        { question: 'Does Honestly back up my journal?', answer: 'Journal data is stored privately on your device and can sync through your personal iCloud account when iCloud is enabled.' },
+        { question: 'Is Honestly free?', answer: 'Yes. Journaling with a daily prompt, month books and their covers, mood check-ins, the affirmation library and reminders are all free. Premium adds app blocking, your own prompts and affirmations, 35 page themes, widgets, full history and iCloud backup, as a one-time Lifetime purchase or a yearly or monthly plan.' },
+        { question: 'Who can read my journal?', answer: 'Only you. Your pages are stored on your iPhone, there is no account to create, and Honestly has no analytics or advertising trackers. If you choose to back up, the copy goes to your own private iCloud.' },
+        { question: 'How does app blocking work?', answer: "With Premium, you pick apps using Apple's Screen Time. Each morning they stay asleep until today's page is written. Apple handles the selection privately, so Honestly never sees which apps you chose.", learnMoreSlug: 'break-social-media-phone-addiction' },
+        { question: 'Do reminders cost anything?', answer: 'No. The journal reminder arrives at the time you pick, only on mornings your page is still blank. Affirmation reminders can come up to three times a day, on the days you choose.' },
+        { question: 'Does Honestly give me journal prompts?', answer: 'Yes. A new question waits on your page each morning, and you can swap it for another from the prompt library. Writing your own prompts is part of Premium.', learnMoreSlug: 'daily-journal-prompts-app' },
+        { question: 'Does Honestly back up my journal?', answer: 'Your pages live on your iPhone. With Premium you can back them up to your own iCloud and restore them on a new phone. Backup is manual, so nothing leaves your phone unless you choose.' },
+        { question: 'What languages is Honestly in?', answer: 'English, Arabic, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Portuguese, Russian and Spanish.' },
+        { question: 'Does it work on iPad?', answer: 'Yes. Honestly runs on iPhone and iPad with iOS 18 or later.' },
       ]
     },
     legal: {
@@ -139,7 +146,8 @@ export const apps: AppConfig[] = [
     design: {
       primary: '#F5851F',
       bg: '#FAF8F5',
-      fontFamily: 'font-nunito',
+      fontFamily: 'font-manrope',
+      webFont: 'Manrope, system-ui, -apple-system, sans-serif',
       templateId: 'sanctuary',
       mesh: false
     }

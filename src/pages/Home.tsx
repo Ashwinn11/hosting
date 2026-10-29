@@ -219,13 +219,13 @@ const WORLDS: Record<string, World> = {
     cardText: '#33261A',
     cardText2: '#8A7A67',
     accent: '#F5851F',
-    fontDisplay: '"Shantell Sans", cursive',
+    fontDisplay: '"Manrope", sans-serif',
     demo: (
       <div style={{ marginTop: 20, display: 'flex', gap: 9, alignItems: 'center', flexWrap: 'wrap' }}>
         {[0, 1, 2, 3, 4].map((m) => (
           <MiniFace key={m} mood={m} size={26} className={`hon-face hon-face-${m}`} />
         ))}
-        <span className="hon-note" style={{ fontFamily: '"Shantell Sans", cursive', fontSize: 12, color: '#BC5E17', marginLeft: 4 }}>
+        <span className="hon-note" style={{ fontFamily: '"Manrope", sans-serif', fontWeight: 700, fontSize: 12, color: '#BC5E17', marginLeft: 4 }}>
           how are you, really?
         </span>
       </div>

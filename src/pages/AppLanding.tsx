@@ -3,7 +3,7 @@ import type React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { apps } from '../config/apps';
 import { ZenTemplate, AcademicTemplate, ArcadeTemplate, SanctuaryTemplate } from '../templates/AppTemplates';
-import HonestlyLanding from './HonestlyLanding';
+import HonestlyLanding from './honestly/HonestlyLanding';
 import SnipsyLanding from './SnipsyLanding';
 import TetherLanding from './TetherLanding';
 
